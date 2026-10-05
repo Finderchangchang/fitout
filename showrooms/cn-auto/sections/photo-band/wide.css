@@ -1,0 +1,9 @@
+.photo-band img {
+  width: 100%;
+  height: clamp(12rem, 22vw, 16rem);
+  object-fit: cover;
+}
+
+.photo-band .meta {
+  padding-block: 0.5rem;
+}

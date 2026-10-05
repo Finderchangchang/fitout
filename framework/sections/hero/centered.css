@@ -1,0 +1,11 @@
+.hero-center {
+  text-align: center;
+}
+
+.hero-center .section-lead {
+  margin-inline: auto;
+}
+
+.hero-center .btn-row {
+  justify-content: center;
+}

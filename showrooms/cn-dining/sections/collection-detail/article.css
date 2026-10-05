@@ -1,0 +1,28 @@
+.detail {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.detail-copy {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.detail-photo {
+  width: min(100%, 36rem);
+  height: auto;
+}
+
+.specs th {
+  width: 6rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .detail {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}

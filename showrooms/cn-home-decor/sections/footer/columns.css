@@ -1,0 +1,77 @@
+.footer-links {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.site-footer {
+  background: var(--text);
+  color: var(--on-media);
+  border-top: 0;
+  padding-top: var(--section-y);
+}
+
+.site-footer a,
+.site-footer .footer-name,
+.site-footer .footer-label,
+.site-footer p {
+  color: var(--on-media);
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 44px;
+  line-height: 1.5;
+  padding-block: 0.4rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.site-footer .btn {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--surface);
+}
+
+.footer-legal {
+  border-top-color: var(--border);
+}
+
+.qr-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.qr-pair figure {
+  width: 7.5rem;
+  min-width: 0;
+}
+
+.qr-pair img {
+  width: 7.5rem;
+  height: 7.5rem;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.qr-pair figcaption {
+  display: block;
+  min-height: 44px;
+  line-height: 44px;
+  text-align: center;
+  color: var(--on-media);
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1.15fr 0.8fr 1.15fr 0.9fr;
+  }
+}

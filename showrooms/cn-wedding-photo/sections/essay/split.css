@@ -1,0 +1,27 @@
+.essay-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.essay-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.essay-grid .section-lead,
+.essay-grid .prose {
+  margin-top: 0.75rem;
+}
+
+.essay-more {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .essay-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+  }
+}

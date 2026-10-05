@@ -1,0 +1,17 @@
+<section class="section" data-section="trust" data-family="metrics" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <dl class="metric-row">
+      {{#each items}}
+      <div class="metric">
+        <dd class="stat-value" data-count="{{countTo}}">{{value}}</dd>
+        <dt>{{label}}</dt>
+      </div>
+      {{/each}}
+    </dl>
+  </div>
+</section>

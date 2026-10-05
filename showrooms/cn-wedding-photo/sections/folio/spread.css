@@ -1,0 +1,34 @@
+.folio-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.folio-card {
+  min-width: 0;
+}
+
+.folio-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.folio-card a {
+  text-decoration: none;
+}
+
+.folio-more {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .folio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .folio-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

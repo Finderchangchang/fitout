@@ -1,0 +1,35 @@
+.board-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.board-grid > * {
+  min-width: 0;
+}
+
+.board-photo {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.board-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.board-card .item-title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 768px) {
+  .board-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .board-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

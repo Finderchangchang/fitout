@@ -1,0 +1,105 @@
+{
+  "id": "__ID__",
+  "showroom": "__ID__",
+  "industry": "__INDUSTRY__",
+  "niche": "__NICHE__",
+  "businessType": "LocalBusiness",
+  "name": "虚构店名（虚构）",
+  "summary": "把这句话换成这家店实际做什么。",
+  "contact": {
+    "phone": "0571-86001000",
+    "wechat": "demo-wechat",
+    "wechatQr": "",
+    "email": "hello@example.com",
+    "address": "杭州市西湖区学院路 1 号（虚构地址）",
+    "hours": [{ "day": "周一至周五", "time": "10:00-18:00" }],
+    "formUrl": ""
+  },
+  "nav": [
+    { "label": "服务", "href": "services/index.html" },
+    { "label": "关于", "href": "about/index.html" },
+    { "label": "联系", "href": "contact/index.html" }
+  ],
+  "shell": { "header": "standard", "footer": "simple", "floatContact": "dock" },
+  "collections": {
+    "services": [
+      {
+        "slug": "cut",
+        "name": "一项服务",
+        "summary": "用一句话写清这项服务做什么。"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "虚构店名（虚构）",
+      "description": "把首页说明换成这家店的一句介绍。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "text",
+          "anchor": "top",
+          "tone": "light",
+          "data": {
+            "title": "把标题写成一句短话",
+            "lead": "一句人话，说清做什么。",
+            "primaryLabel": "电话联系",
+            "primaryHref": "tel:057186001000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "关于我们",
+      "description": "关于这家店的一句说明。",
+      "banner": "hero-1",
+      "bannerAlt": "店里的一张照片",
+      "sections": [
+        {
+          "type": "why",
+          "variant": "points",
+          "anchor": "how",
+          "tone": "light",
+          "data": {
+            "title": "怎么做",
+            "items": [{ "name": "先看现场", "text": "写一条具体做法，不要写空话。" }]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "title": "服务",
+      "description": "服务列表的一句说明。",
+      "banner": "hero-1",
+      "bannerAlt": "店里的一张照片",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "grid",
+          "anchor": "list",
+          "tone": "light",
+          "data": { "title": "服务", "collection": "services" }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "联系",
+      "description": "电话、地址和营业时间。",
+      "banner": "hero-1",
+      "bannerAlt": "店里的一张照片",
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "card",
+          "anchor": "visit",
+          "tone": "light",
+          "data": { "title": "到店" }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "hospitality",
+  "label": "民宿文旅",
+  "mode": "multi",
+  "note": "民宿、酒店、旅行社、景区。首页放住处或线路，内页能订和问。初稿，样板间会再改。",
+  "buttons": {
+    "primary": "查看可订",
+    "secondary": "看看房型",
+    "form": "在线咨询"
+  },
+  "shell": {
+    "header": ["standard", "centered"],
+    "footer": ["simple", "columns"],
+    "floatContact": ["dock"]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["split-image", "text"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "services", "required": true, "variants": ["grid-cards", "list-rows"] },
+        { "type": "cases", "required": false, "variants": ["gallery", "list"] },
+        { "type": "testimonials", "required": false, "variants": ["grid-cards", "spotlight"] },
+        { "type": "faq", "required": false, "variants": ["accordion", "two-column"] },
+        { "type": "contact", "required": true, "variants": ["card", "banner"] },
+        { "type": "cta-band", "required": false, "variants": ["simple", "inline"] }
+      ]
+    },
+    {
+      "id": "rooms",
+      "file": "rooms/index.html",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] }
+      ]
+    },
+    {
+      "id": "room",
+      "file": "rooms/{slug}.html",
+      "from": "rooms",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "order": [
+        { "type": "why", "required": true, "variants": ["points", "steps"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card", "banner"] }
+      ]
+    }
+  ]
+}

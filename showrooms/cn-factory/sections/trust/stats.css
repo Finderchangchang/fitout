@@ -1,0 +1,30 @@
+.np-meter {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.np-meter .np-title,
+.np-meter .section-lead,
+.np-meter dt,
+.np-meter .meter-value {
+  color: var(--primary-contrast);
+}
+
+.meter-grid {
+  display: grid;
+  gap: 1.25rem 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.meter-value {
+  font-size: var(--fs-5);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+@media (min-width: 1024px) {
+  .meter-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

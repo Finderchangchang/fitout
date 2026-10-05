@@ -1,0 +1,120 @@
+{
+  "id": "bad-site",
+  "style": "./bad-style",
+  "industry": "store-service",
+  "businessType": "LocalBusiness",
+  "name": "Acme赋能美业（虚构）",
+  "summary": "故意写坏的验收样例。",
+  "contact": {
+    "phone": "0571-86000000",
+    "wechat": "bad-demo",
+    "wechatQr": "",
+    "email": "bad@example.com",
+    "address": "虚构市虚构路 1 号（虚构地址）",
+    "hours": [
+      {
+        "day": "周一",
+        "time": "9:00-18:00"
+      }
+    ],
+    "formUrl": "",
+    "icp": "浙ICP备2026000000号",
+    "police": ""
+  },
+  "nav": [
+    {
+      "label": "服务",
+      "href": "#services"
+    },
+    {
+      "label": "联系",
+      "href": "#contact"
+    }
+  ],
+  "shell": {
+    "header": "standard",
+    "footer": "simple",
+    "floatContact": "dock"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "这是一个革命性的故意写超长的首屏大标题呀啦——验收",
+      "description": "故意写坏，用来证明机检能抓住违规。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "split-image",
+          "anchor": "hero",
+          "data": {
+            "label": "坏样子",
+            "title": "这是一个革命性的故意写超长的首屏大标题呀啦——验收",
+            "lead": "这一句是说明，本身没有违规。",
+            "primaryLabel": "了解更多",
+            "primaryHref": "#contact",
+            "secondaryLabel": "",
+            "secondaryHref": "",
+            "image": "",
+            "imageAlt": ""
+          }
+        },
+        {
+          "type": "services",
+          "variant": "grid-cards",
+          "anchor": "services",
+          "data": {
+            "title": "服务",
+            "lead": "",
+            "items": [
+              {
+                "name": "甲油胶💅",
+                "text": "这里用了彩色符号。",
+                "price": "99 元"
+              }
+            ]
+          }
+        },
+        {
+          "type": "why",
+          "variant": "points",
+          "anchor": "why",
+          "data": {
+            "title": "空话",
+            "lead": "",
+            "items": [
+              {
+                "name": "空话一条",
+                "text": "赋能打造全方位领先的一站式革命性颠覆性"
+              }
+            ]
+          }
+        },
+        {
+          "type": "testimonials",
+          "variant": "grid-cards",
+          "anchor": "testimonials",
+          "data": {
+            "title": "假评价",
+            "lead": "",
+            "items": [
+              {
+                "quote": "Lorem ipsum dolor sit amet, consectetur.",
+                "name": "John Doe",
+                "role": "顾客"
+              }
+            ]
+          }
+        },
+        {
+          "type": "contact",
+          "variant": "card",
+          "anchor": "contact",
+          "data": {
+            "title": "联系",
+            "lead": ""
+          }
+        }
+      ]
+    }
+  ]
+}

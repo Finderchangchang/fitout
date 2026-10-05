@@ -1,0 +1,15 @@
+.cta-inline {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.cta-inline .phone-line {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .cta-inline {
+    grid-template-columns: 1fr auto;
+  }
+}

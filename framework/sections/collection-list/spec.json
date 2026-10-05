@@ -1,0 +1,16 @@
+{
+  "note": "任意集合的列表页。条目由拼装脚本从 collections 注入。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40, "hint": "集合 id，例如 services 或 news" }
+  },
+  "variants": {
+    "grid": {
+      "needsImage": false,
+      "family": "catalog",
+      "fit": "卡片网格。没图就不出图",
+      "source": "产品目录网格的通用版"
+    }
+  }
+}

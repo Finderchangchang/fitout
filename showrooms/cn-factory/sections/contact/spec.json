@@ -1,0 +1,17 @@
+{
+  "note": "左边热线和二维码，右边外链询价。不在站内做可提交表单。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+  },
+  "variants": {
+    "split": {
+      "needsImage": false,
+      "family": "desk",
+      "fit": "热线与二维码一块，询价入口单独一块",
+      "source": "样板间自写"
+    }
+  }
+}

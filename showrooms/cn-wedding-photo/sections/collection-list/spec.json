@@ -1,0 +1,15 @@
+{
+  "note": "样片、套系、团队、基地、新闻共用。列表只显示名称、一句说明和图。套系的张数写在说明里。条目由拼装注入，这里不要求 items。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 }
+  },
+  "variants": {
+    "mosaic": { "needsImage": false, "family": "mosaic", "fit": "样片大小图" },
+    "sheet": { "needsImage": false, "family": "sheet", "fit": "套系一行一张，说明里带张数和价格" },
+    "portraits": { "needsImage": false, "family": "portraits", "fit": "团队竖图" },
+    "scenes": { "needsImage": false, "family": "scenes", "fit": "基地横图" },
+    "feed": { "needsImage": false, "family": "feed", "fit": "新闻左图右文" }
+  }
+}

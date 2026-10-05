@@ -1,0 +1,25 @@
+{
+  "note": "首页和关于页的数字条。value 里要有数字，进入视口后从 0 计到终值。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "value": { "type": "string", "required": true, "maxChars": 8 },
+        "label": { "type": "string", "required": true, "maxChars": 12 }
+      }
+    }
+  },
+  "variants": {
+    "stats": {
+      "needsImage": false,
+      "family": "metrics",
+      "fit": "一行大数字，深色底",
+      "source": "样板间自己的数字条"
+    }
+  }
+}

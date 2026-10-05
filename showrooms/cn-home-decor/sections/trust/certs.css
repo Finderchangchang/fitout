@@ -1,0 +1,26 @@
+.cert-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.cert-grid > * {
+  min-width: 0;
+}
+
+.cert-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--surface);
+  margin-bottom: 0.75rem;
+}
+
+.cert-card .item-title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

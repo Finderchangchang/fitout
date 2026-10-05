@@ -1,0 +1,24 @@
+{
+  "note": "医院介绍正文。几段事实，不写口号。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "item": {
+        "text": { "type": "string", "required": true, "maxChars": 80 }
+      }
+    }
+  },
+  "variants": {
+    "split": {
+      "needsImage": false,
+      "family": "prose",
+      "fit": "左对齐的几段介绍",
+      "source": "样板间自写"
+    }
+  }
+}

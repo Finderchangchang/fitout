@@ -1,0 +1,14 @@
+<section class="section" data-section="essay" data-family="essay" id="{{anchor}}">
+  <div class="container essay">
+    <div class="essay-copy">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      <p class="prose">{{body}}</p>
+    </div>
+    <figure class="essay-figure">
+      <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+      {{#if caption}}<figcaption class="meta">{{caption}}</figcaption>{{/if}}
+    </figure>
+  </div>
+</section>

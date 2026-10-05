@@ -1,0 +1,24 @@
+{
+  "note": "热线和两枚码。留言入口单独一块，这里不放。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": false,
+      "max": 2,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 8 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "card": {
+      "needsImage": false,
+      "family": "visit",
+      "fit": "电话地址在左，两枚码在右"
+    }
+  }
+}

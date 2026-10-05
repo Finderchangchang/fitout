@@ -1,0 +1,14 @@
+.step-list {
+  display: grid;
+  gap: var(--gap);
+}
+
+.step-no {
+  font-size: var(--fs-3);
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}

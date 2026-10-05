@@ -1,0 +1,138 @@
+{
+  "id": "cn-professional",
+  "name": "国内风 · 律所财税",
+  "note": "给律师事务所，财税代账和企业咨询也能用。版式按专业领域、团队、案例、知识文章来排，电话在页头、悬浮条、页脚和详情里都能看见。",
+  "industry": "professional",
+  "niche": "law",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "电话咨询",
+    "secondary": "看服务项目",
+    "form": "预约面谈"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 9, "interval": "4500ms" }
+  },
+  "collections": [
+    { "id": "services", "label": "专业领域", "listFile": "services/index.html" },
+    { "id": "team", "label": "律师团队", "listFile": "team/index.html" },
+    { "id": "cases", "label": "典型案例", "listFile": "cases/index.html" },
+    { "id": "news", "label": "法律知识", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "services", "required": true, "variants": ["rows"] },
+        { "type": "why", "required": true, "variants": ["dossier"] },
+        { "type": "team", "required": true, "variants": ["bench"] },
+        { "type": "cases", "required": true, "variants": ["ledger"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "collection-list", "required": true, "variants": ["briefs"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["dossier"] },
+        { "type": "timeline", "required": true, "variants": ["rail"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "honors", "required": true, "variants": ["shelf"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "services",
+      "file": "services/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["folios"] }
+      ]
+    },
+    {
+      "id": "service",
+      "file": "services/{slug}.html",
+      "kind": "detail",
+      "from": "services",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "team",
+      "file": "team/index.html",
+      "kind": "team",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["people"] }
+      ]
+    },
+    {
+      "id": "member",
+      "file": "team/{slug}.html",
+      "kind": "detail",
+      "from": "team",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "cases",
+      "file": "cases/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["docket"] }
+      ]
+    },
+    {
+      "id": "case",
+      "file": "cases/{slug}.html",
+      "kind": "detail",
+      "from": "cases",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["briefs"] }
+      ]
+    },
+    {
+      "id": "article",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card"] }
+      ]
+    }
+  ]
+}

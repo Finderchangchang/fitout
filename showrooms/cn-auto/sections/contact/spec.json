@@ -1,0 +1,15 @@
+{
+  "note": "左热线右预约。电话、地址、时间和二维码来自 contact，不要在 data 里再写。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 }
+  },
+  "variants": {
+    "split": {
+      "needsImage": false,
+      "family": "desk",
+      "fit": "热线和预约分开",
+      "source": "样板间自写。不嵌地图，表单只给站外链接"
+    }
+  }
+}

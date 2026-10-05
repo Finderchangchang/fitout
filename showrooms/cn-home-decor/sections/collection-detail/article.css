@@ -1,0 +1,30 @@
+.product-photo {
+  width: min(100%, 36rem);
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.specs {
+  width: min(100%, 36rem);
+  border-collapse: collapse;
+  margin-block: 1.5rem;
+}
+
+.specs th,
+.specs td {
+  text-align: left;
+  padding: 0.7rem 0.75rem 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.specs th {
+  width: 6.5rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.specs td {
+  overflow-wrap: anywhere;
+}

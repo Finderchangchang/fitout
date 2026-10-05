@@ -1,0 +1,58 @@
+{
+  "note": "没有真实评价就整块不要。不打星。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "quote": {
+          "type": "string",
+          "required": true,
+          "maxChars": 80,
+          "hint": "原话。没有原话就不要这条"
+        },
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12,
+          "hint": "怎么称呼"
+        },
+        "role": {
+          "type": "string",
+          "required": false,
+          "maxChars": 16,
+          "hint": "身份或从哪来，可无"
+        }
+      },
+      "hint": "1 到 6 条"
+    }
+  },
+  "variants": {
+    "grid-cards": {
+      "needsImage": false,
+      "family": "quotes",
+      "fit": "几条评价并列",
+      "source": "localbiz-site components/sections/testimonials/TestimonialsGridCards.tsx。不搬星级"
+    },
+    "spotlight": {
+      "needsImage": false,
+      "family": "quote",
+      "fit": "第一条放大，其余放下面。不横向滚动",
+      "source": "localbiz-site components/sections/testimonials/TestimonialsSpotlight.tsx。不搬横向滚动条"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.trust-rail .section-lead,
+.trust-rail .stat-grid dt,
+.trust-rail .stat-value {
+  color: var(--on-media);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1rem;
+  margin: 0;
+}
+
+.stat-value {
+  font-size: var(--fs-5);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin: 0.2rem 0 0;
+}
+
+.stat-grid dt {
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

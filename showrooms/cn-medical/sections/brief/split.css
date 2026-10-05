@@ -1,0 +1,18 @@
+.brief-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.brief-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .brief-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

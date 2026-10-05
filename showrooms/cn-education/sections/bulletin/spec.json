@@ -1,0 +1,29 @@
+{
+  "note": "首页新闻。日期、标题、图和链接。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 3,
+      "item": {
+        "date": { "type": "string", "required": true, "maxChars": 16 },
+        "name": { "type": "string", "required": true, "maxChars": 20 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "href": { "type": "string", "required": true, "maxChars": 200 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "feed": {
+      "needsImage": false,
+      "family": "feed",
+      "fit": "第一条拉高，旁边叠两条",
+      "source": "样板间自写"
+    }
+  }
+}

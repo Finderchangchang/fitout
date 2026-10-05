@@ -1,0 +1,30 @@
+{
+  "note": "案例按年份一条一行，图在右侧。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "year": { "type": "string", "required": true, "maxChars": 8 },
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 50 },
+        "result": { "type": "string", "required": false, "maxChars": 24 },
+        "href": { "type": "string", "required": false, "maxChars": 200 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "ledger": {
+      "needsImage": false,
+      "family": "ledger",
+      "fit": "年份、事实、结果，右侧一张小图",
+      "source": "样板间自己的案例台账"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "note": "收尾一句。按钮文字用样板间主按钮，不在 data 里改。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "primaryHref": { "type": "string", "required": true, "maxChars": 200 }
+  },
+  "variants": {
+    "plate": {
+      "needsImage": false,
+      "family": "band",
+      "fit": "一句起订，一个采购按钮",
+      "source": "样板间自写"
+    }
+  }
+}

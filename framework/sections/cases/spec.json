@@ -1,0 +1,72 @@
+{
+  "note": "没有真实案例就整块不要。gallery 缺任何一张图就改用 list。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16,
+          "hint": "案例名，用客人怎么称呼，不要编公司"
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 50,
+          "hint": "做了什么"
+        },
+        "result": {
+          "type": "string",
+          "required": false,
+          "maxChars": 24,
+          "hint": "结果，可无。没有就不填"
+        },
+        "image": {
+          "type": "image",
+          "required": false,
+          "maxChars": 200,
+          "hint": "gallery 每一项都要有图，否则整块改用 list"
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": false,
+          "maxChars": 30,
+          "hint": "有图才需要"
+        }
+      },
+      "hint": "1 到 6 条"
+    }
+  },
+  "variants": {
+    "gallery": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "fallback": "list",
+      "family": "gallery",
+      "fit": "每条都有照片",
+      "source": "自写 figure。不使用任何参考仓库里的库存照片"
+    },
+    "list": {
+      "needsImage": false,
+      "family": "stories",
+      "fit": "没有照片，只写做过的事",
+      "source": "自写文章列表"
+    }
+  }
+}

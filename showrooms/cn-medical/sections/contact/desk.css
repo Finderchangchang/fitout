@@ -1,0 +1,43 @@
+.contact-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.contact-grid p {
+  margin-top: 0.35rem;
+}
+
+.group-label {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.qr-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+.qr-grid figure {
+  margin: 0;
+}
+
+.qr-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.qr-grid figcaption {
+  margin-top: 0.4rem;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+}

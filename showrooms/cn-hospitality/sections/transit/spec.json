@@ -1,0 +1,24 @@
+{
+  "note": "怎么来。每条一句路，不嵌地图。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "list": {
+      "needsImage": false,
+      "family": "route",
+      "fit": "自驾、大巴、火车各一条"
+    }
+  }
+}

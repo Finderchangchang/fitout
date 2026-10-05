@@ -1,0 +1,26 @@
+{
+  "note": "关于页的校区环境，四张同比例照片。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 4,
+      "max": 4,
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+        "caption": { "type": "string", "required": true, "maxChars": 16 }
+      }
+    }
+  },
+  "variants": {
+    "grid": {
+      "needsImage": false,
+      "family": "grounds",
+      "fit": "两行两列的校区照片",
+      "source": "样板间自写"
+    }
+  }
+}

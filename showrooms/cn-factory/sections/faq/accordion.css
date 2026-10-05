@@ -1,0 +1,12 @@
+.faq-list {
+  max-width: 40rem;
+}
+
+[data-section="faq"] .section-head {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.9rem;
+}
+
+[data-section="faq"] summary {
+  font-size: 1.0625rem;
+}

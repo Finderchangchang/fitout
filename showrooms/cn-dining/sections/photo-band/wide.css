@@ -1,0 +1,17 @@
+.photo-band {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.photo-band img {
+  width: 100%;
+  aspect-ratio: 2.4 / 1;
+  object-fit: cover;
+  max-height: 26rem;
+}
+
+.photo-band .meta {
+  padding-block: 1rem 0;
+  text-align: left;
+  color: var(--text-muted);
+}

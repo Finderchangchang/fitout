@@ -1,0 +1,82 @@
+.adv-box {
+  position: relative;
+  display: grid;
+  gap: 0.35rem 1.25rem;
+}
+
+.adv-box > input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.adv-box > img {
+  display: none;
+  width: 100%;
+}
+
+.adv-box:not(:has(input:checked)) > img:nth-of-type(1),
+.adv-box:has(input:nth-of-type(1):checked) > img:nth-of-type(1),
+.adv-box:has(input:nth-of-type(2):checked) > img:nth-of-type(2),
+.adv-box:has(input:nth-of-type(3):checked) > img:nth-of-type(3),
+.adv-box:has(input:nth-of-type(4):checked) > img:nth-of-type(4) {
+  display: block;
+}
+
+.adv-box > label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  padding-block: 0.35rem;
+}
+
+.adv-no {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.adv-text {
+  display: block;
+  color: var(--text-muted);
+}
+
+.item-title {
+  display: block;
+  font-size: var(--fs-3);
+}
+
+.adv-box:not(:has(input:checked)) > label:nth-of-type(1) .adv-no,
+.adv-box:has(input:nth-of-type(1):checked) > label:nth-of-type(1) .adv-no,
+.adv-box:has(input:nth-of-type(2):checked) > label:nth-of-type(2) .adv-no,
+.adv-box:has(input:nth-of-type(3):checked) > label:nth-of-type(3) .adv-no,
+.adv-box:has(input:nth-of-type(4):checked) > label:nth-of-type(4) .adv-no {
+  background: var(--accent);
+  color: var(--on-media);
+}
+
+@media (min-width: 768px) {
+  .adv-box {
+    grid-template-columns: 0.78fr 1.22fr;
+    align-items: start;
+  }
+
+  .adv-box > img {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+  }
+
+  .adv-box > label {
+    grid-column: 2;
+  }
+}

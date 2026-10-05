@@ -1,0 +1,33 @@
+.section[data-section="offer"] {
+  padding-block: 56px;
+}
+
+.offer-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.offer-grid > * {
+  min-width: 0;
+}
+
+.offer-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+.offer-price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: var(--fs-3);
+  font-variant-numeric: tabular-nums;
+  margin: 0.25rem 0;
+}
+
+@media (min-width: 768px) {
+  .offer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

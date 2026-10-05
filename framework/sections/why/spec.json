@@ -1,0 +1,52 @@
+{
+  "note": "优势或流程。写具体做法，不写空话。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16,
+          "hint": "要点或步骤名"
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40,
+          "hint": "一句事实"
+        }
+      },
+      "hint": "1 到 6 条"
+    }
+  },
+  "variants": {
+    "points": {
+      "needsImage": false,
+      "family": "points",
+      "fit": "几条并列的理由",
+      "source": "hyperui public/examples/marketing/feature-grids/1.html 的三列卡片。图标换成线宽 2 的 check，不搬 stroke 1.5 的闪电图"
+    },
+    "steps": {
+      "needsImage": false,
+      "family": "sequence",
+      "fit": "有先后的做法，用有序列表",
+      "source": "自写 ol。不搬 localbiz 服务行的 01 角标"
+    }
+  }
+}

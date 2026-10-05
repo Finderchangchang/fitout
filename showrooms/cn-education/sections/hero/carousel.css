@@ -1,0 +1,114 @@
+.hero-full {
+  min-height: 25rem;
+  padding-bottom: 3rem;
+}
+
+.hero-full .hero-copy {
+  text-align: start;
+  padding-bottom: 0.5rem;
+}
+
+.hero-full .meta {
+  display: inline-block;
+  width: fit-content;
+}
+
+.hero-full .section-title {
+  font-weight: 800;
+}
+
+.hero-full .btn {
+  border-color: var(--on-media);
+  color: var(--on-media);
+  background: transparent;
+}
+
+.hero-full .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}
+
+.hero-ui {
+  justify-content: flex-start;
+}
+
+.hero-full .carousel-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-full .prev-icon {
+  display: inline-flex;
+  transform: rotate(180deg);
+}
+
+.hero-full .hero-dots button {
+  border: 0;
+  background: transparent;
+  color: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-full .hero-dots button::after {
+  content: "";
+  display: block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: var(--on-media);
+  opacity: 0.9;
+}
+
+.hero-full .hero-dots button[aria-current="true"] {
+  background: transparent;
+  color: transparent;
+}
+
+.hero-full .hero-dots button[aria-current="true"]::after {
+  opacity: 1;
+  background: var(--accent);
+}
+
+@media (max-width: 767px) {
+  .hero-full .hero-copy {
+    padding-block: 1.25rem 0.35rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-full {
+    min-height: 32rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-full {
+    min-height: 700px;
+    padding-bottom: 5.5rem;
+  }
+}
+
+.hero-full .hero-scrim {
+  background: linear-gradient(180deg, rgb(10 22 15 / 0.5), rgb(10 22 15 / 0.86));
+}
+@media (max-width: 1023px) {
+  .hero-full .hero-scrim { background: rgb(10 22 15 / 0.72); }
+}

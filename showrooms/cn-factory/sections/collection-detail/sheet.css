@@ -1,0 +1,23 @@
+.sheet {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.sheet-copy {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+}
+
+.spec-table th {
+  width: 6.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .sheet {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}

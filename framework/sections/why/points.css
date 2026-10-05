@@ -1,0 +1,8 @@
+.point-card {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}

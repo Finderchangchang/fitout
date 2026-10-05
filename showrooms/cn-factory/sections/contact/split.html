@@ -1,0 +1,39 @@
+<section class="section" data-section="contact" data-family="desk" id="{{anchor}}">
+  <div class="container contact-split">
+    <div>
+      <div class="section-head np-head">
+        {{#if isH1}}<h1 class="section-title np-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title np-title">{{title}}</h2>{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      </div>
+      <p class="contact-phone"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+      {{#if email}}<p><a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
+      {{#if wechat}}<p>微信 {{wechat}}</p><p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
+      <p><a href="{{amapUrl}}">{{address}}</a></p>
+      <h3 class="contact-sub">到厂时间</h3>
+      {{#each hours}}
+      <p>{{day}} <span class="nums">{{time}}</span></p>
+      {{/each}}
+      <div class="contact-codes">
+        {{#if wechatQrSrc}}
+        <figure class="contact-qr">
+          <img src="{{wechatQrSrc}}" alt="{{name}}公众号二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
+          <figcaption>关注公众号</figcaption>
+        </figure>
+        {{/if}}
+        {{#if image}}
+        <figure class="contact-qr">
+          <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+          <figcaption>加销售微信</figcaption>
+        </figure>
+        {{/if}}
+      </div>
+    </div>
+    <aside class="inquiry-plate">
+      <h3>在线留言</h3>
+      <p>图纸请用 PDF 或 STEP，写明材料牌号、数量和表面处理。工作日收到后当天回复。</p>
+      {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
+      <p class="meta">也可以直接打电话，把尺寸和数量说清楚。</p>
+    </aside>
+  </div>
+</section>

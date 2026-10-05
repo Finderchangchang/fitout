@@ -1,0 +1,31 @@
+{
+  "note": "首页房型卡。面积、床型、人数和参考价写在卡上，列表页的集合数据带不走这些字段。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "area": { "type": "string", "required": true, "maxChars": 12 },
+        "bed": { "type": "string", "required": true, "maxChars": 16 },
+        "guests": { "type": "string", "required": true, "maxChars": 8 },
+        "price": { "type": "string", "required": true, "maxChars": 12 },
+        "href": { "type": "string", "required": true, "maxChars": 200 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "cards": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "family": "lodging",
+      "fit": "四列房卡，图下写面积、床、人数和参考价"
+    }
+  }
+}

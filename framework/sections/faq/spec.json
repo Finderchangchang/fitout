@@ -1,0 +1,52 @@
+{
+  "note": "用原生 details，不用脚本。正文可以有中文破折号。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "q": {
+          "type": "string",
+          "required": true,
+          "maxChars": 24,
+          "hint": "问题"
+        },
+        "a": {
+          "type": "string",
+          "required": true,
+          "maxChars": 80,
+          "hint": "回答"
+        }
+      },
+      "hint": "1 到 6 问"
+    }
+  },
+  "variants": {
+    "accordion": {
+      "needsImage": false,
+      "family": "accordion",
+      "fit": "问题不多，竖着叠",
+      "source": "localbiz-site components/sections/faq/FaqAccordion.tsx。展开图标用 chevron，不用加号"
+    },
+    "two-column": {
+      "needsImage": false,
+      "family": "columns",
+      "fit": "问题分成两列",
+      "source": "localbiz-site components/sections/faq/FaqTwoColumn.tsx"
+    }
+  }
+}

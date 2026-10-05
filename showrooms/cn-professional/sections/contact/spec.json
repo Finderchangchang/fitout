@@ -1,0 +1,25 @@
+{
+  "note": "热线和二维码一块，预约入口单独一块。不嵌地图，不做站内表单。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "qrs": {
+      "type": "list",
+      "required": false,
+      "max": 4,
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+        "label": { "type": "string", "required": true, "maxChars": 8 }
+      }
+    }
+  },
+  "variants": {
+    "card": {
+      "needsImage": false,
+      "family": "visit",
+      "fit": "左边电话和二维码，右边预约入口",
+      "source": "样板间联系页"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<section class="section" data-section="folio" data-family="folio" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="folio-grid" data-media-group="folio">
+      {{#each items}}
+      <article class="folio-card">
+        <a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>
+        <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
+        <p>{{text}}</p>
+      </article>
+      {{/each}}
+    </div>
+    <p class="folio-more"><a class="btn" href="{{href}}">{{hrefLabel}}</a></p>
+  </div>
+</section>

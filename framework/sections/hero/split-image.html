@@ -1,0 +1,16 @@
+<!-- 结构来自 localbiz HeroSplitImage。缺图时不会用到这一版。 -->
+<section class="section hero" data-section="hero" data-family="split" id="{{anchor}}">
+  <div class="container split">
+    <div class="hero-in">
+      {{#if label}}<p class="meta">{{label}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      <p class="section-lead">{{lead}}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        {{#if secondaryHref}}{{#if secondaryLabel}}<a class="btn" href="{{secondaryHref}}">{{secondaryLabel}}</a>{{/if}}{{/if}}
+      </div>
+    </div>
+    {{#if image}}<img class="hero-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}">{{/if}}
+  </div>
+</section>

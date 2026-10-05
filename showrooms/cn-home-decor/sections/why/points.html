@@ -1,0 +1,18 @@
+<section class="section" data-section="why" data-family="points" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head cm-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      <span class="cm-rule" aria-hidden="true"></span>
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="grid-3">
+      {{#each items}}
+      <article class="card point-card">
+        <h3 class="item-title">{{name}}</h3>
+        <p>{{text}}</p>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

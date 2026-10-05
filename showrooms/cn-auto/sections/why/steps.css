@@ -1,0 +1,26 @@
+.step-list {
+  display: grid;
+  gap: var(--gap);
+}
+
+.step-list li {
+  border-top: 3px solid var(--primary);
+  padding-top: 0.85rem;
+  min-width: 0;
+}
+
+.step-no {
+  font-size: var(--fs-3);
+  color: var(--on-media);
+}
+
+.step-list h3 {
+  font-size: var(--fs-3);
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 900px) {
+  .step-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

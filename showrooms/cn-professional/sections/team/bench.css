@@ -1,0 +1,26 @@
+.bench-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.bench-grid article {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+}
+
+.bench-grid .item-name {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .bench-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bench-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

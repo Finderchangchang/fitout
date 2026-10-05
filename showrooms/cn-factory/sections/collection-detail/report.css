@@ -1,0 +1,14 @@
+.report {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.report-copy {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 42rem;
+}
+
+.report-photo {
+  max-width: 40rem;
+}

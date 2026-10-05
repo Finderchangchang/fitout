@@ -1,0 +1,235 @@
+{
+  "industries": [
+    {
+      "id": "store-service",
+      "name": "门店服务",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "block",
+        "purpleAccent": false
+      },
+      "niches": [
+        {
+          "id": "beauty",
+          "name": "美业",
+          "ruleFlags": { "serifTitles": true, "beigeTerracotta": "ok" }
+        },
+        {
+          "id": "dining",
+          "name": "餐饮",
+          "ruleFlags": { "serifTitles": true, "beigeTerracotta": "ok" }
+        },
+        { "id": "fitness", "name": "健身" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" }
+      ]
+    },
+    {
+      "id": "factory-trade",
+      "name": "工厂贸易",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "warn",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "manufacturing", "name": "制造" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "products", "name": "产品中心" },
+        { "id": "about", "name": "关于我们" },
+        { "id": "contact", "name": "联系我们" }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "教培",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": true,
+        "beigeTerracotta": "block",
+        "purpleAccent": true
+      },
+      "niches": [
+        {
+          "id": "kids",
+          "name": "少儿",
+          "ruleFlags": { "satFull": true, "purpleAccent": true }
+        },
+        {
+          "id": "vocational",
+          "name": "职教",
+          "ruleFlags": { "satFull": true, "purpleAccent": true }
+        }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "about", "name": "关于学校" },
+        { "id": "courses", "name": "课程" },
+        { "id": "teachers", "name": "师资" },
+        { "id": "works", "name": "学员成果" },
+        { "id": "news", "name": "资讯" },
+        { "id": "contact", "name": "联系" }
+      ]
+    },
+    {
+      "id": "professional",
+      "name": "专业服务",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "warn",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "law", "name": "律所", "ruleFlags": { "serifTitles": true } },
+        { "id": "consulting", "name": "咨询", "ruleFlags": { "serifTitles": true } },
+        { "id": "tax", "name": "财税" },
+        { "id": "design", "name": "设计" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "about", "name": "关于" },
+        { "id": "services", "name": "业务领域" },
+        { "id": "team", "name": "团队" },
+        { "id": "cases", "name": "案例" },
+        { "id": "news", "name": "文章" },
+        { "id": "contact", "name": "联系" }
+      ]
+    },
+    {
+      "id": "medical",
+      "name": "医疗健康",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "block",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "dental", "name": "口腔" },
+        { "id": "aesthetic", "name": "医美", "ruleFlags": { "serifTitles": true } },
+        { "id": "clinic", "name": "诊所" },
+        { "id": "tcm", "name": "中医馆" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "services", "name": "诊疗项目" },
+        { "id": "doctors", "name": "医生团队" },
+        { "id": "about", "name": "机构介绍" },
+        { "id": "contact", "name": "预约联系" }
+      ]
+    },
+    {
+      "id": "home-decor",
+      "name": "家装建材",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "ok",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "renovation", "name": "装修公司" },
+        { "id": "custom-furniture", "name": "全屋定制" },
+        { "id": "building-materials", "name": "建材门店" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "projects", "name": "案例工地" },
+        { "id": "products", "name": "材料产品" },
+        { "id": "about", "name": "关于我们" },
+        { "id": "contact", "name": "预约量房" }
+      ]
+    },
+    {
+      "id": "auto",
+      "name": "汽车服务",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "block",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "repair", "name": "汽修" },
+        { "id": "detailing", "name": "汽车美容" },
+        { "id": "used-car", "name": "二手车" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "services", "name": "服务项目" },
+        { "id": "about", "name": "关于门店" },
+        { "id": "contact", "name": "预约到店" }
+      ]
+    },
+    {
+      "id": "hospitality",
+      "name": "民宿文旅",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "ok",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "homestay", "name": "民宿", "ruleFlags": { "serifTitles": true } },
+        { "id": "hotel", "name": "酒店", "ruleFlags": { "serifTitles": true } },
+        { "id": "travel", "name": "旅行社" },
+        { "id": "scenic", "name": "景区" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "rooms", "name": "房型线路" },
+        { "id": "about", "name": "关于" },
+        { "id": "contact", "name": "预订咨询" }
+      ]
+    },
+    {
+      "id": "agriculture",
+      "name": "农业特产",
+      "ruleFlags": {
+        "serifTitles": false,
+        "satFull": false,
+        "beigeTerracotta": "ok",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "produce", "name": "农产品基地" },
+        { "id": "specialty", "name": "土特产" },
+        { "id": "tea", "name": "茶叶", "ruleFlags": { "serifTitles": true } }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "products", "name": "产品" },
+        { "id": "about", "name": "产地" },
+        { "id": "contact", "name": "采购联系" }
+      ]
+    },
+    {
+      "id": "wedding-photo",
+      "name": "婚庆摄影",
+      "ruleFlags": {
+        "serifTitles": true,
+        "satFull": false,
+        "beigeTerracotta": "ok",
+        "purpleAccent": false
+      },
+      "niches": [
+        { "id": "wedding", "name": "婚庆" },
+        { "id": "bridal-photo", "name": "婚纱摄影" },
+        { "id": "portrait", "name": "写真" }
+      ],
+      "defaultPages": [
+        { "id": "home", "name": "首页" },
+        { "id": "works", "name": "作品" },
+        { "id": "about", "name": "关于" },
+        { "id": "contact", "name": "预约档期" }
+      ]
+    }
+  ]
+}

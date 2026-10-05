@@ -1,0 +1,35 @@
+.mosaic-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.mosaic-card {
+  min-width: 0;
+}
+
+.mosaic-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.mosaic-card a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .mosaic-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mosaic-grid {
+    grid-template-columns: 1.35fr 1fr 1fr;
+  }
+
+  .mosaic-card:first-child {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+}

@@ -1,0 +1,562 @@
+{
+  "grade": "产品图：浅暖色无缝背景棚拍；场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。",
+  "slots": [
+    {
+      "id": "hero-tea",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "oolong",
+        "tea",
+        "wooden",
+        "table",
+        "warm"
+      ],
+      "prompt": "木桌上的一杯焙火乌龙，暖色侧光，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "hero-bake",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "fresh",
+        "scone",
+        "baking",
+        "tray"
+      ],
+      "prompt": "烤盘上刚出炉的原味司康，暖木台面，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "hero-door",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "small",
+        "teahouse",
+        "storefront",
+        "night"
+      ],
+      "prompt": "窄门头的茶饮店夜晚，暖色门灯，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "hero-table",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "window",
+        "seat",
+        "wooden",
+        "table"
+      ],
+      "prompt": "靠窗一张旧木桌，杯子和盘子，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "banner",
+      "page": "inner",
+      "block": "banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "cafe",
+        "counter",
+        "cups",
+        "tray"
+      ],
+      "prompt": "吧台上的杯子和烤盘，暖木色，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "front-longjing",
+      "page": "home",
+      "block": "storefront",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "teahouse",
+        "facade",
+        "street",
+        "day"
+      ],
+      "prompt": "沿街一整条茶饮店门头，白天，暖色灯，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "ing-tea",
+      "page": "home",
+      "block": "ingredients",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "roasted",
+        "oolong",
+        "loose",
+        "leaves"
+      ],
+      "prompt": "摊开的焙火乌龙茶叶，茶褐色，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "ing-flour",
+      "page": "home",
+      "block": "ingredients",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "pastry",
+        "flour",
+        "wooden",
+        "spoon"
+      ],
+      "prompt": "木勺舀起低筋面粉，暖台面，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "ing-butter",
+      "page": "home",
+      "block": "ingredients",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "cultured",
+        "butter",
+        "block"
+      ],
+      "prompt": "一块发酵黄油放在木板上，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "ing-fruit",
+      "page": "home",
+      "block": "ingredients",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "green",
+        "grapes",
+        "wooden",
+        "plate"
+      ],
+      "prompt": "一盘青提，暖色木桌，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "prod-grape",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "grape",
+        "cold",
+        "brew",
+        "glass"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔和顶光加侧光，正面略俯视，主体居中占画面六成，一杯透明杯装青提冷萃茶，杯壁挂水珠，旁边点缀三颗青提和几片茶叶，高清写实，色调温暖干净，没有文字、没有logo、没有水印。",
+      "grade": "产品图：浅暖色无缝背景棚拍，色调浅暖干净。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "prod-oolong",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "oolong",
+        "gaiwan",
+        "square"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔和顶光加侧光，正面略俯视，主体居中占画面六成，一只白瓷盖碗盛着焙火乌龙茶汤，旁边放少量乌龙茶叶，高清写实，色调温暖干净，没有文字、没有logo、没有水印。",
+      "grade": "产品图：浅暖色无缝背景棚拍，色调浅暖干净。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "prod-scone",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "plain",
+        "scone",
+        "square"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔和顶光加侧光，正面略俯视，主体居中占画面六成，一只原味司康放在浅色陶瓷小盘上，旁边一小碟果酱，高清写实，色调温暖干净，没有文字、没有logo、没有水印。",
+      "grade": "产品图：浅暖色无缝背景棚拍，色调浅暖干净。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "prod-roll",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "osmanthus",
+        "roll",
+        "square"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔和顶光加侧光，正面略俯视，主体居中占画面六成，切开的桂花卷两块叠放在浅色盘子上，表面撒少量干桂花，高清写实，色调温暖干净，没有文字、没有logo、没有水印。",
+      "grade": "产品图：浅暖色无缝背景棚拍，色调浅暖干净。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "prod-rice",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "tea",
+        "rice",
+        "bowl",
+        "square"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔和顶光加侧光，正面略俯视，主体居中占画面六成，一碗茶泡饭，配海苔丝和小块鲑鱼，浅色陶碗，高清写实，色调温暖干净，没有文字、没有logo、没有水印。",
+      "grade": "产品图：浅暖色无缝背景棚拍，色调浅暖干净。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "prod-noodle",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "scallion",
+        "noodles",
+        "square"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔和顶光加侧光，正面略俯视，主体居中占画面六成，一碗葱油拌面，面上有炸葱和葱花，浅色陶碗，旁边一双木筷，高清写实，色调温暖干净，没有文字、没有logo、没有水印。",
+      "grade": "产品图：浅暖色无缝背景棚拍，色调浅暖干净。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "ops-warehouse",
+      "page": "home",
+      "block": "ops",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "small",
+        "central",
+        "kitchen",
+        "shelves"
+      ],
+      "prompt": "后厨货架和操作台，暖灯，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "ops-tasting",
+      "page": "home",
+      "block": "ops",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "tea",
+        "tasting",
+        "long",
+        "table"
+      ],
+      "prompt": "店里试饮长桌，几只盖碗，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "ops-kitchen",
+      "page": "home",
+      "block": "ops",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "morning",
+        "bakery",
+        "oven",
+        "trays"
+      ],
+      "prompt": "早晨烤炉和托盘，暖光，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "news-oven",
+      "page": "news",
+      "block": "story",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "new",
+        "bakery",
+        "oven",
+        "installed"
+      ],
+      "prompt": "店里新安装的烤炉，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "news-hill",
+      "page": "news",
+      "block": "story",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "tea",
+        "hillside",
+        "spring"
+      ],
+      "prompt": "春天的茶山和茶树，暖色，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "news-meet",
+      "page": "news",
+      "block": "story",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "long",
+        "table",
+        "inside",
+        "teahouse"
+      ],
+      "prompt": "店里摆开的长桌，准备说明会，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "store-longjing",
+      "page": "stores",
+      "block": "store",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "hangzhou",
+        "teahouse",
+        "night",
+        "front"
+      ],
+      "prompt": "杭州窄街茶饮店夜景门头，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "store-hubin",
+      "page": "stores",
+      "block": "store",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "window",
+        "seats",
+        "lakeside",
+        "cafe"
+      ],
+      "prompt": "靠窗座位，窗外是街，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "store-pingjiang",
+      "page": "stores",
+      "block": "store",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "narrow",
+        "lane",
+        "teahouse",
+        "door"
+      ],
+      "prompt": "窄巷里的小门头，白天，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "store-yuehu",
+      "page": "stores",
+      "block": "store",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "small",
+        "shop",
+        "stone",
+        "steps"
+      ],
+      "prompt": "小店门口的石阶，暖色，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "about-table",
+      "page": "home",
+      "block": "essay",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "tea",
+        "and",
+        "scone",
+        "same",
+        "table"
+      ],
+      "prompt": "同一张木桌上的茶和司康，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "about-kitchen",
+      "page": "about",
+      "block": "essay",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "central",
+        "kitchen",
+        "worktop",
+        "morning"
+      ],
+      "prompt": "后厨操作台的早班，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "about-wide",
+      "page": "about",
+      "block": "band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "kitchen",
+        "corridor",
+        "to",
+        "service"
+      ],
+      "prompt": "后厨通向备餐的过道，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "about-room",
+      "page": "about",
+      "block": "banner",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "window",
+        "seats",
+        "inside",
+        "teahouse"
+      ],
+      "prompt": "店内靠窗座位，暖灯，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "qr-wechat",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "wechat",
+        "qr",
+        "code",
+        "square"
+      ],
+      "prompt": "方形公众号二维码，米白底，中间不要放商标。",
+      "grade": "浅米色底，码面清楚。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "qr-mini",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "ordering",
+        "qr",
+        "code",
+        "square"
+      ],
+      "prompt": "方形点单二维码，米白底，中间不要放商标。",
+      "grade": "浅米色底，码面清楚。不要荧光绿，不要黑底红光。"
+    },
+    {
+      "id": "join-counter",
+      "page": "join",
+      "block": "merits",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "cafe",
+        "counter",
+        "staff",
+        "side"
+      ],
+      "prompt": "吧台内侧的操作区，暖灯，没有字。",
+      "grade": "场景图：店内暖光实拍，暖木桌色温，阴影偏茶褐，饱和度压低。不要荧光绿，不要黑底红光。"
+    }
+  ]
+}

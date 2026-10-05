@@ -1,0 +1,31 @@
+{
+  "note": "电话、地址、营业时间、微信来自 site.json 的 contact，不要在 data 里再写一遍。不嵌地图，不做可提交的表单。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    }
+  },
+  "variants": {
+    "card": {
+      "needsImage": false,
+      "family": "visit",
+      "fit": "时间一块，地址和电话一块",
+      "source": "localbiz-site components/sections/hoursContact/HoursContactCard.tsx"
+    },
+    "banner": {
+      "needsImage": false,
+      "family": "banner",
+      "fit": "横过来的同一组信息",
+      "source": "localbiz-site components/sections/hoursContact/HoursContactBanner.tsx"
+    }
+  }
+}

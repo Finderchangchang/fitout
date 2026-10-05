@@ -1,0 +1,33 @@
+{
+  "note": "做法或政策。line 是一条横向的步骤，notes 是成段说明。都不放图，避免两套比例挤在同一版式。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "linkLabel": { "type": "string", "required": false, "maxChars": 8 },
+    "href": { "type": "string", "required": false, "maxChars": 200 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "line": {
+      "needsImage": false,
+      "family": "sequence",
+      "fit": "有先后的五步，用一条线串起来",
+      "source": "样板间自写"
+    },
+    "notes": {
+      "needsImage": false,
+      "family": "notes",
+      "fit": "几条并列的规矩",
+      "source": "样板间自写"
+    }
+  }
+}

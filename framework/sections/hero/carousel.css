@@ -1,0 +1,19 @@
+.hero-full .btn {
+  border-color: var(--on-media, var(--primary-contrast));
+  color: var(--on-media, var(--primary-contrast));
+  background: transparent;
+}
+
+.hero-full .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}

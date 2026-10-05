@@ -1,0 +1,29 @@
+<section class="section" data-section="contact" data-family="visit" id="{{anchor}}">
+  <div class="container contact-grid">
+    <div>
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      <p class="group-label">到校时间</p>
+      {{#each hours}}
+      <p>{{day}} <span class="nums">{{time}}</span></p>
+      {{/each}}
+      <p><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+      {{#if email}}<p><a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
+      {{#if wechat}}
+      <p>{{wechat}}</p>
+      <p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>
+      {{/if}}
+      <p>{{address}}</p>
+      <p><a class="btn" href="{{amapUrl}}">到校区</a></p>
+    </div>
+    <div class="qr-grid" data-media-group="mark">
+      {{#each qrs}}
+      <figure>
+        <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+        <figcaption>{{label}}</figcaption>
+      </figure>
+      {{/each}}
+    </div>
+  </div>
+</section>

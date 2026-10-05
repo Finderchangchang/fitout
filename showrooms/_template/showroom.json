@@ -1,0 +1,74 @@
+{
+  "id": "__ID__",
+  "name": "未命名样板间",
+  "note": "脚手架，不是正式样板间。按 docs/SHOWROOM.md 改成自己的页面和句子。",
+  "industry": "__INDUSTRY__",
+  "niche": "__NICHE__",
+  "flavor": "__FLAVOR__",
+  "buttons": {
+    "primary": "电话联系",
+    "secondary": "看项目",
+    "form": "发消息"
+  },
+  "shell": {
+    "header": ["standard", "centered"],
+    "footer": ["simple", "columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 9, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "services", "label": "服务", "listFile": "services/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel", "text"] },
+        { "type": "trust", "required": false, "variants": ["stats", "certs"] },
+        { "type": "services", "required": false, "variants": ["grid-cards", "list-rows"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["points", "steps"] }
+      ]
+    },
+    {
+      "id": "services",
+      "file": "services/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] }
+      ]
+    },
+    {
+      "id": "service",
+      "file": "services/{slug}.html",
+      "kind": "detail",
+      "from": "services",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card", "banner"] }
+      ]
+    }
+  ]
+}

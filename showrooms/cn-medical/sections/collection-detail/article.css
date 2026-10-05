@@ -1,0 +1,65 @@
+.article-col {
+  max-width: 42rem;
+}
+
+.detail-photo {
+  width: min(100%, 22rem);
+  height: auto;
+  display: block;
+  margin: 0.5rem 0 1rem;
+}
+
+.fact-row {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.fact-row div {
+  border-top: 2px solid var(--primary);
+  padding-top: 0.45rem;
+}
+
+.fact-row dt {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.fact-row dd {
+  margin: 0.2rem 0 0;
+  font-weight: 700;
+}
+
+.fact-row .price {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.block-label {
+  margin: 1.25rem 0 0.5rem;
+  font-size: var(--fs-3);
+  box-shadow: inset 0 -2px 0 var(--primary);
+  width: fit-content;
+  padding-bottom: 0.15rem;
+}
+
+.flow-list,
+.caution-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.flow-list li,
+.caution-list li {
+  margin-top: 0.45rem;
+}
+
+.article-col .btn-row {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .fact-row {
+    grid-template-columns: repeat(3, minmax(0, 14rem));
+  }
+}

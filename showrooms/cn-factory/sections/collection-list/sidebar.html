@@ -1,0 +1,35 @@
+<section class="section" data-section="collection-list" data-family="filter" id="{{anchor}}">
+  <div class="container catalog-layout">
+    <aside class="facet-col">
+      <h2 class="facet-label">按工艺看</h2>
+      {{#if lead}}<p>{{lead}}</p>{{/if}}
+      <ul class="facet-list">
+        {{#each facets}}
+        <li>
+          <a href="{{href}}">{{name}}</a>
+          <p>{{text}}</p>
+        </li>
+        {{/each}}
+      </ul>
+    </aside>
+    <div class="part-pane">
+      <span id="bend" class="craft-hook"></span>
+      <span id="stamp" class="craft-hook"></span>
+      <span id="machine" class="craft-hook"></span>
+      <span id="weld" class="craft-hook"></span>
+      <div class="section-head np-head">
+        {{#if isH1}}<h1 class="section-title np-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title np-title">{{title}}</h2>{{/if}}
+      </div>
+      <div class="part-grid" data-media-group="part">
+        {{#each items}}
+        <article class="card part-card" data-file="{{href}}">
+          {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+          <h3><a href="{{href}}">{{name}}</a></h3>
+          <p>{{summary}}</p>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

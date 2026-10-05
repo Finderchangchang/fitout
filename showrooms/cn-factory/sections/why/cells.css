@@ -1,0 +1,21 @@
+.cell-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cell-plate {
+  background: var(--surface);
+  border-top: 3px solid var(--accent);
+  padding: 1.25rem 1.15rem 1.4rem;
+}
+
+.cell-plate h3 {
+  margin-bottom: 0.4rem;
+  font-size: var(--fs-2);
+}
+
+@media (min-width: 768px) {
+  .cell-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

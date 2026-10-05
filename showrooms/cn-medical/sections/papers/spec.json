@@ -1,0 +1,25 @@
+{
+  "note": "资质文字。不放证件扫描件。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "list": {
+      "needsImage": false,
+      "family": "quals",
+      "fit": "三条许可，左名右说明",
+      "source": "样板间自写"
+    }
+  }
+}

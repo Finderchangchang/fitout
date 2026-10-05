@@ -1,0 +1,25 @@
+{
+  "note": "内页顶部统一页头。高约 400 到 580px。拼装脚本自动插到非首页，不要写进 site.json 的板块顺序。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 30, "hint": "页名，作为这一页的 h1" },
+    "image": { "type": "image", "required": false, "maxChars": 200, "hint": "页头图。没有就用深色底" },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30, "hint": "有图才需要" },
+    "crumbs": {
+      "type": "list",
+      "required": false,
+      "max": 4,
+      "item": {
+        "label": { "type": "string", "required": true, "maxChars": 16 },
+        "href": { "type": "string", "required": false, "maxChars": 200 }
+      }
+    }
+  },
+  "variants": {
+    "band": {
+      "needsImage": false,
+      "family": "pagehead",
+      "fit": "图压暗，上面是面包屑和页名",
+      "source": "样板间内页统一页头"
+    }
+  }
+}

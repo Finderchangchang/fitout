@@ -1,0 +1,37 @@
+<section class="section" data-section="contact" data-family="visit" id="{{anchor}}">
+  <div class="container contact-split">
+    <div class="contact-hotline">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      <p class="phone-line"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+      <ul class="hours-list">
+        {{#each hours}}
+        <li>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></li>
+        {{/each}}
+      </ul>
+      <p>{{address}}</p>
+      <p><a class="btn" href="{{amapUrl}}">{{icon:map-pin:20}}高德导航</a></p>
+      {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:20}}{{email}}</a></p>{{/if}}
+      {{#if qrs}}
+      <div class="qr-grid" data-media-group="mark">
+        {{#each qrs}}
+        <figure>
+          <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}">
+          <figcaption>{{label}}</figcaption>
+        </figure>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+    <div class="contact-book">
+      <h2 class="subhead">预约面谈</h2>
+      <p>预约表在所外。提交后，工作人员回电话确认时间。</p>
+      {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
+      {{#if wechat}}
+      <p>{{icon:chat:20}}<span class="nums">{{wechat}}</span></p>
+      <p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>
+      {{/if}}
+    </div>
+  </div>
+</section>

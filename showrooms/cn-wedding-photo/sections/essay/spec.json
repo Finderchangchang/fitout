@@ -1,0 +1,15 @@
+{
+  "note": "品牌一段。左图右文，链到内页。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "body": { "type": "string", "required": true, "maxChars": 180 },
+    "image": { "type": "image", "required": true, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+    "href": { "type": "string", "required": false, "maxChars": 200 },
+    "hrefLabel": { "type": "string", "required": false, "maxChars": 8 }
+  },
+  "variants": {
+    "split": { "needsImage": true, "imageField": "image", "family": "essay", "fit": "图在左，介绍在右" }
+  }
+}

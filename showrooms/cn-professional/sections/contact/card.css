@@ -1,0 +1,47 @@
+.contact-split {
+  display: grid;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.contact-hotline,
+.contact-book {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.hours-list {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact-book {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+}
+
+.qr-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.qr-grid img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.qr-grid figcaption {
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .contact-split {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}

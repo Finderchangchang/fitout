@@ -1,0 +1,34 @@
+{
+  "note": "首页行业应用是不等宽照片。关于页是厂区三张实拍。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 50 },
+        "result": { "type": "string", "required": false, "maxChars": 24 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "linked": {
+      "needsImage": false,
+      "family": "linked",
+      "fit": "三张应用照片，宽度不等，说明在图下",
+      "source": "样板间自写"
+    },
+    "yard": {
+      "needsImage": false,
+      "family": "yard",
+      "fit": "厂门、车间、质检三张",
+      "source": "样板间自写"
+    }
+  }
+}

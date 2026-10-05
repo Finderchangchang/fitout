@@ -1,0 +1,57 @@
+.desk-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.desk-hot {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+}
+
+.desk-hot a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  max-width: 100%;
+}
+
+.desk-label {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.desk-book {
+  border-top: 3px solid var(--primary);
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.desk-codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.desk-codes img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.desk-codes figcaption {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .desk-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+  }
+}

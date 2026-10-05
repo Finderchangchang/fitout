@@ -1,0 +1,143 @@
+{
+  "id": "cn-education",
+  "name": "国内风 · 培训学校",
+  "note": "给机构型职业技能培训学校、兴趣培训中心和民办学校。展示校区、师资、课程体系和学员成果，并引导预约试听。",
+  "industry": "education",
+  "niche": "vocational",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "预约试听",
+    "secondary": "看课程",
+    "form": "留言咨询"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "courses", "label": "课程设置", "listFile": "courses/index.html" },
+    { "id": "teachers", "label": "师资力量", "listFile": "teachers/index.html" },
+    { "id": "works", "label": "学员风采", "listFile": "works/index.html" },
+    { "id": "news", "label": "招生资讯", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "campus", "required": true, "variants": ["split"] },
+        { "type": "services", "required": true, "variants": ["lineup"] },
+        { "type": "advantage", "required": true, "variants": ["switch"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "cases", "required": true, "variants": ["gallery"] },
+        { "type": "bulletin", "required": true, "variants": ["feed"] },
+        { "type": "team", "required": true, "variants": ["cards"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "yard", "required": true, "variants": ["grid"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "courses",
+      "file": "courses/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "course-board", "required": true, "variants": ["tabs"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "course",
+      "file": "courses/{slug}.html",
+      "kind": "detail",
+      "from": "courses",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "teachers",
+      "file": "teachers/index.html",
+      "kind": "team",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["portraits"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "teacher",
+      "file": "teachers/{slug}.html",
+      "kind": "detail",
+      "from": "teachers",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "works",
+      "file": "works/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["cards"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "work",
+      "file": "works/{slug}.html",
+      "kind": "detail",
+      "from": "works",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["rows"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "news-item",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["desk"] },
+        { "type": "inquiry", "required": true, "variants": ["note"] }
+      ]
+    }
+  ]
+}

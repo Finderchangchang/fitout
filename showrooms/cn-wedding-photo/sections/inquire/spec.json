@@ -1,0 +1,10 @@
+{
+  "note": "咨询档期。只链到外部表单，页内不放输入框。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 }
+  },
+  "variants": {
+    "note": { "needsImage": false, "family": "message", "fit": "一句说明加一颗外链按钮" }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "note": "机构介绍或做法。有照片时文字在左、照片在右。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "body": { "type": "string", "required": false, "maxChars": 200 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "dossier": {
+      "needsImage": false,
+      "family": "dossier",
+      "fit": "左文右图，左侧一条印章色竖线",
+      "source": "样板间自己的简介"
+    }
+  }
+}

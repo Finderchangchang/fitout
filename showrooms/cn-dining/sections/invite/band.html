@@ -1,0 +1,15 @@
+<section class="section" data-section="invite" data-family="invite" id="{{anchor}}">
+  <div class="container invite">
+    <div class="invite-copy">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      <ul class="invite-list">
+        {{#each items}}
+        <li><strong>{{name}}</strong><span>{{text}}</span></li>
+        {{/each}}
+      </ul>
+      <p><a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a></p>
+    </div>
+  </div>
+</section>

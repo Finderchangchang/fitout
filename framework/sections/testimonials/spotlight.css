@@ -1,0 +1,20 @@
+.quote {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quote-feature {
+  font-size: var(--fs-3);
+  margin-bottom: var(--gap);
+}
+
+.quote-rest {
+  display: grid;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .quote-rest {
+    grid-template-columns: 1fr 1fr;
+  }
+}

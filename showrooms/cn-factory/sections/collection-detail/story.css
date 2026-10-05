@@ -1,0 +1,8 @@
+.story {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.story-photo {
+  max-width: 52rem;
+}

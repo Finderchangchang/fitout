@@ -1,0 +1,26 @@
+<section class="section" data-section="advantage" data-family="switcher" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="adv-box" data-media-group="card">
+      {{#each items}}
+      <input type="radio" name="adv" id="adv-{{@index}}">
+      {{/each}}
+      {{#each items}}
+      <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+      {{/each}}
+      {{#each items}}
+      <label for="adv-{{@index}}">
+        <span class="adv-no">{{@index}}</span>
+        <span>
+          <span class="item-title">{{name}}</span>
+          <span class="adv-text">{{text}}</span>
+        </span>
+      </label>
+      {{/each}}
+    </div>
+  </div>
+</section>

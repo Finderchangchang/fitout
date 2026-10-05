@@ -1,0 +1,52 @@
+<section class="section" data-section="collection-detail" data-family="article" id="{{anchor}}">
+  <div class="container detail-grid">
+    {{#if image}}<img class="detail-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+    <div class="detail-copy">
+      <div class="section-head">
+        {{#if date}}<p class="meta">{{date}}</p>{{/if}}
+        {{#if role}}<p class="meta">{{role}}</p>{{/if}}
+        {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+        <p class="section-lead">{{summary}}</p>
+        {{#if price}}<p class="detail-price">{{price}}</p>{{/if}}
+      </div>
+      {{#if bodyLabel}}<h3 class="detail-label">{{bodyLabel}}</h3>{{/if}}
+      {{#if body}}<p class="prose">{{body}}</p>{{/if}}
+      {{#if specs}}
+      <table class="specs">
+        <tbody>
+          {{#each specs}}
+          <tr>
+            <th>{{label}}</th>
+            <td>{{value}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{/if}}
+      {{#if steps}}
+      <ol class="detail-steps">
+        {{#each steps}}
+        <li>
+          <h3>{{name}}</h3>
+          <p>{{text}}</p>
+        </li>
+        {{/each}}
+      </ol>
+      {{/if}}
+      {{#if faqs}}
+      <div class="detail-faqs">
+        {{#each faqs}}
+        <h3>{{q}}</h3>
+        <p>{{a}}</p>
+        {{/each}}
+      </div>
+      {{/if}}
+      {{#if navHref}}<p><a class="detail-nav" href="{{navHref}}">到店导航</a></p>{{/if}}
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+      </div>
+    </div>
+  </div>
+</section>

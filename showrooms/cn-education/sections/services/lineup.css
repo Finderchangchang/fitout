@@ -1,0 +1,37 @@
+.course-lineup {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.course-lineup .section-lead,
+.course-lineup .meta,
+.course-lineup a,
+.course-lineup .price {
+  color: var(--primary-contrast);
+}
+
+.lineup-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.lineup-grid img {
+  width: 100%;
+  margin-bottom: 0.65rem;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 768px) {
+  .lineup-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lineup-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

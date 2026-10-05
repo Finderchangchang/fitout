@@ -1,0 +1,24 @@
+.scene-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.scene-card {
+  min-width: 0;
+}
+
+.scene-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.scene-card a {
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .scene-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

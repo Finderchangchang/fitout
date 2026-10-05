@@ -1,0 +1,20 @@
+.use-row {
+  display: grid;
+  gap: 1rem;
+}
+
+.use-card h3 {
+  margin-top: 0.75rem;
+  font-size: var(--fs-2);
+}
+
+.use-card p {
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .use-row {
+    grid-template-columns: 1.35fr 1fr 0.82fr;
+    align-items: start;
+  }
+}

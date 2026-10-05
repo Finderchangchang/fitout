@@ -1,0 +1,129 @@
+{
+  "id": "cn-dining",
+  "name": "国内风 · 餐饮连锁",
+  "note": "给餐饮、茶饮、烘焙的连锁品牌和单店老板。用来展示产品、门店和品牌故事，并招加盟。",
+  "industry": "store-service",
+  "niche": "dining",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "谈加盟",
+    "secondary": "看产品",
+    "form": "写给招商"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 9, "interval": "4500ms" }
+  },
+  "collections": [
+    { "id": "products", "label": "产品", "listFile": "products/index.html" },
+    { "id": "stores", "label": "门店", "listFile": "stores/index.html" },
+    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "essay", "required": true, "variants": ["split"] },
+        { "type": "mosaic", "required": true, "variants": ["quad"] },
+        { "type": "tasting", "required": true, "variants": ["picker"] },
+        { "type": "triptych", "required": true, "variants": ["spread"] },
+        { "type": "briefs", "required": true, "variants": ["cards"] },
+        { "type": "invite", "required": true, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "essay", "required": true, "variants": ["split"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "faq", "required": true, "variants": ["accordion"] }
+      ]
+    },
+    {
+      "id": "products",
+      "file": "products/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["board"] }
+      ]
+    },
+    {
+      "id": "product",
+      "file": "products/{slug}.html",
+      "kind": "detail",
+      "from": "products",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "stores",
+      "file": "stores/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["feed"] }
+      ]
+    },
+    {
+      "id": "store",
+      "file": "stores/{slug}.html",
+      "kind": "detail",
+      "from": "stores",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "join",
+      "file": "join/index.html",
+      "kind": "join",
+      "order": [
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "merits", "required": true, "variants": ["list"] },
+        { "type": "inquire", "required": true, "variants": ["note"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["feed"] }
+      ]
+    },
+    {
+      "id": "story",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card"] },
+        { "type": "inquire", "required": true, "variants": ["note"] }
+      ]
+    }
+  ]
+}

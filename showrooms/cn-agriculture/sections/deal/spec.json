@@ -1,0 +1,27 @@
+{
+  "note": "批发怎么谈。四步文字，旁边可以有一张装车图。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "steps": {
+      "needsImage": false,
+      "family": "path",
+      "fit": "四步合作，不做成表单",
+      "source": "样板间自写"
+    }
+  }
+}

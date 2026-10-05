@@ -1,0 +1,30 @@
+{
+  "note": "产品用分类筛选。门店和新闻用同一套图文列表。分类靠条目链接里的前缀，列表数据本身不带分类字段。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 },
+    "groups": {
+      "type": "list",
+      "required": false,
+      "max": 6,
+      "item": {
+        "key": { "type": "string", "required": true, "maxChars": 12 },
+        "label": { "type": "string", "required": true, "maxChars": 8 },
+        "on": { "type": "string", "required": false, "maxChars": 2 }
+      }
+    }
+  },
+  "variants": {
+    "board": {
+      "needsImage": false,
+      "family": "catalog",
+      "fit": "方图目录，可按分类收起"
+    },
+    "feed": {
+      "needsImage": false,
+      "family": "feed",
+      "fit": "图文列表，说明里带地址或日期"
+    }
+  }
+}

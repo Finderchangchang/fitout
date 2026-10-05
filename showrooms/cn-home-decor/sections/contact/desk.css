@@ -1,0 +1,67 @@
+.contact-split {
+  display: grid;
+  gap: var(--gap);
+}
+
+.contact-split > * {
+  min-width: 0;
+}
+
+.contact-phone {
+  font-size: var(--fs-3);
+  font-weight: 700;
+  margin: 0;
+}
+
+.contact-phone a {
+  color: var(--accent);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-sub {
+  margin-top: 1.25rem;
+  font-size: var(--fs-3);
+}
+
+.contact-codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-qr {
+  width: 7.5rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.contact-qr img {
+  width: 7.5rem;
+  height: 7.5rem;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.contact-qr figcaption {
+  display: block;
+  min-height: 44px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.inquiry-plate {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .contact-split {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+}

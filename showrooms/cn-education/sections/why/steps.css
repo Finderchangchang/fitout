@@ -1,0 +1,46 @@
+.step-list {
+  display: grid;
+  gap: 0;
+}
+
+.step-list li {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: 0.85rem;
+  position: relative;
+  padding-bottom: 1.35rem;
+}
+
+.step-list li::before {
+  content: "";
+  position: absolute;
+  left: 1.35rem;
+  top: 0.4rem;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.step-no {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  position: relative;
+  z-index: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  font-weight: 800;
+  font-size: var(--fs-3);
+}
+
+.step-list .item-title,
+.step-list li > p:not(.step-no) {
+  grid-column: 2;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}

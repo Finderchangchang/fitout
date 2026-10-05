@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fitout.local/tokens.schema.json",
+  "title": "精装风格 token",
+  "description": "一套装修风格必须提供的键。组件里不写这些数值。颜色用 #RRGGBB。字体栈西文在前、中文在后，不引字体 CDN。衬线标题只给美业、餐饮、律所、咨询。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "note", "color", "font", "type", "radius", "shadow", "density", "container", "motion"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "note": { "type": "string", "minLength": 1 },
+    "color": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bg", "surface", "text", "text-muted", "border", "primary", "primary-contrast", "accent"],
+      "properties": {
+        "bg": { "$ref": "#/$defs/hex" },
+        "surface": { "$ref": "#/$defs/hex" },
+        "text": { "$ref": "#/$defs/hex" },
+        "text-muted": { "$ref": "#/$defs/hex" },
+        "border": { "$ref": "#/$defs/hex" },
+        "primary": { "$ref": "#/$defs/hex" },
+        "primary-contrast": { "$ref": "#/$defs/hex" },
+        "accent": { "$ref": "#/$defs/hex" },
+        "on-media": { "$ref": "#/$defs/hex", "description": "压在图片上的字色。不写就用 primary-contrast" }
+      }
+    },
+    "font": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["font-heading", "font-body"],
+      "properties": {
+        "font-heading": { "type": "string", "minLength": 3 },
+        "font-body": { "type": "string", "minLength": 3 }
+      }
+    },
+    "type": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base", "ratio"],
+      "properties": {
+        "base": { "type": "number", "minimum": 16, "maximum": 18 },
+        "ratio": { "type": "number", "enum": [1.2, 1.25, 1.333] },
+        "hero": { "type": "number", "minimum": 60, "maximum": 173, "description": "桌面首屏标题像素。普通 60 到 110，手写展示字可到 173" },
+        "display": { "type": "string", "enum": ["sans", "serif", "script"], "description": "script 才允许 hero 超过 110，并且标题不超过 4 个词" }
+      }
+    },
+    "radius": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["radius-sm", "radius-md", "radius-lg"],
+      "properties": {
+        "radius-sm": { "type": "string", "minLength": 1 },
+        "radius-md": { "type": "string", "minLength": 1 },
+        "radius-lg": { "type": "string", "minLength": 1 }
+      }
+    },
+    "shadow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shadow-card"],
+      "properties": {
+        "shadow-card": { "type": "string", "minLength": 1, "description": "可以是 none" }
+      }
+    },
+    "density": { "type": "string", "enum": ["compact", "standard", "airy"] },
+    "sectionY": { "type": "string", "minLength": 2, "description": "可选。盖过 density 的桌面板块上下留白，最大 160px。例如 140px 或 clamp(4.5rem, 4vw, 140px)" },
+    "container": { "type": "number", "minimum": 1152, "maximum": 1340 },
+    "motion": { "type": "integer", "enum": [0, 1], "description": "0 关闭入场。1 时微交互 200ms，整页入场 700ms，只动 transform 和 opacity" }
+  },
+  "$defs": {
+    "hex": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+  }
+}

@@ -1,0 +1,28 @@
+.practice-list {
+  display: grid;
+}
+
+.practice-row {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.practice-row p {
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .practice-row {
+    grid-template-columns: 14rem 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .practice-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}

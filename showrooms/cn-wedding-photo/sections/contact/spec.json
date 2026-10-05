@@ -1,0 +1,20 @@
+{
+  "note": "热线、地址和两枚码。留言不放在这一块。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": false,
+      "max": 2,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 8 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "card": { "needsImage": false, "family": "visit", "fit": "左热线，右两枚码" }
+  }
+}

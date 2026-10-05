@@ -1,0 +1,37 @@
+{
+  "note": "按钮文字用户型主按钮，不要在 data 里改。只填标题和链接。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "一句行动"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    },
+    "primaryHref": {
+      "type": "string",
+      "required": true,
+      "maxChars": 200,
+      "hint": "电话 tel: 或联系页路径"
+    }
+  },
+  "variants": {
+    "simple": {
+      "needsImage": false,
+      "family": "band",
+      "fit": "标题在上，按钮在下",
+      "source": "localbiz-site components/sections/ctaBand/CtaBandSimple.tsx。不搬渐变那一版"
+    },
+    "inline": {
+      "needsImage": false,
+      "family": "split-cta",
+      "fit": "宽屏时标题和按钮同一行",
+      "source": "同一 CtaBandSimple，宽屏改成一行"
+    }
+  }
+}

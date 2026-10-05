@@ -1,0 +1,40 @@
+.paper-grid {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paper-grid li {
+  min-width: 0;
+}
+
+.paper-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.paper-grid h3 {
+  margin-top: 0.65rem;
+  font-size: 1rem;
+}
+
+.paper-grid .meta {
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 768px) {
+  .paper-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .paper-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

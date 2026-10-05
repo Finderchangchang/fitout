@@ -1,0 +1,34 @@
+<section class="section" data-section="collection-detail" data-family="article" id="{{anchor}}">
+  <div class="container detail">
+    <div class="detail-copy">
+      {{#if date}}<p class="meta">{{date}}</p>{{/if}}
+      {{#if category}}<p class="meta">{{category}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+      <p class="section-lead">{{summary}}</p>
+      {{#if address}}<p>{{icon:map-pin:20}}{{address}}</p>{{/if}}
+      {{#if hours}}<p>{{icon:clock:20}}{{hours}}</p>{{/if}}
+      {{#if kit}}<p>{{kit}}</p>{{/if}}
+      {{#if body}}<p class="prose">{{body}}</p>{{/if}}
+      {{#if specs}}
+      <table class="specs">
+        <tbody>
+          {{#each specs}}
+          <tr>
+            <th>{{label}}</th>
+            <td>{{value}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{/if}}
+      <div class="btn-row">
+        {{#if mapHref}}<a class="btn" href="{{mapHref}}" target="_blank" rel="noopener noreferrer">高德导航</a>{{/if}}
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        <a class="btn" href="tel:{{phoneTel}}">打电话</a>
+        {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+      </div>
+    </div>
+    {{#if image}}<img class="detail-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+  </div>
+</section>

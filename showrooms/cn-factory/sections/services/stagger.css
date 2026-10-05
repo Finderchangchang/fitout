@@ -1,0 +1,53 @@
+.stagger {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.stagger-row {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.stagger-photo {
+  max-width: 18rem;
+}
+
+.stagger-photo img,
+[data-media-group="process"] img,
+[data-media-group="use"] img,
+[data-media-group="yard"] img,
+[data-media-group="story"] img,
+[data-media-group="job"] img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+[data-media-group="part"] img,
+[data-media-group="seal"] img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .stagger-row {
+    grid-template-columns: 1fr 18rem;
+    gap: 1.5rem;
+  }
+
+  .stagger-row:nth-child(odd) .stagger-photo {
+    justify-self: end;
+  }
+
+  .stagger-row:nth-child(even) {
+    grid-template-columns: 18rem 1fr;
+  }
+
+  .stagger-row:nth-child(even) .stagger-copy {
+    order: 2;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "note": "能拿出证书的荣誉。不放名录墙。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 20 },
+        "issuer": { "type": "string", "required": false, "maxChars": 16 },
+        "year": { "type": "string", "required": true, "maxChars": 8 }
+      }
+    }
+  },
+  "variants": {
+    "shelf": {
+      "needsImage": false,
+      "family": "ribbons",
+      "fit": "年份、名称、颁发机构一行一条",
+      "source": "样板间自己的荣誉条"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "note": "车间一边文字一边实拍。设备事实写短句，不铺纯色块。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "image": { "type": "image", "required": true, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+    "linkLabel": { "type": "string", "required": false, "maxChars": 8 },
+    "linkHref": { "type": "string", "required": false, "maxChars": 200 },
+    "points": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "split": {
+      "needsImage": true,
+      "imageField": "image",
+      "family": "workshop",
+      "fit": "左文右图，下面四条设备",
+      "source": "样板间自写"
+    }
+  }
+}

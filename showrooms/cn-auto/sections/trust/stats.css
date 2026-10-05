@@ -1,0 +1,28 @@
+.stat-value {
+  font-size: var(--fs-4);
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.stat-grid .card {
+  display: flex;
+  flex-direction: column-reverse;
+  border-top: 3px solid var(--primary);
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

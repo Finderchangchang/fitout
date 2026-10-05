@@ -1,0 +1,31 @@
+.bulletin-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.bulletin-row {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+  align-content: start;
+}
+
+.bulletin-row img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.bulletin-row a {
+  text-decoration: none;
+}
+
+.bulletin-more {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .bulletin-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

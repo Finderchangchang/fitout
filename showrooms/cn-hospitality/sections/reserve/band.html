@@ -1,0 +1,13 @@
+<section class="section" data-section="reserve" data-family="reserve" id="{{anchor}}">
+  <div class="container reserve">
+    <div>
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:{{phoneTel}}">{{primaryLabel}}</a>
+      {{#if wechat}}<button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button>{{/if}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,165 @@
+{
+  "id": "cn-wedding-photo",
+  "name": "国内风 · 婚纱摄影",
+  "note": "给婚纱摄影工作室、影楼和婚庆公司。首页靠大图和样片，套系写清服装、张数、精修、相册和价格，引导预约看样。同一套版式换内容后，也能给婚庆策划、写真馆和儿童摄影用。",
+  "industry": "wedding-photo",
+  "niche": "bridal-photo",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "预约看样",
+    "secondary": "看样片集",
+    "form": "咨询档期"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 9, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "works", "label": "作品欣赏", "listFile": "works/index.html" },
+    { "id": "packages", "label": "套系价格", "listFile": "packages/index.html" },
+    { "id": "team", "label": "团队", "listFile": "team/index.html" },
+    { "id": "bases", "label": "拍摄基地", "listFile": "bases/index.html" },
+    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "offer", "required": true, "variants": ["tiles"] },
+        { "type": "folio", "required": true, "variants": ["spread"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "essay", "required": true, "variants": ["split"] },
+        { "type": "rates", "required": true, "variants": ["cards"] },
+        { "type": "guests", "required": true, "variants": ["wall"] },
+        { "type": "bulletin", "required": true, "variants": ["feed"] },
+        { "type": "invite", "required": true, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "essay", "required": true, "variants": ["split"] },
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "faq", "required": true, "variants": ["accordion"] }
+      ]
+    },
+    {
+      "id": "works",
+      "file": "works/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["mosaic"] }
+      ]
+    },
+    {
+      "id": "work",
+      "file": "works/{slug}.html",
+      "kind": "detail",
+      "from": "works",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["gallery"] }
+      ]
+    },
+    {
+      "id": "packages",
+      "file": "packages/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["sheet"] }
+      ]
+    },
+    {
+      "id": "package",
+      "file": "packages/{slug}.html",
+      "kind": "detail",
+      "from": "packages",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+      ]
+    },
+    {
+      "id": "team",
+      "file": "team/index.html",
+      "kind": "team",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["portraits"] }
+      ]
+    },
+    {
+      "id": "person",
+      "file": "team/{slug}.html",
+      "kind": "detail",
+      "from": "team",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["portrait"] }
+      ]
+    },
+    {
+      "id": "bases",
+      "file": "bases/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["scenes"] }
+      ]
+    },
+    {
+      "id": "base",
+      "file": "bases/{slug}.html",
+      "kind": "detail",
+      "from": "bases",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["place"] }
+      ]
+    },
+    {
+      "id": "guests",
+      "file": "guests/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "guests", "required": true, "variants": ["wall"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["feed"] }
+      ]
+    },
+    {
+      "id": "story",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card"] },
+        { "type": "inquire", "required": true, "variants": ["note"] }
+      ]
+    }
+  ]
+}

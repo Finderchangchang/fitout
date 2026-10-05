@@ -1,0 +1,11 @@
+.cta-plate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.cta-plate .section-head {
+  margin: 0;
+}

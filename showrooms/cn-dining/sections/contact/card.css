@@ -1,0 +1,46 @@
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-copy {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.contact-copy p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.code-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.code-pair figure {
+  width: 10rem;
+  margin: 0;
+}
+
+.code-pair img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.code-pair figcaption {
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}

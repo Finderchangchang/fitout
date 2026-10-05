@@ -1,0 +1,19 @@
+<section class="section" data-section="guests" data-family="voices" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="voice-grid" data-media-group="portrait">
+      {{#each items}}
+      <article class="voice-card">
+        <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+        <h3 class="item-title">{{name}}</h3>
+        <p>{{text}}</p>
+      </article>
+      {{/each}}
+    </div>
+    {{#if href}}{{#if hrefLabel}}<p class="voice-more"><a class="btn" href="{{href}}">{{hrefLabel}}</a></p>{{/if}}{{/if}}
+  </div>
+</section>

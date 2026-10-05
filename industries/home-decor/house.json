@@ -1,0 +1,77 @@
+{
+  "id": "home-decor",
+  "label": "家装建材",
+  "mode": "multi",
+  "note": "装修公司、全屋定制、建材门店。首页先看案例和材料，内页能翻到工地和产品。初稿，样板间会再改。",
+  "buttons": {
+    "primary": "预约量房",
+    "secondary": "看看案例",
+    "form": "在线留言"
+  },
+  "shell": {
+    "header": ["standard", "centered"],
+    "footer": ["simple", "columns"],
+    "floatContact": ["dock"]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["split-image", "text"] },
+        { "type": "cases", "required": true, "variants": ["gallery", "list"] },
+        { "type": "services", "required": false, "variants": ["grid-cards", "list-rows"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "trust", "required": false, "variants": ["stats", "certs"] },
+        { "type": "testimonials", "required": false, "variants": ["grid-cards", "spotlight"] },
+        { "type": "contact", "required": true, "variants": ["card", "banner"] },
+        { "type": "cta-band", "required": false, "variants": ["simple", "inline"] }
+      ]
+    },
+    {
+      "id": "projects",
+      "file": "projects/index.html",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] }
+      ]
+    },
+    {
+      "id": "project",
+      "file": "projects/{slug}.html",
+      "from": "projects",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "products",
+      "file": "products/index.html",
+      "order": [
+        { "type": "product-list", "required": true, "variants": ["grid", "rows"] }
+      ]
+    },
+    {
+      "id": "product",
+      "file": "products/{slug}.html",
+      "from": "products",
+      "order": [
+        { "type": "product-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "order": [
+        { "type": "why", "required": true, "variants": ["points", "steps"] },
+        { "type": "team", "required": false, "variants": ["cards", "roster"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card", "banner"] }
+      ]
+    }
+  ]
+}

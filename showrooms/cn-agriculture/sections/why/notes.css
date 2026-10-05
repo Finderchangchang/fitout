@@ -1,0 +1,26 @@
+.note-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.note-list > div {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.note-list dt {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.note-list dd {
+  margin: 0.35rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .note-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2rem;
+  }
+}

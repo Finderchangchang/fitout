@@ -1,0 +1,18 @@
+.campus-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.thumb-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .campus-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

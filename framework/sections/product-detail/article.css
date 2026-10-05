@@ -1,0 +1,16 @@
+.product-photo {
+  width: min(100%, 36rem);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--gap);
+}
+
+.specs {
+  margin-bottom: var(--gap);
+}
+
+.specs th {
+  width: 30%;
+  font-weight: 600;
+}

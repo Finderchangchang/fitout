@@ -1,0 +1,47 @@
+<section class="section" data-section="contact" data-family="desk" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="desk-grid">
+      <div class="desk-hot">
+        <p class="desk-label">热线</p>
+        <p><a href="tel:{{phoneTel}}">{{icon:phone:20}}<span class="nums">{{phone}}</span></a></p>
+        {{#each hours}}<p>{{icon:clock:20}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
+        <p><a href="{{amapUrl}}">{{icon:map-pin:20}}{{address}}</a></p>
+        {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:20}}{{email}}</a></p>{{/if}}
+        {{#if wechat}}<p>{{icon:chat:20}}{{wechat}}</p>{{/if}}
+        {{#if wechatQrSrc}}
+        <div class="code-row desk-codes">
+          <figure>
+            <img src="{{wechatQrSrc}}" alt="门店微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">
+            <figcaption>加门店微信</figcaption>
+          </figure>
+          <figure>
+            <img class="code-mp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Crect width='100%25' height='100%25' fill='%23e7e2d8'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%233d3b37' font-size='28' font-family='sans-serif'%3E%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81%3C/text%3E%3C/svg%3E" alt="公众号二维码" width="800" height="800">
+            <figcaption>关注公众号</figcaption>
+          </figure>
+        </div>
+        <script>
+          (function () {
+            var pub = document.querySelector(".desk-codes figure img:not(.code-mp)");
+            var mp = document.querySelector(".desk-codes img.code-mp");
+            if (!pub || !mp) return;
+            var src = pub.getAttribute("src") || "";
+            var next = src.replace("qr-wechat", "qr-mp");
+            if (next && next !== src) mp.src = next;
+          })();
+        </script>
+        {{/if}}
+        {{#if wechat}}<p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
+      </div>
+      <div class="card desk-book">
+        <p class="desk-label">预约</p>
+        <p>进厂前先约工位。电话说车牌和要做的项目就行。</p>
+        {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
+      </div>
+    </div>
+  </div>
+</section>

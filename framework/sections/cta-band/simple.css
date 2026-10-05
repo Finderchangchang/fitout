@@ -1,0 +1,4 @@
+.cta-simple {
+  display: grid;
+  gap: var(--gap);
+}

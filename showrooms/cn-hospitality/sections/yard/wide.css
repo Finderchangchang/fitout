@@ -1,0 +1,27 @@
+.yard {
+  padding-block: 0;
+}
+
+.yard-frame {
+  position: relative;
+  margin: 0;
+}
+
+.yard-frame img {
+  width: 100%;
+  height: min(24rem, 40vw);
+  min-height: 16rem;
+  object-fit: cover;
+}
+
+.yard-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  padding-block: 1.25rem 1.5rem;
+  color: var(--on-media);
+}

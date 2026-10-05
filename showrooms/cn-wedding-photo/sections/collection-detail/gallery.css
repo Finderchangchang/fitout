@@ -1,0 +1,53 @@
+.detail-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.detail-copy {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.frame-list {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.frame-list img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.spec-table,
+.sheet-specs {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.spec-table th,
+.spec-table td,
+.sheet-specs th,
+.sheet-specs td {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-weight: 400;
+  vertical-align: baseline;
+}
+
+.spec-table th,
+.sheet-specs th {
+  width: 7rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 1024px) {
+  .detail-layout {
+    grid-template-columns: 1.35fr 0.65fr;
+    align-items: start;
+  }
+}

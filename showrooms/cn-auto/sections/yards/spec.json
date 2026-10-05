@@ -1,0 +1,26 @@
+{
+  "note": "首页三家店的地址和营业时间。照片和导航在门店详情。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "href": { "type": "string", "required": true, "maxChars": 200 }
+      }
+    }
+  },
+  "variants": {
+    "row": {
+      "needsImage": false,
+      "family": "yards",
+      "fit": "三张地址卡，不放车型墙",
+      "source": "样板间自写"
+    }
+  }
+}

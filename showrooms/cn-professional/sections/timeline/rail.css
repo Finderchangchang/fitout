@@ -1,0 +1,19 @@
+.rail {
+  display: grid;
+  gap: 1.5rem;
+  margin-left: 0.35rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+}
+
+.rail-year {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.rail p {
+  margin-top: 0.35rem;
+}

@@ -1,0 +1,26 @@
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+  margin: 0;
+}
+
+.stat-row dd {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 8vw, var(--fs-hero));
+  font-weight: 700;
+  line-height: 1;
+  color: var(--on-media);
+}
+
+.stat-row dt {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .stat-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

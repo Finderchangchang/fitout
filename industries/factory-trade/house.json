@@ -1,0 +1,61 @@
+{
+  "id": "factory-trade",
+  "label": "工厂贸易",
+  "mode": "multi",
+  "note": "首页、产品中心、每个产品一页、关于我们、联系我们。产品详情页按 site.json 的 products 自动生成，不要在 pages 里手写。",
+  "buttons": {
+    "primary": "获取报价",
+    "secondary": "查看产品",
+    "form": "在线留言"
+  },
+  "shell": {
+    "header": ["standard", "centered"],
+    "footer": ["simple", "columns"],
+    "floatContact": ["dock"]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["split-image", "text"] },
+        { "type": "trust", "required": false, "variants": ["stats", "certs"] },
+        { "type": "services", "required": false, "variants": ["grid-cards", "list-rows"] },
+        { "type": "why", "required": false, "variants": ["points", "steps"] },
+        { "type": "cases", "required": false, "variants": ["gallery", "list"] },
+        { "type": "cta-band", "required": true, "variants": ["simple", "inline"] }
+      ]
+    },
+    {
+      "id": "products",
+      "file": "products/index.html",
+      "order": [
+        { "type": "product-list", "required": true, "variants": ["grid", "rows"] }
+      ]
+    },
+    {
+      "id": "product",
+      "file": "products/{slug}.html",
+      "from": "products",
+      "order": [
+        { "type": "product-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "order": [
+        { "type": "why", "required": true, "variants": ["points", "steps"] },
+        { "type": "team", "required": false, "variants": ["cards", "roster"] },
+        { "type": "faq", "required": false, "variants": ["accordion", "two-column"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card", "banner"] }
+      ]
+    }
+  ]
+}

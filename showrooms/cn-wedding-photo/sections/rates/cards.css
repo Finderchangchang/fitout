@@ -1,0 +1,30 @@
+.rate-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.rate-card {
+  min-width: 0;
+  background: var(--surface);
+  padding: 1rem;
+}
+
+.rate-price {
+  margin: 0.35rem 0;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  .rate-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rate-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

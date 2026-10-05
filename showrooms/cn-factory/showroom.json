@@ -1,0 +1,120 @@
+{
+  "id": "cn-factory",
+  "name": "国内风 · 制造工厂",
+  "industry": "factory-trade",
+  "niche": "manufacturing",
+  "flavor": "cn",
+  "note": "给机械设备、五金、零部件、建材工厂。内销为主，兼做外贸询盘。首页把厂房、工艺、产能、资质和零件摆开，内页能翻到参数和询价。",
+  "buttons": {
+    "primary": "索取报价",
+    "secondary": "产品中心",
+    "form": "留言询价"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "products", "label": "产品中心", "listFile": "products/index.html" },
+    { "id": "applications", "label": "应用领域", "listFile": "applications/index.html" },
+    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "services", "required": true, "variants": ["stagger"] },
+        { "type": "why", "required": true, "variants": ["overlay"] },
+        { "type": "cases", "required": true, "variants": ["linked"] },
+        { "type": "collection-list", "required": true, "variants": ["brief"] },
+        { "type": "honors", "required": true, "variants": ["wall"] },
+        { "type": "cta-band", "required": true, "variants": ["plate"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "timeline", "required": true, "variants": ["rail"] },
+        { "type": "why", "required": true, "variants": ["cells"] },
+        { "type": "cases", "required": true, "variants": ["yard"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "honors", "required": true, "variants": ["wall"] }
+      ]
+    },
+    {
+      "id": "products",
+      "file": "products/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["sidebar"] }
+      ]
+    },
+    {
+      "id": "product",
+      "file": "products/{slug}.html",
+      "kind": "detail",
+      "from": "products",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+      ]
+    },
+    {
+      "id": "applications",
+      "file": "applications/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["mosaic"] }
+      ]
+    },
+    {
+      "id": "application",
+      "file": "applications/{slug}.html",
+      "kind": "detail",
+      "from": "applications",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["story"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["index"] }
+      ]
+    },
+    {
+      "id": "news-item",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["report"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["split"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] }
+      ]
+    }
+  ]
+}

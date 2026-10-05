@@ -1,0 +1,33 @@
+.meter-grid {
+  display: grid;
+  gap: 1.25rem 1.5rem;
+  margin: 0;
+}
+
+.meter-grid > div {
+  min-width: 0;
+}
+
+.meter-value {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+[data-tone="dark"] .meter-value {
+  color: var(--on-media);
+}
+
+.meter-grid dt {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .meter-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

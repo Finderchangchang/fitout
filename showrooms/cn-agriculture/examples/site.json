@@ -1,0 +1,627 @@
+{
+  "id": "cn-agriculture",
+  "showroom": "cn-agriculture",
+  "industry": "agriculture",
+  "niche": "produce",
+  "businessType": "Organization",
+  "name": "畈上粮社（虚构）",
+  "summary": "金寨麻埠的晚稻和干货，按袋出货，袋上写田块号。",
+  "contact": {
+    "phone": "0564-7182630",
+    "wechat": "fanshang-buyer",
+    "wechatQr": "qr-wechat",
+    "email": "sales@fanshang.example",
+    "address": "安徽省六安市金寨县麻埠镇畈上村18号（虚构地址）",
+    "hours": [
+      { "day": "周一至周六", "time": "08:00-17:30" }
+    ],
+    "formUrl": "https://example.com/fanshang-inquiry",
+    "icp": "皖ICP备20260816号-3"
+  },
+  "nav": [
+    { "label": "首页", "href": "index.html" },
+    { "label": "基地介绍", "href": "about/index.html" },
+    { "label": "产品中心", "href": "products/index.html" },
+    { "label": "种植溯源", "href": "trace/index.html" },
+    { "label": "批发合作", "href": "trade/index.html" },
+    { "label": "新闻动态", "href": "news/index.html" },
+    { "label": "联系我们", "href": "contact/index.html" }
+  ],
+  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "collections": {
+    "products": [
+      {
+        "slug": "wan-dao",
+        "name": "畈上晚稻米",
+        "summary": "麻埠畈上。10公斤袋。批发4.6元/斤，零售6.8元/斤。",
+        "body": "当年晚稻，过筛后按袋称重。袋上写田块号，不在户里混堆。",
+        "image": "prod-rice",
+        "imageAlt": "一袋十公斤的晚稻米",
+        "specs": [
+          { "label": "产地", "value": "金寨麻埠畈上" },
+          { "label": "规格", "value": "10公斤编织袋" },
+          { "label": "保质期", "value": "12个月" },
+          { "label": "储存", "value": "阴凉干燥，避光" },
+          { "label": "批发价", "value": "4.6元/斤起" },
+          { "label": "零售价", "value": "6.8元/斤" }
+        ]
+      },
+      {
+        "slug": "cai-zi",
+        "name": "麻埠菜籽油",
+        "summary": "金寨麻埠。5升壶。批发18元/升，零售26元/升。",
+        "body": "当年油菜籽压榨。壶上写批次，不和其他油混装。",
+        "image": "prod-oil",
+        "imageAlt": "一壶五升的菜籽油",
+        "specs": [
+          { "label": "产地", "value": "金寨麻埠" },
+          { "label": "规格", "value": "5升塑料壶" },
+          { "label": "保质期", "value": "18个月" },
+          { "label": "储存", "value": "避光，勿近灶台" },
+          { "label": "批发价", "value": "18元/升起" },
+          { "label": "零售价", "value": "26元/升" }
+        ]
+      },
+      {
+        "slug": "ban-li",
+        "name": "金寨板栗",
+        "summary": "金寨。5公斤网袋。批发9.5元/斤，零售14元/斤。",
+        "body": "采后当天进冷库，出库走冷藏。不常温堆放。",
+        "image": "prod-chestnut",
+        "imageAlt": "一网袋刚出冷库的板栗",
+        "specs": [
+          { "label": "产地", "value": "金寨" },
+          { "label": "规格", "value": "5公斤网袋" },
+          { "label": "保质期", "value": "冷藏45天" },
+          { "label": "储存", "value": "0到4度冷藏" },
+          { "label": "批发价", "value": "9.5元/斤起" },
+          { "label": "零售价", "value": "14元/斤" }
+        ]
+      },
+      {
+        "slug": "shai-qing",
+        "name": "麻埠晒青",
+        "summary": "春茶，250克袋。批发68元/斤，零售96元/斤。",
+        "body": "春茶，摊晾后晒干。汤色黄，有谷香。按当年批次报价。",
+        "image": "prod-tea",
+        "imageAlt": "一袋二百五十克晒青",
+        "specs": [
+          { "label": "产地", "value": "金寨麻埠" },
+          { "label": "规格", "value": "250克铝箔袋" },
+          { "label": "保质期", "value": "18个月" },
+          { "label": "储存", "value": "密封，避光防潮" },
+          { "label": "批发价", "value": "68元/斤起" },
+          { "label": "零售价", "value": "96元/斤" }
+        ]
+      },
+      {
+        "slug": "xiang-gu",
+        "name": "畈上干香菇",
+        "summary": "畈上。500克袋。批发42元/斤，零售58元/斤。",
+        "body": "烘干后密封。出库前看袋是否受潮，受潮的不发。",
+        "image": "prod-mushroom",
+        "imageAlt": "一袋五百克干香菇",
+        "specs": [
+          { "label": "产地", "value": "金寨麻埠畈上" },
+          { "label": "规格", "value": "500克袋" },
+          { "label": "保质期", "value": "12个月" },
+          { "label": "储存", "value": "干燥密封" },
+          { "label": "批发价", "value": "42元/斤起" },
+          { "label": "零售价", "value": "58元/斤" }
+        ]
+      },
+      {
+        "slug": "hong-shu",
+        "name": "高山薯干",
+        "summary": "天堂寨脚。2.5公斤袋。批发11元/斤，零售16元/斤。",
+        "body": "切片后晒干。常温密封，不和鲜货放一间库。",
+        "image": "prod-yam",
+        "imageAlt": "一袋切片晒干的薯干",
+        "specs": [
+          { "label": "产地", "value": "金寨天堂寨脚" },
+          { "label": "规格", "value": "2.5公斤袋" },
+          { "label": "保质期", "value": "8个月" },
+          { "label": "储存", "value": "阴凉密封" },
+          { "label": "批发价", "value": "11元/斤起" },
+          { "label": "零售价", "value": "16元/斤" }
+        ]
+      }
+    ],
+    "news": [
+      {
+        "slug": "kai-lian",
+        "name": "晚稻开镰进冷库",
+        "date": "2026-09-18",
+        "summary": "2026年9月18日开镰，第一批约40吨晚稻进了冷库。",
+        "body": "晒场过了水分的米，当天过筛后入库。这一批约40吨，先供县城三家粮油店。",
+        "image": "news-harvest",
+        "imageAlt": "冷库门口卸下的晚稻袋"
+      },
+      {
+        "slug": "xu-yue",
+        "name": "三家粮油店续约",
+        "date": "2026-08-02",
+        "summary": "2026年8月2日，县城三家粮油店把年度合同续了一年。",
+        "body": "续约写了晚稻和菜籽油的量。板栗和干货仍按季另议，不写进年度。",
+        "image": "news-shop",
+        "imageAlt": "粮油店货架上的米袋"
+      },
+      {
+        "slug": "kuo-ku",
+        "name": "冷库扩到280吨",
+        "date": "2026-06-21",
+        "summary": "2026年6月21日，冷库扩到280吨，鲜货和干货分库。",
+        "body": "原来180吨不够放板栗。新库隔成两间，鲜货走冷藏，干货常温。",
+        "image": "news-cold",
+        "imageAlt": "新隔出的两间冷库"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "畈上粮社｜当年晚稻，按袋出货",
+      "description": "金寨麻埠畈上村的晚稻和干货，按袋出货，袋上能对到田块。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "carousel",
+          "anchor": "hero",
+          "tone": "image",
+          "data": {
+            "label": "金寨麻埠晚稻",
+            "title": "当年晚稻，按袋出货",
+            "lead": "畈上村860亩晚稻，按袋出货，不混堆。",
+            "primaryLabel": "联系采购",
+            "primaryHref": "contact/index.html",
+            "secondaryLabel": "看看产品",
+            "secondaryHref": "products/index.html",
+            "interval": "4000",
+            "slides": [
+              { "image": "hero-paddy", "imageAlt": "河湾边正在灌浆的晚稻田" },
+              { "image": "hero-yard", "imageAlt": "晒场上摊开的一地晚稻" },
+              { "image": "hero-cold", "imageAlt": "冷库门口停着一辆冷藏车" },
+              { "image": "hero-pack", "imageAlt": "库房里码齐的编织袋" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "meter",
+          "tone": "dark",
+          "data": {
+            "title": "社里现在的数",
+            "lead": "亩数、户数和库容，是今年账上的数。",
+            "items": [
+              { "value": "860亩", "label": "晚稻在种" },
+              { "value": "126户", "label": "入社农户" },
+              { "value": "280吨", "label": "冷库库容" },
+              { "value": "11年", "label": "统一收购" }
+            ]
+          }
+        },
+        {
+          "type": "lots",
+          "variant": "board",
+          "anchor": "lots",
+          "tone": "light",
+          "data": {
+            "title": "今年在卖的货",
+            "lead": "产地、规格和两档价，写在每条下面。",
+            "items": [
+              {
+                "name": "畈上晚稻米",
+                "summary": "麻埠畈上。10公斤袋。批发4.6元/斤，零售6.8元/斤。",
+                "href": "products/wan-dao.html",
+                "image": "prod-rice",
+                "imageAlt": "一袋十公斤的晚稻米"
+              },
+              {
+                "name": "麻埠菜籽油",
+                "summary": "金寨麻埠。5升壶。批发18元/升，零售26元/升。",
+                "href": "products/cai-zi.html",
+                "image": "prod-oil",
+                "imageAlt": "一壶五升的菜籽油"
+              },
+              {
+                "name": "金寨板栗",
+                "summary": "金寨。5公斤网袋。批发9.5元/斤，零售14元/斤。",
+                "href": "products/ban-li.html",
+                "image": "prod-chestnut",
+                "imageAlt": "一网袋刚出冷库的板栗"
+              },
+              {
+                "name": "麻埠晒青",
+                "summary": "春茶，250克袋。批发68元/斤，零售96元/斤。",
+                "href": "products/shai-qing.html",
+                "image": "prod-tea",
+                "imageAlt": "一袋二百五十克晒青"
+              }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "valley",
+          "tone": "image",
+          "data": {
+            "image": "band-valley",
+            "imageAlt": "河湾边铺开的晚稻田",
+            "caption": "麻埠镇畈上村，晚稻田沿着河湾铺开。"
+          }
+        },
+        {
+          "type": "field",
+          "variant": "land",
+          "anchor": "field",
+          "tone": "light",
+          "data": {
+            "title": "基地在麻埠",
+            "lead": "田在河湾边，晚稻是主作。",
+            "text": "分户种，统一收。用水和肥按田块记，收上来的粮不在户里混堆。",
+            "linkLabel": "看基地介绍",
+            "href": "about/index.html",
+            "image": "about-fields",
+            "imageAlt": "河湾边正在灌浆的晚稻田"
+          }
+        },
+        {
+          "type": "why",
+          "variant": "line",
+          "anchor": "steps",
+          "tone": "dark",
+          "data": {
+            "title": "从选种到冷链",
+            "lead": "五步都在社里记，不把粮混堆。",
+            "linkLabel": "看种植溯源",
+            "href": "trace/index.html",
+            "items": [
+              { "name": "选种", "text": "晚稻种按田块留，不从外地调来路不清的种。" },
+              { "name": "种植", "text": "用水和肥按田块记，不按户估一个数。" },
+              { "name": "采收", "text": "开镰后当天过筛，水分不合格不入库。" },
+              { "name": "分拣", "text": "过筛后按袋称重，袋上写田块号。" },
+              { "name": "冷链", "text": "干货进常温库，鲜货进零到四度冷库。" }
+            ]
+          }
+        },
+        {
+          "type": "collection-list",
+          "variant": "clips",
+          "anchor": "news",
+          "tone": "light",
+          "data": {
+            "title": "社里近事",
+            "lead": "开镰、续约和扩库，都写了日子。",
+            "collection": "news"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "plate",
+          "anchor": "ask",
+          "tone": "dark",
+          "data": {
+            "title": "批发从一吨起谈",
+            "lead": "晚稻1吨起，干货100斤起，外省一次一议。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "基地介绍｜畈上粮社（虚构）",
+      "description": "产地在金寨麻埠畈上村，分户种，统一收。",
+      "banner": "banner",
+      "bannerAlt": "麻埠镇河湾边的晚稻田",
+      "bannerTitle": "基地介绍",
+      "crumbs": [{ "label": "基地介绍", "href": "" }],
+      "sections": [
+        {
+          "type": "field",
+          "variant": "keeper",
+          "anchor": "origin",
+          "tone": "light",
+          "data": {
+            "title": "产地在畈上",
+            "lead": "金寨县麻埠镇，沿河这一片。",
+            "text": "晚稻为主，油菜和干货也收。田在各户名下，社里统一过筛入库。",
+            "linkLabel": "看资质说明",
+            "href": "certs/index.html",
+            "image": "person-keeper",
+            "imageAlt": "库管在冷库门口侧身查看"
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "scale",
+          "tone": "dark",
+          "data": {
+            "title": "今年的规模",
+            "lead": "亩数、户数、库容，和统一收购的年头。",
+            "items": [
+              { "value": "860亩", "label": "晚稻在种" },
+              { "value": "126户", "label": "入社农户" },
+              { "value": "280吨", "label": "冷库库容" },
+              { "value": "11年", "label": "统一收购" }
+            ]
+          }
+        },
+        {
+          "type": "why",
+          "variant": "notes",
+          "anchor": "grow",
+          "tone": "light",
+          "data": {
+            "title": "种植方式",
+            "lead": "分户种，记到田块，由社里收。",
+            "items": [
+              { "name": "分户种", "text": "田在各户名下，社里不并成一块大田。" },
+              { "name": "记田块", "text": "用水、用肥和产量按田块记，不按户估。" },
+              { "name": "统一收", "text": "开镰后由社里过筛、称重、入库，户里不混堆。" }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "valley",
+          "tone": "image",
+          "data": {
+            "image": "dry-shed",
+            "imageAlt": "库房西边摊开的晒场",
+            "caption": "晒场在库房西边，水分过了才进库。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "title": "产品中心｜畈上粮社（虚构）",
+      "description": "晚稻、菜籽油、板栗、晒青、香菇和薯干，写明两档价。",
+      "banner": "banner",
+      "bannerAlt": "晒场上码好的成品袋",
+      "bannerTitle": "产品中心",
+      "crumbs": [{ "label": "产品中心", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "rows",
+          "anchor": "catalog",
+          "tone": "light",
+          "data": {
+            "title": "产品中心",
+            "lead": "点进去能看保质期和储存方式。",
+            "collection": "products"
+          }
+        }
+      ]
+    },
+    {
+      "id": "trace",
+      "title": "种植与溯源｜畈上粮社（虚构）",
+      "description": "选种、种植、采收、分拣、冷链，五步都有记录。",
+      "banner": "banner",
+      "bannerAlt": "收割机在晚稻田里作业",
+      "bannerTitle": "种植与溯源",
+      "crumbs": [{ "label": "种植与溯源", "href": "" }],
+      "sections": [
+        {
+          "type": "stations",
+          "variant": "rail",
+          "anchor": "rail",
+          "tone": "light",
+          "data": {
+            "title": "种植与溯源",
+            "lead": "从选种到冷链，每一步都有人记。",
+            "items": [
+              {
+                "name": "选种",
+                "text": "晚稻种按田块留，外地来路不清的种不进田。",
+                "image": "step-seed",
+                "imageAlt": "晒场上摊开的稻种"
+              },
+              {
+                "name": "种植",
+                "text": "用水和肥按田块记，不按户估一个总数。",
+                "image": "step-grow",
+                "imageAlt": "河湾边正在灌水的稻田"
+              },
+              {
+                "name": "采收",
+                "text": "开镰当天过筛，水分不合格不入库。",
+                "image": "step-cut",
+                "imageAlt": "收割机在晚稻田里作业"
+              },
+              {
+                "name": "分拣",
+                "text": "过筛后按袋称重，袋上写田块号。",
+                "image": "step-sort",
+                "imageAlt": "工人把稻谷过筛装袋"
+              },
+              {
+                "name": "冷链",
+                "text": "干货进常温库，鲜货进零到四度冷库。",
+                "image": "step-cold",
+                "imageAlt": "冷库门口停着一辆冷藏车"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "certs",
+      "title": "资质认证｜畈上粮社（虚构）",
+      "description": "证照名称是占位，以基地出示的证书原件为准。",
+      "banner": "banner",
+      "bannerAlt": "证照摊在库房桌上",
+      "bannerTitle": "资质认证",
+      "crumbs": [{ "label": "资质认证", "href": "" }],
+      "sections": [
+        {
+          "type": "honors",
+          "variant": "wall",
+          "anchor": "papers",
+          "tone": "light",
+          "data": {
+            "title": "资质认证（占位）",
+            "lead": "名称是证照栏占位，以基地出示的证书原件为准。",
+            "items": [
+              {
+                "name": "食品生产许可证（占位）",
+                "issuer": "以证书原件为准",
+                "image": "cert-license",
+                "imageAlt": "食品生产许可证占位图"
+              },
+              {
+                "name": "农产品检测报告（占位）",
+                "issuer": "以证书原件为准",
+                "image": "cert-test",
+                "imageAlt": "农产品检测报告占位图"
+              },
+              {
+                "name": "冷链运输备案（占位）",
+                "issuer": "以证书原件为准",
+                "image": "cert-cold",
+                "imageAlt": "冷链运输备案占位图"
+              },
+              {
+                "name": "绿色食品证书（占位）",
+                "issuer": "以证书原件为准",
+                "image": "cert-green",
+                "imageAlt": "绿色食品证书占位图"
+              }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "plate",
+          "anchor": "ask",
+          "tone": "dark",
+          "data": {
+            "title": "约看证书原件",
+            "lead": "电话约时间，到社里看原件。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "trade",
+      "title": "批发合作｜畈上粮社（虚构）",
+      "description": "起订、账期、区域和退换，以及四步合作。",
+      "banner": "banner",
+      "bannerAlt": "装车前对袋数的坪",
+      "bannerTitle": "批发合作",
+      "crumbs": [{ "label": "批发合作", "href": "" }],
+      "sections": [
+        {
+          "type": "why",
+          "variant": "notes",
+          "anchor": "policy",
+          "tone": "light",
+          "data": {
+            "title": "经销政策",
+            "lead": "起订、账期、区域和退换，谈的时候写进合同。",
+            "items": [
+              { "name": "起订", "text": "晚稻1吨起，干货100斤起，不足量按零售价。" },
+              { "name": "账期", "text": "县城老客户月结，新客户先款后货。" },
+              { "name": "区域", "text": "金寨县内三家粮油店已签约，外县另谈。" },
+              { "name": "退换", "text": "运输破包当天拍照，完好开封不退。" }
+            ]
+          }
+        },
+        {
+          "type": "deal",
+          "variant": "steps",
+          "anchor": "path",
+          "tone": "dark",
+          "data": {
+            "title": "合作怎么走",
+            "lead": "先看样品，再对规格，然后签年度。",
+            "image": "trade-load",
+            "imageAlt": "坪上正在装车的米袋",
+            "items": [
+              { "name": "看样品", "text": "寄一袋小样，或到社里看当年批次。" },
+              { "name": "对规格", "text": "袋重、水分和价，写在同一张单上。" },
+              { "name": "签年度", "text": "数量和区域写进年度合同，不口头改。" },
+              { "name": "排冷链", "text": "鲜货走冷藏，干货常温，出库前对袋数。" }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "sample",
+          "tone": "image",
+          "data": {
+            "image": "trade-sample",
+            "imageAlt": "桌上摊开的米样和随货单",
+            "caption": "样品按当年批次装袋，价写在随货单上。"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "plate",
+          "anchor": "ask",
+          "tone": "dark",
+          "data": {
+            "title": "谈一吨的量",
+            "lead": "把品类、数量和到货地说清楚。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "新闻动态｜畈上粮社（虚构）",
+      "description": "开镰、续约和冷库扩容，按日子写。",
+      "banner": "banner",
+      "bannerAlt": "冷库门口的公告板",
+      "bannerTitle": "新闻动态",
+      "crumbs": [{ "label": "新闻动态", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "clips",
+          "anchor": "feed",
+          "tone": "light",
+          "data": {
+            "title": "新闻动态",
+            "lead": "开镰、续约和扩库，按日子排。",
+            "collection": "news"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "联系我们｜畈上粮社（虚构）",
+      "description": "批发从一吨起谈，零售也可以来电或扫码。",
+      "banner": "contact-gate",
+      "bannerAlt": "合作社大门口的卸货坪",
+      "bannerTitle": "联系我们",
+      "crumbs": [{ "label": "联系我们", "href": "" }],
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "split",
+          "anchor": "desk",
+          "tone": "light",
+          "data": {
+            "title": "联系我们",
+            "lead": "批发和零售都接，先打电话或扫码。",
+            "image": "qr-buyer",
+            "imageAlt": "采购对接人微信二维码"
+          }
+        }
+      ]
+    }
+  ]
+}

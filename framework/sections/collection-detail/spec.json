@@ -1,0 +1,32 @@
+{
+  "note": "任意集合的详情页。字段同时用来核对 collections 里的每一条。",
+  "fields": {
+    "name": { "type": "string", "required": true, "maxChars": 20 },
+    "summary": { "type": "string", "required": true, "maxChars": 80 },
+    "body": { "type": "string", "required": false, "maxChars": 200 },
+    "date": { "type": "string", "required": false, "maxChars": 16 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "specs": {
+      "type": "list",
+      "required": false,
+      "max": 8,
+      "item": {
+        "label": { "type": "string", "required": true, "maxChars": 8 },
+        "value": { "type": "string", "required": true, "maxChars": 24 }
+      }
+    },
+    "primaryLabel": { "type": "string", "required": false, "maxChars": 8, "filledBy": "build" },
+    "primaryHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backLabel": { "type": "string", "required": false, "maxChars": 12, "filledBy": "build" }
+  },
+  "variants": {
+    "article": {
+      "needsImage": false,
+      "family": "article",
+      "fit": "名称、说明、可选规格，回到列表",
+      "source": "产品详情的通用版"
+    }
+  }
+}

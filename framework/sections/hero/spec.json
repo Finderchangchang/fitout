@@ -1,0 +1,116 @@
+{
+  "note": "首屏可以有小标签、标题、一句说明、最多两个按钮，以及压在底边的一条信任数字。中文标题不超过 14 字，英文不超过 10 个词。",
+  "fields": {
+    "label": {
+      "type": "string",
+      "required": false,
+      "maxChars": 12,
+      "hint": "可无。全站小标签用同一种写法，不超过 14px"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 80,
+      "hint": "中文不超过 14 字，英文不超过 10 个词。机检按这个口径，不按 80"
+    },
+    "lead": {
+      "type": "string",
+      "required": true,
+      "maxChars": 40,
+      "hint": "一句人话，说清做什么"
+    },
+    "primaryLabel": {
+      "type": "string",
+      "required": true,
+      "maxChars": 8,
+      "hint": "主动作，跟户型主按钮同一句。禁止：提交、了解更多、点击这里、点击查看、查看详情、立即提交、Submit、Learn more、Click here、Read more"
+    },
+    "primaryHref": {
+      "type": "string",
+      "required": true,
+      "maxChars": 200,
+      "hint": "电话用 tel:，站内用页面路径或 #锚点"
+    },
+    "secondaryLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8,
+      "hint": "次动作，可无"
+    },
+    "secondaryHref": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200,
+      "hint": "次动作的链接，可无"
+    },
+    "image": {
+      "type": "image",
+      "required": false,
+      "maxChars": 200,
+      "hint": "相对 site.json 的图片路径。没有就空字符串"
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": false,
+      "maxChars": 30,
+      "hint": "有图才需要"
+    },
+    "interval": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8,
+      "hint": "轮播间隔毫秒，3000 到 5000。不是轮播就不要填"
+    },
+    "slides": {
+      "type": "list",
+      "required": false,
+      "min": 0,
+      "max": 9,
+      "item": {
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200,
+          "hint": "一张轮播图。slot:名字 或相对路径"
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30,
+          "hint": "这张图里有什么"
+        }
+      },
+      "hint": "轮播 3 到 9 张。不是轮播就不要写"
+    }
+  },
+  "variants": {
+    "split-image": {
+      "needsImage": true,
+      "imageField": "image",
+      "fallback": "text",
+      "family": "split",
+      "fit": "有一张真实照片时，左文右图",
+      "source": "localbiz-site components/sections/hero/HeroSplitImage.tsx。不搬它的渐变占位图"
+    },
+    "text": {
+      "needsImage": false,
+      "family": "editorial",
+      "fit": "没有照片。左对齐",
+      "source": "同一 HeroSplitImage 的文字半边，去掉图片"
+    },
+    "centered": {
+      "needsImage": false,
+      "family": "centered",
+      "fit": "居中、无图。门店和工厂户型不允许，只留给以后的专业服务",
+      "source": "localbiz-site components/sections/hero/HeroCentered.tsx"
+    },
+    "carousel": {
+      "needsImage": true,
+      "imageField": "slides.image",
+      "fallback": "text",
+      "family": "stage",
+      "fit": "满屏轮播。3 到 9 张，字压在压暗的图上",
+      "source": "样板间首屏。不把标题烤进图片"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "note": "专业领域。有起步价的项目才填 price，律所业务留空。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "price": { "type": "string", "required": false, "maxChars": 16 },
+        "href": { "type": "string", "required": false, "maxChars": 200 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "rows": {
+      "needsImage": false,
+      "family": "practice",
+      "fit": "左图右文的横排，价格写在名称下",
+      "source": "样板间自己的服务横排"
+    }
+  }
+}

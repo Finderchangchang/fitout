@@ -1,0 +1,13 @@
+.page-banner {
+  min-height: clamp(22rem, 46vh, 34rem);
+  align-content: end;
+}
+
+.page-banner .section-title {
+  font-size: var(--fs-5);
+  font-weight: 700;
+}
+
+.page-banner-scrim {
+  background: linear-gradient(180deg, rgb(0 0 0 / 0.16), rgb(0 0 0 / 0.78));
+}

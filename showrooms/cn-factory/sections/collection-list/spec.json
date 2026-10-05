@@ -1,0 +1,44 @@
+{
+  "note": "列表条目由拼装注入。日期和分类写进 summary，注入时不会另给字段。facets 链到本页锚点，由版式按零件文件名筛出一组。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 },
+    "facets": {
+      "type": "list",
+      "required": false,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 24 },
+        "href": { "type": "string", "required": true, "maxChars": 200 }
+      }
+    }
+  },
+  "variants": {
+    "brief": {
+      "needsImage": false,
+      "family": "brief",
+      "fit": "首页新闻。第一条大，其余三条叠在旁边",
+      "source": "样板间自写"
+    },
+    "sidebar": {
+      "needsImage": false,
+      "family": "filter",
+      "fit": "左侧工艺筛出一组零件，右侧是这一组",
+      "source": "样板间自写"
+    },
+    "mosaic": {
+      "needsImage": false,
+      "family": "mosaic",
+      "fit": "行业应用卡片，图下写用途",
+      "source": "样板间自写"
+    },
+    "index": {
+      "needsImage": false,
+      "family": "ledger",
+      "fit": "新闻按行排，日期写在说明里",
+      "source": "样板间自写"
+    }
+  }
+}

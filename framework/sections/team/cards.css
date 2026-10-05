@@ -1,0 +1,8 @@
+.item-title {
+  font-size: var(--fs-3);
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--radius-md);
+}

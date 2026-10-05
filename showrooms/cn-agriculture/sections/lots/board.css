@@ -1,0 +1,27 @@
+.lot-list {
+  display: grid;
+}
+
+.lot-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lot-row img {
+  width: 7.5rem;
+  height: 7.5rem;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.lot-row h3 {
+  font-size: 1.25rem;
+}
+
+.lot-row p {
+  margin-top: 0.25rem;
+}

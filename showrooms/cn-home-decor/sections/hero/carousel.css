@@ -1,0 +1,70 @@
+.hero-full {
+  min-height: clamp(32rem, 78vh, 40rem);
+  align-content: end;
+}
+
+.hero-full .section-title {
+  font-weight: 700;
+  letter-spacing: 0;
+  max-width: 8em;
+}
+
+.hero-full .section-lead,
+.hero-full .meta {
+  color: var(--on-media);
+  max-width: 28em;
+}
+
+.hero-full .btn {
+  border-color: var(--on-media);
+  color: var(--on-media);
+  background: transparent;
+  border-radius: 0;
+  min-height: 48px;
+}
+
+.hero-full .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}
+
+.carousel-btn,
+.hero-dots button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.carousel-btn[data-carousel-prev]::before {
+  transform: rotate(135deg);
+}
+
+@media (min-width: 1024px) {
+  .hero-full {
+    min-height: clamp(42.5rem, 82vh, 54rem);
+  }
+}

@@ -1,0 +1,17 @@
+.docket-row {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.docket-row p {
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .docket-row {
+    grid-template-columns: 1fr 16rem;
+  }
+}

@@ -1,0 +1,60 @@
+.float-dock {
+  max-width: 100%;
+}
+
+.dock-num {
+  display: none;
+}
+
+.wechat-pop {
+  position: relative;
+}
+
+.wechat-panel {
+  position: absolute;
+  z-index: 21;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  display: grid;
+  gap: 0.5rem;
+  width: 14rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.float-dock .btn,
+.float-dock summary {
+  padding-inline: 0.5rem;
+}
+
+@media (max-width: 1023px) {
+  .dock-word {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .dock-num {
+    display: inline;
+  }
+
+  .float-dock > a[href^="tel"] {
+    flex: 1.65 1 0;
+  }
+
+  .float-dock .btn,
+  .float-dock summary {
+    font-size: 0.875rem;
+    gap: 0.2rem;
+    padding-inline: 0.15rem;
+    white-space: nowrap;
+  }
+}

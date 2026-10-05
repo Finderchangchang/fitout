@@ -1,0 +1,22 @@
+.honor {
+  display: grid;
+  gap: 0.25rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.honor .rail-year {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .honor {
+    grid-template-columns: 6rem 1fr auto;
+    gap: 1rem;
+    align-items: baseline;
+  }
+}

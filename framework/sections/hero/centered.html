@@ -1,0 +1,15 @@
+<!-- 结构见 spec.json 的 source。样式数值只走 token。 -->
+<section class="section hero hero-center" data-section="hero" data-family="centered" id="{{anchor}}">
+  <div class="container">
+    <div class="hero-in">
+      {{#if label}}<p class="meta">{{label}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      <p class="section-lead">{{lead}}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        {{#if secondaryHref}}{{#if secondaryLabel}}<a class="btn" href="{{secondaryHref}}">{{secondaryLabel}}</a>{{/if}}{{/if}}
+      </div>
+    </div>
+  </div>
+</section>

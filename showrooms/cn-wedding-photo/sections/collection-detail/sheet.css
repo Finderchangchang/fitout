@@ -1,0 +1,26 @@
+.product-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.product-row figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.product-row img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.product-row figcaption {
+  margin-top: 0.4rem;
+}
+
+.sheet-specs tr:last-child td {
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+}

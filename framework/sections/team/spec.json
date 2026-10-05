@@ -1,0 +1,72 @@
+{
+  "note": "没有真人就整块不要。cards 缺任何一张照片就改用 roster。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12,
+          "hint": "名字或称呼"
+        },
+        "role": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16,
+          "hint": "岗位"
+        },
+        "text": {
+          "type": "string",
+          "required": false,
+          "maxChars": 40,
+          "hint": "一句事实，可无"
+        },
+        "image": {
+          "type": "image",
+          "required": false,
+          "maxChars": 200,
+          "hint": "cards 每一项都要有照片，否则改用 roster"
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": false,
+          "maxChars": 30,
+          "hint": "有照片才需要"
+        }
+      },
+      "hint": "1 到 6 人"
+    }
+  },
+  "variants": {
+    "cards": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "fallback": "roster",
+      "family": "portraits",
+      "fit": "每个人都有照片",
+      "source": "hyperui public/examples/marketing/team-sections/1.html 的姓名加岗位。不搬库存头像，不搬品牌社交图标"
+    },
+    "roster": {
+      "needsImage": false,
+      "family": "people",
+      "fit": "没有照片，只写是谁",
+      "source": "同一结构去掉图片"
+    }
+  }
+}

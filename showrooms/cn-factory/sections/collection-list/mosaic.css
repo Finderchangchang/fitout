@@ -1,0 +1,29 @@
+.job-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.job-card h3 {
+  margin-top: 0.75rem;
+  font-size: var(--fs-2);
+}
+
+.job-card p {
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .job-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .job-grid {
+    grid-template-columns: 1.35fr 1fr 0.9fr;
+  }
+
+  .job-card:first-child {
+    grid-row: 1 / span 2;
+  }
+}

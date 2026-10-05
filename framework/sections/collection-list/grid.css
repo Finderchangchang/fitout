@@ -1,0 +1,5 @@
+.catalog-card img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  width: 100%;
+}

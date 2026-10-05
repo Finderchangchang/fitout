@@ -1,0 +1,19 @@
+<section class="section" data-section="why" data-family="sequence" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      <span class="grain-kicker" aria-hidden="true"></span>
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <ol class="step-line">
+      {{#each items}}
+      <li>
+        <h3>{{name}}</h3>
+        <p>{{text}}</p>
+      </li>
+      {{/each}}
+    </ol>
+    {{#if href}}{{#if linkLabel}}<p><a class="text-link" href="{{href}}">{{linkLabel}}</a></p>{{/if}}{{/if}}
+  </div>
+</section>

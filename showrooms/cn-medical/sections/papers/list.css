@@ -1,0 +1,29 @@
+.paper-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.paper-list div {
+  display: grid;
+  gap: 0.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.paper-list dt {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.paper-list dd {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .paper-list div {
+    grid-template-columns: 12rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+  }
+}

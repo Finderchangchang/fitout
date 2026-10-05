@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="{{homeHref}}">{{name}}</a>
+    <nav class="desktop-nav" data-nav aria-label="主导航">
+      <ul class="nav-list">
+        {{#each nav}}<li><a href="{{href}}">{{label}}</a></li>{{/each}}
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <a class="hotline" href="tel:{{phoneTel}}"><span class="hotline-label">服务热线</span><span class="nums hotline-num">{{phone}}</span></a>
+      <button type="button" class="btn menu-button" data-menu-button aria-expanded="false" aria-controls="mobile-menu">{{icon:menu:24}}<span class="sr">菜单</span></button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobile-menu" data-menu-panel data-nav hidden>
+    <button type="button" class="btn" data-menu-button aria-expanded="false">{{icon:close:20}}<span class="sr">关闭</span></button>
+    <nav aria-label="手机导航">
+      {{#each nav}}<a href="{{href}}">{{label}}</a>{{/each}}
+      <a href="tel:{{phoneTel}}">{{phone}}</a>
+    </nav>
+  </div>
+  <script>
+    (function () {
+      var here = location.pathname.replace(/\\/g, "/").replace(/index\.html$/, "");
+      if (!here.endsWith("/")) here += "/";
+      document.querySelectorAll("[data-nav] a").forEach(function (a) {
+        var href = a.pathname.replace(/\\/g, "/").replace(/index\.html$/, "");
+        if (!href.endsWith("/")) href += "/";
+        if (href === here) a.setAttribute("aria-current", "page");
+      });
+    })();
+  </script>
+</header>

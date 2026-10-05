@@ -1,0 +1,40 @@
+.sheet {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.sheet-photo img {
+  width: min(100%, 28rem);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.sheet-copy {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+.spec-list {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding: 0.65rem 0;
+}
+
+.spec-row span:first-child {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .sheet {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+}

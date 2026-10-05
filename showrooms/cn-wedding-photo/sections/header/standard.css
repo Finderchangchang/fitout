@@ -1,0 +1,116 @@
+h1,
+h2,
+h3 {
+  font-weight: 650;
+}
+
+.section-title {
+  font-size: clamp(2rem, 2.6vw, 2.75rem);
+  font-weight: 650;
+}
+
+img {
+  border-radius: 0;
+}
+
+.site-header {
+  background: var(--bg);
+  border-bottom: 2px solid var(--primary);
+}
+
+.site-header .bar {
+  flex-wrap: nowrap;
+  min-height: 88px;
+  gap: 0.75rem;
+}
+
+.brand {
+  color: var(--primary);
+  font-size: 1.125rem;
+  white-space: nowrap;
+}
+
+.desktop-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.nav-list a {
+  color: var(--text);
+  white-space: nowrap;
+  padding-inline: 0.2rem;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.hotline {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hotline-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.header-tools {
+  flex: none;
+}
+
+.btn {
+  min-height: 46px;
+}
+
+[data-tone="dark"] a:not(.btn),
+[data-tone="image"] a:not(.btn),
+[data-tone="dark"] .prose,
+[data-tone="image"] .prose {
+  color: var(--on-media);
+}
+
+@media (max-width: 767px) {
+  .brand {
+    font-size: 0.875rem;
+    min-width: 0;
+  }
+
+  .hotline {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 1;
+    gap: 0;
+  }
+
+  .hotline-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-list {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 0.1rem 0.35rem;
+  }
+}

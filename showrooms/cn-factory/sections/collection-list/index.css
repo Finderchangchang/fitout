@@ -1,0 +1,25 @@
+.ledger {
+  display: grid;
+}
+
+.ledger-row {
+  display: grid;
+  gap: 0.9rem;
+  align-items: center;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ledger-row h3 {
+  font-size: var(--fs-2);
+}
+
+.ledger-row p {
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .ledger-row {
+    grid-template-columns: 16rem 1fr;
+  }
+}

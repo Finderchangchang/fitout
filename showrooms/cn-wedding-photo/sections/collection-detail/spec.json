@@ -1,0 +1,49 @@
+{
+  "note": "样片、套系、团队、基地、新闻共用。样片用 gallery，套系用 products 和 specs，基地用 address。",
+  "fields": {
+    "name": { "type": "string", "required": true, "maxChars": 20 },
+    "summary": { "type": "string", "required": true, "maxChars": 80 },
+    "body": { "type": "string", "required": false, "maxChars": 200 },
+    "date": { "type": "string", "required": false, "maxChars": 16 },
+    "address": { "type": "string", "required": false, "maxChars": 40 },
+    "hours": { "type": "string", "required": false, "maxChars": 24 },
+    "mapHref": { "type": "string", "required": false, "maxChars": 200 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "specs": {
+      "type": "list",
+      "required": false,
+      "max": 8,
+      "item": {
+        "label": { "type": "string", "required": true, "maxChars": 8 },
+        "value": { "type": "string", "required": true, "maxChars": 24 }
+      }
+    },
+    "gallery": {
+      "type": "list",
+      "required": false,
+      "max": 8,
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    },
+    "products": {
+      "type": "list",
+      "required": false,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "gallery": { "needsImage": false, "family": "gallery", "fit": "大图画廊，旁边是拍摄地、风格、套系" },
+    "sheet": { "needsImage": false, "family": "sheet", "fit": "方图产品加规格表，价格在最后一行" },
+    "portrait": { "needsImage": false, "family": "portrait", "fit": "竖图加人，岗位和擅长" },
+    "place": { "needsImage": false, "family": "place", "fit": "场景横图、地址和导航" },
+    "article": { "needsImage": false, "family": "article", "fit": "日期、正文和一张图" }
+  }
+}

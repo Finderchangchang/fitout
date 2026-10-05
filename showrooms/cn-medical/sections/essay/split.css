@@ -1,0 +1,9 @@
+.prose-col {
+  max-width: 42rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.prose-col .section-lead {
+  margin: 0;
+}

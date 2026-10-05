@@ -1,0 +1,21 @@
+<section class="section" data-section="floor" data-family="workshop" id="{{anchor}}">
+  <div class="container floor-split">
+    <div class="floor-copy">
+      <div class="section-head">
+        {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      </div>
+      <ul class="floor-points">
+        {{#each points}}
+        <li>
+          <h3>{{name}}</h3>
+          <p>{{text}}</p>
+        </li>
+        {{/each}}
+      </ul>
+      {{#if linkHref}}{{#if linkLabel}}<p><a class="floor-link" href="{{linkHref}}">{{linkLabel}}</a></p>{{/if}}{{/if}}
+    </div>
+    <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+  </div>
+</section>

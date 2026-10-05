@@ -1,0 +1,26 @@
+{
+  "note": "首屏下四条入口。文字加编号方块，不放圆形图标。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 8 },
+        "text": { "type": "string", "required": true, "maxChars": 24 },
+        "href": { "type": "string", "required": true, "maxChars": 200 }
+      }
+    }
+  },
+  "variants": {
+    "index": {
+      "needsImage": false,
+      "family": "index",
+      "fit": "四条横排，编号是暖橙方块",
+      "source": "样板间自写"
+    }
+  }
+}

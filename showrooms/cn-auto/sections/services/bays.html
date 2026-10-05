@@ -1,0 +1,21 @@
+<section class="section" data-section="services" data-family="bays" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="bay-grid" data-media-group="bay">
+      {{#each items}}
+      <article class="bay-card">
+        <a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>
+        <div class="bay-copy">
+          <h3><a href="{{href}}">{{name}}</a></h3>
+          <p>{{text}}</p>
+          {{#if price}}<p class="bay-price">{{price}}</p>{{/if}}
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

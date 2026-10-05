@@ -1,0 +1,20 @@
+<section class="section" data-section="triptych" data-family="triptych" data-fullbleed id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="tri-grid" data-media-group="card">
+      {{#each items}}
+      <figure class="tri-item">
+        <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+        <figcaption>
+          <strong>{{name}}</strong>
+          <span>{{text}}</span>
+        </figcaption>
+      </figure>
+      {{/each}}
+    </div>
+  </div>
+</section>

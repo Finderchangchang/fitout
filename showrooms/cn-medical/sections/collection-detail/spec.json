@@ -1,0 +1,44 @@
+{
+  "note": "项目、医生、科普共用详情。项目写适用、流程、注意和价格。医生写年限和擅长。科普写日期和正文。用不到的字段留空。",
+  "fields": {
+    "name": { "type": "string", "required": true, "maxChars": 16 },
+    "summary": { "type": "string", "required": true, "maxChars": 80 },
+    "body": { "type": "string", "required": false, "maxChars": 200 },
+    "date": { "type": "string", "required": false, "maxChars": 16 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "fit": { "type": "string", "required": false, "maxChars": 80 },
+    "price": { "type": "string", "required": false, "maxChars": 16 },
+    "years": { "type": "string", "required": false, "maxChars": 8 },
+    "focus": { "type": "string", "required": false, "maxChars": 24 },
+    "steps": {
+      "type": "list",
+      "required": false,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    },
+    "cautions": {
+      "type": "list",
+      "required": false,
+      "max": 4,
+      "item": {
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    },
+    "primaryLabel": { "type": "string", "required": false, "maxChars": 8, "filledBy": "build" },
+    "primaryHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backLabel": { "type": "string", "required": false, "maxChars": 12, "filledBy": "build" }
+  },
+  "variants": {
+    "article": {
+      "needsImage": false,
+      "family": "article",
+      "fit": "名称、说明、项目或医生事实，底部预约和返回列表",
+      "source": "样板间自写"
+    }
+  }
+}

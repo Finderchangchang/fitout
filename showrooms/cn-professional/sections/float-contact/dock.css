@@ -1,0 +1,74 @@
+.float-dock {
+  max-width: 100%;
+}
+
+.dock-num {
+  display: none;
+}
+
+.float-dock .btn,
+.float-dock summary {
+  flex-direction: row;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 0.35rem;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+.float-dock > details {
+  height: 44px;
+}
+
+.wechat-pop {
+  position: relative;
+}
+
+.wechat-panel {
+  position: absolute;
+  z-index: 21;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  display: grid;
+  gap: 0.5rem;
+  width: 14rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.wechat-panel img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .float-dock {
+    padding: 0.25rem 0.35rem calc(0.25rem + env(safe-area-inset-bottom));
+  }
+
+  .float-dock .btn,
+  .float-dock summary {
+    padding-inline: 0.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .float-dock {
+    width: 7.25rem;
+    gap: 0.25rem;
+    padding: 0.35rem;
+  }
+
+  .float-dock .btn,
+  .float-dock summary {
+    width: 100%;
+  }
+}

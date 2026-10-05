@@ -1,0 +1,21 @@
+{
+  "note": "首页收口。只有热线和一颗按钮，没有输入框。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "primaryHref": { "type": "string", "required": true, "maxChars": 200 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 32 }
+      }
+    }
+  },
+  "variants": {
+    "band": { "needsImage": false, "family": "close", "fit": "三句短话加一颗按钮" }
+  }
+}

@@ -1,0 +1,43 @@
+.floor-split {
+  display: grid;
+  gap: var(--gap);
+}
+
+.floor-split img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.floor-points {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.floor-points h3 {
+  font-size: var(--fs-2);
+}
+
+.floor-points li {
+  border-top: 1px solid rgb(244 246 248 / 0.28);
+  padding-top: 0.75rem;
+}
+
+.floor-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--on-media);
+  text-underline-offset: 0.15em;
+}
+
+@media (min-width: 900px) {
+  .floor-split {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+  }
+
+  .floor-points {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id": "cn-agriculture",
+  "name": "国内风 · 农业特产",
+  "industry": "agriculture",
+  "niche": "produce",
+  "flavor": "cn",
+  "note": "给农产品基地、合作社和地方特产品牌。首页摆产地、在售和溯源，内页能翻到规格、两档价和批发条件。版式也能换上土特产或茶叶。",
+  "buttons": {
+    "primary": "联系采购",
+    "secondary": "看看产品",
+    "form": "在线询价"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "products", "label": "产品中心", "listFile": "products/index.html" },
+    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "lots", "required": true, "variants": ["board"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "field", "required": true, "variants": ["land"] },
+        { "type": "why", "required": true, "variants": ["line"] },
+        { "type": "collection-list", "required": true, "variants": ["clips"] },
+        { "type": "cta-band", "required": true, "variants": ["plate"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "field", "required": true, "variants": ["keeper"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "why", "required": true, "variants": ["notes"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] }
+      ]
+    },
+    {
+      "id": "products",
+      "file": "products/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["rows"] }
+      ]
+    },
+    {
+      "id": "product",
+      "file": "products/{slug}.html",
+      "kind": "detail",
+      "from": "products",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+      ]
+    },
+    {
+      "id": "trace",
+      "file": "trace/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "stations", "required": true, "variants": ["rail"] }
+      ]
+    },
+    {
+      "id": "certs",
+      "file": "certs/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "honors", "required": true, "variants": ["wall"] },
+        { "type": "cta-band", "required": true, "variants": ["plate"] }
+      ]
+    },
+    {
+      "id": "trade",
+      "file": "trade/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["notes"] },
+        { "type": "deal", "required": true, "variants": ["steps"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "cta-band", "required": true, "variants": ["plate"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["clips"] }
+      ]
+    },
+    {
+      "id": "news-item",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["report"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["split"] }
+      ]
+    }
+  ]
+}

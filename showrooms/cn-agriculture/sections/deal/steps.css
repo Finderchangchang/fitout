@@ -1,0 +1,41 @@
+.deal-photo {
+  margin-bottom: 1.5rem;
+}
+
+.deal-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  max-height: 22rem;
+}
+
+.deal-grid {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.deal-grid li {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: start;
+  min-width: 0;
+}
+
+.deal-grid h3 {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .deal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .deal-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

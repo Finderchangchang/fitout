@@ -1,0 +1,186 @@
+# 配图
+
+样板间的图片位在 `showrooms/<id>/images.json`。字段说明见 `docs/SHOWROOM.md` 的 images.json 一节。这一页写三件事：图库图怎么下、AI 图怎么生、拿到图之后怎么裁成一套。
+
+演示图放仓库外：
+
+```text
+H:\ai_tool\fitout-demo-assets\<showroom-id>\<slot-id>.jpg
+```
+
+图库图的许可证不允许原样再分发，所以不要放进公开仓库。拼装时指过去：
+
+```text
+node scripts/build.mjs showrooms/<id>/examples/site.json --demo-images H:\ai_tool\fitout-demo-assets\<id>
+```
+
+三个脚本都在 `scripts/images/`，不安装 npm 包。网络用 Node 自带的 fetch。裁切和调色用本机 Playwright 的 Chromium canvas。Playwright 从环境变量 `PLAYWRIGHT_PATH` 找，找不到就用 `H:\ai_tool\site-studio-refs\scripts\node_modules\playwright`。
+
+MiniMax 的密钥只读环境变量 `MINIMAX_API_KEY`。接口根地址默认 `https://api.minimaxi.com/v1`，要用别的地址就设 `MINIMAX_BASE_URL`（https，写到 `/v1` 为止）。脚本不会把密钥写进日志、报告或图片目录。
+
+## 顺序
+
+1. 先 `--dry-run`。图库清单看文件名、作者、许可证和估计大小。AI 位看将要发送的 prompt。
+2. 图库清单给老板点头之后再下载。没点头不要下。
+3. 下载和生成都写到各自的目录。
+4. 用 `grade.mjs` 裁切、调色、压成 JPG，再放进演示目录。
+5. 用上面的 `--demo-images` 拼装。
+
+## 1. 下载图库图
+
+`H:\ai_tool\site-studio-refs\images\` 里如果还没有清单，就用下面这份。一个图片位一条，`primary` 是首选，`fallback` 是备选，备选可以不写。
+
+```json
+{
+  "showroom": "cn-dining",
+  "items": [
+    {
+      "id": "hero-tea",
+      "primary": {
+        "page": "https://www.example.com/photo/hero-tea",
+        "author": "作者名",
+        "platform": "pexels",
+        "url": "https://images.example.com/hero-tea.jpg",
+        "bytes": 240000,
+        "license": "Pexels License"
+      },
+      "fallback": {
+        "page": "https://www.example.com/photo/hero-tea-alt",
+        "author": "作者名",
+        "platform": "unsplash",
+        "url": "https://images.example.com/hero-tea-alt.jpg",
+        "bytes": 180000,
+        "license": "Unsplash License"
+      }
+    }
+  ]
+}
+```
+
+| 字段 | 含义 |
+|---|---|
+| `id` | 图片位 id，和 images.json 里的一样 |
+| `page` | 照片页面链接，用来核对作者和许可证 |
+| `author` | 作者 |
+| `platform` | 平台，例如 `pexels`、`unsplash` |
+| `url` | 文件直链。只接受 http 或 https |
+| `bytes` | 估计字节数。dry-run 把首选的加总 |
+| `license` | 许可证名称 |
+
+```text
+node scripts/images/fetch-stock.mjs --plan <stock-plan.json> --out <目录> --dry-run
+node scripts/images/fetch-stock.mjs --plan <stock-plan.json> --out <目录>
+```
+
+`--dry-run` 只打印将要下载的首选，以及估计总大小，不创建目录、不写文件。
+
+真下载时先下首选。直链不是 2xx、连不上、或者文件不是 png / jpeg / webp / gif，就改下备选。两个都失败时这一条记失败，其他条照常保存，最后退出码为 1。
+
+保存的文件名是 `<id>` 加真实后缀，不把 png 硬改成 `.jpg`。来源写在同一目录的 `credits.json`：页面、作者、平台、直链、许可证、字节数、用的是首选还是备选。再次下载同一个 id 会盖掉这一条，别的 id 保留。
+
+## 2. 生成 AI 图
+
+只处理 `source` 为 `ai` 的位。模型 `image-01`。`prompt` 是这三段接在一起：slot 的 prompt、这套的 grade（slot 上有就用 slot 的，没有用顶层）、固定的「无文字、无 logo、无水印、不要真实品牌」。
+
+比例不在 MiniMax 支持列表里时，选数值最接近的一档。支持的比例和模型原生像素是：
+
+| slot 比例 | aspect_ratio | 模型大约输出 |
+|---|---|---|
+| `1:1` | `1:1` | 1024×1024 |
+| `16:9` | `16:9` | 1280×720 |
+| `4:3` | `4:3` | 1152×864 |
+| `3:2` | `3:2` | 1248×832 |
+| `2:3` | `2:3` | 832×1248 |
+| `4:5` | `3:4` | 864×1152 |
+| `9:16` | `9:16` | 720×1280 |
+| `16:10` | `3:2` | 1248×832 |
+| `2.4:1` | `21:9` | 1344×576 |
+
+生成图先按模型尺寸存成 `<slot-id>.jpg`。要的像素在下一步裁。
+
+```text
+node scripts/images/gen-ai.mjs --showroom cn-dining --out <目录> --dry-run
+node scripts/images/gen-ai.mjs --showroom cn-dining --out <目录> --only prod-grape
+```
+
+`--only` 只处理一个位。不加的话，会按 images.json 的顺序把全部 ai 位各请求一次。
+
+请求体是这几个字段：`model`、`prompt`、`aspect_ratio`、`response_format`（`url`）、`n`（1）、`prompt_optimizer`（false）、`aigc_watermark`（false）。不传 width / height，避免和比例打架。
+
+成功后，用过的 prompt 和接口摘要写在 `<目录>/ai-log.json`。里面有任务 id、HTTP 状态、`base_resp`、响应有哪些字段、图片从 url 还是 base64 来、文件尺寸和耗时。不写密钥，也不写带签名的图片直链，只写主机名。
+
+失败时打印 HTTP 状态码和 MiniMax 返回的 `status_code`、`status_msg`。响应里的长字符串会截断。
+
+## 3. 裁切、调色、压缩
+
+```text
+node scripts/images/grade.mjs --showroom cn-dining --in <原始图目录> --out H:\ai_tool\fitout-demo-assets\cn-dining
+```
+
+输入按图片位 id 找 `.jpg`、`.jpeg`、`.png`、`.webp`、`.gif`，jpg 优先。目录里没有的位跳过，最后说明还缺多少。对得上的才处理。
+
+裁切：按 `px` 的宽高比从原图切一块，再缩放到 `px`。默认焦点在画面正中。slot 可以加 `focus`：
+
+```json
+"focus": [0.42, 0.38]
+```
+
+两个数都在 0 到 1，表示焦点在宽、高上的相对位置，裁切时尽量把这个点留在画面中心。有一个数大于 1，就两个都按像素算。
+
+调色参数是可选的 `gradeParams`，可以写在 images.json 顶层，某个 slot 再写一份就盖过顶层对应字段。**不要为了填这个字段去改样板间里已经定稿的 images.json**，没写就用中性默认。
+
+```json
+"gradeParams": {
+  "brightness": 1.02,
+  "contrast": 1.04,
+  "saturate": 0.88,
+  "warmth": 0.22
+}
+```
+
+或者用一层色，不用冷暖：
+
+```json
+"gradeParams": {
+  "brightness": 1,
+  "contrast": 1,
+  "saturate": 0.92,
+  "tint": { "color": "#c4783a", "opacity": 0.18 }
+}
+```
+
+| 字段 | 默认 | 范围 | 做法 |
+|---|---|---|---|
+| `brightness` | 1 | 0 到 3 | canvas `brightness()`，1 是原图 |
+| `contrast` | 1 | 0 到 3 | canvas `contrast()` |
+| `saturate` | 1 | 0 到 3 | canvas `saturate()` |
+| `warmth` | 0 | -1 到 1 | 正数 soft-light 叠 `#d68436`，负数叠 `#407ac4`。透明度是 `min(0.55, abs(warmth) × 0.45)` |
+| `tint.color` | 无 | `#RRGGBB` | 再叠一层 soft-light |
+| `tint.opacity` | 0 | 0 到 1 | 这一层的 alpha |
+
+三个滤镜都是 1、warmth 是 0、又没有 tint 时，不叠颜色，只做裁切和压缩。`grade` 那段文字仍然只用于生图 prompt，不拿来猜数字。
+
+导出 JPG。质量从 80 开始，文件还大于上限就减 5，最低到 20。上限：
+
+- 首屏大图 250 KB（250×1024 字节）：`block` 是 `hero`，或者 `page` 是 `home` 且 `px` 宽度 ≥ 1440
+- 其他 150 KB（150×1024 字节）
+
+跑完打印表：id、比例、像素、文件大小、实际质量、上限、是否通过。尺寸或比例不对，或者降到 20 仍然超过上限，退出码为 1。
+
+## 客户提供
+
+`source` 三选一：`stock` 图库，`ai` 生成，`client` 客户提供。二维码、营业执照、资质证书写 `client`。
+
+`fetch-stock.mjs` 看到清单里的 id 在样板间里是 `client`，就跳过，不下载。`gen-ai.mjs` 只处理 `ai`，`client` 不发请求。`--only` 指到一个 `client` 位时，打印跳过并退出 0。
+
+拼装按 id 在 `--demo-images` 目录里找文件。找到就拷进站点。找不到就画一块浅色占位，写上用途和「上线前替换」，例如「微信二维码 · 上线前替换」。用途取这个位 `desc` 的第一句，没有 `desc` 就用 id。拼装不因此失败，这一页也不挂「演示占位图」。
+
+不带 `--demo-images` 时没有图片目录可找，`client` 位也出这块占位，拼装不失败。`check.mjs` 在正式模式（构建报告不是演示，也没有 `--demo`）发现这个位没有 `images/<id>` 文件，给警告，不阻断。演示模式不为此警告。
+
+## 交给真实客户
+
+`mustBeReal` 为 `true` 的位置必须换成客户自己的实拍，不能把图库图或 AI 图放进正式站。门头、车间、教室、后厨、老师和学生都属于这一类。
+
+二维码、营业执照、资质证书不要写 `stock` 或 `ai`，写 `client`。
+
+正式拼装不要带 `--demo-images`。那个参数是演示用的。缺的图库图和 AI 图会画深色占位，只有这一页真画出了这种块，才标「演示占位图」。见 `docs/SHOWROOM.md`。

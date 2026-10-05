@@ -1,0 +1,19 @@
+<!-- 结构见 spec.json 的 source。样式数值只走 token。 -->
+<section class="section" data-section="testimonials" data-family="quotes" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="grid-2">
+      {{#each items}}
+      <blockquote class="card quote">
+        <p>{{quote}}</p>
+        <p>{{name}}</p>
+        {{#if role}}<p class="meta">{{role}}</p>{{/if}}
+      </blockquote>
+      {{/each}}
+    </div>
+  </div>
+</section>

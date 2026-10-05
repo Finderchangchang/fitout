@@ -1,0 +1,584 @@
+{
+  "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+  "gradeParams": {
+    "brightness": 1.04,
+    "contrast": 1.05,
+    "saturate": 0.92,
+    "warmth": 0.32
+  },
+  "slots": [
+    {
+      "id": "hero-paddy",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "paddy",
+        "rice",
+        "field",
+        "river",
+        "afternoon"
+      ],
+      "prompt": "河湾边的晚稻田，稻穗已经黄了，午后侧光，没有人看镜头，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "首屏第一张，河湾晚稻。"
+    },
+    {
+      "id": "hero-yard",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "rice",
+        "drying",
+        "yard",
+        "grain",
+        "sun"
+      ],
+      "prompt": "合作社晒场上摊开的晚稻，地面是干土色，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "首屏第二张，晒场。"
+    },
+    {
+      "id": "hero-cold",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "cold",
+        "storage",
+        "truck",
+        "warehouse",
+        "door"
+      ],
+      "prompt": "冷库门口停着一辆冷藏车，门是深色的，午后光，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "首屏第三张，冷库门。"
+    },
+    {
+      "id": "hero-pack",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "rice",
+        "sack",
+        "warehouse",
+        "stack"
+      ],
+      "prompt": "库房里码齐的编织袋，袋是本色，不要商标，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "首屏第四张，成品袋。"
+    },
+    {
+      "id": "band-valley",
+      "page": "home",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "valley",
+        "paddy",
+        "river",
+        "wide"
+      ],
+      "prompt": "麻埠这一段河湾的宽幅晚稻田，稻穗金黄，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "首页横幅，河湾田。"
+    },
+    {
+      "id": "dry-shed",
+      "page": "about",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "drying",
+        "yard",
+        "shed",
+        "grain"
+      ],
+      "prompt": "库房西边的晒场，稻谷摊开，棚是木色，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "关于页横幅，晒场。"
+    },
+    {
+      "id": "trade-sample",
+      "page": "trade",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "rice",
+        "sample",
+        "table",
+        "note"
+      ],
+      "prompt": "木桌上摊开的米样和一张手写随货单，字不要可读，不要文字标题。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "批发页横幅，样品。"
+    },
+    {
+      "id": "banner",
+      "page": "inner",
+      "block": "page-banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "paddy",
+        "village",
+        "road",
+        "afternoon"
+      ],
+      "prompt": "村口通向稻田的土路，两旁是黄了的晚稻，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "内页默认横幅。"
+    },
+    {
+      "id": "contact-gate",
+      "page": "contact",
+      "block": "page-banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "gate",
+        "warehouse",
+        "yard",
+        "truck"
+      ],
+      "prompt": "合作社大门口的卸货坪，一辆货车停着，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "联系页横幅，门口。"
+    },
+    {
+      "id": "about-fields",
+      "page": "home",
+      "block": "field",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "paddy",
+        "irrigation",
+        "farmer",
+        "field"
+      ],
+      "prompt": "河湾边正在灌水的晚稻田，人在远处，不要正脸，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "首页产地横图。"
+    },
+    {
+      "id": "person-keeper",
+      "page": "about",
+      "block": "field",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "warehouse",
+        "keeper",
+        "door",
+        "profile"
+      ],
+      "prompt": "东亚库管在冷库门口侧身查看温度计，不要正脸特写，不要看镜头微笑，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "关于页库管侧影。"
+    },
+    {
+      "id": "prod-rice",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "rice",
+        "sack",
+        "grain",
+        "product"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔光，正面居中，主体清晰，少量配料或道具点缀。一袋带透明窗的晚稻米，米粒浅金，袋是本色编织袋，旁边一小撮米。不要文字，不要logo，不要水印。包装是素面的，不印任何文字、商标、标签和图案。",
+      "grade": "电商棚拍：浅米色无缝背景，柔光。不要青冷，不要把字烤进图。",
+      "desc": "晚稻米产品图。"
+    },
+    {
+      "id": "prod-oil",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "rapeseed",
+        "oil",
+        "bottle",
+        "product"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔光，正面居中，主体清晰，少量配料或道具点缀。一壶金黄菜籽油，壶是半透明的，旁边几粒油菜籽。不要文字，不要logo，不要水印。包装是素面的，不印任何文字、商标、标签和图案。",
+      "grade": "电商棚拍：浅米色无缝背景，柔光。不要青冷，不要把字烤进图。",
+      "desc": "菜籽油产品图。"
+    },
+    {
+      "id": "prod-chestnut",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "chestnut",
+        "mesh",
+        "bag",
+        "product"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔光，正面居中，主体清晰，少量配料或道具点缀。一网袋板栗，壳是栗色，旁边两三颗开口的栗。不要文字，不要logo，不要水印。包装是素面的，不印任何文字、商标、标签和图案。",
+      "grade": "电商棚拍：浅米色无缝背景，柔光。不要青冷，不要把字烤进图。",
+      "desc": "板栗产品图。"
+    },
+    {
+      "id": "prod-tea",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "tea",
+        "leaves",
+        "pouch",
+        "product"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔光，正面居中，主体清晰，少量配料或道具点缀。一袋晒青茶叶，叶色黄绿，袋是铝箔，旁边一小撮干茶。不要文字，不要logo，不要水印。包装是素面的，不印任何文字、商标、标签和图案。",
+      "grade": "电商棚拍：浅米色无缝背景，柔光。不要青冷，不要把字烤进图。",
+      "desc": "晒青产品图。"
+    },
+    {
+      "id": "prod-mushroom",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "shiitake",
+        "dried",
+        "bag",
+        "product"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔光，正面居中，主体清晰，少量配料或道具点缀。一袋干香菇，菇盖褐色，袋是牛皮纸，旁边两朵干菇。不要文字，不要logo，不要水印。包装是素面的，不印任何文字、商标、标签和图案。",
+      "grade": "电商棚拍：浅米色无缝背景，柔光。不要青冷，不要把字烤进图。",
+      "desc": "干香菇产品图。"
+    },
+    {
+      "id": "prod-yam",
+      "page": "products",
+      "block": "product",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "sweet",
+        "potato",
+        "dried",
+        "product"
+      ],
+      "prompt": "电商主图式棚拍：浅米色干净无缝背景，柔光，正面居中，主体清晰，少量配料或道具点缀。一袋切片薯干，片是琥珀色，袋是本色，旁边几片薯干。不要文字，不要logo，不要水印。包装是素面的，不印任何文字、商标、标签和图案。",
+      "grade": "电商棚拍：浅米色无缝背景，柔光。不要青冷，不要把字烤进图。",
+      "desc": "薯干产品图。"
+    },
+    {
+      "id": "step-seed",
+      "page": "trace",
+      "block": "stations",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "seed",
+        "rice",
+        "drying",
+        "grain"
+      ],
+      "prompt": "晒场上摊开的稻种，颗粒清楚，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "溯源，选种。"
+    },
+    {
+      "id": "step-grow",
+      "page": "trace",
+      "block": "stations",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "irrigation",
+        "paddy",
+        "water",
+        "field"
+      ],
+      "prompt": "正在灌水的稻田，水面反射午后光，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "溯源，种植。"
+    },
+    {
+      "id": "step-cut",
+      "page": "trace",
+      "block": "stations",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "harvester",
+        "rice",
+        "field",
+        "machine"
+      ],
+      "prompt": "收割机在黄了的晚稻田里作业，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "溯源，采收。"
+    },
+    {
+      "id": "step-sort",
+      "page": "trace",
+      "block": "stations",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "sorting",
+        "grain",
+        "sack",
+        "worker"
+      ],
+      "prompt": "工人把稻谷过筛后装进编织袋，侧身，不要正脸，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "溯源，分拣。"
+    },
+    {
+      "id": "step-cold",
+      "page": "trace",
+      "block": "stations",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "cold",
+        "room",
+        "truck",
+        "door"
+      ],
+      "prompt": "冷库门口的冷藏车，门半开，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "溯源，冷链。"
+    },
+    {
+      "id": "cert-license",
+      "page": "certs",
+      "block": "honors",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "license",
+        "document",
+        "paper"
+      ],
+      "prompt": "一张摊开的许可文件，字迹模糊不可读，不要国徽，不要真实机关名。",
+      "grade": "浅米纸色，文件摊平。不要仿造国徽，不要可读的机关名称。",
+      "desc": "食品生产许可占位。"
+    },
+    {
+      "id": "cert-test",
+      "page": "certs",
+      "block": "honors",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "report",
+        "document",
+        "table"
+      ],
+      "prompt": "一张检测报告表格，数字模糊不可读，不要真实机构名。",
+      "grade": "浅米纸色，文件摊平。不要仿造国徽，不要可读的机关名称。",
+      "desc": "检测报告占位。"
+    },
+    {
+      "id": "cert-cold",
+      "page": "certs",
+      "block": "honors",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "filing",
+        "document",
+        "stamp"
+      ],
+      "prompt": "一张运输备案表格，章是模糊的，不要仿造公章文字。",
+      "grade": "浅米纸色，文件摊平。不要仿造国徽，不要可读的机关名称。",
+      "desc": "冷链备案占位。"
+    },
+    {
+      "id": "cert-green",
+      "page": "certs",
+      "block": "honors",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "certificate",
+        "paper",
+        "folder"
+      ],
+      "prompt": "一份证书封面，文字不可读，不要仿造标志。",
+      "grade": "浅米纸色，文件摊平。不要仿造国徽，不要可读的机关名称。",
+      "desc": "绿色食品证书占位。"
+    },
+    {
+      "id": "news-harvest",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "harvest",
+        "sack",
+        "cold",
+        "door"
+      ],
+      "prompt": "冷库门口卸下的晚稻袋，午后光，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "开镰新闻图。"
+    },
+    {
+      "id": "news-shop",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "grain",
+        "shop",
+        "shelf",
+        "rice"
+      ],
+      "prompt": "县城粮油店货架上的米袋，不要真实品牌，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "续约新闻图。"
+    },
+    {
+      "id": "news-cold",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "cold",
+        "room",
+        "partition",
+        "warehouse"
+      ],
+      "prompt": "隔成两间的冷库内部，一间货架一间空位，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "扩库新闻图。"
+    },
+    {
+      "id": "trade-load",
+      "page": "trade",
+      "block": "deal",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "loading",
+        "truck",
+        "sack",
+        "yard"
+      ],
+      "prompt": "卸货坪上工人把米袋装上货车，侧身，不要正脸，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "合作页装车图。"
+    },
+    {
+      "id": "qr-wechat",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "wechat",
+        "qr",
+        "code"
+      ],
+      "prompt": "方形公众号二维码，米白底，中间不要放商标。",
+      "grade": "浅米白底，码面清楚。",
+      "desc": "公众号二维码。"
+    },
+    {
+      "id": "qr-buyer",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "buyer",
+        "qr",
+        "code"
+      ],
+      "prompt": "方形采购对接二维码，米白底，中间不要放商标。",
+      "grade": "浅米白底，码面清楚。",
+      "desc": "采购对接二维码。"
+    }
+  ]
+}

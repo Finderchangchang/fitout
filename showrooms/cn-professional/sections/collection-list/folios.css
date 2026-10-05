@@ -1,0 +1,17 @@
+.folio-row {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.folio-row p {
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .folio-row {
+    grid-template-columns: 18rem 1fr;
+  }
+}

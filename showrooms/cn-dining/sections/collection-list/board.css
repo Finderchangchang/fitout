@@ -1,0 +1,66 @@
+.cat-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.shelf:has(#cat-all:checked) label[for="cat-all"],
+.shelf:has(#cat-tea:checked) label[for="cat-tea"],
+.shelf:has(#cat-bake:checked) label[for="cat-bake"],
+.shelf:has(#cat-meal:checked) label[for="cat-meal"] {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.shelf:has(#cat-tea:checked) .tile-card:not(:has(a[href*="tea-"])) {
+  display: none;
+}
+
+.shelf:has(#cat-bake:checked) .tile-card:not(:has(a[href*="bake-"])) {
+  display: none;
+}
+
+.shelf:has(#cat-meal:checked) .tile-card:not(:has(a[href*="meal-"])) {
+  display: none;
+}
+
+.tile-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.tile-card {
+  min-width: 0;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+.tile-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.tile-card a {
+  text-decoration: none;
+}
+
+.tile-card a:hover,
+.tile-card a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .tile-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tile-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

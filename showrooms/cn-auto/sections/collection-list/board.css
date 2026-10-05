@@ -1,0 +1,48 @@
+.board-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.board-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  min-width: 0;
+}
+
+.board-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.board-copy {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+}
+
+.board-copy h2 {
+  font-size: var(--fs-3);
+}
+
+.board-copy a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .board-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .board-grid {
+    grid-template-columns: 1.15fr 1fr 1fr;
+  }
+
+  .board-card:first-child {
+    grid-row: span 2;
+  }
+}

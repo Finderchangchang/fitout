@@ -1,0 +1,31 @@
+{
+  "note": "条目来自 site.json 的 products，由拼装脚本注入，不要在 data 里再写一份。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "目录标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    }
+  },
+  "variants": {
+    "grid": {
+      "needsImage": false,
+      "family": "catalog",
+      "fit": "产品卡片。没图就不出图片",
+      "source": "hyperui public/examples/marketing/product-cards/1.html 的名称加链接。不搬库存图，不做出图切换"
+    },
+    "rows": {
+      "needsImage": false,
+      "family": "menu",
+      "fit": "产品逐行",
+      "source": "同一信息，改成行"
+    }
+  }
+}

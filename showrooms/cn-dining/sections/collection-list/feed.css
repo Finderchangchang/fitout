@@ -1,0 +1,32 @@
+.feed-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.feed-card {
+  min-width: 0;
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.feed-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.feed-card a {
+  text-decoration: none;
+}
+
+.feed-card a:hover,
+.feed-card a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .feed-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

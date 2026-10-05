@@ -1,0 +1,18 @@
+.person {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.person img {
+  width: 100%;
+  max-width: 24rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .person {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+}

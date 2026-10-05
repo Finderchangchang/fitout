@@ -1,0 +1,36 @@
+.portrait-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.portrait-card {
+  min-width: 0;
+}
+
+.portrait-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+.portrait-card h2 {
+  font-size: var(--fs-3);
+}
+
+.portrait-card a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .portrait-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portrait-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

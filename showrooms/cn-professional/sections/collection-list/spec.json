@@ -1,0 +1,34 @@
+{
+  "note": "集合列表。条目由拼装脚本注入，价格和日期写进 summary。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 }
+  },
+  "variants": {
+    "folios": {
+      "needsImage": false,
+      "family": "folios",
+      "fit": "左图右文的服务目录",
+      "source": "样板间服务目录"
+    },
+    "people": {
+      "needsImage": false,
+      "family": "portraits",
+      "fit": "环境人像网格",
+      "source": "样板间人员目录"
+    },
+    "docket": {
+      "needsImage": false,
+      "family": "docket",
+      "fit": "左文右图的案例目录",
+      "source": "样板间案例目录"
+    },
+    "briefs": {
+      "needsImage": false,
+      "family": "briefs",
+      "fit": "知识文章卡片",
+      "source": "样板间文章目录"
+    }
+  }
+}

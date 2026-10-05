@@ -1,0 +1,643 @@
+{
+  "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。",
+  "gradeParams": {
+    "brightness": 1.08,
+    "contrast": 1.02,
+    "saturate": 1.04,
+    "warmth": 0.32
+  },
+  "slots": [
+    {
+      "id": "hero-shop",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "cnc",
+        "workshop",
+        "lathe",
+        "daylight",
+        "students"
+      ],
+      "prompt": "中国职业技能学校实训车间，东亚面孔的学员穿工装站在数控车床前对刀，自然光，纪实摄影风格，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "hero-class",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "evening",
+        "classroom",
+        "blueprint",
+        "vocational",
+        "students"
+      ],
+      "prompt": "中国职业技能学校晚班教室，东亚面孔的学员穿工装对着零件图，自然光，纪实摄影风格，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "hero-gate",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "school",
+        "entrance",
+        "hallway",
+        "stairs",
+        "daylight"
+      ],
+      "prompt": "中国职业技能学校门厅和楼梯，东亚面孔的学员穿工装进出实训车间，自然光，纪实摄影风格，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "hero-bench",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "bench",
+        "caliper",
+        "metal",
+        "parts",
+        "workshop"
+      ],
+      "prompt": "中国职业技能学校实训车间钳工台，东亚面孔的学员穿工装用量具看金属零件，自然光，纪实摄影风格，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "campus-main",
+      "page": "home",
+      "block": "campus",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "campus",
+        "building",
+        "daylight",
+        "street",
+        "school"
+      ],
+      "prompt": "临街的两三层校区楼，白天，外立面干净。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "campus-hall",
+      "page": "about",
+      "block": "yard",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "lobby",
+        "notice",
+        "stairs",
+        "interior",
+        "school"
+      ],
+      "prompt": "门厅课表墙和楼梯，实拍，墙上字小到看不清。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "campus-room",
+      "page": "about",
+      "block": "yard",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "classroom",
+        "evening",
+        "desks",
+        "vocational",
+        "interior"
+      ],
+      "prompt": "二楼晚班教室的座位和课桌，灯还亮着。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "campus-yard",
+      "page": "about",
+      "block": "yard",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "courtyard",
+        "bicycles",
+        "building",
+        "side",
+        "daylight"
+      ],
+      "prompt": "楼侧小院，停着自行车，白天。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "course-cnc",
+      "page": "courses",
+      "block": "lineup",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "student",
+        "lathe",
+        "cnc",
+        "portrait",
+        "workshop"
+      ],
+      "prompt": "学员站在数控车床前对刀，竖构图，画面不写字。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "course-elec",
+      "page": "courses",
+      "block": "lineup",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "student",
+        "electrician",
+        "panel",
+        "wiring",
+        "portrait"
+      ],
+      "prompt": "学员在配电箱前接线，竖构图，不穿西装。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "course-weld",
+      "page": "courses",
+      "block": "lineup",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "student",
+        "welding",
+        "helmet",
+        "workshop",
+        "portrait"
+      ],
+      "prompt": "学员戴焊接面罩在焊接间，竖构图，画面不写字。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "course-cad",
+      "page": "courses",
+      "block": "lineup",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "student",
+        "cad",
+        "computer",
+        "drawing",
+        "portrait"
+      ],
+      "prompt": "学员在电脑前改零件图，竖构图，屏幕内容不作为标题。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "course-plc",
+      "page": "courses",
+      "block": "board",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "student",
+        "plc",
+        "cabinet",
+        "indicator",
+        "portrait"
+      ],
+      "prompt": "学员看小型控制柜指示灯，竖构图。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "course-lift",
+      "page": "courses",
+      "block": "board",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "technician",
+        "elevator",
+        "machine",
+        "room",
+        "portrait"
+      ],
+      "prompt": "学员在电梯机房看控制柜，竖构图，画面不写字。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "adv-bench",
+      "page": "home",
+      "block": "advantage",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "teacher",
+        "lathe",
+        "coaching",
+        "workshop",
+        "hands"
+      ],
+      "prompt": "老师站在卡盘旁边看学员操作，不是讲台。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "adv-night",
+      "page": "home",
+      "block": "advantage",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "night",
+        "workshop",
+        "lights",
+        "vocational",
+        "interior"
+      ],
+      "prompt": "晚上仍亮灯的实训车间，暖白灯。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "adv-exam",
+      "page": "home",
+      "block": "advantage",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "office",
+        "schedule",
+        "desk",
+        "papers",
+        "admin"
+      ],
+      "prompt": "教务桌上摊开的考证日程，字小，不作为标题。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "adv-shop",
+      "page": "home",
+      "block": "advantage",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "teacher",
+        "student",
+        "paper",
+        "workshop",
+        "handover"
+      ],
+      "prompt": "老师把一页推荐表交给学员，表上没有大字标题。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "band-night",
+      "page": "home",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "night",
+        "workshop",
+        "wide",
+        "lights",
+        "lathe"
+      ],
+      "prompt": "宽幅晚班车间，灯还亮，车床在深处。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "work-shaft",
+      "page": "works",
+      "block": "gallery",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "metal",
+        "bushing",
+        "caliper",
+        "lathe",
+        "part"
+      ],
+      "prompt": "车好的轴套放在量具旁，台面，画面不写字。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "work-panel",
+      "page": "works",
+      "block": "gallery",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "electrical",
+        "panel",
+        "wiring",
+        "open",
+        "training"
+      ],
+      "prompt": "打开门的实训配电箱，线槽清楚。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "work-weld",
+      "page": "works",
+      "block": "gallery",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "weld",
+        "bead",
+        "steel",
+        "plate",
+        "closeup"
+      ],
+      "prompt": "钢板上的一条平焊缝，近景。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "work-draw",
+      "page": "works",
+      "block": "gallery",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "cad",
+        "drawing",
+        "monitor",
+        "mechanical",
+        "screen"
+      ],
+      "prompt": "显示器上的轴套零件图，不把图中的字放大成标题。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "work-cabinet",
+      "page": "works",
+      "block": "gallery",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "control",
+        "cabinet",
+        "plc",
+        "lights",
+        "training"
+      ],
+      "prompt": "小型控制柜，指示灯亮着。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "news-night",
+      "page": "news",
+      "block": "feed",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "classroom",
+        "evening",
+        "lights",
+        "corridor",
+        "school"
+      ],
+      "prompt": "二楼晚班教室从走廊看进去，灯亮着。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "news-exam",
+      "page": "news",
+      "block": "feed",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "office",
+        "list",
+        "desk",
+        "papers",
+        "admin"
+      ],
+      "prompt": "教务室桌上的名单，字很小。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "news-wire",
+      "page": "news",
+      "block": "feed",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "wire",
+        "spool",
+        "shelf",
+        "electrical",
+        "lab"
+      ],
+      "prompt": "电工室架子上成卷的新导线。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "news-meet",
+      "page": "news",
+      "block": "feed",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "gate",
+        "morning",
+        "workshop",
+        "open",
+        "weekend"
+      ],
+      "prompt": "周六上午打开的车间大门。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "teacher-zhou",
+      "page": "teachers",
+      "block": "portraits",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "teacher",
+        "woman",
+        "lathe",
+        "portrait",
+        "workshop"
+      ],
+      "prompt": "中国职业技能学校实训车间，东亚面孔的女老师穿工装站在数控车床旁，自然光，纪实摄影风格，竖构图半身，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "teacher-chen",
+      "page": "teachers",
+      "block": "portraits",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "teacher",
+        "man",
+        "electrical",
+        "portrait",
+        "lab"
+      ],
+      "prompt": "中国职业技能学校电工实训室，东亚面孔的男老师穿工装看学员接线，自然光，纪实摄影风格，竖构图半身，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "teacher-he",
+      "page": "teachers",
+      "block": "portraits",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "teacher",
+        "woman",
+        "drawing",
+        "portrait",
+        "classroom"
+      ],
+      "prompt": "中国职业技能学校制图教室，东亚面孔的女老师穿工装俯身看学员图纸，自然光，纪实摄影风格，竖构图半身，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "teacher-ma",
+      "page": "teachers",
+      "block": "portraits",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "ai",
+      "mustBeReal": true,
+      "keywords": [
+        "teacher",
+        "man",
+        "welding",
+        "portrait",
+        "workshop"
+      ],
+      "prompt": "中国职业技能学校焊接实训间，东亚面孔的男老师穿工装看焊缝，自然光，纪实摄影风格，竖构图半身，无文字无 logo。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "banner",
+      "page": "inner",
+      "block": "banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": true,
+      "keywords": [
+        "campus",
+        "workshop",
+        "wide",
+        "daylight",
+        "school"
+      ],
+      "prompt": "内页横幅用的校区车间宽图，画面不写字。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。"
+    },
+    {
+      "id": "qr-advisor",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "qr",
+        "code",
+        "square",
+        "advisor",
+        "contact"
+      ],
+      "prompt": "客户提供的课程顾问二维码，浅底方形。上线前换成真码，不要绘制可扫描的假码。",
+      "grade": "方形浅底二维码，不叠暖色，画面里不写字。",
+      "gradeParams": { "brightness": 1, "contrast": 1, "saturate": 1, "warmth": 0 }
+    },
+    {
+      "id": "qr-official",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": true,
+      "keywords": [
+        "qr",
+        "code",
+        "square",
+        "official",
+        "account"
+      ],
+      "prompt": "客户提供的学校公众号二维码，浅底方形，和顾问码不是同一张。上线前换成真码，不要绘制可扫描的假码。",
+      "grade": "方形浅底二维码，不叠暖色，画面里不写字。",
+      "gradeParams": { "brightness": 1, "contrast": 1, "saturate": 1, "warmth": 0 }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+.clip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.taste-panel {
+  display: none;
+}
+
+.clip:checked + .taste-panel {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.taste-panel img {
+  width: 100%;
+  max-width: 28rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.taste-copy {
+  display: grid;
+  gap: 0.5rem;
+  align-content: center;
+  min-width: 0;
+}
+
+.taste-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.taste-thumbs label {
+  width: 6.5rem;
+  min-height: 44px;
+  display: grid;
+  gap: 0.35rem;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  padding: 0.35rem;
+  color: var(--text);
+}
+
+.taste-thumbs img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.taste-thumbs span {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.taste:has(#taste-1:checked) label[for="taste-1"],
+.taste:has(#taste-2:checked) label[for="taste-2"],
+.taste:has(#taste-3:checked) label[for="taste-3"],
+.taste:has(#taste-4:checked) label[for="taste-4"],
+.taste:has(#taste-5:checked) label[for="taste-5"],
+.taste:has(#taste-6:checked) label[for="taste-6"] {
+  border-color: var(--primary);
+}
+
+.taste-more {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .clip:checked + .taste-panel {
+    grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+    align-items: center;
+  }
+}

@@ -1,0 +1,21 @@
+.field-keeper {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.field-keeper img {
+  width: min(100%, 22rem);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .field-keeper {
+    grid-template-columns: 1fr 0.72fr;
+  }
+
+  .field-keeper figure {
+    justify-self: end;
+  }
+}

@@ -1,0 +1,51 @@
+.note-list {
+  display: grid;
+  gap: var(--gap);
+}
+
+.note-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  min-width: 0;
+}
+
+.note-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.note-card div {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+}
+
+.note-card h2 {
+  font-size: var(--fs-3);
+}
+
+.note-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.note-card a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .note-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  .note-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

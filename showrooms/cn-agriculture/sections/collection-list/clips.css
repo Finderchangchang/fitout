@@ -1,0 +1,32 @@
+.clip-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.clip-item {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.clip-item img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.clip-item h3 {
+  font-size: 1.25rem;
+  margin-top: 0.35rem;
+}
+
+.clip-item p {
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .clip-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}

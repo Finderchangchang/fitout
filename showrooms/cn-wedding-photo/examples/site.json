@@ -1,0 +1,702 @@
+{
+  "id": "wantang",
+  "showroom": "cn-wedding-photo",
+  "industry": "wedding-photo",
+  "niche": "bridal-photo",
+  "businessType": "LocalBusiness",
+  "name": "晚棠婚纱摄影（虚构）",
+  "summary": "杭州学院路的婚纱摄影店。店里有棚、礼服间和二楼看样室，外景在龙井和南山路。",
+  "contact": {
+    "phone": "0571-86924715",
+    "wechat": "wantang2016",
+    "wechatQr": "qr-wechat",
+    "email": "shop@wantang.example",
+    "address": "杭州市西湖区学院路58号晚棠楼（虚构地址）",
+    "hours": [
+      { "day": "周二至周日", "time": "10:00-19:00" },
+      { "day": "周一", "time": "休息" }
+    ],
+    "formUrl": "https://example.com/wantang-book",
+    "icp": "浙ICP备16048217号",
+    "police": "浙公网安备33010602016048号"
+  },
+  "nav": [
+    { "label": "首页", "href": "index.html" },
+    { "label": "作品欣赏", "href": "works/index.html" },
+    { "label": "套系价格", "href": "packages/index.html" },
+    { "label": "拍摄基地", "href": "bases/index.html" },
+    { "label": "关于我们", "href": "about/index.html" },
+    { "label": "新闻动态", "href": "news/index.html" },
+    { "label": "预约看样", "href": "contact/index.html" }
+  ],
+  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "collections": {
+    "works": [
+      {
+        "slug": "veil",
+        "name": "南窗轻纱",
+        "summary": "拍摄地在学院路店南窗，风格是窗光，套系用轻纱。上午拍，两套服装。",
+        "body": "这组在店里南窗拍。上午的光，不打正面大灯。轻纱套系两套服装，样片放在二楼看样室。",
+        "image": "work-veil",
+        "imageAlt": "南窗边的藕粉轻纱",
+        "specs": [
+          { "label": "拍摄地", "value": "学院路店南窗" },
+          { "label": "风格", "value": "窗光" },
+          { "label": "套系", "value": "轻纱套系" }
+        ],
+        "gallery": [
+          { "image": "work-veil", "imageAlt": "南窗边的藕粉轻纱" },
+          { "image": "work-veil-b", "imageAlt": "窗边坐着整理头纱" }
+        ]
+      },
+      {
+        "slug": "lake",
+        "name": "湖岸园林",
+        "summary": "拍摄地在龙井村湖岸，风格是园林，套系用园林。外景一个下午。",
+        "body": "龙井庭院靠湖的一侧。园林套系三套服装，精修按套系张数交。下雨就改到学院路棚。",
+        "image": "work-lake",
+        "imageAlt": "龙井湖岸的园林外景",
+        "specs": [
+          { "label": "拍摄地", "value": "龙井村湖岸" },
+          { "label": "风格", "value": "园林" },
+          { "label": "套系", "value": "园林套系" }
+        ],
+        "gallery": [
+          { "image": "work-lake", "imageAlt": "龙井湖岸的园林外景" },
+          { "image": "work-lake-b", "imageAlt": "庭院回廊里的一组" }
+        ]
+      },
+      {
+        "slug": "hall",
+        "name": "厅堂走道",
+        "summary": "拍摄地在宴会厅走道，风格是厅堂，套系用胶片。棚内布光。",
+        "body": "学院路棚里搭的宴会厅走道。胶片套系，服装四套。选片在二楼，不在拍摄当天当场定。",
+        "image": "work-hall",
+        "imageAlt": "棚里的宴会厅走道",
+        "specs": [
+          { "label": "拍摄地", "value": "宴会厅走道" },
+          { "label": "风格", "value": "厅堂" },
+          { "label": "套系", "value": "胶片套系" }
+        ],
+        "gallery": [
+          { "image": "work-hall", "imageAlt": "棚里的宴会厅走道" },
+          { "image": "work-hall-b", "imageAlt": "走道尽头的一组站姿" }
+        ]
+      },
+      {
+        "slug": "alley",
+        "name": "梧桐小巷",
+        "summary": "拍摄地在南山路梧桐道，风格是街拍，套系用轻纱。傍晚出门。",
+        "body": "南山路人行道的梧桐。轻纱套系，傍晚出门，天黑前收。马路对面不拍。",
+        "image": "work-alley",
+        "imageAlt": "南山路梧桐下的轻纱",
+        "specs": [
+          { "label": "拍摄地", "value": "南山路梧桐道" },
+          { "label": "风格", "value": "街拍" },
+          { "label": "套系", "value": "轻纱套系" }
+        ],
+        "gallery": [
+          { "image": "work-alley", "imageAlt": "南山路梧桐下的轻纱" },
+          { "image": "work-alley-b", "imageAlt": "梧桐阴影里的半身" }
+        ]
+      }
+    ],
+    "packages": [
+      {
+        "slug": "gauze",
+        "name": "轻纱套系",
+        "summary": "服装2套，拍摄60张，精修30张，相册10寸，价格9680元。",
+        "body": "含服装2套、拍摄60张、精修30张和一本10寸相册。外景可在学院路店或南山路。交通和加急另算。",
+        "image": "work-veil",
+        "imageAlt": "轻纱套系的南窗样片",
+        "specs": [
+          { "label": "服装套数", "value": "2套" },
+          { "label": "拍摄张数", "value": "60张" },
+          { "label": "精修张数", "value": "30张" },
+          { "label": "相册规格", "value": "10寸相册" },
+          { "label": "价格", "value": "9680元" }
+        ],
+        "products": [
+          { "name": "豆沙皮册", "image": "pkg-album", "imageAlt": "豆沙色皮面相册" },
+          { "name": "藕粉礼服", "image": "pkg-dress", "imageAlt": "藕粉色婚纱礼服" }
+        ]
+      },
+      {
+        "slug": "garden",
+        "name": "园林套系",
+        "summary": "服装3套，拍摄90张，精修45张，相册12寸皮册，价格13860元。",
+        "body": "含服装3套、拍摄90张、精修45张和一本12寸皮册。外景在龙井庭院。交通和加急另算。",
+        "image": "work-lake",
+        "imageAlt": "园林套系的湖岸样片",
+        "specs": [
+          { "label": "服装套数", "value": "3套" },
+          { "label": "拍摄张数", "value": "90张" },
+          { "label": "精修张数", "value": "45张" },
+          { "label": "相册规格", "value": "12寸皮册" },
+          { "label": "价格", "value": "13860元" }
+        ],
+        "products": [
+          { "name": "豆沙皮册", "image": "pkg-album", "imageAlt": "豆沙色皮面相册" },
+          { "name": "藕粉礼服", "image": "pkg-dress", "imageAlt": "藕粉色婚纱礼服" }
+        ]
+      },
+      {
+        "slug": "film",
+        "name": "胶片套系",
+        "summary": "服装4套，拍摄120张，精修60张，相册12寸加电子册，价格18600元。",
+        "body": "含服装4套、拍摄120张、精修60张，12寸皮册再加一本电子册。棚和龙井都能拍。交通和加急另算。",
+        "image": "work-hall",
+        "imageAlt": "胶片套系的厅堂样片",
+        "specs": [
+          { "label": "服装套数", "value": "4套" },
+          { "label": "拍摄张数", "value": "120张" },
+          { "label": "精修张数", "value": "60张" },
+          { "label": "相册规格", "value": "12寸加电子册" },
+          { "label": "价格", "value": "18600元" }
+        ],
+        "products": [
+          { "name": "豆沙皮册", "image": "pkg-album", "imageAlt": "豆沙色皮面相册" },
+          { "name": "藕粉礼服", "image": "pkg-dress", "imageAlt": "藕粉色婚纱礼服" }
+        ]
+      }
+    ],
+    "team": [
+      {
+        "slug": "lin",
+        "name": "林晚秋",
+        "summary": "摄影师，在店里第9年，负责外景和窗光。",
+        "body": "龙井和南山路这两处固定是林晚秋拍。窗边的组也归她。不接店外的兼职单。",
+        "image": "team-lin",
+        "imageAlt": "摄影师林晚秋在看样室",
+        "specs": [
+          { "label": "岗位", "value": "摄影师" },
+          { "label": "从业", "value": "9年" },
+          { "label": "擅长", "value": "外景与窗光" }
+        ]
+      },
+      {
+        "slug": "zhou",
+        "name": "周予安",
+        "summary": "摄影师，在店里第6年，负责棚拍和厅堂。",
+        "body": "学院路棚的厅堂和走道是周予安布光。胶片套系的棚内部分由他拍。",
+        "image": "team-zhou",
+        "imageAlt": "摄影师周予安在棚内",
+        "specs": [
+          { "label": "岗位", "value": "摄影师" },
+          { "label": "从业", "value": "6年" },
+          { "label": "擅长", "value": "棚拍与厅堂" }
+        ]
+      },
+      {
+        "slug": "he",
+        "name": "何清禾",
+        "summary": "化妆师，在店里第8年，负责盘发和外景妆。",
+        "body": "外景妆和盘发是何清禾。跟到龙井或南山路，拍完再回店卸妆。",
+        "image": "team-he",
+        "imageAlt": "化妆师何清禾在整理盘发",
+        "specs": [
+          { "label": "岗位", "value": "化妆师" },
+          { "label": "从业", "value": "8年" },
+          { "label": "擅长", "value": "盘发与外景妆" }
+        ]
+      },
+      {
+        "slug": "su",
+        "name": "苏小满",
+        "summary": "化妆师，在店里第5年，负责棚内妆和试纱。",
+        "body": "试纱和棚内妆是苏小满。礼服间的试穿由她看着时间，不另约外面的化妆师。",
+        "image": "team-su",
+        "imageAlt": "化妆师苏小满在礼服间",
+        "specs": [
+          { "label": "岗位", "value": "化妆师" },
+          { "label": "从业", "value": "5年" },
+          { "label": "擅长", "value": "棚内妆与试纱" }
+        ]
+      }
+    ],
+    "bases": [
+      {
+        "slug": "loft",
+        "name": "学院路棚",
+        "summary": "室内棚，260平方米，窗光。婚纱、写真、儿童和全家福都能拍。",
+        "body": "一楼是棚和礼服间，二楼是看样室。南窗留给轻纱。儿童和全家福用同一个棚，不单开场地费。",
+        "address": "杭州市西湖区学院路58号晚棠楼（虚构）",
+        "hours": "周二至周日 10:00-19:00",
+        "mapHref": "https://uri.amap.com/search?keyword=%E6%9D%AD%E5%B7%9E%E5%B8%82%E8%A5%BF%E6%B9%96%E5%8C%BA%E5%AD%A6%E9%99%A2%E8%B7%AF58%E5%8F%B7",
+        "image": "base-loft",
+        "imageAlt": "学院路棚的南窗",
+        "specs": [
+          { "label": "类型", "value": "室内棚" },
+          { "label": "面积", "value": "260平方米" },
+          { "label": "风格", "value": "窗光" }
+        ]
+      },
+      {
+        "slug": "garden",
+        "name": "龙井庭院",
+        "summary": "外景庭院，约2亩，靠湖。园林套系在这里拍。",
+        "body": "龙井村的一处庭院，店里长期租用。下雨改到学院路棚，定金接着用。",
+        "address": "杭州市西湖区龙井村外景（虚构地址）",
+        "hours": "周二至周日 10:00-17:00",
+        "mapHref": "https://uri.amap.com/search?keyword=%E6%9D%AD%E5%B7%9E%E5%B8%82%E8%A5%BF%E6%B9%96%E5%8C%BA%E9%BE%99%E4%BA%95%E6%9D%91",
+        "image": "base-garden",
+        "imageAlt": "龙井庭院靠湖的回廊",
+        "specs": [
+          { "label": "类型", "value": "外景庭院" },
+          { "label": "面积", "value": "约2亩" },
+          { "label": "风格", "value": "园林" }
+        ]
+      },
+      {
+        "slug": "street",
+        "name": "南山路",
+        "summary": "街拍，南山路梧桐人行道。轻纱套系傍晚出门。",
+        "body": "只拍人行道靠梧桐的一侧。天黑前收工，不进店堂，也不占车行道。",
+        "address": "杭州市西湖区南山路人行道（虚构地址）",
+        "hours": "周二至周日 15:00-18:30",
+        "mapHref": "https://uri.amap.com/search?keyword=%E6%9D%AD%E5%B7%9E%E5%B8%82%E8%A5%BF%E6%B9%96%E5%8C%BA%E5%8D%97%E5%B1%B1%E8%B7%AF",
+        "image": "base-street",
+        "imageAlt": "南山路梧桐人行道",
+        "specs": [
+          { "label": "类型", "value": "街拍" },
+          { "label": "面积", "value": "人行道一段" },
+          { "label": "风格", "value": "梧桐" }
+        ]
+      }
+    ],
+    "news": [
+      {
+        "slug": "courtyard",
+        "name": "南窗换了纱",
+        "date": "2026-03-12",
+        "summary": "2026-03-12，学院路店南窗的纱换成藕粉色。看样室的灯没动。",
+        "body": "南窗原来的白纱换成藕粉色。上午的光还是从这扇窗进来。看样仍在二楼，电话预约。",
+        "image": "news-open",
+        "imageAlt": "学院路店南窗的新纱"
+      },
+      {
+        "slug": "fair",
+        "name": "档期说明会",
+        "date": "2026-04-18",
+        "summary": "2026-04-18，店里办了一场档期说明，限额十二对，讲的是五到六月。",
+        "body": "说明会在二楼看样室，讲五到六月哪几天还能拍。没有现场下定的折扣。想看样仍要另外打电话。",
+        "image": "news-fair",
+        "imageAlt": "二楼看样室的说明会"
+      },
+      {
+        "slug": "album",
+        "name": "皮册样品到店",
+        "date": "2026-05-09",
+        "summary": "2026-05-09，12寸皮册样品到店，封面是豆沙色，园林和胶片两档用它。",
+        "body": "样品放在二楼看样室。轻纱套系仍是10寸相册。封面颜色只有豆沙这一种。",
+        "image": "work-hall",
+        "imageAlt": "看样室里的皮册样品"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "晚棠婚纱摄影（虚构）｜先看样片再定档",
+      "description": "杭州学院路婚纱摄影。套系写明服装、张数、精修和相册，先看样再定档。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "carousel",
+          "anchor": "top",
+          "tone": "image",
+          "data": {
+            "label": "学院路影楼",
+            "title": "先看样片再定档",
+            "lead": "杭州婚纱摄影，套系写明服装、张数和精修。",
+            "primaryLabel": "预约看样",
+            "primaryHref": "contact/index.html",
+            "secondaryLabel": "看样片集",
+            "secondaryHref": "works/index.html",
+            "interval": "4000",
+            "slides": [
+              { "image": "hero-veil", "imageAlt": "南窗边的新人轻纱" },
+              { "image": "hero-garden", "imageAlt": "龙井庭院的外景" },
+              { "image": "hero-studio", "imageAlt": "棚里试纱" },
+              { "image": "hero-aisle", "imageAlt": "宴会厅走道" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "numbers",
+          "tone": "light",
+          "data": {
+            "title": "影楼数字",
+            "lead": "开业、同事、基地和去年客片。",
+            "items": [
+              { "value": "2016年", "label": "开业年份" },
+              { "value": "4人", "label": "店里同事" },
+              { "value": "3处", "label": "拍摄基地" },
+              { "value": "86组", "label": "去年客片" }
+            ]
+          }
+        },
+        {
+          "type": "offer",
+          "variant": "tiles",
+          "anchor": "offer",
+          "tone": "dark",
+          "data": {
+            "title": "到店能做的",
+            "lead": "摄影、妆造、礼服和选片，都在这家店。",
+            "items": [
+              { "name": "婚纱摄影", "text": "棚拍、龙井庭院和南山路，样片先看再定。", "image": "offer-photo", "imageAlt": "摄影师在南窗取景" },
+              { "name": "妆造跟拍", "text": "化妆师在店里试妆，外景跟到拍摄结束。", "image": "offer-makeup", "imageAlt": "化妆师在整理盘发" },
+              { "name": "礼服借用", "text": "套系里的服装从礼服间挑，不加服装费。", "image": "offer-dress", "imageAlt": "礼服间的藕粉婚纱" },
+              { "name": "选片精修", "text": "二楼看样室选片，精修张数写在套系上。", "image": "offer-select", "imageAlt": "二楼看样室的选片桌" }
+            ]
+          }
+        },
+        {
+          "type": "folio",
+          "variant": "spread",
+          "anchor": "folio",
+          "tone": "light",
+          "data": {
+            "title": "样片集",
+            "lead": "先看这四组，再约看样。",
+            "href": "works/index.html",
+            "hrefLabel": "全部样片",
+            "items": [
+              { "name": "南窗轻纱", "text": "学院路南窗，轻纱套系", "href": "works/veil.html", "image": "work-veil", "imageAlt": "南窗边的藕粉轻纱" },
+              { "name": "湖岸园林", "text": "龙井湖岸，园林套系", "href": "works/lake.html", "image": "work-lake", "imageAlt": "龙井湖岸的园林外景" },
+              { "name": "厅堂走道", "text": "宴会厅走道，胶片套系", "href": "works/hall.html", "image": "work-hall", "imageAlt": "棚里的宴会厅走道" },
+              { "name": "梧桐小巷", "text": "南山路梧桐，轻纱套系", "href": "works/alley.html", "image": "work-alley", "imageAlt": "南山路梧桐下的轻纱" }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "yard",
+          "tone": "image",
+          "data": {
+            "image": "banner",
+            "imageAlt": "学院路店庭院",
+            "caption": "学院路店庭院，看样从这里进。"
+          }
+        },
+        {
+          "type": "essay",
+          "variant": "split",
+          "anchor": "story",
+          "tone": "light",
+          "data": {
+            "title": "品牌介绍",
+            "lead": "学院路一家婚纱店。",
+            "body": "晚棠2016年开在学院路。一个棚、一间礼服间、二楼看样室。外景在龙井庭院和南山路。摄影师两位，化妆师两位。",
+            "image": "about-room",
+            "imageAlt": "二楼看样室的窗",
+            "href": "about/index.html",
+            "hrefLabel": "看这家店"
+          }
+        },
+        {
+          "type": "rates",
+          "variant": "cards",
+          "anchor": "rates",
+          "tone": "dark",
+          "data": {
+            "title": "套系价格",
+            "lead": "三档都含服装、拍摄和精修。",
+            "items": [
+              { "name": "轻纱套系", "price": "9680元", "text": "服装2套，拍60张，精修30张，10寸册。", "href": "packages/gauze.html", "hrefLabel": "看这档" },
+              { "name": "园林套系", "price": "13860元", "text": "服装3套，拍90张，精修45张，12寸册。", "href": "packages/garden.html", "hrefLabel": "看这档" },
+              { "name": "胶片套系", "price": "18600元", "text": "服装4套，拍120张，精修60张，加电子册。", "href": "packages/film.html", "hrefLabel": "看这档" }
+            ]
+          }
+        },
+        {
+          "type": "guests",
+          "variant": "wall",
+          "anchor": "guests",
+          "tone": "light",
+          "data": {
+            "title": "客片",
+            "lead": "去年86组客片，页上留三则原话。",
+            "href": "guests/index.html",
+            "hrefLabel": "看客片",
+            "items": [
+              { "name": "陈予、周宁", "text": "四月一个周二来的。林晚秋在南窗拍，精修张数按轻纱套系交。", "image": "guest-chen", "imageAlt": "陈予和周宁在南窗" },
+              { "name": "吴澄", "text": "园林套系，拍了90张，精修45张，相册是豆沙封面。", "image": "guest-wu", "imageAlt": "吴澄在龙井庭院" },
+              { "name": "马晓、梁川", "text": "棚里拍的。苏小满试的妆，走的轻纱套系。", "image": "guest-ma", "imageAlt": "马晓和梁川在棚里" }
+            ]
+          }
+        },
+        {
+          "type": "bulletin",
+          "variant": "feed",
+          "anchor": "news",
+          "tone": "dark",
+          "data": {
+            "title": "新闻动态",
+            "lead": "店里最近三件事。",
+            "href": "news/index.html",
+            "hrefLabel": "全部动态",
+            "items": [
+              { "name": "南窗换了纱", "text": "2026-03-12，南窗纱换成藕粉。", "href": "news/courtyard.html", "image": "news-open", "imageAlt": "学院路店南窗的新纱" },
+              { "name": "档期说明会", "text": "2026-04-18，店里办档期说明。", "href": "news/fair.html", "image": "news-fair", "imageAlt": "二楼看样室的说明会" },
+              { "name": "皮册样品到店", "text": "2026-05-09，12寸皮册样品到了。", "href": "news/album.html", "image": "work-hall", "imageAlt": "看样室里的皮册样品" }
+            ]
+          }
+        },
+        {
+          "type": "invite",
+          "variant": "band",
+          "anchor": "book",
+          "tone": "light",
+          "data": {
+            "title": "预约看样",
+            "lead": "看样不收费，先约下午。",
+            "primaryHref": "contact/index.html",
+            "items": [
+              { "name": "看样不收费", "text": "先约下午，二楼看样室。" },
+              { "name": "档期当面定", "text": "看完样再选拍摄日。" },
+              { "name": "定金两成", "text": "定档当天收，写进合同。" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "品牌介绍｜晚棠婚纱摄影（虚构）",
+      "description": "2016年开在学院路。店里有棚、礼服间和看样室，外景在龙井和南山路。",
+      "banner": "about-room",
+      "bannerAlt": "二楼看样室的窗",
+      "crumbs": [{ "label": "品牌介绍", "href": "" }],
+      "sections": [
+        {
+          "type": "essay",
+          "variant": "split",
+          "anchor": "story",
+          "tone": "light",
+          "data": {
+            "title": "这家店",
+            "lead": "从学院路一个棚做起。",
+            "body": "晚棠2016年开在学院路。店里有一个棚、一间礼服间和二楼看样室。外景用龙井庭院和南山路。摄影师两位，化妆师两位，不外包给不认识的人。",
+            "image": "about-room",
+            "imageAlt": "二楼看样室的窗",
+            "href": "team/index.html",
+            "hrefLabel": "看团队"
+          }
+        },
+        {
+          "type": "why",
+          "variant": "steps",
+          "anchor": "steps",
+          "tone": "dark",
+          "data": {
+            "title": "看样怎么约",
+            "lead": "从电话到选片，四步。",
+            "items": [
+              { "name": "电话约看样", "text": "先打电话，约周二到周日的下午。" },
+              { "name": "到店看样", "text": "二楼看样室，样片和客片都在。" },
+              { "name": "定妆和档期", "text": "选定套系后定化妆和拍摄日。" },
+              { "name": "拍摄和选片", "text": "拍完约选片，精修张数按套系。" }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "yard",
+          "tone": "image",
+          "data": {
+            "image": "banner",
+            "imageAlt": "学院路店庭院",
+            "caption": "龙井和南山路是外景，看样仍在学院路。"
+          }
+        },
+        {
+          "type": "faq",
+          "variant": "accordion",
+          "anchor": "ask",
+          "tone": "light",
+          "data": {
+            "title": "常见问题",
+            "lead": "看样、下雨、儿童和定金。",
+            "items": [
+              { "q": "看样要预约吗？", "a": "要预约。周二到周日都可以，周一店休。电话里说一下下午。" },
+              { "q": "套系价包含哪些？", "a": "包含服装、拍摄、精修和相册。交通和加急另算，合同里写明。" },
+              { "q": "外景下雨怎么办？", "a": "外景下雨就改到棚里，或者另约一天。已经付的定金接着用。" },
+              { "q": "儿童和全家福能拍吗？", "a": "能。用同一个棚，服装从店里挑，不单开一套价。" },
+              { "q": "定金怎么收？", "a": "定金是套系价的两成，看样当天如果定档就收。不拍的话按合同退。" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "works",
+      "title": "作品欣赏｜晚棠婚纱摄影（虚构）",
+      "description": "四组样片：南窗、龙井湖岸、宴会厅和南山路。点进去看拍摄地和套系。",
+      "banner": "banner",
+      "bannerAlt": "学院路店庭院",
+      "crumbs": [{ "label": "作品欣赏", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "mosaic",
+          "anchor": "list",
+          "tone": "light",
+          "data": {
+            "title": "样片集",
+            "lead": "点进去看拍摄地、风格和套系。",
+            "collection": "works"
+          }
+        }
+      ]
+    },
+    {
+      "id": "packages",
+      "title": "套系价格｜晚棠婚纱摄影（虚构）",
+      "description": "轻纱9680元、园林13860元、胶片18600元。服装、张数、精修和相册见各档。",
+      "banner": "banner",
+      "bannerAlt": "学院路店庭院",
+      "crumbs": [{ "label": "套系价格", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "sheet",
+          "anchor": "list",
+          "tone": "light",
+          "data": {
+            "title": "三档套系",
+            "lead": "服装、张数、精修、相册和价格都写在说明里。",
+            "collection": "packages"
+          }
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "title": "团队｜晚棠婚纱摄影（虚构）",
+      "description": "摄影师林晚秋、周予安，化妆师何清禾、苏小满。都在店里，不外包。",
+      "banner": "banner",
+      "bannerAlt": "学院路店庭院",
+      "crumbs": [{ "label": "团队", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "portraits",
+          "anchor": "list",
+          "tone": "light",
+          "data": {
+            "title": "摄影师和化妆师",
+            "lead": "四位都在店里，不外包。",
+            "collection": "team"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bases",
+      "title": "拍摄基地｜晚棠婚纱摄影（虚构）",
+      "description": "学院路棚、龙井庭院、南山路。地址和能拍什么写在各处。",
+      "banner": "banner",
+      "bannerAlt": "学院路店庭院",
+      "crumbs": [{ "label": "拍摄基地", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "scenes",
+          "anchor": "list",
+          "tone": "light",
+          "data": {
+            "title": "三个拍摄点",
+            "lead": "一个棚、一处庭院、一段梧桐道。",
+            "collection": "bases"
+          }
+        }
+      ]
+    },
+    {
+      "id": "guests",
+      "title": "客片评价｜晚棠婚纱摄影（虚构）",
+      "description": "去年客片86组。页上是陈予和周宁、吴澄、马晓和梁川三则原话。",
+      "banner": "banner",
+      "bannerAlt": "学院路店庭院",
+      "crumbs": [{ "label": "客片评价", "href": "" }],
+      "sections": [
+        {
+          "type": "guests",
+          "variant": "wall",
+          "anchor": "voices",
+          "tone": "light",
+          "data": {
+            "title": "客人原话",
+            "lead": "去年86组里，页上这三则都是到店拍的。",
+            "items": [
+              { "name": "陈予、周宁", "text": "四月一个周二来的。林晚秋在南窗拍，精修张数按轻纱套系交。", "image": "guest-chen", "imageAlt": "陈予和周宁在南窗" },
+              { "name": "吴澄", "text": "园林套系，拍了90张，精修45张，相册是豆沙封面。", "image": "guest-wu", "imageAlt": "吴澄在龙井庭院" },
+              { "name": "马晓、梁川", "text": "棚里拍的。苏小满试的妆，走的轻纱套系。", "image": "guest-ma", "imageAlt": "马晓和梁川在棚里" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "新闻动态｜晚棠婚纱摄影（虚构）",
+      "description": "南窗换纱、档期说明会、12寸皮册到店。日期写在每条说明里。",
+      "banner": "banner",
+      "bannerAlt": "学院路店庭院",
+      "crumbs": [{ "label": "新闻动态", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "feed",
+          "anchor": "list",
+          "tone": "light",
+          "data": {
+            "title": "店里近况",
+            "lead": "按日期排，新的在前。",
+            "collection": "news"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "预约看样｜晚棠婚纱摄影（虚构）",
+      "description": "热线0571-86924715。看样请打电话，问档期用页面上的表。",
+      "banner": "banner",
+      "bannerAlt": "学院路店庭院",
+      "crumbs": [{ "label": "预约看样", "href": "" }],
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "card",
+          "anchor": "visit",
+          "tone": "light",
+          "data": {
+            "title": "预约热线",
+            "lead": "看样和档期打这个电话。公众号发通知，预约码用来约时间。",
+            "items": [
+              { "name": "公众号", "image": "qr-wechat", "imageAlt": "晚棠公众号二维码" },
+              { "name": "预约码", "image": "qr-book", "imageAlt": "预约看样二维码" }
+            ]
+          }
+        },
+        {
+          "type": "inquire",
+          "variant": "note",
+          "anchor": "write",
+          "tone": "dark",
+          "data": {
+            "title": "咨询档期",
+            "lead": "看样请打电话。想问某一天有没有空，用这张表。"
+          }
+        }
+      ]
+    }
+  ]
+}

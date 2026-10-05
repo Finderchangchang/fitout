@@ -1,0 +1,18 @@
+{
+  "note": "外壳，不进 main。内容来自 site.json 的 name、nav 和户型按钮，不在板块 data 里填。",
+  "fields": {},
+  "variants": {
+    "standard": {
+      "needsImage": false,
+      "family": "bar",
+      "fit": "商标在左，导航在中间，电话在右。一行。",
+      "source": "localbiz-site components/sections/header/HeaderStandard.tsx；菜单按钮结构参考 components/MobileNav.tsx 与 hyperui public/examples/marketing/headers/1.html"
+    },
+    "centered": {
+      "needsImage": false,
+      "family": "bar",
+      "fit": "桌面一行：导航在左，商标居中，电话在右。不是两行叠起来的居中导航。",
+      "source": "localbiz-site components/sections/header/HeaderCentered.tsx，改成一行"
+    }
+  }
+}

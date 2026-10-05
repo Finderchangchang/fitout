@@ -1,0 +1,27 @@
+<section class="hero hero-full" data-section="hero" data-family="stage" data-fullbleed id="{{anchor}}" data-carousel data-interval="{{interval}}">
+  <div class="hero-slides" data-media-group="hero">
+    {{#each slides}}
+    <img class="hero-slide" data-slide src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}">
+    {{/each}}
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="container hero-copy" data-on-media>
+    {{#if label}}<p class="meta">{{label}}</p>{{/if}}
+    {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+    {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+    <p class="section-lead">{{lead}}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+      {{#if secondaryHref}}{{#if secondaryLabel}}<a class="btn" href="{{secondaryHref}}">{{secondaryLabel}}</a>{{/if}}{{/if}}
+    </div>
+  </div>
+  <div class="container hero-ui">
+    <button type="button" class="carousel-btn" data-carousel-prev aria-label="上一张"><span class="prev-icon">{{icon:chevron-right:20}}</span><span class="sr">上一张</span></button>
+    <div class="hero-dots">
+      {{#each slides}}
+      <button type="button" data-carousel-dot aria-label="第{{@index}}张"><span class="sr">{{@index}}</span></button>
+      {{/each}}
+    </div>
+    <button type="button" class="carousel-btn" data-carousel-next aria-label="下一张">{{icon:chevron-right:20}}<span class="sr">下一张</span></button>
+  </div>
+</section>

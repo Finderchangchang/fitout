@@ -1,0 +1,50 @@
+.np-quote {
+  display: grid;
+  padding: 0;
+}
+
+.np-quote-copy {
+  background: var(--surface);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  padding: var(--section-y) clamp(1rem, 4vw, 3.5rem);
+}
+
+.np-quote-inner {
+  max-width: 34rem;
+}
+
+.np-quote-copy .section-lead {
+  color: var(--text-muted);
+}
+
+.np-quote-line {
+  font-size: var(--fs-3);
+  font-weight: 700;
+  margin-top: 0.35rem;
+}
+
+.np-quote-line a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.np-quote-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 2.4 / 1;
+}
+
+@media (min-width: 1024px) {
+  .np-quote {
+    grid-template-columns: 0.86fr 1.14fr;
+  }
+
+  .np-quote-photo img {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 18rem;
+  }
+}

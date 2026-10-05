@@ -1,0 +1,37 @@
+.voice-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.voice-card {
+  min-width: 0;
+}
+
+.voice-card img {
+  width: min(100%, 16rem);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.voice-more {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .voice-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .voice-card {
+    display: grid;
+    grid-template-columns: 10.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .voice-card img {
+    width: 10.5rem;
+  }
+}

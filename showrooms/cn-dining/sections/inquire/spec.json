@@ -1,0 +1,16 @@
+{
+  "note": "留言入口。只链到外部表单，页内不放输入框。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+  },
+  "variants": {
+    "note": {
+      "needsImage": false,
+      "family": "message",
+      "fit": "一句说明加一颗外链按钮"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "note": "外壳。备案号有才显示。链接文字用备案号原文，方便机检。",
+  "fields": {},
+  "variants": {
+    "simple": {
+      "needsImage": false,
+      "family": "plain",
+      "fit": "信息顺着排",
+      "source": "localbiz-site components/sections/footer/FooterSimple.tsx；备案行参考 PageTemplatify themes/enterprise/template.html 的备案信息"
+    },
+    "columns": {
+      "needsImage": false,
+      "family": "columns",
+      "fit": "导航、联系分成几列",
+      "source": "localbiz-site components/sections/footer/FooterColumns.tsx，加上同一段备案"
+    }
+  }
+}

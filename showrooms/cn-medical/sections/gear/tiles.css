@@ -1,0 +1,21 @@
+.gear-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.gear-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.gear-grid .item-title {
+  margin: 0.75rem 0 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .gear-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

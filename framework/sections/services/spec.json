@@ -1,0 +1,70 @@
+{
+  "note": "服务或加工能力。不要编价格。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "可无"
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12,
+          "hint": "项目名"
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40,
+          "hint": "一句具体说明"
+        },
+        "price": {
+          "type": "string",
+          "required": false,
+          "maxChars": 16,
+          "hint": "可无。有就写不整齐的起步价"
+        },
+        "image": {
+          "type": "image",
+          "required": false,
+          "maxChars": 200,
+          "hint": "可无"
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": false,
+          "maxChars": 30,
+          "hint": "有图才需要"
+        }
+      },
+      "hint": "1 到 6 项"
+    }
+  },
+  "variants": {
+    "grid-cards": {
+      "needsImage": false,
+      "family": "grid",
+      "fit": "三项上下，适合扫一眼",
+      "source": "localbiz-site components/sections/services/ServicesGridCards.tsx"
+    },
+    "list-rows": {
+      "needsImage": false,
+      "family": "menu",
+      "fit": "像菜单一样逐行。不编号",
+      "source": "localbiz-site components/sections/services/ServicesListRows.tsx。不搬 01 编号"
+    }
+  }
+}

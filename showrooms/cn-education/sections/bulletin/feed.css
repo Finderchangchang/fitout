@@ -1,0 +1,29 @@
+.feed-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.feed-grid img {
+  width: 100%;
+  margin-bottom: 0.65rem;
+}
+
+.feed-grid .card {
+  padding: 0.75rem;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 768px) {
+  .feed-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .feed-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,18 @@
+.reach-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.reach-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .reach-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

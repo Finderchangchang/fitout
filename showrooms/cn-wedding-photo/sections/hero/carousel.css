@@ -1,0 +1,96 @@
+.hero-full {
+  align-items: end;
+  min-height: 28rem;
+}
+
+.hero-full .hero-copy {
+  text-align: left;
+  max-width: 40rem;
+  padding-bottom: 1.5rem;
+}
+
+.hero-full .section-lead {
+  color: var(--on-media);
+}
+
+.hero-full .btn {
+  border-color: var(--on-media);
+  color: var(--on-media);
+  background: transparent;
+}
+
+.hero-full .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.hero-ui {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+.hero-ui .carousel-btn,
+.hero-dots button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.prev-icon {
+  display: inline-flex;
+  transform: rotate(180deg);
+}
+
+.hero-dots {
+  gap: 0.15rem;
+}
+
+.hero-dots button {
+  border: 0;
+  background: transparent;
+  position: relative;
+}
+
+.hero-dots button::after {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--on-media);
+  opacity: 0.45;
+}
+
+.hero-dots button[aria-current="true"]::after {
+  opacity: 1;
+  background: var(--primary-contrast);
+}
+
+@media (max-width: 767px) {
+  .hero-full {
+    min-height: 17rem;
+  }
+
+  .hero-full .hero-copy {
+    padding-top: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .hero-full .hero-ui {
+    margin-top: 0.35rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-full {
+    min-height: 700px;
+    height: 700px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-full .hero-scrim { background: rgb(28 18 20 / 0.7); }
+}

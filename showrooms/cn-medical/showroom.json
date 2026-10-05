@@ -1,0 +1,136 @@
+{
+  "id": "cn-medical",
+  "name": "国内风 · 口腔诊所",
+  "note": "给口腔诊所、连锁齿科和社区门诊。版式按「怎么看病」来排：就医入口、诊疗项目、医生、环境和设备、就诊指南、科普、预约。同一套结构可以换成诊所、中医馆或体检中心，只要改栏目里的项目和文章。示例是一家社区口腔门诊，语气要专业、干净，把人引到电话或在线预约。",
+  "industry": "medical",
+  "niche": "dental",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "预约挂号",
+    "secondary": "看看项目",
+    "form": "在线预约"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "services", "label": "诊疗项目", "listFile": "services/index.html" },
+    { "id": "doctors", "label": "医生团队", "listFile": "doctors/index.html" },
+    { "id": "articles", "label": "口腔科普", "listFile": "articles/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "gate", "required": true, "variants": ["board"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "services", "required": true, "variants": ["board"] },
+        { "type": "brief", "required": true, "variants": ["split"] },
+        { "type": "team", "required": true, "variants": ["cards"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "gear", "required": true, "variants": ["tiles"] },
+        { "type": "bulletin", "required": true, "variants": ["rows"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "essay", "required": true, "variants": ["split"] },
+        { "type": "rooms", "required": true, "variants": ["grid"] },
+        { "type": "gear", "required": true, "variants": ["tiles"] },
+        { "type": "papers", "required": true, "variants": ["list"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "services",
+      "file": "services/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["cards"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "service",
+      "file": "services/{slug}.html",
+      "kind": "detail",
+      "from": "services",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "doctors",
+      "file": "doctors/index.html",
+      "kind": "team",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["portraits"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "doctor",
+      "file": "doctors/{slug}.html",
+      "kind": "detail",
+      "from": "doctors",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "guide",
+      "file": "guide/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "faq", "required": true, "variants": ["accordion"] },
+        { "type": "reach", "required": true, "variants": ["split"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "articles",
+      "file": "articles/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["rows"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "article",
+      "file": "articles/{slug}.html",
+      "kind": "news-detail",
+      "from": "articles",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["desk"] },
+        { "type": "inquiry", "required": true, "variants": ["note"] }
+      ]
+    }
+  ]
+}

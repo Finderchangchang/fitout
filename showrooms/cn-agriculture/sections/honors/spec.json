@@ -1,0 +1,27 @@
+{
+  "note": "证照墙。名称标明占位，发证方写以证书原件为准。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 20 },
+        "issuer": { "type": "string", "required": false, "maxChars": 16 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "wall": {
+      "needsImage": false,
+      "family": "wall",
+      "fit": "四张等大证照，下面写占位名称",
+      "source": "样板间自写"
+    }
+  }
+}

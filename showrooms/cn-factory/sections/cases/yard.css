@@ -1,0 +1,19 @@
+.yard-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.yard-card h3 {
+  margin-top: 0.75rem;
+  font-size: var(--fs-2);
+}
+
+.yard-card p {
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .yard-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

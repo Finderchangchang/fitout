@@ -1,0 +1,94 @@
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+.btn {
+  min-height: 48px;
+}
+
+.section .section-title {
+  box-shadow: inset 0 -2px 0 var(--primary);
+  width: fit-content;
+  padding-bottom: 0.15rem;
+}
+
+.hero .section-title,
+.page-banner .section-title,
+[data-tone="dark"] .section-title {
+  box-shadow: none;
+}
+
+[data-tone="dark"] a:not(.btn) {
+  color: var(--on-media);
+}
+
+.site-header .bar {
+  flex-wrap: nowrap;
+  min-height: 88px;
+  gap: 0.75rem;
+}
+
+.brand,
+.hotline {
+  white-space: nowrap;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.hotline {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+}
+
+.nav-list {
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.nav-list a {
+  font-weight: 600;
+}
+
+.nav-list a:hover {
+  box-shadow: inset 0 -2px 0 var(--primary);
+}
+
+@media (max-width: 1023px) {
+  .brand {
+    font-size: 1rem;
+  }
+
+  .hotline {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand {
+    font-size: 1.125rem;
+  }
+
+  .nav-list {
+    gap: 0.1rem 0.45rem;
+  }
+
+  .nav-list a {
+    font-size: 0.9375rem;
+    white-space: nowrap;
+    padding-inline: 0.15rem;
+  }
+
+  .hotline {
+    font-size: 1.0625rem;
+  }
+}

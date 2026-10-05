@@ -1,0 +1,19 @@
+<!-- 结构见 spec.json 的 source。样式数值只走 token。 -->
+<section class="section" data-section="product-list" data-family="menu" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div>
+      {{#each items}}
+      <article class="catalog-row">
+        {{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+        <h2 class="item-title"><a href="{{href}}">{{name}}</a></h2>
+        {{#if summary}}<p>{{summary}}</p>{{/if}}
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+.invite-copy {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 40rem;
+}
+
+.invite-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.invite-list li {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.invite-list strong {
+  font-weight: 700;
+}

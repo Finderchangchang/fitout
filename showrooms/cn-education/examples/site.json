@@ -1,0 +1,873 @@
+{
+  "id": "nanzhan",
+  "showroom": "cn-education",
+  "industry": "education",
+  "niche": "vocational",
+  "businessType": "LocalBusiness",
+  "name": "南栈技能学校（虚构）",
+  "summary": "拱墅石桥路的职业技能学校，六门工种课白天和晚班都开。",
+  "contact": {
+    "phone": "0571-86904326",
+    "wechat": "nanzhan-skill",
+    "wechatQr": "qr-advisor",
+    "email": "hello@nanzhan.example",
+    "address": "杭州市拱墅区石桥路 86 号（虚构地址）",
+    "hours": [
+      { "day": "周一至周五", "time": "9:00-20:30" },
+      { "day": "周六", "time": "9:00-17:00" }
+    ],
+    "formUrl": "https://example.com/forms/nanzhan-trial",
+    "icp": "浙ICP备20918463号"
+  },
+  "nav": [
+    { "label": "首页", "href": "index.html" },
+    { "label": "学校简介", "href": "about/index.html" },
+    { "label": "课程设置", "href": "courses/index.html" },
+    { "label": "师资力量", "href": "teachers/index.html" },
+    { "label": "学员风采", "href": "works/index.html" },
+    { "label": "招生资讯", "href": "news/index.html" },
+    { "label": "预约试听", "href": "contact/index.html" }
+  ],
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
+  "collections": {
+    "courses": [
+      {
+        "slug": "cnc-lathe",
+        "name": "数控车工",
+        "summary": "96课时，学费7,860元。适合想上车床的在职人员，可考车工中级工。",
+        "body": "先认零件图，再上车床对刀、车外圆。晚班从晚上六点到八点半，一个班大约十二个人。学费不含考证费。想来可以先约一节试听。",
+        "image": "course-cnc",
+        "imageAlt": "学员在数控车床前对刀",
+        "specs": [
+          { "label": "课时", "value": "96 课时" },
+          { "label": "学费", "value": "7,860 元" },
+          { "label": "适合人群", "value": "想上车床的在职人员" },
+          { "label": "证书", "value": "车工中级工，可报考" }
+        ]
+      },
+      {
+        "slug": "elec-install",
+        "name": "电工上岗",
+        "summary": "72课时，学费4,280元。适合要考低压电工证的人，考证按月另排。",
+        "body": "从识图、接线到测绝缘，都在二楼电工室做。低压电工证单独排期，不塞进正课。报名带身份证复印件。白天班和晚班都有。",
+        "image": "course-elec",
+        "imageAlt": "学员在配电箱前接线",
+        "specs": [
+          { "label": "课时", "value": "72 课时" },
+          { "label": "学费", "value": "4,280 元" },
+          { "label": "适合人群", "value": "想考低压电工证的人" },
+          { "label": "证书", "value": "低压电工证" }
+        ]
+      },
+      {
+        "slug": "weld-arc",
+        "name": "焊条电弧焊",
+        "summary": "64课时，学费5,160元。适合想学平焊的在职人员，可考焊工证。",
+        "body": "平焊和对接焊在一楼焊接间。防护面罩和焊条由学校发，厚板材料按实际另计。晚班同样收到晚上八点半。结业可报考焊工证。",
+        "image": "course-weld",
+        "imageAlt": "学员戴面罩在焊接间操作",
+        "specs": [
+          { "label": "课时", "value": "64 课时" },
+          { "label": "学费", "value": "5,160 元" },
+          { "label": "适合人群", "value": "想学平焊的在职人员" },
+          { "label": "证书", "value": "焊工证，电弧焊" }
+        ]
+      },
+      {
+        "slug": "cad-mech",
+        "name": "机械制图",
+        "summary": "48课时，学费3,240元。适合要看图上车床的人，结业发制图员证明。",
+        "body": "用学校的电脑画零件图，标注和公差当面改。画完的图可以交给车工班当练习件。晚班在二楼东侧。这门课不单独组织国家考证。",
+        "image": "course-cad",
+        "imageAlt": "学员在电脑前改零件图",
+        "specs": [
+          { "label": "课时", "value": "48 课时" },
+          { "label": "学费", "value": "3,240 元" },
+          { "label": "适合人群", "value": "要看图上车床的人" },
+          { "label": "证书", "value": "结业发制图员证明" }
+        ]
+      },
+      {
+        "slug": "plc-basic",
+        "name": "PLC入门",
+        "summary": "56课时，学费4,960元。适合已经学过电工、想碰控制柜的人。",
+        "body": "用教室里的小型PLC和按钮盒，做启停和延时。不讲大项目投标。适合已经上过电工课的人。这门课不单独发证。",
+        "image": "course-plc",
+        "imageAlt": "学员在控制柜前看指示灯",
+        "specs": [
+          { "label": "课时", "value": "56 课时" },
+          { "label": "学费", "value": "4,960 元" },
+          { "label": "适合人群", "value": "车间电工想学控制" },
+          { "label": "证书", "value": "不单独发证" }
+        ]
+      },
+      {
+        "slug": "lift-maint",
+        "name": "电梯维保",
+        "summary": "80课时，学费6,430元。适合物业维修想考上岗的人，按月开班。",
+        "body": "讲井道安全、门机和日常保养记录。实操在合作车间，不在石桥路校区的车床间。名额按月收，满了就等下一期。结业可考电梯维修上岗证。",
+        "image": "course-lift",
+        "imageAlt": "学员在电梯机房看控制柜",
+        "specs": [
+          { "label": "课时", "value": "80 课时" },
+          { "label": "学费", "value": "6,430 元" },
+          { "label": "适合人群", "value": "物业维修想考上岗" },
+          { "label": "证书", "value": "电梯维修上岗证" }
+        ]
+      }
+    ],
+    "teachers": [
+      {
+        "slug": "zhou-lan",
+        "name": "周岚",
+        "summary": "数控实训老师。教龄11年，车工高级工，常驻车床区。",
+        "body": "周岚从2014年起带车工班，白天和晚班都在石桥路车间。考证那一周不排新课，专门盯实操。持车工高级工证书。",
+        "image": "teacher-zhou",
+        "imageAlt": "周岚站在数控车床旁边",
+        "specs": [
+          { "label": "教龄", "value": "11 年" },
+          { "label": "任教课程", "value": "数控车工" },
+          { "label": "证书", "value": "车工高级工" }
+        ]
+      },
+      {
+        "slug": "chen-mu",
+        "name": "陈牧",
+        "summary": "电工实训老师。教龄9年，持低压电工考评员证。",
+        "body": "陈牧负责电工室和考证名单。接线不对，他让学员自己复测，不代手。周六上午在教务室收身份证复印件。",
+        "image": "teacher-chen",
+        "imageAlt": "陈牧在电工室看学员接线",
+        "specs": [
+          { "label": "教龄", "value": "9 年" },
+          { "label": "任教课程", "value": "电工上岗" },
+          { "label": "证书", "value": "低压电工考评员" }
+        ]
+      },
+      {
+        "slug": "he-shumin",
+        "name": "何淑敏",
+        "summary": "制图老师。教龄14年，图改完才让学员把图送去车床。",
+        "body": "何淑敏带机械制图。图上的漏标用红笔圈出来，改完才允许把图送到车床区。晚班在二楼东侧。持机械制图员证书。",
+        "image": "teacher-he",
+        "imageAlt": "何淑敏俯身看学员的图纸",
+        "specs": [
+          { "label": "教龄", "value": "14 年" },
+          { "label": "任教课程", "value": "机械制图" },
+          { "label": "证书", "value": "机械制图员" }
+        ]
+      },
+      {
+        "slug": "ma-jun",
+        "name": "马峻",
+        "summary": "焊接实训老师。教龄16年，焊工高级工，只带电弧焊。",
+        "body": "马峻只教焊条电弧焊，不带气保焊。焊接间的通风和面罩归他检查。材料用完按根数登记。持焊工高级工证书。",
+        "image": "teacher-ma",
+        "imageAlt": "马峻在焊接间检查焊缝",
+        "specs": [
+          { "label": "教龄", "value": "16 年" },
+          { "label": "任教课程", "value": "焊条电弧焊" },
+          { "label": "证书", "value": "焊工高级工" }
+        ]
+      }
+    ],
+    "works": [
+      {
+        "slug": "shaft",
+        "name": "周宁的轴套",
+        "summary": "课堂车完一只轴套。2025年6月结业，现在拱墅一家机加工厂做数控车工。",
+        "body": "周宁用六个小时从下料到车外圆，公差按课堂图，没有返工。2025年6月结业，学校开了推荐表，现在在拱墅一家机加工厂做数控车工。",
+        "image": "work-shaft",
+        "imageAlt": "车好的金属轴套放在量具旁",
+        "specs": [
+          { "label": "工种", "value": "数控车工" },
+          { "label": "用时", "value": "6 小时" },
+          { "label": "学员", "value": "周宁" },
+          { "label": "就业去向", "value": "拱墅机加工厂，车工" }
+        ]
+      },
+      {
+        "slug": "panel",
+        "name": "孙磊的配电箱",
+        "summary": "照明回路自己接完并测了绝缘。结业后去物业做维修电工。",
+        "body": "孙磊接的是教室照明那路线。绝缘电阻记在本子上，陈牧复核了一次。2025年4月结业，现在在一家物业公司做维修电工。",
+        "image": "work-panel",
+        "imageAlt": "打开门的实训配电箱",
+        "specs": [
+          { "label": "工种", "value": "电工上岗" },
+          { "label": "用时", "value": "2 天" },
+          { "label": "学员", "value": "孙磊" },
+          { "label": "就业去向", "value": "物业公司，维修电工" }
+        ]
+      },
+      {
+        "slug": "seam",
+        "name": "吴迪的焊缝",
+        "summary": "平焊试板没有烧穿。结业后去钢结构厂做焊工。",
+        "body": "吴迪交的是一条平焊试板。起弧和收弧都在板内，留在焊接间的展示架上。2025年5月结业，现在在一家钢结构厂做焊工。",
+        "image": "work-weld",
+        "imageAlt": "钢板上的一条平焊缝",
+        "specs": [
+          { "label": "工种", "value": "焊条电弧焊" },
+          { "label": "用时", "value": "4 小时" },
+          { "label": "学员", "value": "吴迪" },
+          { "label": "就业去向", "value": "钢结构厂，焊工" }
+        ]
+      },
+      {
+        "slug": "drawing",
+        "name": "郑凯的零件图",
+        "summary": "轴套零件图标注改完。结业后去机械厂做制图。",
+        "body": "郑凯画的轴套图被车工班拿去对过一次。漏标的粗糙度当晚改完，第二天才交。2025年3月结业，现在在一家机械厂做制图。",
+        "image": "work-draw",
+        "imageAlt": "屏幕上的轴套零件图",
+        "specs": [
+          { "label": "工种", "value": "机械制图" },
+          { "label": "用时", "value": "3 小时" },
+          { "label": "学员", "value": "郑凯" },
+          { "label": "就业去向", "value": "机械厂，制图员" }
+        ]
+      },
+      {
+        "slug": "cabinet",
+        "name": "钱薇的控制柜",
+        "summary": "启停回路能跑通。结业后留在原车间做电工，兼看控制柜。",
+        "body": "钱薇接的是按钮启停加一个延时。指示灯按她写的顺序亮，程序存在教室那台电脑里。结业后回原车间做电工，开始碰控制柜。",
+        "image": "work-cabinet",
+        "imageAlt": "小型控制柜和亮着的指示灯",
+        "specs": [
+          { "label": "工种", "value": "PLC入门" },
+          { "label": "用时", "value": "5 小时" },
+          { "label": "学员", "value": "钱薇" },
+          { "label": "就业去向", "value": "原车间电工" }
+        ]
+      }
+    ],
+    "news": [
+      {
+        "slug": "spring-2026",
+        "name": "2026年春季招生开始",
+        "summary": "2026-03-02 · 数控、电工、焊接三个晚班开始报名。",
+        "date": "2026-03-02",
+        "body": "2026年春季晚班从3月16日开课。数控车工、电工上岗、焊条电弧焊三个班同时收，晚班晚上六点到八点半。名额到教务室登记，也可以先预约试听。课表贴在门厅。",
+        "image": "news-night",
+        "imageAlt": "二楼晚班教室亮着灯"
+      },
+      {
+        "slug": "exam-april",
+        "name": "4月低压电工证报名通知",
+        "summary": "2026-04-02 · 四月低压电工证还剩11个名额。",
+        "date": "2026-04-02",
+        "body": "低压电工四月考试还剩11个名额。已经在读电工班的学员优先。要考的人周三前到教务室登记，带身份证复印件。考证费不包含在学费里。",
+        "image": "news-exam",
+        "imageAlt": "教务室桌上的考证名单"
+      },
+      {
+        "slug": "wire-lab",
+        "name": "电工实训室材料已更换",
+        "summary": "2026-06-18 · 电工室换上新导线，六月班照常招生。",
+        "date": "2026-06-18",
+        "body": "实训室这周换了2.5平方的导线和一批线槽，旧线已经清走。六月电工晚班照常招生，上课时间是晚上六点到八点半。想报名的人可以先来试听。",
+        "image": "news-wire",
+        "imageAlt": "电工室架子上的新导线"
+      },
+      {
+        "slug": "open-shop",
+        "name": "周六上午开放车间",
+        "summary": "2026-09-05 · 9月12日上午开放车间，可当场预约试听。",
+        "date": "2026-09-05",
+        "body": "9月12日上午九点到十一点，石桥路车间开放。只看不操作。想报名的人可以当场预约试听，也可以看看学员留在车间的工件。",
+        "image": "news-meet",
+        "imageAlt": "周六上午打开的车间大门"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "南栈技能学校（虚构）",
+      "description": "杭州拱墅石桥路的职业技能学校，六门工种课白天和晚班都开。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "carousel",
+          "anchor": "hero",
+          "tone": "image",
+          "data": {
+            "label": "石桥路校区",
+            "title": "学会技术，好找工作",
+            "lead": "六门课在开，白天和晚班都有。",
+            "primaryLabel": "预约试听",
+            "primaryHref": "contact/index.html",
+            "secondaryLabel": "看课程",
+            "secondaryHref": "courses/index.html",
+            "interval": "4000",
+            "slides": [
+              { "image": "hero-shop", "imageAlt": "石桥路车间白天的车床区" },
+              { "image": "hero-class", "imageAlt": "晚班教室里学员对着图纸" },
+              { "image": "hero-gate", "imageAlt": "校区门口的门厅和楼梯" },
+              { "image": "hero-bench", "imageAlt": "钳工台上的量具和零件" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "numbers",
+          "tone": "light",
+          "data": {
+            "title": "办学实力",
+            "lead": "2009年开办，校区在拱墅石桥路。",
+            "items": [
+              { "value": "2009", "label": "开办年份" },
+              { "value": "4", "label": "在岗老师" },
+              { "value": "6", "label": "在开课程" },
+              { "value": "1286", "label": "在册学员" }
+            ]
+          }
+        },
+        {
+          "type": "campus",
+          "variant": "split",
+          "anchor": "campus",
+          "tone": "light",
+          "data": {
+            "title": "学校简介",
+            "lead": "车间、教室和晚班都在石桥路这一栋。",
+            "linkLabel": "看简介",
+            "href": "about/index.html",
+            "image": "campus-main",
+            "imageAlt": "石桥路校区楼外白天",
+            "thumbs": [
+              { "image": "campus-hall", "imageAlt": "门厅里的课表和楼梯" },
+              { "image": "campus-room", "imageAlt": "二楼晚班教室的座位" },
+              { "image": "campus-yard", "imageAlt": "楼侧停自行车的院子" }
+            ]
+          }
+        },
+        {
+          "type": "services",
+          "variant": "lineup",
+          "anchor": "courses",
+          "tone": "dark",
+          "data": {
+            "title": "课程设置",
+            "lead": "六门都在开，学费不含考证费。",
+            "items": [
+              {
+                "name": "数控车工",
+                "text": "96课时。适合想上车床的在职人员。",
+                "price": "7,860 元",
+                "href": "courses/cnc-lathe.html",
+                "image": "course-cnc",
+                "imageAlt": "学员在数控车床前对刀"
+              },
+              {
+                "name": "电工上岗",
+                "text": "72课时。适合要考低压电工证的人。",
+                "price": "4,280 元",
+                "href": "courses/elec-install.html",
+                "image": "course-elec",
+                "imageAlt": "学员在配电箱前接线"
+              },
+              {
+                "name": "焊条电弧焊",
+                "text": "64课时。适合想学平焊的在职人员。",
+                "price": "5,160 元",
+                "href": "courses/weld-arc.html",
+                "image": "course-weld",
+                "imageAlt": "学员戴面罩在焊接间操作"
+              },
+              {
+                "name": "机械制图",
+                "text": "48课时。适合要看图上车床的人。",
+                "price": "3,240 元",
+                "href": "courses/cad-mech.html",
+                "image": "course-cad",
+                "imageAlt": "学员在电脑前改零件图"
+              },
+              {
+                "name": "PLC入门",
+                "text": "56课时。适合已经学过电工的人。",
+                "price": "4,960 元",
+                "href": "courses/plc-basic.html",
+                "image": "course-plc",
+                "imageAlt": "学员在控制柜前看指示灯"
+              },
+              {
+                "name": "电梯维保",
+                "text": "80课时。适合物业维修想考上岗的人。",
+                "price": "6,430 元",
+                "href": "courses/lift-maint.html",
+                "image": "course-lift",
+                "imageAlt": "学员在电梯机房看控制柜"
+              }
+            ]
+          }
+        },
+        {
+          "type": "advantage",
+          "variant": "switch",
+          "anchor": "advantage",
+          "tone": "light",
+          "data": {
+            "title": "办学优势",
+            "lead": "实操有师傅带，晚班能上，结业可推荐。",
+            "items": [
+              {
+                "name": "师傅在工位带",
+                "text": "实操时老师站在机床旁边看操作。",
+                "image": "adv-bench",
+                "imageAlt": "老师站在车床卡盘旁指导"
+              },
+              {
+                "name": "晚班收到八点半",
+                "text": "周一到周五晚上六点到八点半。",
+                "image": "adv-night",
+                "imageAlt": "晚上仍亮灯的实训车间"
+              },
+              {
+                "name": "考证按月另排",
+                "text": "低压电工和焊工考证不占正课。",
+                "image": "adv-exam",
+                "imageAlt": "教务桌上摊开的考证日程"
+              },
+              {
+                "name": "结业推荐就业",
+                "text": "结业开推荐表，介绍到合作车间，不包分配。",
+                "image": "adv-shop",
+                "imageAlt": "老师把推荐表交给学员"
+              }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "band",
+          "tone": "image",
+          "data": {
+            "image": "band-night",
+            "imageAlt": "晚班车间里还亮着的灯",
+            "caption": "石桥路车间，晚班还在上课。"
+          }
+        },
+        {
+          "type": "cases",
+          "variant": "gallery",
+          "anchor": "works",
+          "tone": "light",
+          "data": {
+            "title": "学员风采",
+            "lead": "学员交的作业，以及结业后的岗位。",
+            "items": [
+              {
+                "name": "周宁的轴套",
+                "text": "按课堂图车完。结业后去拱墅机加工厂做车工。",
+                "result": "现做数控车工",
+                "href": "works/shaft.html",
+                "image": "work-shaft",
+                "imageAlt": "车好的金属轴套放在量具旁"
+              },
+              {
+                "name": "孙磊的配电箱",
+                "text": "回路接完并测了绝缘。结业后去物业做维修电工。",
+                "result": "现做维修电工",
+                "href": "works/panel.html",
+                "image": "work-panel",
+                "imageAlt": "打开门的实训配电箱"
+              },
+              {
+                "name": "吴迪的焊缝",
+                "text": "平焊试板没有烧穿。结业后去钢结构厂做焊工。",
+                "result": "现做焊工",
+                "href": "works/seam.html",
+                "image": "work-weld",
+                "imageAlt": "钢板上的一条平焊缝"
+              },
+              {
+                "name": "郑凯的零件图",
+                "text": "轴套图标注改完。结业后去机械厂做制图。",
+                "result": "现做制图员",
+                "href": "works/drawing.html",
+                "image": "work-draw",
+                "imageAlt": "屏幕上的轴套零件图"
+              }
+            ]
+          }
+        },
+        {
+          "type": "bulletin",
+          "variant": "feed",
+          "anchor": "news",
+          "tone": "dark",
+          "data": {
+            "title": "招生资讯",
+            "lead": "开班、考证和剩余名额。",
+            "items": [
+              {
+                "date": "2026-03-02",
+                "name": "2026年春季招生开始",
+                "text": "数控、电工、焊接三个晚班同时收。",
+                "href": "news/spring-2026.html",
+                "image": "news-night",
+                "imageAlt": "二楼晚班教室亮着灯"
+              },
+              {
+                "date": "2026-04-02",
+                "name": "4月低压电工证报名通知",
+                "text": "四月考试还剩11个名额。",
+                "href": "news/exam-april.html",
+                "image": "news-exam",
+                "imageAlt": "教务室桌上的考证名单"
+              },
+              {
+                "date": "2026-06-18",
+                "name": "电工实训室材料已更换",
+                "text": "新导线已经换上，六月电工晚班照常招生。",
+                "href": "news/wire-lab.html",
+                "image": "news-wire",
+                "imageAlt": "电工室架子上的新导线"
+              }
+            ]
+          }
+        },
+        {
+          "type": "team",
+          "variant": "cards",
+          "anchor": "team",
+          "tone": "light",
+          "data": {
+            "title": "师资力量",
+            "lead": "车工、电工、制图、焊接，都在车间上课。",
+            "items": [
+              {
+                "name": "周岚",
+                "role": "数控实训",
+                "text": "教龄11年，车工高级工，常驻车床区。",
+                "href": "teachers/zhou-lan.html",
+                "image": "teacher-zhou",
+                "imageAlt": "周岚站在数控车床旁边"
+              },
+              {
+                "name": "陈牧",
+                "role": "电工实训",
+                "text": "教龄9年，持低压电工考评员证。",
+                "href": "teachers/chen-mu.html",
+                "image": "teacher-chen",
+                "imageAlt": "陈牧在电工室看学员接线"
+              },
+              {
+                "name": "何淑敏",
+                "role": "制图老师",
+                "text": "教龄14年，先改图，再送去车床。",
+                "href": "teachers/he-shumin.html",
+                "image": "teacher-he",
+                "imageAlt": "何淑敏俯身看学员的图纸"
+              },
+              {
+                "name": "马峻",
+                "role": "焊接实训",
+                "text": "教龄16年，焊工高级工，只带电弧焊。",
+                "href": "teachers/ma-jun.html",
+                "image": "teacher-ma",
+                "imageAlt": "马峻在焊接间检查焊缝"
+              }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "book",
+          "tone": "dark",
+          "data": {
+            "title": "预约试听",
+            "lead": "试听不收费。来之前打0571-86904326。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "学校简介｜南栈技能学校（虚构）",
+      "description": "2009年在拱墅石桥路租车间办学，现在六个工种同时开班。",
+      "sections": [
+        {
+          "type": "why",
+          "variant": "steps",
+          "anchor": "history",
+          "tone": "light",
+          "data": {
+            "title": "发展历程",
+            "lead": "从2009年租下石桥路车间办起。",
+            "items": [
+              { "name": "租下石桥路车间", "text": "2009年先租一层，只开了车工班。" },
+              { "name": "电工班首届取证", "text": "2014年第一批低压电工取证。" },
+              { "name": "拱墅校区加盖一层", "text": "2018年往上加了一层教室。" },
+              { "name": "晚班收到八点半", "text": "2023年起晚班收到晚上八点半。" }
+            ]
+          }
+        },
+        {
+          "type": "yard",
+          "variant": "grid",
+          "anchor": "yard",
+          "tone": "light",
+          "data": {
+            "title": "校区环境",
+            "lead": "石桥路校区的楼、门厅、教室和侧院。",
+            "items": [
+              { "image": "campus-main", "imageAlt": "石桥路校区楼外白天", "caption": "教学楼" },
+              { "image": "campus-hall", "imageAlt": "门厅里的课表和楼梯", "caption": "门厅" },
+              { "image": "campus-room", "imageAlt": "二楼晚班教室的座位", "caption": "晚班教室" },
+              { "image": "campus-yard", "imageAlt": "楼侧停自行车的院子", "caption": "侧院" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "about-numbers",
+          "tone": "light",
+          "data": {
+            "title": "办学数据",
+            "lead": "结业人数、在册班次、上期取证和合作车间。",
+            "items": [
+              { "value": "1860", "label": "累计结业" },
+              { "value": "42", "label": "在册班次" },
+              { "value": "93.7%", "label": "上期取证" },
+              { "value": "11", "label": "合作车间" }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "book",
+          "tone": "dark",
+          "data": {
+            "title": "预约看校区",
+            "lead": "周六上午可以约来看车间。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "courses",
+      "title": "课程设置｜南栈技能学校（虚构）",
+      "description": "六门在开课程：机械加工、电控、焊接和特种设备。",
+      "sections": [
+        {
+          "type": "course-board",
+          "variant": "tabs",
+          "anchor": "board",
+          "tone": "light",
+          "data": {
+            "title": "课程设置",
+            "lead": "按工种分三类，写清课时、学费和证书。",
+            "groups": [
+              {
+                "name": "机械加工",
+                "items": [
+                  {
+                    "name": "数控车工",
+                    "hours": "96 课时",
+                    "price": "7,860 元",
+                    "href": "courses/cnc-lathe.html",
+                    "image": "course-cnc",
+                    "imageAlt": "学员在数控车床前对刀"
+                  },
+                  {
+                    "name": "机械制图",
+                    "hours": "48 课时",
+                    "price": "3,240 元",
+                    "href": "courses/cad-mech.html",
+                    "image": "course-cad",
+                    "imageAlt": "学员在电脑前改零件图"
+                  }
+                ]
+              },
+              {
+                "name": "电控自动化",
+                "items": [
+                  {
+                    "name": "电工上岗",
+                    "hours": "72 课时",
+                    "price": "4,280 元",
+                    "href": "courses/elec-install.html",
+                    "image": "course-elec",
+                    "imageAlt": "学员在配电箱前接线"
+                  },
+                  {
+                    "name": "PLC入门",
+                    "hours": "56 课时",
+                    "price": "4,960 元",
+                    "href": "courses/plc-basic.html",
+                    "image": "course-plc",
+                    "imageAlt": "学员在控制柜前看指示灯"
+                  }
+                ]
+              },
+              {
+                "name": "焊接与特种",
+                "items": [
+                  {
+                    "name": "焊条电弧焊",
+                    "hours": "64 课时",
+                    "price": "5,160 元",
+                    "href": "courses/weld-arc.html",
+                    "image": "course-weld",
+                    "imageAlt": "学员戴面罩在焊接间操作"
+                  },
+                  {
+                    "name": "电梯维保",
+                    "hours": "80 课时",
+                    "price": "6,430 元",
+                    "href": "courses/lift-maint.html",
+                    "image": "course-lift",
+                    "imageAlt": "学员在电梯机房看控制柜"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "book",
+          "tone": "dark",
+          "data": {
+            "title": "预约试听",
+            "lead": "还没定报哪门，可以先来听一节。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "teachers",
+      "title": "师资力量｜南栈技能学校（虚构）",
+      "description": "车工、电工、制图、焊接四位在岗老师。",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "portraits",
+          "anchor": "faculty",
+          "tone": "light",
+          "data": {
+            "title": "师资力量",
+            "lead": "车工、电工、制图、焊接，都是在岗老师。",
+            "collection": "teachers"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "book",
+          "tone": "dark",
+          "data": {
+            "title": "预约试听",
+            "lead": "试听时可以对上带课的老师。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "works",
+      "title": "学员风采｜南栈技能学校（虚构）",
+      "description": "学员的课堂作业，以及结业后的就业岗位。",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "cards",
+          "anchor": "gallery",
+          "tone": "light",
+          "data": {
+            "title": "学员风采",
+            "lead": "工件是课堂作业，岗位是结业后的去向。",
+            "collection": "works"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "book",
+          "tone": "dark",
+          "data": {
+            "title": "预约试听",
+            "lead": "想来学同样的工种，先约一节试听。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "招生资讯｜南栈技能学校（虚构）",
+      "description": "春季招生、考证报名、实训材料更换和周六开放车间。",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "rows",
+          "anchor": "feed",
+          "tone": "light",
+          "data": {
+            "title": "招生资讯",
+            "lead": "报名、考证和开班通知。",
+            "collection": "news"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "book",
+          "tone": "dark",
+          "data": {
+            "title": "预约试听",
+            "lead": "看到想报的班，可以先来试听。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "预约试听｜南栈技能学校（虚构）",
+      "description": "石桥路校区热线0571-86904326，周一到周六可约试听。",
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "desk",
+          "anchor": "reach",
+          "tone": "light",
+          "data": {
+            "title": "预约试听",
+            "lead": "电话、地址和二维码都在这里。",
+            "qrs": [
+              { "image": "qr-advisor", "imageAlt": "课程顾问的联系二维码", "label": "课程顾问" },
+              { "image": "qr-official", "imageAlt": "学校公众号的二维码", "label": "学校公众号" }
+            ]
+          }
+        },
+        {
+          "type": "inquiry",
+          "variant": "note",
+          "anchor": "note",
+          "tone": "dark",
+          "data": {
+            "title": "留言预约",
+            "lead": "留下姓名和想学的工种，顾问会回电话。"
+          }
+        }
+      ]
+    }
+  ]
+}

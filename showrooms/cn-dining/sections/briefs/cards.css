@@ -1,0 +1,32 @@
+.brief-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.brief {
+  min-width: 0;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.brief img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.brief a {
+  text-decoration: none;
+}
+
+.brief a:hover,
+.brief a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .brief-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

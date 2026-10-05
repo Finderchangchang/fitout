@@ -1,0 +1,31 @@
+.dossier {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.dossier-copy {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+}
+
+.dossier-points {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.dossier-points p {
+  margin-top: 0.35rem;
+}
+
+.dossier-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .dossier:has(.dossier-photo) {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "note": "关于页两台设备，各一张图。美容店和二手车可以换成自己的设备。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 2,
+      "max": 2,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "pair": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "family": "gear",
+      "fit": "两张并排设备图",
+      "source": "样板间自写"
+    }
+  }
+}

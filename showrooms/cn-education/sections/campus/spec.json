@@ -1,0 +1,29 @@
+{
+  "note": "校区介绍。文字在左，主图和缩略图在右。数字不放在这一块。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "linkLabel": { "type": "string", "required": true, "maxChars": 8 },
+    "href": { "type": "string", "required": true, "maxChars": 200 },
+    "image": { "type": "image", "required": true, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+    "thumbs": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 3,
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "split": {
+      "needsImage": false,
+      "family": "story",
+      "fit": "左文右图，缩略图在主图下面",
+      "source": "样板间自写"
+    }
+  }
+}

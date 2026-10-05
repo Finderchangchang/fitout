@@ -1,0 +1,72 @@
+{
+  "note": "这一份同时用来核对 site.json 里的 products。图片可无，没有就不出 img，不换版式。primaryLabel 和 primaryHref 由拼装脚本填。",
+  "fields": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxChars": 20,
+      "hint": "产品名"
+    },
+    "summary": {
+      "type": "string",
+      "required": true,
+      "maxChars": 80,
+      "hint": "一两句，说清这是什么"
+    },
+    "image": {
+      "type": "image",
+      "required": false,
+      "maxChars": 200,
+      "hint": "可无"
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": false,
+      "maxChars": 30,
+      "hint": "有图才需要。不填就用产品名"
+    },
+    "specs": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 8,
+      "item": {
+        "label": {
+          "type": "string",
+          "required": true,
+          "maxChars": 8,
+          "hint": "规格名"
+        },
+        "value": {
+          "type": "string",
+          "required": true,
+          "maxChars": 24,
+          "hint": "规格值"
+        }
+      },
+      "hint": "至少一条规格"
+    },
+    "primaryLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8,
+      "filledBy": "build",
+      "hint": "户型主按钮"
+    },
+    "primaryHref": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200,
+      "filledBy": "build",
+      "hint": "联系页"
+    }
+  },
+  "variants": {
+    "article": {
+      "needsImage": false,
+      "family": "article",
+      "fit": "名称、说明、规格表、去联系页",
+      "source": "自写文章。产品卡的名称链接来自 hyperui product-cards/1.html"
+    }
+  }
+}

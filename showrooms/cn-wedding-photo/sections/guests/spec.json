@@ -1,0 +1,24 @@
+{
+  "note": "客片原话。人像必须是实拍位。写真馆和儿童馆可以换成家长或客人的原话。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "href": { "type": "string", "required": false, "maxChars": 200 },
+    "hrefLabel": { "type": "string", "required": false, "maxChars": 8 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 80 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "wall": { "needsImage": true, "imageField": "items.image", "family": "voices", "fit": "三张竖图旁边是原话" }
+  }
+}

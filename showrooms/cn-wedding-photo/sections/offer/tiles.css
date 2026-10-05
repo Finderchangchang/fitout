@@ -1,0 +1,38 @@
+.offer-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.offer-card {
+  min-width: 0;
+}
+
+.offer-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.item-title {
+  font-size: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.offer-no {
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--on-media);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .offer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .offer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,7 @@
+.page-banner .section-title {
+  font-size: var(--fs-6);
+}
+
+.page-banner .kicker {
+  margin-bottom: 0.35rem;
+}

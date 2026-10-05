@@ -1,0 +1,13 @@
+.group-label,
+.contact-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}

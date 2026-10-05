@@ -1,0 +1,17 @@
+.field-land {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.field-land img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .field-land {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}

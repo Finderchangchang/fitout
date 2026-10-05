@@ -1,0 +1,22 @@
+.photo-band {
+  padding: 0;
+}
+
+.photo-band img {
+  width: 100%;
+  aspect-ratio: 2.4 / 1;
+  object-fit: cover;
+  display: block;
+  max-height: 24rem;
+}
+
+.photo-band .meta {
+  padding: 0.75rem 0 0;
+}
+
+@media (min-width: 1024px) {
+  .photo-band img {
+    aspect-ratio: 4 / 1;
+    max-height: none;
+  }
+}

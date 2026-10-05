@@ -1,0 +1,104 @@
+{
+  "id": "_smoke",
+  "name": "冒烟样板间",
+  "note": "不是正式样板间。只用来验收样板间引擎：页面种类、两个集合、轮播、数字、入场、页内 Banner、演示占位图。",
+  "industry": "store-service",
+  "niche": "beauty",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "电话预约",
+    "secondary": "看项目",
+    "form": "发消息"
+  },
+  "shell": {
+    "header": ["standard", "centered"],
+    "footer": ["simple", "columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 9, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "services", "label": "服务", "listFile": "services/index.html" },
+    { "id": "news", "label": "消息", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel", "text"] },
+        { "type": "trust", "required": true, "variants": ["stats", "certs"] },
+        { "type": "services", "required": true, "variants": ["grid-cards", "list-rows"] },
+        { "type": "cases", "required": true, "variants": ["gallery", "list"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "testimonials", "required": true, "variants": ["grid-cards", "spotlight"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["points", "steps"] },
+        { "type": "faq", "required": false, "variants": ["accordion", "two-column"] }
+      ]
+    },
+    {
+      "id": "services",
+      "file": "services/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] }
+      ]
+    },
+    {
+      "id": "service",
+      "file": "services/{slug}.html",
+      "kind": "detail",
+      "from": "services",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "team",
+      "file": "team/index.html",
+      "kind": "team",
+      "order": [
+        { "type": "team", "required": true, "variants": ["cards", "roster"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] }
+      ]
+    },
+    {
+      "id": "news-item",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card", "banner"] }
+      ]
+    }
+  ]
+}

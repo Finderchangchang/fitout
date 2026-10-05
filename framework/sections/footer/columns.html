@@ -1,0 +1,31 @@
+<!-- 结构来自 localbiz FooterColumns，备案行参考 PageTemplatify。 -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-name">{{name}}</p>
+        {{#if summary}}<p>{{summary}}</p>{{/if}}
+        <p><a href="{{homeHref}}">{{icon:home:16}}首页</a></p>
+      </div>
+      <div>
+        <p class="footer-label">导航</p>
+        <ul class="footer-links">
+          {{#each nav}}<li><a href="{{href}}">{{label}}</a></li>{{/each}}
+        </ul>
+      </div>
+      <div>
+        <p class="footer-label">联系</p>
+        <p><a href="tel:{{phoneTel}}">{{icon:phone:16}}{{phone}}</a></p>
+      {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:16}}{{email}}</a></p>{{/if}}
+      {{#if wechat}}<p>{{icon:chat:16}}{{wechat}}</p><p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
+      <p><a href="{{amapUrl}}">{{icon:map-pin:16}}{{address}}</a></p>
+      {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>{{year}} {{name}}</p>
+      {{#if icp}}<p><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer">{{icp}}</a></p>{{/if}}
+      {{#if police}}<p><a href="{{policeUrl}}" rel="noopener noreferrer">{{police}}</a></p>{{/if}}
+    </div>
+  </div>
+</footer>

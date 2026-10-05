@@ -1,0 +1,35 @@
+.tri-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.tri-item {
+  margin: 0;
+  min-width: 0;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.tri-item img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  height: auto;
+}
+
+.tri-item figcaption {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem;
+}
+
+.tri-item figcaption span {
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .tri-grid {
+    grid-template-columns: 1.45fr 1fr 1fr;
+    align-items: start;
+  }
+}

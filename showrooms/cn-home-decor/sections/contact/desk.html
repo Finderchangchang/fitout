@@ -1,0 +1,40 @@
+<section class="section" data-section="contact" data-family="desk" id="{{anchor}}">
+  <div class="container contact-split">
+    <div>
+      <div class="section-head cm-head">
+        {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+        <span class="cm-rule" aria-hidden="true"></span>
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      </div>
+      <p class="contact-phone"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+      {{#if email}}<p><a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
+      {{#if wechat}}<p>微信 {{wechat}}</p><p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
+      <p><a href="{{amapUrl}}">{{address}}</a></p>
+      <h3 class="contact-sub">量房时间</h3>
+      {{#each hours}}
+      <p>{{day}} <span class="nums">{{time}}</span></p>
+      {{/each}}
+      <div class="contact-codes" data-media-group="qr">
+        {{#if wechatQrSrc}}
+        <figure class="contact-qr">
+          <img src="{{wechatQrSrc}}" alt="{{name}}公众号二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
+          <figcaption>关注公众号</figcaption>
+        </figure>
+        {{/if}}
+        {{#if image}}
+        <figure class="contact-qr">
+          <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+          <figcaption>量房顾问</figcaption>
+        </figure>
+        {{/if}}
+      </div>
+    </div>
+    <aside class="inquiry-plate">
+      <h3 class="item-title">在线留言</h3>
+      <p>留下小区、户型和电话。报价是参考价，以实际量房为准。工作日当天回复。</p>
+      {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
+      <p class="meta">也可以直接打电话，约上门量房的时间。</p>
+    </aside>
+  </div>
+</section>

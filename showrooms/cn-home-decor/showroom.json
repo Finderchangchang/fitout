@@ -1,0 +1,148 @@
+{
+  "id": "cn-home-decor",
+  "name": "国内风 · 装修公司",
+  "industry": "home-decor",
+  "niche": "renovation",
+  "flavor": "cn",
+  "note": "给家装公司、整装公司和全屋定制工厂店。版式也能给建材门店换文案复用。首页把案例、套餐价和工地摆开，引导免费量房。报价写参考价，以实际量房为准。",
+  "buttons": {
+    "primary": "免费量房",
+    "secondary": "看看案例",
+    "form": "在线留言"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "projects", "label": "装修案例", "listFile": "projects/index.html" },
+    { "id": "designers", "label": "设计团队", "listFile": "designers/index.html" },
+    { "id": "packages", "label": "装修套餐", "listFile": "packages/index.html" },
+    { "id": "notes", "label": "装修知识", "listFile": "notes/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "lanes", "required": true, "variants": ["index"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "cases", "required": true, "variants": ["gallery"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "offer", "required": true, "variants": ["tiles"] },
+        { "type": "team", "required": true, "variants": ["cards"] },
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "collection-list", "required": true, "variants": ["digest"] },
+        { "type": "cta-band", "required": true, "variants": ["simple"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["points"] },
+        { "type": "trust", "required": true, "variants": ["certs"] },
+        { "type": "cases", "required": true, "variants": ["gallery"] }
+      ]
+    },
+    {
+      "id": "projects",
+      "file": "projects/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["board"] }
+      ]
+    },
+    {
+      "id": "project",
+      "file": "projects/{slug}.html",
+      "kind": "detail",
+      "from": "projects",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "designers",
+      "file": "designers/index.html",
+      "kind": "team",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["board"] }
+      ]
+    },
+    {
+      "id": "designer",
+      "file": "designers/{slug}.html",
+      "kind": "detail",
+      "from": "designers",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "packages",
+      "file": "packages/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["board"] }
+      ]
+    },
+    {
+      "id": "package",
+      "file": "packages/{slug}.html",
+      "kind": "detail",
+      "from": "packages",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "craft",
+      "file": "craft/index.html",
+      "kind": "process",
+      "order": [
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "services", "required": true, "variants": ["nodes"] },
+        { "type": "cases", "required": true, "variants": ["gallery"] }
+      ]
+    },
+    {
+      "id": "notes",
+      "file": "notes/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["board"] }
+      ]
+    },
+    {
+      "id": "note",
+      "file": "notes/{slug}.html",
+      "kind": "news-detail",
+      "from": "notes",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["desk"] },
+        { "type": "faq", "required": true, "variants": ["accordion"] }
+      ]
+    }
+  ]
+}

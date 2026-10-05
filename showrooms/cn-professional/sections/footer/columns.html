@@ -1,0 +1,41 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-name">{{name}}</p>
+        {{#if summary}}<p>{{summary}}</p>{{/if}}
+        <p class="phone-line"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+      </div>
+      <div>
+        <p class="footer-label">导航</p>
+        <ul class="footer-links">
+          {{#each nav}}<li><a href="{{href}}">{{label}}</a></li>{{/each}}
+        </ul>
+      </div>
+      <div>
+        <p class="footer-label">到访</p>
+        <p><a href="{{amapUrl}}">{{icon:map-pin:16}}{{address}}</a></p>
+        {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:16}}{{email}}</a></p>{{/if}}
+        {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
+      </div>
+      <div class="footer-qr">
+        <p class="footer-label">扫码</p>
+        <div class="qr-pair">
+          <div class="qr-slot">
+            {{#if wechatQrSrc}}<img src="{{wechatQrSrc}}" alt="顾问微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">{{/if}}
+            <p>加顾问微信</p>
+          </div>
+          <div class="qr-slot">
+            <img class="qr-office" alt="公众号二维码" width="800" height="800" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+            <p>关注公众号</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>{{year}} {{name}}</p>
+      {{#if icp}}<p><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer">{{icp}}</a></p>{{/if}}
+      {{#if police}}<p><a href="{{policeUrl}}" rel="noopener noreferrer">{{police}}</a></p>{{/if}}
+    </div>
+  </div>
+</footer>

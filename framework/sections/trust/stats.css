@@ -1,0 +1,21 @@
+.stat-value {
+  font-size: var(--fs-4);
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.stat-grid .card {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "note": "热线、门诊时间、地址和两张二维码。在线预约不放在这一块。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "qrs": {
+      "type": "list",
+      "required": true,
+      "min": 2,
+      "max": 2,
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+        "label": { "type": "string", "required": true, "maxChars": 12 }
+      }
+    }
+  },
+  "variants": {
+    "desk": {
+      "needsImage": false,
+      "family": "visit",
+      "fit": "左边热线和地址，右边两张二维码",
+      "source": "样板间自写"
+    }
+  }
+}

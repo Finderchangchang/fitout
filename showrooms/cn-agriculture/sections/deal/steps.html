@@ -1,0 +1,24 @@
+<section class="section" data-section="deal" data-family="path" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      <span class="grain-kicker" aria-hidden="true"></span>
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    {{#if image}}
+    <figure class="deal-photo" data-media-group="load">
+      <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+    </figure>
+    {{/if}}
+    <ol class="deal-grid">
+      {{#each items}}
+      <li>
+        <span class="grain-kicker" aria-hidden="true"></span>
+        <h3>{{name}}</h3>
+        <p>{{text}}</p>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

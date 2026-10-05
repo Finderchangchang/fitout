@@ -1,0 +1,322 @@
+{
+  "id": "smoke",
+  "showroom": "_smoke",
+  "industry": "store-service",
+  "niche": "beauty",
+  "businessType": "LocalBusiness",
+  "name": "青禾造型（虚构）",
+  "summary": "学院路的理发店，剪、染和护理都在店里做。",
+  "contact": {
+    "phone": "0571-86001280",
+    "wechat": "qinghe-salon",
+    "wechatQr": "",
+    "email": "hello@qinghe.example",
+    "address": "杭州市西湖区学院路 18 号（虚构地址）",
+    "hours": [
+      { "day": "周二至周五", "time": "10:00-20:00" },
+      { "day": "周六至周日", "time": "10:00-21:00" }
+    ],
+    "formUrl": ""
+  },
+  "nav": [
+    { "label": "服务", "href": "services/index.html" },
+    { "label": "关于", "href": "about/index.html" },
+    { "label": "新闻", "href": "news/index.html" },
+    { "label": "联系", "href": "contact/index.html" }
+  ],
+  "shell": {
+    "header": "standard",
+    "footer": "simple",
+    "floatContact": "dock"
+  },
+  "collections": {
+    "services": [
+      {
+        "slug": "cut",
+        "name": "剪发",
+        "summary": "修长度，再吹干。做之前先看发质。",
+        "body": "只剪店里能做完的长度。刘海、层次和发尾分开说，不当场加项目。",
+        "image": "svc-1",
+        "imageAlt": "剪完的短发侧面",
+        "specs": [{ "label": "时长", "value": "约 40 分钟" }]
+      },
+      {
+        "slug": "color",
+        "name": "染发",
+        "summary": "只染全头，颜色在店里选。",
+        "body": "不接漂到白金。染完用店里的护理冲一遍，不含剪。",
+        "image": "svc-2",
+        "imageAlt": "染后的棕色头发",
+        "specs": [{ "label": "时长", "value": "约 2 小时" }]
+      },
+      {
+        "slug": "perm",
+        "name": "烫发",
+        "summary": "冷烫，卷度当面定。",
+        "body": "头发太干就先劝你改期。不含剪，也不含染。",
+        "image": "svc-3",
+        "imageAlt": "烫完的自然卷",
+        "specs": [{ "label": "时长", "value": "约 3 小时" }]
+      },
+      {
+        "slug": "care",
+        "name": "护理",
+        "summary": "只做头发，不含剪染。",
+        "body": "用店里的发膜，做完吹到干。适合染烫之后那一周。",
+        "image": "svc-4",
+        "imageAlt": "护理中的湿发",
+        "specs": [{ "label": "时长", "value": "约 50 分钟" }]
+      }
+    ],
+    "news": [
+      {
+        "slug": "spring",
+        "name": "三月的预约",
+        "summary": "三月周末要提前两天打电话。",
+        "body": "周二到周五还有空位。周六日只接到晚上七点。",
+        "date": "2026-03-02",
+        "image": "news-1",
+        "imageAlt": "柜台上的预约本"
+      },
+      {
+        "slug": "recruit",
+        "name": "招一名学徒",
+        "summary": "店里招一名学徒，从洗头做起。",
+        "body": "不包住。先来店里看一天，再决定留不留。",
+        "date": "2026-04-18",
+        "image": "news-2",
+        "imageAlt": "空着的学徒工位"
+      },
+      {
+        "slug": "hours",
+        "name": "周日改到晚上",
+        "summary": "周日营业改到晚上九点。",
+        "body": "周一仍然休息。改期从四月第一个周日开始。",
+        "date": "2026-04-01",
+        "image": "news-3",
+        "imageAlt": "晚上亮灯的门口"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "青禾造型（虚构）",
+      "description": "杭州西湖区学院路的理发店，剪、染和护理。电话 0571-86001280。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "carousel",
+          "anchor": "hero",
+          "tone": "image",
+          "data": {
+            "label": "学院路店",
+            "title": "把头发养好",
+            "lead": "剪、染、护理都在店里做，不接外带。",
+            "primaryLabel": "电话预约",
+            "primaryHref": "tel:057186001280",
+            "secondaryLabel": "看项目",
+            "secondaryHref": "services/index.html",
+            "interval": "4000",
+            "slides": [
+              { "image": "hero-1", "imageAlt": "理发店门口的白天" },
+              { "image": "hero-2", "imageAlt": "剪发椅和镜子" },
+              { "image": "hero-3", "imageAlt": "染发区的水槽" },
+              { "image": "hero-4", "imageAlt": "靠窗的等候座位" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "trust",
+          "tone": "light",
+          "data": {
+            "title": "店里这几年",
+            "lead": "数字是店里记的，不是估的。",
+            "items": [
+              { "value": "18 年", "label": "开店" },
+              { "value": "4 项", "label": "在做的项目" },
+              { "value": "3 人", "label": "店里的人" }
+            ]
+          }
+        },
+        {
+          "type": "services",
+          "variant": "grid-cards",
+          "anchor": "services",
+          "tone": "dark",
+          "data": {
+            "title": "在做的项目",
+            "lead": "价格是起步价，做之前先看头发。",
+            "items": [
+              { "name": "剪发", "text": "修长度，再吹干。", "price": "128 元起", "image": "svc-1", "imageAlt": "剪完的短发侧面" },
+              { "name": "染发", "text": "只染全头，颜色当面选。", "price": "268 元起", "image": "svc-2", "imageAlt": "染后的棕色头发" },
+              { "name": "烫发", "text": "冷烫，不含护理。", "price": "328 元起", "image": "svc-3", "imageAlt": "烫完的自然卷" },
+              { "name": "护理", "text": "只做头发，不含剪。", "price": "168 元起", "image": "svc-4", "imageAlt": "护理中的湿发" }
+            ]
+          }
+        },
+        {
+          "type": "cases",
+          "variant": "gallery",
+          "anchor": "cases",
+          "tone": "light",
+          "data": {
+            "title": "做过的头发",
+            "lead": "都是店里的客人，用化名。",
+            "items": [
+              { "name": "林女士的短发", "text": "把过肩的头发剪到耳下。", "result": "当天吹干就走", "image": "case-1", "imageAlt": "剪短后的后脑" },
+              { "name": "周先生的染发", "text": "从黑色改成棕色，只染全头。", "result": "两周后回店看色", "image": "case-2", "imageAlt": "棕色染发的正面" },
+              { "name": "陈小姐的烫发", "text": "自然卷，卷度收到肩。", "result": "不含剪", "image": "case-3", "imageAlt": "烫完的侧面" },
+              { "name": "赵女士的护理", "text": "染完一周来做发膜。", "result": "吹到干", "image": "case-4", "imageAlt": "护理后的发尾" }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "band",
+          "tone": "image",
+          "data": {
+            "image": "band-1",
+            "imageAlt": "靠窗的剪发位",
+            "caption": "店里靠窗的四个位子"
+          }
+        },
+        {
+          "type": "testimonials",
+          "variant": "grid-cards",
+          "anchor": "quotes",
+          "tone": "dark",
+          "data": {
+            "title": "客人怎么说",
+            "lead": "原话摘自店里的回访，不打分。",
+            "items": [
+              { "quote": "剪完不用再回去修，长度和我说的一样。", "name": "林女士", "role": "剪发客人" },
+              { "quote": "染之前先劝我别漂，颜色也是店里选的。", "name": "周先生", "role": "染发客人" },
+              { "quote": "护理做完头发不打结，第二天还能梳开。", "name": "陈小姐", "role": "护理客人" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "关于我们｜青禾造型（虚构）",
+      "description": "青禾造型在学院路开了十八年，店里三个人。",
+      "bannerAlt": "店内通道的深色照片",
+      "sections": [
+        {
+          "type": "why",
+          "variant": "points",
+          "anchor": "why",
+          "tone": "light",
+          "data": {
+            "title": "店里怎么做",
+            "lead": "三件事，都写在价目旁边。",
+            "items": [
+              { "name": "先看头发", "text": "太干、太脆就改期，不硬做。" },
+              { "name": "当面定价", "text": "起步价写在项目上，加项先说。" },
+              { "name": "周一休息", "text": "店里三个人，周一不营业。" }
+            ]
+          }
+        },
+        {
+          "type": "faq",
+          "variant": "accordion",
+          "anchor": "faq",
+          "tone": "light",
+          "data": {
+            "title": "常见问题",
+            "lead": "打电话之前可以先看这三条。",
+            "items": [
+              { "q": "要不要预约？", "a": "周末要预约。周二到周五可以走进来，有空位就做。" },
+              { "q": "可以只洗头吗？", "a": "不单洗。洗头含在剪、染、烫、护理里面。" },
+              { "q": "儿童可以剪吗？", "a": "六岁以上可以，和大人同一张价目。" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "title": "在做的项目｜青禾造型（虚构）",
+      "description": "剪发、染发、烫发和护理的起步价。",
+      "bannerAlt": "项目页用的店内横图",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "grid",
+          "anchor": "list",
+          "tone": "light",
+          "data": {
+            "title": "在做的项目",
+            "lead": "点进去看时长和做法。",
+            "collection": "services"
+          }
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "title": "店里的人｜青禾造型（虚构）",
+      "description": "店主何女士，剪发吴师傅，染发许师傅。",
+      "bannerAlt": "团队页用的店内横图",
+      "sections": [
+        {
+          "type": "team",
+          "variant": "cards",
+          "anchor": "team",
+          "tone": "light",
+          "data": {
+            "title": "店里的人",
+            "lead": "三个人都在店里，不挂名。",
+            "items": [
+              { "name": "何女士", "role": "店主", "text": "负责预约和护理。", "image": "team-1", "imageAlt": "店主何女士的半身" },
+              { "name": "吴师傅", "role": "剪发", "text": "在这家店剪了九年。", "image": "team-2", "imageAlt": "剪发吴师傅的半身" },
+              { "name": "许师傅", "role": "染发", "text": "只做染和烫。", "image": "team-3", "imageAlt": "染发许师傅的半身" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "店里的消息｜青禾造型（虚构）",
+      "description": "预约、招学徒和周日营业时间。",
+      "bannerAlt": "消息页用的店内横图",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "grid",
+          "anchor": "list",
+          "tone": "light",
+          "data": {
+            "title": "店里的消息",
+            "lead": "三条都是店里自己写的。",
+            "collection": "news"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "来店里｜青禾造型（虚构）",
+      "description": "学院路 18 号，电话 0571-86001280。周一休息。",
+      "bannerAlt": "联系页用的店内横图",
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "card",
+          "anchor": "contact",
+          "tone": "light",
+          "data": {
+            "title": "来店里",
+            "lead": "先打电话，店里再留位置。"
+          }
+        }
+      ]
+    }
+  ]
+}

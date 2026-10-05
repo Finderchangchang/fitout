@@ -1,0 +1,56 @@
+.detail-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.detail-photo {
+  width: 100%;
+  height: auto;
+}
+
+.detail-price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: var(--fs-3);
+}
+
+.detail-label,
+.detail-steps h3,
+.detail-faqs h3 {
+  font-size: var(--fs-2);
+  margin-top: 1rem;
+}
+
+.specs {
+  margin-top: 1rem;
+}
+
+.specs th {
+  width: 7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.detail-nav {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.detail-steps,
+.detail-faqs {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn-row {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+  }
+}

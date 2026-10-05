@@ -1,0 +1,32 @@
+.step-line {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+
+.step-line li {
+  min-width: 0;
+  padding-top: 0.85rem;
+  border-top: 3px solid var(--primary);
+}
+
+[data-tone="dark"] .step-line li {
+  border-top-color: var(--on-media);
+}
+
+.step-line h3 {
+  font-size: 1.125rem;
+}
+
+.step-line p {
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 1024px) {
+  .step-line {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+}

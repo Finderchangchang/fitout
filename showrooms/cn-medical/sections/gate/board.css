@@ -1,0 +1,46 @@
+.gate-note {
+  margin: 0 0 var(--gap);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.gate-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.gate-item {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--primary);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.gate-no {
+  font-size: var(--fs-4);
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.gate-item .item-title {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .gate-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gate-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

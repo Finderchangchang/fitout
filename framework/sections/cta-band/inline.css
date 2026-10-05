@@ -1,0 +1,15 @@
+.cta-inline {
+  display: grid;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .cta-inline {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .cta-inline .section-head {
+    margin-bottom: 0;
+  }
+}

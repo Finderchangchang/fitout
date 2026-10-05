@@ -1,0 +1,27 @@
+.news-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.news-row {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  align-items: center;
+}
+
+.news-row img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.news-row a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .news-row {
+    grid-template-columns: 16rem 1fr;
+  }
+}

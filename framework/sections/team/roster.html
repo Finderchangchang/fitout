@@ -1,0 +1,23 @@
+<!-- 结构见 spec.json 的 source。样式数值只走 token。 -->
+<section class="section" data-section="team" data-family="people" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{icon:users:24}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div>
+      {{#each items}}
+      <article class="person-row">
+        {{icon:user:20}}
+        <div>
+          <h3 class="item-title">{{name}}</h3>
+          <p class="meta">{{role}}</p>
+          {{#if text}}<p>{{text}}</p>{{/if}}
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

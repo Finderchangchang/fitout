@@ -1,0 +1,26 @@
+.year-rail {
+  display: grid;
+  margin-left: 0.35rem;
+  border-left: 2px solid var(--accent);
+}
+
+.year-rail li {
+  position: relative;
+  padding: 0 0 1.6rem 1.25rem;
+}
+
+.year-rail li::before {
+  content: "";
+  position: absolute;
+  left: -0.42rem;
+  top: 0.35rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--accent);
+}
+
+.year-mark {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-3);
+}

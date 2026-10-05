@@ -1,0 +1,16 @@
+.report {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+  max-width: 46rem;
+}
+
+.report img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.report .prose {
+  max-width: 40rem;
+}

@@ -1,0 +1,78 @@
+.np-splitband {
+  display: grid;
+  padding: 0;
+}
+
+.np-splitband-copy {
+  background: var(--surface);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  padding: var(--section-y) clamp(1rem, 4vw, 3.5rem);
+}
+
+.np-splitband-inner {
+  max-width: 36rem;
+}
+
+.np-splitband-copy .section-lead {
+  color: var(--text-muted);
+}
+
+.np-reasons {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.25rem;
+}
+
+.np-reasons h3 {
+  font-size: var(--fs-2);
+}
+
+.np-splitband-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 2.4 / 1;
+}
+
+@media (min-width: 1024px) {
+  .np-splitband {
+    grid-template-columns: 0.92fr 1.08fr;
+  }
+
+  .np-splitband-photo img {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 22rem;
+  }
+}
+
+.btn {
+  min-height: 48px;
+}
+
+[data-tone="dark"] a,
+[data-tone="image"] a {
+  color: var(--on-media);
+}
+
+[data-tone="dark"] .card,
+[data-tone="image"] .card,
+[data-tone="dark"] .card a,
+[data-tone="image"] .card a {
+  color: var(--text);
+}
+
+[data-tone="dark"] .card a,
+[data-tone="image"] .card a {
+  color: var(--primary);
+}
+
+.np-quote-copy a {
+  color: var(--primary);
+}
+
+.np-quote-copy .btn-primary {
+  color: var(--primary-contrast);
+}

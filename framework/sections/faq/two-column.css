@@ -1,0 +1,11 @@
+.faq-columns {
+  display: grid;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .faq-columns {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}

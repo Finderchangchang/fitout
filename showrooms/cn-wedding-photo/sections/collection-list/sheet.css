@@ -1,0 +1,29 @@
+.sheet-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.sheet-row {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.sheet-row img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.sheet-row a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .sheet-row {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+  }
+}

@@ -1,0 +1,18 @@
+<section class="section" data-section="gear" data-family="devices" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="gear-grid" data-media-group="card">
+      {{#each items}}
+      <article>
+        <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+        <h3 class="item-title">{{name}}</h3>
+        <p>{{text}}</p>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

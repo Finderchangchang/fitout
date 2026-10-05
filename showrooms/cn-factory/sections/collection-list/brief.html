@@ -1,0 +1,20 @@
+<section class="section np-news" data-section="collection-list" data-family="brief" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head np-head">
+      {{#if isH1}}<h1 class="section-title np-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title np-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="brief-grid" data-media-group="story">
+      {{#each items}}
+      <article class="card brief-card">
+        {{#if image}}<a class="brief-photo" href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+        <div class="brief-copy">
+          <h3><a href="{{href}}">{{name}}</a></h3>
+          <p>{{summary}}</p>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+.trust-rail.section {
+  background: transparent;
+}
+
+#numbers.trust-rail.section {
+  padding-block: 0;
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.trust-bar {
+  background: var(--text);
+  color: var(--on-media);
+  padding: 1.25rem 1.25rem 1.4rem;
+}
+
+.trust-bar .section-title,
+.trust-bar .section-lead,
+.trust-bar .meta {
+  color: var(--on-media);
+}
+
+.trust-bar .section-head {
+  margin-bottom: 0.75rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+}
+
+.stat-value {
+  font-size: var(--fs-4);
+  font-weight: 800;
+  color: var(--on-media);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+.stat-grid dt {
+  color: var(--on-media);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #numbers.trust-rail.section {
+    margin-top: -4.5rem;
+  }
+}

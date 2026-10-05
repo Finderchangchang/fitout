@@ -1,0 +1,34 @@
+{
+  "id": "store-service",
+  "label": "门店服务",
+  "mode": "single",
+  "note": "美业、健身、餐饮。单页，锚点导航。居中无图 hero 不在允许列表里（只留给以后的专业服务）。教培、专业服务这次不建，照这个文件另存一份再改顺序即可。",
+  "buttons": {
+    "primary": "电话预约",
+    "secondary": "看看项目",
+    "form": "在线留言"
+  },
+  "shell": {
+    "header": ["standard", "centered"],
+    "footer": ["simple", "columns"],
+    "floatContact": ["dock"]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["split-image", "text"] },
+        { "type": "trust", "required": false, "variants": ["stats", "certs"] },
+        { "type": "services", "required": true, "variants": ["grid-cards", "list-rows"] },
+        { "type": "why", "required": false, "variants": ["points", "steps"] },
+        { "type": "cases", "required": false, "variants": ["gallery", "list"] },
+        { "type": "testimonials", "required": false, "variants": ["grid-cards", "spotlight"] },
+        { "type": "team", "required": false, "variants": ["cards", "roster"] },
+        { "type": "faq", "required": false, "variants": ["accordion", "two-column"] },
+        { "type": "contact", "required": true, "variants": ["card", "banner"] },
+        { "type": "cta-band", "required": false, "variants": ["simple", "inline"] }
+      ]
+    }
+  ]
+}

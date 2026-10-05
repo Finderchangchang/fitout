@@ -1,0 +1,64 @@
+{
+  "note": "stats 填 value 和 label。certs 填 name 和 issuer。没有真数字、真证照就整块不要。",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16,
+      "hint": "区块标题"
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40,
+      "hint": "一句说明，可无"
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "value": {
+          "type": "string",
+          "required": false,
+          "maxChars": 8,
+          "hint": "stats 用。零碎的真数字，例如 12 年"
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "maxChars": 12,
+          "hint": "stats 用。这个数字是什么"
+        },
+        "name": {
+          "type": "string",
+          "required": false,
+          "maxChars": 20,
+          "hint": "certs 用。证照或资质名称"
+        },
+        "issuer": {
+          "type": "string",
+          "required": false,
+          "maxChars": 16,
+          "hint": "certs 用。谁发的，可无"
+        }
+      },
+      "hint": "1 到 6 条"
+    }
+  },
+  "variants": {
+    "stats": {
+      "needsImage": false,
+      "family": "metrics",
+      "fit": "少量不整齐的真数字",
+      "source": "hyperui public/examples/marketing/stats/1.html 的 dl 结构。不搬示例里的假文案"
+    },
+    "certs": {
+      "needsImage": false,
+      "family": "credentials",
+      "fit": "证照、许可、从业时间",
+      "source": "自写列表。调研里没有现成的资质墙，只用已入库的 badge-check 图标"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<section class="section" data-section="collection-detail" data-family="matter" id="{{anchor}}">
+  <div class="container matter">
+    <div class="section-head">
+      {{#if date}}<p class="meta">{{date}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+      <p class="section-lead">{{summary}}</p>
+      {{#if price}}<p class="price">{{price}}</p>{{/if}}
+      {{#if role}}<p>{{role}}{{#if years}} · {{years}}{{/if}}{{#if focus}} · {{focus}}{{/if}}</p>{{/if}}
+    </div>
+    {{#if image}}<img class="detail-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+    {{#if specs}}
+    <table class="specs">
+      <tbody>
+        {{#each specs}}
+        <tr>
+          <th>{{label}}</th>
+          <td>{{value}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+    {{#if body}}
+    <div>
+      <h2 class="subhead">{{#if bodyLabel}}{{bodyLabel}}{{else}}正文{{/if}}</h2>
+      <p class="prose">{{body}}</p>
+    </div>
+    {{/if}}
+    {{#if steps}}
+    <div>
+      <h2 class="subhead">{{#if stepsLabel}}{{stepsLabel}}{{else}}办理流程{{/if}}</h2>
+      <ol class="steps">
+        {{#each steps}}
+        <li>
+          <span class="step-no">{{@index}}</span>
+          <div>
+            <h3 class="item-name">{{name}}</h3>
+            <p>{{text}}</p>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+    {{/if}}
+    {{#if faqs}}
+    <div>
+      <h2 class="subhead">常见问题</h2>
+      {{#each faqs}}
+      <details class="faq">
+        <summary>{{q}}{{icon:chevron-down:16}}</summary>
+        <p>{{a}}</p>
+      </details>
+      {{/each}}
+    </div>
+    {{/if}}
+    <div class="consult">
+      <h2 class="subhead">咨询</h2>
+      <p class="phone-line"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+      <p>工作日 9:00 至 18:00 有人接听。见面请先预约。</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        {{#if formUrl}}<a class="btn" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a>{{/if}}
+        {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+      </div>
+    </div>
+  </div>
+</section>

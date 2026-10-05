@@ -1,0 +1,139 @@
+{
+  "id": "cn-hospitality",
+  "name": "国内风 · 民宿",
+  "note": "给民宿、精品客栈和度假酒店。讲院子和入住体验，把人引到电话或微信预订。栏目换成线路、门票之后，农家乐和旅行社也能用这套版式。",
+  "industry": "hospitality",
+  "niche": "homestay",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "电话预订",
+    "secondary": "看看房型",
+    "form": "写给前台"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+  },
+  "collections": [
+    { "id": "rooms", "label": "房型介绍", "listFile": "rooms/index.html" },
+    { "id": "places", "label": "周边玩法", "listFile": "places/index.html" },
+    { "id": "journal", "label": "游记", "listFile": "journal/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "stays", "required": true, "variants": ["cards"] },
+        { "type": "yard", "required": true, "variants": ["wide"] },
+        { "type": "chronicle", "required": true, "variants": ["split"] },
+        { "type": "nearby", "required": true, "variants": ["cards"] },
+        { "type": "supper", "required": true, "variants": ["board"] },
+        { "type": "collection-list", "required": true, "variants": ["feed"] },
+        { "type": "reserve", "required": true, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "chronicle", "required": true, "variants": ["split"] },
+        { "type": "yard", "required": false, "variants": ["wide"] },
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] }
+      ]
+    },
+    {
+      "id": "rooms",
+      "file": "rooms/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["rooms"] }
+      ]
+    },
+    {
+      "id": "room",
+      "file": "rooms/{slug}.html",
+      "kind": "detail",
+      "from": "rooms",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "places",
+      "file": "places/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["board"] }
+      ]
+    },
+    {
+      "id": "place",
+      "file": "places/{slug}.html",
+      "kind": "detail",
+      "from": "places",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "dining",
+      "file": "dining/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "supper", "required": true, "variants": ["board"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] }
+      ]
+    },
+    {
+      "id": "album",
+      "file": "album/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "album", "required": true, "variants": ["wall"] }
+      ]
+    },
+    {
+      "id": "journal",
+      "file": "journal/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["feed"] }
+      ]
+    },
+    {
+      "id": "note",
+      "file": "journal/{slug}.html",
+      "kind": "news-detail",
+      "from": "journal",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card"] },
+        { "type": "transit", "required": true, "variants": ["list"] },
+        { "type": "faq", "required": true, "variants": ["accordion"] },
+        { "type": "inquire", "required": false, "variants": ["note"] }
+      ]
+    }
+  ]
+}

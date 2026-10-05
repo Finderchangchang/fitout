@@ -1,0 +1,80 @@
+.hero-full .hero-scrim {
+  background: linear-gradient(180deg, rgb(0 0 0 / 0.55), rgb(0 0 0 / 0.9));
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}
+
+.hero-full .hero-copy {
+  padding-block: clamp(4rem, 10vh, 6rem) 1.5rem;
+  max-width: none;
+}
+
+.hero .section-title {
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 12em;
+}
+
+.hero .section-lead {
+  max-width: 28em;
+  font-size: 1.125rem;
+}
+
+.hero-full .hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-ui {
+  align-self: flex-start;
+  justify-content: flex-start;
+  width: max-content;
+  max-width: 100%;
+  margin-right: auto;
+  padding: 1.25rem 0 0;
+}
+
+@media (max-width: 1023px) {
+  .hero-full .hero-copy {
+    padding-bottom: 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-full .hero-ui {
+    max-width: calc(100% - 12rem);
+  }
+}
+
+.carousel-btn,
+.hero-dots .carousel-dot {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-prev .icon {
+  transform: rotate(180deg);
+}
+
+.hero-dots {
+  gap: 0.25rem;
+}
+
+.hero-dots .carousel-dot[aria-current="true"] {
+  background: var(--on-media);
+  color: var(--text);
+}

@@ -1,0 +1,25 @@
+{
+  "note": "关于页的年份纵线。年份写在 name，事情写在 text。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 8 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "rail": {
+      "needsImage": false,
+      "family": "chronicle",
+      "fit": "左侧年份，右侧一句事实，一条竖线串起来",
+      "source": "样板间自写"
+    }
+  }
+}

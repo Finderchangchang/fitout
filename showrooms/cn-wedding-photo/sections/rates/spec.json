@@ -1,0 +1,23 @@
+{
+  "note": "首页三档套系。服装、张数、精修、相册写在一句里，价格单独一列。换内容后可给写真或儿童馆做档位。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 3,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "price": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "href": { "type": "string", "required": true, "maxChars": 200 },
+        "hrefLabel": { "type": "string", "required": true, "maxChars": 8 }
+      }
+    }
+  },
+  "variants": {
+    "cards": { "needsImage": false, "family": "rates", "fit": "三张卡片，价格用强调色" }
+  }
+}

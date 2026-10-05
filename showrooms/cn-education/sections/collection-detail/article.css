@@ -1,0 +1,32 @@
+.detail-photo {
+  width: min(100%, 28rem);
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.spec-grid {
+  display: grid;
+  gap: 0.85rem 1rem;
+  margin-block: 1.25rem;
+}
+
+.spec-grid div {
+  border-top: 2px solid var(--primary);
+  padding-top: 0.45rem;
+}
+
+.spec-grid dt {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.spec-grid dd {
+  margin: 0;
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .spec-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

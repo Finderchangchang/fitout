@@ -1,0 +1,15 @@
+{
+  "note": "留言入口。只有档案里写了 formUrl 才出按钮，按钮跳到站外。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 }
+  },
+  "variants": {
+    "note": {
+      "needsImage": false,
+      "family": "note",
+      "fit": "一句说明加站外表单按钮",
+      "source": "样板间自写"
+    }
+  }
+}

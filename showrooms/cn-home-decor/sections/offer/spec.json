@@ -1,0 +1,29 @@
+{
+  "note": "套餐价。价格写参考价，并说明以实际量房为准。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 3,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 8 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "price": { "type": "string", "required": true, "maxChars": 16 },
+        "href": { "type": "string", "required": true, "maxChars": 200 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "tiles": {
+      "needsImage": false,
+      "family": "tariff",
+      "fit": "三档套餐并排，价格用深湖蓝",
+      "source": "样板间自写"
+    }
+  }
+}

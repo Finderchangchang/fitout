@@ -1,0 +1,17 @@
+.menu-row {
+  display: grid;
+  gap: 0.25rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 768px) {
+  .menu-row {
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+  }
+}

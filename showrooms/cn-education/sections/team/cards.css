@@ -1,0 +1,25 @@
+.people-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.people-grid img {
+  width: 100%;
+  margin-bottom: 0.65rem;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 768px) {
+  .people-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .people-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "id": "cn-auto",
+  "name": "国内风 · 汽车服务",
+  "note": "给汽修厂、快修连锁和汽车美容贴膜店。版式按服务项目、技师、门店和养车知识来排，美容店和二手车行可以换条目，不换骨架。电话在页头、悬浮条、页脚和详情里都能看见。",
+  "industry": "auto",
+  "niche": "repair",
+  "flavor": "cn",
+  "buttons": {
+    "primary": "预约到店",
+    "secondary": "看看服务",
+    "form": "填写预约"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4200ms" }
+  },
+  "collections": [
+    { "id": "services", "label": "服务项目", "listFile": "services/index.html" },
+    { "id": "team", "label": "技师团队", "listFile": "team/index.html" },
+    { "id": "stores", "label": "门店分布", "listFile": "stores/index.html" },
+    { "id": "news", "label": "养车知识", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "services", "required": true, "variants": ["bays"] },
+        { "type": "why", "required": true, "variants": ["steps"] },
+        { "type": "trust", "required": true, "variants": ["stats"] },
+        { "type": "floor", "required": true, "variants": ["split"] },
+        { "type": "team", "required": true, "variants": ["cards"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "collection-list", "required": true, "variants": ["notes"] },
+        { "type": "yards", "required": true, "variants": ["row"] },
+        { "type": "contact", "required": true, "variants": ["split"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "order": [
+        { "type": "why", "required": true, "variants": ["points"] },
+        { "type": "tools", "required": true, "variants": ["pair"] },
+        { "type": "trust", "required": true, "variants": ["certs"] },
+        { "type": "photo-band", "required": true, "variants": ["wide"] },
+        { "type": "cta-band", "required": true, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "services",
+      "file": "services/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["board"] }
+      ]
+    },
+    {
+      "id": "service",
+      "file": "services/{slug}.html",
+      "kind": "detail",
+      "from": "services",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "team",
+      "file": "team/index.html",
+      "kind": "team",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["portraits"] }
+      ]
+    },
+    {
+      "id": "member",
+      "file": "team/{slug}.html",
+      "kind": "detail",
+      "from": "team",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "stores",
+      "file": "stores/index.html",
+      "kind": "list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["stores"] }
+      ]
+    },
+    {
+      "id": "store",
+      "file": "stores/{slug}.html",
+      "kind": "detail",
+      "from": "stores",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["notes"] }
+      ]
+    },
+    {
+      "id": "article",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "order": [
+        { "type": "contact", "required": true, "variants": ["split"] }
+      ]
+    }
+  ]
+}

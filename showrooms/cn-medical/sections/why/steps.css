@@ -1,0 +1,29 @@
+.step-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.step-no {
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.step-list li {
+  display: grid;
+  gap: 0.3rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--primary);
+}
+
+@media (min-width: 768px) {
+  .step-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

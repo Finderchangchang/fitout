@@ -1,0 +1,25 @@
+{
+  "grade": "演示用中性深灰，不把标题烤进图片。",
+  "slots": [
+    { "id": "hero-1", "page": "home", "block": "hero", "ratio": "16:10", "px": "1440x900", "desc": "理发店门口，白天，没有招牌文字" },
+    { "id": "hero-2", "page": "home", "block": "hero", "ratio": "16:10", "px": "1440x900", "desc": "剪发椅和镜子，空无一人" },
+    { "id": "hero-3", "page": "home", "block": "hero", "ratio": "16:10", "px": "1440x900", "desc": "染发区的水槽和毛巾" },
+    { "id": "hero-4", "page": "home", "block": "hero", "ratio": "16:10", "px": "1440x900", "desc": "靠窗的等候座位" },
+    { "id": "svc-1", "page": "home", "block": "services", "ratio": "3:2", "px": "1200x800", "desc": "刚剪完的短发侧面" },
+    { "id": "svc-2", "page": "home", "block": "services", "ratio": "3:2", "px": "1200x800", "desc": "染发前后的发色对照，不要写字" },
+    { "id": "svc-3", "page": "home", "block": "services", "ratio": "3:2", "px": "1200x800", "desc": "烫发后的卷度特写" },
+    { "id": "svc-4", "page": "home", "block": "services", "ratio": "3:2", "px": "1200x800", "desc": "护理时的湿发" },
+    { "id": "case-1", "page": "home", "block": "cases", "ratio": "3:2", "px": "1200x800", "desc": "一位客人剪短后的后脑" },
+    { "id": "case-2", "page": "home", "block": "cases", "ratio": "3:2", "px": "1200x800", "desc": "棕色染发的正面，不露全脸" },
+    { "id": "case-3", "page": "home", "block": "cases", "ratio": "3:2", "px": "1200x800", "desc": "自然卷烫完的侧面" },
+    { "id": "case-4", "page": "home", "block": "cases", "ratio": "3:2", "px": "1200x800", "desc": "护理后发尾的光泽" },
+    { "id": "band-1", "page": "home", "block": "photo-band", "ratio": "2.4:1", "px": "1440x600", "desc": "店内全景横图，靠窗" },
+    { "id": "banner", "page": "inner", "block": "page-banner", "ratio": "2.4:1", "px": "1440x600", "desc": "内页页头条，深色室内，没有页名" },
+    { "id": "team-1", "page": "team", "block": "team", "ratio": "4:5", "px": "800x1000", "desc": "店主半身，不看镜头" },
+    { "id": "team-2", "page": "team", "block": "team", "ratio": "4:5", "px": "800x1000", "desc": "剪发师傅半身" },
+    { "id": "team-3", "page": "team", "block": "team", "ratio": "4:5", "px": "800x1000", "desc": "染发师傅半身" },
+    { "id": "news-1", "page": "news", "block": "news", "ratio": "3:2", "px": "1200x800", "desc": "预约本摊在柜台上" },
+    { "id": "news-2", "page": "news", "block": "news", "ratio": "3:2", "px": "1200x800", "desc": "学徒用工位，空着" },
+    { "id": "news-3", "page": "news", "block": "news", "ratio": "3:2", "px": "1200x800", "desc": "晚上亮着灯的门口" }
+  ]
+}

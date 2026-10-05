@@ -1,0 +1,28 @@
+{
+  "note": "集合列表。条目只有名称、摘要、链接和图。价格、年限、日期写进摘要。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 }
+  },
+  "variants": {
+    "cards": {
+      "needsImage": false,
+      "family": "catalog",
+      "fit": "横图项目卡，名字链到详情",
+      "source": "样板间自写"
+    },
+    "portraits": {
+      "needsImage": false,
+      "family": "people",
+      "fit": "竖图医生卡，名字链到详情",
+      "source": "样板间自写"
+    },
+    "rows": {
+      "needsImage": false,
+      "family": "index",
+      "fit": "左图右文的科普行",
+      "source": "样板间自写"
+    }
+  }
+}

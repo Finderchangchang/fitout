@@ -1,0 +1,17 @@
+{
+  "note": "满宽图块，用来把页面节奏切开。",
+  "fields": {
+    "image": { "type": "image", "required": true, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+    "caption": { "type": "string", "required": false, "maxChars": 40 }
+  },
+  "variants": {
+    "wide": {
+      "needsImage": true,
+      "imageField": "image",
+      "family": "bleed",
+      "fit": "一整条宽图",
+      "source": "样板间满宽图块"
+    }
+  }
+}

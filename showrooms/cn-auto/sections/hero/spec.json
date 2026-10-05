@@ -1,0 +1,43 @@
+{
+  "note": "满宽轮播。标题是活字。底边是一张白工单，写工时、参考价和质保，不是图标条。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 80 },
+    "lead": { "type": "string", "required": true, "maxChars": 40 },
+    "primaryLabel": { "type": "string", "required": true, "maxChars": 8 },
+    "primaryHref": { "type": "string", "required": true, "maxChars": 200 },
+    "secondaryLabel": { "type": "string", "required": false, "maxChars": 8 },
+    "secondaryHref": { "type": "string", "required": false, "maxChars": 200 },
+    "interval": { "type": "string", "required": false, "maxChars": 8 },
+    "slides": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 5,
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    },
+    "ticket": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 3,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 8 },
+        "text": { "type": "string", "required": true, "maxChars": 16 }
+      }
+    }
+  },
+  "variants": {
+    "carousel": {
+      "needsImage": true,
+      "imageField": "slides.image",
+      "fallback": "carousel",
+      "family": "stage",
+      "fit": "四张车间实拍，字在图上，底边一张工单",
+      "source": "样板间自写。标题不烤进图片"
+    }
+  }
+}

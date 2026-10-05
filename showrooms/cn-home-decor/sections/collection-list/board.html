@@ -1,0 +1,19 @@
+<section class="section" data-section="collection-list" data-family="board" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head cm-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      <span class="cm-rule" aria-hidden="true"></span>
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="board-grid" data-media-group="board">
+      {{#each items}}
+      <article class="card board-card">
+        {{#if image}}<a class="board-photo" href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+        <h2 class="item-title"><a href="{{href}}">{{name}}</a></h2>
+        {{#if summary}}<p>{{summary}}</p>{{/if}}
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="page-banner" data-section="page-banner" data-family="pagehead" data-fullbleed id="{{anchor}}">
+  {{#if image}}<img class="page-banner-img" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}">{{/if}}
+  <div class="page-banner-scrim"></div>
+  <div class="container page-banner-copy" data-on-media>
+    <p class="kicker">{{name}}</p>
+    <p class="crumbs">
+      <a href="{{homeHref}}">首页</a>
+      {{#each crumbs}}<span aria-hidden="true">/</span>{{#if href}}<a href="{{href}}">{{label}}</a>{{else}}<span>{{label}}</span>{{/if}}{{/each}}
+    </p>
+    {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+    {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+  </div>
+</section>

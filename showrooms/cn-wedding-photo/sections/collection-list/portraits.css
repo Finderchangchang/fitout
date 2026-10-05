@@ -1,0 +1,30 @@
+.portrait-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.portrait-card {
+  min-width: 0;
+}
+
+.portrait-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.portrait-card a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .portrait-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portrait-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "note": "首页就医入口。一条门诊说明加四条文字入口，链到预约和就诊指南。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "note": { "type": "string", "required": true, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 4,
+      "max": 4,
+      "item": {
+        "no": { "type": "string", "required": true, "maxChars": 4 },
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "href": { "type": "string", "required": true, "maxChars": 200 }
+      }
+    }
+  },
+  "variants": {
+    "board": {
+      "needsImage": false,
+      "family": "entries",
+      "fit": "四列文字入口，大号步骤号，没有圆形图标",
+      "source": "样板间自写"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.metric-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1rem;
+  margin: 0;
+}
+
+.metric {
+  margin: 0;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--primary);
+}
+
+.metric dt {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.stat-value {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 650;
+  line-height: 1;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .metric-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

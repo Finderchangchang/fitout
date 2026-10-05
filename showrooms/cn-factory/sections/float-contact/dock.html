@@ -1,0 +1,16 @@
+<div class="float-dock" data-float>
+  <a class="btn" href="tel:{{phoneTel}}">{{icon:phone:20}}打电话</a>
+  {{#if hasWechat}}
+  <details class="wechat-pop">
+    <summary class="btn">{{icon:chat:20}}加微信</summary>
+    <div class="wechat-panel">
+      {{#if wechatQrSrc}}<img src="{{wechatQrSrc}}" alt="{{name}}的微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">{{/if}}
+      {{#if wechat}}
+      <p class="nums">{{wechat}}</p>
+      <button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button>
+      {{/if}}
+    </div>
+  </details>
+  {{/if}}
+  <a class="btn" href="{{amapUrl}}">{{icon:map-pin:20}}导航</a>
+</div>

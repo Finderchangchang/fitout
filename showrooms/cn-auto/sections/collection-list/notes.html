@@ -1,0 +1,20 @@
+<section class="section" data-section="collection-list" data-family="notes" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="note-list" data-media-group="card">
+      {{#each items}}
+      <article class="note-card">
+        {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+        <div>
+          <h2><a href="{{href}}">{{name}}</a></h2>
+          {{#if summary}}<p>{{summary}}</p>{{/if}}
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

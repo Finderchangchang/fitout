@@ -1,0 +1,19 @@
+<section class="section" data-section="gate" data-family="entries" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <p class="gate-note">{{note}}</p>
+    <div class="gate-grid">
+      {{#each items}}
+      <a class="gate-item" href="{{href}}">
+        <span class="gate-no">{{no}}</span>
+        <span class="item-title">{{name}}</span>
+        <span>{{text}}</span>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</section>

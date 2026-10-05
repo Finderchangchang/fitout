@@ -1,0 +1,32 @@
+.stat-band {
+  background: var(--primary);
+  color: var(--on-media);
+}
+
+.stat-band .section-lead,
+.stat-band dt {
+  color: var(--on-media);
+}
+
+.stat-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.stat-grid > * {
+  min-width: 0;
+}
+
+.stat-value {
+  font-size: var(--fs-4);
+  color: var(--on-media);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

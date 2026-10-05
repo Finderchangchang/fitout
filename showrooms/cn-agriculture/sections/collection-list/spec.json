@@ -1,0 +1,22 @@
+{
+  "note": "集合列表。条目由拼装注入名称、说明、链接和图。规格和日期不在列表上。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 }
+  },
+  "variants": {
+    "rows": {
+      "needsImage": false,
+      "family": "rows",
+      "fit": "产品一行一条，方图在左",
+      "source": "样板间自写"
+    },
+    "clips": {
+      "needsImage": false,
+      "family": "feed",
+      "fit": "新闻一条一条排，日期写在说明开头",
+      "source": "样板间自写"
+    }
+  }
+}

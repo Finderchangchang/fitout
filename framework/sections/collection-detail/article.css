@@ -1,0 +1,5 @@
+.product-photo {
+  width: min(100%, 36rem);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}

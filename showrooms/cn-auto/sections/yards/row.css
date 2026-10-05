@@ -1,0 +1,19 @@
+.yard-row {
+  display: grid;
+  gap: var(--gap);
+}
+
+.yard-row h3 {
+  font-size: var(--fs-3);
+  margin-bottom: 0.35rem;
+}
+
+.yard-row .card {
+  border-top: 3px solid var(--primary);
+}
+
+@media (min-width: 768px) {
+  .yard-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

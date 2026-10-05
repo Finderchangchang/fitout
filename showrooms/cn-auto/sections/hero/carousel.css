@@ -1,0 +1,163 @@
+.hero-full {
+  min-height: clamp(42.5rem, calc(100svh - 10rem), 48rem);
+  align-content: end;
+  padding-bottom: 0;
+}
+
+.hero-full .section-title {
+  font-weight: 700;
+  max-width: 8em;
+}
+
+.hero-full .section-lead,
+.hero-full .meta {
+  color: var(--on-media);
+  max-width: 28em;
+}
+
+.hero-full .btn {
+  border-color: var(--on-media);
+  color: var(--on-media);
+  background: transparent;
+}
+
+.hero-full .btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}
+
+.hero-ui {
+  align-items: center;
+  padding-bottom: 0.75rem;
+}
+
+.carousel-btn,
+.hero-dots button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--on-media);
+  background: rgb(26 34 43 / 0.35);
+  color: var(--on-media);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-btn::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 0.2rem;
+}
+
+[data-carousel-next]::before {
+  transform: rotate(-135deg);
+  margin-left: 0;
+  margin-right: 0.2rem;
+}
+
+.hero-dots button {
+  border: 0;
+  background: transparent;
+}
+
+.hero-dots button::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--on-media);
+  opacity: 0.7;
+}
+
+.hero-dots button[aria-current="true"]::after {
+  background: var(--primary);
+  opacity: 1;
+}
+
+.ticket-wrap {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 1.25rem;
+}
+
+.ticket {
+  display: grid;
+  background: var(--surface);
+  color: var(--text);
+  border-top: 3px solid var(--primary);
+}
+
+.ticket p {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.85rem 1rem;
+  min-height: 44px;
+}
+
+.ticket p + p {
+  border-top: 1px solid var(--border);
+}
+
+.ticket-name {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .ticket {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .ticket p + p {
+    border-top: 0;
+    border-left: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 1023px) {
+  /* 底栏约 55px，引擎给 body 留了 4.5rem。页头一行时用 5.5rem。 */
+  .hero-full {
+    min-height: calc(100svh - 5.5rem - 4.5rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-full .section-title {
+    font-size: clamp(1.875rem, 8vw, 2.75rem);
+  }
+
+  /* 手机页头是店名加热线两行，大约 6.25rem。工单要整段落在底栏上面。 */
+  .hero-full {
+    min-height: calc(100svh - 6.25rem - 4.5rem);
+  }
+
+  .hero-full .hero-copy {
+    padding-block: 1.25rem 0.5rem;
+  }
+}
+
+.hero-full .hero-scrim {
+  background: linear-gradient(90deg, rgb(14 16 18 / 0.86), rgb(14 16 18 / 0.38) 78%);
+}
+
+@media (max-width: 1023px) {
+  .hero-full .hero-scrim { background: rgb(14 16 18 / 0.74); }
+}

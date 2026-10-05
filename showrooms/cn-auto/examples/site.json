@@ -1,0 +1,700 @@
+{
+  "id": "luzhun",
+  "showroom": "cn-auto",
+  "industry": "auto",
+  "niche": "repair",
+  "businessType": "LocalBusiness",
+  "name": "路准汽车服务（虚构）",
+  "summary": "滨江做保养、维修、钣喷和贴膜。工时和配件参考价，进厂前写在同一张单上。",
+  "contact": {
+    "phone": "0571-86903316",
+    "wechat": "luzhun-shop",
+    "wechatQr": "qr-wechat",
+    "email": "shop@luzhun.example",
+    "address": "杭州市滨江区江南大道1288号（虚构地址）",
+    "hours": [
+      { "day": "滨江、拱墅", "time": "08:30-19:00" },
+      { "day": "萧山店", "time": "09:00-18:30" }
+    ],
+    "formUrl": "https://example.com/luzhun-visit",
+    "icp": "浙ICP备20261006号-8"
+  },
+  "nav": [
+    { "label": "关于我们", "href": "about/index.html" },
+    { "label": "服务项目", "href": "services/index.html" },
+    { "label": "技师团队", "href": "team/index.html" },
+    { "label": "门店分布", "href": "stores/index.html" },
+    { "label": "养车知识", "href": "news/index.html" },
+    { "label": "预约到店", "href": "contact/index.html" }
+  ],
+  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "collections": {
+    "services": [
+      {
+        "slug": "care",
+        "name": "常规保养",
+        "summary": "家用轿车和SUV。大约90分钟。参考价328元起，工时质保六个月。",
+        "bodyLabel": "服务内容",
+        "body": "换机油、机滤，检查刹车片和轮胎。做完把用量和参考价写在结算单上。",
+        "price": "参考价328元起",
+        "image": "svc-care",
+        "imageAlt": "技师在举升机下换机油",
+        "specs": [
+          { "label": "所需时间", "value": "约90分钟" },
+          { "label": "参考价", "value": "328元起" },
+          { "label": "质保", "value": "工时六个月" },
+          { "label": "适合", "value": "家用轿车和SUV" }
+        ],
+        "faqs": [
+          { "q": "可以只换机油吗", "a": "可以。机滤一起换的话，写在同一张单上。" }
+        ]
+      },
+      {
+        "slug": "repair",
+        "name": "故障维修",
+        "summary": "先检测再报价。检测大约40分钟。参考价80元起，当天修可抵工时。",
+        "bodyLabel": "服务内容",
+        "body": "读故障码，看底盘和漏油。报价含工时和配件参考价，确认后才拆。",
+        "price": "参考价80元起",
+        "image": "svc-repair",
+        "imageAlt": "技师用诊断仪读故障码",
+        "specs": [
+          { "label": "所需时间", "value": "大约40分钟" },
+          { "label": "参考价", "value": "80元起" },
+          { "label": "质保", "value": "工时六个月" },
+          { "label": "适合", "value": "有故障灯的车" }
+        ],
+        "faqs": [
+          { "q": "检测费能抵吗", "a": "当天在本店维修，检测费从工时里扣。不修就按检测收费。" }
+        ]
+      },
+      {
+        "slug": "paint",
+        "name": "钣金喷漆",
+        "summary": "小面积补漆大约两天。翼子板参考价680元起，漆面质保十二个月。",
+        "bodyLabel": "服务内容",
+        "body": "先看凹陷范围。能局部补的不整喷。漆面干透后交车，质保写在结算单。",
+        "price": "参考价680元起",
+        "image": "svc-paint",
+        "imageAlt": "烤漆房里一辆补漆的轿车",
+        "specs": [
+          { "label": "所需时间", "value": "大约两天" },
+          { "label": "参考价", "value": "翼子板680元起" },
+          { "label": "质保", "value": "漆面十二个月" },
+          { "label": "适合", "value": "刮蹭和小凹陷" }
+        ]
+      },
+      {
+        "slug": "detail",
+        "name": "汽车美容",
+        "summary": "外观和内饰精洗大约两小时。参考价168元起，当天可以取车。",
+        "bodyLabel": "服务内容",
+        "body": "精洗外观、内饰和轮毂。不承诺划痕消失。做完对一遍车主指出的位置。",
+        "price": "参考价168元起",
+        "image": "svc-detail",
+        "imageAlt": "技师用泡沫精洗发动机盖",
+        "specs": [
+          { "label": "所需时间", "value": "大约两小时" },
+          { "label": "参考价", "value": "168元起" },
+          { "label": "质保", "value": "当天核对" },
+          { "label": "适合", "value": "日常精洗" }
+        ]
+      },
+      {
+        "slug": "film",
+        "name": "车衣贴膜",
+        "summary": "全车车衣大约一天。参考价2680元起，车衣质保三年，前挡膜一年。",
+        "bodyLabel": "服务内容",
+        "body": "前挡和全车车衣分开报价。贴完三天内不要用高压水枪冲洗边缘。",
+        "price": "参考价2680元起",
+        "image": "svc-film",
+        "imageAlt": "贴膜技师贴前挡膜",
+        "specs": [
+          { "label": "所需时间", "value": "大约一天" },
+          { "label": "参考价", "value": "2680元起" },
+          { "label": "质保", "value": "车衣三年" },
+          { "label": "适合", "value": "前挡或全车" }
+        ]
+      }
+    ],
+    "team": [
+      {
+        "slug": "zhou",
+        "name": "周启明",
+        "role": "机修主管",
+        "summary": "机修主管，在店十二年。发动机和变速箱，证书在滨江店前台。",
+        "bodyLabel": "擅长",
+        "body": "发动机、变速箱和故障码。大修先报价，车主确认后才拆。",
+        "image": "tech-zhou",
+        "imageAlt": "机修主管周启明站在举升机旁",
+        "specs": [
+          { "label": "岗位", "value": "机修主管" },
+          { "label": "工龄", "value": "十二年" },
+          { "label": "证书", "value": "汽车维修工（虚构）" },
+          { "label": "门店", "value": "滨江店" }
+        ]
+      },
+      {
+        "slug": "chen",
+        "name": "陈晓禾",
+        "role": "钣喷技师",
+        "summary": "钣喷技师。小面积补漆和翼子板，漆面质保写在结算单上。",
+        "bodyLabel": "擅长",
+        "body": "先看能不能局部补。整喷只在车主书面确认后做。",
+        "image": "tech-chen",
+        "imageAlt": "钣喷技师陈晓禾在烤漆房门口",
+        "specs": [
+          { "label": "岗位", "value": "钣喷技师" },
+          { "label": "工龄", "value": "八年" },
+          { "label": "证书", "value": "汽车喷漆工（虚构）" },
+          { "label": "门店", "value": "滨江店" }
+        ]
+      },
+      {
+        "slug": "ma",
+        "name": "马立冬",
+        "role": "保养组长",
+        "summary": "保养组长。换油和底盘检查按里程排，单子当天给车主。",
+        "bodyLabel": "擅长",
+        "body": "机油按里程和月份一起看。底盘松动的地方拍照给车主。",
+        "image": "tech-ma",
+        "imageAlt": "保养组长马立冬拿着机油壶",
+        "specs": [
+          { "label": "岗位", "value": "保养组长" },
+          { "label": "工龄", "value": "九年" },
+          { "label": "证书", "value": "汽车维修工（虚构）" },
+          { "label": "门店", "value": "滨江店" }
+        ]
+      },
+      {
+        "slug": "lin",
+        "name": "林晚晴",
+        "role": "贴膜技师",
+        "summary": "贴膜技师。前挡和全车车衣，贴完交车前对边角。",
+        "bodyLabel": "擅长",
+        "body": "前挡膜和车衣分开算。边缘起翘的，质保期内回店处理。",
+        "image": "tech-lin",
+        "imageAlt": "贴膜技师林晚晴整理前挡膜",
+        "specs": [
+          { "label": "岗位", "value": "贴膜技师" },
+          { "label": "工龄", "value": "六年" },
+          { "label": "证书", "value": "贴膜施工（虚构）" },
+          { "label": "门店", "value": "滨江店" }
+        ]
+      }
+    ],
+    "stores": [
+      {
+        "slug": "binjiang",
+        "name": "滨江店",
+        "summary": "杭州市滨江区江南大道1288号。每天08:30-19:00，导航可到店。",
+        "bodyLabel": "到店",
+        "body": "总店。保养、维修、钣喷和贴膜都在这一家。前台可以看备案。",
+        "image": "store-binjiang",
+        "imageAlt": "滨江店卷帘门和门口停车位",
+        "navHref": "https://uri.amap.com/search?keyword=杭州市滨江区江南大道1288号",
+        "specs": [
+          { "label": "地址", "value": "杭州市滨江区江南大道1288号" },
+          { "label": "营业时间", "value": "每天08:30-19:00" },
+          { "label": "工位", "value": "保养和钣喷" },
+          { "label": "停车", "value": "店门口可停" }
+        ]
+      },
+      {
+        "slug": "gongshu",
+        "name": "拱墅店",
+        "summary": "杭州市拱墅区莫干山路918号。每天08:30-19:00，只做保养和快修。",
+        "bodyLabel": "到店",
+        "body": "拱墅店没有烤漆房。钣喷请到滨江店。保养和快修当天可约。",
+        "image": "store-gongshu",
+        "imageAlt": "拱墅店沿街的快修工位",
+        "navHref": "https://uri.amap.com/search?keyword=杭州市拱墅区莫干山路918号",
+        "specs": [
+          { "label": "地址", "value": "杭州市拱墅区莫干山路918号" },
+          { "label": "营业时间", "value": "每天08:30-19:00" },
+          { "label": "工位", "value": "保养和快修" },
+          { "label": "烤漆", "value": "请到滨江店" }
+        ]
+      },
+      {
+        "slug": "xiaoshan",
+        "name": "萧山店",
+        "summary": "杭州市萧山区市心中路456号。每天09:00-18:30，美容和贴膜为主。",
+        "bodyLabel": "到店",
+        "body": "萧山店以精洗和贴膜为主。维修大项转到滨江店。",
+        "image": "store-xiaoshan",
+        "imageAlt": "萧山店贴膜间靠窗的工位",
+        "navHref": "https://uri.amap.com/search?keyword=杭州市萧山区市心中路456号",
+        "specs": [
+          { "label": "地址", "value": "杭州市萧山区市心中路456号" },
+          { "label": "营业时间", "value": "每天09:00-18:30" },
+          { "label": "工位", "value": "美容和贴膜" },
+          { "label": "维修", "value": "大项转滨江" }
+        ]
+      }
+    ],
+    "news": [
+      {
+        "slug": "oil",
+        "name": "机油按里程还是按月",
+        "date": "2026-08-12",
+        "summary": "2026-08-12。市区短途按月份看，长途按里程看，两个先到先换。",
+        "bodyLabel": "怎么判断",
+        "body": "机油盒上的月份和仪表里程一起看。先到的那个为准。店里换油时会写上下次时间。",
+        "image": "news-oil",
+        "imageAlt": "工作台上的机油壶和机滤"
+      },
+      {
+        "slug": "scratch",
+        "name": "小刮蹭要不要整喷",
+        "date": "2026-07-03",
+        "summary": "2026-07-03。巴掌大的刮蹭先看能不能局部补，整喷要车主书面确认。",
+        "bodyLabel": "怎么判断",
+        "body": "局部补漆大约两天。整喷时间更长，参考价另算。质保写在结算单上。",
+        "image": "news-paint",
+        "imageAlt": "翼子板上的一小块刮蹭"
+      },
+      {
+        "slug": "wash",
+        "name": "贴膜后三天别这样洗",
+        "date": "2026-05-21",
+        "summary": "2026-05-21。贴完三天内不要用高压水枪冲边缘，手洗可以。",
+        "bodyLabel": "怎么判断",
+        "body": "边缘的胶还在贴合。高压水容易把边吹开。三天后再用机器洗。",
+        "image": "news-film",
+        "imageAlt": "刚贴好的前挡膜边缘"
+      },
+      {
+        "slug": "brake",
+        "name": "刹车片薄了会响",
+        "date": "2026-04-09",
+        "summary": "2026-04-09。轻点刹车有金属声，多半是片薄了，先测厚度再换。",
+        "bodyLabel": "怎么判断",
+        "body": "厚度够就先不换。两边一起换的，参考价写在进厂单上，确认后再拆。",
+        "image": "news-brake",
+        "imageAlt": "拆下来的刹车片放在工作台上"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "路准汽车服务（虚构）｜先看工单，再动手",
+      "description": "滨江汽修。保养、维修、钣喷和贴膜。工时、配件参考价和质保，进厂前写在同一张单上。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "carousel",
+          "anchor": "top",
+          "tone": "image",
+          "data": {
+            "label": "路准汽修",
+            "title": "先看工单，再动手",
+            "lead": "工时、配件参考价和质保，进厂前写在同一张单上。",
+            "primaryLabel": "预约到店",
+            "primaryHref": "contact/index.html",
+            "secondaryLabel": "看看服务",
+            "secondaryHref": "services/index.html",
+            "interval": "4200",
+            "slides": [
+              { "image": "hero-bay", "imageAlt": "白天的保养工位，轿车停在举升机上" },
+              { "image": "hero-order", "imageAlt": "技师把进厂单递给车主" },
+              { "image": "hero-paint", "imageAlt": "烤漆房门口一辆补过漆的轿车" },
+              { "image": "hero-film", "imageAlt": "贴膜工位上的前挡玻璃" }
+            ],
+            "ticket": [
+              { "name": "工时", "text": "写在进厂单上" },
+              { "name": "配件", "text": "只标参考价" },
+              { "name": "质保", "text": "跟结算单一走" }
+            ]
+          }
+        },
+        {
+          "type": "services",
+          "variant": "bays",
+          "anchor": "bays",
+          "tone": "light",
+          "data": {
+            "title": "五个工位",
+            "lead": "保养、维修、钣喷、美容和贴膜，参考价写在卡上。",
+            "items": [
+              {
+                "name": "常规保养",
+                "text": "家用轿车和SUV，机油机滤按里程换。",
+                "price": "参考价328元起",
+                "href": "services/care.html",
+                "image": "svc-care",
+                "imageAlt": "技师在举升机下换机油"
+              },
+              {
+                "name": "故障维修",
+                "text": "先检测再报价，检测大约40分钟。",
+                "price": "参考价80元起",
+                "href": "services/repair.html",
+                "image": "svc-repair",
+                "imageAlt": "技师用诊断仪读故障码"
+              },
+              {
+                "name": "钣金喷漆",
+                "text": "小面积补漆，翼子板大约两天。",
+                "price": "参考价680元起",
+                "href": "services/paint.html",
+                "image": "svc-paint",
+                "imageAlt": "烤漆房里一辆补漆的轿车"
+              },
+              {
+                "name": "汽车美容",
+                "text": "精洗内饰和外观，大约两小时。",
+                "price": "参考价168元起",
+                "href": "services/detail.html",
+                "image": "svc-detail",
+                "imageAlt": "技师用泡沫精洗发动机盖"
+              },
+              {
+                "name": "车衣贴膜",
+                "text": "前挡和全车车衣，当天可以取车。",
+                "price": "参考价2680元起",
+                "href": "services/film.html",
+                "image": "svc-film",
+                "imageAlt": "贴膜技师贴前挡膜"
+              }
+            ]
+          }
+        },
+        {
+          "type": "why",
+          "variant": "steps",
+          "anchor": "steps",
+          "tone": "dark",
+          "data": {
+            "title": "进厂四步",
+            "lead": "预约、检查、报价和交车，都写在同一张单上。",
+            "items": [
+              { "name": "预约到店", "text": "电话或网上约工位，当天给时间。" },
+              { "name": "进厂检查", "text": "先看故障码和底盘，再决定拆不拆。" },
+              { "name": "确认报价", "text": "工时和配件参考价，确认后才开工。" },
+              { "name": "交车质保", "text": "质保写在结算单，过期前可以回店。" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "numbers",
+          "tone": "light",
+          "data": {
+            "title": "店里这些数",
+            "lead": "开业年份、门店、技师和月进厂，都按店里的台账。",
+            "items": [
+              { "value": "2014", "label": "年在滨江开业" },
+              { "value": "3", "label": "家直营门店" },
+              { "value": "23", "label": "名持证技师" },
+              { "value": "860", "label": "台月均进厂" }
+            ]
+          }
+        },
+        {
+          "type": "floor",
+          "variant": "split",
+          "anchor": "floor",
+          "tone": "image",
+          "data": {
+            "title": "车间和设备",
+            "lead": "举升、定位、烤漆和持证，都在滨江店能看见。",
+            "image": "shop-floor",
+            "imageAlt": "滨江店保养工位和双柱举升机",
+            "linkLabel": "看看设备",
+            "linkHref": "about/index.html#tools",
+            "points": [
+              { "name": "举升机", "text": "双柱举升，轿车和SUV都能上。" },
+              { "name": "四轮定位", "text": "定位仪在保养工位旁边。" },
+              { "name": "烤漆房", "text": "小面积补漆进烤漆房，不在露天喷。" },
+              { "name": "技师持证", "text": "机修和钣喷分开考，证书在店里。" }
+            ]
+          }
+        },
+        {
+          "type": "team",
+          "variant": "cards",
+          "anchor": "crew",
+          "tone": "light",
+          "data": {
+            "title": "技师团队",
+            "lead": "技师团队 23 人，以下为部分骨干。这四位在滨江店。",
+            "items": [
+              {
+                "name": "周启明",
+                "role": "机修主管",
+                "text": "做发动机和变速箱，在店十二年。",
+                "href": "team/zhou.html",
+                "image": "tech-zhou",
+                "imageAlt": "机修主管周启明站在举升机旁"
+              },
+              {
+                "name": "陈晓禾",
+                "role": "钣喷技师",
+                "text": "小面积补漆和翼子板，她经手。",
+                "href": "team/chen.html",
+                "image": "tech-chen",
+                "imageAlt": "钣喷技师陈晓禾在烤漆房门口"
+              },
+              {
+                "name": "马立冬",
+                "role": "保养组长",
+                "text": "换油和底盘检查，按里程排期。",
+                "href": "team/ma.html",
+                "image": "tech-ma",
+                "imageAlt": "保养组长马立冬拿着机油壶"
+              },
+              {
+                "name": "林晚晴",
+                "role": "贴膜技师",
+                "text": "前挡和全车车衣，当天可以取。",
+                "href": "team/lin.html",
+                "image": "tech-lin",
+                "imageAlt": "贴膜技师林晚晴整理前挡膜"
+              }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "wide",
+          "tone": "image",
+          "data": {
+            "image": "band-bay",
+            "imageAlt": "一排举升机上的轿车",
+            "caption": "滨江店下午的保养工位，灯是冷白。"
+          }
+        },
+        {
+          "type": "collection-list",
+          "variant": "notes",
+          "anchor": "notes",
+          "tone": "light",
+          "data": {
+            "title": "养车知识",
+            "lead": "机油、补漆、贴膜和刹车，店里写过的四篇。",
+            "collection": "news"
+          }
+        },
+        {
+          "type": "yards",
+          "variant": "row",
+          "anchor": "yards",
+          "tone": "dark",
+          "data": {
+            "title": "三家直营店",
+            "lead": "滨江、拱墅、萧山，营业时间写在每家下面。",
+            "items": [
+              { "name": "滨江店", "text": "杭州市滨江区江南大道1288号，每天08:30-19:00。", "href": "stores/binjiang.html" },
+              { "name": "拱墅店", "text": "杭州市拱墅区莫干山路918号，每天08:30-19:00。", "href": "stores/gongshu.html" },
+              { "name": "萧山店", "text": "杭州市萧山区市心中路456号，每天09:00-18:30。", "href": "stores/xiaoshan.html" }
+            ]
+          }
+        },
+        {
+          "type": "contact",
+          "variant": "split",
+          "anchor": "desk",
+          "tone": "light",
+          "data": {
+            "title": "预约到店",
+            "lead": "电话约工位，或填一张预约，进厂前对上时间。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "关于我们｜路准汽车服务（虚构）",
+      "description": "三家直营店。举升机、定位仪和烤漆房在滨江，技师证书在店里可以看。",
+      "banner": "banner",
+      "bannerAlt": "滨江店门口的卷帘门和停车空地",
+      "crumbs": [{ "label": "关于我们", "href": "" }],
+      "sections": [
+        {
+          "type": "why",
+          "variant": "points",
+          "anchor": "facts",
+          "tone": "light",
+          "data": {
+            "title": "店里四件事",
+            "lead": "门店、设备、资质和技师认证，来之前可以先看。",
+            "items": [
+              { "name": "门店", "text": "滨江、拱墅、萧山三家直营，不挂加盟牌。" },
+              { "name": "设备", "text": "举升机、四轮定位和烤漆房都在滨江店。" },
+              { "name": "资质", "text": "维修经营备案挂在前台，编号是虚构的。" },
+              { "name": "技师认证", "text": "技师团队 23 人。机修和钣喷分开考，证书可以在店里看。" }
+            ]
+          }
+        },
+        {
+          "type": "tools",
+          "variant": "pair",
+          "anchor": "tools",
+          "tone": "light",
+          "data": {
+            "title": "两台常用设备",
+            "lead": "举升机和四轮定位仪，在滨江店保养区。",
+            "items": [
+              {
+                "name": "双柱举升机",
+                "text": "轿车和SUV都能上，旁边是换油工位。",
+                "image": "equip-lift",
+                "imageAlt": "双柱举升机和换油工位"
+              },
+              {
+                "name": "四轮定位仪",
+                "text": "做完底盘再定位，打印单一并给车主。",
+                "image": "equip-align",
+                "imageAlt": "四轮定位仪对着轿车前轮"
+              }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "certs",
+          "anchor": "seals",
+          "tone": "light",
+          "data": {
+            "title": "资质和认证",
+            "lead": "备案和职业资格都是虚构的，不是真实批文。",
+            "items": [
+              { "name": "机动车维修经营备案", "issuer": "虚构备案，非真实" },
+              { "name": "汽车维修工职业资格", "issuer": "人社考核（虚构）" }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "booth",
+          "tone": "image",
+          "data": {
+            "image": "band-booth",
+            "imageAlt": "贴膜工位和架子上的前挡膜",
+            "caption": "贴膜工位靠窗，前挡膜在架子上。"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "visit",
+          "tone": "dark",
+          "data": {
+            "title": "先约再进厂",
+            "lead": "工位按天排，电话或预约表都可以。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "title": "服务项目｜路准汽车服务（虚构）",
+      "description": "保养、维修、钣喷、美容和贴膜。每项写了时间、参考价和质保。",
+      "banner": "banner",
+      "bannerAlt": "滨江店门口的卷帘门和停车空地",
+      "crumbs": [{ "label": "服务项目", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "board",
+          "anchor": "board",
+          "tone": "light",
+          "data": {
+            "title": "五项服务",
+            "lead": "每项都写时间和参考价，确认后才开工。",
+            "collection": "services"
+          }
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "title": "技师团队｜路准汽车服务（虚构）",
+      "description": "技师团队 23 人，以下为部分骨干。岗位、工龄和证书写在名字下面，证书在店里可以看。",
+      "banner": "banner",
+      "bannerAlt": "滨江店门口的卷帘门和停车空地",
+      "crumbs": [{ "label": "技师团队", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "portraits",
+          "anchor": "people",
+          "tone": "light",
+          "data": {
+            "title": "技师团队 23 人，以下为部分骨干",
+            "lead": "页面上是滨江店这四位。点名字看工龄和证书。",
+            "collection": "team"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stores",
+      "title": "门店分布｜路准汽车服务（虚构）",
+      "description": "滨江、拱墅、萧山三家直营。地址和营业时间写在店名下面。",
+      "banner": "banner",
+      "bannerAlt": "滨江店门口的卷帘门和停车空地",
+      "crumbs": [{ "label": "门店分布", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "stores",
+          "anchor": "directory",
+          "tone": "light",
+          "data": {
+            "title": "三家门店",
+            "lead": "点店名看地址、时间和导航。",
+            "collection": "stores"
+          }
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "养车知识｜路准汽车服务（虚构）",
+      "description": "机油、补漆、贴膜和刹车四篇，按店里的做法写。",
+      "banner": "banner",
+      "bannerAlt": "滨江店门口的卷帘门和停车空地",
+      "crumbs": [{ "label": "养车知识", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "notes",
+          "anchor": "posts",
+          "tone": "light",
+          "data": {
+            "title": "四篇笔记",
+            "lead": "机油、补漆、贴膜和刹车，按店里的做法写。",
+            "collection": "news"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "预约到店｜路准汽车服务（虚构）",
+      "description": "电话 0571-86903316，或填预约。滨江、拱墅 08:30-19:00，萧山店 09:00-18:30。",
+      "banner": "banner",
+      "bannerAlt": "滨江店门口的卷帘门和停车空地",
+      "crumbs": [{ "label": "预约到店", "href": "" }],
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "split",
+          "anchor": "book",
+          "tone": "light",
+          "data": {
+            "title": "预约到店",
+            "lead": "滨江、拱墅 08:30-19:00，萧山店 09:00-18:30。"
+          }
+        }
+      ]
+    }
+  ]
+}

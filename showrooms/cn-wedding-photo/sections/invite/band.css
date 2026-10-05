@@ -1,0 +1,30 @@
+.invite-copy {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 40rem;
+}
+
+.invite-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .invite-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.invite-list li {
+  display: grid;
+  gap: 0.15rem;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--primary);
+}
+
+.invite-list strong {
+  font-weight: 650;
+}

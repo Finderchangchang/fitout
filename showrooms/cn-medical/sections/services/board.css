@@ -1,0 +1,39 @@
+.svc-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.svc-card a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.svc-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.svc-card .item-title {
+  margin: 0.75rem 0 0.35rem;
+}
+
+.price {
+  margin: 0.35rem 0 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .svc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .svc-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
