@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+# 参考站截图、拆解、克隆的开源源码一律放仓库外（../site-studio-refs/），不进仓库
+refs/
+out/
