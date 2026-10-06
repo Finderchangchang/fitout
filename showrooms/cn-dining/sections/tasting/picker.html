@@ -5,9 +5,16 @@
       {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
       {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
     </div>
+    <style>
+      {{#each items}}
+      #{{anchor}} .taste:has(#taste-{{anchor}}-{{@index}}:checked) label[for="taste-{{anchor}}-{{@index}}"] {
+        border-color: var(--primary);
+      }
+      {{/each}}
+    </style>
     <div class="taste">
       {{#each items}}
-      <input class="clip" type="radio" name="taste" id="taste-{{@index}}" {{#if on}}checked{{/if}}>
+      <input class="clip" type="radio" name="taste-{{anchor}}" id="taste-{{anchor}}-{{@index}}" {{#if on}}checked{{/if}}>
       <div class="taste-panel">
         <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}">
         <div class="taste-copy">
@@ -19,7 +26,7 @@
       {{/each}}
       <div class="taste-thumbs" data-media-group="tile">
         {{#each items}}
-        <label for="taste-{{@index}}">
+        <label for="taste-{{anchor}}-{{@index}}">
           <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
           <span>{{name}}</span>
         </label>

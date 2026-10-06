@@ -124,6 +124,7 @@ export const RULES = {
   图片位: { level: "block", text: "每个 img 要有 width 和 height，或写 aspect-ratio。同一组若用 aspect-ratio 和 object-fit:cover 锁住显示框，就按框检查；否则仍比原图比例" },
   降级: { level: "warn", text: "拼装时缺图改了版式。退出码仍看有没有 block" },
   口号: { level: "warn", text: "首屏口号不要套示例句式，按企业档案重写" },
+  实拍: { level: "block", text: "mustBeReal 的位不能标成 ai。没有 sources.json 时只警告，无法确认实拍" },
   样板间: { level: "block", text: "样板间版式不写死这套示例站的 slug、id、专有名词和电话" },
 };
 

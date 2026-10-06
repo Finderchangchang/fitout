@@ -202,6 +202,27 @@ node scripts/images/grade.mjs --showroom cn-dining --in <原始图目录> --out 
 - `mustBeReal: true` 只留给页面文字明确说「这是我们的」那一类：团队、医生、律师、技师的人像，门店门头，厂房或场地全景，证书，客片和作品。氛围图、细节特写、工艺过程不要标成必须实拍。
 - 二维码、营业执照、资质证书不要写 `stock` 或 `ai`，写 `client`。
 
-拼装分不清一张 jpg 是实拍还是生成的。正式目录里不要把生成图放进 `mustBeReal` 的位。
+`--images` 目录里可以放一份 `sources.json`。它是一个对象，键是图片位 id，值只能是这三字：
+
+| 值 | 含义 |
+|---|---|
+| `photo` | 老板实拍 |
+| `ai` | 生成 |
+| `stock` | 图库 |
+
+```json
+{
+  "front-longjing": "photo",
+  "hero-tea": "ai"
+}
+```
+
+拼装时如果有这份文件，会原样抄到站点的 `images/sources.json`。正式模式的 `check.mjs` 读它（演示模式不查）：
+
+- `mustBeReal: true` 的位标成 `ai`：失败，不许拿生成图冒充实拍。
+- 标成 `photo` 或 `stock`：这一条通过。
+- 没有 `sources.json`：警告「无法确认实拍」，不改变退出码。文件在、但某个必须实拍的位没写来源，也是这一句警告，带上 id。
+
+值不是 `photo`、`ai`、`stock` 时，拼装直接失败。
 
 正式拼装不要带 `--demo-images`。那个参数是演示用的：缺的图库图和 AI 图会画深色占位，只有这一页真画出了这种块，才标「演示占位图」。演示模式仍给 `mustBeReal` 的位画占位，方便看版式。见 `docs/SHOWROOM.md`。

@@ -5,12 +5,25 @@
       {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
       {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
     </div>
+    <style>
+      {{#each groups}}
+      #{{anchor}} .lane-box:has(#lane-{{anchor}}-{{@index}}:checked) > .lane-panel:nth-of-type({{@index}}) {
+        display: block;
+      }
+      #{{anchor}} .lane-box:has(#lane-{{anchor}}-{{@index}}:checked) > label:nth-of-type({{@index}}) {
+        border-bottom-color: var(--primary);
+      }
+      #{{anchor}} .lane-box:has(#lane-{{anchor}}-{{@index}}:checked) > label:nth-of-type({{@index}})::before {
+        background: var(--accent);
+      }
+      {{/each}}
+    </style>
     <div class="lane-box">
       {{#each groups}}
-      <input type="radio" name="lanes" id="lane-{{@index}}">
+      <input type="radio" name="lanes-{{anchor}}" id="lane-{{anchor}}-{{@index}}">
       {{/each}}
       {{#each groups}}
-      <label for="lane-{{@index}}">{{name}}</label>
+      <label for="lane-{{anchor}}-{{@index}}">{{name}}</label>
       {{/each}}
       {{#each groups}}
       <div class="lane-panel">

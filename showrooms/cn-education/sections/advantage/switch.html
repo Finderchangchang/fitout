@@ -5,15 +5,31 @@
       {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
       {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
     </div>
+    <style>
+      @media (min-width: 768px) {
+        #{{anchor}} .adv-box > img {
+          grid-row: 1 / span {{items.length}};
+        }
+      }
+      {{#each items}}
+      #{{anchor}} .adv-box:has(#adv-{{anchor}}-{{@index}}:checked) > img:nth-of-type({{@index}}) {
+        display: block;
+      }
+      #{{anchor}} .adv-box:has(#adv-{{anchor}}-{{@index}}:checked) > label:nth-of-type({{@index}}) .adv-no {
+        background: var(--accent);
+        color: var(--on-media);
+      }
+      {{/each}}
+    </style>
     <div class="adv-box" data-media-group="card">
       {{#each items}}
-      <input type="radio" name="adv" id="adv-{{@index}}">
+      <input type="radio" name="adv-{{anchor}}" id="adv-{{anchor}}-{{@index}}">
       {{/each}}
       {{#each items}}
       <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
       {{/each}}
       {{#each items}}
-      <label for="adv-{{@index}}">
+      <label for="adv-{{anchor}}-{{@index}}">
         <span class="adv-no">{{@index}}</span>
         <span>
           <span class="item-title">{{name}}</span>

@@ -496,22 +496,22 @@
               {
                 "name": "折弯",
                 "text": "公差 ±0.2 毫米",
-                "href": "products/index.html#catalog-c1"
+                "href": "products/index.html#catalog-k1ph8kiy"
               },
               {
                 "name": "冲压",
                 "text": "冲床到 160 吨",
-                "href": "products/index.html#catalog-c2"
+                "href": "products/index.html#catalog-k6a87dw"
               },
               {
                 "name": "机加",
                 "text": "车铣都在厂里",
-                "href": "products/index.html#catalog-c3"
+                "href": "products/index.html#catalog-k15se72r"
               },
               {
                 "name": "组焊",
                 "text": "焊完交检出厂",
-                "href": "products/index.html#catalog-c4"
+                "href": "products/index.html#catalog-kms2wja"
               }
             ]
           }
@@ -556,28 +556,28 @@
               {
                 "name": "数控折弯机",
                 "text": "板厚到 6 毫米，常规公差 ±0.2 毫米。",
-                "href": "products/index.html#catalog-c1",
+                "href": "products/index.html#catalog-k1ph8kiy",
                 "image": "line-bend",
                 "imageAlt": "折弯机在弯一块门框加强板"
               },
               {
                 "name": "160吨冲床",
                 "text": "连续模和单工序都做，冲床到 160 吨。",
-                "href": "products/index.html#catalog-c2",
+                "href": "products/index.html#catalog-k6a87dw",
                 "image": "line-stamp",
                 "imageAlt": "冲床在落一块柜体侧板"
               },
               {
                 "name": "车床和铣床",
                 "text": "轴套和安装底板在厂里车铣，不外协。",
-                "href": "products/index.html#catalog-c3",
+                "href": "products/index.html#catalog-k15se72r",
                 "image": "line-cnc",
                 "imageAlt": "车床卡着一根轴套棒料"
               },
               {
                 "name": "组焊工位",
                 "text": "支架按图组焊，焊完进质检再出厂。",
-                "href": "products/index.html#catalog-c4",
+                "href": "products/index.html#catalog-kms2wja",
                 "image": "line-weld",
                 "imageAlt": "焊工在组一支支架"
               }
@@ -913,22 +913,22 @@
               {
                 "name": "折弯件",
                 "text": "门框加强板，按图折。",
-                "href": "products/index.html#catalog-c1"
+                "href": "products/index.html#catalog-k1ph8kiy"
               },
               {
                 "name": "冲压件",
                 "text": "柜体侧板和铰链座。",
-                "href": "products/index.html#catalog-c2"
+                "href": "products/index.html#catalog-k6a87dw"
               },
               {
                 "name": "机加件",
                 "text": "轴套和安装底板。",
-                "href": "products/index.html#catalog-c3"
+                "href": "products/index.html#catalog-k15se72r"
               },
               {
                 "name": "焊接组件",
                 "text": "支架总成，按套出货。",
-                "href": "products/index.html#catalog-c4"
+                "href": "products/index.html#catalog-kms2wja"
               }
             ]
           }

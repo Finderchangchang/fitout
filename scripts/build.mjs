@@ -3,9 +3,9 @@
  * 读企业档案，套上户型或样板间，拼成纯静态站。
  * 不安装依赖。内容违规交给 check.mjs，这里只在结构拼不起来时失败。
  * --keep 可重复。--site-dir 仍会先清空目标目录，但这些相对子目录会原样留住。
+ * 留住的目录在同一盘用 rename，不再用 cpSync，中文路径不会把进程打崩。
  */
 import fs from "fs";
-import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import { render } from "./lib/tpl.mjs";
@@ -106,6 +106,7 @@ const fallbacks = [];
 const icons = loadIcons();
 const shell = readText(path.join(frameworkDir, "shell", "page.html"));
 const notes = [];
+const SOURCE_MARKS = new Set(["photo", "ai", "stock"]);
 const copied = new Set();
 const notedMissing = new Set();
 let usedPlaceholder = false;
@@ -166,6 +167,7 @@ for (const key of [...usedCss].sort()) {
 fs.mkdirSync(path.join(outDir, "assets"), { recursive: true });
 fs.writeFileSync(path.join(outDir, "assets", "site.css"), css.join("\n"), "utf8");
 fs.copyFileSync(path.join(frameworkDir, "shell", "site.js"), path.join(outDir, "assets", "site.js"));
+publishSources();
 fs.writeFileSync(path.join(outDir, "site.json"), JSON.stringify(publishSite(site), null, 2) + "\n", "utf8");
 if (usedPlaceholder) notes.push("演示模式：缺图渲染成占位色块，页面标了演示占位图");
 const coverage = collectCoverage();
@@ -481,15 +483,39 @@ function usableFallback(section, spec, order, data) {
 }
 
 function categoryKeys(items) {
-  const map = new Map();
-  let n = 0;
+  const labels = [];
+  const seen = new Set();
   for (const item of items || []) {
     const label = String(item?.category || "").trim();
-    if (!label || map.has(label)) continue;
-    n += 1;
-    map.set(label, `c${n}`);
+    if (!label || seen.has(label)) continue;
+    seen.add(label);
+    labels.push(label);
   }
+  const byBase = new Map();
+  for (const label of labels) {
+    const base = stableCategoryKey(label);
+    if (!byBase.has(base)) byBase.set(base, []);
+    byBase.get(base).push(label);
+  }
+  const assigned = new Map();
+  for (const [base, list] of byBase) {
+    const sorted = [...list].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+    sorted.forEach((label, index) => {
+      assigned.set(label, index === 0 ? base : `${base}-${index + 1}`);
+    });
+  }
+  const map = new Map();
+  for (const label of labels) map.set(label, assigned.get(label));
   return map;
+}
+
+function stableCategoryKey(label) {
+  let hash = 2166136261;
+  for (let i = 0; i < label.length; i += 1) {
+    hash ^= label.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return `k${(hash >>> 0).toString(36)}`;
 }
 
 function filtersFrom(catKeys, facets) {
@@ -1207,25 +1233,85 @@ function resetOutDir(dir, keeps) {
   const stashed = [];
   if (fs.existsSync(dir)) {
     const base = path.resolve(dir);
+    const parent = path.dirname(base);
     for (const rel of keeps) {
       const src = path.join(dir, ...rel.split("/"));
       const resolved = path.resolve(src);
       if (resolved !== base && !resolved.startsWith(base + path.sep)) fail(`--keep 路径越界：${rel}`);
       if (!fs.existsSync(src)) continue;
-      const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "fitout-keep-"));
+      const tmp = fs.mkdtempSync(path.join(parent, ".fitout-keep-"));
       const saved = path.join(tmp, "item");
-      fs.cpSync(src, saved, { recursive: true });
+      moveTree(src, saved);
       stashed.push({ rel, saved, tmp });
     }
-    fs.rmSync(dir, { recursive: true, force: true });
+    removeTree(dir);
   }
   fs.mkdirSync(dir, { recursive: true });
   for (const item of stashed) {
     const dest = path.join(dir, ...item.rel.split("/"));
     fs.mkdirSync(path.dirname(dest), { recursive: true });
-    fs.cpSync(item.saved, dest, { recursive: true });
-    fs.rmSync(item.tmp, { recursive: true, force: true });
+    moveTree(item.saved, dest);
+    removeTree(item.tmp);
   }
+}
+
+function moveTree(src, dest) {
+  try {
+    fs.renameSync(src, dest);
+  } catch {
+    copyTree(src, dest);
+    removeTree(src);
+  }
+}
+
+function copyTree(src, dest) {
+  const st = fs.lstatSync(src);
+  if (st.isDirectory()) {
+    fs.mkdirSync(dest, { recursive: true });
+    for (const name of fs.readdirSync(src)) copyTree(path.join(src, name), path.join(dest, name));
+    return;
+  }
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (st.isSymbolicLink()) {
+    fs.symlinkSync(fs.readlinkSync(src), dest);
+    return;
+  }
+  fs.copyFileSync(src, dest);
+}
+
+function removeTree(target) {
+  if (!fs.existsSync(target)) return;
+  const st = fs.lstatSync(target);
+  if (st.isDirectory() && !st.isSymbolicLink()) {
+    for (const name of fs.readdirSync(target)) removeTree(path.join(target, name));
+    fs.rmdirSync(target);
+    return;
+  }
+  fs.unlinkSync(target);
+}
+
+function publishSources() {
+  if (!imagesDir) return;
+  const file = path.join(imagesDir, "sources.json");
+  if (!fs.existsSync(file)) return;
+  let data;
+  try {
+    data = readJson(file);
+  } catch (err) {
+    fail(err.message || "sources.json 不是合法 JSON");
+  }
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    fail("sources.json 要是对象：图片位 id 对应 photo、ai 或 stock");
+  }
+  const out = {};
+  for (const [id, value] of Object.entries(data)) {
+    const mark = typeof value === "string" ? value.trim() : "";
+    if (!SOURCE_MARKS.has(mark)) fail(`sources.json 的来源只能是 photo、ai、stock：${id}`);
+    out[id] = mark;
+  }
+  const destDir = path.join(outDir, "images");
+  fs.mkdirSync(destDir, { recursive: true });
+  fs.writeFileSync(path.join(destDir, "sources.json"), JSON.stringify(out, null, 2) + "\n", "utf8");
 }
 
 function requiredText(value, label) {

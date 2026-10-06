@@ -136,6 +136,7 @@ function checkSite(dir) {
   checkBuildReport(dir);
   checkClientSlots(dir, site, demoMode);
   checkImageTiers(dir, demoMode);
+  checkImageSources(dir, site, demoMode);
 }
 
 function demoSoft(demoMode, html) {
@@ -168,6 +169,51 @@ function checkClientSlots(dir, site, demoMode) {
     const id = String(slot.id);
     if (exts.some((ext) => names.includes(id + ext))) continue;
     report("图片", `${id} 是客户提供的图片，正式站还没有文件`, "warn");
+  }
+}
+
+function checkImageSources(dir, site, demoMode) {
+  if (demoMode || !site?.showroom || !/^[a-z0-9_-]+$/.test(site.showroom)) return;
+  const specFile = path.join(root, "showrooms", site.showroom, "images.json");
+  if (!fs.existsSync(specFile)) return;
+  let doc;
+  try {
+    doc = readJson(specFile);
+  } catch {
+    return;
+  }
+  const realIds = (doc.slots || [])
+    .filter((slot) => slot && slot.mustBeReal && slot.id)
+    .map((slot) => String(slot.id));
+  if (!realIds.length) return;
+  const file = path.join(dir, "images", "sources.json");
+  if (!fs.existsSync(file)) {
+    report("实拍", "无法确认实拍", "warn");
+    return;
+  }
+  let sources;
+  try {
+    sources = readJson(file);
+  } catch {
+    report("实拍", "sources.json 不是合法 JSON");
+    return;
+  }
+  if (!sources || typeof sources !== "object" || Array.isArray(sources)) {
+    report("实拍", "sources.json 要是对象：图片位 id 对应 photo、ai 或 stock");
+    return;
+  }
+  const allowed = new Set(["photo", "ai", "stock"]);
+  for (const id of realIds) {
+    if (!Object.prototype.hasOwnProperty.call(sources, id)) {
+      report("实拍", `无法确认实拍：${id}`, "warn");
+      continue;
+    }
+    const mark = typeof sources[id] === "string" ? sources[id].trim() : "";
+    if (!allowed.has(mark)) {
+      report("实拍", `sources.json 的来源只能是 photo、ai、stock：${id}`);
+      continue;
+    }
+    if (mark === "ai") report("实拍", `不许拿生成图冒充实拍：${id}`);
   }
 }
 
