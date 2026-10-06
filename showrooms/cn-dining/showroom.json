@@ -7,7 +7,9 @@
   "flavor": "cn",
   "buttons": {
     "primary": "谈加盟",
+    "primaryHref": "join/index.html",
     "secondary": "看产品",
+    "secondaryHref": "products/index.html",
     "form": "写给招商"
   },
   "shell": {
@@ -55,6 +57,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -125,6 +128,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "essay",
@@ -153,6 +157,7 @@
       "id": "products",
       "file": "products/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "collection-list",
@@ -167,6 +172,7 @@
       "id": "product",
       "file": "products/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "products",
       "order": [
         {
@@ -182,6 +188,16 @@
       "id": "stores",
       "file": "stores/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案里有两家及以上门店，要按地址列出来。",
+      "deny": [
+        "只有一家店",
+        "只此一家",
+        "没有第二家店",
+        "仅此一家",
+        "不设分店",
+        "就这一家"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -196,6 +212,8 @@
       "id": "store",
       "file": "stores/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "门店列表开着，并且有对应门店。列表关掉就不生成。",
       "from": "stores",
       "order": [
         {
@@ -211,6 +229,15 @@
       "id": "join",
       "file": "join/index.html",
       "kind": "join",
+      "optional": true,
+      "when": "档案提到招加盟、开放加盟或联营开店。",
+      "deny": [
+        "不招加盟",
+        "不开放加盟",
+        "不接受加盟",
+        "不加盟",
+        "只此一家"
+      ],
       "order": [
         {
           "type": "why",
@@ -239,6 +266,13 @@
       "id": "news",
       "file": "news/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的动态，例如换供应商、新菜单、招生或工期。",
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -253,6 +287,8 @@
       "id": "story",
       "file": "news/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
         {
@@ -268,6 +304,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",

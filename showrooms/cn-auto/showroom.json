@@ -7,7 +7,9 @@
   "flavor": "cn",
   "buttons": {
     "primary": "预约到店",
+    "primaryHref": "contact/index.html",
     "secondary": "看看服务",
+    "secondaryHref": "services/index.html",
     "form": "填写预约"
   },
   "shell": {
@@ -60,6 +62,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -137,6 +140,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "why",
@@ -179,6 +183,7 @@
       "id": "services",
       "file": "services/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "collection-list",
@@ -193,6 +198,7 @@
       "id": "service",
       "file": "services/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "services",
       "order": [
         {
@@ -208,6 +214,13 @@
       "id": "team",
       "file": "team/index.html",
       "kind": "team",
+      "optional": true,
+      "when": "档案写了可以放上姓名的真人，例如技师、律师或顾问。",
+      "deny": [
+        "没有团队",
+        "没有真人",
+        "不公开人员"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -222,6 +235,8 @@
       "id": "member",
       "file": "team/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "团队页开着，并且有对应的人。列表关掉就不生成。",
       "from": "team",
       "order": [
         {
@@ -237,6 +252,16 @@
       "id": "stores",
       "file": "stores/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案里有两家及以上门店，要按地址列出来。",
+      "deny": [
+        "只有一家店",
+        "只此一家",
+        "没有第二家店",
+        "仅此一家",
+        "不设分店",
+        "就这一家"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -251,6 +276,8 @@
       "id": "store",
       "file": "stores/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "门店列表开着，并且有对应门店。列表关掉就不生成。",
       "from": "stores",
       "order": [
         {
@@ -266,6 +293,13 @@
       "id": "news",
       "file": "news/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的动态，例如换供应商、新菜单、招生或工期。",
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -280,6 +314,8 @@
       "id": "article",
       "file": "news/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "文章或新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
         {
@@ -295,6 +331,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",

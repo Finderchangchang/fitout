@@ -23,7 +23,7 @@
       "type": "string",
       "required": true,
       "maxChars": 8,
-      "hint": "主动作，跟户型主按钮同一句。禁止：提交、了解更多、点击这里、点击查看、查看详情、立即提交、Submit、Learn more、Click here、Read more"
+      "hint": "主动作。不写 hero.buttons 时跟样板间主按钮同一句；写了就用 hero.buttons。禁止：提交、了解更多、点击这里、点击查看、查看详情、立即提交、Submit、Learn more、Click here、Read more"
     },
     "primaryHref": {
       "type": "string",

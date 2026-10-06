@@ -12,6 +12,15 @@ import { render } from "./lib/tpl.mjs";
 import { readJson } from "./lib/json.mjs";
 import { imageSize } from "./lib/image-size.mjs";
 import { HERO_PX, industryError, nicheError } from "./lib/rules.mjs";
+import {
+  closedTargets,
+  contactFile,
+  isOn,
+  pointsClosed,
+  requiredTurnedOff,
+  resolveHeroButtons,
+  scrubSection,
+} from "./lib/pages.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const frameworkDir = path.join(root, "framework");
@@ -25,7 +34,7 @@ const DENSITY = {
 const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".svg", ".gif"]);
 const PUBLISHED_KEYS = [
   "id", "name", "industry", "niche", "showroom", "style", "businessType", "summary", "url",
-  "contact", "nav", "shell", "pages", "products", "collections", "toolEntry",
+  "contact", "nav", "shell", "pages", "products", "collections", "toolEntry", "hero",
 ];
 const TONES = new Set(["light", "dark", "image"]);
 
@@ -142,8 +151,11 @@ assertAllowed(house.shell.floatContact, shellChoice.floatContact, "悬浮联系�
 const pagesById = new Map((site.pages || []).map((page) => [page.id, page]));
 const usedCss = new Set();
 const written = [];
+const turnedOff = requiredTurnedOff(house, site);
+if (turnedOff.length) fail(`必有页不能关：${turnedOff.join("、")}`);
 
 for (const page of house.pages) {
+  if (!isOn(house, site, page)) continue;
   if (page.from) writeCollection(page);
   else {
     const source = pagesById.get(page.id);
@@ -218,7 +230,7 @@ function writeCollection(page) {
       data: {
         ...item,
         imageAlt: item.imageAlt || item.name || "",
-        primaryLabel: house.buttons.primary,
+        primaryLabel: defaultPrimaryClosed() ? "电话咨询" : house.buttons.primary,
         primaryHref: contactHref(),
         backHref: listFileOf(id),
         backLabel: "返回列表",
@@ -258,7 +270,10 @@ function writePage({ file, title, description, sections, order, banner }) {
       data: banner || bannerFromTitle(title),
     });
   }
-  queued.push(...checked);
+  for (const section of checked) {
+    const kept = adaptSection(section, order);
+    if (kept) queued.push(kept);
+  }
   const globals = makeGlobals(file);
   let main = "";
   let first = true;
@@ -795,9 +810,34 @@ function makeGlobals(file) {
 }
 
 function contactHref() {
-  const contact = house.pages.find((page) => page.id === "contact");
-  if (contact?.file) return contact.file;
-  return "#contact";
+  return contactFile(house);
+}
+
+function defaultPrimaryClosed() {
+  return pointsClosed(house.buttons?.primaryHref || "", closedTargets(house, site));
+}
+
+function adaptSection(section, order) {
+  if (section.type === "hero") {
+    const buttons = resolveHeroButtons({
+      site,
+      house,
+      data: section.data || {},
+      phone,
+    });
+    return {
+      ...section,
+      data: {
+        ...(section.data || {}),
+        primaryLabel: buttons[0].label,
+        primaryHref: buttons[0].href,
+        secondaryLabel: buttons[1]?.label || "",
+        secondaryHref: buttons[1]?.href || "",
+      },
+    };
+  }
+  const rule = (order || []).find((item) => item.type === section.type);
+  return scrubSection(section, { house, site, required: Boolean(rule?.required) });
 }
 
 function itemsOf(id) {
@@ -883,6 +923,7 @@ function faqJsonLd() {
 function collectFaqItems() {
   const items = [];
   for (const page of site.pages || []) {
+    if (page.enabled === false) continue;
     for (const section of page.sections || []) {
       if (section?.type !== "faq") continue;
       const list = section.data?.items;
@@ -909,7 +950,10 @@ function readToolEntry() {
 }
 
 function navFor(file) {
-  const nav = (site.nav || []).map((item) => ({ label: item.label, href: rootHref(file, item.href) }));
+  const closed = closedTargets(house, site);
+  const nav = (site.nav || [])
+    .filter((item) => !pointsClosed(item.href, closed))
+    .map((item) => ({ label: item.label, href: rootHref(file, item.href) }));
   if (!toolEntry) return nav;
   const href = siteHref(file, toolEntry.href);
   const taken = (site.nav || []).some((item) => sameSitePath(item.href, toolEntry.href));

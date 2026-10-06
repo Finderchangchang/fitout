@@ -53,7 +53,7 @@ showrooms/<id>/
 - `id`、`name`（中文名）、`industry`、`flavor`
 - `niche`：需要行业例外时写
 - `note`：这套是给谁的。冒烟和模板要写明不是正式样板间
-- `buttons`：`primary`、`secondary`、`form`。首屏主按钮必须和 `primary` 同一句
+- `buttons`：`primary`、`secondary`、`form`，以及 `primaryHref`、`secondaryHref`。没写 `hero.buttons` 时，首屏用这两句和这两个链接。链接指向的页被关掉时，拼装改成联系页上的按钮
 - `shell`：`header`、`footer`、`floatContact`，每项是允许的版式名数组。现成的有顶栏 `standard` / `centered`，页脚 `simple` / `columns`，悬浮 `dock`
 - `pages`：见下
 - `collections`：见下
@@ -61,7 +61,9 @@ showrooms/<id>/
 
 `pages` 的每一项：
 
-- `id`、`file`、`kind`、`order`
+- `id`、`file`、`kind`、`optional`、`order`
+- `optional`：`false` 是必有页（首页、关于、联系、主集合及其详情）。`true` 是可选页（加盟、门店分布、团队、新闻，以及别的次要页）
+- 可选页要写 `when`：什么情况下该有，给填档案的模型看。可以再写 `deny`，档案里出现这些说法时，这一页必须关掉
 - 详情页加 `from`，`file` 里写 `{slug}`，例如 `services/{slug}.html`
 - `kind` 用这些名字：`home`、`about`、`list`、`detail`、`team`、`news-list`、`news-detail`、`contact`
 - `order` 是板块数组。每项有 `type`、`variants`、`required`

@@ -12,13 +12,14 @@ import { spawnSync } from "child_process";
 import { fileURLToPath } from "url";
 import { readJson } from "./lib/json.mjs";
 import { E5_WORDS, E6_WORDS, PLACEHOLDERS, LIMITS, heroTitleIssue } from "./lib/rules.mjs";
+import { closedTargets, isOn, parentOfCollection, pointsClosed } from "./lib/pages.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
-const CALL_LIMIT = 80;
+const CALL_LIMIT = 95;
 const ASSETS = process.env.FITOUT_DEMO_ASSETS || "H:\\ai_tool\\fitout-demo-assets";
 const RETRY_RULES = new Set([
-  "spec", "篇幅", "C14", "E5", "E6", "E2", "口径", "残留", "SEO", "结构", "链接", "D6", "C9", "C8", "口号", "A9",
+  "spec", "篇幅", "C14", "E5", "E6", "E2", "口径", "残留", "SEO", "结构", "链接", "D6", "C9", "C8", "口号", "A9", "重复",
 ]);
 
 const args = process.argv.slice(2);
@@ -153,8 +154,12 @@ function systemPrompt(room, banned, businessType) {
     "首屏 slides 的 imageAlt 必须原样照抄给出的画面说明。首屏 label 可以不写；要写就不超过 4 个字。",
     "不要编电话、微信、邮箱、备案号、价格、年份、人数、客户数、评分、证号、评价原话、人名。数字照档案里的那一串抄，不要换算，不要凑整。",
     "可选板块没有对应事实就整块不出。样板间必填板块必须在，内容仍只能用档案里有的话，不够就写短。",
-    "样板间会生成详情页的集合不能空；每一条都能在档案里找到。对不上的集合不要编造条目。",
-    `首屏 primaryLabel 必须是「${primary}」，和户型主按钮同一句。标题和按钮里不要用破折号。`,
+    "可选页看骨架里的「什么情况下该有」。对不上，或档案写了否定，就把该页 enabled 设为 false。关掉的页不要留在导航里，首页也不要做它的入口。必有页不能关。",
+    "详情页不要写进 pages。列表页关掉时，这个集合可以空着，详情也不要编。",
+    "顶层写 hero.buttons，1 到 2 个，每项有 label 和 href。不写才用样板间默认。默认按钮指向的页如果关掉了，就改成「电话咨询」或「联系我们」，href 用联系页。",
+    `样板间默认主按钮是「${primary}」。档案不是这条业务就不要用它。标题和按钮里不要用破折号。`,
+    "档案内容少时少放几块，够说清就停，不要把同一件事换着说。首页同一个短句不要出现 3 次，同一个数字加单位不要写进 3 个板块。",
+    "导航、首屏按钮、页脚摘要不要写已关掉的业务。例如不招加盟，这些地方就不要出现「加盟」。",
     `不要用这些空话：${words}。按钮不要写：${buttons}。`,
     "示例站只看结构。不要沿用它的公司名、电话、微信、邮箱、备案号、人名、首屏口号、句子和数字。",
     banned.length ? `这些示例字样一旦出现就算失败：${banned.join("、")}` : "",
@@ -190,18 +195,23 @@ function showroomOutline(room, heroes, allSlots) {
   lines.push(`名称：${room.name || room.id}`);
   lines.push(`industry：${room.industry}`);
   lines.push(`niche：${room.niche || ""}`);
-  lines.push(`主按钮：${room.buttons?.primary || ""}`);
-  lines.push(`次按钮可以空。要用的话用具体动作，不必抄「${room.buttons?.secondary || ""}」。`);
+  lines.push(`默认主按钮：${room.buttons?.primary || ""} → ${room.buttons?.primaryHref || "联系页"}`);
+  lines.push(`默认次按钮：${room.buttons?.secondary || ""} → ${room.buttons?.secondaryHref || ""}。次按钮可以空，要用就写具体动作。`);
   lines.push(`顶栏只能：${(room.shell?.header || []).join("、")}`);
   lines.push(`页脚只能：${(room.shell?.footer || []).join("、")}`);
   lines.push(`悬浮只能：${(room.shell?.floatContact || []).join("、")}`);
   lines.push("页面（详情页由集合生成，不要写进 pages）：");
   for (const page of room.pages || []) {
     if (page.from) {
-      lines.push(`- 详情 ${page.file} 来自集合 ${page.from}，不要出现在 pages`);
+      const follow = page.optional ? "列表页关掉就不生成。" : "主集合开着就生成。";
+      lines.push(`- 详情 ${page.file} 来自集合 ${page.from}，不要出现在 pages。${follow}`);
       continue;
     }
-    lines.push(`- ${page.id} → ${page.file}`);
+    const flag = page.optional ? "可选" : "必有";
+    let line = `- ${page.id} → ${page.file} ${flag}`;
+    if (page.optional && page.when) line += `。什么情况下该有：${page.when}`;
+    if (page.optional && page.deny?.length) line += `。档案出现这些说法就要关掉：${page.deny.join("、")}`;
+    lines.push(line);
     for (const block of page.order || []) {
       lines.push(`  - ${block.type} ${block.required ? "必填" : "可无"} 版式：${(block.variants || []).join("、")}`);
     }
@@ -354,7 +364,7 @@ function runCheck(tmp) {
     const warn = line.includes("[警告/");
     const rule = match[1];
     if (!RETRY_RULES.has(rule)) continue;
-    if (warn && rule !== "口号") continue;
+    if (warn && rule !== "口号" && rule !== "重复") continue;
     if (rule === "SEO" && /上线前要换真实网址/.test(match[2])) continue;
     errors.push(`[${rule}] ${match[2]}`);
   }
@@ -412,6 +422,11 @@ function lintSite(site, { leak, model }) {
     if (!pageIds.has(page.id)) push(`户型没有页面 ${page.id}`);
     if (seenPages.has(page.id)) push(`页面重复：${page.id}`);
     seenPages.add(page.id);
+    const housePage = (showroom.pages || []).find((item) => item.id === page.id && !item.from);
+    if (page.enabled === false) {
+      if (!housePage?.optional) push(`必有页 ${page.id} 不能关`);
+      continue;
+    }
     if (!page.title) push(`${page.id || "?"} 缺少 title`);
     else if (countChars(page.title) > LIMITS.title) push(`页面 ${page.id} 的 title 有 ${countChars(page.title)} 字，上限 ${LIMITS.title}`);
     if (!page.description) push(`${page.id || "?"} 缺少 description`);
@@ -426,20 +441,22 @@ function lintSite(site, { leak, model }) {
         continue;
       }
       lintFields(section?.data || {}, spec.fields, `${page.id}.${section.type}`, section.type, push);
-      if (section.type === "hero" && section.data?.primaryLabel && section.data.primaryLabel !== showroom.buttons?.primary) {
-        push(`首屏主按钮必须是「${showroom.buttons?.primary}」`);
-      }
       if (!["light", "dark", "image"].includes(section?.tone)) push(`${page.id} 的 ${section?.type} 缺少 tone（light、dark、image）`);
       if (section?.type === "hero" && section.tone !== "image") push("首屏 tone 必须是 image");
       if (model && section?.type === "hero") lintHeroExtra(section.data || {}, push);
     }
   }
   lintHomeTones(site, push);
+  lintHeroButtons(site, push, model);
+  if (model) lintClosedPages(site, push);
   for (const id of pageIds) {
-    if (!seenPages.has(id)) push(`site.json 缺少页面 ${id}`);
+    const housePage = (showroom.pages || []).find((item) => item.id === id && !item.from);
+    if (!seenPages.has(id) && !housePage?.optional) push(`site.json 缺少页面 ${id}`);
   }
   for (const page of showroom.pages || []) {
     if (!page.from) continue;
+    const parent = parentOfCollection(showroom, page.from);
+    if (parent && !isOn(showroom, site, parent)) continue;
     const items = itemsOf(site, page.from);
     if (!Array.isArray(items) || items.length === 0) {
       push(`集合 ${page.from} 是空的`);
@@ -493,6 +510,51 @@ function lintSite(site, { leak, model }) {
     }
   });
   return errors;
+}
+
+function lintHeroButtons(site, push, model) {
+  const closed = closedTargets(showroom, site);
+  const hero = site.hero;
+  if (hero != null) {
+    if (!hero || typeof hero !== "object" || Array.isArray(hero) || !Array.isArray(hero.buttons)) {
+      push("hero.buttons 要是 1 到 2 个按钮");
+      return;
+    }
+    if (hero.buttons.length < 1 || hero.buttons.length > 2) push("hero.buttons 要 1 到 2 个");
+    for (const button of hero.buttons) {
+      if (!button?.label || !button?.href) {
+        push("hero.buttons 每一项都要有 label 和 href");
+        continue;
+      }
+      if (countChars(String(button.label)) > 8) push(`首屏按钮「${button.label}」超过 8 个字`);
+      if (pointsClosed(button.href, closed)) push(`首屏按钮「${button.label}」指向已关闭的页面，改到联系页或还开着的页`);
+    }
+    return;
+  }
+  if (!model) return;
+  const home = (site.pages || []).find((page) => page.id === "home");
+  const section = (home?.sections || []).find((item) => item?.type === "hero");
+  const href = section?.data?.primaryHref || showroom.buttons?.primaryHref || "";
+  if (pointsClosed(href, closed)) push("默认首屏按钮指向已关闭的页面，请写 hero.buttons，改成电话咨询或联系我们");
+}
+
+function lintClosedPages(site, push) {
+  const closed = closedTargets(showroom, site);
+  for (const page of showroom.pages || []) {
+    if (page.from || page.optional !== true || !isOn(showroom, site, page)) continue;
+    for (const phrase of page.deny || []) {
+      if (phrase && profile.includes(phrase)) {
+        push(`档案写了「${phrase}」，页面 ${page.id} 要关掉（enabled: false），导航和首屏按钮不要指向它`);
+        break;
+      }
+    }
+  }
+  for (const item of site.nav || []) {
+    if (pointsClosed(item?.href, closed)) push(`导航「${item?.label || item?.href}」指向已关闭的页面，删掉这一项`);
+  }
+  if (pointsClosed(showroom.buttons?.primaryHref || "", closed) && String(site.summary || "").includes("加盟")) {
+    push("这条业务已关，页脚摘要不要写加盟");
+  }
 }
 
 function lintHomeTones(site, push) {

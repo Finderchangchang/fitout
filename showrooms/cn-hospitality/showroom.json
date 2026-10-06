@@ -7,7 +7,9 @@
   "flavor": "cn",
   "buttons": {
     "primary": "电话预订",
+    "primaryHref": "tel:",
     "secondary": "看看房型",
+    "secondaryHref": "rooms/index.html",
     "form": "写给前台"
   },
   "shell": {
@@ -55,6 +57,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -125,6 +128,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "chronicle",
@@ -160,6 +164,7 @@
       "id": "rooms",
       "file": "rooms/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "collection-list",
@@ -174,6 +179,7 @@
       "id": "room",
       "file": "rooms/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "rooms",
       "order": [
         {
@@ -189,6 +195,11 @@
       "id": "places",
       "file": "places/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案写了店周边可以去的地方。",
+      "deny": [
+        "没有周边"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -203,6 +214,8 @@
       "id": "place",
       "file": "places/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "地点列表开着，并且有对应条目。列表关掉就不生成。",
       "from": "places",
       "order": [
         {
@@ -218,6 +231,12 @@
       "id": "dining",
       "file": "dining/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案单独写了餐厅或餐食。",
+      "deny": [
+        "没有餐厅",
+        "不供餐"
+      ],
       "order": [
         {
           "type": "supper",
@@ -239,6 +258,11 @@
       "id": "album",
       "file": "album/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案有一组可以翻看的相册说明。",
+      "deny": [
+        "没有相册"
+      ],
       "order": [
         {
           "type": "album",
@@ -253,6 +277,12 @@
       "id": "journal",
       "file": "journal/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的住店手记。",
+      "deny": [
+        "没有手记",
+        "没有动态"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -267,6 +297,8 @@
       "id": "note",
       "file": "journal/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "笔记列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "journal",
       "order": [
         {
@@ -282,6 +314,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",

@@ -7,7 +7,9 @@
   "flavor": "cn",
   "buttons": {
     "primary": "预约试听",
+    "primaryHref": "contact/index.html",
     "secondary": "看课程",
+    "secondaryHref": "courses/index.html",
     "form": "留言咨询"
   },
   "shell": {
@@ -60,6 +62,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -137,6 +140,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "why",
@@ -172,6 +176,7 @@
       "id": "courses",
       "file": "courses/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "course-board",
@@ -193,6 +198,7 @@
       "id": "course",
       "file": "courses/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "courses",
       "order": [
         {
@@ -208,6 +214,13 @@
       "id": "teachers",
       "file": "teachers/index.html",
       "kind": "team",
+      "optional": true,
+      "when": "档案写了可以放上姓名的老师。",
+      "deny": [
+        "没有老师",
+        "没有团队",
+        "不公开人员"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -229,6 +242,8 @@
       "id": "teacher",
       "file": "teachers/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "教师列表开着，并且有对应的人。列表关掉就不生成。",
       "from": "teachers",
       "order": [
         {
@@ -244,6 +259,11 @@
       "id": "works",
       "file": "works/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案有学员作品或作业可以展示。",
+      "deny": [
+        "没有作品"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -265,6 +285,8 @@
       "id": "work",
       "file": "works/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "作品列表开着，并且有对应条目。列表关掉就不生成。",
       "from": "works",
       "order": [
         {
@@ -280,6 +302,13 @@
       "id": "news",
       "file": "news/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的动态，例如换供应商、新菜单、招生或工期。",
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -301,6 +330,8 @@
       "id": "news-item",
       "file": "news/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
         {
@@ -316,6 +347,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",

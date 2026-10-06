@@ -7,7 +7,9 @@
   "note": "给农产品基地、合作社和地方特产品牌。首页摆产地、在售和溯源，内页能翻到规格、两档价和批发条件。版式也能换上土特产或茶叶。",
   "buttons": {
     "primary": "联系采购",
+    "primaryHref": "contact/index.html",
     "secondary": "看看产品",
+    "secondaryHref": "products/index.html",
     "form": "在线询价"
   },
   "shell": {
@@ -50,6 +52,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -113,6 +116,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "field",
@@ -148,6 +152,7 @@
       "id": "products",
       "file": "products/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "collection-list",
@@ -162,6 +167,7 @@
       "id": "product",
       "file": "products/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "products",
       "order": [
         {
@@ -177,6 +183,15 @@
       "id": "trace",
       "file": "trace/index.html",
       "kind": "about",
+      "optional": true,
+      "when": "档案有产地、种植、养殖或加工过程。",
+      "deny": [
+        "没有自己的茶园",
+        "没有产地",
+        "不是茶园",
+        "没有亩数",
+        "没有产量"
+      ],
       "order": [
         {
           "type": "stations",
@@ -191,6 +206,14 @@
       "id": "certs",
       "file": "certs/index.html",
       "kind": "about",
+      "optional": true,
+      "when": "档案写了已经拿到的证书、检测报告或证号。",
+      "deny": [
+        "没有证书",
+        "没有资质",
+        "证号待补",
+        "食品证号待补"
+      ],
       "order": [
         {
           "type": "honors",
@@ -212,6 +235,13 @@
       "id": "trade",
       "file": "trade/index.html",
       "kind": "about",
+      "optional": true,
+      "when": "档案有批发、供货或采购条件。",
+      "deny": [
+        "没有批发",
+        "没有批发价",
+        "不做批发"
+      ],
       "order": [
         {
           "type": "why",
@@ -247,6 +277,13 @@
       "id": "news",
       "file": "news/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的动态，例如换供应商、新菜单、招生或工期。",
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -261,6 +298,8 @@
       "id": "news-item",
       "file": "news/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
         {
@@ -276,6 +315,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",

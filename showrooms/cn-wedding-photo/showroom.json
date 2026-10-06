@@ -7,7 +7,9 @@
   "flavor": "cn",
   "buttons": {
     "primary": "预约看样",
+    "primaryHref": "contact/index.html",
     "secondary": "看样片集",
+    "secondaryHref": "works/index.html",
     "form": "咨询档期"
   },
   "shell": {
@@ -65,6 +67,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -142,6 +145,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "essay",
@@ -177,6 +181,7 @@
       "id": "works",
       "file": "works/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "collection-list",
@@ -191,6 +196,7 @@
       "id": "work",
       "file": "works/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "works",
       "order": [
         {
@@ -206,6 +212,12 @@
       "id": "packages",
       "file": "packages/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案写了套餐、档位或明确的价格包。",
+      "deny": [
+        "没有套餐",
+        "没有价目"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -220,6 +232,8 @@
       "id": "package",
       "file": "packages/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "套餐列表开着，并且有对应条目。列表关掉就不生成。",
       "from": "packages",
       "order": [
         {
@@ -235,6 +249,13 @@
       "id": "team",
       "file": "team/index.html",
       "kind": "team",
+      "optional": true,
+      "when": "档案写了可以放上姓名的真人，例如技师、律师或顾问。",
+      "deny": [
+        "没有团队",
+        "没有真人",
+        "不公开人员"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -249,6 +270,8 @@
       "id": "person",
       "file": "team/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "团队页开着，并且有对应的人。列表关掉就不生成。",
       "from": "team",
       "order": [
         {
@@ -264,6 +287,12 @@
       "id": "bases",
       "file": "bases/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案有拍摄基地或取景地。",
+      "deny": [
+        "没有基地",
+        "没有外景"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -278,6 +307,8 @@
       "id": "base",
       "file": "bases/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "基地列表开着，并且有对应条目。列表关掉就不生成。",
       "from": "bases",
       "order": [
         {
@@ -293,6 +324,11 @@
       "id": "guests",
       "file": "guests/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案有可以公开的客片说明。",
+      "deny": [
+        "没有客片"
+      ],
       "order": [
         {
           "type": "guests",
@@ -307,6 +343,13 @@
       "id": "news",
       "file": "news/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的动态，例如换供应商、新菜单、招生或工期。",
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -321,6 +364,8 @@
       "id": "story",
       "file": "news/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
         {
@@ -336,6 +381,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",

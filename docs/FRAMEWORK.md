@@ -141,7 +141,7 @@ node scripts/check.mjs --lint-framework
 | E3 | 按任务书，不画占位框。缺图换不带图的版式。没有手画插画 |
 | E4 | 样板间首页至少 12 张图，其中至少 2 张在 `data-fullbleed` 里。演示模式降为警告。没有样板间的例子不卡张数。空 alt 仍失败 |
 | E5 | 机检可见文字，以及 alt、title、aria-label 和 description。词表：赋能、革命性、颠覆性、一站式、全方位、领先的（block）；打造、Elevate、Seamless、Unleash、Next-Gen（warn，英文按词边界）。单独的「智能」不扫 |
-| E6 | 机检 `button` 和带 `btn` 的链接。先去掉空白和标点（含全角、间隔号）再比，繁体折成简体。禁止提交、了解更多、点击这里、点击查看、查看详情、立即提交、Submit、Learn more、Click here、Read more。hero 主按钮要和户型主按钮同一句 |
+| E6 | 机检 `button` 和带 `btn` 的链接。先去掉空白和标点（含全角、间隔号）再比，繁体折成简体。禁止提交、了解更多、点击这里、点击查看、查看详情、立即提交、Submit、Learn more、Click here、Read more。没覆盖首屏按钮时，hero 主按钮要和户型主按钮同一句；写了 `hero.buttons`，或默认指向的页关掉了，就按档案里的按钮 |
 | E7 | 没有站内表单。有 `formUrl` 才给一个外链按钮 |
 | E8 | 没落。没有 logo 槽。缺图走版式降级，不用色块顶 |
 | E9 | 模板有才显示。机检：档案里有备案号，页脚必须出现原文 |

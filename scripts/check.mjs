@@ -9,6 +9,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { readJson } from "./lib/json.mjs";
+import { closedTargets, isOn, parentOfCollection, pointsClosed } from "./lib/pages.mjs";
 import {
   RULES,
   E5_WORDS,
@@ -296,8 +297,9 @@ function checkPage(where, html, site, house, vars, js, demoMode, css) {
       if (folded.includes(word)) report("E6", `${where} 按钮写了「${word}」：${clip(label)}`);
     }
   }
-  checkHeroButton(where, html, house);
+  checkHeroButton(where, html, house, site);
   checkHeroCtas(where, html);
+  if (where === "index.html") checkRepeat(html);
 
   const hero = html.match(/<section\b[^>]*data-section="hero"[^>]*>[\s\S]*?<\/section>/i);
   if (hero) {
@@ -316,7 +318,7 @@ function checkPage(where, html, site, house, vars, js, demoMode, css) {
   checkCarousel(where, html, js);
 }
 
-function checkHeroButton(where, html, house) {
+function checkHeroButton(where, html, house, site) {
   const expected = house?.buttons?.primary;
   if (!expected) return;
   const hero = html.match(/<section\b[^>]*data-section="hero"[^>]*>[\s\S]*?<\/section>/i);
@@ -325,8 +327,55 @@ function checkHeroButton(where, html, house) {
   if (!primary) return;
   const label = visibleText(primary);
   if (!label) return;
+  const override = Array.isArray(site?.hero?.buttons) ? String(site.hero.buttons[0]?.label || "") : "";
+  if (override) {
+    if (foldLabel(label) !== foldLabel(override) && !isFallbackLabel(label)) {
+      report("E6", `${where} 的 hero 主按钮「${clip(label)}」和 hero.buttons「${override}」不是同一句`);
+    }
+    return;
+  }
+  if (pointsClosed(house?.buttons?.primaryHref || "", closedTargets(house, site))) return;
   if (foldLabel(label) !== foldLabel(expected)) {
     report("E6", `${where} 的 hero 主按钮「${clip(label)}」和户型主按钮「${expected}」不是同一句`);
+  }
+}
+
+function isFallbackLabel(label) {
+  const got = foldLabel(label);
+  return got === foldLabel("电话咨询") || got === foldLabel("联系我们");
+}
+
+const REPEAT_UNITS = "平方米|公斤|千克|毫升|厘米|毫米|小时|分钟|万元|亿元|元|年|月|日|人|座|杯|家|个|位|次|吨|亩|斤|克|米|㎡|%|％|折|天|周|项|台|件|箱|瓶|袋|只|款|种|层|间|万|亿";
+
+function checkRepeat(html) {
+  const sections = html.match(/<section\b[\s\S]*?<\/section>/gi) || [];
+  if (!sections.length) return;
+  const clauseCount = new Map();
+  const unitSections = new Map();
+  sections.forEach((section, index) => {
+    const text = visibleText(section);
+    const clauses = text.split(/[。！？；，,\n.!?;]+/).map((part) => part.replace(/\s+/g, "").trim());
+    for (const clause of clauses) {
+      if ([...clause].length < 4) continue;
+      clauseCount.set(clause, (clauseCount.get(clause) || 0) + 1);
+    }
+    const seen = new Set();
+    const re = new RegExp(`(\\d+(?:\\.\\d+)?)\\s*(${REPEAT_UNITS})`, "g");
+    for (const match of text.matchAll(re)) {
+      const token = `${match[1]}${match[2]}`;
+      if (seen.has(token)) continue;
+      seen.add(token);
+      if (!unitSections.has(token)) unitSections.set(token, new Set());
+      unitSections.get(token).add(index);
+    }
+  });
+  const phrases = [...clauseCount.entries()].filter(([, count]) => count >= 3).slice(0, 8);
+  for (const [clause, count] of phrases) {
+    report("重复", `首页短句「${clip(clause)}」出现 ${count} 次`, "warn");
+  }
+  const units = [...unitSections.entries()].filter(([, set]) => set.size >= 3).slice(0, 8);
+  for (const [token, set] of units) {
+    report("重复", `首页「${token}」出现在 ${set.size} 个板块`, "warn");
   }
 }
 
@@ -904,7 +953,9 @@ function checkMotionJs(js) {
 
 function checkSiteJson(site) {
   const specs = loadSpecs(site);
+  const house = loadHouse(site);
   for (const page of site.pages || []) {
+    if (page.enabled === false) continue;
     for (const section of page.sections || []) {
       const spec = specs.get(section.type);
       if (!spec) {
@@ -924,6 +975,8 @@ function checkSiteJson(site) {
       report("spec", `collections.${id} 必须是列表`);
       continue;
     }
+    const parent = house ? parentOfCollection(house, id) : null;
+    if (parent && !isOn(house, site, parent)) continue;
     for (const item of items) {
       checkFields(item, detailSpec?.fields || {}, `${id}.${item.slug || "?"}`, "collection-detail");
     }

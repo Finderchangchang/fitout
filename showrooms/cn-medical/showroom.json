@@ -7,7 +7,9 @@
   "flavor": "cn",
   "buttons": {
     "primary": "预约挂号",
+    "primaryHref": "contact/index.html",
     "secondary": "看看项目",
+    "secondaryHref": "services/index.html",
     "form": "在线预约"
   },
   "shell": {
@@ -55,6 +57,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -132,6 +135,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "essay",
@@ -174,6 +178,7 @@
       "id": "services",
       "file": "services/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "collection-list",
@@ -195,6 +200,7 @@
       "id": "service",
       "file": "services/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "services",
       "order": [
         {
@@ -210,6 +216,13 @@
       "id": "doctors",
       "file": "doctors/index.html",
       "kind": "team",
+      "optional": true,
+      "when": "档案写了可以放上姓名的医生。",
+      "deny": [
+        "没有医生",
+        "没有团队",
+        "不公开人员"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -231,6 +244,8 @@
       "id": "doctor",
       "file": "doctors/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "医生列表开着，并且有对应的人。列表关掉就不生成。",
       "from": "doctors",
       "order": [
         {
@@ -246,6 +261,12 @@
       "id": "guide",
       "file": "guide/index.html",
       "kind": "about",
+      "optional": true,
+      "when": "档案写了就诊流程或到店须知。",
+      "deny": [
+        "没有须知",
+        "没有流程"
+      ],
       "order": [
         {
           "type": "why",
@@ -281,6 +302,12 @@
       "id": "articles",
       "file": "articles/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的科普或公告。",
+      "deny": [
+        "没有文章",
+        "没有动态"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -302,6 +329,8 @@
       "id": "article",
       "file": "articles/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "文章或新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "articles",
       "order": [
         {
@@ -317,6 +346,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",

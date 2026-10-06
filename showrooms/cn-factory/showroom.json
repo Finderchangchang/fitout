@@ -7,7 +7,9 @@
   "note": "给机械设备、五金、零部件、建材工厂。内销为主，兼做外贸询盘。首页把厂房、工艺、产能、资质和零件摆开，内页能翻到参数和询价。",
   "buttons": {
     "primary": "索取报价",
+    "primaryHref": "contact/index.html",
     "secondary": "产品中心",
+    "secondaryHref": "products/index.html",
     "form": "留言询价"
   },
   "shell": {
@@ -55,6 +57,7 @@
       "id": "home",
       "file": "index.html",
       "kind": "home",
+      "optional": false,
       "order": [
         {
           "type": "hero",
@@ -118,6 +121,7 @@
       "id": "about",
       "file": "about/index.html",
       "kind": "about",
+      "optional": false,
       "order": [
         {
           "type": "timeline",
@@ -160,6 +164,7 @@
       "id": "products",
       "file": "products/index.html",
       "kind": "list",
+      "optional": false,
       "order": [
         {
           "type": "collection-list",
@@ -174,6 +179,7 @@
       "id": "product",
       "file": "products/{slug}.html",
       "kind": "detail",
+      "optional": false,
       "from": "products",
       "order": [
         {
@@ -189,6 +195,12 @@
       "id": "applications",
       "file": "applications/index.html",
       "kind": "list",
+      "optional": true,
+      "when": "档案写了产品用在哪些场景或行业。",
+      "deny": [
+        "没有应用场景",
+        "没有应用"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -203,6 +215,8 @@
       "id": "application",
       "file": "applications/{slug}.html",
       "kind": "detail",
+      "optional": true,
+      "when": "应用列表开着，并且有对应条目。列表关掉就不生成。",
       "from": "applications",
       "order": [
         {
@@ -218,6 +232,13 @@
       "id": "news",
       "file": "news/index.html",
       "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的动态，例如换供应商、新菜单、招生或工期。",
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
         {
           "type": "collection-list",
@@ -232,6 +253,8 @@
       "id": "news-item",
       "file": "news/{slug}.html",
       "kind": "news-detail",
+      "optional": true,
+      "when": "新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
         {
@@ -247,6 +270,7 @@
       "id": "contact",
       "file": "contact/index.html",
       "kind": "contact",
+      "optional": false,
       "order": [
         {
           "type": "contact",
