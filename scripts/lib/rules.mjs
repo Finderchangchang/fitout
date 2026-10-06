@@ -163,6 +163,7 @@ export const E6_WORDS = [
 
 export const PLACEHOLDERS = [
   { label: "待补充", pattern: "待补充" },
+  { label: "待补", pattern: "待补" },
   { label: "TODO", pattern: "\\bTODO\\b", flags: "i" },
   { label: "XX", pattern: "(?:^|[^A-Za-z0-9])XX(?:[^A-Za-z0-9]|$)" },
   { label: "示例", pattern: "示例" },

@@ -153,7 +153,7 @@ node scripts/check.mjs --lint-framework
 
 标题和按钮额外禁止「——」「—」。正文允许。这是任务书定的，不是 A 报告原文。
 
-店名不超过 16 字，页面 title 不超过 30，description 不超过 80，地址不超过 40。占位词另拦：待补充、TODO、XX、示例、请填写、ipsum、Jane Doe、张三、李四、`test@`、`123-4567-8900`。`id` 全页不能重复。
+店名不超过 16 字，页面 title 不超过 30，description 不超过 80，地址不超过 40。占位词另拦：待补、待补充、TODO、XX、示例、请填写、ipsum、Jane Doe、张三、李四、`test@`、`123-4567-8900`。`id` 全页不能重复。
 
 ## 样板间必须满足的约定
 

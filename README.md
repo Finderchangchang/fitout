@@ -58,6 +58,10 @@ node scripts/build.mjs showrooms/cn-factory/examples/site.json --out out
 
 打开 `out/` 里生成的 `index.html` 就能看。仓库里**不带演示图片**（图库照片的许可证不允许原样再分发），缺图的位置会自动换成不需要图的版式；自己配图的流程（图库下载 / AI 生图 / 统一调色）见 [docs/IMAGES.md](docs/IMAGES.md)。新做一套样板间见 [docs/SHOWROOM.md](docs/SHOWROOM.md)。
 
+按企业档案填 `site.json`：`node scripts/fill.mjs --profile 企业档案.md --showroom cn-factory --out site.json`。密钥只放环境变量 `DEEPSEEK_API_KEY`，填法和重试见 [docs/SITE_JSON.md](docs/SITE_JSON.md)。
+
+DeepSeek `deepseek-chat` 按 3 份虚构档案填了 6 个站，这一轮拼装、机检和视觉检查都通过，疑似编造 0，示例泄漏 0。
+
 ## 交房前的机检
 
 审美和规矩不靠模型自觉，靠脚本拦：
@@ -81,7 +85,7 @@ node scripts/build.mjs showrooms/cn-factory/examples/site.json --out out
 - [x] 样板间引擎 + 四道机检
 - [x] 第一批 10 套国内风样板间
 - [ ] 国际风样板间
-- [ ] 便宜模型实测（按企业档案自动填 `site.json`）
+- [x] 便宜模型实测（按企业档案自动填 `site.json`）
 - [ ] 一句话出站的 skill
 
 ## 许可

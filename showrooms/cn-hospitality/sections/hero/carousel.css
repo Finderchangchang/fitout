@@ -100,6 +100,10 @@
   .hero-full .hero-copy {
     padding-top: 2rem;
   }
+
+  .hero-full .hero-scrim {
+    background: rgb(0 0 0 / 0.64);
+  }
 }
 
 @media (min-width: 1024px) {

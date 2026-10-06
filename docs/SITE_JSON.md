@@ -214,3 +214,18 @@
 - 占位词：Lorem、John Doe、Acme。
 - 编出来的客户数、评分、备案号、评价、案例、团队。没有就不填，整块不出。
 - 站内可提交的表单、嵌入地图、手画插画。
+
+## 用模型填
+
+`scripts/fill.mjs` 把本页规则、这套样板间的 `examples/site.json`（只作结构，不抄公司名、电话、数字和句式）、各板块 `spec.json` 的字段和字数上限、企业档案全文拼成提示词，请 DeepSeek 输出 `site.json`。
+
+```bash
+node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2]
+```
+
+- `--model` 默认 `deepseek-chat`。
+- `--max-retries` 默认 `2`。校验不过就把错误清单发回给模型改，最多再改这么多轮。
+- 密钥只读环境变量 `DEEPSEEK_API_KEY`，不要写进命令行、日志或档案。
+- 每次调用用了多少 token，记在旁边的 `<out>.log.json`。
+
+校验先看本仓库的填写规则（必填、字数、空话、主按钮），再实际拼一次、跑一次机检。缺图警告，以及「上线前要换真实网址」，不会拿去要求模型重写。

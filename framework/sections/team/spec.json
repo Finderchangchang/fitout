@@ -48,6 +48,12 @@
           "required": false,
           "maxChars": 30,
           "hint": "有照片才需要"
+        },
+        "href": {
+          "type": "string",
+          "required": false,
+          "maxChars": 200,
+          "hint": "没有单独的个人页就留空。模板会判断这个字段，省掉键会让拼装报未定义"
         }
       },
       "hint": "1 到 6 人"

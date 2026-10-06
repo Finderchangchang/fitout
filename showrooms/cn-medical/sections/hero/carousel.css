@@ -89,3 +89,9 @@
     padding-bottom: 2rem;
   }
 }
+
+@media (max-width: 767px) {
+  .hero-full .hero-scrim {
+    background: rgb(0 0 0 / 0.64);
+  }
+}
