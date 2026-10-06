@@ -14,16 +14,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
-        "clinic",
-        "dental",
-        "chair",
-        "daylight",
-        "room"
+        "tray",
+        "instrument",
+        "light"
       ],
-      "prompt": "中国社区口腔诊所诊室，综合治疗台和冷白灯，白天，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "prompt": "综合治疗台旁边的器械托盘和冷白灯，白天，只取托盘局部，不要口腔特写，不要诊室全景，不要文字，不要 logo。",
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must",
+      "desc": "首屏，治疗台托盘。"
     },
     {
       "id": "hero-room",
@@ -32,15 +33,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
-        "clinic",
-        "operatory",
-        "equipment",
-        "daylight"
+        "chair",
+        "window",
+        "corner"
       ],
-      "prompt": "中国社区口腔诊所二楼诊室，一台综合治疗台靠窗，地面干净，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "prompt": "靠窗综合治疗台的扶手和地面，自然光，冷白，不要口腔特写，不要整间诊室，不要文字，不要 logo。",
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must",
+      "desc": "首屏，靠窗的治疗台一角。"
     },
     {
       "id": "hero-lobby",
@@ -49,16 +52,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
-        "clinic",
-        "lobby",
+        "seat",
         "waiting",
-        "chairs",
-        "daylight"
+        "floor"
       ],
-      "prompt": "中国社区口腔诊所一楼候诊区，一排浅色座椅和挂号窗口，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "prompt": "一排浅色候诊椅的座面和地面反光，自然光，不要挂号窗口全景，不要口腔特写，不要文字，不要 logo。",
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must",
+      "desc": "首屏，候诊椅的局部。"
     },
     {
       "id": "hero-consult",
@@ -67,16 +71,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
-        "clinic",
-        "consult",
         "xray",
-        "doctor",
-        "daylight"
+        "lightbox",
+        "film"
       ],
-      "prompt": "中国社区口腔诊所诊室，东亚面孔的医生穿白大衣对着灯箱上的牙片讲解，不见患者口腔，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "prompt": "灯箱上的一张牙片，只见胶片，不见患者口腔，冷白自然光，不要医生正脸特写，不要文字，不要 logo。",
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must",
+      "desc": "首屏，灯箱上的牙片。"
     },
     {
       "id": "banner",
@@ -86,6 +91,7 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "clinic",
         "facade",
@@ -94,7 +100,8 @@
         "wide"
       ],
       "prompt": "中国社区口腔诊所沿街外立面，玻璃门和门诊招牌位置留白不写字，白天，横构图，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must"
     },
     {
       "id": "band",
@@ -103,7 +110,8 @@
       "ratio": "2.4:1",
       "px": "1440x600",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "clinic",
         "waiting",
@@ -112,7 +120,8 @@
         "daylight"
       ],
       "prompt": "中国社区口腔诊所一楼候诊长廊，浅色座椅延伸到收费处，横构图，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must"
     },
     {
       "id": "svc-clean",
@@ -121,7 +130,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "scaler",
         "dental",
@@ -129,7 +139,8 @@
         "tray"
       ],
       "prompt": "超声洁牙机放在综合治疗台器械盘上，诊室白天，不见口腔，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "svc-fill",
@@ -138,7 +149,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "resin",
         "dental",
@@ -146,7 +158,8 @@
         "unit"
       ],
       "prompt": "树脂补牙材料放在治疗台托盘上，诊室白天，不见口腔，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "svc-pull",
@@ -155,7 +168,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "panoramic",
         "xray",
@@ -163,7 +177,8 @@
         "clinic"
       ],
       "prompt": "口腔诊所拍片室里的全景机，机器空着，白天，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "svc-fluor",
@@ -172,7 +187,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "pediatric",
         "dental",
@@ -180,7 +196,8 @@
         "room"
       ],
       "prompt": "儿童口腔诊室，小号治疗椅和浅色柜，没有孩子入镜，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "svc-plant",
@@ -189,7 +206,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "consult",
         "xray",
@@ -197,7 +215,8 @@
         "clinic"
       ],
       "prompt": "口腔咨询室的看片灯亮着一张牙片，桌面干净，不见患者，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "svc-brace",
@@ -206,7 +225,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "ortho",
         "impression",
@@ -214,7 +234,8 @@
         "clinic"
       ],
       "prompt": "正畸初诊的取模台，托盘和模型盒摆好，不见口腔，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "room-wait",
@@ -223,7 +244,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "waiting",
         "chairs",
@@ -231,7 +253,8 @@
         "clinic"
       ],
       "prompt": "口腔诊所一楼候诊区靠窗座椅，白天自然光，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "room-chair",
@@ -240,7 +263,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "operatory",
         "chair",
@@ -248,7 +272,8 @@
         "clinic"
       ],
       "prompt": "二楼空着的一间口腔诊室，治疗台和灯，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "room-sterile",
@@ -257,7 +282,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "sterile",
         "instruments",
@@ -265,7 +291,8 @@
         "clinic"
       ],
       "prompt": "口腔诊所消毒间，器械篮和封口机，不见人员，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "facade",
@@ -275,6 +302,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "facade",
         "clinic",
@@ -282,7 +310,8 @@
         "daylight"
       ],
       "prompt": "学院路社区口腔门诊楼外，玻璃门和台阶，白天，招牌位置不写字，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must"
     },
     {
       "id": "gear-chair",
@@ -291,7 +320,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "dental",
         "unit",
@@ -299,7 +329,8 @@
         "chair"
       ],
       "prompt": "口腔综合治疗台和冷白手术灯的近景，诊室白天，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "gear-pano",
@@ -308,7 +339,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "panoramic",
         "xray",
@@ -316,7 +348,8 @@
         "room"
       ],
       "prompt": "全景机拍片位，机器和对准杆，房间空着，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "gear-scaler",
@@ -325,7 +358,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "ultrasonic",
         "scaler",
@@ -333,7 +367,8 @@
         "tray"
       ],
       "prompt": "超声洁牙机机头放在托盘上，可拆卸的工作尖清晰，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "street",
@@ -343,6 +378,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "sidewalk",
         "clinic",
@@ -350,7 +386,8 @@
         "daylight"
       ],
       "prompt": "社区口腔门诊门口的人行道和玻璃门，白天，没有广告字，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "must"
     },
     {
       "id": "doc-lin",
@@ -360,6 +397,7 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "doctor",
         "man",
@@ -368,7 +406,8 @@
         "coat"
       ],
       "prompt": "中国社区口腔诊所，东亚面孔的中年男医生穿白大衣站在治疗台旁，竖构图半身，自然光，纪实，无文字无 logo。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "doc-zhao",
@@ -378,6 +417,7 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "doctor",
         "woman",
@@ -386,7 +426,8 @@
         "coat"
       ],
       "prompt": "中国社区口腔诊所儿童诊室，东亚面孔的女医生穿白大衣站在小号治疗椅旁，竖构图半身，自然光，纪实，无文字无 logo。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "doc-chen",
@@ -396,6 +437,7 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "doctor",
         "man",
@@ -404,7 +446,8 @@
         "coat"
       ],
       "prompt": "中国社区口腔诊所，东亚面孔的男医生穿白大衣拿着牙周探针托盘，竖构图半身，不见患者口腔，自然光，纪实，无文字无 logo。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "doc-wu",
@@ -414,6 +457,7 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "doctor",
         "man",
@@ -422,7 +466,8 @@
         "coat"
       ],
       "prompt": "中国社区口腔诊所，东亚面孔的年轻男医生穿白大衣站在超声洁牙机旁，竖构图半身，自然光，纪实，无文字无 logo。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "art-first",
@@ -439,7 +484,8 @@
         "rack"
       ],
       "prompt": "儿童口腔诊室门口的说明架和空治疗椅，没有孩子，没有疗效对比，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "art-brush",
@@ -456,7 +502,8 @@
         "equipment"
       ],
       "prompt": "治疗台上的超声洁牙机和托盘，没有口腔特写，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "art-gum",
@@ -473,7 +520,8 @@
         "clinic"
       ],
       "prompt": "不锈钢托盘上的牙周探针，诊室台面，没有口腔特写，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "art-kids",
@@ -490,7 +538,8 @@
         "clinic"
       ],
       "prompt": "儿童诊室里的涂氟托盘和小杯，没有孩子入镜，没有前后对比，自然光，纪实摄影风格，无文字无 logo，不要口腔特写，不要术前术后对比。",
-      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。"
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "tier": "nice"
     },
     {
       "id": "qr-wechat",
@@ -500,6 +549,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "qr",
         "wechat",
@@ -507,7 +557,8 @@
       ],
       "prompt": "门诊微信二维码，由门诊提供。",
       "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
-      "desc": "门诊微信二维码。交给门诊换成自己的码。"
+      "desc": "门诊微信二维码。交给门诊换成自己的码。",
+      "tier": "nice"
     },
     {
       "id": "qr-service",
@@ -517,6 +568,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "qr",
         "service",
@@ -524,7 +576,8 @@
       ],
       "prompt": "门诊服务号二维码，由门诊提供。",
       "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
-      "desc": "门诊服务号二维码。交给门诊换成自己的码。"
+      "desc": "门诊服务号二维码。交给门诊换成自己的码。",
+      "tier": "nice"
     }
   ]
 }

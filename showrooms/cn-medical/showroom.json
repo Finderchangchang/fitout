@@ -11,9 +11,15 @@
     "form": "在线预约"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,12 +27,28 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4000ms"
+    }
   },
   "collections": [
-    { "id": "services", "label": "诊疗项目", "listFile": "services/index.html" },
-    { "id": "doctors", "label": "医生团队", "listFile": "doctors/index.html" },
-    { "id": "articles", "label": "口腔科普", "listFile": "articles/index.html" }
+    {
+      "id": "services",
+      "label": "诊疗项目",
+      "listFile": "services/index.html"
+    },
+    {
+      "id": "doctors",
+      "label": "医生团队",
+      "listFile": "doctors/index.html"
+    },
+    {
+      "id": "articles",
+      "label": "口腔科普",
+      "listFile": "articles/index.html"
+    }
   ],
   "pages": [
     {
@@ -34,16 +56,76 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "gate", "required": true, "variants": ["board"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "services", "required": true, "variants": ["board"] },
-        { "type": "brief", "required": true, "variants": ["split"] },
-        { "type": "team", "required": true, "variants": ["cards"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "gear", "required": true, "variants": ["tiles"] },
-        { "type": "bulletin", "required": true, "variants": ["rows"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "gate",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "services",
+          "required": true,
+          "variants": [
+            "board"
+          ]
+        },
+        {
+          "type": "brief",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "gear",
+          "required": false,
+          "variants": [
+            "tiles"
+          ]
+        },
+        {
+          "type": "bulletin",
+          "required": false,
+          "variants": [
+            "rows"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -51,11 +133,41 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "essay", "required": true, "variants": ["split"] },
-        { "type": "rooms", "required": true, "variants": ["grid"] },
-        { "type": "gear", "required": true, "variants": ["tiles"] },
-        { "type": "papers", "required": true, "variants": ["list"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "essay",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "rooms",
+          "required": false,
+          "variants": [
+            "grid"
+          ]
+        },
+        {
+          "type": "gear",
+          "required": false,
+          "variants": [
+            "tiles"
+          ]
+        },
+        {
+          "type": "papers",
+          "required": false,
+          "variants": [
+            "list"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -63,8 +175,20 @@
       "file": "services/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["cards"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -73,7 +197,13 @@
       "kind": "detail",
       "from": "services",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -81,8 +211,20 @@
       "file": "doctors/index.html",
       "kind": "team",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["portraits"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "portraits"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -91,7 +233,13 @@
       "kind": "detail",
       "from": "doctors",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -99,10 +247,34 @@
       "file": "guide/index.html",
       "kind": "about",
       "order": [
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "faq", "required": true, "variants": ["accordion"] },
-        { "type": "reach", "required": true, "variants": ["split"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        },
+        {
+          "type": "reach",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -110,8 +282,20 @@
       "file": "articles/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["rows"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "rows"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -120,7 +304,13 @@
       "kind": "news-detail",
       "from": "articles",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -128,8 +318,20 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["desk"] },
-        { "type": "inquiry", "required": true, "variants": ["note"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "desk"
+          ]
+        },
+        {
+          "type": "inquiry",
+          "required": false,
+          "variants": [
+            "note"
+          ]
+        }
       ]
     }
   ]

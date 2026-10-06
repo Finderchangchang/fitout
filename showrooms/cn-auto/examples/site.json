@@ -13,21 +13,49 @@
     "email": "shop@luzhun.example",
     "address": "杭州市滨江区江南大道1288号（虚构地址）",
     "hours": [
-      { "day": "滨江、拱墅", "time": "08:30-19:00" },
-      { "day": "萧山店", "time": "09:00-18:30" }
+      {
+        "day": "滨江、拱墅",
+        "time": "08:30-19:00"
+      },
+      {
+        "day": "萧山店",
+        "time": "09:00-18:30"
+      }
     ],
     "formUrl": "https://example.com/luzhun-visit",
     "icp": "浙ICP备20261006号-8"
   },
   "nav": [
-    { "label": "关于我们", "href": "about/index.html" },
-    { "label": "服务项目", "href": "services/index.html" },
-    { "label": "技师团队", "href": "team/index.html" },
-    { "label": "门店分布", "href": "stores/index.html" },
-    { "label": "养车知识", "href": "news/index.html" },
-    { "label": "预约到店", "href": "contact/index.html" }
+    {
+      "label": "关于我们",
+      "href": "about/index.html"
+    },
+    {
+      "label": "服务项目",
+      "href": "services/index.html"
+    },
+    {
+      "label": "技师团队",
+      "href": "team/index.html"
+    },
+    {
+      "label": "门店分布",
+      "href": "stores/index.html"
+    },
+    {
+      "label": "养车知识",
+      "href": "news/index.html"
+    },
+    {
+      "label": "预约到店",
+      "href": "contact/index.html"
+    }
   ],
-  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
   "collections": {
     "services": [
       {
@@ -40,13 +68,28 @@
         "image": "svc-care",
         "imageAlt": "技师在举升机下换机油",
         "specs": [
-          { "label": "所需时间", "value": "约90分钟" },
-          { "label": "参考价", "value": "328元起" },
-          { "label": "质保", "value": "工时六个月" },
-          { "label": "适合", "value": "家用轿车和SUV" }
+          {
+            "label": "所需时间",
+            "value": "约90分钟"
+          },
+          {
+            "label": "参考价",
+            "value": "328元起"
+          },
+          {
+            "label": "质保",
+            "value": "工时六个月"
+          },
+          {
+            "label": "适合",
+            "value": "家用轿车和SUV"
+          }
         ],
         "faqs": [
-          { "q": "可以只换机油吗", "a": "可以。机滤一起换的话，写在同一张单上。" }
+          {
+            "q": "可以只换机油吗",
+            "a": "可以。机滤一起换的话，写在同一张单上。"
+          }
         ]
       },
       {
@@ -59,13 +102,28 @@
         "image": "svc-repair",
         "imageAlt": "技师用诊断仪读故障码",
         "specs": [
-          { "label": "所需时间", "value": "大约40分钟" },
-          { "label": "参考价", "value": "80元起" },
-          { "label": "质保", "value": "工时六个月" },
-          { "label": "适合", "value": "有故障灯的车" }
+          {
+            "label": "所需时间",
+            "value": "大约40分钟"
+          },
+          {
+            "label": "参考价",
+            "value": "80元起"
+          },
+          {
+            "label": "质保",
+            "value": "工时六个月"
+          },
+          {
+            "label": "适合",
+            "value": "有故障灯的车"
+          }
         ],
         "faqs": [
-          { "q": "检测费能抵吗", "a": "当天在本店维修，检测费从工时里扣。不修就按检测收费。" }
+          {
+            "q": "检测费能抵吗",
+            "a": "当天在本店维修，检测费从工时里扣。不修就按检测收费。"
+          }
         ]
       },
       {
@@ -78,10 +136,22 @@
         "image": "svc-paint",
         "imageAlt": "烤漆房里一辆补漆的轿车",
         "specs": [
-          { "label": "所需时间", "value": "大约两天" },
-          { "label": "参考价", "value": "翼子板680元起" },
-          { "label": "质保", "value": "漆面十二个月" },
-          { "label": "适合", "value": "刮蹭和小凹陷" }
+          {
+            "label": "所需时间",
+            "value": "大约两天"
+          },
+          {
+            "label": "参考价",
+            "value": "翼子板680元起"
+          },
+          {
+            "label": "质保",
+            "value": "漆面十二个月"
+          },
+          {
+            "label": "适合",
+            "value": "刮蹭和小凹陷"
+          }
         ]
       },
       {
@@ -94,10 +164,22 @@
         "image": "svc-detail",
         "imageAlt": "技师用泡沫精洗发动机盖",
         "specs": [
-          { "label": "所需时间", "value": "大约两小时" },
-          { "label": "参考价", "value": "168元起" },
-          { "label": "质保", "value": "当天核对" },
-          { "label": "适合", "value": "日常精洗" }
+          {
+            "label": "所需时间",
+            "value": "大约两小时"
+          },
+          {
+            "label": "参考价",
+            "value": "168元起"
+          },
+          {
+            "label": "质保",
+            "value": "当天核对"
+          },
+          {
+            "label": "适合",
+            "value": "日常精洗"
+          }
         ]
       },
       {
@@ -110,10 +192,22 @@
         "image": "svc-film",
         "imageAlt": "贴膜技师贴前挡膜",
         "specs": [
-          { "label": "所需时间", "value": "大约一天" },
-          { "label": "参考价", "value": "2680元起" },
-          { "label": "质保", "value": "车衣三年" },
-          { "label": "适合", "value": "前挡或全车" }
+          {
+            "label": "所需时间",
+            "value": "大约一天"
+          },
+          {
+            "label": "参考价",
+            "value": "2680元起"
+          },
+          {
+            "label": "质保",
+            "value": "车衣三年"
+          },
+          {
+            "label": "适合",
+            "value": "前挡或全车"
+          }
         ]
       }
     ],
@@ -128,10 +222,22 @@
         "image": "tech-zhou",
         "imageAlt": "机修主管周启明站在举升机旁",
         "specs": [
-          { "label": "岗位", "value": "机修主管" },
-          { "label": "工龄", "value": "十二年" },
-          { "label": "证书", "value": "汽车维修工（虚构）" },
-          { "label": "门店", "value": "滨江店" }
+          {
+            "label": "岗位",
+            "value": "机修主管"
+          },
+          {
+            "label": "工龄",
+            "value": "十二年"
+          },
+          {
+            "label": "证书",
+            "value": "汽车维修工（虚构）"
+          },
+          {
+            "label": "门店",
+            "value": "滨江店"
+          }
         ]
       },
       {
@@ -144,10 +250,22 @@
         "image": "tech-chen",
         "imageAlt": "钣喷技师陈晓禾在烤漆房门口",
         "specs": [
-          { "label": "岗位", "value": "钣喷技师" },
-          { "label": "工龄", "value": "八年" },
-          { "label": "证书", "value": "汽车喷漆工（虚构）" },
-          { "label": "门店", "value": "滨江店" }
+          {
+            "label": "岗位",
+            "value": "钣喷技师"
+          },
+          {
+            "label": "工龄",
+            "value": "八年"
+          },
+          {
+            "label": "证书",
+            "value": "汽车喷漆工（虚构）"
+          },
+          {
+            "label": "门店",
+            "value": "滨江店"
+          }
         ]
       },
       {
@@ -160,10 +278,22 @@
         "image": "tech-ma",
         "imageAlt": "保养组长马立冬拿着机油壶",
         "specs": [
-          { "label": "岗位", "value": "保养组长" },
-          { "label": "工龄", "value": "九年" },
-          { "label": "证书", "value": "汽车维修工（虚构）" },
-          { "label": "门店", "value": "滨江店" }
+          {
+            "label": "岗位",
+            "value": "保养组长"
+          },
+          {
+            "label": "工龄",
+            "value": "九年"
+          },
+          {
+            "label": "证书",
+            "value": "汽车维修工（虚构）"
+          },
+          {
+            "label": "门店",
+            "value": "滨江店"
+          }
         ]
       },
       {
@@ -176,10 +306,22 @@
         "image": "tech-lin",
         "imageAlt": "贴膜技师林晚晴整理前挡膜",
         "specs": [
-          { "label": "岗位", "value": "贴膜技师" },
-          { "label": "工龄", "value": "六年" },
-          { "label": "证书", "value": "贴膜施工（虚构）" },
-          { "label": "门店", "value": "滨江店" }
+          {
+            "label": "岗位",
+            "value": "贴膜技师"
+          },
+          {
+            "label": "工龄",
+            "value": "六年"
+          },
+          {
+            "label": "证书",
+            "value": "贴膜施工（虚构）"
+          },
+          {
+            "label": "门店",
+            "value": "滨江店"
+          }
         ]
       }
     ],
@@ -194,10 +336,22 @@
         "imageAlt": "滨江店卷帘门和门口停车位",
         "navHref": "https://uri.amap.com/search?keyword=杭州市滨江区江南大道1288号",
         "specs": [
-          { "label": "地址", "value": "杭州市滨江区江南大道1288号" },
-          { "label": "营业时间", "value": "每天08:30-19:00" },
-          { "label": "工位", "value": "保养和钣喷" },
-          { "label": "停车", "value": "店门口可停" }
+          {
+            "label": "地址",
+            "value": "杭州市滨江区江南大道1288号"
+          },
+          {
+            "label": "营业时间",
+            "value": "每天08:30-19:00"
+          },
+          {
+            "label": "工位",
+            "value": "保养和钣喷"
+          },
+          {
+            "label": "停车",
+            "value": "店门口可停"
+          }
         ]
       },
       {
@@ -210,10 +364,22 @@
         "imageAlt": "拱墅店沿街的快修工位",
         "navHref": "https://uri.amap.com/search?keyword=杭州市拱墅区莫干山路918号",
         "specs": [
-          { "label": "地址", "value": "杭州市拱墅区莫干山路918号" },
-          { "label": "营业时间", "value": "每天08:30-19:00" },
-          { "label": "工位", "value": "保养和快修" },
-          { "label": "烤漆", "value": "请到滨江店" }
+          {
+            "label": "地址",
+            "value": "杭州市拱墅区莫干山路918号"
+          },
+          {
+            "label": "营业时间",
+            "value": "每天08:30-19:00"
+          },
+          {
+            "label": "工位",
+            "value": "保养和快修"
+          },
+          {
+            "label": "烤漆",
+            "value": "请到滨江店"
+          }
         ]
       },
       {
@@ -226,10 +392,22 @@
         "imageAlt": "萧山店贴膜间靠窗的工位",
         "navHref": "https://uri.amap.com/search?keyword=杭州市萧山区市心中路456号",
         "specs": [
-          { "label": "地址", "value": "杭州市萧山区市心中路456号" },
-          { "label": "营业时间", "value": "每天09:00-18:30" },
-          { "label": "工位", "value": "美容和贴膜" },
-          { "label": "维修", "value": "大项转滨江" }
+          {
+            "label": "地址",
+            "value": "杭州市萧山区市心中路456号"
+          },
+          {
+            "label": "营业时间",
+            "value": "每天09:00-18:30"
+          },
+          {
+            "label": "工位",
+            "value": "美容和贴膜"
+          },
+          {
+            "label": "维修",
+            "value": "大项转滨江"
+          }
         ]
       }
     ],
@@ -297,15 +475,36 @@
             "secondaryHref": "services/index.html",
             "interval": "4200",
             "slides": [
-              { "image": "hero-bay", "imageAlt": "白天的保养工位，轿车停在举升机上" },
-              { "image": "hero-order", "imageAlt": "技师把进厂单递给车主" },
-              { "image": "hero-paint", "imageAlt": "烤漆房门口一辆补过漆的轿车" },
-              { "image": "hero-film", "imageAlt": "贴膜工位上的前挡玻璃" }
+              {
+                "image": "hero-bay",
+                "imageAlt": "举升机托着轿车底盘的局部"
+              },
+              {
+                "image": "hero-order",
+                "imageAlt": "工装袖口和进厂单的桌面"
+              },
+              {
+                "image": "hero-paint",
+                "imageAlt": "烤漆房门口的车漆反光"
+              },
+              {
+                "image": "hero-film",
+                "imageAlt": "前挡玻璃上的贴膜刮板"
+              }
             ],
             "ticket": [
-              { "name": "工时", "text": "写在进厂单上" },
-              { "name": "配件", "text": "只标参考价" },
-              { "name": "质保", "text": "跟结算单一走" }
+              {
+                "name": "工时",
+                "text": "写在进厂单上"
+              },
+              {
+                "name": "配件",
+                "text": "只标参考价"
+              },
+              {
+                "name": "质保",
+                "text": "跟结算单一走"
+              }
             ]
           }
         },
@@ -370,10 +569,22 @@
             "title": "进厂四步",
             "lead": "预约、检查、报价和交车，都写在同一张单上。",
             "items": [
-              { "name": "预约到店", "text": "电话或网上约工位，当天给时间。" },
-              { "name": "进厂检查", "text": "先看故障码和底盘，再决定拆不拆。" },
-              { "name": "确认报价", "text": "工时和配件参考价，确认后才开工。" },
-              { "name": "交车质保", "text": "质保写在结算单，过期前可以回店。" }
+              {
+                "name": "预约到店",
+                "text": "电话或网上约工位，当天给时间。"
+              },
+              {
+                "name": "进厂检查",
+                "text": "先看故障码和底盘，再决定拆不拆。"
+              },
+              {
+                "name": "确认报价",
+                "text": "工时和配件参考价，确认后才开工。"
+              },
+              {
+                "name": "交车质保",
+                "text": "质保写在结算单，过期前可以回店。"
+              }
             ]
           }
         },
@@ -386,10 +597,22 @@
             "title": "店里这些数",
             "lead": "开业年份、门店、技师和月进厂，都按店里的台账。",
             "items": [
-              { "value": "2014", "label": "年在滨江开业" },
-              { "value": "3", "label": "家直营门店" },
-              { "value": "23", "label": "名持证技师" },
-              { "value": "860", "label": "台月均进厂" }
+              {
+                "value": "2014",
+                "label": "年在滨江开业"
+              },
+              {
+                "value": "3",
+                "label": "家直营门店"
+              },
+              {
+                "value": "23",
+                "label": "名持证技师"
+              },
+              {
+                "value": "860",
+                "label": "台月均进厂"
+              }
             ]
           }
         },
@@ -406,10 +629,22 @@
             "linkLabel": "看看设备",
             "linkHref": "about/index.html#tools",
             "points": [
-              { "name": "举升机", "text": "双柱举升，轿车和SUV都能上。" },
-              { "name": "四轮定位", "text": "定位仪在保养工位旁边。" },
-              { "name": "烤漆房", "text": "小面积补漆进烤漆房，不在露天喷。" },
-              { "name": "技师持证", "text": "机修和钣喷分开考，证书在店里。" }
+              {
+                "name": "举升机",
+                "text": "双柱举升，轿车和SUV都能上。"
+              },
+              {
+                "name": "四轮定位",
+                "text": "定位仪在保养工位旁边。"
+              },
+              {
+                "name": "烤漆房",
+                "text": "小面积补漆进烤漆房，不在露天喷。"
+              },
+              {
+                "name": "技师持证",
+                "text": "机修和钣喷分开考，证书在店里。"
+              }
             ]
           }
         },
@@ -488,9 +723,21 @@
             "title": "三家直营店",
             "lead": "滨江、拱墅、萧山，营业时间写在每家下面。",
             "items": [
-              { "name": "滨江店", "text": "杭州市滨江区江南大道1288号，每天08:30-19:00。", "href": "stores/binjiang.html" },
-              { "name": "拱墅店", "text": "杭州市拱墅区莫干山路918号，每天08:30-19:00。", "href": "stores/gongshu.html" },
-              { "name": "萧山店", "text": "杭州市萧山区市心中路456号，每天09:00-18:30。", "href": "stores/xiaoshan.html" }
+              {
+                "name": "滨江店",
+                "text": "杭州市滨江区江南大道1288号，每天08:30-19:00。",
+                "href": "stores/binjiang.html"
+              },
+              {
+                "name": "拱墅店",
+                "text": "杭州市拱墅区莫干山路918号，每天08:30-19:00。",
+                "href": "stores/gongshu.html"
+              },
+              {
+                "name": "萧山店",
+                "text": "杭州市萧山区市心中路456号，每天09:00-18:30。",
+                "href": "stores/xiaoshan.html"
+              }
             ]
           }
         },
@@ -512,7 +759,12 @@
       "description": "三家直营店。举升机、定位仪和烤漆房在滨江，技师证书在店里可以看。",
       "banner": "banner",
       "bannerAlt": "滨江店门口的卷帘门和停车空地",
-      "crumbs": [{ "label": "关于我们", "href": "" }],
+      "crumbs": [
+        {
+          "label": "关于我们",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "why",
@@ -523,10 +775,22 @@
             "title": "店里四件事",
             "lead": "门店、设备、资质和技师认证，来之前可以先看。",
             "items": [
-              { "name": "门店", "text": "滨江、拱墅、萧山三家直营，不挂加盟牌。" },
-              { "name": "设备", "text": "举升机、四轮定位和烤漆房都在滨江店。" },
-              { "name": "资质", "text": "维修经营备案挂在前台，编号是虚构的。" },
-              { "name": "技师认证", "text": "技师团队 23 人。机修和钣喷分开考，证书可以在店里看。" }
+              {
+                "name": "门店",
+                "text": "滨江、拱墅、萧山三家直营，不挂加盟牌。"
+              },
+              {
+                "name": "设备",
+                "text": "举升机、四轮定位和烤漆房都在滨江店。"
+              },
+              {
+                "name": "资质",
+                "text": "维修经营备案挂在前台，编号是虚构的。"
+              },
+              {
+                "name": "技师认证",
+                "text": "技师团队 23 人。机修和钣喷分开考，证书可以在店里看。"
+              }
             ]
           }
         },
@@ -563,8 +827,14 @@
             "title": "资质和认证",
             "lead": "备案和职业资格都是虚构的，不是真实批文。",
             "items": [
-              { "name": "机动车维修经营备案", "issuer": "虚构备案，非真实" },
-              { "name": "汽车维修工职业资格", "issuer": "人社考核（虚构）" }
+              {
+                "name": "机动车维修经营备案",
+                "issuer": "虚构备案，非真实"
+              },
+              {
+                "name": "汽车维修工职业资格",
+                "issuer": "人社考核（虚构）"
+              }
             ]
           }
         },
@@ -598,7 +868,12 @@
       "description": "保养、维修、钣喷、美容和贴膜。每项写了时间、参考价和质保。",
       "banner": "banner",
       "bannerAlt": "滨江店门口的卷帘门和停车空地",
-      "crumbs": [{ "label": "服务项目", "href": "" }],
+      "crumbs": [
+        {
+          "label": "服务项目",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -619,7 +894,12 @@
       "description": "技师团队 23 人，以下为部分骨干。岗位、工龄和证书写在名字下面，证书在店里可以看。",
       "banner": "banner",
       "bannerAlt": "滨江店门口的卷帘门和停车空地",
-      "crumbs": [{ "label": "技师团队", "href": "" }],
+      "crumbs": [
+        {
+          "label": "技师团队",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -640,7 +920,12 @@
       "description": "滨江、拱墅、萧山三家直营。地址和营业时间写在店名下面。",
       "banner": "banner",
       "bannerAlt": "滨江店门口的卷帘门和停车空地",
-      "crumbs": [{ "label": "门店分布", "href": "" }],
+      "crumbs": [
+        {
+          "label": "门店分布",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -661,7 +946,12 @@
       "description": "机油、补漆、贴膜和刹车四篇，按店里的做法写。",
       "banner": "banner",
       "bannerAlt": "滨江店门口的卷帘门和停车空地",
-      "crumbs": [{ "label": "养车知识", "href": "" }],
+      "crumbs": [
+        {
+          "label": "养车知识",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -682,7 +972,12 @@
       "description": "电话 0571-86903316，或填预约。滨江、拱墅 08:30-19:00，萧山店 09:00-18:30。",
       "banner": "banner",
       "bannerAlt": "滨江店门口的卷帘门和停车空地",
-      "crumbs": [{ "label": "预约到店", "href": "" }],
+      "crumbs": [
+        {
+          "label": "预约到店",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "contact",

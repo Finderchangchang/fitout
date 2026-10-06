@@ -11,9 +11,15 @@
     "form": "写给招商"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,12 +27,28 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 9, "interval": "4500ms" }
+    "carousel": {
+      "min": 3,
+      "max": 9,
+      "interval": "4500ms"
+    }
   },
   "collections": [
-    { "id": "products", "label": "产品", "listFile": "products/index.html" },
-    { "id": "stores", "label": "门店", "listFile": "stores/index.html" },
-    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+    {
+      "id": "products",
+      "label": "产品",
+      "listFile": "products/index.html"
+    },
+    {
+      "id": "stores",
+      "label": "门店",
+      "listFile": "stores/index.html"
+    },
+    {
+      "id": "news",
+      "label": "新闻动态",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -34,15 +56,69 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "essay", "required": true, "variants": ["split"] },
-        { "type": "mosaic", "required": true, "variants": ["quad"] },
-        { "type": "tasting", "required": true, "variants": ["picker"] },
-        { "type": "triptych", "required": true, "variants": ["spread"] },
-        { "type": "briefs", "required": true, "variants": ["cards"] },
-        { "type": "invite", "required": true, "variants": ["band"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "essay",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "mosaic",
+          "required": false,
+          "variants": [
+            "quad"
+          ]
+        },
+        {
+          "type": "tasting",
+          "required": true,
+          "variants": [
+            "picker"
+          ]
+        },
+        {
+          "type": "triptych",
+          "required": false,
+          "variants": [
+            "spread"
+          ]
+        },
+        {
+          "type": "briefs",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "invite",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -50,9 +126,27 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "essay", "required": true, "variants": ["split"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "faq", "required": true, "variants": ["accordion"] }
+        {
+          "type": "essay",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     },
     {
@@ -60,7 +154,13 @@
       "file": "products/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["board"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        }
       ]
     },
     {
@@ -69,7 +169,13 @@
       "kind": "detail",
       "from": "products",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -77,7 +183,13 @@
       "file": "stores/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["feed"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "feed"
+          ]
+        }
       ]
     },
     {
@@ -86,7 +198,13 @@
       "kind": "detail",
       "from": "stores",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -94,9 +212,27 @@
       "file": "join/index.html",
       "kind": "join",
       "order": [
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "merits", "required": true, "variants": ["list"] },
-        { "type": "inquire", "required": true, "variants": ["note"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "merits",
+          "required": false,
+          "variants": [
+            "list"
+          ]
+        },
+        {
+          "type": "inquire",
+          "required": false,
+          "variants": [
+            "note"
+          ]
+        }
       ]
     },
     {
@@ -104,7 +240,13 @@
       "file": "news/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["feed"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "feed"
+          ]
+        }
       ]
     },
     {
@@ -113,7 +255,13 @@
       "kind": "news-detail",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -121,8 +269,20 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["card"] },
-        { "type": "inquire", "required": true, "variants": ["note"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "card"
+          ]
+        },
+        {
+          "type": "inquire",
+          "required": false,
+          "variants": [
+            "note"
+          ]
+        }
       ]
     }
   ]

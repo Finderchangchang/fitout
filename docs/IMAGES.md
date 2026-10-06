@@ -14,6 +14,20 @@ H:\ai_tool\fitout-demo-assets\<showroom-id>\<slot-id>.jpg
 node scripts/build.mjs showrooms/<id>/examples/site.json --demo-images H:\ai_tool\fitout-demo-assets\<id>
 ```
 
+课堂上图很少，用正式模式，不要画演示占位：
+
+```text
+node scripts/build.mjs <site.json> --images <老板照片和生成图的目录> [--site-dir <目录>] [--base-url <网址>]
+```
+
+`--images` 按图片位 id 找同名的 jpg、jpeg、png、webp、svg、gif。找不到就当这张没有。不要和 `--demo-images` 一起用。
+
+`images.json` 每个位有 `tier`。`must` 是课上必须有的图，每套最多 8 张（首屏 1 到 3 张，再加几张最关键的）。`nice` 没有就走无图。正式模式（不带 `--demo-images`）里：
+
+- `nice` 缺了：能换无图版式就换。首屏轮播凑不满 3 张，改成文字首屏。纯图片带 `photo-band` 整块不出。别的板块留下文字，缺的 `<img>` 不输出。拼装不因此失败。
+- `must` 缺了：拼装仍然成功。`check.mjs` 警告「这些图课上要有，现在还没有」，并列出 id。
+- 还有 `must` 或 `nice` 位没有文件时，首页张数不够不再拿 E4 挡住。演示模式仍按原来的张数规则。
+
 三个脚本都在 `scripts/images/`，不安装 npm 包。网络用 Node 自带的 fetch。裁切和调色用本机 Playwright 的 Chromium canvas。Playwright 从环境变量 `PLAYWRIGHT_PATH` 找，找不到就用 `H:\ai_tool\site-studio-refs\scripts\node_modules\playwright`。
 
 MiniMax 的密钥只读环境变量 `MINIMAX_API_KEY`。接口根地址默认 `https://api.minimaxi.com/v1`，要用别的地址就设 `MINIMAX_BASE_URL`（https，写到 `/v1` 为止）。脚本不会把密钥写进日志、报告或图片目录。
@@ -175,12 +189,19 @@ node scripts/images/grade.mjs --showroom cn-dining --in <原始图目录> --out 
 
 拼装按 id 在 `--demo-images` 目录里找文件。找到就拷进站点。找不到就画一块浅色占位，写上用途和「上线前替换」，例如「微信二维码 · 上线前替换」。用途取这个位 `desc` 的第一句，没有 `desc` 就用 id。拼装不因此失败，这一页也不挂「演示占位图」。
 
-不带 `--demo-images` 时没有图片目录可找，`client` 位也出这块占位，拼装不失败。`check.mjs` 在正式模式（构建报告不是演示，也没有 `--demo`）发现这个位没有 `images/<id>` 文件，给警告，不阻断。演示模式不为此警告。
+不带 `--demo-images` 时，`--images` 目录里有同名文件就用那张，没有就出这块占位，拼装不失败。`check.mjs` 在正式模式里，对没写 `tier` 的 `client` 位发现站点里没有 `images/<id>` 文件，给警告，不阻断。写了 `tier` 的位改走上面的 must / nice 规则，不再重复这条。演示模式不为此警告。
 
 ## 交给真实客户
 
-`mustBeReal` 为 `true` 的位置必须换成客户自己的实拍，不能把图库图或 AI 图放进正式站。门头、车间、教室、后厨、老师和学生都属于这一类。
+课堂口径：
 
-二维码、营业执照、资质证书不要写 `stock` 或 `ai`，写 `client`。
+首屏轮播是行业氛围和细节特写，可以用 AI 生成，也可以用图库。不要把它写成「本厂 / 本店 / 本校」的全景。样板间里这些位一律 `mustBeReal: false`、`tier: must`。prompt 写局部：工厂是机床加工、金属零件、车间光影；餐饮是茶汤和食材；律所是案头书卷、法槌、建筑局部；口腔是器械和诊室局部，不要口腔特写。每套 `tier: must` 的位里，至少 3 个是 `mustBeReal: false`，课上没有老板照片时，可以用生成图把首屏补上。
 
-正式拼装不要带 `--demo-images`。那个参数是演示用的。缺的图库图和 AI 图会画深色占位，只有这一页真画出了这种块，才标「演示占位图」。见 `docs/SHOWROOM.md`。
+- `mustBeReal` 为 `true` 的图片位不允许用生成图。正式拼装时，这个位没有客户的真图，就走无图 fallback，不画「上线前替换」，也不拿生成图顶上。所以每个 `mustBeReal` 的位都必须写 fallback（样板间里写 `"fallback": "omit"`，表示整张图不出）。
+- `tier` 为 `must` 且 `mustBeReal` 为 `false` 的位可以用生成图。正式拼装找不到文件时，仍按缺图警告，不因此改退出码。
+- `mustBeReal: true` 只留给页面文字明确说「这是我们的」那一类：团队、医生、律师、技师的人像，门店门头，厂房或场地全景，证书，客片和作品。氛围图、细节特写、工艺过程不要标成必须实拍。
+- 二维码、营业执照、资质证书不要写 `stock` 或 `ai`，写 `client`。
+
+拼装分不清一张 jpg 是实拍还是生成的。正式目录里不要把生成图放进 `mustBeReal` 的位。
+
+正式拼装不要带 `--demo-images`。那个参数是演示用的：缺的图库图和 AI 图会画深色占位，只有这一页真画出了这种块，才标「演示占位图」。演示模式仍给 `mustBeReal` 的位画占位，方便看版式。见 `docs/SHOWROOM.md`。

@@ -1,17 +1,37 @@
 {
   "note": "环境照片三张，同一比例。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 3,
       "max": 3,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 12 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
@@ -21,7 +41,8 @@
       "imageField": "items.image",
       "family": "rooms",
       "fit": "候诊、诊室、消毒三张横图",
-      "source": "样板间自写"
+      "source": "样板间自写",
+      "fallback": "omit"
     }
   }
 }

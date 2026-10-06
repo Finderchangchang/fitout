@@ -1,0 +1,16 @@
+{
+  "note": "首页上的小工具入口。拼装脚本在 site.json 有 toolEntry 时插到首页末尾，不写进户型顺序。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": true, "maxChars": 40 },
+    "label": { "type": "string", "required": true, "maxChars": 8 },
+    "href": { "type": "string", "required": true, "maxChars": 200 }
+  },
+  "variants": {
+    "band": {
+      "needsImage": false,
+      "family": "tool",
+      "fit": "一句说明加一颗按钮，颜色走样板间令牌"
+    }
+  }
+}

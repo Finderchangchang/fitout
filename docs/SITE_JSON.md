@@ -98,7 +98,7 @@
 
 ## 板块字段
 
-没有写「可无」的就是必填。列表 1 到 6 条，产品规格 1 到 8 条。
+没有写「可无」的就是必填。列表一般 1 到 6 条，常见问题 1 到 10 条，产品规格 1 到 8 条。
 
 ### hero
 
@@ -135,7 +135,7 @@
 
 ### faq
 
-`title` ≤16。`lead` 可无 ≤40。每条 `q` ≤24，`a` ≤80。回答里可以用中文破折号。标题和按钮里不行。
+`title` ≤16。`lead` 可无 ≤40。问答 1 到 10 条。每条 `q` ≤24，`a` ≤80。回答里可以用中文破折号。标题和按钮里不行。
 
 ### contact
 
@@ -164,11 +164,45 @@
 
 `site.json` 写 `"showroom": "<id>"` 时，不再读 `industries/` 和 `styles/`。脚本改读 `showrooms/<id>/showroom.json`、那里的 `tokens.json`，以及那里的 `sections/`（没有的版式回落到 `framework/sections`）。
 
-字段还可以有 `niche`（美业 `beauty`、餐饮 `dining`、律所 `law`、咨询 `consulting` 等）和 `collections`。集合的每一项会生成一页，slug 规则和产品一样：小写、连字符，不能用 `index`，不能重复。列表页自己写在 `pages` 里，用板块 `collection-list`。详情页由 `"from": "<集合 id>"` 生成，不要写进 `pages`。
+字段还可以有 `niche`（美业 `beauty`、餐饮 `dining`、律所 `law`、咨询 `consulting` 等）和 `collections`。集合的每一项会生成一页，slug 规则和产品一样：小写、连字符，不能用 `index`，不能重复。要做筛选时，给这一项加 `category`（分类名，例如「茶饮」）。拼装按分类名生成筛选项，不看 slug 前缀。同一分类写同一个名字。没有 `category` 的集合不出现筛选。列表页自己写在 `pages` 里，用板块 `collection-list`。详情页由 `"from": "<集合 id>"` 生成，不要写进 `pages`。
+
+样板间首页至少留首屏、一个产品或服务板块。联系板块留在放了 `contact` 的那一页。这三块在户型里标必有，其余板块可以不写：档案里没有事实就整块不出。页面本身仍要在，不能少页。
 
 内页顶部的页内 Banner 由脚本插入，不要写进板块顺序。旧的两个例子不写 `showroom`，仍然走原来的户型。
 
 目录里每个文件写什么，见 `docs/SHOWROOM.md`。
+
+## 常见问题、sitemap、robots
+
+档案里每个 `type` 为 `faq` 的板块，问答显示在那一页上。同一批问答再写进首页的第二段 JSON-LD，类型是 `FAQPage`：`name` 是问题，`acceptedAnswer.text` 是回答，顺序和页面上一致。没有 faq 板块就不写这段。原来的 LocalBusiness 或 Organization 仍在第一段。
+
+拼装参数 `--base-url <网址>` 只接受 http 或 https，脚本会补上末尾的 `/`。它会写出：
+
+- `sitemap.xml`：每个生成的 html 页面一条 `<loc>`，前缀是这个网址
+- `robots.txt`：`User-agent: *`、`Allow: /`，并写上 sitemap 的地址
+
+不给 `--base-url` 时用 `https://example.com/` 占位。正式模式的 `check.mjs` 会警告「上线前要换真实网址」。带 `--demo-images` 的演示模式不警告。
+
+## toolEntry
+
+可选。有这个对象时，首页末尾多一块小工具入口，导航末尾多一项。颜色和字体走样板间令牌，不另配色。
+
+| 字段 | 必填 | 说明 |
+|---|---|---|
+| `title` | 是 | 入口标题，也是导航上的文字。≤16 |
+| `lead` | 是 | 一句话。≤40 |
+| `label` | 是 | 按钮文字。≤8 |
+| `href` | 否 | 相对站点根的路径。不写就是 `tool/`。不要写主机名，也不要写成 `tool/index.html` |
+
+`nav` 里如果已经有同一个路径，导航不再加一项。
+
+链接按页面所在目录改成相对路径：首页是 `tool/`，`products/xxx.html` 里是 `../tool/`。站点挂在 `https://用户名.github.io/仓库名/` 这种子路径下，也能点到工具页。
+
+## 输出目录
+
+`--out <目录>` 会在里面再建一层 `<site.id>/`。`--site-dir <目录>` 把整站直接写到这个目录根下，根上就是 `index.html`。两个都写时用 `--site-dir`。
+
+`--site-dir` 会先清空目标目录，再写入这一次拼出来的页面。小工具之类的附加页要在拼装之后放进去。若这个目录里已经有要留住的子目录，用 `--keep <相对路径>`，可以写多次，例如 `--keep tool`。路径必须在目标目录里面，不能写 `..` 或盘符。目标里还没有这个子目录时，`--keep` 什么也不做。
 
 ## 不要写的东西
 

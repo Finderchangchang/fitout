@@ -22,36 +22,11 @@
   align-items: center;
 }
 
-.catalog-layout:has(#bend:target) .facet-list a[href$="#bend"],
-.catalog-layout:has(#stamp:target) .facet-list a[href$="#stamp"],
-.catalog-layout:has(#machine:target) .facet-list a[href$="#machine"],
-.catalog-layout:has(#weld:target) .facet-list a[href$="#weld"] {
-  color: var(--primary);
-  box-shadow: inset 3px 0 0 var(--accent);
-  padding-left: 0.7rem;
-}
-
 .craft-hook {
   display: block;
   height: 0;
   overflow: hidden;
   scroll-margin-top: 1rem;
-}
-
-.part-pane:has(#bend:target) .part-card,
-.part-pane:has(#stamp:target) .part-card,
-.part-pane:has(#machine:target) .part-card,
-.part-pane:has(#weld:target) .part-card {
-  display: none;
-}
-
-.part-pane:has(#bend:target) .part-card[data-file="frame.html"],
-.part-pane:has(#stamp:target) .part-card[data-file="side.html"],
-.part-pane:has(#stamp:target) .part-card[data-file="hinge.html"],
-.part-pane:has(#machine:target) .part-card[data-file="plate.html"],
-.part-pane:has(#machine:target) .part-card[data-file="bush.html"],
-.part-pane:has(#weld:target) .part-card[data-file="bracket.html"] {
-  display: block;
 }
 
 .facet-list p {

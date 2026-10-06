@@ -14,17 +14,18 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "press",
-        "shop",
-        "punch",
-        "machine",
-        "factory"
+        "die",
+        "sheet",
+        "closeup"
       ],
-      "prompt": "桐乡机件厂冲压车间，一台深色冲床正在落料，地面是钢蓝灰的水泥，灯是冷白，不要文字。",
+      "prompt": "冲床模具咬住一块钢板的特写，切边和油膜是金属本色，背景虚成钢蓝灰，冷白灯，不要车间全景，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "首屏第一张，冲压车间全景。"
+      "desc": "首屏，冲床落料的金属板。",
+      "tier": "must"
     },
     {
       "id": "hero-bend",
@@ -33,17 +34,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
-        "press",
         "brake",
-        "operator",
-        "sheet",
-        "metal"
+        "die",
+        "sheet"
       ],
-      "prompt": "折弯机前一位操作工对着钢板对线，机床是钢蓝灰的，不要露正脸特写，不要文字。",
+      "prompt": "折弯机钳口咬住钢板的局部，机床是钢蓝灰，不要露正脸，不要机床全景，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "首屏第二张，折弯对线。"
+      "desc": "首屏，折弯机钳口。",
+      "tier": "must"
     },
     {
       "id": "hero-cnc",
@@ -52,16 +53,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "lathe",
-        "turning",
-        "bushing",
-        "workshop"
+        "coolant",
+        "bushing"
       ],
-      "prompt": "机加车间一台车床正在切削钢轴套，冷却液偏钢蓝，切屑是本色，不要文字。",
+      "prompt": "车刀贴着钢轴套切削，冷却液偏钢蓝，切屑是本色，只取刀尖和工件，不要机加车间全景，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "首屏第三张，车削轴套。"
+      "desc": "首屏，车刀和冷却液。",
+      "tier": "must"
     },
     {
       "id": "hero-weld",
@@ -70,16 +72,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
-        "welding",
-        "fixture",
-        "bracket",
-        "factory"
+        "weld",
+        "bead",
+        "bracket"
       ],
-      "prompt": "组焊台上一组焊完的支架等着交检，焊点是金属本色，背景是钢蓝灰隔断，不要文字。",
+      "prompt": "一组焊完的支架，只取焊点和金属本色，背景虚成钢蓝灰隔断，不要组焊跨全景，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "首屏第四张，组焊待检。"
+      "desc": "首屏，焊点和支架局部。",
+      "tier": "must"
     },
     {
       "id": "floor-wide",
@@ -89,6 +92,7 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "factory",
         "aisle",
@@ -97,7 +101,8 @@
       ],
       "prompt": "车间一条笔直过道，左侧料架右侧折弯机，冷白顶灯，地面钢蓝灰，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "报价说明右侧的车间宽图。"
+      "desc": "报价说明右侧的车间宽图。",
+      "tier": "must"
     },
     {
       "id": "line-bend",
@@ -106,7 +111,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "press",
         "brake",
@@ -116,7 +122,8 @@
       ],
       "prompt": "折弯机正在弯一块门框加强板，近景能看见折线和板厚，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "工艺行，折弯。"
+      "desc": "工艺行，折弯。",
+      "tier": "nice"
     },
     {
       "id": "line-stamp",
@@ -125,7 +132,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "stamping",
         "press",
@@ -134,7 +142,8 @@
       ],
       "prompt": "冲床模具里一块柜体侧板刚落下来，油是薄的，不要暖色反光，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "工艺行，冲压。"
+      "desc": "工艺行，冲压。",
+      "tier": "nice"
     },
     {
       "id": "line-cnc",
@@ -143,7 +152,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "lathe",
         "steel",
@@ -152,7 +162,8 @@
       ],
       "prompt": "车床卡盘夹着棒料，刀架正在车轴套外圆，背景是钢蓝灰机床，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "工艺行，机加。"
+      "desc": "工艺行，机加。",
+      "tier": "nice"
     },
     {
       "id": "line-weld",
@@ -161,7 +172,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "welder",
         "bracket",
@@ -170,7 +182,8 @@
       ],
       "prompt": "焊工在夹具上组一支支架，面罩挡住脸，弧光不要做成橙色大片，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "工艺行，组焊。"
+      "desc": "工艺行，组焊。",
+      "tier": "nice"
     },
     {
       "id": "use-farm",
@@ -180,6 +193,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "farm",
         "equipment",
@@ -188,7 +202,8 @@
       ],
       "prompt": "农机罩壳内侧露出折弯支架，钢板本色，户外光偏冷，不要品牌标志，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "农机罩壳支架。"
+      "desc": "农机罩壳支架。",
+      "tier": "nice"
     },
     {
       "id": "use-cabinet",
@@ -198,6 +213,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "electrical",
         "cabinet",
@@ -206,7 +222,8 @@
       ],
       "prompt": "几块配电柜侧板靠在料架上，孔已冲好，表面还没喷粉，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "配电柜侧板。"
+      "desc": "配电柜侧板。",
+      "tier": "nice"
     },
     {
       "id": "use-rack",
@@ -216,6 +233,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "warehouse",
         "rack",
@@ -224,7 +242,8 @@
       ],
       "prompt": "仓储货架节点上的冲孔连接件，孔径清楚，钢材本色，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "货架连接件。"
+      "desc": "货架连接件。",
+      "tier": "nice"
     },
     {
       "id": "use-kitchen",
@@ -234,6 +253,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "appliance",
         "base",
@@ -242,7 +262,8 @@
       ],
       "prompt": "一块卷圆边的厨电底托放在检验台上，边缘圆滑，不要家电品牌，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "厨电底托。"
+      "desc": "厨电底托。",
+      "tier": "nice"
     },
     {
       "id": "news-press",
@@ -251,7 +272,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "new",
         "press",
@@ -260,7 +282,8 @@
       ],
       "prompt": "一台新折弯机刚就位，地上还有垫木，机床钢蓝灰，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "新闻，160 吨折弯机到厂。"
+      "desc": "新闻，160 吨折弯机到厂。",
+      "tier": "nice"
     },
     {
       "id": "news-hours",
@@ -269,7 +292,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "factory",
         "gate",
@@ -278,7 +302,8 @@
       ],
       "prompt": "厂门口一块小告示板，字模糊到看不清，门牌是钢蓝灰色，白天，不要可读大字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "新闻，周六接待时间。"
+      "desc": "新闻，周六接待时间。",
+      "tier": "nice"
     },
     {
       "id": "news-quote",
@@ -287,7 +312,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "quotation",
         "sheet",
@@ -296,7 +322,8 @@
       ],
       "prompt": "桌上一张报价单和一支笔，材料牌号那一栏有手写字但不要清楚可读，冷色台面。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "新闻，报价单写牌号。"
+      "desc": "新闻，报价单写牌号。",
+      "tier": "nice"
     },
     {
       "id": "news-meter",
@@ -305,7 +332,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "optical",
         "measuring",
@@ -314,7 +342,8 @@
       ],
       "prompt": "质检室一台影像仪和旁边的卡尺，零件放在玻璃台上，灯光冷白，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "新闻，影像仪。"
+      "desc": "新闻，影像仪。",
+      "tier": "nice"
     },
     {
       "id": "cert-iso",
@@ -324,6 +353,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "quality",
         "certificate",
@@ -332,7 +362,8 @@
       ],
       "prompt": "客户提供的质量管理体系证书扫描件。竖版，红章在右下，正文小到不可读，纸色偏冷。此位不生成。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "质量管理体系证书。由客户提供扫描件。"
+      "desc": "质量管理体系证书。由客户提供扫描件。",
+      "tier": "nice"
     },
     {
       "id": "cert-env",
@@ -342,6 +373,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "environment",
         "certificate",
@@ -350,7 +382,8 @@
       ],
       "prompt": "客户提供的环境管理体系证书扫描件。版式与质量那张不同，冷白纸，正文不可读。此位不生成。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "环境管理体系证书。由客户提供扫描件。"
+      "desc": "环境管理体系证书。由客户提供扫描件。",
+      "tier": "nice"
     },
     {
       "id": "cert-ohs",
@@ -360,6 +393,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "safety",
         "certificate",
@@ -368,7 +402,8 @@
       ],
       "prompt": "客户提供的职业健康安全证书扫描件。印章偏暗，纸边有扫描阴影，正文不可读。此位不生成。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "职业健康安全证书。由客户提供扫描件。"
+      "desc": "职业健康安全证书。由客户提供扫描件。",
+      "tier": "nice"
     },
     {
       "id": "cert-tech",
@@ -378,6 +413,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "company",
         "plaque",
@@ -386,7 +422,8 @@
       ],
       "prompt": "客户提供的企业技术中心铜牌照片。字不可读，铜是旧的暗黄，墙是钢蓝灰。此位不生成。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "企业技术中心牌匾。由客户提供照片。"
+      "desc": "企业技术中心牌匾。由客户提供照片。",
+      "tier": "nice"
     },
     {
       "id": "cta-bay",
@@ -396,6 +433,7 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "welding",
         "bay",
@@ -404,7 +442,8 @@
       ],
       "prompt": "组焊车间一跨的宽幅，地上摆着待检支架，天窗光偏冷，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "首页询价条右侧车间。"
+      "desc": "首页询价条右侧车间。",
+      "tier": "must"
     },
     {
       "id": "banner",
@@ -414,6 +453,7 @@
       "px": "1440x900",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "factory",
         "gate",
@@ -423,7 +463,8 @@
       ],
       "prompt": "振业路厂门外，门牌、停车空地和一扇钢蓝灰大门，阴天，不要可读的大字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "内页横幅，厂门外景。"
+      "desc": "内页横幅，厂门外景。",
+      "tier": "must"
     },
     {
       "id": "yard-gate",
@@ -433,6 +474,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "factory",
         "entrance",
@@ -441,7 +483,8 @@
       ],
       "prompt": "厂门近景，南侧门牌和东向车道，墙面钢蓝灰，不要可读大字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "关于页，厂门。"
+      "desc": "关于页，厂门。",
+      "tier": "must"
     },
     {
       "id": "yard-bay",
@@ -451,6 +494,7 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "stamping",
         "bending",
@@ -459,7 +503,8 @@
       ],
       "prompt": "冲压线和折弯线隔着一条通道，料架分开，冷白灯，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "关于页，车间通道。"
+      "desc": "关于页，车间通道。",
+      "tier": "nice"
     },
     {
       "id": "yard-qc",
@@ -468,7 +513,8 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
+      "mustBeReal": false,
+      "fallback": "omit",
       "keywords": [
         "inspection",
         "room",
@@ -477,7 +523,8 @@
       ],
       "prompt": "质检室，卡尺、影像仪和墙上的首件看板，看板字不可读，灯光冷白。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "关于页，质检室。"
+      "desc": "关于页，质检室。",
+      "tier": "nice"
     },
     {
       "id": "part-frame",
@@ -487,6 +534,7 @@
       "px": "800x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "bent",
         "steel",
@@ -496,7 +544,8 @@
       ],
       "prompt": "偏钢蓝的台面上一块折好的门框加强板，能看见折线和毛刺已去掉，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "产品，门框加强板。"
+      "desc": "产品，门框加强板。",
+      "tier": "nice"
     },
     {
       "id": "part-side",
@@ -506,6 +555,7 @@
       "px": "800x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "punched",
         "cabinet",
@@ -514,7 +564,8 @@
       ],
       "prompt": "一块冲好孔的柜体侧板平放，孔距清楚，表面去油未喷粉，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "产品，柜体侧板。"
+      "desc": "产品，柜体侧板。",
+      "tier": "nice"
     },
     {
       "id": "part-hinge",
@@ -524,6 +575,7 @@
       "px": "800x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "stamped",
         "hinge",
@@ -532,7 +584,8 @@
       ],
       "prompt": "几只镀锌铰链座排成一列，连续模的冲裁边还在，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "产品，铰链座。"
+      "desc": "产品，铰链座。",
+      "tier": "nice"
     },
     {
       "id": "part-plate",
@@ -542,6 +595,7 @@
       "px": "800x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "milled",
         "mounting",
@@ -550,7 +604,8 @@
       ],
       "prompt": "一块铣过平面的安装底板，螺纹孔清楚，钢材本色，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "产品，安装底板。"
+      "desc": "产品，安装底板。",
+      "tier": "nice"
     },
     {
       "id": "part-bush",
@@ -560,6 +615,7 @@
       "px": "800x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "turned",
         "steel",
@@ -569,7 +625,8 @@
       ],
       "prompt": "几只发黑的钢轴套立着，内孔能看见，台面偏钢蓝，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "产品，轴套。"
+      "desc": "产品，轴套。",
+      "tier": "nice"
     },
     {
       "id": "part-bracket",
@@ -579,6 +636,7 @@
       "px": "800x800",
       "source": "stock",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "welded",
         "bracket",
@@ -587,7 +645,8 @@
       ],
       "prompt": "一支焊好还没喷粉的支架总成，焊缝清楚，放在检验台上，不要文字。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "产品，支架总成。"
+      "desc": "产品，支架总成。",
+      "tier": "nice"
     },
     {
       "id": "qr-wechat",
@@ -597,6 +656,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "wechat",
         "qr",
@@ -605,7 +665,8 @@
       ],
       "prompt": "客户提供的公众号二维码。方形，四周留白，没有 logo。此位不生成。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "公众号二维码。页脚和联系页的公众号位，由客户提供。"
+      "desc": "公众号二维码。页脚和联系页的公众号位，由客户提供。",
+      "tier": "nice"
     },
     {
       "id": "qr-advisor",
@@ -615,6 +676,7 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
+      "fallback": "omit",
       "keywords": [
         "wechat",
         "sales",
@@ -623,7 +685,8 @@
       ],
       "prompt": "客户提供的销售顾问微信二维码。方形，四周留白，图案和公众号那张不同。此位不生成。",
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
-      "desc": "销售顾问微信二维码。页脚和联系页的销售位，由客户提供，不和公众号共用。"
+      "desc": "销售顾问微信二维码。页脚和联系页的销售位，由客户提供，不和公众号共用。",
+      "tier": "nice"
     }
   ]
 }

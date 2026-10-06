@@ -11,9 +11,15 @@
     "form": "写给前台"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,12 +27,28 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4000ms"
+    }
   },
   "collections": [
-    { "id": "rooms", "label": "房型介绍", "listFile": "rooms/index.html" },
-    { "id": "places", "label": "周边玩法", "listFile": "places/index.html" },
-    { "id": "journal", "label": "游记", "listFile": "journal/index.html" }
+    {
+      "id": "rooms",
+      "label": "房型介绍",
+      "listFile": "rooms/index.html"
+    },
+    {
+      "id": "places",
+      "label": "周边玩法",
+      "listFile": "places/index.html"
+    },
+    {
+      "id": "journal",
+      "label": "游记",
+      "listFile": "journal/index.html"
+    }
   ],
   "pages": [
     {
@@ -34,15 +56,69 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "stays", "required": true, "variants": ["cards"] },
-        { "type": "yard", "required": true, "variants": ["wide"] },
-        { "type": "chronicle", "required": true, "variants": ["split"] },
-        { "type": "nearby", "required": true, "variants": ["cards"] },
-        { "type": "supper", "required": true, "variants": ["board"] },
-        { "type": "collection-list", "required": true, "variants": ["feed"] },
-        { "type": "reserve", "required": true, "variants": ["band"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "stays",
+          "required": true,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "yard",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "chronicle",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "nearby",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "supper",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "feed"
+          ]
+        },
+        {
+          "type": "reserve",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -50,10 +126,34 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "chronicle", "required": true, "variants": ["split"] },
-        { "type": "yard", "required": false, "variants": ["wide"] },
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] }
+        {
+          "type": "chronicle",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "yard",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     },
     {
@@ -61,7 +161,13 @@
       "file": "rooms/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["rooms"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "rooms"
+          ]
+        }
       ]
     },
     {
@@ -70,7 +176,13 @@
       "kind": "detail",
       "from": "rooms",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -78,7 +190,13 @@
       "file": "places/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["board"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        }
       ]
     },
     {
@@ -87,7 +205,13 @@
       "kind": "detail",
       "from": "places",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -95,8 +219,20 @@
       "file": "dining/index.html",
       "kind": "list",
       "order": [
-        { "type": "supper", "required": true, "variants": ["board"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] }
+        {
+          "type": "supper",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     },
     {
@@ -104,7 +240,13 @@
       "file": "album/index.html",
       "kind": "list",
       "order": [
-        { "type": "album", "required": true, "variants": ["wall"] }
+        {
+          "type": "album",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        }
       ]
     },
     {
@@ -112,7 +254,13 @@
       "file": "journal/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["feed"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "feed"
+          ]
+        }
       ]
     },
     {
@@ -121,7 +269,13 @@
       "kind": "news-detail",
       "from": "journal",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -129,10 +283,34 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["card"] },
-        { "type": "transit", "required": true, "variants": ["list"] },
-        { "type": "faq", "required": true, "variants": ["accordion"] },
-        { "type": "inquire", "required": false, "variants": ["note"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "card"
+          ]
+        },
+        {
+          "type": "transit",
+          "required": false,
+          "variants": [
+            "list"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        },
+        {
+          "type": "inquire",
+          "required": false,
+          "variants": [
+            "note"
+          ]
+        }
       ]
     }
   ]

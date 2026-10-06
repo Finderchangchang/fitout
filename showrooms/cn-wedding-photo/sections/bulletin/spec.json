@@ -1,25 +1,67 @@
 {
   "note": "首页三条近况。日期写在说明里。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "href": { "type": "string", "required": false, "maxChars": 200 },
-    "hrefLabel": { "type": "string", "required": false, "maxChars": 8 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "href": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "hrefLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 3,
       "max": 4,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 20 },
-        "text": { "type": "string", "required": true, "maxChars": 40 },
-        "href": { "type": "string", "required": true, "maxChars": 200 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 20
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40
+        },
+        "href": {
+          "type": "string",
+          "required": true,
+          "maxChars": 200
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
   "variants": {
-    "feed": { "needsImage": true, "imageField": "items.image", "family": "bulletin", "fit": "左图右文的三条近况" }
+    "feed": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "family": "bulletin",
+      "fit": "左图右文的三条近况",
+      "fallback": "omit"
+    }
   }
 }

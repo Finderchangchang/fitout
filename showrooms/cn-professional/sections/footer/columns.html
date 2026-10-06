@@ -18,19 +18,18 @@
         {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:16}}{{email}}</a></p>{{/if}}
         {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
       </div>
+      {{#if hasWechat}}
       <div class="footer-qr">
+        {{#if wechatQrSrc}}
         <p class="footer-label">扫码</p>
-        <div class="qr-pair">
-          <div class="qr-slot">
-            {{#if wechatQrSrc}}<img src="{{wechatQrSrc}}" alt="顾问微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">{{/if}}
-            <p>加顾问微信</p>
-          </div>
-          <div class="qr-slot">
-            <img class="qr-office" alt="公众号二维码" width="800" height="800" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-            <p>关注公众号</p>
-          </div>
+        <div class="qr-slot">
+          <img src="{{wechatQrSrc}}" alt="顾问微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">
+          <p>加顾问微信</p>
         </div>
+        {{/if}}
+        {{#if wechat}}<p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
       </div>
+      {{/if}}
     </div>
     <div class="footer-legal">
       <p>{{year}} {{name}}</p>

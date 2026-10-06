@@ -1,19 +1,44 @@
 {
   "note": "左文右图。正文是一段事实，不写口号。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "body": { "type": "string", "required": true, "maxChars": 180 },
-    "image": { "type": "image", "required": true, "maxChars": 200 },
-    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
-    "caption": { "type": "string", "required": false, "maxChars": 20 }
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "body": {
+      "type": "string",
+      "required": true,
+      "maxChars": 180
+    },
+    "image": {
+      "type": "image",
+      "required": true,
+      "maxChars": 200
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true,
+      "maxChars": 30
+    },
+    "caption": {
+      "type": "string",
+      "required": false,
+      "maxChars": 20
+    }
   },
   "variants": {
     "split": {
       "needsImage": true,
       "imageField": "image",
       "family": "essay",
-      "fit": "文字在左，一张图在右"
+      "fit": "文字在左，一张图在右",
+      "fallback": "omit"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "note": "房型、周边和游记共用列表。周边靠链接前缀筛选。面积和价格写进说明，列表数据不带这些字段。",
+  "note": "房型、周边和游记共用列表。周边分类读每条的 category，不看链接前缀。面积和价格写进说明。",
   "fields": {
     "title": { "type": "string", "required": true, "maxChars": 16 },
     "lead": { "type": "string", "required": false, "maxChars": 40 },

@@ -1,20 +1,52 @@
 {
   "note": "首页诊疗项目。照片在上，名称和价格在下，链到详情。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 1,
       "max": 6,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 12 },
-        "text": { "type": "string", "required": true, "maxChars": 40 },
-        "price": { "type": "string", "required": false, "maxChars": 16 },
-        "href": { "type": "string", "required": true, "maxChars": 200 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40
+        },
+        "price": {
+          "type": "string",
+          "required": false,
+          "maxChars": 16
+        },
+        "href": {
+          "type": "string",
+          "required": true,
+          "maxChars": 200
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
@@ -24,7 +56,8 @@
       "imageField": "items.image",
       "family": "catalog",
       "fit": "横图项目卡，价格写在照片下面",
-      "source": "样板间自写"
+      "source": "样板间自写",
+      "fallback": "omit"
     }
   }
 }

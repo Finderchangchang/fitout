@@ -9,6 +9,7 @@
     "wide": {
       "needsImage": true,
       "imageField": "image",
+      "fallback": "omit",
       "family": "bleed",
       "fit": "一整条宽图",
       "source": "样板间满宽图块"

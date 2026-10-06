@@ -12,105 +12,189 @@
     "wechatQr": "qr-wechat",
     "email": "hi@luchaji.example",
     "address": "杭州市西湖区龙井路88号（虚构地址）",
-    "hours": [{ "day": "周一至周日", "time": "10:00-21:30" }],
+    "hours": [
+      {
+        "day": "周一至周日",
+        "time": "10:00-21:30"
+      }
+    ],
     "formUrl": "https://example.com/lucha-join",
     "icp": "浙ICP备17028394号",
     "police": "浙公网安备33010602017028号"
   },
   "nav": [
-    { "label": "首页", "href": "index.html" },
-    { "label": "品牌故事", "href": "about/index.html" },
-    { "label": "产品中心", "href": "products/index.html" },
-    { "label": "门店分布", "href": "stores/index.html" },
-    { "label": "加盟合作", "href": "join/index.html" },
-    { "label": "新闻动态", "href": "news/index.html" },
-    { "label": "联系我们", "href": "contact/index.html" }
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "品牌故事",
+      "href": "about/index.html"
+    },
+    {
+      "label": "产品中心",
+      "href": "products/index.html"
+    },
+    {
+      "label": "门店分布",
+      "href": "stores/index.html"
+    },
+    {
+      "label": "加盟合作",
+      "href": "join/index.html"
+    },
+    {
+      "label": "新闻动态",
+      "href": "news/index.html"
+    },
+    {
+      "label": "联系我们",
+      "href": "contact/index.html"
+    }
   ],
-  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
   "collections": {
     "products": [
       {
         "slug": "tea-grape",
-        "name": "青提冷萃",
         "category": "茶饮",
+        "name": "青提冷萃",
         "summary": "冷萃绿茶打底，加入当季青提汁，默认少冰，仅在青提当季供应。",
         "body": "茶底冷萃一夜，青提去皮后压汁。冰量默认少冰，需要多冰请在点单时说明。杯型360毫升，售价28元。",
         "image": "prod-grape",
         "imageAlt": "一杯青提冷萃",
         "specs": [
-          { "label": "杯型", "value": "360毫升" },
-          { "label": "茶底", "value": "冷萃绿茶" },
-          { "label": "价格", "value": "28元" }
+          {
+            "label": "杯型",
+            "value": "360毫升"
+          },
+          {
+            "label": "茶底",
+            "value": "冷萃绿茶"
+          },
+          {
+            "label": "价格",
+            "value": "28元"
+          }
         ]
       },
       {
         "slug": "tea-oolong",
-        "name": "焙火乌龙",
         "category": "茶饮",
+        "name": "焙火乌龙",
         "summary": "建德焙火乌龙，火候停在栗香，菜单上这一杯是清饮。",
         "body": "热饮用盖碗闷泡约两分钟。如需加奶请另点，这一款按清饮出品。杯型420毫升，售价32元。",
         "image": "prod-oolong",
         "imageAlt": "盖碗中的焙火乌龙",
         "specs": [
-          { "label": "杯型", "value": "420毫升" },
-          { "label": "茶底", "value": "焙火乌龙" },
-          { "label": "价格", "value": "32元" }
+          {
+            "label": "杯型",
+            "value": "420毫升"
+          },
+          {
+            "label": "茶底",
+            "value": "焙火乌龙"
+          },
+          {
+            "label": "价格",
+            "value": "32元"
+          }
         ]
       },
       {
         "slug": "bake-scone",
-        "name": "原味司康",
         "category": "烘焙",
+        "name": "原味司康",
         "summary": "低筋面粉配发酵黄油，当天揉制、当天出炉，晚间售完即止。",
         "body": "出炉时间在上午十点。卖完后由桂花卷接上，不再补烤隔夜司康。单个售价19元。",
         "image": "prod-scone",
         "imageAlt": "一只原味司康",
         "specs": [
-          { "label": "出炉", "value": "当天上午" },
-          { "label": "份量", "value": "1个" },
-          { "label": "价格", "value": "19元" }
+          {
+            "label": "出炉",
+            "value": "当天上午"
+          },
+          {
+            "label": "份量",
+            "value": "1个"
+          },
+          {
+            "label": "价格",
+            "value": "19元"
+          }
         ]
       },
       {
         "slug": "bake-roll",
-        "name": "桂花卷",
         "category": "烘焙",
+        "name": "桂花卷",
         "summary": "糖渍桂花卷在面里，不撒在表面，和司康共用同一炉。",
         "body": "桂花用的是去年腌制的糖渍桂花，新花要到秋天再换。当天上午出炉，单个售价23元。",
         "image": "prod-roll",
         "imageAlt": "切开的桂花卷",
         "specs": [
-          { "label": "出炉", "value": "当天上午" },
-          { "label": "份量", "value": "1个" },
-          { "label": "价格", "value": "23元" }
+          {
+            "label": "出炉",
+            "value": "当天上午"
+          },
+          {
+            "label": "份量",
+            "value": "1个"
+          },
+          {
+            "label": "价格",
+            "value": "23元"
+          }
         ]
       },
       {
         "slug": "meal-rice",
-        "name": "茶泡饭",
         "category": "热食",
+        "name": "茶泡饭",
         "summary": "焙火乌龙茶汤泡饭，配一碟腌萝卜，十一点后供应。",
         "body": "茶汤用当日焙火乌龙，配一碟腌萝卜。十一点后供应，一碗售价36元。",
         "image": "prod-rice",
         "imageAlt": "一碗茶泡饭",
         "specs": [
-          { "label": "茶底", "value": "焙火乌龙" },
-          { "label": "份量", "value": "一碗" },
-          { "label": "价格", "value": "36元" }
+          {
+            "label": "茶底",
+            "value": "焙火乌龙"
+          },
+          {
+            "label": "份量",
+            "value": "一碗"
+          },
+          {
+            "label": "价格",
+            "value": "36元"
+          }
         ]
       },
       {
         "slug": "meal-noodle",
-        "name": "葱油拌面",
         "category": "热食",
+        "name": "葱油拌面",
         "summary": "葱油在余杭后厨熬制，门店加热后拌碱面，可另加蛋。",
         "body": "碱水面，葱油由余杭后厨熬好后配送到店。加蛋按份另计。一碗售价31元。",
         "image": "prod-noodle",
         "imageAlt": "一碗葱油拌面",
         "specs": [
-          { "label": "份量", "value": "一碗" },
-          { "label": "酱料", "value": "后厨葱油" },
-          { "label": "价格", "value": "31元" }
+          {
+            "label": "份量",
+            "value": "一碗"
+          },
+          {
+            "label": "酱料",
+            "value": "后厨葱油"
+          },
+          {
+            "label": "价格",
+            "value": "31元"
+          }
         ]
       }
     ],
@@ -126,8 +210,14 @@
         "image": "store-longjing",
         "imageAlt": "龙井路店夜间门头",
         "specs": [
-          { "label": "座位", "value": "36座" },
-          { "label": "城市", "value": "杭州" }
+          {
+            "label": "座位",
+            "value": "36座"
+          },
+          {
+            "label": "城市",
+            "value": "杭州"
+          }
         ]
       },
       {
@@ -141,8 +231,14 @@
         "image": "store-hubin",
         "imageAlt": "湖滨店靠窗座位",
         "specs": [
-          { "label": "座位", "value": "28座" },
-          { "label": "城市", "value": "杭州" }
+          {
+            "label": "座位",
+            "value": "28座"
+          },
+          {
+            "label": "城市",
+            "value": "杭州"
+          }
         ]
       },
       {
@@ -156,8 +252,14 @@
         "image": "store-pingjiang",
         "imageAlt": "平江路店窄巷门头",
         "specs": [
-          { "label": "座位", "value": "22座" },
-          { "label": "城市", "value": "苏州" }
+          {
+            "label": "座位",
+            "value": "22座"
+          },
+          {
+            "label": "城市",
+            "value": "苏州"
+          }
         ]
       },
       {
@@ -171,8 +273,14 @@
         "image": "store-yuehu",
         "imageAlt": "月湖店门口石阶",
         "specs": [
-          { "label": "座位", "value": "19座" },
-          { "label": "城市", "value": "宁波" }
+          {
+            "label": "座位",
+            "value": "19座"
+          },
+          {
+            "label": "城市",
+            "value": "宁波"
+          }
         ]
       }
     ],
@@ -227,10 +335,22 @@
             "secondaryHref": "products/index.html",
             "interval": "4500",
             "slides": [
-              { "image": "hero-tea", "imageAlt": "木桌上的一杯焙火乌龙" },
-              { "image": "hero-bake", "imageAlt": "刚出炉的原味司康" },
-              { "image": "hero-door", "imageAlt": "龙井路店夜间门头" },
-              { "image": "hero-table", "imageAlt": "靠窗座位和木桌" }
+              {
+                "image": "hero-tea",
+                "imageAlt": "杯沿的茶汤和暖色侧光"
+              },
+              {
+                "image": "hero-bake",
+                "imageAlt": "烤盘上刚出炉的司康"
+              },
+              {
+                "image": "hero-door",
+                "imageAlt": "夜间门灯下的窄门局部"
+              },
+              {
+                "image": "hero-table",
+                "imageAlt": "旧木桌上的杯子和盘子"
+              }
             ]
           }
         },
@@ -243,10 +363,22 @@
             "title": "品牌实力",
             "lead": "四家门店，在杭州、苏州、宁波，2017年开业。",
             "items": [
-              { "value": "4 家", "label": "在营门店" },
-              { "value": "9 年", "label": "品牌年限" },
-              { "value": "3 城", "label": "覆盖城市" },
-              { "value": "2017", "label": "创立年份" }
+              {
+                "value": "4 家",
+                "label": "在营门店"
+              },
+              {
+                "value": "9 年",
+                "label": "品牌年限"
+              },
+              {
+                "value": "3 城",
+                "label": "覆盖城市"
+              },
+              {
+                "value": "2017",
+                "label": "创立年份"
+              }
             ]
           }
         },
@@ -427,9 +559,18 @@
             "lead": "先到现有门店坐一坐，再谈费用和培训。",
             "primaryHref": "join/index.html",
             "items": [
-              { "name": "实地看店", "text": "龙井路、湖滨、平江路、月湖都可以坐。" },
-              { "name": "费用标准", "text": "加盟费18.6万元，保证金6.2万元。" },
-              { "name": "跟班培训", "text": "前厅到店跟班18天，从早班开始。" }
+              {
+                "name": "实地看店",
+                "text": "龙井路、湖滨、平江路、月湖都可以坐。"
+              },
+              {
+                "name": "费用标准",
+                "text": "加盟费18.6万元，保证金6.2万元。"
+              },
+              {
+                "name": "跟班培训",
+                "text": "前厅到店跟班18天，从早班开始。"
+              }
             ]
           }
         }
@@ -441,7 +582,12 @@
       "description": "2017年从杭州龙井路起步，现有4家门店，在杭州、苏州、宁波。",
       "banner": "about-room",
       "bannerAlt": "龙井路店靠窗座位",
-      "crumbs": [{ "label": "品牌故事", "href": "" }],
+      "crumbs": [
+        {
+          "label": "品牌故事",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "essay",
@@ -504,7 +650,12 @@
       "description": "茶饮、烘焙、热食三个系列，杯型、出炉时间和价格见各款。",
       "banner": "banner",
       "bannerAlt": "吧台上的杯子和烤盘",
-      "crumbs": [{ "label": "产品中心", "href": "" }],
+      "crumbs": [
+        {
+          "label": "产品中心",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -516,10 +667,23 @@
             "lead": "按茶饮、烘焙、热食分类查看。",
             "collection": "products",
             "groups": [
-              { "key": "all", "label": "全部", "on": "1" },
-              { "key": "tea", "label": "茶饮" },
-              { "key": "bake", "label": "烘焙" },
-              { "key": "meal", "label": "热食" }
+              {
+                "key": "all",
+                "label": "全部",
+                "on": "1"
+              },
+              {
+                "key": "tea",
+                "label": "茶饮"
+              },
+              {
+                "key": "bake",
+                "label": "烘焙"
+              },
+              {
+                "key": "meal",
+                "label": "热食"
+              }
             ]
           }
         }
@@ -531,7 +695,12 @@
       "description": "杭州龙井路、湖滨，苏州平江路，宁波月湖。地址和营业时间见各店。",
       "banner": "banner",
       "bannerAlt": "吧台上的杯子和烤盘",
-      "crumbs": [{ "label": "门店分布", "href": "" }],
+      "crumbs": [
+        {
+          "label": "门店分布",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -552,7 +721,12 @@
       "description": "加盟费18.6万元，保证金6.2万元。流程是咨询、看店、试做、开业。",
       "banner": "banner",
       "bannerAlt": "吧台上的杯子和烤盘",
-      "crumbs": [{ "label": "加盟合作", "href": "" }],
+      "crumbs": [
+        {
+          "label": "加盟合作",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "why",
@@ -563,10 +737,22 @@
             "title": "加盟流程",
             "lead": "咨询、看店、试做，通过后安排开业。",
             "items": [
-              { "name": "来信咨询", "text": "写明意向城市、投资预算，以及是否已有铺面。" },
-              { "name": "到店考察", "text": "到龙井路店或湖滨店坐一下午，再继续谈。" },
-              { "name": "后厨试做", "text": "在余杭后厨完成一杯焙火乌龙和一只司康。" },
-              { "name": "培训开业", "text": "前厅跟班培训结束后，按开业清单开门营业。" }
+              {
+                "name": "来信咨询",
+                "text": "写明意向城市、投资预算，以及是否已有铺面。"
+              },
+              {
+                "name": "到店考察",
+                "text": "到龙井路店或湖滨店坐一下午，再继续谈。"
+              },
+              {
+                "name": "后厨试做",
+                "text": "在余杭后厨完成一杯焙火乌龙和一只司康。"
+              },
+              {
+                "name": "培训开业",
+                "text": "前厅跟班培训结束后，按开业清单开门营业。"
+              }
             ]
           }
         },
@@ -581,10 +767,22 @@
             "image": "join-counter",
             "imageAlt": "门店吧台内侧操作区",
             "items": [
-              { "name": "选址", "text": "按门口人流评估，不按城市均价打包推荐铺位。" },
-              { "name": "培训", "text": "前厅到店跟班18天，从门店早班开始。" },
-              { "name": "供货", "text": "茶叶和司康由余杭后厨配送，门店不自行采购。" },
-              { "name": "费用", "text": "加盟费18.6万元，保证金6.2万元，签约时支付。" }
+              {
+                "name": "选址",
+                "text": "按门口人流评估，不按城市均价打包推荐铺位。"
+              },
+              {
+                "name": "培训",
+                "text": "前厅到店跟班18天，从门店早班开始。"
+              },
+              {
+                "name": "供货",
+                "text": "茶叶和司康由余杭后厨配送，门店不自行采购。"
+              },
+              {
+                "name": "费用",
+                "text": "加盟费18.6万元，保证金6.2万元，签约时支付。"
+              }
             ]
           }
         },
@@ -606,7 +804,12 @@
       "description": "烤炉更新、春季茶山采购、四月加盟说明会。",
       "banner": "banner",
       "bannerAlt": "吧台上的杯子和烤盘",
-      "crumbs": [{ "label": "新闻动态", "href": "" }],
+      "crumbs": [
+        {
+          "label": "新闻动态",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -627,7 +830,12 @@
       "description": "热线0571-87926340，地址在杭州龙井路，公众号和点单码见本页。",
       "banner": "banner",
       "bannerAlt": "吧台上的杯子和烤盘",
-      "crumbs": [{ "label": "联系我们", "href": "" }],
+      "crumbs": [
+        {
+          "label": "联系我们",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "contact",
@@ -638,8 +846,16 @@
             "title": "联系方式",
             "lead": "门店事务请打热线。公众号发通知，点单码在店内使用。",
             "items": [
-              { "name": "公众号", "image": "qr-wechat", "imageAlt": "麓茶记公众号二维码" },
-              { "name": "点单码", "image": "qr-mini", "imageAlt": "店内点单二维码" }
+              {
+                "name": "公众号",
+                "image": "qr-wechat",
+                "imageAlt": "麓茶记公众号二维码"
+              },
+              {
+                "name": "点单码",
+                "image": "qr-mini",
+                "imageAlt": "店内点单二维码"
+              }
             ]
           }
         },

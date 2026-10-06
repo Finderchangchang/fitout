@@ -1,19 +1,47 @@
 {
   "note": "首页三则近况。日期写在说明里。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 3,
       "max": 3,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 16 },
-        "text": { "type": "string", "required": true, "maxChars": 40 },
-        "href": { "type": "string", "required": true, "maxChars": 200 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40
+        },
+        "href": {
+          "type": "string",
+          "required": true,
+          "maxChars": 200
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
@@ -22,7 +50,8 @@
       "needsImage": true,
       "imageField": "items.image",
       "family": "briefs",
-      "fit": "三张近况卡片"
+      "fit": "三张近况卡片",
+      "fallback": "omit"
     }
   }
 }

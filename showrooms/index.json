@@ -1,0 +1,173 @@
+{
+  "note": "给实训营挑样板间。preview 相对 showrooms/。不参与拼装。",
+  "showrooms": [
+    {
+      "id": "cn-agriculture",
+      "name": "国内风 · 农业特产",
+      "industry": "农产品基地合作社特产",
+      "niche": "produce",
+      "fit": "给农产品基地、合作社和地方特产品牌。",
+      "preview": "cn-agriculture/preview.jpg",
+      "pages": [
+        "首页",
+        "基地介绍",
+        "产品中心",
+        "种植溯源",
+        "批发合作",
+        "新闻动态",
+        "联系我们"
+      ]
+    },
+    {
+      "id": "cn-auto",
+      "name": "国内风 · 汽车服务",
+      "industry": "汽修快修美容",
+      "niche": "repair",
+      "fit": "给汽修厂、快修连锁和汽车美容贴膜店。",
+      "preview": "cn-auto/preview.jpg",
+      "pages": [
+        "关于我们",
+        "服务项目",
+        "技师团队",
+        "门店分布",
+        "养车知识",
+        "预约到店"
+      ]
+    },
+    {
+      "id": "cn-dining",
+      "name": "国内风 · 餐饮连锁",
+      "industry": "茶饮餐饮烘焙",
+      "niche": "dining",
+      "fit": "给餐饮、茶饮、烘焙的连锁品牌和单店老板。",
+      "preview": "cn-dining/preview.jpg",
+      "pages": [
+        "首页",
+        "品牌故事",
+        "产品中心",
+        "门店分布",
+        "加盟合作",
+        "新闻动态",
+        "联系我们"
+      ]
+    },
+    {
+      "id": "cn-education",
+      "name": "国内风 · 培训学校",
+      "industry": "职业技能/兴趣培训",
+      "niche": "vocational",
+      "fit": "给机构型职业技能培训学校、兴趣培训中心和民办学校。",
+      "preview": "cn-education/preview.jpg",
+      "pages": [
+        "首页",
+        "学校简介",
+        "课程设置",
+        "师资力量",
+        "学员风采",
+        "招生资讯",
+        "预约试听"
+      ]
+    },
+    {
+      "id": "cn-factory",
+      "name": "国内风 · 制造工厂",
+      "industry": "机械五金零部件建材工厂",
+      "niche": "manufacturing",
+      "fit": "给机械设备、五金、零部件、建材工厂。",
+      "preview": "cn-factory/preview.jpg",
+      "pages": [
+        "首页",
+        "关于我们",
+        "产品中心",
+        "应用领域",
+        "新闻动态",
+        "联系我们"
+      ]
+    },
+    {
+      "id": "cn-home-decor",
+      "name": "国内风 · 装修公司",
+      "industry": "家装全屋定制",
+      "niche": "renovation",
+      "fit": "给家装公司、整装公司和全屋定制工厂店。",
+      "preview": "cn-home-decor/preview.jpg",
+      "pages": [
+        "首页",
+        "关于我们",
+        "装修案例",
+        "设计团队",
+        "装修套餐",
+        "施工工艺",
+        "免费量房"
+      ]
+    },
+    {
+      "id": "cn-hospitality",
+      "name": "国内风 · 民宿",
+      "industry": "民宿客栈酒店",
+      "niche": "homestay",
+      "fit": "给民宿、精品客栈和度假酒店。",
+      "preview": "cn-hospitality/preview.jpg",
+      "pages": [
+        "首页",
+        "民宿故事",
+        "房型介绍",
+        "周边玩法",
+        "餐饮",
+        "游记",
+        "预订交通"
+      ]
+    },
+    {
+      "id": "cn-medical",
+      "name": "国内风 · 口腔诊所",
+      "industry": "口腔/社区/中医",
+      "niche": "dental",
+      "fit": "给口腔诊所、连锁齿科和社区门诊。",
+      "preview": "cn-medical/preview.jpg",
+      "pages": [
+        "首页",
+        "医院介绍",
+        "诊疗项目",
+        "医生团队",
+        "就诊指南",
+        "口腔科普",
+        "预约挂号"
+      ]
+    },
+    {
+      "id": "cn-professional",
+      "name": "国内风 · 律所财税",
+      "industry": "律所财税咨询",
+      "niche": "law",
+      "fit": "给律师事务所，财税代账和企业咨询也能用。",
+      "preview": "cn-professional/preview.jpg",
+      "pages": [
+        "首页",
+        "律所简介",
+        "专业领域",
+        "律师团队",
+        "典型案例",
+        "法律知识",
+        "联系我们"
+      ]
+    },
+    {
+      "id": "cn-wedding-photo",
+      "name": "国内风 · 婚纱摄影",
+      "industry": "婚纱婚庆写真",
+      "niche": "bridal-photo",
+      "fit": "给婚纱摄影工作室、影楼和婚庆公司。",
+      "preview": "cn-wedding-photo/preview.jpg",
+      "pages": [
+        "首页",
+        "作品欣赏",
+        "套系价格",
+        "拍摄基地",
+        "关于我们",
+        "新闻动态",
+        "预约看样"
+      ]
+    }
+  ]
+}

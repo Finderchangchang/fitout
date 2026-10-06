@@ -5,25 +5,14 @@
   margin-bottom: 1.25rem;
 }
 
-.shelf:has(#cat-all:checked) label[for="cat-all"],
-.shelf:has(#cat-tea:checked) label[for="cat-tea"],
-.shelf:has(#cat-bake:checked) label[for="cat-bake"],
-.shelf:has(#cat-meal:checked) label[for="cat-meal"] {
-  background: var(--primary);
-  color: var(--primary-contrast);
-  border-color: var(--primary);
-}
-
-.shelf:has(#cat-tea:checked) .tile-card:not(:has(a[href*="tea-"])) {
-  display: none;
-}
-
-.shelf:has(#cat-bake:checked) .tile-card:not(:has(a[href*="bake-"])) {
-  display: none;
-}
-
-.shelf:has(#cat-meal:checked) .tile-card:not(:has(a[href*="meal-"])) {
-  display: none;
+.clip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 
 .tile-grid {

@@ -1,5 +1,5 @@
 {
-  "note": "列表条目由拼装注入。日期和分类写进 summary，注入时不会另给字段。facets 链到本页锚点，由版式按零件文件名筛出一组。",
+  "note": "列表条目由拼装注入。分类读每条的 category，筛选锚点按分类生成。facets 里同名的 text 会写在筛选项下面，href 不再参与筛选。",
   "fields": {
     "title": { "type": "string", "required": true, "maxChars": 16 },
     "lead": { "type": "string", "required": false, "maxChars": 40 },

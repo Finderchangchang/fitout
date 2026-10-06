@@ -13,20 +13,47 @@
     "email": "hello@nanzhan.example",
     "address": "杭州市拱墅区石桥路 86 号（虚构地址）",
     "hours": [
-      { "day": "周一至周五", "time": "9:00-20:30" },
-      { "day": "周六", "time": "9:00-17:00" }
+      {
+        "day": "周一至周五",
+        "time": "9:00-20:30"
+      },
+      {
+        "day": "周六",
+        "time": "9:00-17:00"
+      }
     ],
     "formUrl": "https://example.com/forms/nanzhan-trial",
     "icp": "浙ICP备20918463号"
   },
   "nav": [
-    { "label": "首页", "href": "index.html" },
-    { "label": "学校简介", "href": "about/index.html" },
-    { "label": "课程设置", "href": "courses/index.html" },
-    { "label": "师资力量", "href": "teachers/index.html" },
-    { "label": "学员风采", "href": "works/index.html" },
-    { "label": "招生资讯", "href": "news/index.html" },
-    { "label": "预约试听", "href": "contact/index.html" }
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "学校简介",
+      "href": "about/index.html"
+    },
+    {
+      "label": "课程设置",
+      "href": "courses/index.html"
+    },
+    {
+      "label": "师资力量",
+      "href": "teachers/index.html"
+    },
+    {
+      "label": "学员风采",
+      "href": "works/index.html"
+    },
+    {
+      "label": "招生资讯",
+      "href": "news/index.html"
+    },
+    {
+      "label": "预约试听",
+      "href": "contact/index.html"
+    }
   ],
   "shell": {
     "header": "standard",
@@ -43,10 +70,22 @@
         "image": "course-cnc",
         "imageAlt": "学员在数控车床前对刀",
         "specs": [
-          { "label": "课时", "value": "96 课时" },
-          { "label": "学费", "value": "7,860 元" },
-          { "label": "适合人群", "value": "想上车床的在职人员" },
-          { "label": "证书", "value": "车工中级工，可报考" }
+          {
+            "label": "课时",
+            "value": "96 课时"
+          },
+          {
+            "label": "学费",
+            "value": "7,860 元"
+          },
+          {
+            "label": "适合人群",
+            "value": "想上车床的在职人员"
+          },
+          {
+            "label": "证书",
+            "value": "车工中级工，可报考"
+          }
         ]
       },
       {
@@ -57,10 +96,22 @@
         "image": "course-elec",
         "imageAlt": "学员在配电箱前接线",
         "specs": [
-          { "label": "课时", "value": "72 课时" },
-          { "label": "学费", "value": "4,280 元" },
-          { "label": "适合人群", "value": "想考低压电工证的人" },
-          { "label": "证书", "value": "低压电工证" }
+          {
+            "label": "课时",
+            "value": "72 课时"
+          },
+          {
+            "label": "学费",
+            "value": "4,280 元"
+          },
+          {
+            "label": "适合人群",
+            "value": "想考低压电工证的人"
+          },
+          {
+            "label": "证书",
+            "value": "低压电工证"
+          }
         ]
       },
       {
@@ -71,10 +122,22 @@
         "image": "course-weld",
         "imageAlt": "学员戴面罩在焊接间操作",
         "specs": [
-          { "label": "课时", "value": "64 课时" },
-          { "label": "学费", "value": "5,160 元" },
-          { "label": "适合人群", "value": "想学平焊的在职人员" },
-          { "label": "证书", "value": "焊工证，电弧焊" }
+          {
+            "label": "课时",
+            "value": "64 课时"
+          },
+          {
+            "label": "学费",
+            "value": "5,160 元"
+          },
+          {
+            "label": "适合人群",
+            "value": "想学平焊的在职人员"
+          },
+          {
+            "label": "证书",
+            "value": "焊工证，电弧焊"
+          }
         ]
       },
       {
@@ -85,10 +148,22 @@
         "image": "course-cad",
         "imageAlt": "学员在电脑前改零件图",
         "specs": [
-          { "label": "课时", "value": "48 课时" },
-          { "label": "学费", "value": "3,240 元" },
-          { "label": "适合人群", "value": "要看图上车床的人" },
-          { "label": "证书", "value": "结业发制图员证明" }
+          {
+            "label": "课时",
+            "value": "48 课时"
+          },
+          {
+            "label": "学费",
+            "value": "3,240 元"
+          },
+          {
+            "label": "适合人群",
+            "value": "要看图上车床的人"
+          },
+          {
+            "label": "证书",
+            "value": "结业发制图员证明"
+          }
         ]
       },
       {
@@ -99,10 +174,22 @@
         "image": "course-plc",
         "imageAlt": "学员在控制柜前看指示灯",
         "specs": [
-          { "label": "课时", "value": "56 课时" },
-          { "label": "学费", "value": "4,960 元" },
-          { "label": "适合人群", "value": "车间电工想学控制" },
-          { "label": "证书", "value": "不单独发证" }
+          {
+            "label": "课时",
+            "value": "56 课时"
+          },
+          {
+            "label": "学费",
+            "value": "4,960 元"
+          },
+          {
+            "label": "适合人群",
+            "value": "车间电工想学控制"
+          },
+          {
+            "label": "证书",
+            "value": "不单独发证"
+          }
         ]
       },
       {
@@ -113,10 +200,22 @@
         "image": "course-lift",
         "imageAlt": "学员在电梯机房看控制柜",
         "specs": [
-          { "label": "课时", "value": "80 课时" },
-          { "label": "学费", "value": "6,430 元" },
-          { "label": "适合人群", "value": "物业维修想考上岗" },
-          { "label": "证书", "value": "电梯维修上岗证" }
+          {
+            "label": "课时",
+            "value": "80 课时"
+          },
+          {
+            "label": "学费",
+            "value": "6,430 元"
+          },
+          {
+            "label": "适合人群",
+            "value": "物业维修想考上岗"
+          },
+          {
+            "label": "证书",
+            "value": "电梯维修上岗证"
+          }
         ]
       }
     ],
@@ -129,9 +228,18 @@
         "image": "teacher-zhou",
         "imageAlt": "周岚站在数控车床旁边",
         "specs": [
-          { "label": "教龄", "value": "11 年" },
-          { "label": "任教课程", "value": "数控车工" },
-          { "label": "证书", "value": "车工高级工" }
+          {
+            "label": "教龄",
+            "value": "11 年"
+          },
+          {
+            "label": "任教课程",
+            "value": "数控车工"
+          },
+          {
+            "label": "证书",
+            "value": "车工高级工"
+          }
         ]
       },
       {
@@ -142,9 +250,18 @@
         "image": "teacher-chen",
         "imageAlt": "陈牧在电工室看学员接线",
         "specs": [
-          { "label": "教龄", "value": "9 年" },
-          { "label": "任教课程", "value": "电工上岗" },
-          { "label": "证书", "value": "低压电工考评员" }
+          {
+            "label": "教龄",
+            "value": "9 年"
+          },
+          {
+            "label": "任教课程",
+            "value": "电工上岗"
+          },
+          {
+            "label": "证书",
+            "value": "低压电工考评员"
+          }
         ]
       },
       {
@@ -155,9 +272,18 @@
         "image": "teacher-he",
         "imageAlt": "何淑敏俯身看学员的图纸",
         "specs": [
-          { "label": "教龄", "value": "14 年" },
-          { "label": "任教课程", "value": "机械制图" },
-          { "label": "证书", "value": "机械制图员" }
+          {
+            "label": "教龄",
+            "value": "14 年"
+          },
+          {
+            "label": "任教课程",
+            "value": "机械制图"
+          },
+          {
+            "label": "证书",
+            "value": "机械制图员"
+          }
         ]
       },
       {
@@ -168,9 +294,18 @@
         "image": "teacher-ma",
         "imageAlt": "马峻在焊接间检查焊缝",
         "specs": [
-          { "label": "教龄", "value": "16 年" },
-          { "label": "任教课程", "value": "焊条电弧焊" },
-          { "label": "证书", "value": "焊工高级工" }
+          {
+            "label": "教龄",
+            "value": "16 年"
+          },
+          {
+            "label": "任教课程",
+            "value": "焊条电弧焊"
+          },
+          {
+            "label": "证书",
+            "value": "焊工高级工"
+          }
         ]
       }
     ],
@@ -183,10 +318,22 @@
         "image": "work-shaft",
         "imageAlt": "车好的金属轴套放在量具旁",
         "specs": [
-          { "label": "工种", "value": "数控车工" },
-          { "label": "用时", "value": "6 小时" },
-          { "label": "学员", "value": "周宁" },
-          { "label": "就业去向", "value": "拱墅机加工厂，车工" }
+          {
+            "label": "工种",
+            "value": "数控车工"
+          },
+          {
+            "label": "用时",
+            "value": "6 小时"
+          },
+          {
+            "label": "学员",
+            "value": "周宁"
+          },
+          {
+            "label": "就业去向",
+            "value": "拱墅机加工厂，车工"
+          }
         ]
       },
       {
@@ -197,10 +344,22 @@
         "image": "work-panel",
         "imageAlt": "打开门的实训配电箱",
         "specs": [
-          { "label": "工种", "value": "电工上岗" },
-          { "label": "用时", "value": "2 天" },
-          { "label": "学员", "value": "孙磊" },
-          { "label": "就业去向", "value": "物业公司，维修电工" }
+          {
+            "label": "工种",
+            "value": "电工上岗"
+          },
+          {
+            "label": "用时",
+            "value": "2 天"
+          },
+          {
+            "label": "学员",
+            "value": "孙磊"
+          },
+          {
+            "label": "就业去向",
+            "value": "物业公司，维修电工"
+          }
         ]
       },
       {
@@ -211,10 +370,22 @@
         "image": "work-weld",
         "imageAlt": "钢板上的一条平焊缝",
         "specs": [
-          { "label": "工种", "value": "焊条电弧焊" },
-          { "label": "用时", "value": "4 小时" },
-          { "label": "学员", "value": "吴迪" },
-          { "label": "就业去向", "value": "钢结构厂，焊工" }
+          {
+            "label": "工种",
+            "value": "焊条电弧焊"
+          },
+          {
+            "label": "用时",
+            "value": "4 小时"
+          },
+          {
+            "label": "学员",
+            "value": "吴迪"
+          },
+          {
+            "label": "就业去向",
+            "value": "钢结构厂，焊工"
+          }
         ]
       },
       {
@@ -225,10 +396,22 @@
         "image": "work-draw",
         "imageAlt": "屏幕上的轴套零件图",
         "specs": [
-          { "label": "工种", "value": "机械制图" },
-          { "label": "用时", "value": "3 小时" },
-          { "label": "学员", "value": "郑凯" },
-          { "label": "就业去向", "value": "机械厂，制图员" }
+          {
+            "label": "工种",
+            "value": "机械制图"
+          },
+          {
+            "label": "用时",
+            "value": "3 小时"
+          },
+          {
+            "label": "学员",
+            "value": "郑凯"
+          },
+          {
+            "label": "就业去向",
+            "value": "机械厂，制图员"
+          }
         ]
       },
       {
@@ -239,10 +422,22 @@
         "image": "work-cabinet",
         "imageAlt": "小型控制柜和亮着的指示灯",
         "specs": [
-          { "label": "工种", "value": "PLC入门" },
-          { "label": "用时", "value": "5 小时" },
-          { "label": "学员", "value": "钱薇" },
-          { "label": "就业去向", "value": "原车间电工" }
+          {
+            "label": "工种",
+            "value": "PLC入门"
+          },
+          {
+            "label": "用时",
+            "value": "5 小时"
+          },
+          {
+            "label": "学员",
+            "value": "钱薇"
+          },
+          {
+            "label": "就业去向",
+            "value": "原车间电工"
+          }
         ]
       }
     ],
@@ -306,10 +501,22 @@
             "secondaryHref": "courses/index.html",
             "interval": "4000",
             "slides": [
-              { "image": "hero-shop", "imageAlt": "石桥路车间白天的车床区" },
-              { "image": "hero-class", "imageAlt": "晚班教室里学员对着图纸" },
-              { "image": "hero-gate", "imageAlt": "校区门口的门厅和楼梯" },
-              { "image": "hero-bench", "imageAlt": "钳工台上的量具和零件" }
+              {
+                "image": "hero-shop",
+                "imageAlt": "车床卡盘和金属屑的局部"
+              },
+              {
+                "image": "hero-class",
+                "imageAlt": "工位上的零件图和台灯光"
+              },
+              {
+                "image": "hero-gate",
+                "imageAlt": "楼梯栏杆和门厅的日光"
+              },
+              {
+                "image": "hero-bench",
+                "imageAlt": "钳工台上的卡尺和零件"
+              }
             ]
           }
         },
@@ -322,10 +529,22 @@
             "title": "办学实力",
             "lead": "2009年开办，校区在拱墅石桥路。",
             "items": [
-              { "value": "2009", "label": "开办年份" },
-              { "value": "4", "label": "在岗老师" },
-              { "value": "6", "label": "在开课程" },
-              { "value": "1286", "label": "在册学员" }
+              {
+                "value": "2009",
+                "label": "开办年份"
+              },
+              {
+                "value": "4",
+                "label": "在岗老师"
+              },
+              {
+                "value": "6",
+                "label": "在开课程"
+              },
+              {
+                "value": "1286",
+                "label": "在册学员"
+              }
             ]
           }
         },
@@ -342,9 +561,18 @@
             "image": "campus-main",
             "imageAlt": "石桥路校区楼外白天",
             "thumbs": [
-              { "image": "campus-hall", "imageAlt": "门厅里的课表和楼梯" },
-              { "image": "campus-room", "imageAlt": "二楼晚班教室的座位" },
-              { "image": "campus-yard", "imageAlt": "楼侧停自行车的院子" }
+              {
+                "image": "campus-hall",
+                "imageAlt": "门厅里的课表和楼梯"
+              },
+              {
+                "image": "campus-room",
+                "imageAlt": "二楼晚班教室的座位"
+              },
+              {
+                "image": "campus-yard",
+                "imageAlt": "楼侧停自行车的院子"
+              }
             ]
           }
         },
@@ -606,10 +834,22 @@
             "title": "发展历程",
             "lead": "从2009年租下石桥路车间办起。",
             "items": [
-              { "name": "租下石桥路车间", "text": "2009年先租一层，只开了车工班。" },
-              { "name": "电工班首届取证", "text": "2014年第一批低压电工取证。" },
-              { "name": "拱墅校区加盖一层", "text": "2018年往上加了一层教室。" },
-              { "name": "晚班收到八点半", "text": "2023年起晚班收到晚上八点半。" }
+              {
+                "name": "租下石桥路车间",
+                "text": "2009年先租一层，只开了车工班。"
+              },
+              {
+                "name": "电工班首届取证",
+                "text": "2014年第一批低压电工取证。"
+              },
+              {
+                "name": "拱墅校区加盖一层",
+                "text": "2018年往上加了一层教室。"
+              },
+              {
+                "name": "晚班收到八点半",
+                "text": "2023年起晚班收到晚上八点半。"
+              }
             ]
           }
         },
@@ -622,10 +862,26 @@
             "title": "校区环境",
             "lead": "石桥路校区的楼、门厅、教室和侧院。",
             "items": [
-              { "image": "campus-main", "imageAlt": "石桥路校区楼外白天", "caption": "教学楼" },
-              { "image": "campus-hall", "imageAlt": "门厅里的课表和楼梯", "caption": "门厅" },
-              { "image": "campus-room", "imageAlt": "二楼晚班教室的座位", "caption": "晚班教室" },
-              { "image": "campus-yard", "imageAlt": "楼侧停自行车的院子", "caption": "侧院" }
+              {
+                "image": "campus-main",
+                "imageAlt": "石桥路校区楼外白天",
+                "caption": "教学楼"
+              },
+              {
+                "image": "campus-hall",
+                "imageAlt": "门厅里的课表和楼梯",
+                "caption": "门厅"
+              },
+              {
+                "image": "campus-room",
+                "imageAlt": "二楼晚班教室的座位",
+                "caption": "晚班教室"
+              },
+              {
+                "image": "campus-yard",
+                "imageAlt": "楼侧停自行车的院子",
+                "caption": "侧院"
+              }
             ]
           }
         },
@@ -638,10 +894,22 @@
             "title": "办学数据",
             "lead": "结业人数、在册班次、上期取证和合作车间。",
             "items": [
-              { "value": "1860", "label": "累计结业" },
-              { "value": "42", "label": "在册班次" },
-              { "value": "93.7%", "label": "上期取证" },
-              { "value": "11", "label": "合作车间" }
+              {
+                "value": "1860",
+                "label": "累计结业"
+              },
+              {
+                "value": "42",
+                "label": "在册班次"
+              },
+              {
+                "value": "93.7%",
+                "label": "上期取证"
+              },
+              {
+                "value": "11",
+                "label": "合作车间"
+              }
             ]
           }
         },
@@ -852,8 +1120,16 @@
             "title": "预约试听",
             "lead": "电话、地址和二维码都在这里。",
             "qrs": [
-              { "image": "qr-advisor", "imageAlt": "课程顾问的联系二维码", "label": "课程顾问" },
-              { "image": "qr-official", "imageAlt": "学校公众号的二维码", "label": "学校公众号" }
+              {
+                "image": "qr-advisor",
+                "imageAlt": "课程顾问的联系二维码",
+                "label": "课程顾问"
+              },
+              {
+                "image": "qr-official",
+                "imageAlt": "学校公众号的二维码",
+                "label": "学校公众号"
+              }
             ]
           }
         },

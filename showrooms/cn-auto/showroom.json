@@ -11,9 +11,15 @@
     "form": "填写预约"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,13 +27,33 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4200ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4200ms"
+    }
   },
   "collections": [
-    { "id": "services", "label": "服务项目", "listFile": "services/index.html" },
-    { "id": "team", "label": "技师团队", "listFile": "team/index.html" },
-    { "id": "stores", "label": "门店分布", "listFile": "stores/index.html" },
-    { "id": "news", "label": "养车知识", "listFile": "news/index.html" }
+    {
+      "id": "services",
+      "label": "服务项目",
+      "listFile": "services/index.html"
+    },
+    {
+      "id": "team",
+      "label": "技师团队",
+      "listFile": "team/index.html"
+    },
+    {
+      "id": "stores",
+      "label": "门店分布",
+      "listFile": "stores/index.html"
+    },
+    {
+      "id": "news",
+      "label": "养车知识",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -35,16 +61,76 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "services", "required": true, "variants": ["bays"] },
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "floor", "required": true, "variants": ["split"] },
-        { "type": "team", "required": true, "variants": ["cards"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "collection-list", "required": true, "variants": ["notes"] },
-        { "type": "yards", "required": true, "variants": ["row"] },
-        { "type": "contact", "required": true, "variants": ["split"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "services",
+          "required": true,
+          "variants": [
+            "bays"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "floor",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "notes"
+          ]
+        },
+        {
+          "type": "yards",
+          "required": false,
+          "variants": [
+            "row"
+          ]
+        },
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "split"
+          ]
+        }
       ]
     },
     {
@@ -52,11 +138,41 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "why", "required": true, "variants": ["points"] },
-        { "type": "tools", "required": true, "variants": ["pair"] },
-        { "type": "trust", "required": true, "variants": ["certs"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "points"
+          ]
+        },
+        {
+          "type": "tools",
+          "required": false,
+          "variants": [
+            "pair"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "certs"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -64,7 +180,13 @@
       "file": "services/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["board"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        }
       ]
     },
     {
@@ -73,7 +195,13 @@
       "kind": "detail",
       "from": "services",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -81,7 +209,13 @@
       "file": "team/index.html",
       "kind": "team",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["portraits"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "portraits"
+          ]
+        }
       ]
     },
     {
@@ -90,7 +224,13 @@
       "kind": "detail",
       "from": "team",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -98,7 +238,13 @@
       "file": "stores/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["stores"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "stores"
+          ]
+        }
       ]
     },
     {
@@ -107,7 +253,13 @@
       "kind": "detail",
       "from": "stores",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -115,7 +267,13 @@
       "file": "news/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["notes"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "notes"
+          ]
+        }
       ]
     },
     {
@@ -124,7 +282,13 @@
       "kind": "news-detail",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -132,7 +296,13 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["split"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "split"
+          ]
+        }
       ]
     }
   ]

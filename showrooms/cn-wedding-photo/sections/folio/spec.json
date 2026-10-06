@@ -1,25 +1,67 @@
 {
   "note": "首页样片。一大几小，点进详情看拍摄地、风格和套系。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "href": { "type": "string", "required": true, "maxChars": 200 },
-    "hrefLabel": { "type": "string", "required": true, "maxChars": 8 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "href": {
+      "type": "string",
+      "required": true,
+      "maxChars": 200
+    },
+    "hrefLabel": {
+      "type": "string",
+      "required": true,
+      "maxChars": 8
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 4,
       "max": 6,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 16 },
-        "text": { "type": "string", "required": true, "maxChars": 24 },
-        "href": { "type": "string", "required": true, "maxChars": 200 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 24
+        },
+        "href": {
+          "type": "string",
+          "required": true,
+          "maxChars": 200
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
   "variants": {
-    "spread": { "needsImage": true, "imageField": "items.image", "family": "folio", "fit": "左大右小，再接一排" }
+    "spread": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "family": "folio",
+      "fit": "左大右小，再接一排",
+      "fallback": "omit"
+    }
   }
 }

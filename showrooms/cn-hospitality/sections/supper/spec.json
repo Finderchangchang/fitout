@@ -1,24 +1,72 @@
 {
   "note": "晚饭：一段话、一张灶房、菜名和价格。不排三张只有菜名的方图。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "body": { "type": "string", "required": false, "maxChars": 120 },
-    "href": { "type": "string", "required": false, "maxChars": 200 },
-    "linkLabel": { "type": "string", "required": false, "maxChars": 8 },
-    "image": { "type": "image", "required": true, "maxChars": 200 },
-    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
-    "caption": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "body": {
+      "type": "string",
+      "required": false,
+      "maxChars": 120
+    },
+    "href": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "linkLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
+    },
+    "image": {
+      "type": "image",
+      "required": true,
+      "maxChars": 200
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true,
+      "maxChars": 30
+    },
+    "caption": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 1,
       "max": 6,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 12 },
-        "price": { "type": "string", "required": true, "maxChars": 8 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "price": {
+          "type": "string",
+          "required": true,
+          "maxChars": 8
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
@@ -27,7 +75,8 @@
       "needsImage": true,
       "imageField": "image",
       "family": "supper",
-      "fit": "文案加灶房，下面是带价格的菜"
+      "fit": "文案加灶房，下面是带价格的菜",
+      "fallback": "omit"
     }
   }
 }

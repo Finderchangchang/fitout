@@ -13,21 +13,49 @@
     "email": "sales@fanshang.example",
     "address": "安徽省六安市金寨县麻埠镇畈上村18号（虚构地址）",
     "hours": [
-      { "day": "周一至周六", "time": "08:00-17:30" }
+      {
+        "day": "周一至周六",
+        "time": "08:00-17:30"
+      }
     ],
     "formUrl": "https://example.com/fanshang-inquiry",
     "icp": "皖ICP备20260816号-3"
   },
   "nav": [
-    { "label": "首页", "href": "index.html" },
-    { "label": "基地介绍", "href": "about/index.html" },
-    { "label": "产品中心", "href": "products/index.html" },
-    { "label": "种植溯源", "href": "trace/index.html" },
-    { "label": "批发合作", "href": "trade/index.html" },
-    { "label": "新闻动态", "href": "news/index.html" },
-    { "label": "联系我们", "href": "contact/index.html" }
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "基地介绍",
+      "href": "about/index.html"
+    },
+    {
+      "label": "产品中心",
+      "href": "products/index.html"
+    },
+    {
+      "label": "种植溯源",
+      "href": "trace/index.html"
+    },
+    {
+      "label": "批发合作",
+      "href": "trade/index.html"
+    },
+    {
+      "label": "新闻动态",
+      "href": "news/index.html"
+    },
+    {
+      "label": "联系我们",
+      "href": "contact/index.html"
+    }
   ],
-  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
   "collections": {
     "products": [
       {
@@ -38,12 +66,30 @@
         "image": "prod-rice",
         "imageAlt": "一袋十公斤的晚稻米",
         "specs": [
-          { "label": "产地", "value": "金寨麻埠畈上" },
-          { "label": "规格", "value": "10公斤编织袋" },
-          { "label": "保质期", "value": "12个月" },
-          { "label": "储存", "value": "阴凉干燥，避光" },
-          { "label": "批发价", "value": "4.6元/斤起" },
-          { "label": "零售价", "value": "6.8元/斤" }
+          {
+            "label": "产地",
+            "value": "金寨麻埠畈上"
+          },
+          {
+            "label": "规格",
+            "value": "10公斤编织袋"
+          },
+          {
+            "label": "保质期",
+            "value": "12个月"
+          },
+          {
+            "label": "储存",
+            "value": "阴凉干燥，避光"
+          },
+          {
+            "label": "批发价",
+            "value": "4.6元/斤起"
+          },
+          {
+            "label": "零售价",
+            "value": "6.8元/斤"
+          }
         ]
       },
       {
@@ -54,12 +100,30 @@
         "image": "prod-oil",
         "imageAlt": "一壶五升的菜籽油",
         "specs": [
-          { "label": "产地", "value": "金寨麻埠" },
-          { "label": "规格", "value": "5升塑料壶" },
-          { "label": "保质期", "value": "18个月" },
-          { "label": "储存", "value": "避光，勿近灶台" },
-          { "label": "批发价", "value": "18元/升起" },
-          { "label": "零售价", "value": "26元/升" }
+          {
+            "label": "产地",
+            "value": "金寨麻埠"
+          },
+          {
+            "label": "规格",
+            "value": "5升塑料壶"
+          },
+          {
+            "label": "保质期",
+            "value": "18个月"
+          },
+          {
+            "label": "储存",
+            "value": "避光，勿近灶台"
+          },
+          {
+            "label": "批发价",
+            "value": "18元/升起"
+          },
+          {
+            "label": "零售价",
+            "value": "26元/升"
+          }
         ]
       },
       {
@@ -70,12 +134,30 @@
         "image": "prod-chestnut",
         "imageAlt": "一网袋刚出冷库的板栗",
         "specs": [
-          { "label": "产地", "value": "金寨" },
-          { "label": "规格", "value": "5公斤网袋" },
-          { "label": "保质期", "value": "冷藏45天" },
-          { "label": "储存", "value": "0到4度冷藏" },
-          { "label": "批发价", "value": "9.5元/斤起" },
-          { "label": "零售价", "value": "14元/斤" }
+          {
+            "label": "产地",
+            "value": "金寨"
+          },
+          {
+            "label": "规格",
+            "value": "5公斤网袋"
+          },
+          {
+            "label": "保质期",
+            "value": "冷藏45天"
+          },
+          {
+            "label": "储存",
+            "value": "0到4度冷藏"
+          },
+          {
+            "label": "批发价",
+            "value": "9.5元/斤起"
+          },
+          {
+            "label": "零售价",
+            "value": "14元/斤"
+          }
         ]
       },
       {
@@ -86,12 +168,30 @@
         "image": "prod-tea",
         "imageAlt": "一袋二百五十克晒青",
         "specs": [
-          { "label": "产地", "value": "金寨麻埠" },
-          { "label": "规格", "value": "250克铝箔袋" },
-          { "label": "保质期", "value": "18个月" },
-          { "label": "储存", "value": "密封，避光防潮" },
-          { "label": "批发价", "value": "68元/斤起" },
-          { "label": "零售价", "value": "96元/斤" }
+          {
+            "label": "产地",
+            "value": "金寨麻埠"
+          },
+          {
+            "label": "规格",
+            "value": "250克铝箔袋"
+          },
+          {
+            "label": "保质期",
+            "value": "18个月"
+          },
+          {
+            "label": "储存",
+            "value": "密封，避光防潮"
+          },
+          {
+            "label": "批发价",
+            "value": "68元/斤起"
+          },
+          {
+            "label": "零售价",
+            "value": "96元/斤"
+          }
         ]
       },
       {
@@ -102,12 +202,30 @@
         "image": "prod-mushroom",
         "imageAlt": "一袋五百克干香菇",
         "specs": [
-          { "label": "产地", "value": "金寨麻埠畈上" },
-          { "label": "规格", "value": "500克袋" },
-          { "label": "保质期", "value": "12个月" },
-          { "label": "储存", "value": "干燥密封" },
-          { "label": "批发价", "value": "42元/斤起" },
-          { "label": "零售价", "value": "58元/斤" }
+          {
+            "label": "产地",
+            "value": "金寨麻埠畈上"
+          },
+          {
+            "label": "规格",
+            "value": "500克袋"
+          },
+          {
+            "label": "保质期",
+            "value": "12个月"
+          },
+          {
+            "label": "储存",
+            "value": "干燥密封"
+          },
+          {
+            "label": "批发价",
+            "value": "42元/斤起"
+          },
+          {
+            "label": "零售价",
+            "value": "58元/斤"
+          }
         ]
       },
       {
@@ -118,12 +236,30 @@
         "image": "prod-yam",
         "imageAlt": "一袋切片晒干的薯干",
         "specs": [
-          { "label": "产地", "value": "金寨天堂寨脚" },
-          { "label": "规格", "value": "2.5公斤袋" },
-          { "label": "保质期", "value": "8个月" },
-          { "label": "储存", "value": "阴凉密封" },
-          { "label": "批发价", "value": "11元/斤起" },
-          { "label": "零售价", "value": "16元/斤" }
+          {
+            "label": "产地",
+            "value": "金寨天堂寨脚"
+          },
+          {
+            "label": "规格",
+            "value": "2.5公斤袋"
+          },
+          {
+            "label": "保质期",
+            "value": "8个月"
+          },
+          {
+            "label": "储存",
+            "value": "阴凉密封"
+          },
+          {
+            "label": "批发价",
+            "value": "11元/斤起"
+          },
+          {
+            "label": "零售价",
+            "value": "16元/斤"
+          }
         ]
       }
     ],
@@ -178,10 +314,22 @@
             "secondaryHref": "products/index.html",
             "interval": "4000",
             "slides": [
-              { "image": "hero-paddy", "imageAlt": "河湾边正在灌浆的晚稻田" },
-              { "image": "hero-yard", "imageAlt": "晒场上摊开的一地晚稻" },
-              { "image": "hero-cold", "imageAlt": "冷库门口停着一辆冷藏车" },
-              { "image": "hero-pack", "imageAlt": "库房里码齐的编织袋" }
+              {
+                "image": "hero-paddy",
+                "imageAlt": "稻穗和水面的午后局部"
+              },
+              {
+                "image": "hero-yard",
+                "imageAlt": "摊开的稻谷和干土色地面"
+              },
+              {
+                "image": "hero-cold",
+                "imageAlt": "冷库门边的冷藏车厢局部"
+              },
+              {
+                "image": "hero-pack",
+                "imageAlt": "码齐的本色编织袋"
+              }
             ]
           }
         },
@@ -194,10 +342,22 @@
             "title": "社里现在的数",
             "lead": "亩数、户数和库容，是今年账上的数。",
             "items": [
-              { "value": "860亩", "label": "晚稻在种" },
-              { "value": "126户", "label": "入社农户" },
-              { "value": "280吨", "label": "冷库库容" },
-              { "value": "11年", "label": "统一收购" }
+              {
+                "value": "860亩",
+                "label": "晚稻在种"
+              },
+              {
+                "value": "126户",
+                "label": "入社农户"
+              },
+              {
+                "value": "280吨",
+                "label": "冷库库容"
+              },
+              {
+                "value": "11年",
+                "label": "统一收购"
+              }
             ]
           }
         },
@@ -278,11 +438,26 @@
             "linkLabel": "看种植溯源",
             "href": "trace/index.html",
             "items": [
-              { "name": "选种", "text": "晚稻种按田块留，不从外地调来路不清的种。" },
-              { "name": "种植", "text": "用水和肥按田块记，不按户估一个数。" },
-              { "name": "采收", "text": "开镰后当天过筛，水分不合格不入库。" },
-              { "name": "分拣", "text": "过筛后按袋称重，袋上写田块号。" },
-              { "name": "冷链", "text": "干货进常温库，鲜货进零到四度冷库。" }
+              {
+                "name": "选种",
+                "text": "晚稻种按田块留，不从外地调来路不清的种。"
+              },
+              {
+                "name": "种植",
+                "text": "用水和肥按田块记，不按户估一个数。"
+              },
+              {
+                "name": "采收",
+                "text": "开镰后当天过筛，水分不合格不入库。"
+              },
+              {
+                "name": "分拣",
+                "text": "过筛后按袋称重，袋上写田块号。"
+              },
+              {
+                "name": "冷链",
+                "text": "干货进常温库，鲜货进零到四度冷库。"
+              }
             ]
           }
         },
@@ -317,7 +492,12 @@
       "banner": "banner",
       "bannerAlt": "麻埠镇河湾边的晚稻田",
       "bannerTitle": "基地介绍",
-      "crumbs": [{ "label": "基地介绍", "href": "" }],
+      "crumbs": [
+        {
+          "label": "基地介绍",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "field",
@@ -343,10 +523,22 @@
             "title": "今年的规模",
             "lead": "亩数、户数、库容，和统一收购的年头。",
             "items": [
-              { "value": "860亩", "label": "晚稻在种" },
-              { "value": "126户", "label": "入社农户" },
-              { "value": "280吨", "label": "冷库库容" },
-              { "value": "11年", "label": "统一收购" }
+              {
+                "value": "860亩",
+                "label": "晚稻在种"
+              },
+              {
+                "value": "126户",
+                "label": "入社农户"
+              },
+              {
+                "value": "280吨",
+                "label": "冷库库容"
+              },
+              {
+                "value": "11年",
+                "label": "统一收购"
+              }
             ]
           }
         },
@@ -359,9 +551,18 @@
             "title": "种植方式",
             "lead": "分户种，记到田块，由社里收。",
             "items": [
-              { "name": "分户种", "text": "田在各户名下，社里不并成一块大田。" },
-              { "name": "记田块", "text": "用水、用肥和产量按田块记，不按户估。" },
-              { "name": "统一收", "text": "开镰后由社里过筛、称重、入库，户里不混堆。" }
+              {
+                "name": "分户种",
+                "text": "田在各户名下，社里不并成一块大田。"
+              },
+              {
+                "name": "记田块",
+                "text": "用水、用肥和产量按田块记，不按户估。"
+              },
+              {
+                "name": "统一收",
+                "text": "开镰后由社里过筛、称重、入库，户里不混堆。"
+              }
             ]
           }
         },
@@ -385,7 +586,12 @@
       "banner": "banner",
       "bannerAlt": "晒场上码好的成品袋",
       "bannerTitle": "产品中心",
-      "crumbs": [{ "label": "产品中心", "href": "" }],
+      "crumbs": [
+        {
+          "label": "产品中心",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -407,7 +613,12 @@
       "banner": "banner",
       "bannerAlt": "收割机在晚稻田里作业",
       "bannerTitle": "种植与溯源",
-      "crumbs": [{ "label": "种植与溯源", "href": "" }],
+      "crumbs": [
+        {
+          "label": "种植与溯源",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "stations",
@@ -460,7 +671,12 @@
       "banner": "banner",
       "bannerAlt": "证照摊在库房桌上",
       "bannerTitle": "资质认证",
-      "crumbs": [{ "label": "资质认证", "href": "" }],
+      "crumbs": [
+        {
+          "label": "资质认证",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "honors",
@@ -518,7 +734,12 @@
       "banner": "banner",
       "bannerAlt": "装车前对袋数的坪",
       "bannerTitle": "批发合作",
-      "crumbs": [{ "label": "批发合作", "href": "" }],
+      "crumbs": [
+        {
+          "label": "批发合作",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "why",
@@ -529,10 +750,22 @@
             "title": "经销政策",
             "lead": "起订、账期、区域和退换，谈的时候写进合同。",
             "items": [
-              { "name": "起订", "text": "晚稻1吨起，干货100斤起，不足量按零售价。" },
-              { "name": "账期", "text": "县城老客户月结，新客户先款后货。" },
-              { "name": "区域", "text": "金寨县内三家粮油店已签约，外县另谈。" },
-              { "name": "退换", "text": "运输破包当天拍照，完好开封不退。" }
+              {
+                "name": "起订",
+                "text": "晚稻1吨起，干货100斤起，不足量按零售价。"
+              },
+              {
+                "name": "账期",
+                "text": "县城老客户月结，新客户先款后货。"
+              },
+              {
+                "name": "区域",
+                "text": "金寨县内三家粮油店已签约，外县另谈。"
+              },
+              {
+                "name": "退换",
+                "text": "运输破包当天拍照，完好开封不退。"
+              }
             ]
           }
         },
@@ -547,10 +780,22 @@
             "image": "trade-load",
             "imageAlt": "坪上正在装车的米袋",
             "items": [
-              { "name": "看样品", "text": "寄一袋小样，或到社里看当年批次。" },
-              { "name": "对规格", "text": "袋重、水分和价，写在同一张单上。" },
-              { "name": "签年度", "text": "数量和区域写进年度合同，不口头改。" },
-              { "name": "排冷链", "text": "鲜货走冷藏，干货常温，出库前对袋数。" }
+              {
+                "name": "看样品",
+                "text": "寄一袋小样，或到社里看当年批次。"
+              },
+              {
+                "name": "对规格",
+                "text": "袋重、水分和价，写在同一张单上。"
+              },
+              {
+                "name": "签年度",
+                "text": "数量和区域写进年度合同，不口头改。"
+              },
+              {
+                "name": "排冷链",
+                "text": "鲜货走冷藏，干货常温，出库前对袋数。"
+              }
             ]
           }
         },
@@ -585,7 +830,12 @@
       "banner": "banner",
       "bannerAlt": "冷库门口的公告板",
       "bannerTitle": "新闻动态",
-      "crumbs": [{ "label": "新闻动态", "href": "" }],
+      "crumbs": [
+        {
+          "label": "新闻动态",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -607,7 +857,12 @@
       "banner": "contact-gate",
       "bannerAlt": "合作社大门口的卸货坪",
       "bannerTitle": "联系我们",
-      "crumbs": [{ "label": "联系我们", "href": "" }],
+      "crumbs": [
+        {
+          "label": "联系我们",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "contact",

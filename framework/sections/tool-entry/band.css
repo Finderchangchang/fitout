@@ -1,0 +1,16 @@
+.tool-entry-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.tool-entry-copy {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+
+.tool-entry .btn {
+  flex: 0 0 auto;
+}

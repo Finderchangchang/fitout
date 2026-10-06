@@ -19,21 +19,7 @@
             <img src="{{wechatQrSrc}}" alt="门店微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">
             <figcaption>加门店微信</figcaption>
           </figure>
-          <figure>
-            <img class="code-mp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Crect width='100%25' height='100%25' fill='%23e7e2d8'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%233d3b37' font-size='28' font-family='sans-serif'%3E%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81%3C/text%3E%3C/svg%3E" alt="公众号二维码" width="800" height="800">
-            <figcaption>关注公众号</figcaption>
-          </figure>
         </div>
-        <script>
-          (function () {
-            var pub = document.querySelector(".desk-codes figure img:not(.code-mp)");
-            var mp = document.querySelector(".desk-codes img.code-mp");
-            if (!pub || !mp) return;
-            var src = pub.getAttribute("src") || "";
-            var next = src.replace("qr-wechat", "qr-mp");
-            if (next && next !== src) mp.src = next;
-          })();
-        </script>
         {{/if}}
         {{#if wechat}}<p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
       </div>

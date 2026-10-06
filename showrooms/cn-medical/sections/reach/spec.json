@@ -1,11 +1,31 @@
 {
   "note": "交通和营业时间。电话地址时间从全站联系信息来。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "text": { "type": "string", "required": true, "maxChars": 80 },
-    "image": { "type": "image", "required": true, "maxChars": 200 },
-    "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "text": {
+      "type": "string",
+      "required": true,
+      "maxChars": 80
+    },
+    "image": {
+      "type": "image",
+      "required": true,
+      "maxChars": 200
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true,
+      "maxChars": 30
+    }
   },
   "variants": {
     "split": {
@@ -13,7 +33,8 @@
       "imageField": "image",
       "family": "route",
       "fit": "左边怎么走和时间，右边街景",
-      "source": "样板间自写"
+      "source": "样板间自写",
+      "fallback": "omit"
     }
   }
 }

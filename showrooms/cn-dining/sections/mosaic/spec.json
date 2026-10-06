@@ -1,18 +1,42 @@
 {
   "note": "四张原料图，图下是米色说明，图与图之间留缝。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 4,
       "max": 4,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 8 },
-        "text": { "type": "string", "required": true, "maxChars": 24 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 8
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 24
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
@@ -21,7 +45,8 @@
       "needsImage": true,
       "imageField": "items.image",
       "family": "mosaic",
-      "fit": "四张图，说明在图下"
+      "fit": "四张图，说明在图下",
+      "fallback": "omit"
     }
   }
 }

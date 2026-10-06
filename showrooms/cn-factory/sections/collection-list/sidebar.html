@@ -1,29 +1,47 @@
 <section class="section" data-section="collection-list" data-family="filter" id="{{anchor}}">
   <div class="container catalog-layout">
+    {{#if filters}}
     <aside class="facet-col">
       <h2 class="facet-label">按工艺看</h2>
       {{#if lead}}<p>{{lead}}</p>{{/if}}
       <ul class="facet-list">
-        {{#each facets}}
+        <li><a href="#{{anchor}}">全部</a></li>
+        {{#each filters}}
         <li>
-          <a href="{{href}}">{{name}}</a>
-          <p>{{text}}</p>
+          <a href="#{{anchor}}-{{key}}">{{label}}</a>
+          {{#if text}}<p>{{text}}</p>{{/if}}
         </li>
         {{/each}}
       </ul>
     </aside>
+    <style>
+      .catalog-layout:not(:has(.craft-hook:target)) .facet-list a[href="#{{anchor}}"] {
+        color: var(--primary);
+        box-shadow: inset 3px 0 0 var(--accent);
+        padding-left: 0.7rem;
+      }
+      {{#each filters}}
+      .catalog-layout:has(#{{anchor}}-{{key}}:target) .facet-list a[href$="#{{anchor}}-{{key}}"] {
+        color: var(--primary);
+        box-shadow: inset 3px 0 0 var(--accent);
+        padding-left: 0.7rem;
+      }
+      .part-pane:has(#{{anchor}}-{{key}}:target) .part-card { display: none; }
+      .part-pane:has(#{{anchor}}-{{key}}:target) .part-card[data-cat="{{key}}"] { display: block; }
+      {{/each}}
+    </style>
+    {{/if}}
     <div class="part-pane">
-      <span id="bend" class="craft-hook"></span>
-      <span id="stamp" class="craft-hook"></span>
-      <span id="machine" class="craft-hook"></span>
-      <span id="weld" class="craft-hook"></span>
+      {{#each filters}}
+      <span id="{{anchor}}-{{key}}" class="craft-hook"></span>
+      {{/each}}
       <div class="section-head np-head">
         {{#if isH1}}<h1 class="section-title np-title">{{title}}</h1>{{/if}}
         {{#if isH2}}<h2 class="section-title np-title">{{title}}</h2>{{/if}}
       </div>
       <div class="part-grid" data-media-group="part">
         {{#each items}}
-        <article class="card part-card" data-file="{{href}}">
+        <article class="card part-card" data-cat="{{catKey}}">
           {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
           <h3><a href="{{href}}">{{name}}</a></h3>
           <p>{{summary}}</p>

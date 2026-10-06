@@ -11,9 +11,15 @@
     "form": "在线询价"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,11 +27,23 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4000ms"
+    }
   },
   "collections": [
-    { "id": "products", "label": "产品中心", "listFile": "products/index.html" },
-    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+    {
+      "id": "products",
+      "label": "产品中心",
+      "listFile": "products/index.html"
+    },
+    {
+      "id": "news",
+      "label": "新闻动态",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -33,14 +51,62 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "lots", "required": true, "variants": ["board"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "field", "required": true, "variants": ["land"] },
-        { "type": "why", "required": true, "variants": ["line"] },
-        { "type": "collection-list", "required": true, "variants": ["clips"] },
-        { "type": "cta-band", "required": true, "variants": ["plate"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "lots",
+          "required": true,
+          "variants": [
+            "board"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "field",
+          "required": false,
+          "variants": [
+            "land"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "line"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "clips"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "plate"
+          ]
+        }
       ]
     },
     {
@@ -48,10 +114,34 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "field", "required": true, "variants": ["keeper"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "why", "required": true, "variants": ["notes"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] }
+        {
+          "type": "field",
+          "required": false,
+          "variants": [
+            "keeper"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "notes"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        }
       ]
     },
     {
@@ -59,7 +149,13 @@
       "file": "products/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["rows"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "rows"
+          ]
+        }
       ]
     },
     {
@@ -68,7 +164,13 @@
       "kind": "detail",
       "from": "products",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "sheet"
+          ]
+        }
       ]
     },
     {
@@ -76,7 +178,13 @@
       "file": "trace/index.html",
       "kind": "about",
       "order": [
-        { "type": "stations", "required": true, "variants": ["rail"] }
+        {
+          "type": "stations",
+          "required": false,
+          "variants": [
+            "rail"
+          ]
+        }
       ]
     },
     {
@@ -84,8 +192,20 @@
       "file": "certs/index.html",
       "kind": "about",
       "order": [
-        { "type": "honors", "required": true, "variants": ["wall"] },
-        { "type": "cta-band", "required": true, "variants": ["plate"] }
+        {
+          "type": "honors",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "plate"
+          ]
+        }
       ]
     },
     {
@@ -93,10 +213,34 @@
       "file": "trade/index.html",
       "kind": "about",
       "order": [
-        { "type": "why", "required": true, "variants": ["notes"] },
-        { "type": "deal", "required": true, "variants": ["steps"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "cta-band", "required": true, "variants": ["plate"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "notes"
+          ]
+        },
+        {
+          "type": "deal",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "plate"
+          ]
+        }
       ]
     },
     {
@@ -104,7 +248,13 @@
       "file": "news/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["clips"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "clips"
+          ]
+        }
       ]
     },
     {
@@ -113,7 +263,13 @@
       "kind": "news-detail",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["report"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "report"
+          ]
+        }
       ]
     },
     {
@@ -121,7 +277,13 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["split"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "split"
+          ]
+        }
       ]
     }
   ]

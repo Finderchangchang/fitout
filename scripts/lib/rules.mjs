@@ -121,8 +121,10 @@ export const RULES = {
   篇幅: { level: "block", text: "店名、标题、说明、地址有字数上限" },
   spec: { level: "block", text: "字段符合板块 spec" },
   图片: { level: "warn", text: "单张图片超过 400KB，或一页合计超过 1.5MB" },
-  图片位: { level: "block", text: "每个 img 要有 width 和 height，或写 aspect-ratio。同一组图片比例一致" },
+  图片位: { level: "block", text: "每个 img 要有 width 和 height，或写 aspect-ratio。同一组若用 aspect-ratio 和 object-fit:cover 锁住显示框，就按框检查；否则仍比原图比例" },
   降级: { level: "warn", text: "拼装时缺图改了版式。退出码仍看有没有 block" },
+  口号: { level: "warn", text: "首屏口号不要套示例句式，按企业档案重写" },
+  样板间: { level: "block", text: "样板间版式不写死这套示例站的 slug、id、专有名词和电话" },
 };
 
 export const HIGH_SAT_BANDS = 3;

@@ -1,6 +1,6 @@
 /**
  * node scripts/check-visual.mjs <站点目录> [--shots <目录>]
- * 需要浏览器的检查：图上文字对比度、悬浮条压页脚、横向溢出、同组图片比例、点击区、顶栏高度。
+ * 需要浏览器的检查：图上文字对比度、按钮对比度、悬浮条压页脚、横向溢出、同组图片比例、点击区、顶栏高度。
  * Playwright 从 PLAYWRIGHT_PATH 或仓库外的 site-studio-refs 里找。找不到就打印「跳过」并退出 0。
  *
  * 确定状态（不改框架）：
@@ -54,6 +54,8 @@ try {
       for (const width of [375, 768, 1024, 1440]) {
         await checkWidth(dir, server.port, home, width, true);
         if (extra) await checkWidth(dir, server.port, extra, width, false);
+        const rest = pages.filter((file) => file !== home && file !== extra);
+        await checkButtonsOn(dir, server.port, rest, width);
       }
     } finally {
       await new Promise((resolve) => server.server.close(resolve));
@@ -157,6 +159,7 @@ async function checkWidth(dir, port, file, width, shoot) {
   if (ready.zeros) failures.push(`${label} 数字还停在 0，有 ${ready.zeros} 处`);
   const contrast = await sampleContrasts(page);
   for (const item of contrast) pushContrast(label, item);
+  for (const item of await sampleButtonContrasts(page)) pushButtonContrast(label, item);
   const ratios = await page.evaluate(groupRatios);
   for (const item of ratios) {
     if (!item.ok) failures.push(`${label} 图片组 ${item.id} 比例不一致`);
@@ -353,6 +356,221 @@ async function showSlide(page, index, slide) {
     return Number.parseFloat(getComputedStyle(el).opacity) > 0.99;
   }, { index, slide }, { timeout: 4000 });
   await frames(page);
+}
+
+async function checkButtonsOn(dir, port, files, width) {
+  if (!files.length) return;
+  const context = await browser.newContext({
+    viewport: { width, height: width <= 768 ? 900 : 800 },
+    deviceScaleFactor: 1,
+    reducedMotion: "reduce",
+  });
+  const page = await context.newPage();
+  await installSettle(page);
+  try {
+    for (const file of files) {
+      const url = `http://127.0.0.1:${port}/${file.split("/").map(encodeURIComponent).join("/")}`;
+      await page.goto(url, { waitUntil: "domcontentloaded" });
+      await settlePage(page);
+      const label = `${path.basename(dir)} ${file} ${width}px`;
+      for (const item of await sampleButtonContrasts(page)) pushButtonContrast(label, item);
+    }
+  } finally {
+    await context.close();
+  }
+}
+
+function pushButtonContrast(label, item) {
+  if (item.error || !Number.isFinite(item.ratio)) {
+    failures.push(`${label} 按钮对比度采样失败：${item.text || "按钮"}${item.error ? `（${item.error}）` : ""}`);
+    return;
+  }
+  if (item.ratio < item.need) {
+    failures.push(`${label} 按钮对比度 ${item.ratio.toFixed(2)}，低于 ${item.need}：${item.text}`);
+  }
+}
+
+async function sampleButtonContrasts(page) {
+  const found = await page.evaluate(collectButtons);
+  const results = [...found.solid];
+  for (const item of found.shot) {
+    await page.evaluate((n) => {
+      const el = document.querySelector(`[data-fitout-btn-shot="${n}"]`);
+      if (el) el.scrollIntoView({ block: "center", inline: "nearest" });
+    }, item.n);
+    await frames(page);
+    const box = await page.evaluate(readShotButton, item.n);
+    if (!box) {
+      results.push({ ratio: Number.NaN, need: item.need, text: item.text, error: "找不到按钮" });
+      continue;
+    }
+    results.push(await contrastAt(page, box));
+  }
+  await page.evaluate(() => {
+    document.querySelectorAll("[data-fitout-btn-shot]").forEach((el) => el.removeAttribute("data-fitout-btn-shot"));
+    window.scrollTo(0, 0);
+  });
+  return results;
+}
+
+function collectButtons() {
+  const lin = (v) => {
+    const c = v / 255;
+    return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  };
+  const lum = (r, g, b) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+  const parse = (text) => {
+    const ctx = document.createElement("canvas").getContext("2d");
+    ctx.fillStyle = "#000";
+    ctx.fillStyle = text;
+    const hex = ctx.fillStyle;
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return { r, g, b, lum: lum(r, g, b) };
+  };
+  const ratioOf = (fg, bg) => {
+    const a = parse(fg).lum;
+    const b = parse(bg).lum;
+    return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  };
+  const painted = (el) => {
+    const cs = getComputedStyle(el);
+    const image = cs.backgroundImage && cs.backgroundImage !== "none";
+    const parts = String(cs.backgroundColor).match(/[\d.]+/g) || [];
+    const alpha = parts.length >= 4 ? Number(parts[3]) : (parts.length ? 1 : 0);
+    return { image, alpha, color: cs.backgroundColor };
+  };
+  const overlap = (a, b) => Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left))
+    * Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
+  const imageBehind = (el) => {
+    const rect = el.getBoundingClientRect();
+    for (const img of document.images) {
+      if (overlap(rect, img.getBoundingClientRect()) > 40) return true;
+    }
+    return false;
+  };
+  const seen = new Set();
+  const solid = [];
+  const shot = [];
+  let n = 0;
+  for (const el of document.querySelectorAll("a.btn, button.btn, .btn, input[type='submit'], input[type='button']")) {
+    if (seen.has(el)) continue;
+    seen.add(el);
+    const cs = getComputedStyle(el);
+    if (cs.display === "none" || cs.visibility === "hidden" || Number.parseFloat(cs.opacity) === 0) continue;
+    const rect = el.getBoundingClientRect();
+    if (rect.width < 8 || rect.height < 8) continue;
+    const text = (el.tagName === "INPUT" ? el.value : el.textContent || "").replace(/\s+/g, " ").trim();
+    if (!text) continue;
+    const size = parseFloat(cs.fontSize) || 16;
+    const weight = parseInt(cs.fontWeight, 10) || 400;
+    const need = size >= 24 || (weight >= 600 && size >= 18.66) ? 3 : 4.5;
+    const short = text.slice(0, 24);
+    const own = painted(el);
+    if (!own.image && own.alpha > 0.25) {
+      solid.push({ ratio: ratioOf(cs.color, own.color), need, text: short });
+      continue;
+    }
+    let image = own.image || imageBehind(el);
+    let bg = "";
+    if (!image) {
+      let node = el.parentElement;
+      while (node) {
+        const paint = painted(node);
+        if (paint.image) {
+          image = true;
+          break;
+        }
+        if (paint.alpha > 0.25) {
+          bg = paint.color;
+          break;
+        }
+        node = node.parentElement;
+      }
+    }
+    if (!image && bg) {
+      solid.push({ ratio: ratioOf(cs.color, bg), need, text: short });
+      continue;
+    }
+    el.setAttribute("data-fitout-btn-shot", String(n));
+    shot.push({ n, need, text: short });
+    n += 1;
+  }
+  return { solid, shot };
+}
+
+function readShotButton(n) {
+  const el = document.querySelector(`[data-fitout-btn-shot="${n}"]`);
+  if (!el) return null;
+  const rect = el.getBoundingClientRect();
+  const cs = getComputedStyle(el);
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.fillStyle = "#000";
+  ctx.fillStyle = cs.color;
+  const hex = ctx.fillStyle;
+  const lin = (v) => {
+    const c = v / 255;
+    return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  };
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  const size = parseFloat(cs.fontSize) || 16;
+  const weight = parseInt(cs.fontWeight, 10) || 400;
+  return {
+    x: rect.x,
+    y: rect.y,
+    width: rect.width,
+    height: rect.height,
+    text: (el.tagName === "INPUT" ? el.value : el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 24),
+    need: size >= 24 || (weight >= 600 && size >= 18.66) ? 3 : 4.5,
+    textRgb: { r, g, b, lum: 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b) },
+  };
+}
+
+async function contrastAt(page, box) {
+  const view = page.viewportSize() || { width: 0, height: 0 };
+  const clip = clipBox(box, view);
+  if (!clip) return { ratio: Number.NaN, need: box.need, text: box.text, error: "按钮不在视口里" };
+  let buffer;
+  try {
+    buffer = await page.screenshot({ clip });
+  } catch (err) {
+    return { ratio: Number.NaN, need: box.need, text: box.text, error: String((err && err.message) || err).split("\n")[0] };
+  }
+  const ratio = await page.evaluate(async ({ b64, rgb }) => {
+    const img = new Image();
+    img.src = `data:image/png;base64,${b64}`;
+    await img.decode();
+    const canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+    ctx.drawImage(img, 0, 0);
+    const data = ctx.getImageData(0, 0, img.width, img.height).data;
+    const lin = (v) => {
+      const c = v / 255;
+      return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+    };
+    const lum = (r, g, b) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+    const bg = [];
+    const all = [];
+    for (let i = 0; i < data.length; i += 16) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const L = lum(r, g, b);
+      all.push(L);
+      const dist = Math.abs(r - rgb.r) + Math.abs(g - rgb.g) + Math.abs(b - rgb.b);
+      if (dist > 48) bg.push(L);
+    }
+    const pool = bg.length >= 8 ? bg : all;
+    pool.sort((a, b) => a - b);
+    const med = pool[Math.floor(pool.length / 2)] || 0;
+    return (Math.max(rgb.lum, med) + 0.05) / (Math.min(rgb.lum, med) + 0.05);
+  }, { b64: buffer.toString("base64"), rgb: box.textRgb });
+  return { ratio, need: box.need, text: box.text };
 }
 
 function pushContrast(label, item) {

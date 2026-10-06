@@ -14,10 +14,16 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["auto", "repair", "lift", "bay", "daylight"],
-      "prompt": "杭州汽修车间白天，双柱举升机托着一辆家用轿车，冷白灯，浅灰地坪，车漆可以有一点正红，不要整张发红，不要文字。",
-      "desc": "首屏第一张，保养工位。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "lift",
+        "undercarriage",
+        "closeup"
+      ],
+      "prompt": "双柱举升机托着家用轿车，只取底盘和立柱的局部，冷白灯，浅灰地坪，车漆可以有一点正红，不要整间车间，不要文字。",
+      "desc": "首屏，举升机和底盘局部。",
+      "tier": "must"
     },
     {
       "id": "hero-order",
@@ -26,10 +32,16 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["mechanic", "clipboard", "customer", "workshop"],
-      "prompt": "东亚技师穿工装，把一张进厂单递给车主，背景是浅灰车间，冷白灯，纸上不要出现可读文字。",
-      "desc": "首屏第二张，递进厂单。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "clipboard",
+        "sleeve",
+        "desk"
+      ],
+      "prompt": "东亚技师的工装袖口把一张进厂单放在浅灰台面上，纸上不要出现可读文字，冷白灯，不要正脸特写。",
+      "desc": "首屏，进厂单和工装袖口。",
+      "tier": "must"
     },
     {
       "id": "hero-paint",
@@ -38,10 +50,16 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["paint", "booth", "sedan", "body", "shop"],
-      "prompt": "烤漆房门口一辆补过翼子板的轿车，车间是冷白灯和浅灰地坪，不要整墙红色，不要文字。",
-      "desc": "首屏第三张，烤漆房。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paint",
+        "panel",
+        "reflection"
+      ],
+      "prompt": "烤漆房门边一辆轿车的翼子板反光，冷白灯，浅灰地坪，不要整墙红色，不要烤漆房全景，不要文字。",
+      "desc": "首屏，烤漆房门口的车漆。",
+      "tier": "must"
     },
     {
       "id": "hero-film",
@@ -50,10 +68,16 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["window", "tint", "film", "windshield", "shop"],
-      "prompt": "贴膜工位，东亚技师给轿车前挡贴膜，靠窗，冷白灯，膜上不要印字。",
-      "desc": "首屏第四张，贴膜工位。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "film",
+        "glass",
+        "squeegee"
+      ],
+      "prompt": "贴膜刮板压在轿车前挡玻璃上，膜的边缘清楚，靠窗冷白灯，膜上不要印字，不要工位全景。",
+      "desc": "首屏，前挡贴膜的刮板。",
+      "tier": "must"
     },
     {
       "id": "svc-care",
@@ -62,10 +86,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["oil", "change", "under", "car", "lift"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "oil",
+        "change",
+        "under",
+        "car",
+        "lift"
+      ],
       "prompt": "技师在举升机下面换机油，东亚面孔，工装，浅灰地坪，冷白灯，不要文字。",
-      "desc": "常规保养。"
+      "desc": "常规保养。",
+      "tier": "nice"
     },
     {
       "id": "svc-repair",
@@ -74,10 +106,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["diagnostic", "scanner", "mechanic", "engine"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "diagnostic",
+        "scanner",
+        "mechanic",
+        "engine"
+      ],
       "prompt": "技师把诊断仪接在发动机舱，屏幕内容模糊不可读，东亚面孔，工装，冷白灯。",
-      "desc": "故障维修。"
+      "desc": "故障维修。",
+      "tier": "nice"
     },
     {
       "id": "svc-paint",
@@ -86,10 +125,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["paint", "booth", "fender", "repair"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paint",
+        "booth",
+        "fender",
+        "repair"
+      ],
       "prompt": "烤漆房里一辆轿车的翼子板刚补完，环境是浅灰和冷白，不要整张发红，不要文字。",
-      "desc": "钣金喷漆。"
+      "desc": "钣金喷漆。",
+      "tier": "nice"
     },
     {
       "id": "svc-detail",
@@ -98,10 +144,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["car", "wash", "foam", "detailing", "hood"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "car",
+        "wash",
+        "foam",
+        "detailing",
+        "hood"
+      ],
       "prompt": "美容工位，技师用白色泡沫精洗发动机盖，东亚面孔，工装，白天，不要文字。",
-      "desc": "汽车美容。"
+      "desc": "汽车美容。",
+      "tier": "nice"
     },
     {
       "id": "svc-film",
@@ -110,10 +164,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["paint", "protection", "film", "windshield"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paint",
+        "protection",
+        "film",
+        "windshield"
+      ],
       "prompt": "贴膜技师把透明前挡膜覆上玻璃，东亚女性，工装，靠窗的冷白光，膜上无字。",
-      "desc": "车衣贴膜。"
+      "desc": "车衣贴膜。",
+      "tier": "nice"
     },
     {
       "id": "tech-zhou",
@@ -123,9 +184,16 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["mechanic", "portrait", "coverall", "lift"],
+      "fallback": "omit",
+      "keywords": [
+        "mechanic",
+        "portrait",
+        "coverall",
+        "lift"
+      ],
       "prompt": "东亚男性机修主管半身肖像，深色工装，站在举升机旁，冷白灯，不穿西装，不要文字。",
-      "desc": "周启明。"
+      "desc": "周启明。",
+      "tier": "nice"
     },
     {
       "id": "tech-chen",
@@ -135,9 +203,16 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["painter", "portrait", "booth", "woman"],
+      "fallback": "omit",
+      "keywords": [
+        "painter",
+        "portrait",
+        "booth",
+        "woman"
+      ],
       "prompt": "东亚女性钣喷技师半身肖像，工装，烤漆房门口，冷白灯，不穿西装，不要文字。",
-      "desc": "陈晓禾。"
+      "desc": "陈晓禾。",
+      "tier": "nice"
     },
     {
       "id": "tech-ma",
@@ -147,9 +222,16 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["mechanic", "oil", "portrait", "workshop"],
+      "fallback": "omit",
+      "keywords": [
+        "mechanic",
+        "oil",
+        "portrait",
+        "workshop"
+      ],
       "prompt": "东亚男性保养技师半身肖像，手里一只机油壶，工装，浅灰车间，不要可读标签。",
-      "desc": "马立冬。"
+      "desc": "马立冬。",
+      "tier": "nice"
     },
     {
       "id": "tech-lin",
@@ -159,9 +241,16 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["tint", "technician", "portrait", "film"],
+      "fallback": "omit",
+      "keywords": [
+        "tint",
+        "technician",
+        "portrait",
+        "film"
+      ],
       "prompt": "东亚女性贴膜技师半身肖像，整理一卷透明前挡膜，工装，靠窗，不要文字。",
-      "desc": "林晚晴。"
+      "desc": "林晚晴。",
+      "tier": "nice"
     },
     {
       "id": "store-binjiang",
@@ -171,9 +260,17 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["auto", "shop", "front", "parking", "day"],
+      "fallback": "omit",
+      "keywords": [
+        "auto",
+        "shop",
+        "front",
+        "parking",
+        "day"
+      ],
       "prompt": "中国城市沿街汽修店白天外立面，卷帘门半开，门口几个停车位，浅灰地面，招牌不要出现可读文字。",
-      "desc": "滨江店门头。"
+      "desc": "滨江店门头。",
+      "tier": "nice"
     },
     {
       "id": "store-gongshu",
@@ -183,9 +280,16 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["quick", "lube", "storefront", "street"],
+      "fallback": "omit",
+      "keywords": [
+        "quick",
+        "lube",
+        "storefront",
+        "street"
+      ],
       "prompt": "沿街快修店，一个保养工位对着马路，白天，浅灰地坪，不要可读店名。",
-      "desc": "拱墅店。"
+      "desc": "拱墅店。",
+      "tier": "nice"
     },
     {
       "id": "store-xiaoshan",
@@ -195,9 +299,16 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["detailing", "studio", "window", "film"],
+      "fallback": "omit",
+      "keywords": [
+        "detailing",
+        "studio",
+        "window",
+        "film"
+      ],
       "prompt": "贴膜美容店靠窗的工位，白天，浅色地面，架子上是透明膜，不要文字。",
-      "desc": "萧山店。"
+      "desc": "萧山店。",
+      "tier": "nice"
     },
     {
       "id": "news-oil",
@@ -206,10 +317,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["motor", "oil", "filter", "workbench"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "motor",
+        "oil",
+        "filter",
+        "workbench"
+      ],
       "prompt": "工作台上的机油壶和机滤，冷白灯，标签模糊不可读，浅灰台面。",
-      "desc": "机油笔记配图。"
+      "desc": "机油笔记配图。",
+      "tier": "nice"
     },
     {
       "id": "news-paint",
@@ -218,10 +336,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["fender", "scratch", "paint", "closeup"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "fender",
+        "scratch",
+        "paint",
+        "closeup"
+      ],
       "prompt": "轿车翼子板上一小块刮蹭的近景，车间冷白灯，不要整张红色，不要文字。",
-      "desc": "刮蹭笔记配图。"
+      "desc": "刮蹭笔记配图。",
+      "tier": "nice"
     },
     {
       "id": "news-film",
@@ -230,10 +355,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["windshield", "film", "edge", "closeup"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "windshield",
+        "film",
+        "edge",
+        "closeup"
+      ],
       "prompt": "刚贴好的前挡膜边缘特写，胶还没完全贴合，不要文字。",
-      "desc": "贴膜笔记配图。"
+      "desc": "贴膜笔记配图。",
+      "tier": "nice"
     },
     {
       "id": "news-brake",
@@ -242,10 +374,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["brake", "pad", "workbench", "worn"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "brake",
+        "pad",
+        "workbench",
+        "worn"
+      ],
       "prompt": "拆下来的刹车片放在钢工作台上，厚度偏薄，冷白灯，不要文字。",
-      "desc": "刹车笔记配图。"
+      "desc": "刹车笔记配图。",
+      "tier": "nice"
     },
     {
       "id": "shop-floor",
@@ -255,9 +394,17 @@
       "px": "1440x900",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["workshop", "two", "post", "lift", "bay"],
+      "fallback": "omit",
+      "keywords": [
+        "workshop",
+        "two",
+        "post",
+        "lift",
+        "bay"
+      ],
       "prompt": "滨江店保养区全景，两台双柱举升机，浅灰地坪，冷白灯，白天，不要文字。",
-      "desc": "车间分栏大图。"
+      "desc": "车间分栏大图。",
+      "tier": "must"
     },
     {
       "id": "equip-lift",
@@ -266,10 +413,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["two", "post", "lift", "oil", "bay"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "two",
+        "post",
+        "lift",
+        "oil",
+        "bay"
+      ],
       "prompt": "一台双柱举升机和旁边的换油工位，浅灰地坪，冷白灯，不要品牌文字。",
-      "desc": "举升机。"
+      "desc": "举升机。",
+      "tier": "nice"
     },
     {
       "id": "equip-align",
@@ -278,10 +433,17 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["wheel", "alignment", "sensor", "sedan"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "wheel",
+        "alignment",
+        "sensor",
+        "sedan"
+      ],
       "prompt": "四轮定位仪的传感器对着轿车前轮，屏幕内容模糊，冷白灯，浅灰地坪。",
-      "desc": "四轮定位仪。"
+      "desc": "四轮定位仪。",
+      "tier": "nice"
     },
     {
       "id": "band-bay",
@@ -291,9 +453,17 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["service", "bays", "lifts", "wide", "daylight"],
+      "fallback": "omit",
+      "keywords": [
+        "service",
+        "bays",
+        "lifts",
+        "wide",
+        "daylight"
+      ],
       "prompt": "一排举升机上的轿车，宽幅，下午的冷白灯，浅灰地坪，不要文字。",
-      "desc": "首页满宽车间。"
+      "desc": "首页满宽车间。",
+      "tier": "must"
     },
     {
       "id": "band-booth",
@@ -303,9 +473,17 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["tint", "bay", "window", "film", "rack"],
+      "fallback": "omit",
+      "keywords": [
+        "tint",
+        "bay",
+        "window",
+        "film",
+        "rack"
+      ],
       "prompt": "贴膜工位靠窗的宽幅，架子上放着前挡膜，冷白日光，不要文字。",
-      "desc": "关于页满宽贴膜间。"
+      "desc": "关于页满宽贴膜间。",
+      "tier": "nice"
     },
     {
       "id": "banner",
@@ -315,9 +493,17 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["auto", "shop", "shutter", "parking", "day"],
+      "fallback": "omit",
+      "keywords": [
+        "auto",
+        "shop",
+        "shutter",
+        "parking",
+        "day"
+      ],
       "prompt": "汽修店门口，卷帘门和停车空地，白天，浅灰地面，招牌不可读，不要文字。",
-      "desc": "内页横幅。"
+      "desc": "内页横幅。",
+      "tier": "must"
     },
     {
       "id": "qr-wechat",
@@ -327,9 +513,14 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": false,
-      "keywords": ["wechat", "qr", "square"],
+      "keywords": [
+        "wechat",
+        "qr",
+        "square"
+      ],
       "prompt": "客户提供的门店微信二维码。此位不生成。",
-      "desc": "门店微信二维码。上线前由店里替换。"
+      "desc": "门店微信二维码。上线前由店里替换。",
+      "tier": "nice"
     },
     {
       "id": "qr-mp",
@@ -339,9 +530,14 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": false,
-      "keywords": ["wechat", "official", "qr"],
+      "keywords": [
+        "wechat",
+        "official",
+        "qr"
+      ],
       "prompt": "客户提供的公众号二维码。此位不生成。",
-      "desc": "公众号二维码。上线前由店里替换。"
+      "desc": "公众号二维码。上线前由店里替换。",
+      "tier": "nice"
     }
   ]
 }

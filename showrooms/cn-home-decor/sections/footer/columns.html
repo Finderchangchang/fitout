@@ -19,40 +19,17 @@
         <p><a class="footer-address" href="{{amapUrl}}">{{address}}</a></p>
         {{#each hours}}<p>{{day}} <span class="nums">{{time}}</span></p>{{/each}}
       </div>
+      {{#if wechatQrSrc}}
       <div>
         <p class="footer-label">扫码</p>
-        {{#if wechatQrSrc}}
         <div class="qr-pair" data-media-group="qr">
           <figure>
             <img src="{{wechatQrSrc}}" alt="{{name}}公众号二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
             <figcaption>关注公众号</figcaption>
           </figure>
-          <figure>
-            <img id="qr-advisor" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22800%22%20viewBox%3D%220%200%20800%20800%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FBF6EE%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%232C1810%22%20font-size%3D%2232%22%20font-family%3D%22sans-serif%22%3E%E9%87%8F%E6%88%BF%E9%A1%BE%E9%97%AE%E4%BA%8C%E7%BB%B4%E7%A0%81%20%C2%B7%20%E4%B8%8A%E7%BA%BF%E5%89%8D%E6%9B%BF%E6%8D%A2%3C%2Ftext%3E%3C%2Fsvg%3E" alt="{{name}}量房顾问二维码" width="800" height="800" loading="lazy" decoding="async">
-            <figcaption>量房顾问</figcaption>
-          </figure>
         </div>
-        <script>
-          (function () {
-            var img = document.getElementById("qr-advisor");
-            var link = document.querySelector("link[rel=stylesheet]");
-            if (!img || !link) return;
-            var prefix = link.getAttribute("href").replace(/assets\/site\.css(?:\?.*)?$/, "");
-            var exts = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
-            var i = 0;
-            function next() {
-              if (i >= exts.length) return;
-              var file = prefix + "images/qr-advisor." + exts[i++];
-              var probe = new Image();
-              probe.onload = function () { img.src = file; };
-              probe.onerror = next;
-              probe.src = file;
-            }
-            next();
-          })();
-        </script>
-        {{/if}}
       </div>
+      {{/if}}
     </div>
     <div class="footer-legal">
       <p>{{year}} {{name}} 版权自有</p>

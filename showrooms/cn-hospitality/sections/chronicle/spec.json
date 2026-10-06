@@ -1,21 +1,54 @@
 {
   "note": "一段院子的来历。左文右图，图不抠人。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "body": { "type": "string", "required": true, "maxChars": 200 },
-    "image": { "type": "image", "required": true, "maxChars": 200 },
-    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
-    "caption": { "type": "string", "required": false, "maxChars": 40 },
-    "href": { "type": "string", "required": false, "maxChars": 200 },
-    "linkLabel": { "type": "string", "required": false, "maxChars": 8 }
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "body": {
+      "type": "string",
+      "required": true,
+      "maxChars": 200
+    },
+    "image": {
+      "type": "image",
+      "required": true,
+      "maxChars": 200
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true,
+      "maxChars": 30
+    },
+    "caption": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "href": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "linkLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
+    }
   },
   "variants": {
     "split": {
       "needsImage": true,
       "imageField": "image",
       "family": "chronicle",
-      "fit": "左文右图"
+      "fit": "左文右图",
+      "fallback": "omit"
     }
   }
 }

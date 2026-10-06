@@ -11,9 +11,15 @@
     "form": "留言咨询"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,13 +27,33 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4000ms"
+    }
   },
   "collections": [
-    { "id": "courses", "label": "课程设置", "listFile": "courses/index.html" },
-    { "id": "teachers", "label": "师资力量", "listFile": "teachers/index.html" },
-    { "id": "works", "label": "学员风采", "listFile": "works/index.html" },
-    { "id": "news", "label": "招生资讯", "listFile": "news/index.html" }
+    {
+      "id": "courses",
+      "label": "课程设置",
+      "listFile": "courses/index.html"
+    },
+    {
+      "id": "teachers",
+      "label": "师资力量",
+      "listFile": "teachers/index.html"
+    },
+    {
+      "id": "works",
+      "label": "学员风采",
+      "listFile": "works/index.html"
+    },
+    {
+      "id": "news",
+      "label": "招生资讯",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -35,16 +61,76 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "campus", "required": true, "variants": ["split"] },
-        { "type": "services", "required": true, "variants": ["lineup"] },
-        { "type": "advantage", "required": true, "variants": ["switch"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "cases", "required": true, "variants": ["gallery"] },
-        { "type": "bulletin", "required": true, "variants": ["feed"] },
-        { "type": "team", "required": true, "variants": ["cards"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "campus",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "services",
+          "required": true,
+          "variants": [
+            "lineup"
+          ]
+        },
+        {
+          "type": "advantage",
+          "required": false,
+          "variants": [
+            "switch"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery"
+          ]
+        },
+        {
+          "type": "bulletin",
+          "required": false,
+          "variants": [
+            "feed"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -52,10 +138,34 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "yard", "required": true, "variants": ["grid"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "yard",
+          "required": false,
+          "variants": [
+            "grid"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -63,8 +173,20 @@
       "file": "courses/index.html",
       "kind": "list",
       "order": [
-        { "type": "course-board", "required": true, "variants": ["tabs"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "course-board",
+          "required": false,
+          "variants": [
+            "tabs"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -73,7 +195,13 @@
       "kind": "detail",
       "from": "courses",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -81,8 +209,20 @@
       "file": "teachers/index.html",
       "kind": "team",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["portraits"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "portraits"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -91,7 +231,13 @@
       "kind": "detail",
       "from": "teachers",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -99,8 +245,20 @@
       "file": "works/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["cards"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -109,7 +267,13 @@
       "kind": "detail",
       "from": "works",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -117,8 +281,20 @@
       "file": "news/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["rows"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "rows"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -127,7 +303,13 @@
       "kind": "news-detail",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -135,8 +317,20 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["desk"] },
-        { "type": "inquiry", "required": true, "variants": ["note"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "desk"
+          ]
+        },
+        {
+          "type": "inquiry",
+          "required": false,
+          "variants": [
+            "note"
+          ]
+        }
       ]
     }
   ]

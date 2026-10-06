@@ -1,9 +1,11 @@
 /**
- * node scripts/build.mjs <site.json> [--out <dir>] [--demo-images <dir>]
+ * node scripts/build.mjs <site.json> [--out <dir>] [--site-dir <dir>] [--keep <相对目录>] [--demo-images <dir>] [--images <dir>] [--base-url <url>]
  * 读企业档案，套上户型或样板间，拼成纯静态站。
  * 不安装依赖。内容违规交给 check.mjs，这里只在结构拼不起来时失败。
+ * --keep 可重复。--site-dir 仍会先清空目标目录，但这些相对子目录会原样留住。
  */
 import fs from "fs";
+import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import { render } from "./lib/tpl.mjs";
@@ -23,7 +25,7 @@ const DENSITY = {
 const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".svg", ".gif"]);
 const PUBLISHED_KEYS = [
   "id", "name", "industry", "niche", "showroom", "style", "businessType", "summary", "url",
-  "contact", "nav", "shell", "pages", "products", "collections",
+  "contact", "nav", "shell", "pages", "products", "collections", "toolEntry",
 ];
 const TONES = new Set(["light", "dark", "image"]);
 
@@ -31,22 +33,45 @@ const args = process.argv.slice(2);
 let sitePath = null;
 let outRoot = path.join(root, "out");
 let demoDir = null;
+let imagesDir = null;
+let siteDirArg = null;
+let baseUrlArg = "";
+const keepRels = [];
 for (let i = 0; i < args.length; i += 1) {
   if (args[i] === "--out") {
     outRoot = path.resolve(args[i + 1] || "");
     i += 1;
+  } else if (args[i] === "--site-dir") {
+    siteDirArg = path.resolve(args[i + 1] || "");
+    i += 1;
+  } else if (args[i] === "--keep") {
+    keepRels.push(readKeep(args[i + 1] || ""));
+    i += 1;
   } else if (args[i] === "--demo-images") {
     demoDir = path.resolve(args[i + 1] || "");
+    i += 1;
+  } else if (args[i] === "--images") {
+    imagesDir = path.resolve(args[i + 1] || "");
+    i += 1;
+  } else if (args[i] === "--base-url") {
+    baseUrlArg = args[i + 1] || "";
     i += 1;
   } else if (!sitePath) sitePath = path.resolve(args[i]);
   else fail(`多余参数：${args[i]}`);
 }
-if (!sitePath) fail("用法：node scripts/build.mjs <site.json> [--out <dir>] [--demo-images <dir>]");
+if (!sitePath) {
+  fail("用法：node scripts/build.mjs <site.json> [--out <dir>] [--site-dir <dir>] [--keep <相对目录>] [--demo-images <dir>] [--images <dir>] [--base-url <url>]");
+}
+if (demoDir && imagesDir) fail("不要同时用 --images 和 --demo-images");
 if (demoDir && (!fs.existsSync(demoDir) || !fs.statSync(demoDir).isDirectory())) {
   fail(`演示图片目录不存在：${demoDir}`);
 }
+if (imagesDir && (!fs.existsSync(imagesDir) || !fs.statSync(imagesDir).isDirectory())) {
+  fail(`图片目录不存在：${imagesDir}`);
+}
 
 const demoMode = Boolean(demoDir);
+const baseUrl = normalizeBase(baseUrlArg || "https://example.com/");
 const site = readJsonOrFail(sitePath);
 const siteDir = path.dirname(sitePath);
 if (!/^_?[a-z0-9][a-z0-9-]*$/.test(site.id || "")) fail("site.id 只能是小写字母、数字和连字符");
@@ -73,7 +98,11 @@ const tokens = readJsonOrFail((assertRegistered(site), showroom ? path.join(show
 validateTokens(tokens);
 const house = showroom || loadHouse(site.industry);
 const imageSlots = loadImageSlots();
+const frameworkSpecs = new Map();
+readSpecDir(path.join(frameworkDir, "sections"), frameworkSpecs);
 const specs = loadSpecs();
+const tiered = [...imageSlots.values()].some((slot) => slot && (slot.tier === "must" || slot.tier === "nice"));
+const fallbacks = [];
 const icons = loadIcons();
 const shell = readText(path.join(frameworkDir, "shell", "page.html"));
 const notes = [];
@@ -82,9 +111,8 @@ const notedMissing = new Set();
 let usedPlaceholder = false;
 const DEMO_MARK = "data-demo%3D%221%22";
 
-const outDir = path.join(outRoot, site.id);
-fs.rmSync(outDir, { recursive: true, force: true });
-fs.mkdirSync(outDir, { recursive: true });
+const outDir = siteDirArg || path.join(outRoot, site.id);
+resetOutDir(outDir, keepRels);
 
 if (!site.name) fail("缺少 name");
 if (!Array.isArray(site.nav) || site.nav.length === 0) fail("缺少 nav");
@@ -95,6 +123,8 @@ for (const page of site.pages || []) {
   if (!house.pages.some((item) => item.id === page.id && !item.from)) fail(`户型没有页面 ${page.id}`);
 }
 
+const toolEntry = readToolEntry();
+const faqItems = collectFaqItems();
 const phone = requiredText(site.contact?.phone, "contact.phone");
 const address = requiredText(site.contact?.address, "contact.address");
 const hours = Array.isArray(site.contact?.hours) ? site.contact.hours : [];
@@ -138,17 +168,28 @@ fs.writeFileSync(path.join(outDir, "assets", "site.css"), css.join("\n"), "utf8"
 fs.copyFileSync(path.join(frameworkDir, "shell", "site.js"), path.join(outDir, "assets", "site.js"));
 fs.writeFileSync(path.join(outDir, "site.json"), JSON.stringify(publishSite(site), null, 2) + "\n", "utf8");
 if (usedPlaceholder) notes.push("演示模式：缺图渲染成占位色块，页面标了演示占位图");
+const coverage = collectCoverage();
+writeSeoFiles();
 fs.writeFileSync(
   path.join(outDir, "build-report.json"),
-  JSON.stringify({ notes, demo: demoMode, showroom: site.showroom || "" }, null, 2) + "\n",
+  JSON.stringify({
+    notes,
+    fallbacks,
+    demo: demoMode,
+    showroom: site.showroom || "",
+    missingMust: coverage.missingMust,
+    sparse: coverage.sparse,
+    baseUrl,
+  }, null, 2) + "\n",
   "utf8",
 );
-written.push("assets/site.css", "assets/site.js", "site.json", "build-report.json");
+written.push("assets/site.css", "assets/site.js", "site.json", "sitemap.xml", "robots.txt", "build-report.json");
 
 console.log(`已生成 ${path.relative(root, outDir) || outDir}`);
-if (notes.length) {
+const printed = [...notes, ...fallbacks];
+if (printed.length) {
   console.log("降级：");
-  for (const note of notes) console.log(`- ${note}`);
+  for (const note of printed) console.log(`- ${note}`);
 }
 console.log("文件：");
 printTree(outDir, "");
@@ -222,9 +263,14 @@ function writePage({ file, title, description, sections, order, banner }) {
   for (const section of queued) {
     const spec = specs.get(section.type);
     if (!spec) fail(`没有板块 ${section.type}`);
-    const variant = section.type === "page-banner" ? "band" : resolveVariant(section, spec, order);
+    const resolved = section.type === "page-banner"
+      ? { variant: "band", data: section.data || {} }
+      : resolveSection(section, spec, order);
+    if (!resolved) continue;
+    const variant = resolved.variant;
+    const fillSpec = resolved.fillSpec || spec;
     usedCss.add(`${section.type}/${variant}`);
-    const data = prepareData(section, spec, file, variant);
+    const data = prepareData({ ...section, data: resolved.data }, fillSpec, file, variant);
     data.anchor = safeAnchor(section.anchor || section.type, file);
     data.isH1 = first;
     data.isH2 = !first;
@@ -236,8 +282,18 @@ function writePage({ file, title, description, sections, order, banner }) {
       data.rest = items.slice(1);
     }
     let html = render(readText(sectionFile(section.type, variant, "html")), data, { icons, globals });
-    html = tagSection(html, section);
+    html = tagSection(html, section, resolved);
     main += html;
+  }
+  if (file === "index.html" && toolEntry) {
+    usedCss.add("tool-entry/band");
+    const toolHtml = render(readText(sectionFile("tool-entry", "band", "html")), {
+      title: toolEntry.title,
+      lead: toolEntry.lead,
+      label: toolEntry.label,
+      href: siteHref(file, toolEntry.href),
+    }, { icons, globals });
+    main += tagSection(toolHtml, { tone: "" });
   }
   usedCss.add(`header/${shellChoice.header}`);
   usedCss.add(`footer/${shellChoice.footer}`);
@@ -252,6 +308,7 @@ function writePage({ file, title, description, sections, order, banner }) {
     assetPrefix: assetPrefix(file),
     canonical: canonical(file),
     jsonLd: isHome ? jsonLd() : "",
+    faqJsonLd: isHome ? faqJsonLd() : "",
     headerHtml,
     mainHtml: main,
     footerHtml,
@@ -262,20 +319,23 @@ function writePage({ file, title, description, sections, order, banner }) {
     usedPlaceholder = true;
     html = html.replace("<body>", "<body>\n  <p class=\"demo-badge\">演示占位图</p>");
   }
+  if (tiered && !demoMode) html = html.replace(/<img\b[^>]*\bsrc=""[^>]*>/gi, "");
   const dest = path.join(outDir, ...file.split("/"));
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, "utf8");
   written.push(file);
 }
 
-function tagSection(html, section) {
+function tagSection(html, section, resolved) {
   const tone = section.tone || "";
   if (tone && !TONES.has(tone)) fail(`tone 只能是 light、dark、image：${tone}`);
   const enter = tokens.motion === 1;
+  const bare = Boolean(resolved?.bare);
   return html.replace(/<section\b([^>]*)>/, (full, attrs) => {
     let next = attrs;
     if (tone && !/\bdata-tone=/.test(attrs)) next += ` data-tone="${tone}"`;
     if (enter && !/\bdata-enter=/.test(attrs)) next += ` data-enter="fade"`;
+    if (bare && !/\bdata-hero-bare\b/.test(attrs)) next += ` data-hero-bare=""`;
     return `<section${next}>`;
   });
 }
@@ -285,13 +345,20 @@ function prepareData(section, spec, file, variant) {
   if (section.type === "product-list" || section.type === "collection-list") {
     const id = section.type === "product-list" ? "products" : String(raw.collection || "");
     const items = itemsOf(id) || [];
-    raw.items = items.map((item) => ({
-      name: item.name || "",
-      summary: item.summary || "",
-      href: detailHref(id, item.slug),
-      image: item.image || "",
-      imageAlt: item.imageAlt || item.name || "",
-    }));
+    const catKeys = categoryKeys(items);
+    raw.items = items.map((item) => {
+      const category = String(item.category || "").trim();
+      return {
+        name: item.name || "",
+        summary: item.summary || "",
+        href: detailHref(id, item.slug),
+        image: item.image || "",
+        imageAlt: item.imageAlt || item.name || "",
+        category,
+        catKey: catKeys.get(category) || "",
+      };
+    });
+    raw.filters = filtersFrom(catKeys, raw.facets);
   }
   const data = fill(raw, spec.fields, `${section.type}`);
   if (section.type === "trust" && Array.isArray(data.items)) {
@@ -357,18 +424,106 @@ function bindAssets(data, file) {
   return walk(data);
 }
 
-function resolveVariant(section, spec, order) {
+function resolveSection(section, spec, order) {
   const meta = spec.variants?.[section.variant];
   if (!meta) fail(`未知版式 ${section.type}/${section.variant}`);
+  const original = section.data || {};
+  if (tiered && !demoMode && meta.needsImage) {
+    if (section.type === "hero" && meta.imageField === "slides.image" && Array.isArray(original.slides)) {
+      const kept = original.slides.filter((item) => imageKept(item?.image));
+      if (kept.length >= 3 && kept.length <= 9) return { variant: section.variant, data: { ...original, slides: kept } };
+    }
+    if (!imagesReady(original, meta.imageField)) {
+      const fb = usableFallback(section, spec, order, original);
+      if (fb) {
+        fallbacks.push(`${section.type}：${section.variant} 缺图，改用 ${fb}`);
+        return { variant: fb, data: original, bare: heroBare(section, spec, fb) };
+      }
+      if (section.type === "hero") {
+        fallbacks.push(`${section.type}：${section.variant} 缺图，改用 text`);
+        return { variant: "text", data: original, fillSpec: frameworkSpecs.get("hero") || spec, bare: true };
+      }
+      if (section.type === "photo-band") {
+        fallbacks.push(`${section.type}：${section.variant} 缺图，整块不出`);
+        return null;
+      }
+      fallbacks.push(`${section.type}：${section.variant} 缺图，图片留空`);
+      return { variant: section.variant, data: original };
+    }
+  }
   let variant = section.variant;
-  if (meta.needsImage && !imagesReady(section.data || {}, meta.imageField)) {
-    if (!meta.fallback) fail(`${section.type}/${section.variant} 缺图，又没有 fallback`);
+  let bare = false;
+  if (meta.needsImage && !imagesReady(original, meta.imageField)) {
+    if (!meta.fallback || meta.fallback === "omit") fail(`${section.type}/${section.variant} 缺图，又没有 fallback`);
     notes.push(`${section.type}：${section.variant} 缺图，改用 ${meta.fallback}`);
     variant = meta.fallback;
+    bare = heroBare(section, spec, variant);
     const rule = order.find((item) => item.type === section.type);
     if (rule && !rule.variants.includes(variant)) fail(`fallback ${variant} 不在户型允许的版式里`);
   }
-  return variant;
+  return { variant, data: original, bare };
+}
+
+function heroBare(section, spec, variant) {
+  if (section.type !== "hero") return false;
+  return !spec.variants?.[variant]?.needsImage;
+}
+
+function usableFallback(section, spec, order, data) {
+  const fbName = spec.variants?.[section.variant]?.fallback;
+  if (!fbName || fbName === "omit" || fbName === section.variant) return null;
+  const fb = spec.variants?.[fbName];
+  if (!fb) return null;
+  const rule = (order || []).find((item) => item.type === section.type);
+  if (rule && !rule.variants.includes(fbName)) return null;
+  if (fb.needsImage && !imagesReady(data, fb.imageField)) return null;
+  return fbName;
+}
+
+function categoryKeys(items) {
+  const map = new Map();
+  let n = 0;
+  for (const item of items || []) {
+    const label = String(item?.category || "").trim();
+    if (!label || map.has(label)) continue;
+    n += 1;
+    map.set(label, `c${n}`);
+  }
+  return map;
+}
+
+function filtersFrom(catKeys, facets) {
+  const notes = new Map();
+  if (Array.isArray(facets)) {
+    for (const facet of facets) {
+      const name = String(facet?.name || "").trim();
+      if (name) notes.set(name, String(facet.text || ""));
+    }
+  }
+  return [...catKeys.entries()].map(([label, key]) => ({
+    key,
+    label,
+    text: notes.get(label) || "",
+  }));
+}
+
+function imageKept(value) {
+  const state = imageState(value);
+  return state === "file" || state === "client" || state === "demo";
+}
+
+function imageState(value) {
+  if (!value) return "empty";
+  const slot = slotOf(value);
+  if (slot) {
+    if (findSlotFile(slot)) return "file";
+    const meta = imageSlots.get(slot);
+    if (meta?.mustBeReal && !demoMode) return "missing";
+    if (meta?.source === "client") return "client";
+    if (demoMode) return "demo";
+    return "missing";
+  }
+  return inspectAsset(value).state === "ok" ? "file" : "missing";
 }
 
 function imagesReady(data, field) {
@@ -387,7 +542,9 @@ function pictureReady(value) {
   const slot = slotOf(value);
   if (slot) {
     if (findSlotFile(slot)) return true;
-    if (imageSlots.get(slot)?.source === "client") return true;
+    const meta = imageSlots.get(slot);
+    if (meta?.mustBeReal && !demoMode) return false;
+    if (meta?.source === "client") return true;
     return demoMode;
   }
   return inspectAsset(value).state === "ok";
@@ -441,9 +598,10 @@ function resolveSlot(id, file) {
     const size = imageSize(found) || { width: box.w, height: box.h };
     return { src: assetPrefix(file) + encodePath(clean), width: size.width, height: size.height };
   }
+  if (meta?.mustBeReal && !demoMode) return { src: "", width: "", height: "" };
   if (meta?.source === "client") return clientPlaceholder(meta, id, box);
   if (!demoMode) {
-    if (!notedMissing.has(id)) {
+    if (!tiered && !notedMissing.has(id)) {
       notes.push(`图片不存在，已省略：${id}`);
       notedMissing.add(id);
     }
@@ -477,15 +635,16 @@ function xmlText(value) {
 }
 
 function findSlotFile(id) {
-  if (!demoDir) return null;
+  const dir = demoDir || imagesDir;
+  if (!dir) return null;
   let names = [];
   try {
-    names = fs.readdirSync(demoDir);
+    names = fs.readdirSync(dir);
   } catch {
     return null;
   }
   for (const ext of IMAGE_EXT) {
-    if (names.includes(id + ext)) return path.join(demoDir, id + ext);
+    if (names.includes(id + ext)) return path.join(dir, id + ext);
   }
   return null;
 }
@@ -604,7 +763,7 @@ function makeGlobals(file) {
     primaryLabel: house.buttons.primary,
     secondaryLabel: house.buttons.secondary,
     formLabel: house.buttons.form,
-    nav: (site.nav || []).map((item) => ({ label: item.label, href: rootHref(file, item.href) })),
+    nav: navFor(file),
     homeHref: rootHref(file, "index.html"),
   };
 }
@@ -679,6 +838,121 @@ function jsonLd() {
   if (address) data.address = { "@type": "PostalAddress", streetAddress: address };
   if (site.url) data.url = site.url;
   return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+function faqJsonLd() {
+  if (!faqItems.length) return "";
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+function collectFaqItems() {
+  const items = [];
+  for (const page of site.pages || []) {
+    for (const section of page.sections || []) {
+      if (section?.type !== "faq") continue;
+      const list = section.data?.items;
+      if (!Array.isArray(list)) continue;
+      for (const item of list) {
+        if (!item || typeof item.q !== "string" || typeof item.a !== "string") continue;
+        if (!item.q.trim() || !item.a.trim()) continue;
+        items.push({ q: item.q, a: item.a });
+      }
+    }
+  }
+  return items;
+}
+
+function readToolEntry() {
+  const raw = site.toolEntry;
+  if (raw == null || raw === "") return null;
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) fail("toolEntry 必须是对象");
+  const title = requiredText(raw.title, "toolEntry.title");
+  const lead = requiredText(raw.lead, "toolEntry.lead");
+  const label = requiredText(raw.label, "toolEntry.label");
+  const href = typeof raw.href === "string" && raw.href.trim() ? raw.href.trim() : "tool/";
+  return { title, lead, label, href };
+}
+
+function navFor(file) {
+  const nav = (site.nav || []).map((item) => ({ label: item.label, href: rootHref(file, item.href) }));
+  if (!toolEntry) return nav;
+  const href = siteHref(file, toolEntry.href);
+  const taken = (site.nav || []).some((item) => sameSitePath(item.href, toolEntry.href));
+  if (!taken) nav.push({ label: toolEntry.title, href });
+  return nav;
+}
+
+function sameSitePath(left, right) {
+  const norm = (value) => String(value || "").trim().replace(/^\/+/, "").replace(/\/index\.html$/, "").replace(/\/$/, "");
+  return norm(left) !== "" && norm(left) === norm(right);
+}
+
+function siteHref(fromFile, href) {
+  let raw = String(href || "").trim();
+  if (!raw) return "";
+  if (/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(raw) || raw.startsWith("//") || raw.startsWith("#")) return raw;
+  const dirLike = raw.endsWith("/");
+  raw = raw.replace(/^\/+/, "");
+  if (!dirLike) return rootHref(fromFile, raw);
+  const target = raw.replace(/\/$/, "");
+  const fromDir = path.posix.dirname(fromFile);
+  let rel = path.posix.relative(fromDir === "." ? "" : fromDir, target);
+  if (!rel || rel === ".") rel = ".";
+  return rel.endsWith("/") ? rel : `${rel}/`;
+}
+
+function collectCoverage() {
+  const missingMust = [];
+  let missingNice = false;
+  let realGap = false;
+  if (!tiered || demoMode) return { missingMust, sparse: false };
+  for (const slot of imageSlots.values()) {
+    if (!slot?.id || (slot.tier !== "must" && slot.tier !== "nice")) continue;
+    if (findSlotFile(slot.id)) continue;
+    if (slot.mustBeReal) {
+      realGap = true;
+      continue;
+    }
+    if (slot.tier === "must") missingMust.push(slot.id);
+    else if (slot.source !== "client") missingNice = true;
+  }
+  return { missingMust, sparse: missingMust.length > 0 || missingNice || realGap };
+}
+
+function writeSeoFiles() {
+  const pages = written.filter((file) => file.endsWith(".html"));
+  const urls = pages.map((file) => new URL(file, baseUrl).href);
+  const body = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...urls.map((loc) => `  <url><loc>${xmlText(loc)}</loc></url>`),
+    "</urlset>",
+    "",
+  ].join("\n");
+  fs.writeFileSync(path.join(outDir, "sitemap.xml"), body, "utf8");
+  const robots = `User-agent: *\nAllow: /\n\nSitemap: ${new URL("sitemap.xml", baseUrl).href}\n`;
+  fs.writeFileSync(path.join(outDir, "robots.txt"), robots, "utf8");
+}
+
+function normalizeBase(value) {
+  const trimmed = String(value || "").trim() || "https://example.com/";
+  let url;
+  try {
+    url = new URL(trimmed);
+  } catch {
+    fail(`网址不合法：${trimmed}`);
+  }
+  if (url.protocol !== "http:" && url.protocol !== "https:") fail(`网址只接受 http 或 https：${trimmed}`);
+  return url.href.endsWith("/") ? url.href : `${url.href}/`;
 }
 
 function canonical(file) {
@@ -804,10 +1078,19 @@ function loadImageSlots() {
   const file = path.join(showroomDir, "images.json");
   if (!fs.existsSync(file)) return map;
   const data = readJsonOrFail(file);
+  let mustCount = 0;
   for (const slot of data.slots || []) {
     if (!slot?.id) fail("images.json 有图片位缺少 id");
+    if (slot.tier != null && slot.tier !== "must" && slot.tier !== "nice") {
+      fail(`图片位 ${slot.id} 的 tier 只能是 must 或 nice`);
+    }
+    if (slot.tier === "must") mustCount += 1;
+    if (slot.mustBeReal && !slot.fallback) {
+      fail(`图片位 ${slot.id} 标了必须实拍，但没有无图 fallback`);
+    }
     map.set(slot.id, slot);
   }
+  if (mustCount > 8) fail(`样板间 ${site.showroom} 的必配图有 ${mustCount} 张，课上最多 8 张`);
   return map;
 }
 
@@ -908,6 +1191,41 @@ function assetPrefix(file) {
 function safeAnchor(anchor, file) {
   if (!/^[A-Za-z][A-Za-z0-9-]*$/.test(anchor)) fail(`${file} 的锚点不合法：${anchor}`);
   return anchor;
+}
+
+function readKeep(raw) {
+  const text = String(raw || "").trim();
+  const rel = text.replace(/\\/g, "/").replace(/^\.\//, "").replace(/\/+$/, "");
+  const bad = !rel || path.posix.isAbsolute(rel) || path.win32.isAbsolute(text) || /^[A-Za-z]:/.test(rel);
+  if (bad || rel.split("/").some((part) => !part || part === "." || part === "..")) {
+    fail(`--keep 要写目标目录里的相对路径：${raw}`);
+  }
+  return rel;
+}
+
+function resetOutDir(dir, keeps) {
+  const stashed = [];
+  if (fs.existsSync(dir)) {
+    const base = path.resolve(dir);
+    for (const rel of keeps) {
+      const src = path.join(dir, ...rel.split("/"));
+      const resolved = path.resolve(src);
+      if (resolved !== base && !resolved.startsWith(base + path.sep)) fail(`--keep 路径越界：${rel}`);
+      if (!fs.existsSync(src)) continue;
+      const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "fitout-keep-"));
+      const saved = path.join(tmp, "item");
+      fs.cpSync(src, saved, { recursive: true });
+      stashed.push({ rel, saved, tmp });
+    }
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+  fs.mkdirSync(dir, { recursive: true });
+  for (const item of stashed) {
+    const dest = path.join(dir, ...item.rel.split("/"));
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.cpSync(item.saved, dest, { recursive: true });
+    fs.rmSync(item.tmp, { recursive: true, force: true });
+  }
 }
 
 function requiredText(value, label) {

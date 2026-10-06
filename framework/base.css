@@ -608,6 +608,90 @@ details[open] summary .chev {
   color: var(--text-muted);
 }
 
+[data-tone="dark"] .btn,
+[data-tone="image"] .btn {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+[data-tone="dark"] .btn-primary,
+[data-tone="image"] .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+/* 页脚链色会盖过 .btn 的字色。复制按钮仍用实底，避免字和底贴在一起。 */
+.site-footer .btn {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.site-footer .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+/* 首屏图全缺：主色作深底，加一层细斜线，不用图片。 */
+.hero[data-hero-bare] {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  overflow: hidden;
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.hero[data-hero-bare]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    -32deg,
+    transparent 0 18px,
+    color-mix(in srgb, var(--primary-contrast) 20%, transparent) 18px 19px
+  );
+}
+
+.hero[data-hero-bare]::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: clamp(0.75rem, 2.2vw, 1.75rem);
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--primary-contrast) 36%, transparent);
+}
+
+.hero[data-hero-bare] > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero[data-hero-bare] .section-title,
+.hero[data-hero-bare] .section-lead,
+.hero[data-hero-bare] .meta {
+  color: var(--primary-contrast);
+}
+
+.hero[data-hero-bare] .btn {
+  background: transparent;
+  color: var(--primary-contrast);
+  border-color: color-mix(in srgb, var(--primary-contrast) 78%, transparent);
+}
+
+.hero[data-hero-bare] .btn-primary {
+  background: var(--primary-contrast);
+  color: var(--primary);
+  border-color: var(--primary-contrast);
+}
+
 [data-media-group="card"] img,
 .gallery-grid img,
 .catalog-card img {

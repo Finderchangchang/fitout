@@ -11,9 +11,15 @@
     "form": "在线留言"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,13 +27,33 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4000ms"
+    }
   },
   "collections": [
-    { "id": "projects", "label": "装修案例", "listFile": "projects/index.html" },
-    { "id": "designers", "label": "设计团队", "listFile": "designers/index.html" },
-    { "id": "packages", "label": "装修套餐", "listFile": "packages/index.html" },
-    { "id": "notes", "label": "装修知识", "listFile": "notes/index.html" }
+    {
+      "id": "projects",
+      "label": "装修案例",
+      "listFile": "projects/index.html"
+    },
+    {
+      "id": "designers",
+      "label": "设计团队",
+      "listFile": "designers/index.html"
+    },
+    {
+      "id": "packages",
+      "label": "装修套餐",
+      "listFile": "packages/index.html"
+    },
+    {
+      "id": "notes",
+      "label": "装修知识",
+      "listFile": "notes/index.html"
+    }
   ],
   "pages": [
     {
@@ -35,16 +61,76 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "lanes", "required": true, "variants": ["index"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "cases", "required": true, "variants": ["gallery"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "offer", "required": true, "variants": ["tiles"] },
-        { "type": "team", "required": true, "variants": ["cards"] },
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "collection-list", "required": true, "variants": ["digest"] },
-        { "type": "cta-band", "required": true, "variants": ["simple"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "lanes",
+          "required": false,
+          "variants": [
+            "index"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "offer",
+          "required": true,
+          "variants": [
+            "tiles"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "digest"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "simple"
+          ]
+        }
       ]
     },
     {
@@ -52,9 +138,27 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "why", "required": true, "variants": ["points"] },
-        { "type": "trust", "required": true, "variants": ["certs"] },
-        { "type": "cases", "required": true, "variants": ["gallery"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "points"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "certs"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery"
+          ]
+        }
       ]
     },
     {
@@ -62,7 +166,13 @@
       "file": "projects/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["board"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        }
       ]
     },
     {
@@ -71,7 +181,13 @@
       "kind": "detail",
       "from": "projects",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -79,7 +195,13 @@
       "file": "designers/index.html",
       "kind": "team",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["board"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        }
       ]
     },
     {
@@ -88,7 +210,13 @@
       "kind": "detail",
       "from": "designers",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -96,7 +224,13 @@
       "file": "packages/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["board"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        }
       ]
     },
     {
@@ -105,7 +239,13 @@
       "kind": "detail",
       "from": "packages",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -113,9 +253,27 @@
       "file": "craft/index.html",
       "kind": "process",
       "order": [
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "services", "required": true, "variants": ["nodes"] },
-        { "type": "cases", "required": true, "variants": ["gallery"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "services",
+          "required": false,
+          "variants": [
+            "nodes"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery"
+          ]
+        }
       ]
     },
     {
@@ -123,7 +281,13 @@
       "file": "notes/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["board"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "board"
+          ]
+        }
       ]
     },
     {
@@ -132,7 +296,13 @@
       "kind": "news-detail",
       "from": "notes",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -140,8 +310,20 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["desk"] },
-        { "type": "faq", "required": true, "variants": ["accordion"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "desk"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     }
   ]

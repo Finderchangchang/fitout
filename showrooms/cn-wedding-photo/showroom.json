@@ -11,9 +11,15 @@
     "form": "咨询档期"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,14 +27,38 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 9, "interval": "4000ms" }
+    "carousel": {
+      "min": 3,
+      "max": 9,
+      "interval": "4000ms"
+    }
   },
   "collections": [
-    { "id": "works", "label": "作品欣赏", "listFile": "works/index.html" },
-    { "id": "packages", "label": "套系价格", "listFile": "packages/index.html" },
-    { "id": "team", "label": "团队", "listFile": "team/index.html" },
-    { "id": "bases", "label": "拍摄基地", "listFile": "bases/index.html" },
-    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+    {
+      "id": "works",
+      "label": "作品欣赏",
+      "listFile": "works/index.html"
+    },
+    {
+      "id": "packages",
+      "label": "套系价格",
+      "listFile": "packages/index.html"
+    },
+    {
+      "id": "team",
+      "label": "团队",
+      "listFile": "team/index.html"
+    },
+    {
+      "id": "bases",
+      "label": "拍摄基地",
+      "listFile": "bases/index.html"
+    },
+    {
+      "id": "news",
+      "label": "新闻动态",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -36,16 +66,76 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "offer", "required": true, "variants": ["tiles"] },
-        { "type": "folio", "required": true, "variants": ["spread"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "essay", "required": true, "variants": ["split"] },
-        { "type": "rates", "required": true, "variants": ["cards"] },
-        { "type": "guests", "required": true, "variants": ["wall"] },
-        { "type": "bulletin", "required": true, "variants": ["feed"] },
-        { "type": "invite", "required": true, "variants": ["band"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "offer",
+          "required": true,
+          "variants": [
+            "tiles"
+          ]
+        },
+        {
+          "type": "folio",
+          "required": false,
+          "variants": [
+            "spread"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "essay",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "rates",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "guests",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        },
+        {
+          "type": "bulletin",
+          "required": false,
+          "variants": [
+            "feed"
+          ]
+        },
+        {
+          "type": "invite",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -53,10 +143,34 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "essay", "required": true, "variants": ["split"] },
-        { "type": "why", "required": true, "variants": ["steps"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "faq", "required": true, "variants": ["accordion"] }
+        {
+          "type": "essay",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     },
     {
@@ -64,7 +178,13 @@
       "file": "works/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["mosaic"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "mosaic"
+          ]
+        }
       ]
     },
     {
@@ -73,7 +193,13 @@
       "kind": "detail",
       "from": "works",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["gallery"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "gallery"
+          ]
+        }
       ]
     },
     {
@@ -81,7 +207,13 @@
       "file": "packages/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["sheet"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "sheet"
+          ]
+        }
       ]
     },
     {
@@ -90,7 +222,13 @@
       "kind": "detail",
       "from": "packages",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "sheet"
+          ]
+        }
       ]
     },
     {
@@ -98,7 +236,13 @@
       "file": "team/index.html",
       "kind": "team",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["portraits"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "portraits"
+          ]
+        }
       ]
     },
     {
@@ -107,7 +251,13 @@
       "kind": "detail",
       "from": "team",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["portrait"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "portrait"
+          ]
+        }
       ]
     },
     {
@@ -115,7 +265,13 @@
       "file": "bases/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["scenes"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "scenes"
+          ]
+        }
       ]
     },
     {
@@ -124,7 +280,13 @@
       "kind": "detail",
       "from": "bases",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["place"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "place"
+          ]
+        }
       ]
     },
     {
@@ -132,7 +294,13 @@
       "file": "guests/index.html",
       "kind": "list",
       "order": [
-        { "type": "guests", "required": true, "variants": ["wall"] }
+        {
+          "type": "guests",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        }
       ]
     },
     {
@@ -140,7 +308,13 @@
       "file": "news/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["feed"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "feed"
+          ]
+        }
       ]
     },
     {
@@ -149,7 +323,13 @@
       "kind": "news-detail",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -157,8 +337,20 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["card"] },
-        { "type": "inquire", "required": true, "variants": ["note"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "card"
+          ]
+        },
+        {
+          "type": "inquire",
+          "required": false,
+          "variants": [
+            "note"
+          ]
+        }
       ]
     }
   ]

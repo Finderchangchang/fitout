@@ -1,5 +1,5 @@
 {
-  "note": "产品用分类筛选。门店和新闻用同一套图文列表。分类靠条目链接里的前缀，列表数据本身不带分类字段。",
+  "note": "产品分类读每条的 category。拼装按分类生成筛选，不看链接前缀。门店和新闻不写 category 时不出现筛选。",
   "fields": {
     "title": { "type": "string", "required": true, "maxChars": 16 },
     "lead": { "type": "string", "required": false, "maxChars": 40 },

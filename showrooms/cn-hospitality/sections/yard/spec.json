@@ -1,18 +1,39 @@
 {
   "note": "通栏院子。说明和相册入口压在图下沿，不另起一块色条。",
   "fields": {
-    "image": { "type": "image", "required": true, "maxChars": 200 },
-    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
-    "caption": { "type": "string", "required": false, "maxChars": 40 },
-    "href": { "type": "string", "required": false, "maxChars": 200 },
-    "linkLabel": { "type": "string", "required": false, "maxChars": 8 }
+    "image": {
+      "type": "image",
+      "required": true,
+      "maxChars": 200
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true,
+      "maxChars": 30
+    },
+    "caption": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "href": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "linkLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
+    }
   },
   "variants": {
     "wide": {
       "needsImage": true,
       "imageField": "image",
       "family": "panorama",
-      "fit": "一条通栏院子，左下说明"
+      "fit": "一条通栏院子，左下说明",
+      "fallback": "omit"
     }
   }
 }

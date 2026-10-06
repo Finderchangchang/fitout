@@ -1,22 +1,62 @@
 {
   "note": "大图在左，说明在右，缩略图横排在下面。用单选切换，不是第二套轮播。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "moreHref": { "type": "string", "required": true, "maxChars": 200 },
-    "moreLabel": { "type": "string", "required": true, "maxChars": 8 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "moreHref": {
+      "type": "string",
+      "required": true,
+      "maxChars": 200
+    },
+    "moreLabel": {
+      "type": "string",
+      "required": true,
+      "maxChars": 8
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 3,
       "max": 6,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 16 },
-        "text": { "type": "string", "required": true, "maxChars": 40 },
-        "price": { "type": "string", "required": true, "maxChars": 8 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
-        "on": { "type": "string", "required": false, "maxChars": 2 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40
+        },
+        "price": {
+          "type": "string",
+          "required": true,
+          "maxChars": 8
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        },
+        "on": {
+          "type": "string",
+          "required": false,
+          "maxChars": 2
+        }
       }
     }
   },
@@ -25,7 +65,8 @@
       "needsImage": true,
       "imageField": "items.image",
       "family": "picker",
-      "fit": "大图加横排缩略"
+      "fit": "大图加横排缩略",
+      "fallback": "omit"
     }
   }
 }

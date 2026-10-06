@@ -11,9 +11,15 @@
     "form": "预约面谈"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,13 +27,33 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 9, "interval": "4500ms" }
+    "carousel": {
+      "min": 3,
+      "max": 9,
+      "interval": "4500ms"
+    }
   },
   "collections": [
-    { "id": "services", "label": "专业领域", "listFile": "services/index.html" },
-    { "id": "team", "label": "律师团队", "listFile": "team/index.html" },
-    { "id": "cases", "label": "典型案例", "listFile": "cases/index.html" },
-    { "id": "news", "label": "法律知识", "listFile": "news/index.html" }
+    {
+      "id": "services",
+      "label": "专业领域",
+      "listFile": "services/index.html"
+    },
+    {
+      "id": "team",
+      "label": "律师团队",
+      "listFile": "team/index.html"
+    },
+    {
+      "id": "cases",
+      "label": "典型案例",
+      "listFile": "cases/index.html"
+    },
+    {
+      "id": "news",
+      "label": "法律知识",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -35,15 +61,69 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "services", "required": true, "variants": ["rows"] },
-        { "type": "why", "required": true, "variants": ["dossier"] },
-        { "type": "team", "required": true, "variants": ["bench"] },
-        { "type": "cases", "required": true, "variants": ["ledger"] },
-        { "type": "photo-band", "required": true, "variants": ["wide"] },
-        { "type": "collection-list", "required": true, "variants": ["briefs"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "services",
+          "required": true,
+          "variants": [
+            "rows"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "dossier"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "bench"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "ledger"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "briefs"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -51,11 +131,41 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "why", "required": true, "variants": ["dossier"] },
-        { "type": "timeline", "required": true, "variants": ["rail"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "honors", "required": true, "variants": ["shelf"] },
-        { "type": "cta-band", "required": true, "variants": ["inline"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "dossier"
+          ]
+        },
+        {
+          "type": "timeline",
+          "required": false,
+          "variants": [
+            "rail"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "honors",
+          "required": false,
+          "variants": [
+            "shelf"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -63,7 +173,13 @@
       "file": "services/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["folios"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "folios"
+          ]
+        }
       ]
     },
     {
@@ -72,7 +188,13 @@
       "kind": "detail",
       "from": "services",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -80,7 +202,13 @@
       "file": "team/index.html",
       "kind": "team",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["people"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "people"
+          ]
+        }
       ]
     },
     {
@@ -89,7 +217,13 @@
       "kind": "detail",
       "from": "team",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -97,7 +231,13 @@
       "file": "cases/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["docket"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "docket"
+          ]
+        }
       ]
     },
     {
@@ -106,7 +246,13 @@
       "kind": "detail",
       "from": "cases",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -114,7 +260,13 @@
       "file": "news/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["briefs"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "briefs"
+          ]
+        }
       ]
     },
     {
@@ -123,7 +275,13 @@
       "kind": "news-detail",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -131,7 +289,13 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["card"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "card"
+          ]
+        }
       ]
     }
   ]

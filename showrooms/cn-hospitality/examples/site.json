@@ -13,23 +13,54 @@
     "email": "stay@luciyuan.example",
     "address": "杭州市桐庐县芦茨村溪口路18号（虚构地址）",
     "hours": [
-      { "day": "前台", "time": "08:00-21:00" },
-      { "day": "入住", "time": "14:00-21:00" }
+      {
+        "day": "前台",
+        "time": "08:00-21:00"
+      },
+      {
+        "day": "入住",
+        "time": "14:00-21:00"
+      }
     ],
     "formUrl": "https://example.com/luciyuan-stay",
     "icp": "浙ICP备16042817号",
     "police": "浙公网安备33012202016018号"
   },
   "nav": [
-    { "label": "首页", "href": "index.html" },
-    { "label": "民宿故事", "href": "about/index.html" },
-    { "label": "房型介绍", "href": "rooms/index.html" },
-    { "label": "周边玩法", "href": "places/index.html" },
-    { "label": "餐饮", "href": "dining/index.html" },
-    { "label": "游记", "href": "journal/index.html" },
-    { "label": "预订交通", "href": "contact/index.html" }
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "民宿故事",
+      "href": "about/index.html"
+    },
+    {
+      "label": "房型介绍",
+      "href": "rooms/index.html"
+    },
+    {
+      "label": "周边玩法",
+      "href": "places/index.html"
+    },
+    {
+      "label": "餐饮",
+      "href": "dining/index.html"
+    },
+    {
+      "label": "游记",
+      "href": "journal/index.html"
+    },
+    {
+      "label": "预订交通",
+      "href": "contact/index.html"
+    }
   ],
-  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
   "collections": {
     "rooms": [
       {
@@ -42,12 +73,30 @@
         "image": "room-creek",
         "imageAlt": "溪口大床房实拍",
         "specs": [
-          { "label": "面积", "value": "28平方米" },
-          { "label": "床型", "value": "1.8米大床" },
-          { "label": "可住", "value": "2人" },
-          { "label": "参考价", "value": "680元起" },
-          { "label": "间数", "value": "4间" },
-          { "label": "设施", "value": "茶桌、空调、独立卫浴" }
+          {
+            "label": "面积",
+            "value": "28平方米"
+          },
+          {
+            "label": "床型",
+            "value": "1.8米大床"
+          },
+          {
+            "label": "可住",
+            "value": "2人"
+          },
+          {
+            "label": "参考价",
+            "value": "680元起"
+          },
+          {
+            "label": "间数",
+            "value": "4间"
+          },
+          {
+            "label": "设施",
+            "value": "茶桌、空调、独立卫浴"
+          }
         ]
       },
       {
@@ -60,12 +109,30 @@
         "image": "room-bamboo",
         "imageAlt": "竹廊双床房实拍",
         "specs": [
-          { "label": "面积", "value": "32平方米" },
-          { "label": "床型", "value": "1.2米双床" },
-          { "label": "可住", "value": "2人" },
-          { "label": "参考价", "value": "720元起" },
-          { "label": "间数", "value": "2间" },
-          { "label": "设施", "value": "竹廊、双床、空调" }
+          {
+            "label": "面积",
+            "value": "32平方米"
+          },
+          {
+            "label": "床型",
+            "value": "1.2米双床"
+          },
+          {
+            "label": "可住",
+            "value": "2人"
+          },
+          {
+            "label": "参考价",
+            "value": "720元起"
+          },
+          {
+            "label": "间数",
+            "value": "2间"
+          },
+          {
+            "label": "设施",
+            "value": "竹廊、双床、空调"
+          }
         ]
       },
       {
@@ -78,12 +145,30 @@
         "image": "room-loft",
         "imageAlt": "阁楼家庭房实拍",
         "specs": [
-          { "label": "面积", "value": "46平方米" },
-          { "label": "床型", "value": "大床加沙发床" },
-          { "label": "可住", "value": "3人" },
-          { "label": "参考价", "value": "980元起" },
-          { "label": "间数", "value": "4间" },
-          { "label": "设施", "value": "沙发床、空调、独立卫浴" }
+          {
+            "label": "面积",
+            "value": "46平方米"
+          },
+          {
+            "label": "床型",
+            "value": "大床加沙发床"
+          },
+          {
+            "label": "可住",
+            "value": "3人"
+          },
+          {
+            "label": "参考价",
+            "value": "980元起"
+          },
+          {
+            "label": "间数",
+            "value": "4间"
+          },
+          {
+            "label": "设施",
+            "value": "沙发床、空调、独立卫浴"
+          }
         ]
       },
       {
@@ -96,20 +181,38 @@
         "image": "room-suite",
         "imageAlt": "院落套房实拍",
         "specs": [
-          { "label": "面积", "value": "58平方米" },
-          { "label": "床型", "value": "1.8米大床" },
-          { "label": "可住", "value": "2人" },
-          { "label": "参考价", "value": "1280元起" },
-          { "label": "间数", "value": "2间" },
-          { "label": "设施", "value": "独立小院、石桌" }
+          {
+            "label": "面积",
+            "value": "58平方米"
+          },
+          {
+            "label": "床型",
+            "value": "1.8米大床"
+          },
+          {
+            "label": "可住",
+            "value": "2人"
+          },
+          {
+            "label": "参考价",
+            "value": "1280元起"
+          },
+          {
+            "label": "间数",
+            "value": "2间"
+          },
+          {
+            "label": "设施",
+            "value": "独立小院、石桌"
+          }
         ]
       }
     ],
     "places": [
       {
         "slug": "spot-pier",
-        "name": "芦茨码头",
         "category": "景点",
+        "name": "芦茨码头",
         "address": "桐庐县芦茨村码头（虚构地点）",
         "hours": "早班看天气",
         "mapHref": "https://uri.amap.com/search?keyword=桐庐芦茨码头",
@@ -118,14 +221,20 @@
         "image": "place-pier",
         "imageAlt": "芦茨码头和船",
         "specs": [
-          { "label": "类型", "value": "景点" },
-          { "label": "距离", "value": "步行8分钟" }
+          {
+            "label": "类型",
+            "value": "景点"
+          },
+          {
+            "label": "距离",
+            "value": "步行8分钟"
+          }
         ]
       },
       {
         "slug": "spot-terrace",
-        "name": "严子陵钓台",
         "category": "景点",
+        "name": "严子陵钓台",
         "address": "桐庐严子陵钓台（虚构地点）",
         "hours": "白天可去",
         "mapHref": "https://uri.amap.com/search?keyword=严子陵钓台",
@@ -134,14 +243,20 @@
         "image": "place-terrace",
         "imageAlt": "江边的钓台",
         "specs": [
-          { "label": "类型", "value": "景点" },
-          { "label": "距离", "value": "步行约20分钟" }
+          {
+            "label": "类型",
+            "value": "景点"
+          },
+          {
+            "label": "距离",
+            "value": "步行约20分钟"
+          }
         ]
       },
       {
         "slug": "exp-raft",
-        "name": "竹筏漂流",
         "category": "体验",
+        "name": "竹筏漂流",
         "address": "芦茨码头旁下水（虚构地点）",
         "hours": "白天可约",
         "mapHref": "https://uri.amap.com/search?keyword=芦茨竹筏",
@@ -150,14 +265,20 @@
         "image": "place-raft",
         "imageAlt": "江上的竹筏",
         "specs": [
-          { "label": "类型", "value": "体验" },
-          { "label": "时长", "value": "约40分钟" }
+          {
+            "label": "类型",
+            "value": "体验"
+          },
+          {
+            "label": "时长",
+            "value": "约40分钟"
+          }
         ]
       },
       {
         "slug": "exp-tea",
-        "name": "采春茶",
         "category": "体验",
+        "name": "采春茶",
         "address": "芦茨后山茶园（虚构地点）",
         "hours": "三月到四月",
         "mapHref": "https://uri.amap.com/search?keyword=芦茨茶园",
@@ -166,14 +287,20 @@
         "image": "place-tea",
         "imageAlt": "后山采茶",
         "specs": [
-          { "label": "类型", "value": "体验" },
-          { "label": "季节", "value": "三月底到四月" }
+          {
+            "label": "类型",
+            "value": "体验"
+          },
+          {
+            "label": "季节",
+            "value": "三月底到四月"
+          }
         ]
       },
       {
         "slug": "bite-stove",
-        "name": "溪边土灶",
         "category": "美食",
+        "name": "溪边土灶",
         "address": "溪口路土灶（虚构地点）",
         "hours": "晚饭看位子",
         "mapHref": "https://uri.amap.com/search?keyword=芦茨溪口路",
@@ -182,14 +309,20 @@
         "image": "place-stove",
         "imageAlt": "溪边的土灶",
         "specs": [
-          { "label": "类型", "value": "美食" },
-          { "label": "距离", "value": "步行5分钟" }
+          {
+            "label": "类型",
+            "value": "美食"
+          },
+          {
+            "label": "距离",
+            "value": "步行5分钟"
+          }
         ]
       },
       {
         "slug": "bite-soy",
-        "name": "镇口豆浆",
         "category": "美食",
+        "name": "镇口豆浆",
         "address": "芦茨镇口（虚构地点）",
         "hours": "早上七点出摊",
         "mapHref": "https://uri.amap.com/search?keyword=芦茨镇口",
@@ -198,8 +331,14 @@
         "image": "place-soy",
         "imageAlt": "镇口的早点摊",
         "specs": [
-          { "label": "类型", "value": "美食" },
-          { "label": "时间", "value": "早上七点" }
+          {
+            "label": "类型",
+            "value": "美食"
+          },
+          {
+            "label": "时间",
+            "value": "早上七点"
+          }
         ]
       }
     ],
@@ -257,10 +396,22 @@
             "secondaryHref": "rooms/index.html",
             "interval": "4000",
             "slides": [
-              { "image": "hero-court", "imageAlt": "午后的院子和门楼" },
-              { "image": "hero-creek", "imageAlt": "窗对溪口的房间" },
-              { "image": "hero-river", "imageAlt": "富春江上的芦茨" },
-              { "image": "hero-table", "imageAlt": "院里的晚饭长桌" }
+              {
+                "image": "hero-court",
+                "imageAlt": "老木门楼的门轴和午后光"
+              },
+              {
+                "image": "hero-creek",
+                "imageAlt": "亚麻床品和窗外的溪光"
+              },
+              {
+                "image": "hero-river",
+                "imageAlt": "江面薄雾和远处的山"
+              },
+              {
+                "image": "hero-table",
+                "imageAlt": "长桌上的碗和暖色灯"
+              }
             ]
           }
         },
@@ -273,10 +424,22 @@
             "title": "院子里的数",
             "lead": "十二间房，2016年开业。回头客大约一半。",
             "items": [
-              { "value": "2016年", "label": "开业" },
-              { "value": "12间", "label": "客房" },
-              { "value": "46%", "label": "回头客" },
-              { "value": "8分钟", "label": "到码头" }
+              {
+                "value": "2016年",
+                "label": "开业"
+              },
+              {
+                "value": "12间",
+                "label": "客房"
+              },
+              {
+                "value": "46%",
+                "label": "回头客"
+              },
+              {
+                "value": "8分钟",
+                "label": "到码头"
+              }
             ]
           }
         },
@@ -409,9 +572,24 @@
             "imageAlt": "院里灶的长桌",
             "caption": "晚饭坐这张长桌。",
             "items": [
-              { "name": "笋干老鸭", "price": "68元", "image": "dish-duck", "imageAlt": "一盘笋干老鸭" },
-              { "name": "清蒸溪鱼", "price": "78元", "image": "dish-fish", "imageAlt": "一盘清蒸溪鱼" },
-              { "name": "艾草青团", "price": "16元", "image": "dish-cake", "imageAlt": "一碟艾草青团" }
+              {
+                "name": "笋干老鸭",
+                "price": "68元",
+                "image": "dish-duck",
+                "imageAlt": "一盘笋干老鸭"
+              },
+              {
+                "name": "清蒸溪鱼",
+                "price": "78元",
+                "image": "dish-fish",
+                "imageAlt": "一盘清蒸溪鱼"
+              },
+              {
+                "name": "艾草青团",
+                "price": "16元",
+                "image": "dish-cake",
+                "imageAlt": "一碟艾草青团"
+              }
             ]
           }
         },
@@ -480,10 +658,22 @@
             "title": "这几年改了什么",
             "lead": "房子还是这处，灶和床换过。",
             "items": [
-              { "name": "2016年改老屋", "text": "门楼和正房改成十二间房。" },
-              { "name": "2019年院里灶", "text": "晚饭改在院子里做，不住店也能订。" },
-              { "name": "2022年加竹廊", "text": "西侧加了一条竹廊，连着两间房。" },
-              { "name": "2024年换床品", "text": "大床换成1.8米，床品全部换新。" }
+              {
+                "name": "2016年改老屋",
+                "text": "门楼和正房改成十二间房。"
+              },
+              {
+                "name": "2019年院里灶",
+                "text": "晚饭改在院子里做，不住店也能订。"
+              },
+              {
+                "name": "2022年加竹廊",
+                "text": "西侧加了一条竹廊，连着两间房。"
+              },
+              {
+                "name": "2024年换床品",
+                "text": "大床换成1.8米，床品全部换新。"
+              }
             ]
           }
         },
@@ -496,10 +686,22 @@
             "title": "先问这几句",
             "lead": "吃饭、开会、开车，都在这里。",
             "items": [
-              { "q": "可以只住房吗", "a": "可以。晚饭另计，不住店也能订院里灶。" },
-              { "q": "院子哪年改的", "a": "2016年把门楼和正房改成十二间房。" },
-              { "q": "有会议室吗", "a": "没有。这里只住房和吃饭，不接会议。" },
-              { "q": "杭州开车多久", "a": "走杭新景高速，大约一个半小时。" }
+              {
+                "q": "可以只住房吗",
+                "a": "可以。晚饭另计，不住店也能订院里灶。"
+              },
+              {
+                "q": "院子哪年改的",
+                "a": "2016年把门楼和正房改成十二间房。"
+              },
+              {
+                "q": "有会议室吗",
+                "a": "没有。这里只住房和吃饭，不接会议。"
+              },
+              {
+                "q": "杭州开车多久",
+                "a": "走杭新景高速，大约一个半小时。"
+              }
             ]
           }
         }
@@ -544,10 +746,23 @@
             "lead": "景点、体验和吃饭，按这个分。",
             "collection": "places",
             "groups": [
-              { "key": "all", "label": "全部", "on": "1" },
-              { "key": "spot", "label": "景点" },
-              { "key": "exp", "label": "体验" },
-              { "key": "bite", "label": "美食" }
+              {
+                "key": "all",
+                "label": "全部",
+                "on": "1"
+              },
+              {
+                "key": "spot",
+                "label": "景点"
+              },
+              {
+                "key": "exp",
+                "label": "体验"
+              },
+              {
+                "key": "bite",
+                "label": "美食"
+              }
             ]
           }
         }
@@ -574,9 +789,24 @@
             "imageAlt": "院里灶的长桌",
             "caption": "长桌大约十六个位子。",
             "items": [
-              { "name": "笋干老鸭", "price": "68元", "image": "dish-duck", "imageAlt": "一盘笋干老鸭" },
-              { "name": "清蒸溪鱼", "price": "78元", "image": "dish-fish", "imageAlt": "一盘清蒸溪鱼" },
-              { "name": "艾草青团", "price": "16元", "image": "dish-cake", "imageAlt": "一碟艾草青团" }
+              {
+                "name": "笋干老鸭",
+                "price": "68元",
+                "image": "dish-duck",
+                "imageAlt": "一盘笋干老鸭"
+              },
+              {
+                "name": "清蒸溪鱼",
+                "price": "78元",
+                "image": "dish-fish",
+                "imageAlt": "一盘清蒸溪鱼"
+              },
+              {
+                "name": "艾草青团",
+                "price": "16元",
+                "image": "dish-cake",
+                "imageAlt": "一碟艾草青团"
+              }
             ]
           }
         },
@@ -589,9 +819,18 @@
             "title": "吃饭的规矩",
             "lead": "不住店也能来，位子有限。",
             "items": [
-              { "q": "不住店能吃饭吗", "a": "可以。晚饭另订，六点半开饭，九点收灶。" },
-              { "q": "早餐给谁吃", "a": "住店含早餐，七点半到九点半，在院里灶。" },
-              { "q": "有没有包间", "a": "没有包间。晚饭坐长桌，大约十六个位子。" }
+              {
+                "q": "不住店能吃饭吗",
+                "a": "可以。晚饭另订，六点半开饭，九点收灶。"
+              },
+              {
+                "q": "早餐给谁吃",
+                "a": "住店含早餐，七点半到九点半，在院里灶。"
+              },
+              {
+                "q": "有没有包间",
+                "a": "没有包间。晚饭坐长桌，大约十六个位子。"
+              }
             ]
           }
         }
@@ -614,14 +853,46 @@
             "title": "院子的照片",
             "lead": "门楼、房间、竹廊和夜里的灯。",
             "items": [
-              { "caption": "溪口大床房", "image": "room-creek", "imageAlt": "溪口大床房实拍" },
-              { "caption": "竹廊双床房", "image": "room-bamboo", "imageAlt": "竹廊双床房实拍" },
-              { "caption": "阁楼家庭房", "image": "room-loft", "imageAlt": "阁楼家庭房实拍" },
-              { "caption": "院落套房", "image": "room-suite", "imageAlt": "院落套房实拍" },
-              { "caption": "老木门楼", "image": "story-gate", "imageAlt": "老木门楼和院墙" },
-              { "caption": "院里灶", "image": "dine-hall", "imageAlt": "院里灶的长桌" },
-              { "caption": "村里的路", "image": "album-lane", "imageAlt": "村里的石板路" },
-              { "caption": "夜里的竹廊", "image": "album-night", "imageAlt": "夜里的竹廊" }
+              {
+                "caption": "溪口大床房",
+                "image": "room-creek",
+                "imageAlt": "溪口大床房实拍"
+              },
+              {
+                "caption": "竹廊双床房",
+                "image": "room-bamboo",
+                "imageAlt": "竹廊双床房实拍"
+              },
+              {
+                "caption": "阁楼家庭房",
+                "image": "room-loft",
+                "imageAlt": "阁楼家庭房实拍"
+              },
+              {
+                "caption": "院落套房",
+                "image": "room-suite",
+                "imageAlt": "院落套房实拍"
+              },
+              {
+                "caption": "老木门楼",
+                "image": "story-gate",
+                "imageAlt": "老木门楼和院墙"
+              },
+              {
+                "caption": "院里灶",
+                "image": "dine-hall",
+                "imageAlt": "院里灶的长桌"
+              },
+              {
+                "caption": "村里的路",
+                "image": "album-lane",
+                "imageAlt": "村里的石板路"
+              },
+              {
+                "caption": "夜里的竹廊",
+                "image": "album-night",
+                "imageAlt": "夜里的竹廊"
+              }
             ]
           }
         }
@@ -665,8 +936,16 @@
             "title": "订房热线",
             "lead": "电话或微信。前台留到晚上九点。",
             "items": [
-              { "name": "微信", "image": "qr-wechat", "imageAlt": "芦茨院微信二维码" },
-              { "name": "预订码", "image": "qr-book", "imageAlt": "芦茨院预订二维码" }
+              {
+                "name": "微信",
+                "image": "qr-wechat",
+                "imageAlt": "芦茨院微信二维码"
+              },
+              {
+                "name": "预订码",
+                "image": "qr-book",
+                "imageAlt": "芦茨院预订二维码"
+              }
             ]
           }
         },
@@ -679,9 +958,18 @@
             "title": "怎么过来",
             "lead": "自驾、大巴、火车，三条路。",
             "items": [
-              { "name": "自驾", "text": "杭新景高速桐庐出口下，导航溪口路18号。门口能停6辆车。" },
-              { "name": "大巴", "text": "西站到桐庐，转芦茨班车，码头下步行8分钟。" },
-              { "name": "火车", "text": "高铁到桐庐站，再打车约40分钟。别在富阳下。" }
+              {
+                "name": "自驾",
+                "text": "杭新景高速桐庐出口下，导航溪口路18号。门口能停6辆车。"
+              },
+              {
+                "name": "大巴",
+                "text": "西站到桐庐，转芦茨班车，码头下步行8分钟。"
+              },
+              {
+                "name": "火车",
+                "text": "高铁到桐庐站，再打车约40分钟。别在富阳下。"
+              }
             ]
           }
         },
@@ -694,12 +982,30 @@
             "title": "入住须知",
             "lead": "留房、宠物、早饭和晚饭。",
             "items": [
-              { "q": "需要提前留房吗", "a": "周末和节假日建议提前一天打电话。当天也接，以空房为准。" },
-              { "q": "开车怎么来", "a": "杭新景高速桐庐出口下，导航到溪口路18号。门口能停6辆车。" },
-              { "q": "坐大巴怎么来", "a": "杭州汽车西站到桐庐，转芦茨班车，码头下车后步行8分钟。" },
-              { "q": "几点入住退房", "a": "入住下午两点到九点，退房中午十二点。早餐七点半到九点半。" },
-              { "q": "可以带宠物吗", "a": "不接待宠物。院子里有别人家的孩子。" },
-              { "q": "晚饭怎么订", "a": "晚饭另订。住店优先，六点半开饭，九点收灶。" }
+              {
+                "q": "需要提前留房吗",
+                "a": "周末和节假日建议提前一天打电话。当天也接，以空房为准。"
+              },
+              {
+                "q": "开车怎么来",
+                "a": "杭新景高速桐庐出口下，导航到溪口路18号。门口能停6辆车。"
+              },
+              {
+                "q": "坐大巴怎么来",
+                "a": "杭州汽车西站到桐庐，转芦茨班车，码头下车后步行8分钟。"
+              },
+              {
+                "q": "几点入住退房",
+                "a": "入住下午两点到九点，退房中午十二点。早餐七点半到九点半。"
+              },
+              {
+                "q": "可以带宠物吗",
+                "a": "不接待宠物。院子里有别人家的孩子。"
+              },
+              {
+                "q": "晚饭怎么订",
+                "a": "晚饭另订。住店优先，六点半开饭，九点收灶。"
+              }
             ]
           }
         },

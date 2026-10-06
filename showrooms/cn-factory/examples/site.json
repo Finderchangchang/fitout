@@ -13,123 +13,283 @@
     "email": "sales@ningpu.example",
     "address": "浙江省嘉兴市桐乡市屠甸镇振业路26号（虚构地址）",
     "hours": [
-      { "day": "周一至周五", "time": "08:00-17:30" },
-      { "day": "周六", "time": "08:00-11:30" }
+      {
+        "day": "周一至周五",
+        "time": "08:00-17:30"
+      },
+      {
+        "day": "周六",
+        "time": "08:00-11:30"
+      }
     ],
     "formUrl": "https://example.com/ningpu-inquiry",
     "icp": "浙ICP备20260915号-6"
   },
   "nav": [
-    { "label": "首页", "href": "index.html" },
-    { "label": "关于我们", "href": "about/index.html" },
-    { "label": "产品中心", "href": "products/index.html" },
-    { "label": "应用领域", "href": "applications/index.html" },
-    { "label": "新闻动态", "href": "news/index.html" },
-    { "label": "联系我们", "href": "contact/index.html" }
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "关于我们",
+      "href": "about/index.html"
+    },
+    {
+      "label": "产品中心",
+      "href": "products/index.html"
+    },
+    {
+      "label": "应用领域",
+      "href": "applications/index.html"
+    },
+    {
+      "label": "新闻动态",
+      "href": "news/index.html"
+    },
+    {
+      "label": "联系我们",
+      "href": "contact/index.html"
+    }
   ],
-  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
   "collections": {
     "products": [
       {
         "slug": "frame",
+        "category": "折弯件",
         "name": "门框加强板",
         "summary": "型号 NP-ZW-186。材质 Q235B，料厚 1.5 毫米，折弯后装在钢木门内侧。",
         "body": "展开尺寸按客户图下料。折弯后抽检对角线，去毛刺，本色交货。月产能约 1200 件。",
         "image": "part-frame",
         "imageAlt": "一块折好的门框加强板",
         "specs": [
-          { "label": "型号", "value": "NP-ZW-186" },
-          { "label": "材质", "value": "Q235B 冷轧板" },
-          { "label": "料厚", "value": "1.5 mm" },
-          { "label": "展开", "value": "186×42 mm" },
-          { "label": "公差", "value": "折弯 ±0.2 mm" },
-          { "label": "表面", "value": "本色，去毛刺" },
-          { "label": "产能", "value": "约 1200 件/月" }
+          {
+            "label": "型号",
+            "value": "NP-ZW-186"
+          },
+          {
+            "label": "材质",
+            "value": "Q235B 冷轧板"
+          },
+          {
+            "label": "料厚",
+            "value": "1.5 mm"
+          },
+          {
+            "label": "展开",
+            "value": "186×42 mm"
+          },
+          {
+            "label": "公差",
+            "value": "折弯 ±0.2 mm"
+          },
+          {
+            "label": "表面",
+            "value": "本色，去毛刺"
+          },
+          {
+            "label": "产能",
+            "value": "约 1200 件/月"
+          }
         ]
       },
       {
         "slug": "side",
+        "category": "冲压件",
         "name": "柜体侧板",
         "summary": "型号 NP-CY-420。材质 SPCC，料厚 1.2 毫米，配电柜侧板，喷粉前交货。",
         "body": "单工序落料，孔位按柜厂图纸。边缘去毛刺、去油后装箱，表面不喷粉。月产能约 600 件。",
         "image": "part-side",
         "imageAlt": "一块冲好孔的柜体侧板",
         "specs": [
-          { "label": "型号", "value": "NP-CY-420" },
-          { "label": "材质", "value": "SPCC" },
-          { "label": "料厚", "value": "1.2 mm" },
-          { "label": "外形", "value": "420×680 mm" },
-          { "label": "公差", "value": "孔距 ±0.15 mm" },
-          { "label": "表面", "value": "去油，不喷粉" },
-          { "label": "产能", "value": "约 600 件/月" }
+          {
+            "label": "型号",
+            "value": "NP-CY-420"
+          },
+          {
+            "label": "材质",
+            "value": "SPCC"
+          },
+          {
+            "label": "料厚",
+            "value": "1.2 mm"
+          },
+          {
+            "label": "外形",
+            "value": "420×680 mm"
+          },
+          {
+            "label": "公差",
+            "value": "孔距 ±0.15 mm"
+          },
+          {
+            "label": "表面",
+            "value": "去油，不喷粉"
+          },
+          {
+            "label": "产能",
+            "value": "约 600 件/月"
+          }
         ]
       },
       {
         "slug": "hinge",
+        "category": "冲压件",
         "name": "铰链座",
         "summary": "型号 NP-JL-20。材质 Q235，料厚 2.0 毫米，连续模生产，供柜门铰链。",
         "body": "2009 年起在做。模具在厂里，改孔需要重开模。表面镀锌，起订约 500 件。",
         "image": "part-hinge",
         "imageAlt": "一排连续模冲出的铰链座",
         "specs": [
-          { "label": "型号", "value": "NP-JL-20" },
-          { "label": "材质", "value": "Q235" },
-          { "label": "料厚", "value": "2.0 mm" },
-          { "label": "模具", "value": "连续模" },
-          { "label": "公差", "value": "孔 ±0.1 mm" },
-          { "label": "表面", "value": "镀锌" },
-          { "label": "产能", "value": "起订约 500 件" }
+          {
+            "label": "型号",
+            "value": "NP-JL-20"
+          },
+          {
+            "label": "材质",
+            "value": "Q235"
+          },
+          {
+            "label": "料厚",
+            "value": "2.0 mm"
+          },
+          {
+            "label": "模具",
+            "value": "连续模"
+          },
+          {
+            "label": "公差",
+            "value": "孔 ±0.1 mm"
+          },
+          {
+            "label": "表面",
+            "value": "镀锌"
+          },
+          {
+            "label": "产能",
+            "value": "起订约 500 件"
+          }
         ]
       },
       {
         "slug": "plate",
+        "category": "机加件",
         "name": "安装底板",
         "summary": "型号 NP-DB-160。材质 Q235B，料厚 8 毫米，铣平面后按图钻攻。",
         "body": "来料或厂里下料都可以。螺纹孔按图攻丝，不做热处理。月产能约 300 件。",
         "image": "part-plate",
         "imageAlt": "一块铣过平面的安装底板",
         "specs": [
-          { "label": "型号", "value": "NP-DB-160" },
-          { "label": "材质", "value": "Q235B" },
-          { "label": "料厚", "value": "8 mm" },
-          { "label": "外形", "value": "160×90 mm" },
-          { "label": "公差", "value": "平面 0.1 mm" },
-          { "label": "表面", "value": "本色" },
-          { "label": "产能", "value": "约 300 件/月" }
+          {
+            "label": "型号",
+            "value": "NP-DB-160"
+          },
+          {
+            "label": "材质",
+            "value": "Q235B"
+          },
+          {
+            "label": "料厚",
+            "value": "8 mm"
+          },
+          {
+            "label": "外形",
+            "value": "160×90 mm"
+          },
+          {
+            "label": "公差",
+            "value": "平面 0.1 mm"
+          },
+          {
+            "label": "表面",
+            "value": "本色"
+          },
+          {
+            "label": "产能",
+            "value": "约 300 件/月"
+          }
         ]
       },
       {
         "slug": "bush",
+        "category": "机加件",
         "name": "轴套",
         "summary": "型号 NP-ZT-2818。材质 45 钢，车削，内孔按轴配，表面发黑。",
         "body": "棒料在厂里车。内孔要留磨量的，请在图纸上写明。月产能约 2000 件。",
         "image": "part-bush",
         "imageAlt": "几只车好的钢轴套",
         "specs": [
-          { "label": "型号", "value": "NP-ZT-2818" },
-          { "label": "材质", "value": "45 钢" },
-          { "label": "外径", "value": "28 mm" },
-          { "label": "内孔", "value": "18 H8" },
-          { "label": "长度", "value": "22 mm" },
-          { "label": "表面", "value": "发黑" },
-          { "label": "产能", "value": "约 2000 件/月" }
+          {
+            "label": "型号",
+            "value": "NP-ZT-2818"
+          },
+          {
+            "label": "材质",
+            "value": "45 钢"
+          },
+          {
+            "label": "外径",
+            "value": "28 mm"
+          },
+          {
+            "label": "内孔",
+            "value": "18 H8"
+          },
+          {
+            "label": "长度",
+            "value": "22 mm"
+          },
+          {
+            "label": "表面",
+            "value": "发黑"
+          },
+          {
+            "label": "产能",
+            "value": "约 2000 件/月"
+          }
         ]
       },
       {
         "slug": "bracket",
+        "category": "焊接组件",
         "name": "支架总成",
         "summary": "型号 NP-ZJ-240。材质 Q235B，折弯件组焊，焊后交检，喷粉前出厂。",
         "body": "零件先折弯再组焊。焊缝按图，不擅自加筋。安装孔公差 ±0.3 毫米。月产能约 400 套。",
         "image": "part-bracket",
         "imageAlt": "一组焊好待检的支架",
         "specs": [
-          { "label": "型号", "value": "NP-ZJ-240" },
-          { "label": "材质", "value": "Q235B" },
-          { "label": "焊缝", "value": "角焊 4 mm" },
-          { "label": "外形", "value": "240×80×60 mm" },
-          { "label": "公差", "value": "安装孔 ±0.3 mm" },
-          { "label": "表面", "value": "喷粉前" },
-          { "label": "产能", "value": "约 400 套/月" }
+          {
+            "label": "型号",
+            "value": "NP-ZJ-240"
+          },
+          {
+            "label": "材质",
+            "value": "Q235B"
+          },
+          {
+            "label": "焊缝",
+            "value": "角焊 4 mm"
+          },
+          {
+            "label": "外形",
+            "value": "240×80×60 mm"
+          },
+          {
+            "label": "公差",
+            "value": "安装孔 ±0.3 mm"
+          },
+          {
+            "label": "表面",
+            "value": "喷粉前"
+          },
+          {
+            "label": "产能",
+            "value": "约 400 套/月"
+          }
         ]
       }
     ],
@@ -142,11 +302,26 @@
         "image": "use-farm",
         "imageAlt": "农机罩壳里的折弯支架",
         "specs": [
-          { "label": "型号", "value": "NP-NJ-20" },
-          { "label": "材质", "value": "Q235B" },
-          { "label": "工艺", "value": "折弯加组焊" },
-          { "label": "料厚", "value": "2.0 mm" },
-          { "label": "产能", "value": "约 800 件/月" }
+          {
+            "label": "型号",
+            "value": "NP-NJ-20"
+          },
+          {
+            "label": "材质",
+            "value": "Q235B"
+          },
+          {
+            "label": "工艺",
+            "value": "折弯加组焊"
+          },
+          {
+            "label": "料厚",
+            "value": "2.0 mm"
+          },
+          {
+            "label": "产能",
+            "value": "约 800 件/月"
+          }
         ]
       },
       {
@@ -157,11 +332,26 @@
         "image": "use-cabinet",
         "imageAlt": "待喷粉的配电柜侧板",
         "specs": [
-          { "label": "型号", "value": "NP-PD-15" },
-          { "label": "材质", "value": "SPCC" },
-          { "label": "工艺", "value": "冲压落料" },
-          { "label": "料厚", "value": "1.5 mm" },
-          { "label": "表面", "value": "喷粉前" }
+          {
+            "label": "型号",
+            "value": "NP-PD-15"
+          },
+          {
+            "label": "材质",
+            "value": "SPCC"
+          },
+          {
+            "label": "工艺",
+            "value": "冲压落料"
+          },
+          {
+            "label": "料厚",
+            "value": "1.5 mm"
+          },
+          {
+            "label": "表面",
+            "value": "喷粉前"
+          }
         ]
       },
       {
@@ -172,11 +362,26 @@
         "image": "use-rack",
         "imageAlt": "货架上的冲孔连接件",
         "specs": [
-          { "label": "型号", "value": "NP-HJ-10" },
-          { "label": "材质", "value": "Q235" },
-          { "label": "工艺", "value": "冲孔折弯" },
-          { "label": "公差", "value": "孔径 0.1 mm" },
-          { "label": "表面", "value": "客户自做" }
+          {
+            "label": "型号",
+            "value": "NP-HJ-10"
+          },
+          {
+            "label": "材质",
+            "value": "Q235"
+          },
+          {
+            "label": "工艺",
+            "value": "冲孔折弯"
+          },
+          {
+            "label": "公差",
+            "value": "孔径 0.1 mm"
+          },
+          {
+            "label": "表面",
+            "value": "客户自做"
+          }
         ]
       },
       {
@@ -187,11 +392,26 @@
         "image": "use-kitchen",
         "imageAlt": "一块卷圆边的厨电底托",
         "specs": [
-          { "label": "型号", "value": "NP-CD-10" },
-          { "label": "材质", "value": "SPCC" },
-          { "label": "工艺", "value": "冲压卷圆" },
-          { "label": "料厚", "value": "1.0 mm" },
-          { "label": "表面", "value": "去毛刺" }
+          {
+            "label": "型号",
+            "value": "NP-CD-10"
+          },
+          {
+            "label": "材质",
+            "value": "SPCC"
+          },
+          {
+            "label": "工艺",
+            "value": "冲压卷圆"
+          },
+          {
+            "label": "料厚",
+            "value": "1.0 mm"
+          },
+          {
+            "label": "表面",
+            "value": "去毛刺"
+          }
         ]
       }
     ],
@@ -255,16 +475,44 @@
             "secondaryHref": "products/index.html",
             "interval": "4000",
             "slides": [
-              { "image": "hero-press", "imageAlt": "冲压车间一台 160 吨冲床在运行" },
-              { "image": "hero-bend", "imageAlt": "折弯机前操作工正在对线" },
-              { "image": "hero-cnc", "imageAlt": "机加车间车床正在切削轴套" },
-              { "image": "hero-weld", "imageAlt": "组焊台上焊完的支架等交检" }
+              {
+                "image": "hero-press",
+                "imageAlt": "冲床落料的金属板局部"
+              },
+              {
+                "image": "hero-bend",
+                "imageAlt": "折弯机钳口咬住钢板"
+              },
+              {
+                "image": "hero-cnc",
+                "imageAlt": "车刀和轴套上的冷却液"
+              },
+              {
+                "image": "hero-weld",
+                "imageAlt": "支架焊点的金属本色"
+              }
             ],
             "rail": [
-              { "name": "折弯", "text": "公差 ±0.2 毫米", "href": "products/index.html#bend" },
-              { "name": "冲压", "text": "冲床到 160 吨", "href": "products/index.html#stamp" },
-              { "name": "机加", "text": "车铣都在厂里", "href": "products/index.html#machine" },
-              { "name": "组焊", "text": "焊完交检出厂", "href": "products/index.html#weld" }
+              {
+                "name": "折弯",
+                "text": "公差 ±0.2 毫米",
+                "href": "products/index.html#catalog-c1"
+              },
+              {
+                "name": "冲压",
+                "text": "冲床到 160 吨",
+                "href": "products/index.html#catalog-c2"
+              },
+              {
+                "name": "机加",
+                "text": "车铣都在厂里",
+                "href": "products/index.html#catalog-c3"
+              },
+              {
+                "name": "组焊",
+                "text": "焊完交检出厂",
+                "href": "products/index.html#catalog-c4"
+              }
             ]
           }
         },
@@ -277,10 +525,22 @@
             "title": "企业实力",
             "lead": "年份、人数和设备，是厂里现在的情况。",
             "items": [
-              { "value": "17 年", "label": "从事机件加工" },
-              { "value": "126 人", "label": "在册员工" },
-              { "value": "38 台", "label": "折弯机和冲床" },
-              { "value": "0.2 mm", "label": "折弯常规公差" }
+              {
+                "value": "17 年",
+                "label": "从事机件加工"
+              },
+              {
+                "value": "126 人",
+                "label": "在册员工"
+              },
+              {
+                "value": "38 台",
+                "label": "折弯机和冲床"
+              },
+              {
+                "value": "0.2 mm",
+                "label": "折弯常规公差"
+              }
             ]
           }
         },
@@ -296,28 +556,28 @@
               {
                 "name": "数控折弯机",
                 "text": "板厚到 6 毫米，常规公差 ±0.2 毫米。",
-                "href": "products/index.html#bend",
+                "href": "products/index.html#catalog-c1",
                 "image": "line-bend",
                 "imageAlt": "折弯机在弯一块门框加强板"
               },
               {
                 "name": "160吨冲床",
                 "text": "连续模和单工序都做，冲床到 160 吨。",
-                "href": "products/index.html#stamp",
+                "href": "products/index.html#catalog-c2",
                 "image": "line-stamp",
                 "imageAlt": "冲床在落一块柜体侧板"
               },
               {
                 "name": "车床和铣床",
                 "text": "轴套和安装底板在厂里车铣，不外协。",
-                "href": "products/index.html#machine",
+                "href": "products/index.html#catalog-c3",
                 "image": "line-cnc",
                 "imageAlt": "车床卡着一根轴套棒料"
               },
               {
                 "name": "组焊工位",
                 "text": "支架按图组焊，焊完进质检再出厂。",
-                "href": "products/index.html#weld",
+                "href": "products/index.html#catalog-c4",
                 "image": "line-weld",
                 "imageAlt": "焊工在组一支支架"
               }
@@ -335,10 +595,22 @@
             "image": "floor-wide",
             "imageAlt": "振业路车间过道两侧是设备和料架",
             "items": [
-              { "name": "材料牌号先确认", "text": "图上没写牌号，先问清楚再下料。" },
-              { "name": "公差写进工艺单", "text": "折弯按 ±0.2 毫米，孔位按图。" },
-              { "name": "首件确认再批量", "text": "首件尺寸对过，才开后面的数量。" },
-              { "name": "交期每周四核对", "text": "插单和改期，周四会上说清楚。" }
+              {
+                "name": "材料牌号先确认",
+                "text": "图上没写牌号，先问清楚再下料。"
+              },
+              {
+                "name": "公差写进工艺单",
+                "text": "折弯按 ±0.2 毫米，孔位按图。"
+              },
+              {
+                "name": "首件确认再批量",
+                "text": "首件尺寸对过，才开后面的数量。"
+              },
+              {
+                "name": "交期每周四核对",
+                "text": "插单和改期，周四会上说清楚。"
+              }
             ]
           }
         },
@@ -395,10 +667,30 @@
             "title": "资质荣誉",
             "lead": "质量、环境和职业健康安全的体系证书。",
             "items": [
-              { "name": "质量管理体系", "issuer": "衡准认证", "image": "cert-iso", "imageAlt": "质量管理体系证书" },
-              { "name": "环境管理体系", "issuer": "衡准认证", "image": "cert-env", "imageAlt": "环境管理体系证书" },
-              { "name": "职业健康安全", "issuer": "衡准认证", "image": "cert-ohs", "imageAlt": "职业健康安全证书" },
-              { "name": "企业技术中心", "issuer": "桐乡经济开发区", "image": "cert-tech", "imageAlt": "企业技术中心牌匾" }
+              {
+                "name": "质量管理体系",
+                "issuer": "衡准认证",
+                "image": "cert-iso",
+                "imageAlt": "质量管理体系证书"
+              },
+              {
+                "name": "环境管理体系",
+                "issuer": "衡准认证",
+                "image": "cert-env",
+                "imageAlt": "环境管理体系证书"
+              },
+              {
+                "name": "职业健康安全",
+                "issuer": "衡准认证",
+                "image": "cert-ohs",
+                "imageAlt": "职业健康安全证书"
+              },
+              {
+                "name": "企业技术中心",
+                "issuer": "桐乡经济开发区",
+                "image": "cert-tech",
+                "imageAlt": "企业技术中心牌匾"
+              }
             ]
           }
         },
@@ -423,7 +715,12 @@
       "description": "2009 年在桐乡屠甸建厂，厂址一直在振业路 26 号。",
       "banner": "banner",
       "bannerAlt": "振业路厂门外的门牌和停车空地",
-      "crumbs": [{ "label": "关于我们", "href": "" }],
+      "crumbs": [
+        {
+          "label": "关于我们",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "timeline",
@@ -434,12 +731,30 @@
             "title": "发展历程",
             "lead": "从一间冲压房做到折弯、机加和组焊都在厂里。",
             "items": [
-              { "name": "2009", "text": "在屠甸租下第一间冲压房，开始做铰链座。" },
-              { "name": "2013", "text": "折弯机进厂，门框件不再外发。" },
-              { "name": "2016", "text": "机加车间建成，轴套改由厂内车削。" },
-              { "name": "2021", "text": "组焊单独隔开，焊完的件进质检室。" },
-              { "name": "2024", "text": "质检室添置影像仪，孔位抽检改用影像。" },
-              { "name": "2026", "text": "160 吨折弯机进厂，100 吨那台停用。" }
+              {
+                "name": "2009",
+                "text": "在屠甸租下第一间冲压房，开始做铰链座。"
+              },
+              {
+                "name": "2013",
+                "text": "折弯机进厂，门框件不再外发。"
+              },
+              {
+                "name": "2016",
+                "text": "机加车间建成，轴套改由厂内车削。"
+              },
+              {
+                "name": "2021",
+                "text": "组焊单独隔开，焊完的件进质检室。"
+              },
+              {
+                "name": "2024",
+                "text": "质检室添置影像仪，孔位抽检改用影像。"
+              },
+              {
+                "name": "2026",
+                "text": "160 吨折弯机进厂，100 吨那台停用。"
+              }
             ]
           }
         },
@@ -452,10 +767,22 @@
             "title": "质量方针",
             "lead": "工艺、首件、材料和交期，车间按这四条做。",
             "items": [
-              { "name": "图纸先过工艺", "text": "工艺没签字，车间不开机。" },
-              { "name": "首件留样对照", "text": "首件挂在看板上，对得上才放行。" },
-              { "name": "牌号写到出货单", "text": "材料和表面写在同一张单上。" },
-              { "name": "周四核对交期", "text": "改期当场说，不攒到出货前一天。" }
+              {
+                "name": "图纸先过工艺",
+                "text": "工艺没签字，车间不开机。"
+              },
+              {
+                "name": "首件留样对照",
+                "text": "首件挂在看板上，对得上才放行。"
+              },
+              {
+                "name": "牌号写到出货单",
+                "text": "材料和表面写在同一张单上。"
+              },
+              {
+                "name": "周四核对交期",
+                "text": "改期当场说，不攒到出货前一天。"
+              }
             ]
           }
         },
@@ -468,9 +795,24 @@
             "title": "厂区环境",
             "lead": "来访从厂门进，再看车间和质检室。",
             "items": [
-              { "name": "振业路厂门", "text": "门牌在南侧，货车从东门进。", "image": "yard-gate", "imageAlt": "振业路厂门和门牌" },
-              { "name": "冲压和折弯车间", "text": "两条线隔一条通道，料架分开。", "image": "yard-bay", "imageAlt": "冲压和折弯车间的通道" },
-              { "name": "质检室", "text": "卡尺、影像仪和首件看板在同一间。", "image": "yard-qc", "imageAlt": "质检室的量具和首件看板" }
+              {
+                "name": "振业路厂门",
+                "text": "门牌在南侧，货车从东门进。",
+                "image": "yard-gate",
+                "imageAlt": "振业路厂门和门牌"
+              },
+              {
+                "name": "冲压和折弯车间",
+                "text": "两条线隔一条通道，料架分开。",
+                "image": "yard-bay",
+                "imageAlt": "冲压和折弯车间的通道"
+              },
+              {
+                "name": "质检室",
+                "text": "卡尺、影像仪和首件看板在同一间。",
+                "image": "yard-qc",
+                "imageAlt": "质检室的量具和首件看板"
+              }
             ]
           }
         },
@@ -483,10 +825,22 @@
             "title": "厂房规模",
             "lead": "厂房面积，以及折弯、冲压设备的台数。",
             "items": [
-              { "value": "1.86 万", "label": "厂房平方米" },
-              { "value": "38 台", "label": "折弯机和冲床" },
-              { "value": "11 人", "label": "质检在编人员" },
-              { "value": "62 天", "label": "新模最长周期" }
+              {
+                "value": "1.86 万",
+                "label": "厂房平方米"
+              },
+              {
+                "value": "38 台",
+                "label": "折弯机和冲床"
+              },
+              {
+                "value": "11 人",
+                "label": "质检在编人员"
+              },
+              {
+                "value": "62 天",
+                "label": "新模最长周期"
+              }
             ]
           }
         },
@@ -499,10 +853,30 @@
             "title": "资质荣誉",
             "lead": "质量、环境和职业健康安全的体系证书。",
             "items": [
-              { "name": "质量管理体系", "issuer": "衡准认证", "image": "cert-iso", "imageAlt": "质量管理体系证书" },
-              { "name": "环境管理体系", "issuer": "衡准认证", "image": "cert-env", "imageAlt": "环境管理体系证书" },
-              { "name": "职业健康安全", "issuer": "衡准认证", "image": "cert-ohs", "imageAlt": "职业健康安全证书" },
-              { "name": "企业技术中心", "issuer": "桐乡经济开发区", "image": "cert-tech", "imageAlt": "企业技术中心牌匾" }
+              {
+                "name": "质量管理体系",
+                "issuer": "衡准认证",
+                "image": "cert-iso",
+                "imageAlt": "质量管理体系证书"
+              },
+              {
+                "name": "环境管理体系",
+                "issuer": "衡准认证",
+                "image": "cert-env",
+                "imageAlt": "环境管理体系证书"
+              },
+              {
+                "name": "职业健康安全",
+                "issuer": "衡准认证",
+                "image": "cert-ohs",
+                "imageAlt": "职业健康安全证书"
+              },
+              {
+                "name": "企业技术中心",
+                "issuer": "桐乡经济开发区",
+                "image": "cert-tech",
+                "imageAlt": "企业技术中心牌匾"
+              }
             ]
           }
         }
@@ -514,7 +888,12 @@
       "description": "折弯件、冲压件、机加件和焊接组件，按型号看参数和产能。",
       "banner": "banner",
       "bannerAlt": "振业路厂门外的门牌和停车空地",
-      "crumbs": [{ "label": "产品中心", "href": "" }],
+      "crumbs": [
+        {
+          "label": "产品中心",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -526,11 +905,31 @@
             "lead": "六种在产零件，写了型号、材质、公差和产能。",
             "collection": "products",
             "facets": [
-              { "name": "全部", "text": "六件都列在右边。", "href": "products/index.html#catalog" },
-              { "name": "折弯件", "text": "门框加强板，按图折。", "href": "products/index.html#bend" },
-              { "name": "冲压件", "text": "柜体侧板和铰链座。", "href": "products/index.html#stamp" },
-              { "name": "机加件", "text": "轴套和安装底板。", "href": "products/index.html#machine" },
-              { "name": "焊接组件", "text": "支架总成，按套出货。", "href": "products/index.html#weld" }
+              {
+                "name": "全部",
+                "text": "六件都列在右边。",
+                "href": "products/index.html#catalog"
+              },
+              {
+                "name": "折弯件",
+                "text": "门框加强板，按图折。",
+                "href": "products/index.html#catalog-c1"
+              },
+              {
+                "name": "冲压件",
+                "text": "柜体侧板和铰链座。",
+                "href": "products/index.html#catalog-c2"
+              },
+              {
+                "name": "机加件",
+                "text": "轴套和安装底板。",
+                "href": "products/index.html#catalog-c3"
+              },
+              {
+                "name": "焊接组件",
+                "text": "支架总成，按套出货。",
+                "href": "products/index.html#catalog-c4"
+              }
             ]
           }
         }
@@ -542,7 +941,12 @@
       "description": "农机、配电柜、货架和厨电四类零件，写清工艺和产能。",
       "banner": "banner",
       "bannerAlt": "振业路厂门外的门牌和停车空地",
-      "crumbs": [{ "label": "应用领域", "href": "" }],
+      "crumbs": [
+        {
+          "label": "应用领域",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -563,7 +967,12 @@
       "description": "设备进厂、接待时间和报价要求，有变动记在这里。",
       "banner": "banner",
       "bannerAlt": "振业路厂门外的门牌和停车空地",
-      "crumbs": [{ "label": "新闻动态", "href": "" }],
+      "crumbs": [
+        {
+          "label": "新闻动态",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -584,7 +993,12 @@
       "description": "询价请打电话，或把图纸发到留言里。工作日回复。",
       "banner": "banner",
       "bannerAlt": "振业路厂门外的门牌和停车空地",
-      "crumbs": [{ "label": "联系我们", "href": "" }],
+      "crumbs": [
+        {
+          "label": "联系我们",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "contact",
@@ -607,10 +1021,22 @@
             "title": "询价说明",
             "lead": "报价前通常先确认下面四件事。",
             "items": [
-              { "q": "报价要提供什么", "a": "图纸用 PDF 或 STEP。写上材料牌号、数量、表面处理，以及要不要开模。" },
-              { "q": "最小起订怎么算", "a": "冲压新模大约 500 件起。老模按库存和排产，折弯可以再少一些。" },
-              { "q": "能不能只做一道工序", "a": "可以。只折弯、只冲孔或只车削都行，请在图纸上把工序圈出来。" },
-              { "q": "外贸询盘用什么格式", "a": "中文或英文邮件都行。附件用 PDF 或 STEP，电话里也可以先对尺寸。" }
+              {
+                "q": "报价要提供什么",
+                "a": "图纸用 PDF 或 STEP。写上材料牌号、数量、表面处理，以及要不要开模。"
+              },
+              {
+                "q": "最小起订怎么算",
+                "a": "冲压新模大约 500 件起。老模按库存和排产，折弯可以再少一些。"
+              },
+              {
+                "q": "能不能只做一道工序",
+                "a": "可以。只折弯、只冲孔或只车削都行，请在图纸上把工序圈出来。"
+              },
+              {
+                "q": "外贸询盘用什么格式",
+                "a": "中文或英文邮件都行。附件用 PDF 或 STEP，电话里也可以先对尺寸。"
+              }
             ]
           }
         }

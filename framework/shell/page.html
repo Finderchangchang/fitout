@@ -14,6 +14,9 @@
   {{#if jsonLd}}
   <script type="application/ld+json">{{@raw jsonLd}}</script>
   {{/if}}
+  {{#if faqJsonLd}}
+  <script type="application/ld+json">{{@raw faqJsonLd}}</script>
+  {{/if}}
 </head>
 <body>
   {{#if demoBadge}}<p class="demo-badge">演示占位图</p>{{/if}}

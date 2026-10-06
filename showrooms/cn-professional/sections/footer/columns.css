@@ -39,10 +39,6 @@
   background: var(--surface);
 }
 
-.qr-slot img.qr-office {
-  background: var(--surface) url("../images/qr-office.jpg") center / cover no-repeat;
-}
-
 .footer-legal {
   border-top-color: var(--primary-contrast);
 }

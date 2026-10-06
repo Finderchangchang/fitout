@@ -15,26 +15,7 @@
   clip-path: inset(50%);
 }
 
-.shelf:has(#cat-all:checked) label[for="cat-all"],
-.shelf:has(#cat-spot:checked) label[for="cat-spot"],
-.shelf:has(#cat-exp:checked) label[for="cat-exp"],
-.shelf:has(#cat-bite:checked) label[for="cat-bite"] {
-  background: var(--primary);
-  color: var(--primary-contrast);
-  border-color: var(--primary);
-}
 
-.shelf:has(#cat-spot:checked) .place-card:not(:has(a[href*="spot-"])) {
-  display: none;
-}
-
-.shelf:has(#cat-exp:checked) .place-card:not(:has(a[href*="exp-"])) {
-  display: none;
-}
-
-.shelf:has(#cat-bite:checked) .place-card:not(:has(a[href*="bite-"])) {
-  display: none;
-}
 
 .place-grid {
   display: grid;

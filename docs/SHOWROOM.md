@@ -11,6 +11,7 @@ showrooms/<id>/
   showroom.json
   tokens.json
   images.json
+  preview.jpg
   sections/<type>/<variant>.html
   sections/<type>/<variant>.css
   sections/<type>/<variant>.spec.json
@@ -38,7 +39,7 @@ showrooms/<id>/
 ## 新增一个行业
 
 1. 在 `industries/registry.json` 的 `industries` 里加一条。`id` 用小写字母、数字和连字符，不能和已有行业或细分重复。
-2. 新建 `industries/<id>/house.json`。照已有户型写 `label`、`buttons`、`shell`、`pages`。建议首页板块序列放在 `id` 为 `home` 的那一页的 `order` 里，必备块标 `"required": true`。版式名用框架里已有的，没有样板间时拼装读的就是这份。
+2. 新建 `industries/<id>/house.json`。照已有户型写 `label`、`buttons`、`shell`、`pages`。建议首页板块序列放在 `id` 为 `home` 的那一页的 `order` 里。首页只把首屏和一个产品或服务板块标 `"required": true`。联系板块标在放了 `contact` 的那一页。其余板块标 `false`，档案里没有事实就可以不写。版式名用框架里已有的，没有样板间时拼装读的就是这份。
 3. 再跑 `node scripts/new-showroom.mjs --id <样板间 id> --industry <id> --flavor cn --niche <niche>` 起骨架。样板间的 `showroom.json` 会盖过户型，页面可以和 `defaultPages` 不一样。
 
 已登记的行业、细分和规则例外以注册表为准，不在这里再抄一份。
@@ -111,17 +112,22 @@ showrooms/<id>/
       "block": "hero",
       "ratio": "16:10",
       "px": "1440x900",
-      "desc": "给以后找图或生图用的画面，不写品牌名"
+      "desc": "给以后找图或生图用的画面，不写品牌名",
+      "tier": "must"
     }
   ]
 }
 ```
 
-比例用这些：首屏和满宽主图 `16:10`（约 1440×900），横条 `2.4:1`（约 1440×600），内容图 `3:2`，竖图 `4:5` 或 `2:3`，头像和产品 `1:1`。整套准备 25 到 40 张不重复的图，其中 8 到 12 张是必须好看的大图。首页至少 12 张，至少 2 张放在带 `data-fullbleed` 的板块里。
+`tier` 二选一。`must`：课上必须有图，每套最多 8 张，缺了机检只警告、不挡拼装。`nice`：没有就走无图，不挡拼装。旧档案不写 `tier` 时，行为跟以前一样。
+
+比例用这些：首屏和满宽主图 `16:10`（约 1440×900），横条 `2.4:1`（约 1440×600），内容图 `3:2`，竖图 `4:5` 或 `2:3`，头像和产品 `1:1`。整套准备 25 到 40 张不重复的图，其中 8 到 12 张是必须好看的大图。首页至少 12 张，至少 2 张放在带 `data-fullbleed` 的板块里。课上只备齐 `must` 时张数可以少于 12，正式模式不因此失败。
 
 档案里的图片字段写图片位 id，或写成 `slot:<id>`。
 
-`node scripts/build.mjs <site.json> --demo-images <目录>` 会按 id 找同名的 jpg、jpeg、png、webp、svg、gif。找到就拷进站点。找不到时，`source` 为 `client` 的位画浅色用途占位，不挂角标，见 `docs/IMAGES.md`。其他位在带了这个参数时画一块带比例和 id 的深色块。只有这一页真的画出了这种块，角落才标「演示占位图」。不带这个参数时，图库图和 AI 图缺了仍走原来的降级：能换无图版式就换，并写进 `build-report.json`。`client` 位没有文件时同样画浅色占位，不报错。
+`node scripts/build.mjs <site.json> --demo-images <目录>` 会按 id 找同名的 jpg、jpeg、png、webp、svg、gif。找到就拷进站点。找不到时，`source` 为 `client` 的位画浅色用途占位，不挂角标，见 `docs/IMAGES.md`。其他位在带了这个参数时画一块带比例和 id 的深色块。只有这一页真的画出了这种块，角落才标「演示占位图」。不带这个参数时，图库图和 AI 图缺了走无图：能换版式就换，纯图片带整块不出，其余板块留文字。降级写进 `build-report.json` 的 `fallbacks`，不因此失败。`client` 位没有文件时同样画浅色占位，不报错。正式配图目录用 `--images`，不要和 `--demo-images` 一起用。
+
+挑样板间用的预览图是 `showrooms/<id>/preview.jpg`（720×450，80KB 以内，首页首屏）。`showrooms/index.json` 的 `showrooms` 数组给助手读，不参与拼装。每项有 `id`、`name`（中文名）、`industry`（行业）、`niche`、`fit`（适合谁，取 `showroom.json` 的 `note` 第一句）、`preview`（相对 `showrooms/` 的路径）、`pages`（`examples/site.json` 导航上的文字）。
 
 ## 版式
 

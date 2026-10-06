@@ -13,21 +13,49 @@
     "email": "hello@chengmu.example",
     "address": "浙江省杭州市余杭区良渚街道港南路18号（虚构地址）",
     "hours": [
-      { "day": "周一至周日", "time": "09:00-18:00" }
+      {
+        "day": "周一至周日",
+        "time": "09:00-18:00"
+      }
     ],
     "formUrl": "https://example.com/chengmu-measure",
     "icp": "浙ICP备20260318号-4"
   },
   "nav": [
-    { "label": "首页", "href": "index.html" },
-    { "label": "关于我们", "href": "about/index.html" },
-    { "label": "装修案例", "href": "projects/index.html" },
-    { "label": "设计团队", "href": "designers/index.html" },
-    { "label": "装修套餐", "href": "packages/index.html" },
-    { "label": "施工工艺", "href": "craft/index.html" },
-    { "label": "免费量房", "href": "contact/index.html" }
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "关于我们",
+      "href": "about/index.html"
+    },
+    {
+      "label": "装修案例",
+      "href": "projects/index.html"
+    },
+    {
+      "label": "设计团队",
+      "href": "designers/index.html"
+    },
+    {
+      "label": "装修套餐",
+      "href": "packages/index.html"
+    },
+    {
+      "label": "施工工艺",
+      "href": "craft/index.html"
+    },
+    {
+      "label": "免费量房",
+      "href": "contact/index.html"
+    }
   ],
-  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
   "collections": {
     "projects": [
       {
@@ -38,12 +66,30 @@
         "image": "case-chunman",
         "imageAlt": "春漫里客厅，浅橡木地板和暖白墙",
         "specs": [
-          { "label": "小区", "value": "良渚春漫里" },
-          { "label": "户型", "value": "三室两厅" },
-          { "label": "面积", "value": "89㎡" },
-          { "label": "风格", "value": "现代" },
-          { "label": "造价", "value": "参考价 18.6 万" },
-          { "label": "工期", "value": "68 天" }
+          {
+            "label": "小区",
+            "value": "良渚春漫里"
+          },
+          {
+            "label": "户型",
+            "value": "三室两厅"
+          },
+          {
+            "label": "面积",
+            "value": "89㎡"
+          },
+          {
+            "label": "风格",
+            "value": "现代"
+          },
+          {
+            "label": "造价",
+            "value": "参考价 18.6 万"
+          },
+          {
+            "label": "工期",
+            "value": "68 天"
+          }
         ]
       },
       {
@@ -54,12 +100,30 @@
         "image": "case-weilai",
         "imageAlt": "未来科技城客餐厅，原木柜和长桌",
         "specs": [
-          { "label": "小区", "value": "未来科技城" },
-          { "label": "户型", "value": "四室两厅" },
-          { "label": "面积", "value": "128㎡" },
-          { "label": "风格", "value": "原木" },
-          { "label": "造价", "value": "参考价 32.4 万" },
-          { "label": "工期", "value": "92 天" }
+          {
+            "label": "小区",
+            "value": "未来科技城"
+          },
+          {
+            "label": "户型",
+            "value": "四室两厅"
+          },
+          {
+            "label": "面积",
+            "value": "128㎡"
+          },
+          {
+            "label": "风格",
+            "value": "原木"
+          },
+          {
+            "label": "造价",
+            "value": "参考价 32.4 万"
+          },
+          {
+            "label": "工期",
+            "value": "92 天"
+          }
         ]
       },
       {
@@ -70,13 +134,34 @@
         "image": "case-dieyuan",
         "imageAlt": "西溪蝶园卧室，奶油色软包和窗帘",
         "specs": [
-          { "label": "小区", "value": "西溪蝶园" },
-          { "label": "范围", "value": "西湖外区，电话确认后接" },
-          { "label": "户型", "value": "两室一厅" },
-          { "label": "面积", "value": "76㎡" },
-          { "label": "风格", "value": "奶油" },
-          { "label": "造价", "value": "参考价 14.2 万" },
-          { "label": "工期", "value": "55 天" }
+          {
+            "label": "小区",
+            "value": "西溪蝶园"
+          },
+          {
+            "label": "范围",
+            "value": "西湖外区，电话确认后接"
+          },
+          {
+            "label": "户型",
+            "value": "两室一厅"
+          },
+          {
+            "label": "面积",
+            "value": "76㎡"
+          },
+          {
+            "label": "风格",
+            "value": "奶油"
+          },
+          {
+            "label": "造价",
+            "value": "参考价 14.2 万"
+          },
+          {
+            "label": "工期",
+            "value": "55 天"
+          }
         ]
       },
       {
@@ -87,12 +172,30 @@
         "image": "case-yunqi",
         "imageAlt": "勾庄云栖客厅，木格栅和新中式沙发",
         "specs": [
-          { "label": "小区", "value": "勾庄云栖" },
-          { "label": "户型", "value": "四室两厅" },
-          { "label": "面积", "value": "142㎡" },
-          { "label": "风格", "value": "新中式" },
-          { "label": "造价", "value": "参考价 41.8 万" },
-          { "label": "工期", "value": "110 天" }
+          {
+            "label": "小区",
+            "value": "勾庄云栖"
+          },
+          {
+            "label": "户型",
+            "value": "四室两厅"
+          },
+          {
+            "label": "面积",
+            "value": "142㎡"
+          },
+          {
+            "label": "风格",
+            "value": "新中式"
+          },
+          {
+            "label": "造价",
+            "value": "参考价 41.8 万"
+          },
+          {
+            "label": "工期",
+            "value": "110 天"
+          }
         ]
       },
       {
@@ -103,12 +206,30 @@
         "image": "case-yaren",
         "imageAlt": "仁和雅苑客厅，白墙和少量木色",
         "specs": [
-          { "label": "小区", "value": "仁和雅苑" },
-          { "label": "户型", "value": "两室一厅" },
-          { "label": "面积", "value": "65㎡" },
-          { "label": "风格", "value": "极简" },
-          { "label": "造价", "value": "参考价 11.5 万" },
-          { "label": "工期", "value": "48 天" }
+          {
+            "label": "小区",
+            "value": "仁和雅苑"
+          },
+          {
+            "label": "户型",
+            "value": "两室一厅"
+          },
+          {
+            "label": "面积",
+            "value": "65㎡"
+          },
+          {
+            "label": "风格",
+            "value": "极简"
+          },
+          {
+            "label": "造价",
+            "value": "参考价 11.5 万"
+          },
+          {
+            "label": "工期",
+            "value": "48 天"
+          }
         ]
       },
       {
@@ -119,12 +240,30 @@
         "image": "case-nanyuan",
         "imageAlt": "闲林南苑客厅，浅灰沙发和木色茶几",
         "specs": [
-          { "label": "小区", "value": "闲林南苑" },
-          { "label": "户型", "value": "三室两厅" },
-          { "label": "面积", "value": "108㎡" },
-          { "label": "风格", "value": "北欧" },
-          { "label": "造价", "value": "参考价 22.7 万" },
-          { "label": "工期", "value": "76 天" }
+          {
+            "label": "小区",
+            "value": "闲林南苑"
+          },
+          {
+            "label": "户型",
+            "value": "三室两厅"
+          },
+          {
+            "label": "面积",
+            "value": "108㎡"
+          },
+          {
+            "label": "风格",
+            "value": "北欧"
+          },
+          {
+            "label": "造价",
+            "value": "参考价 22.7 万"
+          },
+          {
+            "label": "工期",
+            "value": "76 天"
+          }
         ]
       }
     ],
@@ -137,10 +276,22 @@
         "image": "designer-zhou",
         "imageAlt": "周晚宁在展厅对照木皮样块",
         "specs": [
-          { "label": "岗位", "value": "主案设计" },
-          { "label": "年限", "value": "9 年" },
-          { "label": "擅长", "value": "原木和收纳" },
-          { "label": "在跟", "value": "瓶窑金地、仓前梧桐里" }
+          {
+            "label": "岗位",
+            "value": "主案设计"
+          },
+          {
+            "label": "年限",
+            "value": "9 年"
+          },
+          {
+            "label": "擅长",
+            "value": "原木和收纳"
+          },
+          {
+            "label": "在跟",
+            "value": "瓶窑金地、仓前梧桐里"
+          }
         ]
       },
       {
@@ -151,10 +302,22 @@
         "image": "designer-chen",
         "imageAlt": "陈予安在展厅看平面图",
         "specs": [
-          { "label": "岗位", "value": "主案设计" },
-          { "label": "年限", "value": "7 年" },
-          { "label": "擅长", "value": "现代和北欧" },
-          { "label": "在跟", "value": "径山云溪府" }
+          {
+            "label": "岗位",
+            "value": "主案设计"
+          },
+          {
+            "label": "年限",
+            "value": "7 年"
+          },
+          {
+            "label": "擅长",
+            "value": "现代和北欧"
+          },
+          {
+            "label": "在跟",
+            "value": "径山云溪府"
+          }
         ]
       },
       {
@@ -165,10 +328,22 @@
         "image": "designer-lin",
         "imageAlt": "林知夏在展厅比对乳胶漆色卡",
         "specs": [
-          { "label": "岗位", "value": "主案设计" },
-          { "label": "年限", "value": "6 年" },
-          { "label": "擅长", "value": "奶油和浅色" },
-          { "label": "在跟", "value": "手头无在建" }
+          {
+            "label": "岗位",
+            "value": "主案设计"
+          },
+          {
+            "label": "年限",
+            "value": "6 年"
+          },
+          {
+            "label": "擅长",
+            "value": "奶油和浅色"
+          },
+          {
+            "label": "在跟",
+            "value": "手头无在建"
+          }
         ]
       },
       {
@@ -179,10 +354,22 @@
         "image": "designer-wu",
         "imageAlt": "吴砚舟在木作车间看格栅样",
         "specs": [
-          { "label": "岗位", "value": "主案设计" },
-          { "label": "年限", "value": "11 年" },
-          { "label": "擅长", "value": "新中式和极简" },
-          { "label": "在跟", "value": "手头无在建" }
+          {
+            "label": "岗位",
+            "value": "主案设计"
+          },
+          {
+            "label": "年限",
+            "value": "11 年"
+          },
+          {
+            "label": "擅长",
+            "value": "新中式和极简"
+          },
+          {
+            "label": "在跟",
+            "value": "手头无在建"
+          }
         ]
       }
     ],
@@ -195,11 +382,26 @@
         "image": "pkg-half",
         "imageAlt": "半包用的管线、水泥和木方",
         "specs": [
-          { "label": "档位", "value": "半包" },
-          { "label": "计价", "value": "每平方米" },
-          { "label": "参考价", "value": "899 元/㎡" },
-          { "label": "人工", "value": "水电泥瓦木作油漆" },
-          { "label": "主材", "value": "业主自购" }
+          {
+            "label": "档位",
+            "value": "半包"
+          },
+          {
+            "label": "计价",
+            "value": "每平方米"
+          },
+          {
+            "label": "参考价",
+            "value": "899 元/㎡"
+          },
+          {
+            "label": "人工",
+            "value": "水电泥瓦木作油漆"
+          },
+          {
+            "label": "主材",
+            "value": "业主自购"
+          }
         ]
       },
       {
@@ -210,11 +412,26 @@
         "image": "pkg-full",
         "imageAlt": "全包在售的瓷砖、地板和涂料",
         "specs": [
-          { "label": "档位", "value": "全包" },
-          { "label": "计价", "value": "每平方米" },
-          { "label": "参考价", "value": "1680 元/㎡" },
-          { "label": "主材", "value": "瓷砖地板涂料洁具" },
-          { "label": "柜体", "value": "另计" }
+          {
+            "label": "档位",
+            "value": "全包"
+          },
+          {
+            "label": "计价",
+            "value": "每平方米"
+          },
+          {
+            "label": "参考价",
+            "value": "1680 元/㎡"
+          },
+          {
+            "label": "主材",
+            "value": "瓷砖地板涂料洁具"
+          },
+          {
+            "label": "柜体",
+            "value": "另计"
+          }
         ]
       },
       {
@@ -225,11 +442,26 @@
         "image": "pkg-turnkey",
         "imageAlt": "整装套餐里的柜门和基础家电",
         "specs": [
-          { "label": "档位", "value": "整装" },
-          { "label": "计价", "value": "每平方米" },
-          { "label": "参考价", "value": "2390 元/㎡" },
-          { "label": "包含", "value": "柜体、门、基础家电" },
-          { "label": "换品牌", "value": "另算差价" }
+          {
+            "label": "档位",
+            "value": "整装"
+          },
+          {
+            "label": "计价",
+            "value": "每平方米"
+          },
+          {
+            "label": "参考价",
+            "value": "2390 元/㎡"
+          },
+          {
+            "label": "包含",
+            "value": "柜体、门、基础家电"
+          },
+          {
+            "label": "换品牌",
+            "value": "另算差价"
+          }
         ]
       }
     ],
@@ -243,8 +475,14 @@
         "image": "note-compare",
         "imageAlt": "展厅里并排的两块材料样板",
         "specs": [
-          { "label": "栏目", "value": "套餐" },
-          { "label": "适合", "value": "还在比半包和全包" }
+          {
+            "label": "栏目",
+            "value": "套餐"
+          },
+          {
+            "label": "适合",
+            "value": "还在比半包和全包"
+          }
         ]
       },
       {
@@ -256,8 +494,14 @@
         "image": "note-water",
         "imageAlt": "工地水电管线贴着墙面走",
         "specs": [
-          { "label": "栏目", "value": "水电" },
-          { "label": "节点", "value": "打压、绝缘、拍照" }
+          {
+            "label": "栏目",
+            "value": "水电"
+          },
+          {
+            "label": "节点",
+            "value": "打压、绝缘、拍照"
+          }
         ]
       },
       {
@@ -269,8 +513,14 @@
         "image": "note-cabinet",
         "imageAlt": "车间里立着的一块柜门样",
         "specs": [
-          { "label": "栏目", "value": "定制" },
-          { "label": "计价", "value": "按投影面积" }
+          {
+            "label": "栏目",
+            "value": "定制"
+          },
+          {
+            "label": "计价",
+            "value": "按投影面积"
+          }
         ]
       },
       {
@@ -282,8 +532,14 @@
         "image": "note-pay",
         "imageAlt": "桌上的合同和一支笔",
         "specs": [
-          { "label": "栏目", "value": "付款" },
-          { "label": "节点", "value": "签约、水电、竣工" }
+          {
+            "label": "栏目",
+            "value": "付款"
+          },
+          {
+            "label": "节点",
+            "value": "签约、水电、竣工"
+          }
         ]
       }
     ]
@@ -309,10 +565,22 @@
             "secondaryHref": "projects/index.html",
             "interval": "4000",
             "slides": [
-              { "image": "hero-living", "imageAlt": "样板间客厅，浅橡木地板和暖白墙" },
-              { "image": "hero-kitchen", "imageAlt": "样板间厨房，浅色柜门和台面" },
-              { "image": "hero-showroom", "imageAlt": "港南路展厅，套餐样板连成一排" },
-              { "image": "hero-site", "imageAlt": "余杭在建工地，水电管已经定位" }
+              {
+                "image": "hero-living",
+                "imageAlt": "浅橡木地板和暖白墙角"
+              },
+              {
+                "image": "hero-kitchen",
+                "imageAlt": "浅色柜门和台面的接缝"
+              },
+              {
+                "image": "hero-showroom",
+                "imageAlt": "并排木门的暖白墙面"
+              },
+              {
+                "image": "hero-site",
+                "imageAlt": "沿墙定位的水电管局部"
+              }
             ]
           }
         },
@@ -325,10 +593,26 @@
             "title": "先看这四件事",
             "lead": "量房、套餐、验收和主案，从这里进。",
             "items": [
-              { "name": "免费量房", "text": "余杭上门，量完再写价", "href": "contact/index.html" },
-              { "name": "套餐报价", "text": "半包全包整装分开标", "href": "packages/index.html" },
-              { "name": "工地验收", "text": "水电木作油漆有节点", "href": "craft/index.html" },
-              { "name": "主案对接", "text": "四位主案对到交房", "href": "designers/index.html" }
+              {
+                "name": "免费量房",
+                "text": "余杭上门，量完再写价",
+                "href": "contact/index.html"
+              },
+              {
+                "name": "套餐报价",
+                "text": "半包全包整装分开标",
+                "href": "packages/index.html"
+              },
+              {
+                "name": "工地验收",
+                "text": "水电木作油漆有节点",
+                "href": "craft/index.html"
+              },
+              {
+                "name": "主案对接",
+                "text": "四位主案对到交房",
+                "href": "designers/index.html"
+              }
             ]
           }
         },
@@ -341,10 +625,22 @@
             "title": "在册数字",
             "lead": "这些数记到 2026 年 3 月。",
             "items": [
-              { "value": "12 年", "label": "余杭做整装" },
-              { "value": "860 户", "label": "余杭已交付" },
-              { "value": "4 位", "label": "在册主案" },
-              { "value": "68 天", "label": "三居参考工期" }
+              {
+                "value": "12 年",
+                "label": "余杭做整装"
+              },
+              {
+                "value": "860 户",
+                "label": "余杭已交付"
+              },
+              {
+                "value": "4 位",
+                "label": "在册主案"
+              },
+              {
+                "value": "68 天",
+                "label": "三居参考工期"
+              }
             ]
           }
         },
@@ -357,9 +653,30 @@
             "title": "完工案例",
             "lead": "先看三套。六套完工房在案例页。",
             "items": [
-              { "name": "良渚春漫里", "text": "三室两厅，89㎡，现代，工期 68 天。", "result": "参考价 18.6 万", "href": "projects/chunman.html", "image": "case-chunman", "imageAlt": "春漫里客厅，浅橡木地板和暖白墙" },
-              { "name": "勾庄云栖", "text": "四室两厅，142㎡，新中式，工期 110 天。", "result": "参考价 41.8 万", "href": "projects/yunqi.html", "image": "case-yunqi", "imageAlt": "勾庄云栖客厅，木格栅和新中式沙发" },
-              { "name": "仁和雅苑", "text": "两室一厅，65㎡，极简，工期 48 天。", "result": "参考价 11.5 万", "href": "projects/yaren.html", "image": "case-yaren", "imageAlt": "仁和雅苑客厅，白墙和少量木色" }
+              {
+                "name": "良渚春漫里",
+                "text": "三室两厅，89㎡，现代，工期 68 天。",
+                "result": "参考价 18.6 万",
+                "href": "projects/chunman.html",
+                "image": "case-chunman",
+                "imageAlt": "春漫里客厅，浅橡木地板和暖白墙"
+              },
+              {
+                "name": "勾庄云栖",
+                "text": "四室两厅，142㎡，新中式，工期 110 天。",
+                "result": "参考价 41.8 万",
+                "href": "projects/yunqi.html",
+                "image": "case-yunqi",
+                "imageAlt": "勾庄云栖客厅，木格栅和新中式沙发"
+              },
+              {
+                "name": "仁和雅苑",
+                "text": "两室一厅，65㎡，极简，工期 48 天。",
+                "result": "参考价 11.5 万",
+                "href": "projects/yaren.html",
+                "image": "case-yaren",
+                "imageAlt": "仁和雅苑客厅，白墙和少量木色"
+              }
             ]
           }
         },
@@ -383,9 +700,30 @@
             "title": "装修套餐",
             "lead": "三档都标参考价，以实际量房为准。",
             "items": [
-              { "name": "半包", "text": "人工含水电、泥瓦、木作和油漆，主材自购。", "price": "参考价 899 元/㎡", "href": "packages/half.html", "image": "pkg-half", "imageAlt": "半包用的管线、水泥和木方" },
-              { "name": "全包", "text": "常用瓷砖、地板、涂料和洁具含在价里。", "price": "参考价 1680 元/㎡", "href": "packages/full.html", "image": "pkg-full", "imageAlt": "全包在售的瓷砖、地板和涂料" },
-              { "name": "整装", "text": "在全包上加柜体、室内门和基础家电。", "price": "参考价 2390 元/㎡", "href": "packages/turnkey.html", "image": "pkg-turnkey", "imageAlt": "整装套餐里的柜门和基础家电" }
+              {
+                "name": "半包",
+                "text": "人工含水电、泥瓦、木作和油漆，主材自购。",
+                "price": "参考价 899 元/㎡",
+                "href": "packages/half.html",
+                "image": "pkg-half",
+                "imageAlt": "半包用的管线、水泥和木方"
+              },
+              {
+                "name": "全包",
+                "text": "常用瓷砖、地板、涂料和洁具含在价里。",
+                "price": "参考价 1680 元/㎡",
+                "href": "packages/full.html",
+                "image": "pkg-full",
+                "imageAlt": "全包在售的瓷砖、地板和涂料"
+              },
+              {
+                "name": "整装",
+                "text": "在全包上加柜体、室内门和基础家电。",
+                "price": "参考价 2390 元/㎡",
+                "href": "packages/turnkey.html",
+                "image": "pkg-turnkey",
+                "imageAlt": "整装套餐里的柜门和基础家电"
+              }
             ]
           }
         },
@@ -398,10 +736,38 @@
             "title": "设计团队",
             "lead": "四位主案，量房之后对到交房。",
             "items": [
-              { "name": "周晚宁", "role": "主案设计", "text": "原木和收纳，在跟瓶窑金地、仓前梧桐里。", "href": "designers/zhou.html", "image": "designer-zhou", "imageAlt": "周晚宁在展厅对照木皮样块" },
-              { "name": "陈予安", "role": "主案设计", "text": "现代和北欧，在跟径山云溪府。", "href": "designers/chen.html", "image": "designer-chen", "imageAlt": "陈予安在展厅看平面图" },
-              { "name": "林知夏", "role": "主案设计", "text": "奶油和浅色，西溪蝶园（外区）已交房。", "href": "designers/lin.html", "image": "designer-lin", "imageAlt": "林知夏在展厅比对乳胶漆色卡" },
-              { "name": "吴砚舟", "role": "主案设计", "text": "新中式和极简，仁和雅苑已交房。", "href": "designers/wu.html", "image": "designer-wu", "imageAlt": "吴砚舟在木作车间看格栅样" }
+              {
+                "name": "周晚宁",
+                "role": "主案设计",
+                "text": "原木和收纳，在跟瓶窑金地、仓前梧桐里。",
+                "href": "designers/zhou.html",
+                "image": "designer-zhou",
+                "imageAlt": "周晚宁在展厅对照木皮样块"
+              },
+              {
+                "name": "陈予安",
+                "role": "主案设计",
+                "text": "现代和北欧，在跟径山云溪府。",
+                "href": "designers/chen.html",
+                "image": "designer-chen",
+                "imageAlt": "陈予安在展厅看平面图"
+              },
+              {
+                "name": "林知夏",
+                "role": "主案设计",
+                "text": "奶油和浅色，西溪蝶园（外区）已交房。",
+                "href": "designers/lin.html",
+                "image": "designer-lin",
+                "imageAlt": "林知夏在展厅比对乳胶漆色卡"
+              },
+              {
+                "name": "吴砚舟",
+                "role": "主案设计",
+                "text": "新中式和极简，仁和雅苑已交房。",
+                "href": "designers/wu.html",
+                "image": "designer-wu",
+                "imageAlt": "吴砚舟在木作车间看格栅样"
+              }
             ]
           }
         },
@@ -414,12 +780,30 @@
             "title": "施工怎么走",
             "lead": "从量房到验收，每步在工地留记录。",
             "items": [
-              { "name": "上门量房", "text": "余杭范围内上门，出房型图和参考价。" },
-              { "name": "定平面", "text": "主案出平面，柜深和点位一起标。" },
-              { "name": "签套餐", "text": "半包、全包或整装，清单附在合同后。" },
-              { "name": "水电泥瓦", "text": "打压和空鼓当场看，签字再往下做。" },
-              { "name": "木作油漆", "text": "柜门在车间下料，色号按附件。" },
-              { "name": "竣工验收", "text": "保洁之后按房间走一遍，再付尾款。" }
+              {
+                "name": "上门量房",
+                "text": "余杭范围内上门，出房型图和参考价。"
+              },
+              {
+                "name": "定平面",
+                "text": "主案出平面，柜深和点位一起标。"
+              },
+              {
+                "name": "签套餐",
+                "text": "半包、全包或整装，清单附在合同后。"
+              },
+              {
+                "name": "水电泥瓦",
+                "text": "打压和空鼓当场看，签字再往下做。"
+              },
+              {
+                "name": "木作油漆",
+                "text": "柜门在车间下料，色号按附件。"
+              },
+              {
+                "name": "竣工验收",
+                "text": "保洁之后按房间走一遍，再付尾款。"
+              }
             ]
           }
         },
@@ -455,7 +839,12 @@
       "description": "2014 年在良渚港南路开业，展厅和木作车间都在这一处。",
       "banner": "banner",
       "bannerAlt": "港南路展厅的外立面和停车位",
-      "crumbs": [{ "label": "关于我们", "href": "" }],
+      "crumbs": [
+        {
+          "label": "关于我们",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "why",
@@ -466,10 +855,22 @@
             "title": "公司在良渚",
             "lead": "展厅和车间在余杭，外区工地先电话确认。",
             "items": [
-              { "name": "2014 年开业", "text": "展厅一直在港南路 18 号，没有搬过。" },
-              { "name": "只做余杭", "text": "工地当天能到，外区先电话确认。" },
-              { "name": "自有木作", "text": "柜门在自己的车间下料，不外发贴皮。" },
-              { "name": "报价先量房", "text": "套餐价写在页面上，上门再复核。" }
+              {
+                "name": "2014 年开业",
+                "text": "展厅一直在港南路 18 号，没有搬过。"
+              },
+              {
+                "name": "只做余杭",
+                "text": "工地当天能到，外区先电话确认。"
+              },
+              {
+                "name": "自有木作",
+                "text": "柜门在自己的车间下料，不外发贴皮。"
+              },
+              {
+                "name": "报价先量房",
+                "text": "套餐价写在页面上，上门再复核。"
+              }
             ]
           }
         },
@@ -482,9 +883,24 @@
             "title": "资质证照",
             "lead": "装修资质、安全生产许可和营业执照。",
             "items": [
-              { "name": "装修装饰专业承包", "issuer": "浙江住建", "image": "cert-decor", "imageAlt": "装修装饰专业承包证书" },
-              { "name": "安全生产许可证", "issuer": "浙江应急", "image": "cert-safety", "imageAlt": "安全生产许可证" },
-              { "name": "营业执照", "issuer": "余杭市监", "image": "cert-license", "imageAlt": "澄木整装营业执照" }
+              {
+                "name": "装修装饰专业承包",
+                "issuer": "浙江住建",
+                "image": "cert-decor",
+                "imageAlt": "装修装饰专业承包证书"
+              },
+              {
+                "name": "安全生产许可证",
+                "issuer": "浙江应急",
+                "image": "cert-safety",
+                "imageAlt": "安全生产许可证"
+              },
+              {
+                "name": "营业执照",
+                "issuer": "余杭市监",
+                "image": "cert-license",
+                "imageAlt": "澄木整装营业执照"
+              }
             ]
           }
         },
@@ -497,9 +913,30 @@
             "title": "展厅和车间",
             "lead": "来访从展厅进，柜子到后面的车间看。",
             "items": [
-              { "name": "港南路展厅", "text": "一层三套样板，按在售套餐布置。", "result": "良渚街道", "href": "", "image": "hall-floor", "imageAlt": "展厅一层，三套样板间的入口" },
-              { "name": "木作车间", "text": "开料、封边和试装都在这间。", "result": "展厅后面", "href": "", "image": "shop-floor", "imageAlt": "木作车间，板材靠墙立着" },
-              { "name": "样板间过道", "text": "过道墙上贴着材料色号。", "result": "可直接看", "href": "", "image": "hall-aisle", "imageAlt": "样板间过道，墙上是材料色号" }
+              {
+                "name": "港南路展厅",
+                "text": "一层三套样板，按在售套餐布置。",
+                "result": "良渚街道",
+                "href": "",
+                "image": "hall-floor",
+                "imageAlt": "展厅一层，三套样板间的入口"
+              },
+              {
+                "name": "木作车间",
+                "text": "开料、封边和试装都在这间。",
+                "result": "展厅后面",
+                "href": "",
+                "image": "shop-floor",
+                "imageAlt": "木作车间，板材靠墙立着"
+              },
+              {
+                "name": "样板间过道",
+                "text": "过道墙上贴着材料色号。",
+                "result": "可直接看",
+                "href": "",
+                "image": "hall-aisle",
+                "imageAlt": "样板间过道，墙上是材料色号"
+              }
             ]
           }
         }
@@ -511,7 +948,12 @@
       "description": "六套完工房。西溪蝶园在西湖，电话确认后才接。造价工期都写了。",
       "banner": "banner",
       "bannerAlt": "港南路展厅的外立面和停车位",
-      "crumbs": [{ "label": "装修案例", "href": "" }],
+      "crumbs": [
+        {
+          "label": "装修案例",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -532,7 +974,12 @@
       "description": "四位主案，写了年限和手头工地。",
       "banner": "banner",
       "bannerAlt": "港南路展厅的外立面和停车位",
-      "crumbs": [{ "label": "设计团队", "href": "" }],
+      "crumbs": [
+        {
+          "label": "设计团队",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -553,7 +1000,12 @@
       "description": "半包、全包、整装。页面价格是参考价，以实际量房为准。",
       "banner": "banner",
       "bannerAlt": "港南路展厅的外立面和停车位",
-      "crumbs": [{ "label": "装修套餐", "href": "" }],
+      "crumbs": [
+        {
+          "label": "装修套餐",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -574,7 +1026,12 @@
       "description": "六步工序、四个验收节点，和三处在建工地。",
       "banner": "banner-site",
       "bannerAlt": "余杭在建工地的外架和围挡",
-      "crumbs": [{ "label": "施工工艺", "href": "" }],
+      "crumbs": [
+        {
+          "label": "施工工艺",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "why",
@@ -585,12 +1042,30 @@
             "title": "施工工序",
             "lead": "按这个顺序做，不跳步。",
             "items": [
-              { "name": "保护拆改", "text": "成品保护先做，承重墙不动。" },
-              { "name": "水电定位", "text": "点位按图弹线，业主确认再开槽。" },
-              { "name": "泥瓦铺贴", "text": "空鼓和坡度当天查，不合格重贴。" },
-              { "name": "木作安装", "text": "柜门车间做好再进场，缝隙当场看。" },
-              { "name": "油漆收口", "text": "色号按合同附件，自然光下对色。" },
-              { "name": "保洁验收", "text": "保洁后按房间走，尾款这时付。" }
+              {
+                "name": "保护拆改",
+                "text": "成品保护先做，承重墙不动。"
+              },
+              {
+                "name": "水电定位",
+                "text": "点位按图弹线，业主确认再开槽。"
+              },
+              {
+                "name": "泥瓦铺贴",
+                "text": "空鼓和坡度当天查，不合格重贴。"
+              },
+              {
+                "name": "木作安装",
+                "text": "柜门车间做好再进场，缝隙当场看。"
+              },
+              {
+                "name": "油漆收口",
+                "text": "色号按合同附件，自然光下对色。"
+              },
+              {
+                "name": "保洁验收",
+                "text": "保洁后按房间走，尾款这时付。"
+              }
             ]
           }
         },
@@ -603,10 +1078,22 @@
             "title": "验收节点",
             "lead": "四个节点都要业主在场签字。",
             "items": [
-              { "name": "水电验收", "text": "打压、绝缘、拍照，结果写在单上。" },
-              { "name": "泥瓦验收", "text": "空鼓、平整、坡度，当场记下来。" },
-              { "name": "木作验收", "text": "柜门缝、五金、封边，装完再看。" },
-              { "name": "油漆验收", "text": "色差、开裂、阴阳角，自然光下看。" }
+              {
+                "name": "水电验收",
+                "text": "打压、绝缘、拍照，结果写在单上。"
+              },
+              {
+                "name": "泥瓦验收",
+                "text": "空鼓、平整、坡度，当场记下来。"
+              },
+              {
+                "name": "木作验收",
+                "text": "柜门缝、五金、封边，装完再看。"
+              },
+              {
+                "name": "油漆验收",
+                "text": "色差、开裂、阴阳角，自然光下看。"
+              }
             ]
           }
         },
@@ -619,9 +1106,30 @@
             "title": "在建工地",
             "lead": "这三处正在做，可以约着去看。",
             "items": [
-              { "name": "瓶窑金地", "text": "水电已验收，等泥瓦进场。", "result": "瓶窑", "href": "", "image": "site-jindi", "imageAlt": "瓶窑金地工地，水电管已沿墙定位" },
-              { "name": "仓前梧桐里", "text": "泥瓦做完，木作柜体在车间。", "result": "仓前", "href": "", "image": "site-wutong", "imageAlt": "仓前梧桐里工地，客厅地砖已铺完" },
-              { "name": "径山云溪府", "text": "木作进场，油漆还没开始。", "result": "径山", "href": "", "image": "site-yunxi", "imageAlt": "径山云溪府工地，柜体正在安装" }
+              {
+                "name": "瓶窑金地",
+                "text": "水电已验收，等泥瓦进场。",
+                "result": "瓶窑",
+                "href": "",
+                "image": "site-jindi",
+                "imageAlt": "瓶窑金地工地，水电管已沿墙定位"
+              },
+              {
+                "name": "仓前梧桐里",
+                "text": "泥瓦做完，木作柜体在车间。",
+                "result": "仓前",
+                "href": "",
+                "image": "site-wutong",
+                "imageAlt": "仓前梧桐里工地，客厅地砖已铺完"
+              },
+              {
+                "name": "径山云溪府",
+                "text": "木作进场，油漆还没开始。",
+                "result": "径山",
+                "href": "",
+                "image": "site-yunxi",
+                "imageAlt": "径山云溪府工地，柜体正在安装"
+              }
             ]
           }
         }
@@ -633,7 +1141,12 @@
       "description": "半包和全包、水电验收、柜子计价、付款节点。",
       "banner": "banner",
       "bannerAlt": "港南路展厅的外立面和停车位",
-      "crumbs": [{ "label": "装修知识", "href": "" }],
+      "crumbs": [
+        {
+          "label": "装修知识",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "collection-list",
@@ -654,7 +1167,12 @@
       "description": "余杭范围内量房不收费。报价写参考价，以实际量房为准。",
       "banner": "banner",
       "bannerAlt": "港南路展厅的外立面和停车位",
-      "crumbs": [{ "label": "免费量房", "href": "" }],
+      "crumbs": [
+        {
+          "label": "免费量房",
+          "href": ""
+        }
+      ],
       "sections": [
         {
           "type": "contact",
@@ -677,10 +1195,22 @@
             "title": "量房之前",
             "lead": "上门前通常先确认这四件事。",
             "items": [
-              { "q": "量房收不收费", "a": "余杭范围内不收费。外区先打电话，确认能不能排期。" },
-              { "q": "报价怎么算", "a": "页面价格是参考价，以实际量房为准。半包不含主材。" },
-              { "q": "工期一般多久", "a": "89㎡三居参考 68 天。旧房拆改会再加几天，量房时写进计划。" },
-              { "q": "能不能只做柜子", "a": "可以。全屋定制按投影面积另算，仍建议先量房再定柜深。" }
+              {
+                "q": "量房收不收费",
+                "a": "余杭范围内不收费。外区先打电话，确认能不能排期。"
+              },
+              {
+                "q": "报价怎么算",
+                "a": "页面价格是参考价，以实际量房为准。半包不含主材。"
+              },
+              {
+                "q": "工期一般多久",
+                "a": "89㎡三居参考 68 天。旧房拆改会再加几天，量房时写进计划。"
+              },
+              {
+                "q": "能不能只做柜子",
+                "a": "可以。全屋定制按投影面积另算，仍建议先量房再定柜深。"
+              }
             ]
           }
         }

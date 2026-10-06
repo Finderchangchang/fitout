@@ -1,22 +1,52 @@
 {
   "note": "到店能做的几件事。每条一张图、一个名字、一句事实。婚庆可换成策划流程，儿童馆可换成服装和主题。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 3,
       "max": 4,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 12 },
-        "text": { "type": "string", "required": true, "maxChars": 40 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
   "variants": {
-    "tiles": { "needsImage": true, "imageField": "items.image", "family": "tiles", "fit": "四张实拍，说明在图下" }
+    "tiles": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "family": "tiles",
+      "fit": "四张实拍，说明在图下",
+      "fallback": "omit"
+    }
   }
 }

@@ -14,10 +14,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["brick courtyard", "gate", "stone steps", "daylight", "hangzhou"],
-      "prompt": "杭州旧式青砖院门廊，白天，石阶和木门，没有招牌文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "brick",
+        "step",
+        "detail"
+      ],
+      "prompt": "旧式青砖墙和一级石阶，白天侧光，低饱和暖中性，不要整座院门，不要招牌文字。",
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must",
+      "desc": "首屏，青砖和石阶局部。"
     },
     {
       "id": "hero-room",
@@ -26,10 +33,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["meeting room", "long table", "empty chairs", "daylight", "office"],
-      "prompt": "会客室里空着的长桌和木椅，白天侧光，没有人，没有屏幕文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "table",
+        "chair",
+        "daylight"
+      ],
+      "prompt": "会客室里空着的长桌一角和一把木椅，白天侧光，阴影偏墨，没有人，没有屏幕文字。",
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must",
+      "desc": "首屏，空桌和木椅。"
     },
     {
       "id": "hero-shelf",
@@ -38,10 +52,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["archive shelves", "file boxes", "corridor", "indoor", "wood"],
-      "prompt": "档案室木架上的卷宗盒，过道纵深，暖中性阴影，盒脊上不要可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "archive",
+        "box",
+        "spine"
+      ],
+      "prompt": "木架上的卷宗盒脊，暖中性阴影，盒脊上不要可读文字，不要档案室全景。",
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must",
+      "desc": "首屏，卷宗盒的盒脊。"
     },
     {
       "id": "hero-desk",
@@ -50,10 +71,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["desk", "contract", "pen", "reading lamp", "papers"],
-      "prompt": "阅卷桌上的合同和钢笔，台灯，纸面不要出现可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "book",
+        "pen",
+        "gavel"
+      ],
+      "prompt": "阅卷桌上摊开的书页、一支钢笔和一把法槌，台灯，纸面不要出现可读文字，不要律所大门。",
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must",
+      "desc": "首屏，书页、钢笔和法槌。"
     },
     {
       "id": "svc-company",
@@ -62,10 +90,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["meeting table", "folders", "notebook", "daylight", "office"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "meeting table",
+        "folders",
+        "notebook",
+        "daylight",
+        "office"
+      ],
       "prompt": "会议桌上摊开的文件夹和笔记本，没有可读文字，没有人。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "svc-dispute",
@@ -74,10 +110,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["document stacks", "binder", "desk", "window", "office"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "document stacks",
+        "binder",
+        "desk",
+        "window",
+        "office"
+      ],
       "prompt": "窗边一叠装订好的证据材料，暖中性，封面不要可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "svc-labor",
@@ -86,10 +130,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["timesheet", "factory office", "clipboard", "desk", "daylight"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "timesheet",
+        "factory office",
+        "clipboard",
+        "desk",
+        "daylight"
+      ],
       "prompt": "厂办桌上的考勤夹板和计算器，纸面不要可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "svc-property",
@@ -98,10 +150,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["household papers", "desk", "folders", "daylight", "office"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "household papers",
+        "desk",
+        "folders",
+        "daylight",
+        "office"
+      ],
       "prompt": "会客室桌上的户口材料和房产证复印件，纸面不要可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "svc-books",
@@ -110,10 +170,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["ledger", "receipts", "calculator", "desk", "folders"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "ledger",
+        "receipts",
+        "calculator",
+        "desk",
+        "folders"
+      ],
       "prompt": "账册台上的凭证盒和计算器，纸面不要可读数字以外的招牌。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "svc-tax",
@@ -122,10 +190,18 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["tax papers", "envelope", "desk", "stamp", "office"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "tax papers",
+        "envelope",
+        "desk",
+        "stamp",
+        "office"
+      ],
       "prompt": "桌上的信封和申报材料，没有可读文字，没有公章特写。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "about-portrait",
@@ -134,10 +210,18 @@
       "ratio": "4:5",
       "px": "800x1000",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["wooden chair", "window", "meeting room", "daylight", "interior"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "wooden chair",
+        "window",
+        "meeting room",
+        "daylight",
+        "interior"
+      ],
       "prompt": "会客室窗边一把空木椅，侧光，没有人，没有文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must"
     },
     {
       "id": "team-shen",
@@ -147,9 +231,17 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["lawyer", "archive room", "files", "side light", "portrait"],
+      "fallback": "omit",
+      "keywords": [
+        "lawyer",
+        "archive room",
+        "files",
+        "side light",
+        "portrait"
+      ],
       "prompt": "一位中年律师站在档案架前翻卷宗，环境人像，不是抠图，不看镜头。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "team-zhou",
@@ -159,9 +251,17 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["lawyer", "meeting room", "notebook", "portrait", "daylight"],
+      "fallback": "omit",
+      "keywords": [
+        "lawyer",
+        "meeting room",
+        "notebook",
+        "portrait",
+        "daylight"
+      ],
       "prompt": "一位律师坐在会客室长桌边写字，环境人像，不是抠图，不看镜头。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "team-gu",
@@ -171,9 +271,17 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["lawyer", "factory office", "clipboard", "portrait", "daylight"],
+      "fallback": "omit",
+      "keywords": [
+        "lawyer",
+        "factory office",
+        "clipboard",
+        "portrait",
+        "daylight"
+      ],
       "prompt": "一位律师在厂办看夹板，环境人像，不是抠图，不看镜头。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "team-ye",
@@ -183,9 +291,17 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["lawyer", "meeting room", "documents", "portrait", "daylight"],
+      "fallback": "omit",
+      "keywords": [
+        "lawyer",
+        "meeting room",
+        "documents",
+        "portrait",
+        "daylight"
+      ],
       "prompt": "一位律师在会客室看家事材料，环境人像，不是抠图，不看镜头。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "team-liang",
@@ -195,9 +311,17 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["accountant", "ledger desk", "receipts", "portrait", "office"],
+      "fallback": "omit",
+      "keywords": [
+        "accountant",
+        "ledger desk",
+        "receipts",
+        "portrait",
+        "office"
+      ],
       "prompt": "一位税务顾问坐在账册台前整理凭证，环境人像，不是抠图，不看镜头。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "team-chen",
@@ -207,9 +331,17 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["lawyer", "reading desk", "papers", "portrait", "lamp"],
+      "fallback": "omit",
+      "keywords": [
+        "lawyer",
+        "reading desk",
+        "papers",
+        "portrait",
+        "lamp"
+      ],
       "prompt": "一位年轻律师在阅卷桌前看材料，环境人像，不是抠图，不看镜头。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "case-equity",
@@ -219,9 +351,17 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["restaurant back room", "table", "folders", "daylight", "meeting"],
+      "fallback": "omit",
+      "keywords": [
+        "restaurant back room",
+        "table",
+        "folders",
+        "daylight",
+        "meeting"
+      ],
       "prompt": "餐饮店后间的桌上放着文件夹，没有招牌，没有可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "case-labor",
@@ -231,9 +371,17 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["factory office", "attendance sheets", "desk", "daylight", "files"],
+      "fallback": "omit",
+      "keywords": [
+        "factory office",
+        "attendance sheets",
+        "desk",
+        "daylight",
+        "files"
+      ],
       "prompt": "建材厂办公室桌上的考勤表，纸面不要可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "case-lease",
@@ -243,9 +391,17 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["office ceiling", "water stain", "corridor", "daylight", "building"],
+      "fallback": "omit",
+      "keywords": [
+        "office ceiling",
+        "water stain",
+        "corridor",
+        "daylight",
+        "building"
+      ],
       "prompt": "写字楼走廊天花板有一块水渍，白天，没有文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "case-audit",
@@ -255,9 +411,17 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["envelopes", "invoices", "desk", "office", "papers"],
+      "fallback": "omit",
+      "keywords": [
+        "envelopes",
+        "invoices",
+        "desk",
+        "office",
+        "papers"
+      ],
       "prompt": "贸易公司桌上的信封和发票盒，不要可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "band-yard",
@@ -267,9 +431,17 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["courtyard", "brick wall", "steps", "daylight", "entrance"],
+      "fallback": "omit",
+      "keywords": [
+        "courtyard",
+        "brick wall",
+        "steps",
+        "daylight",
+        "entrance"
+      ],
       "prompt": "青砖院门口的石阶横图，白天，没有招牌文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must"
     },
     {
       "id": "news-filing",
@@ -279,9 +451,16 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": false,
-      "keywords": ["annual report", "folder", "desk", "calendar", "office"],
+      "keywords": [
+        "annual report",
+        "folder",
+        "desk",
+        "calendar",
+        "office"
+      ],
       "prompt": "桌上的年报文件夹和台历，纸面不要可读文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "news-charter",
@@ -291,9 +470,16 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": false,
-      "keywords": ["bylaws", "bound booklet", "desk", "pen", "office"],
+      "keywords": [
+        "bylaws",
+        "bound booklet",
+        "desk",
+        "pen",
+        "office"
+      ],
       "prompt": "一本合上的章程小册子和钢笔，封面不要文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "news-severance",
@@ -303,9 +489,16 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": false,
-      "keywords": ["envelope", "notice", "desk", "stamp pad", "office"],
+      "keywords": [
+        "envelope",
+        "notice",
+        "desk",
+        "stamp pad",
+        "office"
+      ],
       "prompt": "一只未拆的信封和印泥，没有可读地址。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "news-deposit",
@@ -315,9 +508,16 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": false,
-      "keywords": ["keys", "contract", "desk", "handover", "office"],
+      "keywords": [
+        "keys",
+        "contract",
+        "desk",
+        "handover",
+        "office"
+      ],
       "prompt": "一串钥匙压在合上的合同上，纸面不要文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "banner-yard",
@@ -327,9 +527,17 @@
       "px": "1440x900",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["courtyard porch", "brick", "daylight", "entrance", "steps"],
+      "fallback": "omit",
+      "keywords": [
+        "courtyard porch",
+        "brick",
+        "daylight",
+        "entrance",
+        "steps"
+      ],
       "prompt": "青砖院门廊横图，白天，没有页名，没有招牌。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must"
     },
     {
       "id": "banner-archive",
@@ -338,10 +546,18 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["archive room", "shelves", "boxes", "corridor", "indoor"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "archive room",
+        "shelves",
+        "boxes",
+        "corridor",
+        "indoor"
+      ],
       "prompt": "档案室木架的横图，暖中性，没有页名，盒脊不要文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "must"
     },
     {
       "id": "banner-desk",
@@ -351,9 +567,17 @@
       "px": "1440x900",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["reading desk", "lamp", "papers", "office", "indoor"],
+      "fallback": "omit",
+      "keywords": [
+        "reading desk",
+        "lamp",
+        "papers",
+        "office",
+        "indoor"
+      ],
       "prompt": "阅卷桌和台灯的横图，没有页名，纸面不要文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "qr-wechat",
@@ -363,9 +587,17 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
-      "keywords": ["qr code", "print", "paper", "square", "desk"],
+      "fallback": "omit",
+      "keywords": [
+        "qr code",
+        "print",
+        "paper",
+        "square",
+        "desk"
+      ],
       "prompt": "白纸上印着一个方形二维码，四周留白，没有其他文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     },
     {
       "id": "qr-office",
@@ -375,9 +607,17 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
-      "keywords": ["qr code", "card", "paper", "square", "print"],
+      "fallback": "omit",
+      "keywords": [
+        "qr code",
+        "card",
+        "paper",
+        "square",
+        "print"
+      ],
       "prompt": "另一张白卡上的方形二维码，四周留白，没有其他文字。",
-      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。"
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "tier": "nice"
     }
   ]
 }

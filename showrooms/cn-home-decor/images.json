@@ -14,11 +14,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["living", "room", "oak", "apartment", "daylight"],
-      "prompt": "中国住宅客厅，东亚家庭的现代装修，浅橡木地板，暖白墙，日光，不要深茶色，不要文字。",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "oak",
+        "floor",
+        "corner"
+      ],
+      "prompt": "浅橡木地板接到暖白墙的墙角，日光，阴影偏暖，不要整间客厅，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "首屏第一张，样板间客厅。"
+      "desc": "首屏，橡木地板和墙角。",
+      "tier": "must"
     },
     {
       "id": "hero-kitchen",
@@ -27,11 +33,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["kitchen", "cabinet", "oak", "chinese", "home"],
-      "prompt": "中国住宅厨房，浅色柜门和台面，暖日光，东亚家庭使用的尺度，不要文字。",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cabinet",
+        "counter",
+        "seam"
+      ],
+      "prompt": "浅色柜门和台面的接缝，暖日光，不要整间厨房，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "首屏第二张，样板间厨房。"
+      "desc": "首屏，柜门和台面接缝。",
+      "tier": "must"
     },
     {
       "id": "hero-showroom",
@@ -40,11 +52,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["showroom", "interior", "samples", "wood", "daylight"],
-      "prompt": "家装展厅里几套样板连成一排，浅橡木和暖白，日光从侧面进来，不要文字。",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "door",
+        "oak",
+        "wall"
+      ],
+      "prompt": "几扇浅橡木门并排，暖白墙，侧面日光，不要展厅全景，不要可读招牌，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "首屏第三张，港南路展厅。"
+      "desc": "首屏，并排的木门。",
+      "tier": "must"
     },
     {
       "id": "hero-site",
@@ -53,11 +71,17 @@
       "ratio": "16:10",
       "px": "1440x900",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["construction", "apartment", "plumbing", "site", "china"],
-      "prompt": "中国住宅在建工地，水电管已经沿墙定位，日光，地面是水泥，不要文字。",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "conduit",
+        "wall",
+        "site"
+      ],
+      "prompt": "水泥墙面上已经定位的水电管局部，日光，不要工地全景，围挡上不要可读文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "首屏第四张，在建工地。"
+      "desc": "首屏，沿墙的水电管。",
+      "tier": "must"
     },
     {
       "id": "band-hall",
@@ -67,10 +91,18 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["showroom", "corridor", "samples", "wood", "wide"],
+      "fallback": "omit",
+      "keywords": [
+        "showroom",
+        "corridor",
+        "samples",
+        "wood",
+        "wide"
+      ],
       "prompt": "展厅一层宽幅连廊，样板间门口连成一排，浅橡木和暖白，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "首页满宽图，展厅连廊。"
+      "desc": "首页满宽图，展厅连廊。",
+      "tier": "must"
     },
     {
       "id": "case-chunman",
@@ -80,10 +112,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["living", "room", "oak", "floor", "modern"],
+      "fallback": "omit",
+      "keywords": [
+        "living",
+        "room",
+        "oak",
+        "floor",
+        "modern"
+      ],
       "prompt": "中国三居客厅完工照，浅橡木地板，暖白墙，现代，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "春漫里客厅完工照。"
+      "desc": "春漫里客厅完工照。",
+      "tier": "nice"
     },
     {
       "id": "case-weilai",
@@ -93,10 +133,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["dining", "oak", "cabinet", "apartment", "wood"],
+      "fallback": "omit",
+      "keywords": [
+        "dining",
+        "oak",
+        "cabinet",
+        "apartment",
+        "wood"
+      ],
       "prompt": "中国住宅客餐厅，原木柜和长桌，暖日光，不要深茶色，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "未来科技城客餐厅。"
+      "desc": "未来科技城客餐厅。",
+      "tier": "nice"
     },
     {
       "id": "case-dieyuan",
@@ -106,10 +154,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["bedroom", "cream", "curtain", "soft", "apartment"],
+      "fallback": "omit",
+      "keywords": [
+        "bedroom",
+        "cream",
+        "curtain",
+        "soft",
+        "apartment"
+      ],
       "prompt": "中国住宅卧室，奶油色软包和浅色窗帘，暖日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "西溪蝶园卧室。"
+      "desc": "西溪蝶园卧室。",
+      "tier": "nice"
     },
     {
       "id": "case-yunqi",
@@ -119,10 +175,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["living", "wood", "screen", "chinese", "sofa"],
+      "fallback": "omit",
+      "keywords": [
+        "living",
+        "wood",
+        "screen",
+        "chinese",
+        "sofa"
+      ],
       "prompt": "中国住宅客厅，木格栅和新中式沙发，暖日光，不要深茶整墙，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "勾庄云栖客厅。"
+      "desc": "勾庄云栖客厅。",
+      "tier": "nice"
     },
     {
       "id": "case-yaren",
@@ -132,10 +196,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["minimal", "living", "white", "wood", "apartment"],
+      "fallback": "omit",
+      "keywords": [
+        "minimal",
+        "living",
+        "white",
+        "wood",
+        "apartment"
+      ],
       "prompt": "中国小户型客厅，白墙，少量浅木色，极简，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "仁和雅苑客厅。"
+      "desc": "仁和雅苑客厅。",
+      "tier": "nice"
     },
     {
       "id": "case-nanyuan",
@@ -145,10 +217,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["sofa", "grey", "wood", "coffee", "table"],
+      "fallback": "omit",
+      "keywords": [
+        "sofa",
+        "grey",
+        "wood",
+        "coffee",
+        "table"
+      ],
       "prompt": "中国住宅客厅，浅灰布艺沙发和木色茶几，北欧，暖日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "闲林南苑客厅。"
+      "desc": "闲林南苑客厅。",
+      "tier": "nice"
     },
     {
       "id": "site-jindi",
@@ -158,10 +238,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["plumbing", "wall", "apartment", "site", "pipes"],
+      "fallback": "omit",
+      "keywords": [
+        "plumbing",
+        "wall",
+        "apartment",
+        "site",
+        "pipes"
+      ],
       "prompt": "中国住宅工地，墙面水电管已定位，还没贴砖，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "瓶窑金地在建，水电阶段。"
+      "desc": "瓶窑金地在建，水电阶段。",
+      "tier": "nice"
     },
     {
       "id": "site-wutong",
@@ -171,10 +259,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["tile", "floor", "apartment", "site", "living"],
+      "fallback": "omit",
+      "keywords": [
+        "tile",
+        "floor",
+        "apartment",
+        "site",
+        "living"
+      ],
       "prompt": "中国住宅工地，客厅地砖已铺完，墙面还待油漆，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "仓前梧桐里在建，泥瓦阶段。"
+      "desc": "仓前梧桐里在建，泥瓦阶段。",
+      "tier": "nice"
     },
     {
       "id": "site-yunxi",
@@ -184,10 +280,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["cabinet", "install", "apartment", "site", "wood"],
+      "fallback": "omit",
+      "keywords": [
+        "cabinet",
+        "install",
+        "apartment",
+        "site",
+        "wood"
+      ],
       "prompt": "中国住宅工地，柜体正在安装，板材是浅橡木色，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "径山云溪府在建，木作阶段。"
+      "desc": "径山云溪府在建，木作阶段。",
+      "tier": "nice"
     },
     {
       "id": "designer-zhou",
@@ -197,10 +301,18 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["designer", "woman", "showroom", "wood", "sample"],
+      "fallback": "omit",
+      "keywords": [
+        "designer",
+        "woman",
+        "showroom",
+        "wood",
+        "sample"
+      ],
       "prompt": "东亚女性室内设计师在展厅对照木皮样块，自然光，半身，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "主案周晚宁在展厅看木皮。"
+      "desc": "主案周晚宁在展厅看木皮。",
+      "tier": "nice"
     },
     {
       "id": "designer-chen",
@@ -210,10 +322,18 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["designer", "man", "blueprint", "showroom", "portrait"],
+      "fallback": "omit",
+      "keywords": [
+        "designer",
+        "man",
+        "blueprint",
+        "showroom",
+        "portrait"
+      ],
       "prompt": "东亚男性室内设计师在展厅看平面图，自然光，半身，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "主案陈予安在看平面。"
+      "desc": "主案陈予安在看平面。",
+      "tier": "nice"
     },
     {
       "id": "designer-lin",
@@ -223,10 +343,18 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["designer", "woman", "paint", "swatch", "showroom"],
+      "fallback": "omit",
+      "keywords": [
+        "designer",
+        "woman",
+        "paint",
+        "swatch",
+        "showroom"
+      ],
       "prompt": "东亚女性室内设计师在展厅比对乳胶漆色卡，自然光，半身，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "主案林知夏在看色卡。"
+      "desc": "主案林知夏在看色卡。",
+      "tier": "nice"
     },
     {
       "id": "designer-wu",
@@ -236,10 +364,18 @@
       "px": "800x1000",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["designer", "man", "workshop", "wood", "screen"],
+      "fallback": "omit",
+      "keywords": [
+        "designer",
+        "man",
+        "workshop",
+        "wood",
+        "screen"
+      ],
       "prompt": "东亚男性室内设计师在木作车间看格栅样，自然光，半身，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "主案吴砚舟在车间看格栅。"
+      "desc": "主案吴砚舟在车间看格栅。",
+      "tier": "nice"
     },
     {
       "id": "pkg-half",
@@ -249,10 +385,17 @@
       "px": "1200x800",
       "source": "ai",
       "mustBeReal": false,
-      "keywords": ["pipe", "cement", "timber", "flatlay", "material"],
+      "keywords": [
+        "pipe",
+        "cement",
+        "timber",
+        "flatlay",
+        "material"
+      ],
       "prompt": "电商主图式棚拍：浅色干净背景、柔光、正面居中、主体清晰、少量配料或道具点缀。一组水电管、水泥和浅色木方平放，暖日光，不要文字，不要商标。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "半包材料平铺。"
+      "desc": "半包材料平铺。",
+      "tier": "nice"
     },
     {
       "id": "pkg-full",
@@ -262,10 +405,17 @@
       "px": "1200x800",
       "source": "ai",
       "mustBeReal": false,
-      "keywords": ["tile", "flooring", "paint", "flatlay", "sample"],
+      "keywords": [
+        "tile",
+        "flooring",
+        "paint",
+        "flatlay",
+        "sample"
+      ],
       "prompt": "电商主图式棚拍：浅色干净背景、柔光、正面居中、主体清晰、少量配料或道具点缀。瓷砖、木地板样块和一桶浅色涂料平放，暖日光，不要文字，不要商标。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "全包主材平铺。"
+      "desc": "全包主材平铺。",
+      "tier": "nice"
     },
     {
       "id": "pkg-turnkey",
@@ -275,10 +425,17 @@
       "px": "1200x800",
       "source": "ai",
       "mustBeReal": false,
-      "keywords": ["cabinet", "door", "appliance", "flatlay", "sample"],
+      "keywords": [
+        "cabinet",
+        "door",
+        "appliance",
+        "flatlay",
+        "sample"
+      ],
       "prompt": "电商主图式棚拍：浅色干净背景、柔光、正面居中、主体清晰、少量配料或道具点缀。一块浅橡木柜门和一台小家电平放，暖日光，不要文字，不要商标。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "整装柜门和家电平铺。"
+      "desc": "整装柜门和家电平铺。",
+      "tier": "nice"
     },
     {
       "id": "note-compare",
@@ -287,11 +444,19 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["material", "samples", "board", "showroom", "wood"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "material",
+        "samples",
+        "board",
+        "showroom",
+        "wood"
+      ],
       "prompt": "展厅桌上并排两块装修材料样板，浅橡木和瓷砖，暖日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "半包和全包的材料对照。"
+      "desc": "半包和全包的材料对照。",
+      "tier": "nice"
     },
     {
       "id": "note-water",
@@ -300,11 +465,19 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["plumbing", "electrical", "wall", "site", "pipes"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "plumbing",
+        "electrical",
+        "wall",
+        "site",
+        "pipes"
+      ],
       "prompt": "住宅工地墙面，水电管线已经固定，还没封槽，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "水电验收前的墙面。"
+      "desc": "水电验收前的墙面。",
+      "tier": "nice"
     },
     {
       "id": "note-cabinet",
@@ -313,11 +486,19 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["cabinet", "door", "workshop", "oak", "sample"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cabinet",
+        "door",
+        "workshop",
+        "oak",
+        "sample"
+      ],
       "prompt": "木作车间里立着一块浅橡木柜门样，背景是板材，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "柜门样在车间。"
+      "desc": "柜门样在车间。",
+      "tier": "nice"
     },
     {
       "id": "note-pay",
@@ -326,11 +507,19 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["contract", "pen", "desk", "paper", "office"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "contract",
+        "pen",
+        "desk",
+        "paper",
+        "office"
+      ],
       "prompt": "木色桌上一份装订好的合同和一支笔，暖日光，纸上不要可读文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "合同和笔，用来讲付款。"
+      "desc": "合同和笔，用来讲付款。",
+      "tier": "nice"
     },
     {
       "id": "hall-floor",
@@ -340,10 +529,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["showroom", "entrance", "samples", "interior", "wood"],
+      "fallback": "omit",
+      "keywords": [
+        "showroom",
+        "entrance",
+        "samples",
+        "interior",
+        "wood"
+      ],
       "prompt": "家装展厅一层入口，三套样板间的门洞，浅橡木和暖白，日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "展厅一层入口。"
+      "desc": "展厅一层入口。",
+      "tier": "nice"
     },
     {
       "id": "shop-floor",
@@ -353,10 +550,18 @@
       "px": "1200x800",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["workshop", "panels", "wood", "cabinet", "factory"],
+      "fallback": "omit",
+      "keywords": [
+        "workshop",
+        "panels",
+        "wood",
+        "cabinet",
+        "factory"
+      ],
       "prompt": "小型木作车间，板材靠墙立着，开料台在中间，暖日光，不要文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "展厅后面的木作车间。"
+      "desc": "展厅后面的木作车间。",
+      "tier": "nice"
     },
     {
       "id": "hall-aisle",
@@ -365,11 +570,19 @@
       "ratio": "3:2",
       "px": "1200x800",
       "source": "stock",
-      "mustBeReal": true,
-      "keywords": ["corridor", "samples", "wall", "showroom", "wood"],
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "corridor",
+        "samples",
+        "wall",
+        "showroom",
+        "wood"
+      ],
       "prompt": "样板间过道，墙上贴着材料色板，浅橡木门套，暖日光，色板上不要可读文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "样板间过道和材料色板。"
+      "desc": "样板间过道和材料色板。",
+      "tier": "nice"
     },
     {
       "id": "banner",
@@ -379,10 +592,18 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["storefront", "showroom", "facade", "daylight", "street"],
+      "fallback": "omit",
+      "keywords": [
+        "storefront",
+        "showroom",
+        "facade",
+        "daylight",
+        "street"
+      ],
       "prompt": "临街家装展厅外立面，暖白墙和浅木门头，门口有停车位，日光，门头不要可读文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "内页横幅，展厅外立面。"
+      "desc": "内页横幅，展厅外立面。",
+      "tier": "must"
     },
     {
       "id": "banner-site",
@@ -392,10 +613,18 @@
       "px": "1440x600",
       "source": "stock",
       "mustBeReal": true,
-      "keywords": ["scaffold", "apartment", "site", "fence", "daylight"],
+      "fallback": "omit",
+      "keywords": [
+        "scaffold",
+        "apartment",
+        "site",
+        "fence",
+        "daylight"
+      ],
       "prompt": "住宅楼在建外立面，脚手架和围挡，日光，围挡上不要可读文字。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "施工工艺页横幅，在建外架。"
+      "desc": "施工工艺页横幅，在建外架。",
+      "tier": "must"
     },
     {
       "id": "cert-decor",
@@ -405,10 +634,16 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
-      "keywords": ["license", "certificate", "construction"],
+      "fallback": "omit",
+      "keywords": [
+        "license",
+        "certificate",
+        "construction"
+      ],
       "prompt": "装修装饰专业承包证书原件，正面平放，不要自行生成印章。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "装修装饰专业承包证书。上线前换成扫描件。"
+      "desc": "装修装饰专业承包证书。上线前换成扫描件。",
+      "tier": "nice"
     },
     {
       "id": "cert-safety",
@@ -418,10 +653,16 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
-      "keywords": ["safety", "permit", "certificate"],
+      "fallback": "omit",
+      "keywords": [
+        "safety",
+        "permit",
+        "certificate"
+      ],
       "prompt": "安全生产许可证原件，正面平放，不要自行生成印章。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "安全生产许可证。上线前换成扫描件。"
+      "desc": "安全生产许可证。上线前换成扫描件。",
+      "tier": "nice"
     },
     {
       "id": "cert-license",
@@ -431,10 +672,16 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
-      "keywords": ["business", "license", "certificate"],
+      "fallback": "omit",
+      "keywords": [
+        "business",
+        "license",
+        "certificate"
+      ],
       "prompt": "营业执照原件，正面平放，不要自行生成印章。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "营业执照。上线前换成扫描件。"
+      "desc": "营业执照。上线前换成扫描件。",
+      "tier": "nice"
     },
     {
       "id": "qr-wechat",
@@ -444,10 +691,16 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
-      "keywords": ["qr", "wechat", "official"],
+      "fallback": "omit",
+      "keywords": [
+        "qr",
+        "wechat",
+        "official"
+      ],
       "prompt": "公众号二维码，方形，留白边。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "澄木整装公众号二维码。上线前换成门店的码。"
+      "desc": "澄木整装公众号二维码。上线前换成门店的码。",
+      "tier": "nice"
     },
     {
       "id": "qr-advisor",
@@ -457,10 +710,16 @@
       "px": "800x800",
       "source": "client",
       "mustBeReal": true,
-      "keywords": ["qr", "wechat", "advisor"],
+      "fallback": "omit",
+      "keywords": [
+        "qr",
+        "wechat",
+        "advisor"
+      ],
       "prompt": "量房顾问微信二维码，方形，留白边。",
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
-      "desc": "量房顾问微信二维码。上线前换成顾问的码。"
+      "desc": "量房顾问微信二维码。上线前换成顾问的码。",
+      "tier": "nice"
     }
   ]
 }

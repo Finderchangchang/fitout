@@ -1,6 +1,7 @@
 /**
  * node scripts/check.mjs <站点目录> [--site <site.json>] [--demo]
  * node scripts/check.mjs --lint-framework
+ * node scripts/check.mjs --lint-showrooms
  * 有 block 级失败就退出码 1。警告不改变退出码。
  * 规则等级在 scripts/lib/rules.mjs。
  */
@@ -37,11 +38,12 @@ import {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const lint = args.includes("--lint-framework");
+const lintRooms = args.includes("--lint-showrooms");
 const demoFlag = args.includes("--demo");
 let siteOverride = null;
 const dirs = [];
 for (let i = 0; i < args.length; i += 1) {
-  if (args[i] === "--lint-framework" || args[i] === "--demo") continue;
+  if (args[i] === "--lint-framework" || args[i] === "--lint-showrooms" || args[i] === "--demo") continue;
   if (args[i] === "--site") {
     siteOverride = path.resolve(args[i + 1] || "");
     i += 1;
@@ -52,6 +54,7 @@ for (let i = 0; i < args.length; i += 1) {
 
 const blocks = [];
 const warnings = [];
+let currentDir = null;
 const seenReports = new Set();
 const cjkFont = new RegExp(`^(?:${CJK_FONT})`, "i");
 const genericFace = new Set([
@@ -60,18 +63,21 @@ const genericFace = new Set([
 ]);
 
 function main() {
-  if (!lint && dirs.length === 0) {
+  if (!lint && !lintRooms && dirs.length === 0) {
     console.error("用法：node scripts/check.mjs <站点目录> [--site <site.json>] [--demo]");
     console.error("      node scripts/check.mjs --lint-framework");
+    console.error("      node scripts/check.mjs --lint-showrooms");
     process.exit(2);
   }
   if (lint) lintFramework();
+  if (lintRooms) lintShowrooms();
   for (const dir of dirs) checkSite(dir);
   printReport();
   process.exit(blocks.length ? 1 : 0);
 }
 
 function checkSite(dir) {
+  currentDir = dir;
   if (!fs.existsSync(dir)) {
     report("结构", `${dir} 不存在`);
     return;
@@ -109,17 +115,27 @@ function checkSite(dir) {
   }
   checkMotionJs(js);
 
+  const toolRel = toolRoot(site);
+  if (toolRel && !toolRel.endsWith(".html")) {
+    const indexFile = path.join(dir, ...toolRel.split("/"), "index.html");
+    if (!fs.existsSync(indexFile)) report("链接", `小工具入口缺少 ${toolRel}/index.html`);
+  }
   for (const file of htmlFiles) {
     const html = fs.readFileSync(file, "utf8");
     const where = path.relative(dir, file).replaceAll("\\", "/");
+    if (isToolHtml(where, toolRel)) {
+      checkLinks(dir, file, where, html, demoMode);
+      continue;
+    }
     checkResiduals(where, html);
-    checkPage(where, html, site, house, vars, js, demoMode);
+    checkPage(where, html, site, house, vars, js, demoMode, css);
     checkLinks(dir, file, where, html, demoMode);
   }
   if (css) checkResiduals("assets/site.css", css);
   if (js) checkResiduals("assets/site.js", js);
   checkBuildReport(dir);
   checkClientSlots(dir, site, demoMode);
+  checkImageTiers(dir, demoMode);
 }
 
 function demoSoft(demoMode, html) {
@@ -136,7 +152,7 @@ function checkClientSlots(dir, site, demoMode) {
   } catch {
     return;
   }
-  const slots = (doc.slots || []).filter((slot) => slot && slot.source === "client" && slot.id);
+  const slots = (doc.slots || []).filter((slot) => slot && slot.source === "client" && slot.id && !slot.tier);
   if (!slots.length) return;
   let names = [];
   const folder = path.join(dir, "images");
@@ -155,7 +171,38 @@ function checkClientSlots(dir, site, demoMode) {
   }
 }
 
-function checkPage(where, html, site, house, vars, js, demoMode) {
+function readSparse(dir) {
+  if (!dir) return false;
+  const file = path.join(dir, "build-report.json");
+  if (!fs.existsSync(file)) return false;
+  try {
+    return readJson(file).sparse === true;
+  } catch {
+    return false;
+  }
+}
+
+function checkImageTiers(dir, demoMode) {
+  if (demoMode) return;
+  const file = path.join(dir, "build-report.json");
+  if (!fs.existsSync(file)) return;
+  let data;
+  try {
+    data = readJson(file);
+  } catch {
+    return;
+  }
+  const missing = Array.isArray(data.missingMust) ? data.missingMust.filter(Boolean) : [];
+  if (missing.length) {
+    report("图片", `这些图课上要有，现在还没有：${missing.join("、")}`, "warn");
+  }
+  const base = String(data.baseUrl || "");
+  if (!base || /^https?:\/\/example\.com\/?$/i.test(base)) {
+    report("SEO", "上线前要换真实网址", "warn");
+  }
+}
+
+function checkPage(where, html, site, house, vars, js, demoMode, css) {
   if (!/<html[^>]*\blang="zh-CN"/i.test(html)) report("SEO", `${where} 缺少 lang="zh-CN"`);
   const viewport = meta(html, "viewport");
   if (!viewport) report("C3", `${where} 缺少 viewport`);
@@ -217,7 +264,8 @@ function checkPage(where, html, site, house, vars, js, demoMode) {
   checkVariety(where, html);
   checkTones(where, html, site);
   checkSatBands(where, html, site);
-  checkImageSlots(where, html);
+  checkImageSlots(where, html, css || "");
+  if (where === "index.html") checkSlogan(html, site, demoMode);
   checkFullbleed(where, html, site, demoMode);
   checkCarousel(where, html, js);
 }
@@ -286,7 +334,14 @@ function checkLinks(dir, file, where, html, demoMode) {
     }
     const stat = fs.statSync(target);
     if (stat.isDirectory()) {
-      report("链接", `${where} 的链接指向目录而不是页面：${href}`);
+      const indexFile = path.join(target, "index.html");
+      if (!fs.existsSync(indexFile)) {
+        report("链接", `${where} 的链接指向目录而不是页面：${href}`);
+        continue;
+      }
+      if (!hash) continue;
+      const targetIds = new Set([...fs.readFileSync(indexFile, "utf8").matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
+      if (!targetIds.has(hash)) report("链接", `${where} 的锚点 #${hash} 不存在`);
       continue;
     }
     if (!hash) continue;
@@ -478,7 +533,7 @@ function checkSatBands(where, html, site) {
   if (bands > HIGH_SAT_BANDS) report("A3", `${where} 高饱和整宽色块 ${bands} 个，最多 ${HIGH_SAT_BANDS}`);
 }
 
-function checkImageSlots(where, html) {
+function checkImageSlots(where, html, css) {
   for (const tag of html.match(/<img\b[^>]*>/gi) || []) {
     const w = (tag.match(/\bwidth="([^"]*)"/i) || [])[1];
     const h = (tag.match(/\bheight="([^"]*)"/i) || [])[1];
@@ -486,12 +541,18 @@ function checkImageSlots(where, html) {
     const ok = (Number(w) > 0 && Number(h) > 0) || /aspect-ratio\s*:/.test(style);
     if (!ok) report("图片位", `${where} 的图片缺少 width/height 或 aspect-ratio`);
   }
-  const parts = html.split(/data-media-group="/);
-  for (let i = 1; i < parts.length; i += 1) {
-    const idEnd = parts[i].indexOf('"');
-    if (idEnd < 0) continue;
-    const id = parts[i].slice(0, idEnd);
-    const chunk = parts[i].slice(idEnd).split(/data-media-group=|<\/section>/i)[0];
+  const rules = cssFrameRules(css);
+  const re = /data-media-group="([^"]*)"/g;
+  for (const match of html.matchAll(re)) {
+    const id = match[1];
+    const start = html.lastIndexOf("<", match.index);
+    const end = html.indexOf(">", match.index);
+    if (start < 0 || end < 0) continue;
+    const open = html.slice(start, end + 1);
+    const classAttr = (open.match(/\bclass="([^"]*)"/i) || [])[1] || "";
+    const classes = classAttr.split(/\s+/).filter(Boolean);
+    const chunk = html.slice(end + 1).split(/data-media-group=|<\/section>/i)[0];
+    if (frameLocked(id, classes, rules)) continue;
     const ratios = [];
     for (const tag of chunk.match(/<img\b[^>]*>/gi) || []) {
       const w = Number((tag.match(/\bwidth="([^"]*)"/i) || [])[1]);
@@ -506,6 +567,160 @@ function checkImageSlots(where, html) {
   }
 }
 
+function cssFrameRules(css) {
+  const masked = String(css || "").replace(/\/\*[\s\S]*?\*\//g, (block) => block.replace(/[^\n]/g, " "));
+  const rules = [];
+  for (const match of masked.matchAll(/([^{}@]+)\{([^{}]*)\}/g)) {
+    const selector = match[1].replace(/\s+/g, " ").trim();
+    if (!selector) continue;
+    const body = match[2];
+    const ratio = body.match(/(?:^|[;\s])aspect-ratio\s*:\s*([^;]+)/i);
+    const fit = body.match(/(?:^|[;\s])object-fit\s*:\s*([^;]+)/i);
+    rules.push({
+      selector,
+      ratio: ratio ? parseAspect(ratio[1]) : null,
+      fit: fit ? fit[1].trim().toLowerCase() : "",
+    });
+  }
+  return rules;
+}
+
+function parseAspect(value) {
+  const text = String(value || "").trim().toLowerCase();
+  if (!text || /^(auto|inherit|initial|unset|revert|revert-layer)$/.test(text)) return null;
+  const slash = text.match(/^(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)$/);
+  if (slash) {
+    const height = Number(slash[2]);
+    if (height <= 0) return null;
+    return Number(slash[1]) / height;
+  }
+  const numeric = Number(text);
+  return numeric > 0 ? numeric : null;
+}
+
+function frameLocked(id, classes, rules) {
+  const matched = rules.filter((rule) => selectorHits(rule.selector, id, classes));
+  return matched.some((rule) => rule.ratio != null && /^cover\b/.test(rule.fit));
+}
+
+function selectorHits(selector, id, classes) {
+  return splitSelector(selector).some((part) => {
+    if (part.includes(`[data-media-group="${id}"]`) || part.includes(`[data-media-group='${id}']`)) return true;
+    return classes.some((name) => new RegExp(`\\.${escapeReg(name)}(?![\\w-])`).test(part));
+  });
+}
+
+function splitSelector(selector) {
+  const parts = [];
+  let depth = 0;
+  let cur = "";
+  for (const ch of selector) {
+    if (ch === "(") depth += 1;
+    else if (ch === ")" && depth) depth -= 1;
+    if (ch === "," && depth === 0) {
+      if (cur.trim()) parts.push(cur.trim());
+      cur = "";
+    } else cur += ch;
+  }
+  if (cur.trim()) parts.push(cur.trim());
+  return parts;
+}
+
+function checkSlogan(html, site, demoMode) {
+  if (demoMode || !site?.showroom || !/^[a-z0-9_-]+$/.test(site.showroom)) return;
+  const example = readExampleSite(site.showroom);
+  if (!example) return;
+  const exampleName = String(example.name || "").replace(/（虚构）|\(虚构\)/g, "").trim();
+  const siteName = String(site.name || "").replace(/（虚构）|\(虚构\)/g, "").trim();
+  if (exampleName && siteName && exampleName === siteName) return;
+  const sampleRaw = exampleHeroTitle(example);
+  const hero = html.match(/<section\b[^>]*data-section="hero"[^>]*>[\s\S]*?<\/section>/i);
+  const h1 = (hero?.[0].match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || "";
+  const actualRaw = visibleText(h1);
+  if (sloganClose(actualRaw, sampleRaw)) {
+    report("口号", "首屏口号不要套示例句式，按企业档案重写", "warn");
+  }
+}
+
+function sloganClose(actualRaw, sampleRaw) {
+  const actual = normSlogan(actualRaw);
+  const sample = normSlogan(sampleRaw);
+  if (!actual || !sample) return false;
+  if (commonRun(actual, sample) >= 4 || editRatio(actual, sample) <= 0.5) return true;
+  const left = sloganClauses(actualRaw);
+  const right = sloganClauses(sampleRaw);
+  for (const a of left) {
+    for (const b of right) {
+      if (commonRun(a, b) >= 4 || editRatio(a, b) <= 0.5) return true;
+    }
+  }
+  return false;
+}
+
+function sloganClauses(text) {
+  return String(text || "")
+    .split(/[\s，。！？、,.!?;；:："“”'‘’（）()【】\[\]《》·—\-]+/)
+    .map((part) => normSlogan(part))
+    .filter((part) => Array.from(part).length >= 4);
+}
+
+function readExampleSite(id) {
+  const file = path.join(root, "showrooms", id, "examples", "site.json");
+  if (!fs.existsSync(file)) return null;
+  try {
+    return readJson(file);
+  } catch {
+    return null;
+  }
+}
+
+function exampleHeroTitle(doc) {
+  const pages = doc.pages || [];
+  const home = pages.find((page) => page.id === "home" || page.file === "index.html") || pages[0];
+  const hero = (home?.sections || []).find((section) => section.type === "hero");
+  return String(hero?.data?.title || "");
+}
+
+function normSlogan(text) {
+  return Array.from(String(text || "").replace(/[\s，。！？、,.!?;；:："“”'‘’（）()【】\[\]《》·—\-]/g, "")).join("");
+}
+
+function commonRun(a, b) {
+  const left = Array.from(a);
+  const right = Array.from(b);
+  let best = 0;
+  const prev = new Uint16Array(right.length + 1);
+  for (let i = 1; i <= left.length; i += 1) {
+    let diagonal = 0;
+    for (let j = 1; j <= right.length; j += 1) {
+      const next = left[i - 1] === right[j - 1] ? diagonal + 1 : 0;
+      diagonal = prev[j];
+      prev[j] = next;
+      if (next > best) best = next;
+    }
+  }
+  return best;
+}
+
+function editRatio(a, b) {
+  const left = Array.from(a);
+  const right = Array.from(b);
+  const denom = Math.max(left.length, right.length);
+  if (!denom) return 1;
+  const row = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let i = 1; i <= left.length; i += 1) {
+    let prev = row[0];
+    row[0] = i;
+    for (let j = 1; j <= right.length; j += 1) {
+      const saved = row[j];
+      const cost = left[i - 1] === right[j - 1] ? 0 : 1;
+      row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + cost);
+      prev = saved;
+    }
+  }
+  return row[right.length] / denom;
+}
+
 function checkFullbleed(where, html, site, demoMode) {
   if (where !== "index.html" || !site?.showroom) return;
   const imgs = (html.match(/<img\b/gi) || []).length;
@@ -515,6 +730,7 @@ function checkFullbleed(where, html, site, demoMode) {
     if (!/\bdata-fullbleed\b/.test(open)) continue;
     full += (section.match(/<img\b/gi) || []).length;
   }
+  if (readSparse(currentDir)) return;
   const level = demoSoft(demoMode, html) ? "warn" : levelOf("E4");
   if (imgs < 12) report("E4", `首页图片 ${imgs} 张，少于 12`, level);
   if (full < 2) report("E4", `首页满宽图 ${full} 张，少于 2`, level);
@@ -1096,6 +1312,115 @@ function forEachMatch(re, text, fn) {
   }
 }
 
+const ROOM_STOP = new Set(`
+home about news products product contact catalog list index top page main nav hero item grid row card all banner
+services cases team why trust faq honors photo stories story store stores places courses course menu shop blog
+search map form tool tools note notes feed board image images assets site slot slots true false null none auto
+left right center cover contain phone email name title text lead summary label href slug key value hours address
+wechat icp police intro band page-banner detail
+`.split(/\s+/).filter(Boolean));
+
+function lintShowrooms() {
+  const dir = path.join(root, "showrooms");
+  if (!fs.existsSync(dir)) return;
+  for (const name of fs.readdirSync(dir)) {
+    if (!/^cn-/.test(name)) continue;
+    const example = path.join(dir, name, "examples", "site.json");
+    const sections = path.join(dir, name, "sections");
+    if (!fs.existsSync(example) || !fs.existsSync(sections)) continue;
+    let doc;
+    try {
+      doc = readJson(example);
+    } catch (err) {
+      report("样板间", `${name} 的示例站读不了：${err.message || "JSON"}`);
+      continue;
+    }
+    const tokens = exampleTokens(doc);
+    const files = walk(sections).filter((file) => /\.(html|css|js)$/i.test(file));
+    for (const file of files) {
+      const text = fs.readFileSync(file, "utf8");
+      for (const token of tokens) {
+        const at = findToken(text, token);
+        if (at < 0) continue;
+        const relFile = path.relative(root, file).replaceAll("\\", "/");
+        report("样板间", `${relFile}:${lineOf(text, at)} 写死了示例值「${clip(token)}」`);
+      }
+    }
+  }
+}
+
+function exampleTokens(doc) {
+  const tokens = new Set();
+  const add = (value) => {
+    const text = String(value || "").trim();
+    if ([...text].length < 3) return;
+    if (ROOM_STOP.has(text.toLowerCase())) return;
+    tokens.add(text);
+  };
+  const addContact = (value) => {
+    const text = String(value || "").trim();
+    add(text);
+    const digits = text.replace(/\D/g, "");
+    if (digits.length >= 6) add(digits);
+  };
+  const walkNode = (node) => {
+    if (Array.isArray(node)) {
+      node.forEach(walkNode);
+      return;
+    }
+    if (!node || typeof node !== "object") return;
+    if (typeof node.slug === "string") add(node.slug);
+    if (typeof node.slug === "string" && typeof node.name === "string") add(node.name);
+    if (typeof node.id === "string") add(node.id);
+    if (typeof node.key === "string") add(node.key);
+    if (typeof node.href === "string" && node.href.includes("#")) add(node.href.split("#")[1].split(/[/?&]/)[0]);
+    for (const value of Object.values(node)) {
+      if (value && typeof value === "object") walkNode(value);
+    }
+  };
+  walkNode(doc);
+  if (doc.collections && typeof doc.collections === "object" && !Array.isArray(doc.collections)) {
+    for (const id of Object.keys(doc.collections)) add(id);
+  }
+  if (typeof doc.name === "string") add(String(doc.name).replace(/（虚构）|\(虚构\)/g, ""));
+  const contact = doc.contact || {};
+  for (const key of ["phone", "wechat", "email", "icp", "police"]) addContact(contact[key]);
+  return [...tokens];
+}
+
+function findToken(text, token) {
+  if (/^[A-Za-z0-9][A-Za-z0-9._+-]*$/.test(token)) {
+    const re = new RegExp(`(?:^|[^A-Za-z0-9])${escapeReg(token)}(?=$|[^A-Za-z0-9])`, "gi");
+    for (const match of text.matchAll(re)) {
+      const start = match.index + (match[0].toLowerCase().startsWith(token.toLowerCase()) ? 0 : 1);
+      if (start > 0 && text[start - 1] === "-") continue;
+      const after = text.slice(start + token.length, start + token.length + 2);
+      if (after[0] === "-" && /[A-Za-z]/.test(after[1] || "")) continue;
+      const before = text.slice(Math.max(0, start - 24), start);
+      if (/data-(?:family|section|tone)=["']$/.test(before)) continue;
+      return start;
+    }
+    return -1;
+  }
+  return text.indexOf(token);
+}
+
+function toolRoot(site) {
+  if (!site?.toolEntry || typeof site.toolEntry !== "object" || Array.isArray(site.toolEntry)) return "";
+  let href = String(site.toolEntry.href || "tool/").trim().replace(/\\/g, "/");
+  href = href.replace(/^\.\//, "").replace(/^\/+/, "");
+  if (/^[a-z][a-z0-9+.-]*:/i.test(href) || href.startsWith("//")) return "";
+  if (href.endsWith("/index.html")) href = href.slice(0, -"/index.html".length);
+  return href.replace(/\/+$/, "");
+}
+
+function isToolHtml(where, toolRel) {
+  if (!toolRel) return false;
+  const norm = String(where || "").replaceAll("\\", "/");
+  if (toolRel.endsWith(".html")) return norm === toolRel;
+  return norm === `${toolRel}/index.html` || norm.startsWith(`${toolRel}/`);
+}
+
 function walk(dir) {
   const out = [];
   if (!fs.existsSync(dir)) return out;
@@ -1131,7 +1456,10 @@ function report(rule, message, level) {
 }
 
 function printReport() {
-  const target = dirs.length ? dirs.map(rel).join("、") : "框架";
+  let target = "框架";
+  if (dirs.length) target = dirs.map(rel).join("、");
+  else if (lint && lintRooms) target = "框架、样板间";
+  else if (lintRooms) target = "样板间";
   console.log(`精装机检：${target}`);
   console.log(`结论：${blocks.length ? "不通过" : "通过"}`);
   console.log(`失败：${blocks.length}`);

@@ -11,9 +11,15 @@
     "form": "留言询价"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -21,12 +27,28 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4000ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4000ms"
+    }
   },
   "collections": [
-    { "id": "products", "label": "产品中心", "listFile": "products/index.html" },
-    { "id": "applications", "label": "应用领域", "listFile": "applications/index.html" },
-    { "id": "news", "label": "新闻动态", "listFile": "news/index.html" }
+    {
+      "id": "products",
+      "label": "产品中心",
+      "listFile": "products/index.html"
+    },
+    {
+      "id": "applications",
+      "label": "应用领域",
+      "listFile": "applications/index.html"
+    },
+    {
+      "id": "news",
+      "label": "新闻动态",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -34,14 +56,62 @@
       "file": "index.html",
       "kind": "home",
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "services", "required": true, "variants": ["stagger"] },
-        { "type": "why", "required": true, "variants": ["overlay"] },
-        { "type": "cases", "required": true, "variants": ["linked"] },
-        { "type": "collection-list", "required": true, "variants": ["brief"] },
-        { "type": "honors", "required": true, "variants": ["wall"] },
-        { "type": "cta-band", "required": true, "variants": ["plate"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "services",
+          "required": true,
+          "variants": [
+            "stagger"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "overlay"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "linked"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "brief"
+          ]
+        },
+        {
+          "type": "honors",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "plate"
+          ]
+        }
       ]
     },
     {
@@ -49,11 +119,41 @@
       "file": "about/index.html",
       "kind": "about",
       "order": [
-        { "type": "timeline", "required": true, "variants": ["rail"] },
-        { "type": "why", "required": true, "variants": ["cells"] },
-        { "type": "cases", "required": true, "variants": ["yard"] },
-        { "type": "trust", "required": true, "variants": ["stats"] },
-        { "type": "honors", "required": true, "variants": ["wall"] }
+        {
+          "type": "timeline",
+          "required": false,
+          "variants": [
+            "rail"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "cells"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "yard"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "honors",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        }
       ]
     },
     {
@@ -61,7 +161,13 @@
       "file": "products/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["sidebar"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "sidebar"
+          ]
+        }
       ]
     },
     {
@@ -70,7 +176,13 @@
       "kind": "detail",
       "from": "products",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "sheet"
+          ]
+        }
       ]
     },
     {
@@ -78,7 +190,13 @@
       "file": "applications/index.html",
       "kind": "list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["mosaic"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "mosaic"
+          ]
+        }
       ]
     },
     {
@@ -87,7 +205,13 @@
       "kind": "detail",
       "from": "applications",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["story"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "story"
+          ]
+        }
       ]
     },
     {
@@ -95,7 +219,13 @@
       "file": "news/index.html",
       "kind": "news-list",
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["index"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "index"
+          ]
+        }
       ]
     },
     {
@@ -104,7 +234,13 @@
       "kind": "news-detail",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["report"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "report"
+          ]
+        }
       ]
     },
     {
@@ -112,8 +248,20 @@
       "file": "contact/index.html",
       "kind": "contact",
       "order": [
-        { "type": "contact", "required": true, "variants": ["split"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     }
   ]

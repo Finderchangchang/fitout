@@ -1,13 +1,41 @@
 {
   "note": "首页诊所简介，左文右图，链到医院介绍。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "text": { "type": "string", "required": true, "maxChars": 80 },
-    "linkLabel": { "type": "string", "required": true, "maxChars": 8 },
-    "linkHref": { "type": "string", "required": true, "maxChars": 200 },
-    "image": { "type": "image", "required": true, "maxChars": 200 },
-    "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "text": {
+      "type": "string",
+      "required": true,
+      "maxChars": 80
+    },
+    "linkLabel": {
+      "type": "string",
+      "required": true,
+      "maxChars": 8
+    },
+    "linkHref": {
+      "type": "string",
+      "required": true,
+      "maxChars": 200
+    },
+    "image": {
+      "type": "image",
+      "required": true,
+      "maxChars": 200
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true,
+      "maxChars": 30
+    }
   },
   "variants": {
     "split": {
@@ -15,7 +43,8 @@
       "imageField": "image",
       "family": "split",
       "fit": "文字在左，诊室照片在右",
-      "source": "样板间自写"
+      "source": "样板间自写",
+      "fallback": "omit"
     }
   }
 }
