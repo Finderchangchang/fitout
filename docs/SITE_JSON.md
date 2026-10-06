@@ -2,7 +2,7 @@
 
 给填内容的模型看。只填事实，不选颜色，不写 CSS。配色、字体、圆角、阴影在风格的 `tokens.json` 里，这份档案碰不到。
 
-字数按去掉所有空白后的 Unicode 码点计。`128 元起` 算 5 个字。超了，机检直接失败。
+字数按去掉所有空白后的 Unicode 码点计。`128 元起` 算 5 个字。超了，机检直接失败。英文站（`lang` 为 `en`）用同一把尺子，上限是中文上限 × 2.2，向上取整。首屏标题另计：含汉字时 ≤14 字，纯英文 ≤10 个词。
 
 ## 先看户型
 
@@ -17,6 +17,8 @@
 | 字段 | 必填 | 说明 |
 |---|---|---|
 | `id` | 是 | 站点目录名。小写字母、数字、连字符 |
+| `lang` | 否 | 不写就是 `zh-CN`。英文站写 `en`。见「语言」 |
+| `buttons` | 否 | 盖掉户型按钮。键是 `primary`、`secondary`、`form`。不写就用户型原文 |
 | `style` | 是 | 风格 id，例如 `_neutral`。对应 `styles/<id>/tokens.json`。也可以写相对这份档案的路径，例如 `./bad-style` |
 | `industry` | 是 | 户型 id |
 | `businessType` | 是 | 门店写 `LocalBusiness`，工厂写 `Organization`。首页 JSON-LD 用它 |
@@ -28,6 +30,23 @@
 | `shell` | 是 | `header`、`footer`、`floatContact`，值必须在户型允许的版式里 |
 | `pages` | 是 | 见下。不要写 `from: products` 的那一页 |
 | `products` | 工厂必填 | 见下。门店不要写 |
+
+## 语言
+
+不写 `lang` 就是中文站。只接受 `zh-CN` 和 `en`。
+
+`en` 时：
+
+- `<html lang="en">`，Open Graph `en_US`，JSON-LD `inLanguage` 为 `en`。中文站仍是 `zh-CN`、`zh_CN`、`zh-CN`。
+- 字段名正好是 `date` 的，能认出就显示成 `Sep 2025`。认 `2025-09`、`2025-09-12`、`2025/09/12`、`2025.09`、`2025年9月`、`2025年9月12日`、`September 2025`。日不写进去。认不出就原样留下。中文站不改这个字段。
+- 字数上限见本页开头。店名 16、页面 title 30、description 80、地址 40，以及各板块 `maxChars`，英文都乘 2.2 后向上取整。
+- 空话改查英文词表，命中即失败：Seamless、Elevate、Unleash、Cutting-edge、World-class、Next-gen、Revolutionary、One-stop。按词边界，大小写不敏感。中文站仍是原来的词表：赋能等失败，打造和 Elevate、Seamless、Unleash、Next-Gen 只警告。
+- 标题和按钮里的 em dash 仍失败。正文可以有。
+- 首页重复、示例口号按词比。短句至少 4 个词。
+- 框架固定文案（首页、复制微信号、跳到正文等）走 `framework/i18n/en.json`。户型主按钮不会自动翻译，英文站用 `buttons.primary` 盖掉，否则顶栏仍是户型里的中文。
+- 字体用 token 的 `font-heading-en` / `font-body-en`。不写就用 `"Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif`。不加载字体文件。
+
+`scripts/fill.mjs` 仍按中文规则填，不读 `lang`。英文站先手写 `site.json`。
 
 ## contact
 
@@ -143,6 +162,8 @@
 
 只要 `title` ≤16，`lead` 可无 ≤40。电话、地址、时间从顶层 `contact` 来，不要在 data 里再写一遍。
 
+框架的 `contact/card`、`contact/banner` 还认可选的 `qrs`（最多 4 个）：`{ "image": 图片位 id 或路径, "imageAlt" ≤30, "label" ≤8 }`。有就在联系区下面整行居中放二维码；正式拼装客户没给文件，这一项整项不出；不写这个键这一块就不出。样板间自己的联系版式有各自的字段，以它自己的 `spec.json` 为准。
+
 ### cta-band
 
 `title` ≤16。`lead` 可无 ≤40。`primaryHref` ≤200。按钮文字用户型主按钮，不要在 data 里改。
@@ -225,9 +246,9 @@
 
 - 颜色、字体、圆角、阴影、动效。那些在风格里。
 - emoji，或者用表情当图标。
-- 标题、按钮、<title> 里的「——」和「—」。正文可以有。
+- 标题、按钮、<title> 里的「——」和「—」。中文站和英文站一样。正文可以有。
 - 按钮写「提交」「了解更多」「点击这里」。写具体动作。
-- 空话：赋能、革命性、颠覆性、一站式、打造、全方位、领先的，以及 Elevate、Seamless、Unleash、Next-Gen。
+- 空话见「语言」。中文站：赋能、革命性、颠覆性、一站式、全方位、领先的为失败；打造，以及 Elevate、Seamless、Unleash、Next-Gen 为警告。英文站改用英文词表，命中即失败。
 - 占位词：Lorem、John Doe、Acme。
 - 编出来的客户数、评分、备案号、评价、案例、团队。没有就不填，整块不出。
 - 站内可提交的表单、嵌入地图、手画插画。
@@ -240,9 +261,11 @@
 node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2]
 ```
 
+一条命令从企业档案做到整站：`node scripts/fitout.mjs --profile <档案.md> --out <目录> --showroom auto`，见 README 的「试一下」。
+
 - `--model` 默认 `deepseek-chat`。
 - `--max-retries` 默认 `2`。校验不过就把错误清单发回给模型改，最多再改这么多轮。
 - 密钥只读环境变量 `DEEPSEEK_API_KEY`，不要写进命令行、日志或档案。
 - 每次调用用了多少 token，记在旁边的 `<out>.log.json`。
 
-校验先看本仓库的填写规则（必填、字数、空话、可选页开关），再实际拼一次、跑一次机检。缺图警告，以及「上线前要换真实网址」，不会拿去要求模型重写。首页把同一短句说满 3 次，或同一个数字加单位出现在 3 个板块里，会要求重写。
+校验先看本仓库的填写规则（必填、字数、空话、可选页开关），再实际拼一次、跑一次机检。`fill.mjs` 这条仍按中文站的字数和空话，不按英文 ×2.2。缺图警告，以及「上线前要换真实网址」，不会拿去要求模型重写。首页把同一短句说满 3 次，或同一个数字加单位出现在 3 个板块里，会要求重写。英文站的这一条按词，短句至少 4 个词。

@@ -1,0 +1,73 @@
+.filter-row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.filter-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-input:checked + .filter-label {
+  font-weight: 700;
+  border-bottom-color: var(--accent);
+}
+
+.filter-input:focus-visible + .filter-label {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.course-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.course-card img {
+  width: calc(100% + 2.5rem);
+  max-width: none;
+  margin: -1.25rem -1.25rem 1rem;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.course-card .kicker {
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .course-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 桌面按门数定列数：4 门和 8 门排 4 列，6 门排 3 列，不留末行只剩一两张。 */
+@media (min-width: 1024px) {
+  .course-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .course-grid:has(> :nth-child(4):last-child),
+  .course-grid:has(> :nth-child(8):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}

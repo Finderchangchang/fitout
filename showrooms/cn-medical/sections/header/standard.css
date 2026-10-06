@@ -79,13 +79,16 @@ h3 {
   }
 
   .nav-list {
-    gap: 0.1rem 0.45rem;
+    gap: 0.1rem 0.1rem;
   }
 
+  /* 所有导航项左右各 0.5rem：两个字的项（首页）正好 44px 宽，不再靠 min-width 撑，
+     相邻两项文字之间的间距处处一样。 */
   .nav-list a {
     font-size: 0.9375rem;
     white-space: nowrap;
-    padding-inline: 0.15rem;
+    min-width: 0;
+    padding-inline: 0.5rem;
   }
 
   .hotline {

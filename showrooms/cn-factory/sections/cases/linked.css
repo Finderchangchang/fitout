@@ -12,9 +12,11 @@
   color: var(--text-muted);
 }
 
+/* 三列等宽：图同一个比例、同一个高度，标题落在同一条线上
+   （以前三列宽度不等，图高低不一，标题一级一级往下掉）。 */
 @media (min-width: 768px) {
   .use-row {
-    grid-template-columns: 1.35fr 1fr 0.82fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: start;
   }
 }

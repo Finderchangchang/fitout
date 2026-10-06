@@ -33,3 +33,22 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+/* 桌面：4 张排成一行（以前 3 + 1，末行孤零零一张）；5 张排 3 + 2，末行两张各占半行。其余数量仍是三列。 */
+@media (min-width: 1024px) {
+  .board-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .board-grid:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .board-grid:has(> :nth-child(5):last-child) > * {
+    grid-column: span 2;
+  }
+
+  .board-grid:has(> :nth-child(5):last-child) > :nth-child(n + 4) {
+    grid-column: span 3;
+  }
+}

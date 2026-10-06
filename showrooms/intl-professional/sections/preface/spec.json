@@ -1,0 +1,19 @@
+{
+  "note": "机构或开场。一段事实，可带一张房间局部。",
+  "fields": {
+    "kicker": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "text": { "type": "string", "required": false, "maxChars": 200 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+  },
+  "variants": {
+    "split": {
+      "needsImage": false,
+      "family": "opening",
+      "fit": "左文右图。没有图就只留文字",
+      "source": "自写开场。不放半身人像，不放金线"
+    }
+  }
+}

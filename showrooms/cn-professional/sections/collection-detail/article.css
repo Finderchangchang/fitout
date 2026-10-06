@@ -8,6 +8,30 @@
   height: auto;
 }
 
+/* 桌面：正文、参数表、流程、问答都在左栏，配图在右栏、保持原比例、跟着页面粘住；
+   以前图片单独占一行，右边整片空着。没有配图的页面保持单栏。 */
+@media (min-width: 1024px) {
+  .matter:has(> .detail-photo) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+    column-gap: 3rem;
+    align-items: start;
+    align-content: start;
+  }
+
+  .matter:has(> .detail-photo) > * {
+    grid-column: 1;
+  }
+
+  .matter:has(> .detail-photo) > .detail-photo {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+    width: 100%;
+    height: auto;
+    position: sticky;
+    top: 1.5rem;
+  }
+}
+
 .specs {
   width: 100%;
   border-collapse: collapse;

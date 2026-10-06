@@ -29,12 +29,12 @@
 }
 
 .qr-slot {
-  width: 8rem;
+  width: 7rem;
 }
 
 .qr-slot img {
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: 7rem;
   object-fit: cover;
   background: var(--surface);
 }
@@ -44,11 +44,21 @@
 }
 
 @media (min-width: 1024px) {
-  .site-footer {
-    padding-bottom: 14rem;
-  }
-
   .footer-grid {
     grid-template-columns: 1.2fr 0.8fr 1.1fr 1.1fr;
   }
+}
+
+/* 二维码下面的说明、复制按钮之间留空；版权和备案号各占 44px 并居中，才在同一条线上。 */
+.qr-slot p {
+  margin-top: 0.5rem;
+}
+
+.footer-qr > p:last-child {
+  margin-top: 0.75rem;
+}
+
+/* 上面是深色的联系条时，页脚同样深色，两块连成一片；加一条细线把页脚分出来。 */
+.site-footer {
+  border-top: 1px solid rgb(247 242 234 / 0.18);
 }

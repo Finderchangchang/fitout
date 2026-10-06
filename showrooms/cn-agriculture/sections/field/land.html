@@ -1,8 +1,10 @@
 <section class="section" data-section="field" data-family="field" id="{{anchor}}">
   <div class="container field-land">
+    {{#if image}}
     <figure data-media-group="land">
       <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
     </figure>
+    {{/if}}
     <div class="section-head">
       <span class="grain-kicker" aria-hidden="true"></span>
       {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}

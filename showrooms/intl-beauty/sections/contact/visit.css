@@ -1,0 +1,93 @@
+.visit-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* 左栏直接坐在页面底色上：标题、导语、营业时间。右栏一张卡，放地址、电话、微信和三个按钮。 */
+.visit-intro {
+  display: grid;
+  gap: 1.75rem;
+  align-content: start;
+}
+
+.visit-hours {
+  width: min(100%, 26rem);
+}
+
+.hour-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 24rem;
+  padding-block: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.visit-hours .hour-line {
+  max-width: none;
+}
+
+.visit-card {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.75rem;
+}
+
+.visit-lines {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+}
+
+.visit-lines p {
+  margin: 0;
+}
+
+.visit-lines a,
+.visit-lines .visit-wechat {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding-block: 0.5rem;
+  max-width: 100%;
+}
+
+.visit-lines .icon {
+  flex: none;
+  margin-top: calc((1lh - 1.25rem) / 2);
+}
+
+.visit-actions {
+  gap: 0.75rem;
+}
+
+.visit-actions .btn {
+  flex: 1 1 8rem;
+}
+
+.qr {
+  width: 8rem;
+  height: auto;
+  justify-self: start;
+}
+
+@media (min-width: 768px) {
+  .visit-card:has(.qr) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    column-gap: 1.5rem;
+  }
+
+  .visit-card:has(.qr) .visit-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 900px) {
+  .visit-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 4rem;
+  }
+}

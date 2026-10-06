@@ -1,0 +1,9 @@
+{
+  "id": "intl-education",
+  "name": "国际风 · 课程平台",
+  "industry": "职业技能/设计/编程/语言课程",
+  "niche": "vocational",
+  "fit": "给职业技能、设计、编程和语言这类课程是主角的培训机构和线上课。",
+  "preview": "intl-education/preview.jpg",
+  "pages": ["首页", "关于", "课程", "讲师", "学员作业", "资讯", "报名咨询"]
+}

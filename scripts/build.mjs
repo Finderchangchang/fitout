@@ -9,8 +9,10 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { render } from "./lib/tpl.mjs";
+import { parseColor, toHex } from "./lib/color.mjs";
 import { readJson } from "./lib/json.mjs";
 import { imageSize } from "./lib/image-size.mjs";
+import { EN_FONT, formatDate, langError, loadCopy, siteLang } from "./lib/i18n.mjs";
 import { HERO_PX, industryError, nicheError } from "./lib/rules.mjs";
 import {
   closedTargets,
@@ -33,8 +35,8 @@ const DENSITY = {
 
 const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".svg", ".gif"]);
 const PUBLISHED_KEYS = [
-  "id", "name", "industry", "niche", "showroom", "style", "businessType", "summary", "url",
-  "contact", "nav", "shell", "pages", "products", "collections", "toolEntry", "hero",
+  "id", "lang", "name", "industry", "niche", "showroom", "style", "businessType", "summary", "url",
+  "contact", "nav", "shell", "pages", "products", "collections", "toolEntry", "hero", "buttons",
 ];
 const TONES = new Set(["light", "dark", "image"]);
 
@@ -82,6 +84,11 @@ if (imagesDir && (!fs.existsSync(imagesDir) || !fs.statSync(imagesDir).isDirecto
 const demoMode = Boolean(demoDir);
 const baseUrl = normalizeBase(baseUrlArg || "https://example.com/");
 const site = readJsonOrFail(sitePath);
+const langProblem = langError(site);
+if (langProblem) fail(langProblem);
+site.lang = siteLang(site);
+const lang = site.lang;
+const copy = loadCopy(lang);
 const siteDir = path.dirname(sitePath);
 if (!/^_?[a-z0-9][a-z0-9-]*$/.test(site.id || "")) fail("site.id 只能是小写字母、数字和连字符");
 
@@ -103,9 +110,11 @@ if (site.showroom) {
   site.niche = site.niche || showroom.niche || "";
 }
 
+const flavor = showroom && (showroom.flavor === "cn" || showroom.flavor === "intl") ? showroom.flavor : "";
 const tokens = readJsonOrFail((assertRegistered(site), showroom ? path.join(showroomDir, "tokens.json") : resolveStyle(site.style, siteDir)));
 validateTokens(tokens);
 const house = showroom || loadHouse(site.industry);
+const buttonOverrides = readButtonOverrides(site);
 const imageSlots = loadImageSlots();
 const frameworkSpecs = new Map();
 readSpecDir(path.join(frameworkDir, "sections"), frameworkSpecs);
@@ -120,6 +129,9 @@ const copied = new Set();
 const notedMissing = new Set();
 let usedPlaceholder = false;
 const DEMO_MARK = "data-demo%3D%221%22";
+// 客户图占位（二维码、证书）：说明字的真实像素，和 SVG 根上的标记（URL 编码后的 data-ph="1"）。见 clientPlaceholder。
+const PH_PX = 14;
+const PH_MARK = "data-ph%3D%221%22";
 
 const outDir = siteDirArg || path.join(outRoot, site.id);
 resetOutDir(outDir, keepRels);
@@ -230,15 +242,15 @@ function writeCollection(page) {
       data: {
         ...item,
         imageAlt: item.imageAlt || item.name || "",
-        primaryLabel: defaultPrimaryClosed() ? "电话咨询" : house.buttons.primary,
+        primaryLabel: defaultPrimaryClosed() ? copy.phoneConsult : buttonLabel("primary"),
         primaryHref: contactHref(),
         backHref: listFileOf(id),
-        backLabel: "返回列表",
+        backLabel: copy.backList,
       },
     };
     writePage({
       file,
-      title: `${item.name}｜${site.name}`,
+      title: `${item.name}${titleJoiner()}${site.name}`,
       description: item.summary || site.summary,
       sections: [section],
       order: page.order,
@@ -331,12 +343,17 @@ function writePage({ file, title, description, sections, order, banner }) {
     footerHtml,
     floatHtml,
     demoBadge: "",
+    htmlLang: lang === "en" ? "en" : "zh-CN",
+    ogLocale: lang === "en" ? "en_US" : "zh_CN",
+    flavor,
+    ui: copy,
   }, { icons });
   if (html.includes(DEMO_MARK)) {
     usedPlaceholder = true;
-    html = html.replace("<body>", "<body>\n  <p class=\"demo-badge\">演示占位图</p>");
+    html = html.replace("<body>", `<body>\n  <p class="demo-badge">${escapeHtml(copy.demoBadge)}</p>`);
   }
   if (tiered && !demoMode) html = html.replace(/<img\b[^>]*\bsrc=""[^>]*>/gi, "");
+  html = markPlaceholders(html);
   const dest = path.join(outDir, ...file.split("/"));
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, "utf8");
@@ -385,7 +402,7 @@ function prepareData(section, spec, file, variant) {
     }));
   }
   if (section.type === "hero" && variant === "carousel" && !data.interval) data.interval = "4000";
-  return bindAssets(data, file);
+  return bindAssets(localizeDates(data), file);
 }
 
 function fill(data, fields, label) {
@@ -410,9 +427,20 @@ function fill(data, fields, label) {
   return out;
 }
 
+// 二维码这类「图就是内容」的列表项：正式拼装客户没给文件，整项不出（连同图下面的说明字）。
+// 演示模式有占位图，不受影响。证书、团队人像等有名字有说明的项不在此列，缺图仍保留文字。
+function dropsWithoutClientImage(item) {
+  if (demoMode || !item || typeof item !== "object" || Array.isArray(item)) return false;
+  if (typeof item.image !== "string" || !item.image) return false;
+  const slot = slotOf(item.image);
+  if (!slot || !/^qr(-|$)/i.test(slot)) return false;
+  const meta = imageSlots.get(slot);
+  return meta?.source === "client" && !findSlotFile(slot);
+}
+
 function bindAssets(data, file) {
   const walk = (node) => {
-    if (Array.isArray(node)) return node.map(walk);
+    if (Array.isArray(node)) return node.filter((item) => !dropsWithoutClientImage(item)).map(walk);
     if (!node || typeof node !== "object") return node;
     const out = {};
     for (const [key, value] of Object.entries(node)) {
@@ -550,7 +578,7 @@ function filtersFrom(catKeys, facets) {
 
 function imageKept(value) {
   const state = imageState(value);
-  return state === "file" || state === "client" || state === "demo";
+  return state === "file" || state === "demo";
 }
 
 function imageState(value) {
@@ -560,7 +588,6 @@ function imageState(value) {
     if (findSlotFile(slot)) return "file";
     const meta = imageSlots.get(slot);
     if (meta?.mustBeReal && !demoMode) return "missing";
-    if (meta?.source === "client") return "client";
     if (demoMode) return "demo";
     return "missing";
   }
@@ -585,7 +612,6 @@ function pictureReady(value) {
     if (findSlotFile(slot)) return true;
     const meta = imageSlots.get(slot);
     if (meta?.mustBeReal && !demoMode) return false;
-    if (meta?.source === "client") return true;
     return demoMode;
   }
   return inspectAsset(value).state === "ok";
@@ -640,7 +666,8 @@ function resolveSlot(id, file) {
     return { src: assetPrefix(file) + encodePath(clean), width: size.width, height: size.height };
   }
   if (meta?.mustBeReal && !demoMode) return { src: "", width: "", height: "" };
-  if (meta?.source === "client") return clientPlaceholder(meta, id, box);
+  // 客户提供的图（二维码、证书）：正式拼装没拿到文件就整块不出，不画「上线前替换」。演示模式才画占位。
+  if (meta?.source === "client") return demoMode ? clientPlaceholder(meta, id, box) : { src: "", width: "", height: "" };
   if (!demoMode) {
     if (!tiered && !notedMissing.has(id)) {
       notes.push(`图片不存在，已省略：${id}`);
@@ -657,18 +684,96 @@ function resolveSlot(id, file) {
   };
 }
 
+/**
+ * 客户提供的图（二维码、证书）在演示模式下画的占位。只在 --demo-images 时出现，正式拼装整块不出。
+ * 说明字由这里统一画，样板间不再各盖一层：
+ * - SVG 不写 viewBox，宽高都是 100%：里面一个单位就是显示出来的 1 个像素，字永远是 14px，
+ *   不管这张图在页面里显示成 96px 的页脚小码，还是 288px 的证书格。以前字号按画布比例算，显示多大字跟着多大。
+ * - 底色、虚线框、字色取这个站自己的 tokens（--text、--surface、--text-muted），和页面配套，不是一块固定的米色。
+ * - 文案分行：用途一行到三行，最后一行「上线前替换」。用途取 desc 的第一小句；
+ *   没有 desc 时，二维码位叫「二维码」，其他位叫「客户提供的图」。不拿图片位 id 当文案。
+ * - SVG 根上带 data-ph 标记，writePage 看到它就给 <img> 加 data-ph 属性，框架 CSS 靠这个属性给占位图设显示尺寸。
+ */
 function clientPlaceholder(meta, id, box) {
   const raw = String(meta?.desc || "").trim();
-  const sentence = raw.split(/[。！？!?]/)[0].trim();
-  const purpose = (sentence || id).slice(0, 18);
-  const label = `${purpose} · 上线前替换`;
-  const size = Math.max(18, Math.min(42, Math.round(Math.min(box.w / 22, box.h / 6))));
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${box.w}" height="${box.h}" viewBox="0 0 ${box.w} ${box.h}"><rect width="100%" height="100%" fill="#e7e2d8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#3d3b37" font-size="${size}" font-family="sans-serif">${xmlText(label)}</text></svg>`;
+  const clause = raw.split(/[。！？!?，,；;]/)[0].trim().replace(/(上线前.*|占位|示例)$/, "").trim();
+  const isQr = /^qr(-|$)/i.test(id);
+  const generic = isQr ? copy.placeholderQr : copy.placeholderImage;
+  const purpose = lang === "en" ? generic : (clause || generic).slice(0, 18);
+  // 按最小的显示宽度（约 96px）折行：中文一行 6 个字，英文一行 14 个字符。
+  const perLine = lang === "en" ? 14 : 6;
+  const lines = [...wrapEven(purpose, perLine), ...wrapEven(copy.placeholderNote, perLine)];
+  const colors = placeholderColors();
+  const rows = lines.map((text, index) => {
+    const dy = ((index - (lines.length - 1) / 2) * 1.45).toFixed(3);
+    return `<text x="50%" y="50%" dy="${dy}em" dominant-baseline="central" text-anchor="middle" fill="${colors.text}" font-size="${PH_PX}" font-family="sans-serif">${xmlText(text)}</text>`;
+  }).join("");
+  const frame = `<rect x="3%" y="3%" width="94%" height="94%" fill="none" stroke="${colors.line}" stroke-width="1" stroke-dasharray="5 4"/>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" data-ph="1" width="100%" height="100%"><rect width="100%" height="100%" fill="${colors.fill}"/>${frame}${rows}</svg>`;
   return {
     src: `data:image/svg+xml,${encodeURIComponent(svg)}`,
     width: box.w,
     height: box.h,
   };
+}
+
+// 占位图的三个颜色，从这个站的 tokens 里混出来：底 = 字色 8% 混进表面色，虚线 = 字色 30% 混进底，字 = 次要字色。
+// 次要字色落在底上不到 4.5:1 时改用正文字色。tokens 里读不到颜色就回到固定的米色。
+function placeholderColors() {
+  const c = tokens?.color || {};
+  const text = parseColor(c.text);
+  const surface = parseColor(c.surface);
+  const muted = parseColor(c["text-muted"]);
+  if (!text || !surface || !muted) return { fill: "#e7e2d8", line: "#b9b2a3", text: "#3d3b37" };
+  const mix = (a, b, t) => ({
+    r: a.r * t + b.r * (1 - t),
+    g: a.g * t + b.g * (1 - t),
+    b: a.b * t + b.b * (1 - t),
+  });
+  const fill = mix(text, surface, 0.08);
+  const line = mix(text, fill, 0.3);
+  const lum = (v) => {
+    const f = (n) => {
+      const x = n / 255;
+      return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
+    };
+    return 0.2126 * f(v.r) + 0.7152 * f(v.g) + 0.0722 * f(v.b);
+  };
+  const ratio = (a, b) => (Math.max(lum(a), lum(b)) + 0.05) / (Math.min(lum(a), lum(b)) + 0.05);
+  const ink = ratio(muted, fill) >= 4.5 ? muted : text;
+  return {
+    fill: toHex(fill.r, fill.g, fill.b),
+    line: toHex(line.r, line.g, line.b),
+    text: toHex(ink.r, ink.g, ink.b),
+  };
+}
+
+// 给占位图的 <img> 加 data-ph 属性：只认 clientPlaceholder 画的 SVG（根上有 data-ph 标记）。
+function markPlaceholders(html) {
+  if (!html.includes(PH_MARK)) return html;
+  return html.replace(/<img\b(?=[^>]*\bsrc="data:image\/svg\+xml,[^"]*data-ph%3D%221%22)/g, '<img data-ph=""');
+}
+
+// 一行放不下就均匀拆成几行：7 个字拆成 4 + 3，不拆成 6 + 1。含空格的（英文）按词拆。
+function wrapEven(text, perLine) {
+  const chars = [...text];
+  if (chars.length <= perLine) return [text];
+  if (/\s/.test(text)) {
+    const out = [];
+    let cur = "";
+    for (const word of text.split(/\s+/)) {
+      if (cur && `${cur} ${word}`.length > perLine) {
+        out.push(cur);
+        cur = word;
+      } else cur = cur ? `${cur} ${word}` : word;
+    }
+    if (cur) out.push(cur);
+    return out;
+  }
+  const each = Math.ceil(chars.length / Math.ceil(chars.length / perLine));
+  const out = [];
+  for (let i = 0; i < chars.length; i += each) out.push(chars.slice(i, i + each).join(""));
+  return out;
 }
 
 function xmlText(value) {
@@ -794,18 +899,21 @@ function makeGlobals(file) {
     address,
     amapUrl: `https://uri.amap.com/search?keyword=${encodeURIComponent(address)}`,
     hours,
-    hoursText: hours.map((row) => `${row.day} ${row.time}`).join("；"),
+    hoursText: hours.map((row) => `${row.day} ${row.time}`).join(lang === "en" ? "; " : "；"),
     icp: site.contact.icp || "",
     police,
     policeUrl: digits ? `https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${digits}` : "",
     formUrl: site.contact.formUrl || "",
     hasWechat: Boolean(wechat || qrPic.src),
     year: String(new Date().getFullYear()),
-    primaryLabel: house.buttons.primary,
-    secondaryLabel: house.buttons.secondary,
-    formLabel: house.buttons.form,
+    primaryLabel: buttonLabel("primary"),
+    secondaryLabel: buttonLabel("secondary"),
+    formLabel: buttonLabel("form"),
+    ui: copy,
     nav: navFor(file),
     homeHref: rootHref(file, "index.html"),
+    // 页脚品牌栏的「首页」链接：导航里已经有首页就不再放一条重复的。
+    footerHome: !(site.nav || []).some((item) => rootHref("index.html", item.href) === "index.html"),
   };
 }
 
@@ -824,6 +932,7 @@ function adaptSection(section, order) {
       house,
       data: section.data || {},
       phone,
+      labels: copy,
     });
     return {
       ...section,
@@ -837,7 +946,7 @@ function adaptSection(section, order) {
     };
   }
   const rule = (order || []).find((item) => item.type === section.type);
-  return scrubSection(section, { house, site, required: Boolean(rule?.required) });
+  return scrubSection(section, { house, site, required: Boolean(rule?.required), labels: copy });
 }
 
 function itemsOf(id) {
@@ -872,7 +981,7 @@ function defaultBannerImage() {
 }
 
 function bannerFromTitle(title) {
-  const name = String(title || "").split("｜")[0].trim() || title;
+  const name = splitTitle(title);
   return {
     title: name,
     image: defaultBannerImage(),
@@ -882,7 +991,7 @@ function bannerFromTitle(title) {
 }
 
 function bannerFromPage(source) {
-  const name = source.bannerTitle || String(source.title || "").split("｜")[0].trim();
+  const name = source.bannerTitle || splitTitle(source.title);
   return {
     title: name,
     image: source.banner || defaultBannerImage(),
@@ -898,6 +1007,7 @@ function jsonLd() {
     "@type": type,
     name: site.name,
     description: site.summary || "",
+    inLanguage: lang === "en" ? "en" : "zh-CN",
   };
   if (phone) data.telephone = phone;
   if (site.contact.email) data.email = site.contact.email;
@@ -911,6 +1021,7 @@ function faqJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: lang === "en" ? "en" : "zh-CN",
     mainEntity: faqItems.map((item) => ({
       "@type": "Question",
       name: item.q,
@@ -1051,8 +1162,8 @@ function cssRoot(token) {
     `  --accent: ${token.color.accent};`,
     `  --on-media: ${token.color["on-media"] || token.color["primary-contrast"]};`,
     "  --scrim: linear-gradient(180deg, rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.8));",
-    `  --font-heading: ${token.font["font-heading"]};`,
-    `  --font-body: ${token.font["font-body"]};`,
+    `  --font-heading: ${lang === "en" ? (token.font["font-heading-en"] || EN_FONT) : token.font["font-heading"]};`,
+    `  --font-body: ${lang === "en" ? (token.font["font-body-en"] || EN_FONT) : token.font["font-body"]};`,
     ...scale.map((size, index) => `  --fs-${index + 1}: ${size};`),
   ];
   if (typeof token.type.hero === "number") lines.push(`  --fs-hero: ${token.type.hero}px;`);
@@ -1094,6 +1205,11 @@ function validateTokens(token) {
     fail("token 颜色不合法：on-media");
   }
   if (!token.font?.["font-heading"] || !token.font?.["font-body"]) fail("token 缺少字体栈");
+  for (const key of ["font-heading-en", "font-body-en"]) {
+    const value = token.font?.[key];
+    if (value == null || value === "") continue;
+    if (typeof value !== "string" || value.length < 3) fail(`token 字体不合法：${key}`);
+  }
   const base = token.type?.base;
   const ratio = token.type?.ratio;
   if (typeof base !== "number" || base < 16 || base > 18) fail("正文字号 base 必须在 16 到 18");
@@ -1220,6 +1336,52 @@ function rootHref(fromFile, href) {
 function phoneTel(raw) {
   const head = String(raw).split(/\s*(?:转|分机|ext\.?|\/|,|，|;|；)\s*/i)[0];
   return head.replace(/[^\d+]/g, "");
+}
+
+function readButtonOverrides(doc) {
+  const raw = doc?.buttons;
+  if (raw == null || raw === "") return {};
+  if (typeof raw !== "object" || Array.isArray(raw)) fail("buttons 必须是对象");
+  const out = {};
+  for (const key of ["primary", "secondary", "form"]) {
+    if (!(key in raw) || raw[key] === "") continue;
+    if (typeof raw[key] !== "string") fail(`buttons.${key} 必须是字符串`);
+    const text = raw[key].trim();
+    if (text) out[key] = text;
+  }
+  return out;
+}
+
+function buttonLabel(key) {
+  return buttonOverrides[key] || house.buttons[key];
+}
+
+function titleJoiner() {
+  return lang === "en" ? " | " : "｜";
+}
+
+function splitTitle(title) {
+  const text = String(title || "");
+  const mark = lang === "en" ? " | " : "｜";
+  if (!text.includes(mark)) return text.trim() || text;
+  return text.split(mark)[0].trim() || text;
+}
+
+function localizeDates(node) {
+  if (lang !== "en") return node;
+  if (Array.isArray(node)) return node.map((item) => localizeDates(item));
+  if (!node || typeof node !== "object") return node;
+  const out = {};
+  for (const [key, value] of Object.entries(node)) {
+    if (key === "date" && typeof value === "string") out[key] = formatDate(value, lang);
+    else if (value && typeof value === "object") out[key] = localizeDates(value);
+    else out[key] = value;
+  }
+  return out;
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 function loadHouse(industry) {

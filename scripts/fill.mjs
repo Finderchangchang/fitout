@@ -4,6 +4,7 @@
  * 用 DeepSeek 按企业档案填 site.json。密钥只读 DEEPSEEK_API_KEY。
  * 拿到 JSON 后用本仓库的填写校验和拼装、机检回喂，最多再改 --max-retries 轮。
  * token 记在 <out>.log.json，每次模型原文记在 <out>.raw-<n>.txt。设置 FITOUT_CALL_LEDGER 时，调用次数达到 80 就停。
+ * 导出 fillProfile，供 fitout.mjs 调用。直接运行本文件时，命令和退出码与以前相同。
  */
 import fs from "fs";
 import os from "os";
@@ -17,69 +18,78 @@ import { closedTargets, isOn, parentOfCollection, pointsClosed } from "./lib/pag
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
 const CALL_LIMIT = 95;
-const ASSETS = process.env.FITOUT_DEMO_ASSETS || "H:\\ai_tool\\fitout-demo-assets";
 const RETRY_RULES = new Set([
   "spec", "篇幅", "C14", "E5", "E6", "E2", "口径", "残留", "SEO", "结构", "链接", "D6", "C9", "C8", "口号", "A9", "重复",
 ]);
 
-const args = process.argv.slice(2);
-const flag = (name, fallback) => {
-  const i = args.indexOf(name);
-  if (i < 0) return fallback;
-  return args[i + 1];
-};
-const profilePath = flag("--profile");
-const showroomId = flag("--showroom");
-const outPath = flag("--out");
-const model = flag("--model", "deepseek-chat");
-const maxRetries = Number(flag("--max-retries", "2"));
-const dryRun = args.includes("--dry-run");
+const USAGE = "用法：node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2]";
 
-if (!profilePath || !showroomId || !outPath || !Number.isInteger(maxRetries) || maxRetries < 0) {
-  console.error("用法：node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2]");
-  process.exit(2);
-}
-
-const profileFile = path.resolve(profilePath);
-const outFile = path.resolve(outPath);
-const logFile = `${outFile}.log.json`;
-if (!fs.existsSync(profileFile)) fail(`找不到企业档案：${profileFile}`, 2);
-if (!/^[a-z0-9_-]+$/.test(showroomId)) fail(`样板间 id 不合法：${showroomId}`, 2);
-
-const showroomDir = path.join(root, "showrooms", showroomId);
-const showroom = readJson(path.join(showroomDir, "showroom.json"));
-const example = readJson(path.join(showroomDir, "examples", "site.json"));
-const images = readJson(path.join(showroomDir, "images.json"));
-const profile = fs.readFileSync(profileFile, "utf8").replace(/^\uFEFF/, "");
-const rulesDoc = fs.readFileSync(path.join(root, "docs", "SITE_JSON.md"), "utf8").replace(/^\uFEFF/, "");
-const specs = loadSpecs(showroomDir);
-const slots = Array.isArray(images.slots) ? images.slots : [];
-const heroSlots = slots.filter((slot) => slot.block === "hero" && slot.tier === "must" && slot.mustBeReal === false);
-const bans = exampleBans(example, showroomId);
-const outline = showroomOutline(showroom, heroSlots, slots);
-const specText = specPrompt(showroom, specs);
-const businessType = example.businessType === "Organization" || example.businessType === "LocalBusiness"
-  ? example.businessType
-  : (showroom.industry === "factory-trade" ? "Organization" : "LocalBusiness");
-const system = systemPrompt(showroom, bans, businessType);
-const user = userPrompt({ rulesDoc, outline, specText, example, profile, showroomId });
-
-if (dryRun) {
-  const exampleErrors = lintSite(example, { leak: false });
-  console.log(`提示词 ${countChars(system) + countChars(user)} 字（系统 ${system.length} 字符，用户 ${user.length} 字符）`);
-  console.log(`示例站校验：${exampleErrors.length ? exampleErrors.join(" | ") : "通过"}`);
-  console.log(`首屏图：${heroSlots.map((slot) => slot.id).join("、") || "无"}`);
-  process.exit(exampleErrors.length ? 1 : 0);
-}
-
-const apiKey = String(process.env.DEEPSEEK_API_KEY || "").trim();
-if (!apiKey) fail("没有 DEEPSEEK_API_KEY", 2);
-
-fs.mkdirSync(path.dirname(outFile), { recursive: true });
-const callLog = [];
-let lastSite = null;
+let profileFile = "";
+let showroomId = "";
+let outFile = "";
+let logFile = "";
+let model = "deepseek-chat";
+let showroom = null;
+let profile = "";
+let specs = new Map();
+let slots = [];
+let heroSlots = [];
+let bans = [];
+let businessType = "LocalBusiness";
+let apiKey = "";
+let callLog = [];
 let lastErrors = [];
-let passedOn = 0;
+
+export async function fillProfile(options = {}) {
+  const profilePath = options.profilePath;
+  const showroomArg = options.showroomId;
+  const outPath = options.outPath;
+  const maxRetries = Number(options.maxRetries == null ? 2 : options.maxRetries);
+  const dryRun = Boolean(options.dryRun);
+  model = options.model || "deepseek-chat";
+  callLog = [];
+  lastErrors = [];
+  if (!profilePath || !showroomArg || !outPath || !Number.isInteger(maxRetries) || maxRetries < 0) fail(USAGE, 2);
+
+  showroomId = showroomArg;
+  profileFile = path.resolve(profilePath);
+  outFile = path.resolve(outPath);
+  logFile = `${outFile}.log.json`;
+  if (!fs.existsSync(profileFile)) fail(`找不到企业档案：${profileFile}`, 2);
+  if (!/^[a-z0-9_-]+$/.test(showroomId)) fail(`样板间 id 不合法：${showroomId}`, 2);
+
+  const showroomDir = path.join(root, "showrooms", showroomId);
+  showroom = readJson(path.join(showroomDir, "showroom.json"));
+  const example = readJson(path.join(showroomDir, "examples", "site.json"));
+  const images = readJson(path.join(showroomDir, "images.json"));
+  profile = fs.readFileSync(profileFile, "utf8").replace(/^\uFEFF/, "");
+  const rulesDoc = fs.readFileSync(path.join(root, "docs", "SITE_JSON.md"), "utf8").replace(/^\uFEFF/, "");
+  specs = loadSpecs(showroomDir);
+  slots = Array.isArray(images.slots) ? images.slots : [];
+  heroSlots = slots.filter((slot) => slot.block === "hero" && slot.tier === "must" && slot.mustBeReal === false);
+  bans = exampleBans(example, showroomId);
+  const outline = showroomOutline(showroom, heroSlots, slots);
+  const specText = specPrompt(showroom, specs);
+  businessType = example.businessType === "Organization" || example.businessType === "LocalBusiness"
+    ? example.businessType
+    : (showroom.industry === "factory-trade" ? "Organization" : "LocalBusiness");
+  const system = systemPrompt(showroom, bans, businessType);
+  const user = userPrompt({ rulesDoc, outline, specText, example, profile, showroomId });
+
+  if (dryRun) {
+    const exampleErrors = lintSite(example, { leak: false });
+    console.log(`提示词 ${countChars(system) + countChars(user)} 字（系统 ${system.length} 字符，用户 ${user.length} 字符）`);
+    console.log(`示例站校验：${exampleErrors.length ? exampleErrors.join(" | ") : "通过"}`);
+    console.log(`首屏图：${heroSlots.map((slot) => slot.id).join("、") || "无"}`);
+    return { ok: exampleErrors.length === 0, exitCode: exampleErrors.length ? 1 : 0, message: "" };
+  }
+
+  apiKey = String(process.env.DEEPSEEK_API_KEY || "").trim();
+  if (!apiKey) fail("没有 DEEPSEEK_API_KEY", 2);
+
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  let lastSite = null;
+  let passedOn = 0;
 
 const messages = [
   { role: "system", content: system },
@@ -125,12 +135,28 @@ if (lastSite) {
   fs.writeFileSync(outFile, `${JSON.stringify(lastSite, null, 2)}\n`, "utf8");
 }
 writeLog({ ok: passedOn > 0, passedOn, errors: passedOn ? [] : lastErrors });
-if (!passedOn) {
-  console.error(`没填成（${lastErrors.length} 条）：${lastErrors.slice(0, 8).join("；")}`);
-  process.exit(1);
-}
 const tokens = callLog.reduce((sum, row) => sum + (row.totalTokens || 0), 0);
-console.log(`已写入 ${outFile}（第 ${passedOn} 次，重试 ${passedOn - 1} 次，${tokens} token）`);
+if (!passedOn) {
+  return {
+    ok: false,
+    exitCode: 1,
+    message: `没填成（${lastErrors.length} 条）：${lastErrors.slice(0, 8).join("；")}`,
+    errors: lastErrors,
+    outFile,
+    tokens,
+    calls: callLog.length,
+  };
+}
+return {
+  ok: true,
+  exitCode: 0,
+  message: `已写入 ${outFile}（第 ${passedOn} 次，重试 ${passedOn - 1} 次，${tokens} token）`,
+  outFile,
+  passedOn,
+  tokens,
+  calls: callLog.length,
+};
+}
 
 function remember(history, assistant, errors) {
   history.length = 2;
@@ -372,7 +398,9 @@ function runCheck(tmp) {
 }
 
 function copyHeroFiles(id, dest) {
-  const from = path.join(ASSETS, id);
+  const assets = String(process.env.FITOUT_DEMO_ASSETS || "").trim();
+  if (!assets) return;
+  const from = path.join(assets, id);
   if (!fs.existsSync(from)) return;
   for (const slot of heroSlots) {
     for (const ext of [".jpg", ".jpeg", ".png", ".webp"]) {
@@ -886,6 +914,32 @@ function redact(text) {
 }
 
 function fail(message, code) {
-  console.error(redact(message));
-  process.exit(code);
+  const error = new Error(redact(message));
+  error.code = code;
+  throw error;
+}
+
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+if (isMain) {
+  const args = process.argv.slice(2);
+  const flag = (name, fallback) => {
+    const i = args.indexOf(name);
+    if (i < 0) return fallback;
+    return args[i + 1];
+  };
+  fillProfile({
+    profilePath: flag("--profile"),
+    showroomId: flag("--showroom"),
+    outPath: flag("--out"),
+    model: flag("--model", "deepseek-chat"),
+    maxRetries: flag("--max-retries", "2"),
+    dryRun: args.includes("--dry-run"),
+  }).then((result) => {
+    if (result.message && result.ok) console.log(result.message);
+    if (result.message && !result.ok) console.error(result.message);
+    process.exit(result.exitCode || 0);
+  }).catch((error) => {
+    console.error(redact(error.message));
+    process.exit(Number.isInteger(error.code) ? error.code : 1);
+  });
 }

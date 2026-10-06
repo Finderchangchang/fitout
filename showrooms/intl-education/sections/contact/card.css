@@ -1,0 +1,97 @@
+.contact-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.contact-copy,
+.contact-code {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+  padding: 1.75rem;
+  min-width: 0;
+}
+
+.contact-copy p,
+.contact-code p {
+  margin: 0;
+}
+
+.contact-group {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+}
+
+.contact-group + .contact-group {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  font-weight: 700;
+}
+
+.hour-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 22rem;
+  padding-block: 0.4rem;
+}
+
+.contact-copy a:not(.btn) {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding-block: 0.5rem;
+}
+
+.contact-copy a:not(.btn) .icon,
+.contact-line .icon {
+  flex: none;
+  margin-top: calc((1lh - 1.25rem) / 2);
+}
+
+.contact-actions {
+  gap: 0.75rem;
+}
+
+/* 右栏：二维码、微信号、复制按钮居中，卡片和左栏等高时上下留白均分。 */
+.contact-code {
+  margin: 0;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.contact-code img {
+  width: min(100%, 14rem);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.contact-line {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-code .btn {
+  display: flex;
+  min-width: 11rem;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 1fr);
+  }
+}

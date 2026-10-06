@@ -1,0 +1,28 @@
+{
+  "note": "集合列表。条目只有名称、摘要、链接和图。课时、价格、到课时间要写进摘要。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 }
+  },
+  "variants": {
+    "portraits": {
+      "needsImage": false,
+      "family": "people",
+      "fit": "人像网格，名字链到详情",
+      "source": "样板间自写"
+    },
+    "cards": {
+      "needsImage": false,
+      "family": "stories",
+      "fit": "图在上、字在下的作业卡",
+      "source": "样板间自写"
+    },
+    "rows": {
+      "needsImage": false,
+      "family": "index",
+      "fit": "左图右文的动态行",
+      "source": "样板间自写"
+    }
+  }
+}

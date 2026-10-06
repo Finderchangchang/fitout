@@ -1,0 +1,35 @@
+{
+  "note": "列表由集合注入。时长、适合谁、价格、执业年限写在 summary 里，因为列表只拿到摘要。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 }
+  },
+  "variants": {
+    "menu": {
+      "needsImage": false,
+      "family": "ledger",
+      "fit": "项目横排，摘要里带时长和价格",
+      "source": "样板间自写"
+    },
+    "people": {
+      "needsImage": false,
+      "family": "roster",
+      "fit": "人像三列，五个人会换行",
+      "source": "样板间自写"
+    },
+    "shots": {
+      "needsImage": false,
+      "family": "frames",
+      "fit": "环境横图",
+      "source": "样板间自写"
+    },
+    "notes": {
+      "needsImage": false,
+      "family": "notes",
+      "fit": "记事，日期写在摘要开头",
+      "source": "样板间自写"
+    }
+  }
+}

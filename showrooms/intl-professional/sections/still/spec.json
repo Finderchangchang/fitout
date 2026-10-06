@@ -1,0 +1,18 @@
+{
+  "note": "一条满宽静图，把页面切开。标题不烤进图片。",
+  "fields": {
+    "image": { "type": "image", "required": true, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+    "caption": { "type": "string", "required": false, "maxChars": 40 }
+  },
+  "variants": {
+    "frame": {
+      "needsImage": true,
+      "imageField": "image",
+      "fallback": "omit",
+      "family": "still",
+      "fit": "窗、墙或空椅的一张静图",
+      "source": "自写满宽图。缺图就整块不出"
+    }
+  }
+}

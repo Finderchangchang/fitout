@@ -1,0 +1,24 @@
+<section class="section" data-section="services" data-family="ledger" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="offer-list" data-media-group="offer">
+      {{#each items}}
+      <article class="offer">
+        {{#if image}}
+        {{#if href}}<a class="offer-photo" href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{else}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+        {{/if}}
+        <div class="offer-copy">
+          <h3 class="item-title">{{#if href}}<a href="{{href}}">{{name}}</a>{{else}}{{name}}{{/if}}</h3>
+          <p>{{text}}</p>
+        </div>
+        {{#if price}}<p class="price nums">{{price}}</p>{{/if}}
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

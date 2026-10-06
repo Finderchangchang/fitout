@@ -1,0 +1,44 @@
+{
+  "note": "三种详情共用字段。参数表和日期可无。询价按钮和返回列表由拼装填。深色询价条写在版式里，因为详情页不能再挂第二个板块。",
+  "fields": {
+    "name": { "type": "string", "required": true, "maxChars": 20 },
+    "summary": { "type": "string", "required": true, "maxChars": 80 },
+    "body": { "type": "string", "required": false, "maxChars": 200 },
+    "date": { "type": "string", "required": false, "maxChars": 16 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "specs": {
+      "type": "list",
+      "required": false,
+      "max": 8,
+      "item": {
+        "label": { "type": "string", "required": true, "maxChars": 8 },
+        "value": { "type": "string", "required": true, "maxChars": 24 }
+      }
+    },
+    "primaryLabel": { "type": "string", "required": false, "maxChars": 8, "filledBy": "build" },
+    "primaryHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backLabel": { "type": "string", "required": false, "maxChars": 12, "filledBy": "build" }
+  },
+  "variants": {
+    "sheet": {
+      "needsImage": false,
+      "family": "sheet",
+      "fit": "方图、说明和参数表，下面一条询价",
+      "source": "样板间自写"
+    },
+    "story": {
+      "needsImage": false,
+      "family": "story",
+      "fit": "用途照片在上，说明在下",
+      "source": "样板间自写"
+    },
+    "report": {
+      "needsImage": false,
+      "family": "report",
+      "fit": "动态的月份、正文和配图",
+      "source": "样板间自写"
+    }
+  }
+}

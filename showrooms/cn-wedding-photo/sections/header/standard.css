@@ -35,10 +35,11 @@ img {
   min-width: 0;
 }
 
+/* 内边距左右各 0.5rem，两个字的项也 ≥ 44px：相邻两项文字间距一个值，不靠 min-width 撑。 */
 .nav-list a {
   color: var(--text);
   white-space: nowrap;
-  padding-inline: 0.2rem;
+  padding-inline: 0.5rem;
 }
 
 .nav-list a:hover,
@@ -67,6 +68,15 @@ img {
 
 .header-tools {
   flex: none;
+}
+
+/* 热线和导航之间一条竖线加间距，热线不会读成又一个导航项（以前两者只隔 15px，字距和导航项一样）。 */
+@media (min-width: 1024px) {
+  .header-tools {
+    margin-left: 0.75rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--border);
+  }
 }
 
 .btn {
@@ -111,6 +121,6 @@ img {
   .nav-list {
     flex-wrap: nowrap;
     justify-content: flex-end;
-    gap: 0.1rem 0.35rem;
+    gap: 0.15rem 0.25rem;
   }
 }

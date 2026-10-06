@@ -1,3 +1,5 @@
+/* 生产设备：一行一件，图在左、字在右。桌面两列并排，奇数个时最后一行占满。
+   以前奇数行字在左、图被推到最右，中间空出一大截。 */
 .stagger {
   display: grid;
   gap: 1.5rem;
@@ -10,7 +12,8 @@
 }
 
 .stagger-photo {
-  max-width: 18rem;
+  order: -1;
+  max-width: none;
 }
 
 .stagger-photo img,
@@ -35,19 +38,18 @@
 
 @media (min-width: 768px) {
   .stagger-row {
-    grid-template-columns: 1fr 18rem;
+    grid-template-columns: 14rem minmax(0, 1fr);
     gap: 1.5rem;
   }
+}
 
-  .stagger-row:nth-child(odd) .stagger-photo {
-    justify-self: end;
+@media (min-width: 1024px) {
+  .stagger {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 3rem;
   }
 
-  .stagger-row:nth-child(even) {
-    grid-template-columns: 18rem 1fr;
-  }
-
-  .stagger-row:nth-child(even) .stagger-copy {
-    order: 2;
+  .stagger-row:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }

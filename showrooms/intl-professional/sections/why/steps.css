@@ -1,0 +1,49 @@
+.step-list {
+  display: grid;
+  gap: var(--gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step-list li {
+  min-width: 0;
+  padding-top: 1rem;
+  border-top: 2px solid var(--primary);
+}
+
+.step-list li p {
+  margin: 0;
+}
+
+.step-no {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: var(--fs-4);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+  margin-bottom: 0.35rem;
+}
+
+[data-tone="dark"] .step-list li {
+  border-top-color: var(--on-media);
+}
+
+@media (min-width: 768px) {
+  .step-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 四步一排：每步一条顶线和一个大数字，不再 2×2 缩在左边。 */
+@media (min-width: 1024px) {
+  .step-list {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 2rem;
+  }
+}

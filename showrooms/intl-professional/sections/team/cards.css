@@ -1,0 +1,62 @@
+.people-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.person {
+  min-width: 0;
+  background: var(--surface);
+}
+
+.person img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.person .item-title,
+.person .meta,
+.person p {
+  padding-inline: 0.9rem;
+}
+
+.person .item-title {
+  margin-top: 0.9rem;
+  font-size: var(--fs-3);
+}
+
+.person a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .people-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .people-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 手机两列：四位顾问整幅叠下来要滚四屏。 */
+@media (max-width: 767px) {
+  .people-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .person .item-title,
+  .person .meta,
+  .person p {
+    padding-inline: 0.7rem;
+  }
+
+  .person .item-title {
+    font-size: var(--fs-2);
+  }
+}

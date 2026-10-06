@@ -1,0 +1,578 @@
+{
+  "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+  "gradeParams": {
+    "brightness": 1,
+    "contrast": 1.06,
+    "saturate": 0.72,
+    "warmth": -0.12
+  },
+  "slots": [
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "hero-basin",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "tier": "must",
+      "keywords": [
+        "basin",
+        "brass",
+        "tap"
+      ],
+      "prompt": "白瓷洗手台上的黄铜龙头，冷石灰光，不要人脸，不要文字。",
+      "desc": "首屏，洗手台上的铜龙头。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "hero-linen",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "tier": "must",
+      "keywords": [
+        "linen",
+        "towel",
+        "fold"
+      ],
+      "prompt": "叠好的本色亚麻毛巾，冷石灰光，不要人脸，不要文字。",
+      "desc": "首屏，叠好的本色毛巾。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "hero-chair",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "tier": "must",
+      "keywords": [
+        "chair",
+        "leather",
+        "metal"
+      ],
+      "prompt": "理发椅的皮革座和金属脚，冷石灰光，不要人脸，不要文字。",
+      "desc": "首屏，理发椅的皮革和金属脚。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "hero-oil",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "tier": "must",
+      "keywords": [
+        "oil",
+        "bottle",
+        "tray"
+      ],
+      "prompt": "木托盘上的玻璃油瓶，冷石灰光，不要人脸，不要文字。",
+      "desc": "首屏，木托盘上的油瓶。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "banner-room",
+      "page": "about",
+      "block": "banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "tier": "must",
+      "keywords": [
+        "window",
+        "curtain",
+        "room"
+      ],
+      "prompt": "护理室的窗和本色帘，冷石灰光，不要人脸，不要文字。",
+      "desc": "内页横幅，护理室的窗和帘。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "band-street",
+      "page": "home",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "tier": "must",
+      "keywords": [
+        "street",
+        "shop",
+        "daylight"
+      ],
+      "prompt": "白天靠街的店面玻璃，冷石灰光，不要招牌文字，不要人脸。",
+      "desc": "首页满宽，靠街店面的白天。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "still-towel",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "tier": "must",
+      "keywords": [
+        "towel",
+        "stack",
+        "linen"
+      ],
+      "prompt": "电商棚拍，浅石灰底上叠好的干毛巾，冷光，不要文字，不要人脸。",
+      "desc": "头皮清洁用的干毛巾。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "still-oil",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "tier": "must",
+      "keywords": [
+        "oil",
+        "bottle",
+        "wood"
+      ],
+      "prompt": "电商棚拍，浅石灰底上的木盘和油瓶，冷光，不要文字，不要人脸。",
+      "desc": "身体护理用的油瓶。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "shot-cut",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "chair",
+        "comb",
+        "scissors"
+      ],
+      "prompt": "剪发椅和木梳，冷石灰光，不要人脸，不要文字。",
+      "desc": "剪发椅和木梳。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "shot-color",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "bowl",
+        "tint",
+        "brush"
+      ],
+      "prompt": "染发碗和色板，冷石灰光，不要人脸，不要文字。",
+      "desc": "染发碗和色板。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "shot-perm",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "roller",
+        "trolley"
+      ],
+      "prompt": "烫发卷和推车，冷石灰光，不要人脸，不要文字。",
+      "desc": "烫发卷和推车。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "shot-face",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "bed",
+        "curtain",
+        "linen"
+      ],
+      "prompt": "面部护理床和本色帘，空床，冷石灰光，不要人脸，不要文字。",
+      "desc": "面部床和帘。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "shot-neck",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "chair",
+        "neck",
+        "linen"
+      ],
+      "prompt": "肩颈用的椅子和搭好的毛巾，冷石灰光，不要人脸，不要文字。",
+      "desc": "肩颈用的椅子。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "shot-hands",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "nail",
+        "tools",
+        "towel"
+      ],
+      "prompt": "手足护理的工具和毛巾，冷石灰光，不要人手特写上的文字，不要脸。",
+      "desc": "手足护理的工具。"
+    },
+    {
+      "mustBeReal": true,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "person-zhou",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "tier": "nice",
+      "focus": [
+        0.5,
+        0.35
+      ],
+      "keywords": [
+        "hairstylist",
+        "portrait",
+        "salon"
+      ],
+      "prompt": "发型师半身，站在一整块冷石灰墙前，不要抠图，不要文字。",
+      "desc": "周晚宁站在浅墙前。"
+    },
+    {
+      "mustBeReal": true,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "person-shen",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "tier": "nice",
+      "focus": [
+        0.5,
+        0.35
+      ],
+      "keywords": [
+        "hairdresser",
+        "portrait",
+        "apron"
+      ],
+      "prompt": "发型师半身，站在一整块冷石灰墙前，不要抠图，不要文字。",
+      "desc": "沈清禾站在浅墙前。"
+    },
+    {
+      "mustBeReal": true,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "person-gu",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "tier": "nice",
+      "focus": [
+        0.5,
+        0.35
+      ],
+      "keywords": [
+        "esthetician",
+        "portrait",
+        "spa"
+      ],
+      "prompt": "美容师半身，站在一整块冷石灰墙前，不要抠图，不要文字。",
+      "desc": "顾小山站在浅墙前。"
+    },
+    {
+      "mustBeReal": true,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "person-liang",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "tier": "nice",
+      "focus": [
+        0.5,
+        0.35
+      ],
+      "keywords": [
+        "beautician",
+        "portrait",
+        "linen"
+      ],
+      "prompt": "美容师半身，站在一整块冷石灰墙前，不要抠图，不要文字。",
+      "desc": "梁夏站在浅墙前。"
+    },
+    {
+      "mustBeReal": true,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "person-chen",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "tier": "nice",
+      "focus": [
+        0.5,
+        0.35
+      ],
+      "keywords": [
+        "manicurist",
+        "portrait",
+        "studio"
+      ],
+      "prompt": "美甲师半身，站在一整块冷石灰墙前，不要抠图，不要文字。",
+      "desc": "陈麦站在浅墙前。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "room-window",
+      "page": "album",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "window",
+        "bed",
+        "curtain"
+      ],
+      "prompt": "靠窗的空护理床和本色帘，冷石灰光，不要人脸，不要文字。",
+      "desc": "窗边的护理床。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "room-chair",
+      "page": "album",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "chair",
+        "mirror",
+        "street"
+      ],
+      "prompt": "靠街的空剪发椅，冷石灰光，不要人脸，不要文字。",
+      "desc": "靠街的剪发椅。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "room-sink",
+      "page": "album",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "basin",
+        "brass",
+        "sink"
+      ],
+      "prompt": "白瓷盆和铜龙头，冷石灰光，不要人脸，不要文字。",
+      "desc": "白瓷盆和铜龙头。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "room-rest",
+      "page": "album",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "chair",
+        "corner",
+        "wait"
+      ],
+      "prompt": "休息角的空椅子，冷石灰光，不要人脸，不要文字。",
+      "desc": "等人的椅子。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "room-dye",
+      "page": "album",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "bowl",
+        "station",
+        "dye"
+      ],
+      "prompt": "染发位子和空碗，冷石灰光，不要人脸，不要文字。",
+      "desc": "染发用的位子。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "room-cart",
+      "page": "album",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "trolley",
+        "oil",
+        "wood"
+      ],
+      "prompt": "木推车和油瓶，冷石灰光，不要人脸，不要文字。",
+      "desc": "木推车上的油瓶。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "news-towel",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "towel",
+        "stack"
+      ],
+      "prompt": "一叠本色毛巾，冷石灰光，不要文字，不要人脸。",
+      "desc": "一叠本色毛巾。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "news-monday",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "door",
+        "closed",
+        "day"
+      ],
+      "prompt": "白天关上的店门，冷石灰光，不要可读招牌，不要人脸。",
+      "desc": "关上的店门。"
+    },
+    {
+      "mustBeReal": false,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "news-book",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "tier": "nice",
+      "keywords": [
+        "notebook",
+        "pen"
+      ],
+      "prompt": "预约本和笔，冷石灰光，本子上不要可读文字，不要人脸。",
+      "desc": "预约本和笔。"
+    },
+    {
+      "mustBeReal": true,
+      "fallback": "omit",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "id": "qr-wechat",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "tier": "nice",
+      "keywords": [
+        "qr",
+        "wechat"
+      ],
+      "prompt": "方形微信二维码，客户提供，不要另外生成图案。",
+      "desc": "微信二维码，上线前替换。"
+    }
+  ]
+}

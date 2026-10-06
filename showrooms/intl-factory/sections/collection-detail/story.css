@@ -1,0 +1,27 @@
+.story-photo {
+  margin: 0 0 1.5rem;
+}
+
+.story-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  max-height: 32rem;
+}
+
+.story-copy {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 40rem;
+}
+
+.story-copy .section-title {
+  font-size: var(--fs-4);
+  line-height: 1.15;
+}
+
+.text-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}

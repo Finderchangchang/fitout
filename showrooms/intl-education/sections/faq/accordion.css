@@ -1,0 +1,12 @@
+.faq-list {
+  max-width: none;
+}
+
+@media (min-width: 1024px) {
+  [data-section="faq"] > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    gap: var(--gap);
+    align-items: start;
+  }
+}

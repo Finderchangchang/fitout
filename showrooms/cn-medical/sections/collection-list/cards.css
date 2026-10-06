@@ -25,3 +25,11 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* 3 项、6 项排三列：卡片和首页的诊疗项目、设备一样的尺寸；2、4 项仍排两列。 */
+@media (min-width: 1024px) {
+  .gallery-grid:has(> :nth-child(3):last-child),
+  .gallery-grid:has(> :nth-child(6):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

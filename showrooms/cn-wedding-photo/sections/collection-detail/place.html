@@ -1,28 +1,30 @@
 <section class="section" data-section="collection-detail" data-family="place" id="{{anchor}}">
-  <div class="container detail-copy">
+  <div class="container place">
     {{#if image}}<img class="place-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
-    {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
-    {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
-    <p class="section-lead">{{summary}}</p>
-    {{#if address}}<p>{{icon:map-pin:20}}{{address}}</p>{{/if}}
-    {{#if hours}}<p>{{icon:clock:20}}{{hours}}</p>{{/if}}
-    {{#if body}}<p class="prose">{{body}}</p>{{/if}}
-    {{#if specs}}
-    <table class="spec-table">
-      <tbody>
-        {{#each specs}}
-        <tr>
-          <th>{{label}}</th>
-          <td>{{value}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-    {{/if}}
-    <div class="btn-row">
-      {{#if mapHref}}<a class="btn" href="{{mapHref}}" target="_blank" rel="noopener noreferrer">高德导航</a>{{/if}}
-      <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
-      {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+    <div class="place-copy">
+      {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+      <p class="section-lead">{{summary}}</p>
+      {{#if address}}<p class="detail-fact">{{icon:map-pin:20}}<span>{{address}}</span></p>{{/if}}
+      {{#if hours}}<p class="detail-fact">{{icon:clock:20}}<span>{{hours}}</span></p>{{/if}}
+      {{#if body}}<p class="prose">{{body}}</p>{{/if}}
+      {{#if specs}}
+      <table class="spec-table">
+        <tbody>
+          {{#each specs}}
+          <tr>
+            <th>{{label}}</th>
+            <td>{{value}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{/if}}
+      <div class="btn-row">
+        {{#if mapHref}}<a class="btn" href="{{mapHref}}" target="_blank" rel="noopener noreferrer">高德导航</a>{{/if}}
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+      </div>
     </div>
   </div>
 </section>

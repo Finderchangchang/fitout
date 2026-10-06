@@ -44,3 +44,17 @@
 .item-title {
   font-size: var(--fs-3);
 }
+
+/* 桌面（1024 起）左边标题和说明、右边步骤，铺满容器，不再只挤在左边四分之一。 */
+@media (min-width: 1024px) {
+  [data-section="why"] > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--gap);
+    align-items: start;
+  }
+
+  [data-section="why"] .section-head {
+    margin-bottom: 0;
+  }
+}

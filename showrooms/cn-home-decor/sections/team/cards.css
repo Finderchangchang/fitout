@@ -1,7 +1,3 @@
-.section[data-section="team"] {
-  padding-block: 56px;
-}
-
 .team-grid {
   display: grid;
   gap: var(--gap);

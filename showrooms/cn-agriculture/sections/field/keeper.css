@@ -15,7 +15,17 @@
     grid-template-columns: 1fr 0.72fr;
   }
 
+  /* 照片靠右栏的右缘（和容器右缘对齐）。以前 figure 撑满右栏、照片留在左边，右边空了 140px。 */
   .field-keeper figure {
     justify-self: end;
   }
+
+  .field-keeper img {
+    margin-left: auto;
+  }
+}
+
+/* 没有照片时文字占整行。 */
+.field-keeper:not(:has(figure)) {
+  grid-template-columns: minmax(0, 40rem);
 }

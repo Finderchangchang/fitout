@@ -1,0 +1,36 @@
+<section class="section" data-section="course-board" data-family="catalog" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    {{#if groups}}
+    <style>
+      {{#each groups}}{{#if hide}}
+      #{{anchor}}:has(#lane-{{anchor}}-{{key}}:checked) .course-card:not([data-cat="{{key}}"]){display:none}
+      {{/if}}{{/each}}
+    </style>
+    <div class="filter-row">
+      {{#each groups}}
+      <input class="filter-input" type="radio" name="lane-{{anchor}}" id="lane-{{anchor}}-{{key}}" {{#if on}}checked{{/if}}>
+      <label class="filter-label" for="lane-{{anchor}}-{{key}}">{{name}}</label>
+      {{/each}}
+    </div>
+    {{/if}}
+    <div class="course-grid" data-media-group="card">
+      {{#each items}}
+      <article class="card course-card" data-cat="{{cat}}">
+        <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+        {{#if catName}}<p class="kicker">{{catName}}</p>{{/if}}
+        <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
+        {{#if hours}}<p>{{hours}}</p>{{/if}}
+        {{#if price}}<p class="price">{{price}}</p>{{/if}}
+        {{#if audience}}<p>{{audience}}</p>{{/if}}
+        {{#if teacher}}<p class="meta">{{teacher}}</p>{{/if}}
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

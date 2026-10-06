@@ -1,0 +1,258 @@
+/* 详情页：上面一块页头（标签、标题、导语），中间一张图，下面左正文、右侧栏（要点、约面谈、联系方式）。
+   以前整页缩成 46rem 居中窄栏，左缘和页头、其他板块都对不上，标题、图、小标题之间只隔 1rem，层次全糊在一起。 */
+.dossier {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.dossier-head {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 44rem;
+}
+
+.dossier-head .kicker {
+  margin: 0;
+}
+
+.dossier-head .section-title {
+  margin: 0;
+}
+
+.dossier-head .section-lead {
+  margin: 0.25rem 0 0;
+  color: var(--text);
+  font-size: 1.1875rem;
+}
+
+.dossier-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 21 / 9;
+  max-height: 30rem;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.dossier-cols {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.dossier-main {
+  display: grid;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.dossier-block {
+  display: grid;
+  gap: 0.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.dossier-block:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.dossier-block > .item-title {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  letter-spacing: 0.14em;
+}
+
+.dossier-block p {
+  margin: 0;
+  max-width: 40em;
+}
+
+.dossier-steps {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: dstep;
+}
+
+.dossier-steps li {
+  counter-increment: dstep;
+  display: grid;
+  gap: 0.15rem;
+  padding-left: 2.75rem;
+  position: relative;
+}
+
+.dossier-steps li::before {
+  content: counter(dstep);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: var(--fs-3);
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.dossier-steps .item-title {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--fs-2);
+  letter-spacing: 0;
+}
+
+.dossier-steps p {
+  margin: 0;
+}
+
+.dossier-side {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.spec-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-top: 2px solid var(--primary);
+}
+
+.spec-list > div {
+  display: grid;
+  gap: 0.1rem;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.spec-list dt {
+  color: var(--accent);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+}
+
+.spec-list dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.faq-list {
+  max-width: 40rem;
+}
+
+.summon {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  background: var(--primary);
+  color: var(--on-media);
+  padding: 1.5rem;
+}
+
+.summon .item-title,
+.summon p {
+  margin: 0;
+  color: var(--on-media);
+}
+
+.summon .btn-primary {
+  background: var(--on-media);
+  color: var(--primary);
+  border-color: var(--on-media);
+}
+
+.dossier-side .visit-triad {
+  margin-top: 0;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.dossier-side .hours-line {
+  margin: 0;
+}
+
+.back-row {
+  margin: 0.5rem 0 0;
+}
+
+@media (min-width: 900px) {
+  .dossier-cols {
+    grid-template-columns: minmax(0, 1.7fr) minmax(16rem, 1fr);
+    gap: 4rem;
+  }
+
+  .dossier-side {
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+/* 正文只有一两块（顾问简介、短文）：右栏不再竖着挂一长条、左边下面空一大片。
+   联系信息改成正文下面一条横排：左边约面谈，右边三张联系卡，营业时间和返回在下面一行。 */
+.dossier-cols:not(:has(.dossier-block:nth-child(2))) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.dossier-cols:not(:has(.dossier-block:nth-child(2))) .dossier-side {
+  position: static;
+}
+
+/* 顾问页右栏本来就窄，三张卡横排会挤，所以只有非顾问页才横排。 */
+@media (min-width: 900px) {
+  .dossier:not(.is-person) .dossier-cols:not(:has(.dossier-block:nth-child(2))) .dossier-side {
+    grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 2.2fr);
+    gap: 1rem 2rem;
+    align-items: stretch;
+  }
+
+  .dossier:not(.is-person) .dossier-cols:not(:has(.dossier-block:nth-child(2))) .dossier-side .visit-triad {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dossier:not(.is-person) .dossier-cols:not(:has(.dossier-block:nth-child(2))) .dossier-side .spec-list,
+  .dossier:not(.is-person) .dossier-cols:not(:has(.dossier-block:nth-child(2))) .dossier-side .hours-line,
+  .dossier:not(.is-person) .dossier-cols:not(:has(.dossier-block:nth-child(2))) .dossier-side .back-row {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 顾问页：竖版肖像放左边，名字、简介、联系放右边。以前整幅横切 21:9，只剩一截外套，脸被切掉了。 */
+@media (min-width: 900px) {
+  .dossier.is-person {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-areas:
+      "photo head"
+      "photo cols";
+    grid-template-rows: auto 1fr;
+    column-gap: 4rem;
+    align-items: start;
+  }
+
+  .is-person .dossier-head {
+    grid-area: head;
+  }
+
+  .is-person .dossier-photo {
+    grid-area: photo;
+    aspect-ratio: 4 / 5;
+    max-height: 40rem;
+  }
+
+  .is-person .dossier-cols {
+    grid-area: cols;
+  }
+}
+
+@media (max-width: 899px) {
+  .is-person .dossier-photo {
+    aspect-ratio: 4 / 5;
+    max-height: 30rem;
+    width: min(100%, 24rem);
+  }
+}

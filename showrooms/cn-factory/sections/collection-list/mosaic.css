@@ -12,6 +12,8 @@
   color: var(--text-muted);
 }
 
+/* 卡片等高等宽：整行排满，不再有首卡下面一大块空白、末行孤零零一张。
+   四张排两列（2x2），其余三列。 */
 @media (min-width: 768px) {
   .job-grid {
     grid-template-columns: 1fr 1fr;
@@ -20,10 +22,11 @@
 
 @media (min-width: 1024px) {
   .job-grid {
-    grid-template-columns: 1.35fr 1fr 0.9fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .job-card:first-child {
-    grid-row: 1 / span 2;
+  .job-grid:has(> :nth-child(4):last-child),
+  .job-grid:has(> :nth-child(2):last-child) {
+    grid-template-columns: 1fr 1fr;
   }
 }

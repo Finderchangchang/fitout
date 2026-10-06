@@ -1,0 +1,4 @@
+.page-banner .section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  max-width: 12em;
+}

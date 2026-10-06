@@ -1,0 +1,119 @@
+.site-header[data-overlay] {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 30;
+  background: color-mix(in srgb, var(--primary) 88%, transparent);
+  border-bottom: 0;
+  color: var(--on-media);
+}
+
+.site-header .bar {
+  min-height: 4.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.brand {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--on-media);
+  max-width: 12rem;
+}
+
+.nav-list {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.35rem;
+}
+
+.nav-list a {
+  color: var(--on-media);
+  padding-inline: 0.35rem;
+  min-width: 44px;
+}
+
+.header-phone {
+  white-space: nowrap;
+  padding-inline: 0.7rem;
+  font-size: 0.875rem;
+}
+
+.site-header[data-overlay] .mobile-panel {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.site-header[data-overlay] .mobile-panel a {
+  color: var(--text);
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+}
+
+[data-tone="dark"] .kicker,
+[data-tone="image"] .kicker {
+  color: var(--on-media);
+}
+
+[data-tone="dark"] .prose,
+[data-tone="image"] .prose {
+  color: var(--on-media);
+}
+
+.visit-triad {
+  display: grid;
+  gap: var(--gap);
+  margin-top: var(--gap);
+}
+
+.visit-triad a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  min-height: 44px;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.visit-triad a span {
+  color: var(--accent);
+  font-size: 0.875rem;
+}
+
+.hours-line {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .visit-triad {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header .bar {
+    flex-wrap: nowrap;
+  }
+
+  .brand {
+    font-size: 1.125rem;
+    max-width: none;
+  }
+}
+
+/* 相邻两块同色的板块：上一块的下留白和下一块的上留白叠起来，间隔是单块的两倍。下一块的上留白收到三成。 */
+@media (min-width: 768px) {
+  main > section:last-child[data-tone="dark"] {
+    padding-bottom: calc(var(--section-y) * 0.6);
+  }
+}

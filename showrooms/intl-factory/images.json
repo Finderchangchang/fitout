@@ -1,0 +1,767 @@
+{
+  "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+  "gradeParams": {
+    "brightness": 0.96,
+    "contrast": 1.08,
+    "saturate": 0.72,
+    "warmth": -0.15
+  },
+  "slots": [
+    {
+      "id": "hero-turn",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cnc lathe",
+        "metal turning",
+        "machine shop"
+      ],
+      "prompt": "车刀贴着钢销切削的特写，冷却液偏冷绿，只取刀尖和工件，不要车间全景，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "首屏，车刀和冷却液，不是厂房全景。",
+      "tier": "must"
+    },
+    {
+      "id": "hero-stamp",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "stamping press",
+        "sheet metal",
+        "factory"
+      ],
+      "prompt": "冲床模具咬住钢板的特写，切边是金属本色，背景虚成石墨灰，不要红色火花，不要车间全景，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "首屏，模具和钢板，不是厂房全景。",
+      "tier": "must"
+    },
+    {
+      "id": "hero-weld",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "steel weld",
+        "metal fabrication",
+        "workshop"
+      ],
+      "prompt": "已经冷却的焊道特写，钢件是石墨色，不要大片红火花，不要车间全景，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "首屏，冷却后的焊道，不是厂房全景。",
+      "tier": "must"
+    },
+    {
+      "id": "hero-gauge",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "caliper",
+        "metal inspection",
+        "workshop"
+      ],
+      "prompt": "卡尺卡在销钉直径上的局部，刻度虚化看不清数字，台面是浅钢灰，不要商标，不要文字。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "首屏，卡尺和销钉，刻度不可读。",
+      "tier": "must"
+    },
+    {
+      "id": "band-chip",
+      "page": "home",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "lathe",
+        "metal chips",
+        "coolant"
+      ],
+      "prompt": "横幅特写，冷却液裹着刚车下的钢销，切屑是本色，不要厂房全景，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "首页满宽条，冷却液和销钉。",
+      "tier": "must"
+    },
+    {
+      "id": "part-dowel",
+      "page": "products",
+      "block": "catalog",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "dowel",
+        "pin",
+        "steel",
+        "studio"
+      ],
+      "prompt": "电商棚拍，一根淬硬钢销钉以 45 度立在浅灰无缝背景上，柔光，金属本色，不要文字，不要商标，不要包装。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "目录主图，淬硬销钉棚拍。",
+      "tier": "must"
+    },
+    {
+      "id": "part-bracket",
+      "page": "products",
+      "block": "catalog",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "bracket",
+        "stamped",
+        "steel",
+        "studio"
+      ],
+      "prompt": "电商棚拍，一件冲压钢支架以 45 度放在浅灰无缝背景上，孔边是金属本色，柔光，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "目录主图，冲压支架棚拍。",
+      "tier": "must"
+    },
+    {
+      "id": "use-cabinet",
+      "page": "home",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "steel cabinet",
+        "hinge",
+        "sheet metal"
+      ],
+      "prompt": "钣金柜门合页和钢销的近景，柜体是石墨灰，不要品牌铭牌，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "用途，柜体五金。",
+      "tier": "must"
+    },
+    {
+      "id": "part-bolt",
+      "page": "products",
+      "block": "catalog",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "bolt",
+        "shoulder",
+        "stainless",
+        "studio"
+      ],
+      "prompt": "电商棚拍，一枚不锈钢肩螺栓以 45 度立在浅灰无缝背景上，柔光，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "目录，肩螺栓棚拍。",
+      "tier": "nice"
+    },
+    {
+      "id": "part-frame",
+      "page": "products",
+      "block": "catalog",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "upright",
+        "weld",
+        "rack",
+        "studio"
+      ],
+      "prompt": "电商棚拍，一段焊好的货架立柱以 45 度放在浅灰无缝背景上，焊道已冷却，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "目录，货架立柱棚拍。",
+      "tier": "nice"
+    },
+    {
+      "id": "part-standoff",
+      "page": "products",
+      "block": "catalog",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "standoff",
+        "aluminum",
+        "turned",
+        "studio"
+      ],
+      "prompt": "电商棚拍，一只铝合金间隔柱以 45 度立在浅灰无缝背景上，柔光，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "目录，铝间隔柱棚拍。",
+      "tier": "nice"
+    },
+    {
+      "id": "part-kit",
+      "page": "products",
+      "block": "catalog",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "kit",
+        "screw",
+        "washer",
+        "studio"
+      ],
+      "prompt": "电商棚拍，一小袋不锈钢螺丝螺母垫圈摊在浅灰无缝背景上，柔光，不要文字，不要商标，不要可读标签。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "目录，柜体紧固件套装棚拍。",
+      "tier": "nice"
+    },
+    {
+      "id": "use-farm",
+      "page": "home",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "farm equipment",
+        "steel bracket",
+        "tractor"
+      ],
+      "prompt": "农机机架上的钢支架近景，有泥点和水痕，金属本色，不要品牌，不要文字。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "用途，农机支架。",
+      "tier": "nice"
+    },
+    {
+      "id": "use-rack",
+      "page": "home",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "pallet rack",
+        "warehouse",
+        "steel"
+      ],
+      "prompt": "仓库托盘货架立柱的近景，孔位清晰，钢是石墨色，不要可读标签，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "用途，货架立柱。",
+      "tier": "nice"
+    },
+    {
+      "id": "use-appliance",
+      "page": "home",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "appliance",
+        "sheet metal",
+        "assembly"
+      ],
+      "prompt": "家电底盘上的铝间隔柱近景，钣金是冷灰，不要品牌面板，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "用途，家电底盘。",
+      "tier": "nice"
+    },
+    {
+      "id": "news-press",
+      "page": "news",
+      "block": "index",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "stamping press",
+        "factory floor",
+        "machine"
+      ],
+      "prompt": "一台大型冲压机的侧面，模具区域清楚，车间是石墨灰，不要可读铭牌，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "动态，冲压机。",
+      "tier": "nice"
+    },
+    {
+      "id": "news-sample",
+      "page": "news",
+      "block": "index",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "metal parts",
+        "inspection table",
+        "workshop"
+      ],
+      "prompt": "一小盘车好的钢销放在检验台上，浅钢灰台面，不要可读标签，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "动态，样品盘。",
+      "tier": "nice"
+    },
+    {
+      "id": "news-lane",
+      "page": "news",
+      "block": "index",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "shipping crates",
+        "cargo port",
+        "plywood"
+      ],
+      "prompt": "几只胶合板出口木箱排在码头，钢灰天空，箱面没有可读字，不要商标，不要文字。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "动态，出口木箱。",
+      "tier": "nice"
+    },
+    {
+      "id": "news-gauge",
+      "page": "news",
+      "block": "index",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "measuring machine",
+        "quality control",
+        "factory"
+      ],
+      "prompt": "三坐标测量仪在机加通道旁的检验间，屏幕内容虚化不可读，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "动态，三坐标旁的检验间。",
+      "tier": "nice"
+    },
+    {
+      "id": "banner",
+      "page": "inner",
+      "block": "page-banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "metal parts",
+        "workbench",
+        "workshop"
+      ],
+      "prompt": "横幅，浅钢灰工作台上摊着销钉和冲片，不要厂房全景，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "内页通用页头，工作台上的零件。",
+      "tier": "nice"
+    },
+    {
+      "id": "banner-floor",
+      "page": "about",
+      "block": "page-banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cnc machine",
+        "factory aisle",
+        "machine shop"
+      ],
+      "prompt": "横幅，机加通道地面有冷却液反光，机床只露出下半截，不要全景招牌，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "关于页页头，通道地面。",
+      "tier": "nice"
+    },
+    {
+      "id": "banner-inspect",
+      "page": "quality",
+      "block": "page-banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "measuring machine",
+        "inspection",
+        "factory"
+      ],
+      "prompt": "横幅，三坐标在钢台上，屏幕虚化不可读，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "检验页页头，三坐标。",
+      "tier": "nice"
+    },
+    {
+      "id": "plant-cnc",
+      "page": "about",
+      "block": "plant",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cnc lathe",
+        "machine shop",
+        "coolant"
+      ],
+      "prompt": "数控车床刀塔和冷却液的近景，不要整机全景，不要可读屏幕，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "北仑机加，刀塔近景。",
+      "tier": "nice"
+    },
+    {
+      "id": "plant-press",
+      "page": "about",
+      "block": "plant",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "stamping press",
+        "sheet metal",
+        "factory"
+      ],
+      "prompt": "冲床模具和钢板的近景，不要整机全景，不要红色火花，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "慈溪冲压，模具近景。",
+      "tier": "nice"
+    },
+    {
+      "id": "inspect-cmm",
+      "page": "quality",
+      "block": "photo-band",
+      "ratio": "3:2",
+      "px": "1440x960",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cmm",
+        "metal inspection",
+        "quality control"
+      ],
+      "prompt": "三坐标测头靠近钢件的横幅画面，屏幕虚化不可读，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "检验页满宽，测头和钢件。",
+      "tier": "nice"
+    },
+    {
+      "id": "cert-iso",
+      "page": "home",
+      "block": "honors",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "certificate",
+        "scan",
+        "placeholder"
+      ],
+      "prompt": "客户提供的证书扫描件。没有文件时不要生成假证书。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "客户提供的体系文件扫描，页面上标明是占位。",
+      "tier": "nice"
+    },
+    {
+      "id": "cert-mat",
+      "page": "home",
+      "block": "honors",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "certificate",
+        "material",
+        "placeholder"
+      ],
+      "prompt": "客户提供的材质证明扫描件。没有文件时不要生成假证书。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "客户提供的材质证明扫描，页面上标明是占位。",
+      "tier": "nice"
+    },
+    {
+      "id": "cert-gauge",
+      "page": "home",
+      "block": "honors",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "calibration",
+        "log",
+        "placeholder"
+      ],
+      "prompt": "客户提供的校准记录扫描件。没有文件时不要生成假记录。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "客户提供的校准记录扫描，页面上标明是占位。",
+      "tier": "nice"
+    },
+    {
+      "id": "cert-pack",
+      "page": "home",
+      "block": "honors",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "crate",
+        "photo",
+        "placeholder"
+      ],
+      "prompt": "客户提供的装箱照片。没有文件时不要生成假照片。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "客户提供的装箱照片，页面上标明是占位。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-wechat",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "qr",
+        "wechat",
+        "placeholder"
+      ],
+      "prompt": "客户提供的微信二维码。没有文件时不要生成假码。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "客户提供的微信二维码。",
+      "tier": "nice"
+    }
+  ]
+}

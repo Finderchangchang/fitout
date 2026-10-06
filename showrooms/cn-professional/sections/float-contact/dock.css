@@ -10,7 +10,6 @@
 .float-dock summary {
   flex-direction: row;
   justify-content: center;
-  white-space: nowrap;
   gap: 0.35rem;
   height: 44px;
   min-height: 44px;

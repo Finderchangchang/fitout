@@ -1,0 +1,48 @@
+.metric-row {
+  display: grid;
+  gap: var(--gap);
+  margin: 0;
+}
+
+.metric-row > div {
+  min-width: 0;
+  padding-top: 1rem;
+  border-top: 2px solid var(--on-media);
+}
+
+[data-tone="light"] .metric-row > div {
+  border-top-color: var(--primary);
+}
+
+.metric-row .stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-5);
+  line-height: 1.1;
+  color: var(--on-media);
+  margin: 0;
+  /* 标题字体默认老式数字，4、6 会沉到基线下，一排数字上下不齐。统一成等高数字。 */
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.metric-row dt {
+  margin-top: 0.5rem;
+  color: var(--on-media);
+}
+
+[data-tone="light"] .metric-row .stat-value,
+[data-tone="light"] .metric-row dt {
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .metric-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .metric-row {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}

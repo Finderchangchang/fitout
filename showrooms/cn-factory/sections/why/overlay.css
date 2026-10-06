@@ -1,17 +1,21 @@
+/* 整行铺满的左文右图：文字左缘要和页头、其他板块的内容左缘（容器左缘）对齐。
+   窄屏左右留 1rem；宽屏用四列网格：两边各一条弹性边，中间两列合起来正好是容器宽。 */
 .np-splitband {
   display: grid;
   padding: 0;
+  background: var(--surface);
 }
 
 .np-splitband-copy {
-  background: var(--surface);
   color: var(--text);
   display: flex;
   align-items: center;
-  padding: var(--section-y) clamp(1rem, 4vw, 3.5rem);
+  padding: var(--section-y) 1rem;
 }
 
 .np-splitband-inner {
+  display: grid;
+  gap: 0.75rem;
   max-width: 36rem;
 }
 
@@ -22,7 +26,7 @@
 .np-reasons {
   display: grid;
   gap: 1.1rem;
-  margin-top: 1.25rem;
+  margin-top: 0.75rem;
 }
 
 .np-reasons h3 {
@@ -38,7 +42,20 @@
 
 @media (min-width: 1024px) {
   .np-splitband {
-    grid-template-columns: 0.92fr 1.08fr;
+    grid-template-columns:
+      1fr
+      calc(min(100% - 2rem, var(--container)) * 0.46)
+      calc(min(100% - 2rem, var(--container)) * 0.54)
+      1fr;
+  }
+
+  .np-splitband-copy {
+    grid-column: 2;
+    padding-inline: 0 clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .np-splitband-photo {
+    grid-column: 3 / -1;
   }
 
   .np-splitband-photo img {

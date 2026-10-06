@@ -1,0 +1,106 @@
+.hero-full {
+  min-height: 92svh;
+  max-height: 100svh;
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}
+
+.hero-full .hero-copy {
+  max-width: none;
+  padding-bottom: 0.25rem;
+}
+
+.hero-full .hero-copy > * {
+  max-width: 34rem;
+}
+
+.hero-full .section-title {
+  font-weight: 800;
+  line-height: 1.05;
+  max-width: 8em;
+}
+
+.hero-full .section-lead {
+  max-width: 22em;
+}
+
+.hero-full .kicker {
+  color: var(--on-media);
+}
+
+.hero-posters {
+  display: none;
+}
+
+.hero-full .carousel-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-full .prev-icon {
+  display: inline-flex;
+  transform: rotate(180deg);
+}
+
+.hero-full .hero-dots button {
+  border: 0;
+  background: transparent;
+  color: transparent;
+  position: relative;
+}
+
+.hero-full .hero-dots button::after {
+  content: "";
+  display: block;
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--on-media);
+  opacity: 0.75;
+}
+
+.hero-full .hero-dots button[aria-current="true"]::after {
+  opacity: 1;
+  background: var(--accent);
+}
+
+@media (min-width: 1100px) {
+  .hero-posters {
+    position: absolute;
+    z-index: 1;
+    right: 4vw;
+    top: 16vh;
+    bottom: 12vh;
+    width: min(34vw, 28rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    align-content: center;
+    pointer-events: none;
+  }
+
+  .hero-posters img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid var(--on-media);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card);
+  }
+
+  .hero-posters img:nth-child(2),
+  .hero-posters img:nth-child(3) {
+    transform: translateY(1.25rem);
+  }
+}

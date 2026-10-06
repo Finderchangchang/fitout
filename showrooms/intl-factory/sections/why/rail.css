@@ -1,0 +1,21 @@
+.step-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+
+.step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.15rem 1.15rem 1.35rem;
+  min-width: 0;
+}
+
+.step h3 {
+  margin: 0 0 0.5rem;
+  font-size: var(--fs-3);
+}
+
+.step p {
+  margin: 0;
+}

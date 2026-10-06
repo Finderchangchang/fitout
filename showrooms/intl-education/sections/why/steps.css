@@ -1,0 +1,43 @@
+/* 报名步骤：编号 + 标题 + 说明，横向一排，不竖着叠在左边留右边整片空白。 */
+.step-list {
+  display: grid;
+  gap: 1.5rem;
+  counter-reset: step;
+}
+
+.step-list li {
+  counter-increment: step;
+  min-width: 0;
+  padding-top: 1rem;
+  border-top: 3px solid var(--primary);
+}
+
+.step-list li::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-tone="dark"] .step-list li {
+  border-top-color: var(--on-media);
+}
+
+[data-tone="dark"] .step-list li::before {
+  color: var(--on-media);
+}
+
+.step-list .item-title {
+  margin-bottom: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .step-list {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 2rem;
+  }
+}

@@ -25,6 +25,12 @@
       "maxChars": 30,
       "hint": "有图才需要。不填就用产品名"
     },
+    "date": {
+      "type": "string",
+      "required": false,
+      "maxChars": 16,
+      "hint": "可无。英文站显示成 Sep 2025，日不写"
+    },
     "specs": {
       "type": "list",
       "required": true,

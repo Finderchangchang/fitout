@@ -1,7 +1,3 @@
-.section[data-section="collection-list"][data-family="digest"] {
-  padding-block: 56px;
-}
-
 .digest-list {
   display: grid;
   gap: var(--gap);
@@ -33,6 +29,6 @@
 
   .digest-item {
     grid-template-columns: 9rem 1fr;
-    align-items: center;
+    align-items: start;
   }
 }

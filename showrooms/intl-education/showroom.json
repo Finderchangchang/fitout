@@ -1,0 +1,166 @@
+{
+  "id": "intl-education",
+  "name": "国际风 · 课程平台",
+  "note": "给职业技能、设计、编程和语言这类课程是主角的培训机构和线上课。先看课（封面、课时、价格、适合谁），再报名。",
+  "industry": "education",
+  "niche": "vocational",
+  "flavor": "intl",
+  "buttons": {
+    "primary": "报名咨询",
+    "primaryHref": "contact/index.html",
+    "secondary": "看课程",
+    "secondaryHref": "courses/index.html",
+    "form": "留言咨询"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 5, "interval": "4500ms" }
+  },
+  "collections": [
+    { "id": "courses", "label": "课程", "listFile": "courses/index.html" },
+    { "id": "teachers", "label": "讲师", "listFile": "teachers/index.html" },
+    { "id": "works", "label": "学员作业", "listFile": "works/index.html" },
+    { "id": "news", "label": "资讯", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "optional": false,
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel", "text"] },
+        { "type": "trust", "required": false, "variants": ["stats"] },
+        { "type": "tracks", "required": false, "variants": ["grid"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "course-board", "required": true, "variants": ["board"] },
+        { "type": "why", "required": false, "variants": ["steps"] },
+        { "type": "team", "required": false, "variants": ["cards", "roster"] },
+        { "type": "testimonials", "required": false, "variants": ["grid-cards"] },
+        { "type": "cases", "required": false, "variants": ["gallery", "list"] },
+        { "type": "bulletin", "required": false, "variants": ["feed"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "optional": false,
+      "order": [
+        { "type": "why", "required": false, "variants": ["steps"] },
+        { "type": "studio", "required": false, "variants": ["split"] },
+        { "type": "trust", "required": false, "variants": ["stats"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "courses",
+      "file": "courses/index.html",
+      "kind": "list",
+      "optional": false,
+      "order": [
+        { "type": "course-board", "required": true, "variants": ["board"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "course",
+      "file": "courses/{slug}.html",
+      "kind": "detail",
+      "optional": false,
+      "from": "courses",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "teachers",
+      "file": "teachers/index.html",
+      "kind": "team",
+      "optional": true,
+      "when": "档案写了可以放上姓名的讲师。",
+      "deny": ["没有讲师", "没有老师", "不公开人员"],
+      "order": [
+        { "type": "collection-list", "required": false, "variants": ["portraits"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "teacher",
+      "file": "teachers/{slug}.html",
+      "kind": "detail",
+      "optional": true,
+      "when": "讲师列表开着，并且有对应的人。列表关掉就不生成。",
+      "from": "teachers",
+      "order": [
+        { "type": "collection-detail", "required": false, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "works",
+      "file": "works/index.html",
+      "kind": "list",
+      "optional": true,
+      "when": "档案有学员作业或作品可以展示。",
+      "deny": ["没有作品", "没有作业"],
+      "order": [
+        { "type": "collection-list", "required": false, "variants": ["cards"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "work",
+      "file": "works/{slug}.html",
+      "kind": "detail",
+      "optional": true,
+      "when": "作业列表开着，并且有对应条目。列表关掉就不生成。",
+      "from": "works",
+      "order": [
+        { "type": "collection-detail", "required": false, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的课室动态。",
+      "deny": ["没有新闻", "没有动态", "不发新闻"],
+      "order": [
+        { "type": "collection-list", "required": false, "variants": ["rows"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "news-item",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "optional": true,
+      "when": "资讯列表开着，并且有对应稿件。列表关掉就不生成。",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": false, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "optional": false,
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] }
+      ]
+    }
+  ]
+}

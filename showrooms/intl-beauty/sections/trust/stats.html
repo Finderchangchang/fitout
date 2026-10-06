@@ -1,0 +1,18 @@
+<section class="section" data-section="trust" data-family="metrics" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="stat-row">
+      {{#each items}}
+      <div>
+        <p class="stat-value nums" data-count="{{countTo}}">{{value}}</p>
+        <p class="meta">{{label}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,7 +1,7 @@
 .campus-grid {
   display: grid;
   gap: var(--gap);
-  align-items: start;
+  align-items: center;
 }
 
 .thumb-row {

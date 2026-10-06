@@ -17,9 +17,11 @@
   padding: 0;
 }
 
+/* align-content: start：某一步的字多折了一行时，同一行其他步的标题不被拉着往下挪。 */
 .deal-grid li {
   display: grid;
   gap: 0.55rem;
+  align-content: start;
   justify-items: start;
   min-width: 0;
 }

@@ -1,3 +1,4 @@
+/* dd 默认左边有 40px 外边距，数字比下面的标签靠右一截。归零。 */
 .stat-value {
   font-size: var(--fs-4);
   color: var(--primary);

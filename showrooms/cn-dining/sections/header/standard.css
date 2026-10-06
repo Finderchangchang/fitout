@@ -83,8 +83,17 @@ img {
   font-size: 0.875rem;
 }
 
+/* 热线和导航之间加一条竖线和更大的间距，热线不再读成又一个导航项。 */
 .header-tools {
   flex: none;
+}
+
+@media (min-width: 1024px) {
+  .header-tools {
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid rgb(251 247 242 / 0.4);
+  }
 }
 
 @media (max-width: 767px) {

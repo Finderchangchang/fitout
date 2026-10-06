@@ -1,8 +1,18 @@
+/* 容器自己不限宽（以前 max-width: 46rem 挂在 container 上，自动外边距把整块推到 x=336，和 logo、页脚都对不上）。
+   手机上下叠；桌面左边文字（标题、导语、正文、按钮）、右边照片。 */
 .report {
   display: grid;
   gap: 1.25rem;
   justify-items: start;
-  max-width: 46rem;
+}
+
+.report-head {
+  max-width: 36rem;
+  margin-bottom: 0;
+}
+
+.report-photo {
+  width: 100%;
 }
 
 .report img {
@@ -12,5 +22,34 @@
 }
 
 .report .prose {
-  max-width: 40rem;
+  max-width: 36rem;
+}
+
+@media (min-width: 1024px) {
+  .report {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-areas:
+      "head photo"
+      "body photo"
+      "actions photo";
+    grid-template-rows: auto auto 1fr;
+    column-gap: var(--gap);
+    align-items: start;
+  }
+
+  .report-head {
+    grid-area: head;
+  }
+
+  .report-body {
+    grid-area: body;
+  }
+
+  .report-actions {
+    grid-area: actions;
+  }
+
+  .report-photo {
+    grid-area: photo;
+  }
 }

@@ -26,13 +26,13 @@
 }
 
 .footer-codes figure {
-  width: 132px;
+  width: 7rem;
   margin: 0;
 }
 
 .footer-codes img {
-  width: 132px;
-  height: 132px;
+  width: 7rem;
+  height: 7rem;
   object-fit: cover;
   background: var(--surface);
 }
@@ -53,4 +53,14 @@
   .footer-grid {
     grid-template-columns: 1.15fr 0.8fr 1.15fr 0.9fr;
   }
+}
+
+/* 二维码下面的「复制微信号」和图注之间留一点空。 */
+.footer-codes > p:not(.footer-label) {
+  margin-top: 0.75rem;
+}
+
+/* 上面是深色的联系条时，页脚同样深色，两块连成一片；加一条细线把页脚分出来。 */
+.site-footer {
+  border-top: 1px solid rgb(251 247 242 / 0.18);
 }

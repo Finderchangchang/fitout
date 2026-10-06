@@ -1,0 +1,21 @@
+<section class="section" data-section="testimonials" data-family="quotes" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="quote-grid">
+      {{#each items}}
+      <blockquote class="quote">
+        <p>{{quote}}</p>
+        <footer>
+          <p class="item-title">{{name}}</p>
+          {{#if role}}<p class="meta">{{role}}</p>{{/if}}
+        </footer>
+      </blockquote>
+      {{/each}}
+    </div>
+  </div>
+</section>

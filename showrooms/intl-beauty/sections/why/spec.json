@@ -1,0 +1,26 @@
+{
+  "note": "进门之前的做法，或店是怎么长出来的。写事实。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "points": {
+      "needsImage": false,
+      "family": "points",
+      "fit": "几条并列的做法",
+      "source": "样板间自写。编号加短句，不放圆形图标。"
+    }
+  }
+}

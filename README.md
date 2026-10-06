@@ -50,7 +50,17 @@
 
 ## 试一下
 
-只需要 Node 18+，不用装任何依赖：
+一条命令从企业档案到整站。Node 18+，不用装依赖。档案怎么写见 [docs/PROFILE.md](docs/PROFILE.md)。
+
+```bash
+node scripts/fitout.mjs --profile examples/profiles/巷口半糖.md --out out/xiangkou --showroom auto
+```
+
+打开 `out/xiangkou/site/index.html`，摘要在 `out/xiangkou/交付说明.md`。老板照片加 `--photos <目录>`，氛围图加 `--gen-images`。给 AI 助手的装法在 [skill/fitout/SKILL.md](skill/fitout/SKILL.md)。
+
+### 分步用法
+
+只拼示例站：
 
 ```bash
 node scripts/build.mjs showrooms/cn-factory/examples/site.json --out out

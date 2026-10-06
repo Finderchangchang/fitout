@@ -4,9 +4,15 @@
   align-items: center;
 }
 
+/* 顶上一条印章朱横线，标题、导语、正文的左缘都是容器左缘；
+   以前是左边一条竖线，文字被推右 23px，和其他板块对不齐。 */
 .dossier-copy {
-  border-left: 3px solid var(--accent);
-  padding-left: 1.25rem;
+  border-top: 3px solid var(--accent);
+  padding-top: 1.5rem;
+}
+
+.dossier-copy .prose {
+  margin-bottom: 1.5rem;
 }
 
 .dossier-points {
@@ -27,5 +33,13 @@
 @media (min-width: 768px) {
   .dossier:has(.dossier-photo) {
     grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+/* 没有配图时：三条要点横排，整行铺满，不再只占左边一条窄栏。 */
+@media (min-width: 768px) {
+  .dossier:not(:has(.dossier-photo)) .dossier-points {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem 2.5rem;
   }
 }

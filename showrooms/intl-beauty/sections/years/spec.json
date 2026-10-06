@@ -1,0 +1,26 @@
+{
+  "note": "年份轨道。name 写年份，text 写那一年发生的事。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "rail": {
+      "needsImage": false,
+      "family": "rail",
+      "fit": "横着的年份",
+      "source": "样板间自写。上沿一条线，不是竖线标题。"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "note": "教室。一张实拍加两间房的事实。数字不放在这一块。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "image": { "type": "image", "required": true, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "split": {
+      "needsImage": false,
+      "family": "story",
+      "fit": "左文右图",
+      "source": "样板间自写"
+    }
+  }
+}

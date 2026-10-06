@@ -1,0 +1,70 @@
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: var(--gap);
+}
+
+.filter-row a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.filter-hook {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.catalog-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.catalog-block {
+  position: relative;
+}
+
+.catalog-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: var(--surface);
+  margin-bottom: 0.85rem;
+}
+
+.catalog-grid .catalog-card img {
+  /* 框架把所有目录图压成 3:2。顾问的竖版肖像被压成横条，只剩一截外套，脸没了。按图自己的比例排：服务、案例是 3:2，顾问是 4:5。 */
+  aspect-ratio: auto;
+}
+
+.catalog-card .item-title {
+  font-size: var(--fs-3);
+  margin-bottom: 0.35rem;
+}
+
+.catalog-card a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 按条数定列数：4 条排 4 列，6 条排 3 列，不留末行只剩一张。 */
+@media (min-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .catalog-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

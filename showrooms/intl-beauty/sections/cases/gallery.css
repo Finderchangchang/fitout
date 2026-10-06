@@ -1,0 +1,26 @@
+.frame-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.frame {
+  min-width: 0;
+}
+
+.frame figcaption {
+  display: grid;
+  gap: 0.35rem;
+  padding-top: 0.75rem;
+}
+
+[data-media-group="frame"] img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .frame-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

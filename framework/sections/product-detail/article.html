@@ -5,6 +5,7 @@
       {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
       {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
       <p class="section-lead">{{summary}}</p>
+      {{#if date}}<p class="meta">{{date}}</p>{{/if}}
     </div>
     {{#if image}}<img class="product-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
     <table class="specs">
@@ -19,7 +20,7 @@
     </table>
     <div class="btn-row">
       <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
-      <a class="btn" href="index.html">{{icon:home:16}}返回产品中心</a>
+      <a class="btn" href="index.html">{{icon:home:16}}{{ui.backProducts}}</a>
     </div>
   </div>
 </section>

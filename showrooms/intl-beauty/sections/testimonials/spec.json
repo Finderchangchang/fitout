@@ -1,0 +1,27 @@
+{
+  "note": "原话。不打星。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "quote": { "type": "string", "required": true, "maxChars": 80 },
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "role": { "type": "string", "required": false, "maxChars": 16 }
+      }
+    }
+  },
+  "variants": {
+    "grid-cards": {
+      "needsImage": false,
+      "family": "quotes",
+      "fit": "几条原话并列",
+      "source": "样板间自写。左边一条线，没有星。"
+    }
+  }
+}

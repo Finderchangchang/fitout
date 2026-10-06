@@ -1,29 +1,38 @@
 <section class="section" data-section="contact" data-family="visit" id="{{anchor}}">
   <div class="container contact-grid">
-    <div>
-      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
-      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
-      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
-      <p class="group-label">到校时间</p>
-      {{#each hours}}
-      <p>{{day}} <span class="nums">{{time}}</span></p>
-      {{/each}}
-      <p><a href="tel:{{phoneTel}}">{{phone}}</a></p>
-      {{#if email}}<p><a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
-      {{#if wechat}}
-      <p>{{wechat}}</p>
-      <p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>
+    <div class="contact-copy">
+      <div class="section-head">
+        {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      </div>
+      <div class="contact-hours">
+        <p class="group-label">到校时间</p>
+        {{#each hours}}
+        <p class="contact-line">{{icon:clock:20}}<span>{{day}} <span class="nums">{{time}}</span></span></p>
+        {{/each}}
+      </div>
+      {{#if qrs}}
+      <div class="qr-grid" data-media-group="mark">
+        {{#each qrs}}
+        <figure>
+          <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+          <figcaption>{{label}}</figcaption>
+        </figure>
+        {{/each}}
+      </div>
       {{/if}}
-      <p>{{address}}</p>
-      <p><a class="btn" href="{{amapUrl}}">到校区</a></p>
     </div>
-    <div class="qr-grid" data-media-group="mark">
-      {{#each qrs}}
-      <figure>
-        <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
-        <figcaption>{{label}}</figcaption>
-      </figure>
-      {{/each}}
+    <div class="contact-card">
+      {{#if email}}<p class="contact-line">{{icon:mail:20}}<a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
+      {{#if wechat}}
+      <p class="contact-line">{{icon:chat:20}}<span class="contact-wx"><span>{{wechat}}</span><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></span></p>
+      {{/if}}
+      <p class="contact-line">{{icon:map-pin:20}}<span>{{address}}</span></p>
+      <div class="contact-actions">
+        <a class="btn" href="tel:{{phoneTel}}">{{icon:phone:20}}{{phone}}</a>
+        <a class="btn" href="{{amapUrl}}">到校区</a>
+      </div>
     </div>
   </div>
 </section>

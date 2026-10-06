@@ -1,0 +1,15 @@
+{
+  "note": "电话、地址、时间和微信来自 contact。询价走到站外，站内不放可提交表单。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 }
+  },
+  "variants": {
+    "split": {
+      "needsImage": false,
+      "family": "desk",
+      "fit": "左边热线和地址，右边站外询价入口",
+      "source": "样板间自写"
+    }
+  }
+}

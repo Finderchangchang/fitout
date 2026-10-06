@@ -1,0 +1,38 @@
+/* 学员原话：blockquote 的浏览器默认外边距要清掉，不然卡片缩进 40px、上下各多 1em。三条排一行，不留末行一张。 */
+.quote {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  margin: 0;
+  min-width: 0;
+  padding: 1.5rem;
+}
+
+.quote p {
+  margin: 0;
+}
+
+.quote > p:first-child {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.quote > p:nth-child(2) {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+[data-section="testimonials"] .grid-2 {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  [data-section="testimonials"] .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [data-section="testimonials"] .grid-2:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

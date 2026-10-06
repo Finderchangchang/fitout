@@ -1,0 +1,40 @@
+.cat-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.clip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.shot-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.shot {
+  min-width: 0;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+[data-media-group="shot"] img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .shot-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

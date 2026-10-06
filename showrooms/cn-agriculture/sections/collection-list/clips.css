@@ -3,9 +3,11 @@
   gap: 1.25rem;
 }
 
+/* align-content: start：卡片被同行最高的那张撑高时，多出来的高度不要摊进图和字之间，三张卡的标题才在同一条线上。 */
 .clip-item {
   display: grid;
   gap: 0.75rem;
+  align-content: start;
   min-width: 0;
 }
 

@@ -25,3 +25,11 @@
 .lot-row p {
   margin-top: 0.25rem;
 }
+
+/* 桌面两列：同产品中心列表，一行 1200px 宽只有一张 120px 的小图和两行字，右边空 900px。 */
+@media (min-width: 1024px) {
+  .lot-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}

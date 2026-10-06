@@ -25,3 +25,9 @@
     grid-template-columns: 16rem 1fr;
   }
 }
+
+/* 标题和日期说明之间留一个间距，一行高于图时竖直居中。 */
+.news-row > div {
+  display: grid;
+  gap: 0.5rem;
+}

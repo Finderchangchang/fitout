@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{htmlLang}}" data-copied="{{ui.copied}}"{{#if flavor}} data-flavor="{{flavor}}"{{/if}}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
   <meta property="og:title" content="{{pageTitle}}">
   <meta property="og:description" content="{{pageDescription}}">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale" content="{{ogLocale}}">
   {{#if canonical}}<link rel="canonical" href="{{canonical}}">{{/if}}
   <link rel="stylesheet" href="{{assetPrefix}}assets/site.css">
   {{#if jsonLd}}
@@ -19,8 +19,8 @@
   {{/if}}
 </head>
 <body>
-  {{#if demoBadge}}<p class="demo-badge">演示占位图</p>{{/if}}
-  <a class="skip" href="#main">跳到正文</a>
+  {{#if demoBadge}}<p class="demo-badge">{{ui.demoBadge}}</p>{{/if}}
+  <a class="skip" href="#main">{{ui.skip}}</a>
   {{@raw headerHtml}}
   <main id="main">
     {{@raw mainHtml}}

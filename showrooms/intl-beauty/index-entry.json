@@ -1,0 +1,9 @@
+{
+  "id": "intl-beauty",
+  "name": "国际风 · 高端门店",
+  "industry": "美容院SPA美发养生馆",
+  "niche": "beauty",
+  "fit": "给美容院、SPA、美发沙龙和高端养生馆。",
+  "preview": "intl-beauty/preview.jpg",
+  "pages": ["首页", "品牌", "项目", "手艺人", "环境", "会员", "记事", "预约"]
+}

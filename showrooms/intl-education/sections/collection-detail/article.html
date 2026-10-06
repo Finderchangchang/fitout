@@ -1,0 +1,37 @@
+<section class="section" data-section="collection-detail" data-family="article" id="{{anchor}}">
+  <div class="container detail-grid">
+    <div class="detail-main">
+      {{#if date}}<p class="meta">{{date}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+      <p class="section-lead">{{summary}}</p>
+      {{#if image}}<img class="detail-cover" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+      {{#if body}}<p class="prose">{{body}}</p>{{/if}}
+      {{#if outline}}
+      <ol class="outline">
+        {{#each outline}}
+        <li>
+          <h3 class="item-title">{{name}}</h3>
+          <p>{{text}}</p>
+        </li>
+        {{/each}}
+      </ol>
+      {{/if}}
+      {{#if teacherHref}}<p><a href="{{teacherHref}}">{{teacher}}</a></p>{{/if}}
+    </div>
+    <aside class="card enroll-card">
+      {{#if specs}}
+      <dl class="enroll-specs">
+        {{#each specs}}
+        <div>
+          <dt>{{label}}</dt>
+          <dd>{{value}}</dd>
+        </div>
+        {{/each}}
+      </dl>
+      {{/if}}
+      <p><a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a></p>
+      {{#if backHref}}<p><a href="{{backHref}}">{{backLabel}}</a></p>{{/if}}
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+}
+
+.plant-card {
+  padding: 1.1rem 0 1.15rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.plant-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  margin: -1.1rem 0 0.15rem;
+}
+
+.plant-card h3,
+.plant-card p {
+  margin: 0;
+  padding-inline: 1.1rem;
+}
+
+.plant-card h3 {
+  margin-top: 0.9rem;
+  font-size: var(--fs-3);
+}
+
+.plant-card p {
+  margin-top: 0.35rem;
+}
+
+/* 1000 起正好四张时排一行四列，不再 3 + 1。 */
+@media (min-width: 1000px) {
+  .plant-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

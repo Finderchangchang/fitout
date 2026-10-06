@@ -1,0 +1,18 @@
+.news-rows {
+  display: grid;
+  gap: var(--gap);
+}
+
+.news-row img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+@media (min-width: 768px) {
+  .news-row {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    gap: var(--gap);
+    align-items: center;
+  }
+}

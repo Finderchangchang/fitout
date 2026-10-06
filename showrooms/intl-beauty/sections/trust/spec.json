@@ -1,0 +1,26 @@
+{
+  "note": "真数字。value 只写数字，单位写在 label。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "value": { "type": "string", "required": true, "maxChars": 8 },
+        "label": { "type": "string", "required": true, "maxChars": 12 }
+      }
+    }
+  },
+  "variants": {
+    "stats": {
+      "needsImage": false,
+      "family": "metrics",
+      "fit": "少量真数字",
+      "source": "样板间自写。数字在上，单位在下。"
+    }
+  }
+}

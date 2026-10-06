@@ -1,0 +1,44 @@
+.stat-value {
+  margin: 0;
+  font-size: clamp(2.5rem, 4.4vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-tone="dark"] .stat-value,
+[data-tone="image"] .stat-value {
+  color: var(--on-media);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem var(--gap);
+  margin: 0;
+}
+
+.stat-grid > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.stat-grid dt {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

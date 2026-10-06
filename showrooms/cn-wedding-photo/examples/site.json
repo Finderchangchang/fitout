@@ -1113,14 +1113,14 @@
           "data": {
             "title": "预约热线",
             "lead": "看样和档期打这个电话。公众号发通知，预约码用来约时间。",
-            "items": [
+            "qrs": [
               {
-                "name": "公众号",
+                "label": "公众号",
                 "image": "qr-wechat",
                 "imageAlt": "晚棠公众号二维码"
               },
               {
-                "name": "预约码",
+                "label": "预约码",
                 "image": "qr-book",
                 "imageAlt": "预约看样二维码"
               }

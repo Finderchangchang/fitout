@@ -1,0 +1,27 @@
+/* 问答：小标题在左，问答列表在右，铺满容器。框架版把列表限在 40rem，另一半整片空。 */
+[data-section="faq"] .faq-list {
+  max-width: none;
+}
+
+[data-section="faq"] .faq-list summary {
+  font-size: 1.0625rem;
+  padding-block: 0.5rem;
+}
+
+[data-section="faq"] .faq-list details > p {
+  max-width: 40em;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  [data-section="faq"] > .container {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr);
+    gap: 4rem;
+    align-items: start;
+  }
+
+  [data-section="faq"] .section-head {
+    margin-bottom: 0;
+  }
+}

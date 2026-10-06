@@ -1,21 +1,17 @@
+/* 联系区：标题在上，下面两栏顶边对齐。左：热线（大号）、联系方式一列（图标和字隔 0.5rem、图标对齐第一行字）、两个按钮；
+   右：预约卡片，下面是二维码。没有二维码时（正式站客户没给文件）右栏只有预约卡片，卡片拉到和左栏一样高。 */
 .desk-grid {
   display: grid;
   gap: var(--gap);
+  align-items: stretch;
 }
 
 .desk-hot {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.75rem;
   align-content: start;
-}
-
-.desk-hot a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  max-width: 100%;
+  justify-items: start;
+  min-width: 0;
 }
 
 .desk-label {
@@ -23,35 +19,95 @@
   color: var(--primary);
 }
 
+.desk-phone {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.desk-phone a {
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.desk-rows {
+  display: grid;
+  width: 100%;
+  border-top: 1px solid var(--border);
+}
+
+.desk-rows li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-block: 0.65rem;
+  min-height: 44px;
+  border-bottom: 1px solid var(--border);
+}
+
+.desk-rows .icon {
+  margin-top: calc((1lh - 1.25rem) / 2);
+  color: var(--primary);
+}
+
+.desk-aside {
+  display: grid;
+  gap: var(--gap);
+  align-content: start;
+  min-width: 0;
+}
+
 .desk-book {
   border-top: 3px solid var(--primary);
   display: grid;
   gap: 0.75rem;
   align-content: start;
+  justify-items: start;
+  padding: 1.5rem;
 }
 
-.desk-codes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
+.desk-codes:not(:has(figure)) {
+  display: none;
+}
+
+.desk-codes figure {
+  position: relative;
+  width: 7.5rem;
+  margin: 0;
 }
 
 .desk-codes img {
-  width: 6rem;
-  height: 6rem;
+  width: 7.5rem;
+  height: 7.5rem;
   object-fit: cover;
   background: var(--surface);
 }
 
 .desk-codes figcaption {
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .desk-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: start;
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  /* 右栏只有预约卡片时（没有二维码），卡片拉到和左栏一样高，按钮贴卡片底。 */
+  .desk-aside:not(:has(.desk-codes figure)) {
+    grid-template-rows: 1fr;
+  }
+
+  .desk-aside:not(:has(.desk-codes figure)) .desk-book {
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .desk-aside:not(:has(.desk-codes figure)) .desk-book > :last-child {
+    align-self: end;
   }
 }

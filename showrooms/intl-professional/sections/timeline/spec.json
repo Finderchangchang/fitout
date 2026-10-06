@@ -1,0 +1,25 @@
+{
+  "note": "历程。只写档案里有的年份。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 8,
+      "item": {
+        "year": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "rail": {
+      "needsImage": false,
+      "family": "years",
+      "fit": "年份和一句事实",
+      "source": "自写年份列表"
+    }
+  }
+}

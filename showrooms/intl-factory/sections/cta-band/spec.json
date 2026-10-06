@@ -1,0 +1,16 @@
+{
+  "note": "深色整宽条。按钮文字用样板间主按钮。不要照片，不要订阅表。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "primaryHref": { "type": "string", "required": true, "maxChars": 200 }
+  },
+  "variants": {
+    "band": {
+      "needsImage": false,
+      "family": "band",
+      "fit": "左对齐标题和一枚方按钮",
+      "source": "样板间自写"
+    }
+  }
+}

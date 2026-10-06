@@ -7,7 +7,6 @@
   background: #0e1a2c;
   color: #f4f7f9;
   border-top: 0;
-  padding-top: var(--section-y);
 }
 
 .site-footer a,
@@ -32,8 +31,34 @@
   border-color: var(--surface);
 }
 
+/* 联系列：每行 44px，和导航列一行一行对齐；微信号和复制按钮同一行，不再叠在一起。 */
+.footer-rows {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.footer-hour {
+  padding-block: 0.5rem;
+}
+
+.footer-wx {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  min-height: 44px;
+}
+
+/* 版权和备案号：行盒不一样高，要居中对齐才在同一条基线上。 */
 .footer-legal {
   border-top-color: rgb(244 247 249 / 0.28);
+}
+
+/* 本页脚的链接是 inline-block 加上下内边距，字落在方框偏上的位置；这里改成垂直居中，和旁边的版权字同一条线。 */
+.footer-legal p a {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 0;
 }
 
 .qr-pair {
@@ -43,20 +68,20 @@
 }
 
 .qr-pair figure {
-  width: 7.5rem;
+  width: 7rem;
 }
 
 .qr-pair img {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 7rem;
+  height: 7rem;
   object-fit: cover;
   background: var(--surface);
 }
 
 .qr-pair figcaption {
   display: block;
-  min-height: 44px;
-  line-height: 44px;
+  line-height: 1.4;
+  padding-top: 0.5rem;
   text-align: center;
 }
 
@@ -71,3 +96,4 @@
     grid-template-columns: 1.15fr 0.8fr 1.15fr 0.9fr;
   }
 }
+

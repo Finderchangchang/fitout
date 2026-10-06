@@ -1,0 +1,18 @@
+<section class="section" data-section="cases" data-family="tiles" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="tile-grid" data-media-group="tile">
+      {{#each items}}
+      <article class="card tile">
+        {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+        <h3><a href="{{href}}">{{name}}</a></h3>
+        <p>{{text}}</p>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

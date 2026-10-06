@@ -28,3 +28,12 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* 图下面的名字和说明各留一个间距。 */
+.portrait-card .item-title {
+  margin-top: 0.75rem;
+}
+
+.portrait-card p {
+  margin-top: 0.35rem;
+}

@@ -1,0 +1,43 @@
+{
+  "note": "满屏轮播。标题是活字。底边一条实色事实条，写目录起订量和交期，不做成栏目胶囊。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 80 },
+    "lead": { "type": "string", "required": true, "maxChars": 40 },
+    "primaryLabel": { "type": "string", "required": true, "maxChars": 8 },
+    "primaryHref": { "type": "string", "required": true, "maxChars": 200 },
+    "secondaryLabel": { "type": "string", "required": false, "maxChars": 8 },
+    "secondaryHref": { "type": "string", "required": false, "maxChars": 200 },
+    "interval": { "type": "string", "required": false, "maxChars": 8 },
+    "slides": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 5,
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    },
+    "desk": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 3,
+      "item": {
+        "label": { "type": "string", "required": true, "maxChars": 16 },
+        "value": { "type": "string", "required": true, "maxChars": 16 }
+      }
+    }
+  },
+  "variants": {
+    "carousel": {
+      "needsImage": true,
+      "imageField": "slides.image",
+      "fallback": "carousel",
+      "family": "stage",
+      "fit": "四张加工特写轮播，字压在左侧压暗上，底边一条实色事实条",
+      "source": "样板间自写。标题不烤进图片"
+    }
+  }
+}

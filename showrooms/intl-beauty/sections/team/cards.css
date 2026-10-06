@@ -1,0 +1,77 @@
+.people-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.person {
+  min-width: 0;
+  padding: 0 0 1.25rem;
+  overflow: hidden;
+}
+
+.person img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.person .item-title,
+.person .meta,
+.person p {
+  padding-inline: 1.25rem;
+}
+
+/* 手机两列：五张整幅人像叠下来要滚五屏。 */
+@media (max-width: 767px) {
+  .people-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .person .item-title,
+  .person .meta,
+  .person p {
+    padding-inline: 0.85rem;
+  }
+
+}
+
+/* 两列排版时人数是单数：最后一位横跨两列，图改横幅，不留一个空格。 */
+@media (max-width: 1023px) {
+  .people-grid > .person:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .people-grid > .person:last-child:nth-child(odd) img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: 50% 22%;
+  }
+}
+
+@media (min-width: 768px) {
+  .people-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 桌面按人数定列数：5 人一排，4 人一排，3 和 6 人三列，不留末行只剩一两张。 */
+@media (min-width: 1024px) {
+  .people-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .people-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .people-grid:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .people-grid:has(> :nth-child(5):last-child) .person .item-title,
+  .people-grid:has(> :nth-child(5):last-child) .person .meta,
+  .people-grid:has(> :nth-child(5):last-child) .person p {
+    padding-inline: 1rem;
+  }
+}

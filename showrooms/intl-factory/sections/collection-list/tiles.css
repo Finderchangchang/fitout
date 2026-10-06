@@ -1,0 +1,46 @@
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+}
+
+.use-card {
+  padding: 0 0 1.15rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.use-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.use-card h3,
+.use-card p {
+  margin: 0;
+  padding-inline: 1.1rem;
+}
+
+.use-card h3 {
+  margin-top: 0.9rem;
+  font-size: var(--fs-3);
+}
+
+.use-card h3 a {
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.use-card p {
+  margin-top: 0.25rem;
+}
+
+/* 1000 起正好四张时排一行四列，不再 3 + 1。 */
+@media (min-width: 1000px) {
+  .use-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

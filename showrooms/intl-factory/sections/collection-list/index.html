@@ -1,0 +1,20 @@
+<section class="section" data-section="collection-list" data-family="ledger" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="note-list" data-media-group="note">
+      {{#each items}}
+      <article class="note">
+        {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+        <div>
+          <h3><a href="{{href}}">{{name}}</a></h3>
+          <p>{{summary}}</p>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

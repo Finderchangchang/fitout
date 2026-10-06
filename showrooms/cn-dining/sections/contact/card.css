@@ -4,27 +4,29 @@
   align-items: start;
 }
 
+/* 左栏：标题、导语、二维码。二维码放在左栏里（不是联系区网格的直接子项），
+   这样右栏的联系信息卡片和左栏顶边对齐、高度接近，不留大块空白。 */
 .contact-copy {
   display: grid;
-  gap: 0.75rem;
+  gap: 1.5rem;
+  align-content: start;
   min-width: 0;
 }
 
-.contact-copy p {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  align-items: center;
+.contact-copy .section-head {
+  margin-bottom: 0;
 }
 
 .code-pair {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1rem 1.5rem;
 }
 
+/* 占位图的字号是画布短边的 14%，显示 7rem（112px）时约 15px：不重、不抢。
+   占位图再淡一档；客户给真二维码时不受影响。 */
 .code-pair figure {
-  width: 10rem;
+  width: 7rem;
   margin: 0;
 }
 
@@ -35,12 +37,78 @@
 }
 
 .code-pair figcaption {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   text-align: center;
+}
+
+/* 右栏：联系信息卡片，每行 图标 + 字，图标对齐第一行字；按钮等宽。 */
+.contact-card {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  min-width: 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-card p {
+  margin: 0;
+}
+
+.contact-hours {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-hours p {
+  margin: 0;
+}
+
+.contact-line {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.contact-line > .icon {
+  margin-top: calc((1lh - 1.25rem) / 2);
 }
 
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* 手机：标题 → 联系卡片 → 二维码。联系方式在前，二维码在后。 */
+@media (max-width: 767px) {
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-copy {
+    display: contents;
+  }
+
+  .contact-copy .section-head {
+    order: 1;
+  }
+
+  .contact-card {
+    order: 2;
+  }
+
+  .contact-hours {
+    order: 3;
+  }
+
+  .code-pair {
+    order: 4;
   }
 }

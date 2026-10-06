@@ -1,0 +1,28 @@
+.trust-bar {
+  border-top: 3px solid #e0a106;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: 1.25rem 1.5rem;
+  margin: 0;
+}
+
+.stat {
+  min-width: 0;
+}
+
+.stat-value {
+  margin: 0;
+  color: var(--on-media);
+  font-size: var(--fs-4);
+  font-weight: 650;
+  line-height: 1.1;
+}
+
+.stat dt {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  color: var(--on-media);
+}

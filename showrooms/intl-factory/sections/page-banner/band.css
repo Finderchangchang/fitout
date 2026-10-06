@@ -1,0 +1,19 @@
+.page-banner-copy {
+  display: grid;
+  gap: 0.75rem;
+  align-content: end;
+  justify-items: start;
+}
+
+.page-banner .crumbs {
+  margin-bottom: 0;
+}
+
+.page-banner .section-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+}
+
+.page-banner-scrim {
+  background: linear-gradient(180deg, rgb(0 0 0 / 0.45) 0%, rgb(0 0 0 / 0.28) 42%, rgb(0 0 0 / 0.78) 100%);
+}

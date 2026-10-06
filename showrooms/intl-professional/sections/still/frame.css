@@ -1,0 +1,10 @@
+.still img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  max-height: 40rem;
+}
+
+.still-caption {
+  padding-block: 1rem 0;
+}

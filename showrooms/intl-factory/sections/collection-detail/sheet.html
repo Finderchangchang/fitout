@@ -1,0 +1,36 @@
+<section class="section" data-section="collection-detail" data-family="sheet" id="{{anchor}}">
+  <div class="container">
+    <div class="sheet-top">
+      {{#if image}}
+      <figure class="sheet-photo" data-media-group="part">
+        <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+      </figure>
+      {{/if}}
+      <div class="sheet-copy">
+        {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+        <p>{{summary}}</p>
+        {{#if body}}<p class="prose">{{body}}</p>{{/if}}
+        {{#if specs}}
+        <div class="table-wrap">
+          <table class="spec-table">
+            <tbody>
+              {{#each specs}}
+              <tr><th>{{label}}</th><td>{{value}}</td></tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        {{/if}}
+        <p class="btn-row"><a class="text-link" href="{{backHref}}">{{backLabel}}</a></p>
+      </div>
+    </div>
+    <aside class="quote-strip">
+      <div>
+        <p class="quote-title">Send the drawing for this part</p>
+        <p>PDF or STEP. The reply has price, MOQ, and a date.</p>
+      </div>
+      <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+    </aside>
+  </div>
+</section>

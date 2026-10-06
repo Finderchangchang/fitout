@@ -1,12 +1,12 @@
-<!-- 结构来自 localbiz FooterSimple，备案行参考 PageTemplatify。 -->
+<!-- 结构来自 localbiz FooterSimple，备案行参考 PageTemplatify。「首页」链接只在导航里没有首页时才放（footerHome）。 -->
 <footer class="site-footer">
   <div class="container footer-simple">
     <p class="footer-name">{{name}}</p>
     {{#if summary}}<p class="section-lead">{{summary}}</p>{{/if}}
-    <p><a href="{{homeHref}}">{{icon:home:16}}首页</a></p>
+    {{#if footerHome}}<p><a href="{{homeHref}}">{{icon:home:16}}{{ui.home}}</a></p>{{/if}}
     <p><a href="tel:{{phoneTel}}">{{icon:phone:16}}{{phone}}</a></p>
       {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:16}}{{email}}</a></p>{{/if}}
-      {{#if wechat}}<p>{{icon:chat:16}}{{wechat}}</p><p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
+      {{#if wechat}}<p>{{icon:chat:16}}{{wechat}}</p><p><button type="button" class="btn" data-copy="{{wechat}}">{{ui.copyWechat}}</button></p>{{/if}}
       <p><a href="{{amapUrl}}">{{icon:map-pin:16}}{{address}}</a></p>
       {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
     <div class="footer-legal">

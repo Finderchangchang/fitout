@@ -4,8 +4,13 @@
   align-items: center;
 }
 
+.cta-inline > div {
+  display: grid;
+  gap: 0.75rem;
+}
+
 .cta-inline .phone-line {
-  margin-top: 0.75rem;
+  margin-top: 0;
 }
 
 @media (min-width: 768px) {

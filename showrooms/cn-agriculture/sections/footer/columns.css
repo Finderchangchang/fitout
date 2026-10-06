@@ -6,8 +6,8 @@
 .site-footer {
   background: var(--text);
   color: var(--on-media);
-  border-top: 0;
-  padding-top: var(--section-y);
+  /* 上面常常是同色的深底板块（批发询价带、资质预约带），页脚顶上画一条细线分开。 */
+  border-top: 1px solid rgb(255 249 240 / 0.22);
 }
 
 .footer-grid {
@@ -37,6 +37,7 @@
   border-color: var(--surface);
 }
 
+/* 版权字是普通文字，备案号是 44px 高的链接：居中对齐，两边的字落在一条线上。 */
 .footer-legal {
   border-top: 1px solid rgb(255 249 240 / 0.28);
 }
@@ -48,6 +49,7 @@
 }
 
 .qr-pair figure {
+  position: relative;
   width: 7.5rem;
 }
 

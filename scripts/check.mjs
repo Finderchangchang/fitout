@@ -9,11 +9,13 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { readJson } from "./lib/json.mjs";
+import { langError, loadCopy, siteLang } from "./lib/i18n.mjs";
 import { closedTargets, isOn, parentOfCollection, pointsClosed } from "./lib/pages.mjs";
 import {
   RULES,
-  E5_WORDS,
   E6_WORDS,
+  phrasesFor,
+  textLimit,
   PLACEHOLDERS,
   LIMITS,
   CONTRAST_PAIRS,
@@ -99,6 +101,8 @@ function checkSite(dir) {
   else {
     try {
       site = readJson(sitePath);
+      const langProblem = langError(site);
+      if (langProblem) report("SEO", langProblem);
       checkSiteJson(site);
       checkLengths(site);
       const registered = industryError(site.industry) || nicheError(site.industry, site.niche);
@@ -250,7 +254,15 @@ function checkImageTiers(dir, demoMode) {
 }
 
 function checkPage(where, html, site, house, vars, js, demoMode, css) {
-  if (!/<html[^>]*\blang="zh-CN"/i.test(html)) report("SEO", `${where} 缺少 lang="zh-CN"`);
+  const lang = siteLang(site);
+  const htmlLang = lang === "en" ? "en" : "zh-CN";
+  const ogLocale = lang === "en" ? "en_US" : "zh_CN";
+  if (!new RegExp(`<html[^>]*\\blang="${htmlLang}"`, "i").test(html)) {
+    report("SEO", `${where} 缺少 lang="${htmlLang}"`);
+  }
+  if (!html.includes(`property="og:locale" content="${ogLocale}"`)) {
+    report("SEO", `${where} 的 og:locale 不是 ${ogLocale}`);
+  }
   const viewport = meta(html, "viewport");
   if (!viewport) report("C3", `${where} 缺少 viewport`);
   else {
@@ -278,9 +290,12 @@ function checkPage(where, html, site, house, vars, js, demoMode, css) {
   if (where === "index.html" && !/"@type"\s*:\s*"(LocalBusiness|Organization)"/.test(html)) {
     report("SEO", "首页 JSON-LD 不是 LocalBusiness 或 Organization");
   }
+  if (where === "index.html" && !html.includes(`"inLanguage":"${htmlLang}"`)) {
+    report("SEO", `首页 JSON-LD 的 inLanguage 不是 ${htmlLang}`);
+  }
 
   checkIds(where, html);
-  for (const item of collectTexts(html)) scanCopy(where, item.text, item.source);
+  for (const item of collectTexts(html)) scanCopy(where, item.text, item.source, lang);
   for (const tag of html.match(/<img\b[^>]*>/gi) || []) {
     const alt = tag.match(/\balt="([^"]*)"/i);
     if (!alt || !decode(alt[1]).trim()) report("ALT", `${where} 的图片 alt 为空`);
@@ -299,7 +314,7 @@ function checkPage(where, html, site, house, vars, js, demoMode, css) {
   }
   checkHeroButton(where, html, house, site);
   checkHeroCtas(where, html);
-  if (where === "index.html") checkRepeat(html);
+  if (where === "index.html") checkRepeat(html, site);
 
   const hero = html.match(/<section\b[^>]*data-section="hero"[^>]*>[\s\S]*?<\/section>/i);
   if (hero) {
@@ -319,7 +334,8 @@ function checkPage(where, html, site, house, vars, js, demoMode, css) {
 }
 
 function checkHeroButton(where, html, house, site) {
-  const expected = house?.buttons?.primary;
+  const fromSite = typeof site?.buttons?.primary === "string" ? site.buttons.primary.trim() : "";
+  const expected = fromSite || house?.buttons?.primary;
   if (!expected) return;
   const hero = html.match(/<section\b[^>]*data-section="hero"[^>]*>[\s\S]*?<\/section>/i);
   if (!hero) return;
@@ -329,7 +345,7 @@ function checkHeroButton(where, html, house, site) {
   if (!label) return;
   const override = Array.isArray(site?.hero?.buttons) ? String(site.hero.buttons[0]?.label || "") : "";
   if (override) {
-    if (foldLabel(label) !== foldLabel(override) && !isFallbackLabel(label)) {
+    if (foldLabel(label) !== foldLabel(override) && !isFallbackLabel(label, site)) {
       report("E6", `${where} 的 hero 主按钮「${clip(label)}」和 hero.buttons「${override}」不是同一句`);
     }
     return;
@@ -340,14 +356,19 @@ function checkHeroButton(where, html, house, site) {
   }
 }
 
-function isFallbackLabel(label) {
+function isFallbackLabel(label, site) {
   const got = foldLabel(label);
-  return got === foldLabel("电话咨询") || got === foldLabel("联系我们");
+  const copy = loadCopy(siteLang(site));
+  return got === foldLabel(copy.phoneConsult) || got === foldLabel(copy.contactUs);
 }
 
 const REPEAT_UNITS = "平方米|公斤|千克|毫升|厘米|毫米|小时|分钟|万元|亿元|元|年|月|日|人|座|杯|家|个|位|次|吨|亩|斤|克|米|㎡|%|％|折|天|周|项|台|件|箱|瓶|袋|只|款|种|层|间|万|亿";
 
-function checkRepeat(html) {
+function checkRepeat(html, site) {
+  if (siteLang(site) === "en") {
+    checkRepeatEn(html);
+    return;
+  }
   const sections = html.match(/<section\b[\s\S]*?<\/section>/gi) || [];
   if (!sections.length) return;
   const clauseCount = new Map();
@@ -363,6 +384,42 @@ function checkRepeat(html) {
     const re = new RegExp(`(\\d+(?:\\.\\d+)?)\\s*(${REPEAT_UNITS})`, "g");
     for (const match of text.matchAll(re)) {
       const token = `${match[1]}${match[2]}`;
+      if (seen.has(token)) continue;
+      seen.add(token);
+      if (!unitSections.has(token)) unitSections.set(token, new Set());
+      unitSections.get(token).add(index);
+    }
+  });
+  const phrases = [...clauseCount.entries()].filter(([, count]) => count >= 3).slice(0, 8);
+  for (const [clause, count] of phrases) {
+    report("重复", `首页短句「${clip(clause)}」出现 ${count} 次`, "warn");
+  }
+  const units = [...unitSections.entries()].filter(([, set]) => set.size >= 3).slice(0, 8);
+  for (const [token, set] of units) {
+    report("重复", `首页「${token}」出现在 ${set.size} 个板块`, "warn");
+  }
+}
+
+const REPEAT_UNITS_EN = "kg|mm|cm|km|sqm|pcs|hours|years|days|tons|sets|units";
+
+function checkRepeatEn(html) {
+  const sections = html.match(/<section\b[\s\S]*?<\/section>/gi) || [];
+  if (!sections.length) return;
+  const clauseCount = new Map();
+  const unitSections = new Map();
+  sections.forEach((section, index) => {
+    const text = visibleText(section);
+    const clauses = text.split(/[.!?;]+/);
+    for (const part of clauses) {
+      const words = part.toLowerCase().match(/[a-z0-9]+(?:['-][a-z0-9]+)*/g) || [];
+      if (words.length < 4) continue;
+      const key = words.join(" ");
+      clauseCount.set(key, (clauseCount.get(key) || 0) + 1);
+    }
+    const seen = new Set();
+    const re = new RegExp(`(\\d+(?:\\.\\d+)?)\\s*(${REPEAT_UNITS_EN}|%)(?![A-Za-z])`, "gi");
+    for (const match of text.matchAll(re)) {
+      const token = `${match[1]}${match[2].toLowerCase()}`;
       if (seen.has(token)) continue;
       seen.add(token);
       if (!unitSections.has(token)) unitSections.set(token, new Set());
@@ -732,18 +789,38 @@ function checkSlogan(html, site, demoMode) {
   const hero = html.match(/<section\b[^>]*data-section="hero"[^>]*>[\s\S]*?<\/section>/i);
   const h1 = (hero?.[0].match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || "";
   const actualRaw = visibleText(h1);
-  if (sloganClose(actualRaw, sampleRaw)) {
+  if (sloganClose(actualRaw, sampleRaw, siteLang(site))) {
     report("口号", "首屏口号不要套示例句式，按企业档案重写", "warn");
   }
 }
 
-function sloganClose(actualRaw, sampleRaw) {
+function sloganClose(actualRaw, sampleRaw, lang) {
+  if (lang === "en") return sloganCloseWords(actualRaw, sampleRaw);
   const actual = normSlogan(actualRaw);
   const sample = normSlogan(sampleRaw);
   if (!actual || !sample) return false;
   if (commonRun(actual, sample) >= 4 || editRatio(actual, sample) <= 0.5) return true;
   const left = sloganClauses(actualRaw);
   const right = sloganClauses(sampleRaw);
+  for (const a of left) {
+    for (const b of right) {
+      if (commonRun(a, b) >= 4 || editRatio(a, b) <= 0.5) return true;
+    }
+  }
+  return false;
+}
+
+function sloganWords(text) {
+  return String(text || "").toLowerCase().match(/[a-z0-9]+(?:['-][a-z0-9]+)*/g) || [];
+}
+
+function sloganCloseWords(actualRaw, sampleRaw) {
+  const actual = sloganWords(actualRaw);
+  const sample = sloganWords(sampleRaw);
+  if (!actual.length || !sample.length) return false;
+  if (commonRun(actual, sample) >= 4 || editRatio(actual, sample) <= 0.5) return true;
+  const left = String(actualRaw || "").split(/[.!?;]+/).map((part) => sloganWords(part)).filter((words) => words.length >= 4);
+  const right = String(sampleRaw || "").split(/[.!?;]+/).map((part) => sloganWords(part)).filter((words) => words.length >= 4);
   for (const a of left) {
     for (const b of right) {
       if (commonRun(a, b) >= 4 || editRatio(a, b) <= 0.5) return true;
@@ -954,6 +1031,7 @@ function checkMotionJs(js) {
 function checkSiteJson(site) {
   const specs = loadSpecs(site);
   const house = loadHouse(site);
+  const lang = siteLang(site);
   for (const page of site.pages || []) {
     if (page.enabled === false) continue;
     for (const section of page.sections || []) {
@@ -962,12 +1040,12 @@ function checkSiteJson(site) {
         report("spec", `没有板块规格 ${section.type}`);
         continue;
       }
-      checkFields(section.data || {}, spec.fields, `${page.id}.${section.type}`, section.type);
+      checkFields(section.data || {}, spec.fields, `${page.id}.${section.type}`, section.type, lang);
     }
   }
   const productSpec = specs.get("product-detail");
   for (const product of site.products || []) {
-    checkFields(product, productSpec?.fields || {}, `product.${product.slug || "?"}`, "product-detail");
+    checkFields(product, productSpec?.fields || {}, `product.${product.slug || "?"}`, "product-detail", lang);
   }
   const detailSpec = specs.get("collection-detail") || productSpec;
   for (const [id, items] of Object.entries(site.collections || {})) {
@@ -978,30 +1056,43 @@ function checkSiteJson(site) {
     const parent = house ? parentOfCollection(house, id) : null;
     if (parent && !isOn(house, site, parent)) continue;
     for (const item of items) {
-      checkFields(item, detailSpec?.fields || {}, `${id}.${item.slug || "?"}`, "collection-detail");
+      checkFields(item, detailSpec?.fields || {}, `${id}.${item.slug || "?"}`, "collection-detail", lang);
     }
   }
 }
 
 function checkLengths(site) {
-  if (typeof site.name === "string" && countChars(site.name) > LIMITS.name) {
-    report("篇幅", `店名有 ${countChars(site.name)} 字，上限 ${LIMITS.name}`);
+  const lang = siteLang(site);
+  if (typeof site.name === "string") {
+    const issue = lengthIssue(site.name, LIMITS.name, lang);
+    if (issue) report("篇幅", `店名${issue}`);
   }
   const address = site.contact?.address;
-  if (typeof address === "string" && countChars(address) > LIMITS.address) {
-    report("篇幅", `地址有 ${countChars(address)} 字，上限 ${LIMITS.address}`);
+  if (typeof address === "string") {
+    const issue = lengthIssue(address, LIMITS.address, lang);
+    if (issue) report("篇幅", `地址${issue}`);
   }
   for (const page of site.pages || []) {
-    if (typeof page.title === "string" && countChars(page.title) > LIMITS.title) {
-      report("篇幅", `页面 ${page.id || "?"} 的 title 有 ${countChars(page.title)} 字，上限 ${LIMITS.title}`);
+    if (typeof page.title === "string") {
+      const issue = lengthIssue(page.title, LIMITS.title, lang);
+      if (issue) report("篇幅", `页面 ${page.id || "?"} 的 title ${issue}`);
     }
-    if (typeof page.description === "string" && countChars(page.description) > LIMITS.description) {
-      report("篇幅", `页面 ${page.id || "?"} 的 description 有 ${countChars(page.description)} 字，上限 ${LIMITS.description}`);
+    if (typeof page.description === "string") {
+      const issue = lengthIssue(page.description, LIMITS.description, lang);
+      if (issue) report("篇幅", `页面 ${page.id || "?"} 的 description ${issue}`);
     }
   }
 }
 
-function checkFields(data, fields, label, type) {
+function lengthIssue(text, maxChars, lang) {
+  const n = countChars(text);
+  const limit = textLimit(maxChars, lang);
+  if (n <= limit) return "";
+  if (lang === "en") return `有 ${n} 个字符，上限 ${limit}（中文上限 ${maxChars} × 2.2）`;
+  return `有 ${n} 字，上限 ${maxChars}`;
+}
+
+function checkFields(data, fields, label, type, lang) {
   for (const [key, def] of Object.entries(fields || {})) {
     if (def.filledBy === "build") continue;
     const value = data?.[key];
@@ -1012,14 +1103,15 @@ function checkFields(data, fields, label, type) {
       }
       if (def.min && value.length < def.min) report("spec", `${label}.${key} 至少 ${def.min} 项`);
       if (def.max && value.length > def.max) report("spec", `${label}.${key} 最多 ${def.max} 项`);
-      value.forEach((item, index) => checkFields(item, def.item, `${label}.${key}[${index}]`, type));
+      value.forEach((item, index) => checkFields(item, def.item, `${label}.${key}[${index}]`, type, lang));
     } else if (typeof value === "string") {
       if (def.required && value.trim() === "") report("spec", `${label} 的 ${key} 是空的`);
       if (type === "hero" && key === "title") {
         const issue = heroTitleIssue(value);
         if (issue) report("C14", `${label}.${key} ${issue}`);
-      } else if (def.maxChars && countChars(value) > def.maxChars) {
-        report("spec", `${label}.${key} 有 ${countChars(value)} 字，上限 ${def.maxChars}`);
+      } else if (def.maxChars) {
+        const issue = lengthIssue(value, def.maxChars, lang);
+        if (issue) report("spec", `${label}.${key} ${issue}`);
       }
     } else if (def.required) report("spec", `${label} 缺少 ${key}`);
   }
@@ -1061,9 +1153,9 @@ function lintFramework() {
   if (hits === 0) console.log("框架 CSS 检查：零命中");
 }
 
-function scanCopy(where, text, source) {
+function scanCopy(where, text, source, lang) {
   if (!text) return;
-  for (const entry of E5_WORDS) {
+  for (const entry of phrasesFor(lang)) {
     if (!hitPhrase(text, entry)) continue;
     const message = source === "可见文字"
       ? `${where} 出现空话「${entry.word}」`
@@ -1420,10 +1512,11 @@ wechat icp police intro band page-banner detail
 `.split(/\s+/).filter(Boolean));
 
 function lintShowrooms() {
-  const dir = path.join(root, "showrooms");
+  // FITOUT_SHOWROOMS_DIR：回归测试拿一份带坏规则的样板间副本来验证这条 lint 真的会失败。平时不设。
+  const dir = process.env.FITOUT_SHOWROOMS_DIR ? path.resolve(process.env.FITOUT_SHOWROOMS_DIR) : path.join(root, "showrooms");
   if (!fs.existsSync(dir)) return;
   for (const name of fs.readdirSync(dir)) {
-    if (!/^cn-/.test(name)) continue;
+    if (!/^(cn|intl)-/.test(name)) continue;
     const example = path.join(dir, name, "examples", "site.json");
     const sections = path.join(dir, name, "sections");
     if (!fs.existsSync(example) || !fs.existsSync(sections)) continue;
@@ -1436,6 +1529,7 @@ function lintShowrooms() {
     }
     const tokens = exampleTokens(doc);
     const files = walk(sections).filter((file) => /\.(html|css|js)$/i.test(file));
+    lintContainerWidth(name, files);
     for (const file of files) {
       const text = fs.readFileSync(file, "utf8");
       for (const token of tokens) {
@@ -1443,6 +1537,42 @@ function lintShowrooms() {
         if (at < 0) continue;
         const relFile = path.relative(root, file).replaceAll("\\", "/");
         report("样板间", `${relFile}:${lineOf(text, at)} 写死了示例值「${clip(token)}」`);
+      }
+    }
+  }
+}
+
+/**
+ * 限宽别挂在 .container 元素上：.container 自带 margin-inline: auto，给它加 max-width 会被推到中间，
+ * 文案左缘和页头 logo、别的板块对不上（首屏 .container hero-copy 反复踩过）。限宽写在里面的子元素上。
+ * 做法：从样板间的 html 里收「和 container 写在同一个 class 里的别的类名」，
+ * 再扫 css 里最后一级选择器是 .container 或这些类、又写了 max-width（不是 none）的规则。
+ * 同一条规则里把 margin / margin-inline 设成 0 的算已处理（不再自动居中）。
+ */
+function lintContainerWidth(name, files) {
+  const containerClasses = new Set(["container"]);
+  for (const file of files.filter((item) => item.endsWith(".html"))) {
+    const text = fs.readFileSync(file, "utf8");
+    for (const match of text.matchAll(/class="([^"]*)"/g)) {
+      const list = match[1].split(/\s+/).filter(Boolean);
+      if (!list.includes("container")) continue;
+      for (const item of list) if (!item.includes("{")) containerClasses.add(item);
+    }
+  }
+  for (const file of files.filter((item) => item.endsWith(".css"))) {
+    const raw = fs.readFileSync(file, "utf8");
+    const text = raw.replace(/\/\*[\s\S]*?\*\//g, (block) => block.replace(/[^\n]/g, " "));
+    const relFile = path.relative(root, file).replaceAll("\\", "/");
+    for (const match of text.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+      const body = match[2];
+      if (!/max-width\s*:\s*(?=[^;}\s])(?!none)/.test(body)) continue;
+      if (/margin(-inline)?\s*:\s*0\b/.test(body)) continue;
+      for (const part of match[1].split(",")) {
+        const last = part.trim().split(/\s+/).pop() || "";
+        const hit = [...last.matchAll(/\.([A-Za-z0-9_-]+)/g)].map((item) => item[1]).find((item) => containerClasses.has(item));
+        if (!hit) continue;
+        report("样板间", `${relFile}:${lineOf(raw, match.index + match[0].indexOf("{"))} 限宽挂在 .${hit} 上（.container 自带 margin-inline: auto，会被推到中间）：${part.trim()}，把 max-width 写在里面的子元素上`);
+        break;
       }
     }
   }

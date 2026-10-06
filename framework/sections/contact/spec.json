@@ -12,6 +12,17 @@
       "required": false,
       "maxChars": 40,
       "hint": "可无"
+    },
+    "qrs": {
+      "type": "list",
+      "required": false,
+      "max": 4,
+      "hint": "二维码，可无。客户没给文件时正式站这一块整个不出",
+      "item": {
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+        "label": { "type": "string", "required": true, "maxChars": 8 }
+      }
     }
   },
   "variants": {

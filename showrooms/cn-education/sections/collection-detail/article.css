@@ -1,13 +1,45 @@
+/* 桌面：左边正文、参数、按钮，右边配图，整行铺满；手机配图在上。
+   以前配图单独占一行，右边整片空着，正文被挤到图下面。 */
+.article-body {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.article-copy {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+  min-width: 0;
+}
+
 .detail-photo {
+  order: -1;
   width: min(100%, 28rem);
   height: auto;
-  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .article-body {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+  }
+
+  /* 配图按 4:3 裁，高度和左边正文、参数、按钮接近，不再一张竖图把右栏撑出一大截。 */
+  .detail-photo {
+    order: 0;
+    width: 100%;
+    max-width: 30rem;
+    justify-self: end;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
 }
 
 .spec-grid {
   display: grid;
   gap: 0.85rem 1rem;
-  margin-block: 1.25rem;
+  margin-block: 0.75rem 1rem;
 }
 
 .spec-grid div {

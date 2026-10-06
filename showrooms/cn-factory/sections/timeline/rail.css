@@ -24,3 +24,33 @@
   font-variant-numeric: tabular-nums;
   font-size: var(--fs-3);
 }
+
+/* 宽屏横向排：每一项上面一条线、线上一个方点，两三排排满，不再只占左边窄窄一条。 */
+@media (min-width: 768px) {
+  .year-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-left: 0;
+    border-left: 0;
+  }
+
+  .year-rail li {
+    padding: 1.1rem 0 0;
+    border-top: 2px solid var(--accent);
+  }
+
+  .year-rail li::before {
+    left: 0;
+    top: -0.38rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .year-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .year-rail:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

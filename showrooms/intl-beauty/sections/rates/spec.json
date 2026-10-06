@@ -1,0 +1,27 @@
+{
+  "note": "会员、次卡或套餐。最多六档，好让健身房和餐厅复用。价格写在卡片上。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "price": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "columns": {
+      "needsImage": false,
+      "family": "plans",
+      "fit": "左对齐的价目栏，价格用强调色",
+      "source": "样板间自写。无装饰框，不居中。"
+    }
+  }
+}

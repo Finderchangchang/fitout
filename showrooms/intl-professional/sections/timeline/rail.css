@@ -1,0 +1,48 @@
+.year-list {
+  display: grid;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.year-list li {
+  min-width: 0;
+  padding-top: 1rem;
+  border-top: 2px solid var(--on-media);
+}
+
+[data-tone="light"] .year-list li {
+  border-top-color: var(--primary);
+}
+
+.year-list li p {
+  margin: 0;
+}
+
+.year-mark {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-4);
+  line-height: 1.1;
+  color: var(--on-media);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+[data-tone="light"] .year-mark {
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  .year-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 按年份条数定列数：四个年份一排，每格一条顶线。 */
+@media (min-width: 1024px) {
+  .year-list {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 2rem;
+  }
+}

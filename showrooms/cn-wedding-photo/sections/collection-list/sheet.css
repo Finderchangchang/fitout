@@ -27,3 +27,22 @@
     align-items: center;
   }
 }
+
+/* 文字栏：标题、说明、按钮之间一个间距（以前三行贴在一起，按钮顶着说明），按钮靠左不拉宽。 */
+.sheet-row > div {
+  display: grid;
+  gap: 0.75rem;
+  align-content: center;
+  justify-items: start;
+}
+
+@media (min-width: 1024px) {
+  .sheet-row {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--gap);
+  }
+
+  .sheet-row .item-title {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,41 @@
+.lane-list {
+  display: grid;
+  border-top: 1px solid var(--border);
+}
+
+.lane {
+  display: grid;
+  gap: 0.35rem;
+  padding-block: 1.15rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.lane h3 {
+  margin: 0;
+  font-size: var(--fs-3);
+}
+
+.lane a {
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lane p {
+  margin: 0;
+  max-width: 40rem;
+}
+
+@media (min-width: 800px) {
+  .lane {
+    grid-template-columns: minmax(10rem, 16rem) 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  .lane a {
+    min-height: 0;
+    padding-block: 0.4rem;
+  }
+}

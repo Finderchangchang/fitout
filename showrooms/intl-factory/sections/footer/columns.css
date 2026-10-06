@@ -1,0 +1,84 @@
+.footer-links {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.site-footer {
+  background: var(--text);
+  color: var(--on-media);
+  /* 页脚和上面同色的深色横幅之间画一条细线，不让两块黑底糊成一块。 */
+  border-top: 1px solid rgb(244 247 246 / 0.16);
+}
+
+/* 品牌名按标题的行高排，不继承正文 1.75 的行高：手机上折行时两行隔 50px。 */
+.site-footer .footer-name {
+  display: block;
+  min-height: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* 联系列：图标和字隔一个 0.5rem。纯文字行（微信号、营业时间）的图标不再额外加右外边距，字的左缘和链接行对齐。 */
+.site-footer p > .icon-16 {
+  margin-right: 0;
+}
+
+.site-footer p:has(> button) {
+  margin-block: 0.25rem 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 2.5rem;
+  }
+}
+
+.site-footer a,
+.site-footer .footer-name,
+.site-footer .footer-label {
+  color: var(--on-media);
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 44px;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.site-footer a:has(> .icon),
+.site-footer p:has(> .icon) {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.site-footer .icon {
+  flex: none;
+  margin-top: calc((1lh - 1rem) / 2);
+}
+
+.site-footer .btn {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--surface);
+}
+
+.footer-legal {
+  border-top-color: rgb(244 247 246 / 0.28);
+}
+
+/* 页面最后一块是深色板块、紧跟深色页脚：板块下留白加页脚上留白，中间一片空黑。板块下留白收到六成。 */
+@media (min-width: 768px) {
+  main > section:last-child[data-tone="dark"] {
+    padding-bottom: calc(var(--section-y) * 0.6);
+  }
+}
+

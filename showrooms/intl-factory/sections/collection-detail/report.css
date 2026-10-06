@@ -1,0 +1,43 @@
+.report {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.report-copy {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 40rem;
+}
+
+.report-copy .section-title {
+  font-size: var(--fs-4);
+  line-height: 1.15;
+}
+
+.report-photo {
+  margin: 0;
+}
+
+.report-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  max-height: 32rem;
+}
+
+.text-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .report {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+
+  .report .quote-strip {
+    grid-column: 1 / -1;
+  }
+}

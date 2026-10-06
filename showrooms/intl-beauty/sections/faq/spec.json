@@ -1,0 +1,26 @@
+{
+  "note": "原生 details。回答可以引用档案里的营业时间。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 10,
+      "item": {
+        "q": { "type": "string", "required": true, "maxChars": 24 },
+        "a": { "type": "string", "required": true, "maxChars": 80 }
+      }
+    }
+  },
+  "variants": {
+    "accordion": {
+      "needsImage": false,
+      "family": "accordion",
+      "fit": "问题竖着叠",
+      "source": "样板间自写。用系统箭头，不用加号。"
+    }
+  }
+}

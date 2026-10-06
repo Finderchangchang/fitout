@@ -1,0 +1,130 @@
+.detail-main {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.detail-main .section-title,
+.detail-main .section-lead,
+.detail-main .prose,
+.detail-main p {
+  margin: 0;
+}
+
+.detail-main .section-lead {
+  max-width: 40em;
+  color: var(--text);
+  font-size: 1.125rem;
+}
+
+.detail-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 32rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.prose {
+  max-width: 40em;
+}
+
+/* 课程大纲：编号 + 标题 + 一句说明，两列排，编号用计数器，不手写。 */
+.outline {
+  display: grid;
+  gap: 1.5rem 2rem;
+  margin: 0.5rem 0 0;
+  counter-reset: outline;
+}
+
+.outline li {
+  counter-increment: outline;
+  min-width: 0;
+  padding-top: 0.9rem;
+  border-top: 3px solid var(--primary);
+}
+
+.outline li::before {
+  content: counter(outline, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.outline .item-title,
+.outline p {
+  margin: 0;
+}
+
+.outline .item-title {
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .outline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 右栏报名卡：标签在上、值在下，不再缩进 40px（dd 的浏览器默认外边距）；按钮占满，返回列表另起一行留出间距。 */
+.enroll-card {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.enroll-card p {
+  margin: 0;
+}
+
+.enroll-specs {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.enroll-specs > div {
+  display: grid;
+  gap: 0.15rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.enroll-specs dt {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.enroll-specs dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.enroll-card .btn {
+  display: flex;
+  width: 100%;
+}
+
+.enroll-card p:last-child:not(:has(.btn)) a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+@media (min-width: 1024px) {
+  .detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 0.75fr);
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .enroll-card {
+    position: sticky;
+    top: 6rem;
+  }
+}

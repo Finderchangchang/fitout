@@ -1,0 +1,53 @@
+.part-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+}
+
+/* 桌面按条数定列数：6 件排 3 × 2，4 件和 8 件排 4 列，不留末行只剩两张。 */
+@media (min-width: 1000px) {
+  .part-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .part-grid:has(> :nth-child(4):last-child),
+  .part-grid:has(> :nth-child(8):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.part-card {
+  padding: 0 0 1.1rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.part-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #d5dde3;
+}
+
+.part-card h3,
+.part-card p {
+  margin: 0;
+  padding-inline: 1rem;
+}
+
+.part-card h3 {
+  margin-top: 0.85rem;
+  font-size: 1.125rem;
+}
+
+.part-card h3 a {
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.part-card p {
+  margin-top: 0.2rem;
+}

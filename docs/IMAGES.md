@@ -2,16 +2,16 @@
 
 样板间的图片位在 `showrooms/<id>/images.json`。字段说明见 `docs/SHOWROOM.md` 的 images.json 一节。这一页写三件事：图库图怎么下、AI 图怎么生、拿到图之后怎么裁成一套。
 
-演示图放仓库外：
+演示图放仓库外，目录自己定。下文把这个目录写成 `<演示图目录>`。
 
 ```text
-H:\ai_tool\fitout-demo-assets\<showroom-id>\<slot-id>.jpg
+<演示图目录>/<showroom-id>/<slot-id>.jpg
 ```
 
 图库图的许可证不允许原样再分发，所以不要放进公开仓库。拼装时指过去：
 
 ```text
-node scripts/build.mjs showrooms/<id>/examples/site.json --demo-images H:\ai_tool\fitout-demo-assets\<id>
+node scripts/build.mjs showrooms/<id>/examples/site.json --demo-images <演示图目录>/<id>
 ```
 
 课堂上图很少，用正式模式，不要画演示占位：
@@ -28,7 +28,7 @@ node scripts/build.mjs <site.json> --images <老板照片和生成图的目录> 
 - `must` 缺了：拼装仍然成功。`check.mjs` 警告「这些图课上要有，现在还没有」，并列出 id。
 - 还有 `must` 或 `nice` 位没有文件时，首页张数不够不再拿 E4 挡住。演示模式仍按原来的张数规则。
 
-三个脚本都在 `scripts/images/`，不安装 npm 包。网络用 Node 自带的 fetch。裁切和调色用本机 Playwright 的 Chromium canvas。Playwright 从环境变量 `PLAYWRIGHT_PATH` 找，找不到就用 `H:\ai_tool\site-studio-refs\scripts\node_modules\playwright`。
+三个脚本都在 `scripts/images/`，不安装 npm 包。网络用 Node 自带的 fetch。裁切和调色用本机 Playwright 的 Chromium canvas。Playwright 先看环境变量 `PLAYWRIGHT_PATH`，指到入口文件（`.../playwright/index.mjs`）或包目录（`.../playwright`）都行，指到目录时自动找里面的 `index.mjs`；没设置就按 Node 正常的模块解析去找 `playwright`。`check-visual.mjs`、`shot.mjs` 和这几个脚本用同一个查找函数。
 
 MiniMax 的密钥只读环境变量 `MINIMAX_API_KEY`。接口根地址默认 `https://api.minimaxi.com/v1`，要用别的地址就设 `MINIMAX_BASE_URL`（https，写到 `/v1` 为止）。脚本不会把密钥写进日志、报告或图片目录。
 
@@ -42,7 +42,7 @@ MiniMax 的密钥只读环境变量 `MINIMAX_API_KEY`。接口根地址默认 `h
 
 ## 1. 下载图库图
 
-`H:\ai_tool\site-studio-refs\images\` 里如果还没有清单，就用下面这份。一个图片位一条，`primary` 是首选，`fallback` 是备选，备选可以不写。
+`<图库清单目录>` 里如果还没有清单，就用下面这份。一个图片位一条，`primary` 是首选，`fallback` 是备选，备选可以不写。
 
 ```json
 {
@@ -128,7 +128,7 @@ node scripts/images/gen-ai.mjs --showroom cn-dining --out <目录> --only prod-g
 ## 3. 裁切、调色、压缩
 
 ```text
-node scripts/images/grade.mjs --showroom cn-dining --in <原始图目录> --out H:\ai_tool\fitout-demo-assets\cn-dining
+node scripts/images/grade.mjs --showroom cn-dining --in <原始图目录> --out <演示图目录>/cn-dining
 ```
 
 输入按图片位 id 找 `.jpg`、`.jpeg`、`.png`、`.webp`、`.gif`，jpg 优先。目录里没有的位跳过，最后说明还缺多少。对得上的才处理。
@@ -187,9 +187,9 @@ node scripts/images/grade.mjs --showroom cn-dining --in <原始图目录> --out 
 
 `fetch-stock.mjs` 看到清单里的 id 在样板间里是 `client`，就跳过，不下载。`gen-ai.mjs` 只处理 `ai`，`client` 不发请求。`--only` 指到一个 `client` 位时，打印跳过并退出 0。
 
-拼装按 id 在 `--demo-images` 目录里找文件。找到就拷进站点。找不到就画一块浅色占位，写上用途和「上线前替换」，例如「微信二维码 · 上线前替换」。用途取这个位 `desc` 的第一句，没有 `desc` 就用 id。拼装不因此失败，这一页也不挂「演示占位图」。
+拼装按 id 在 `--demo-images` 目录里找文件。找到就拷进站点。找不到就画一块浅色占位，分两行：用途、「上线前替换」，例如「微信二维码 / 上线前替换」。用途取这个位 `desc` 的第一小句（到逗号、句号为止，去掉「占位」「上线前……」），没有 `desc` 时二维码位叫「二维码」、其他位叫「客户提供的图」，**不拿图片位 id 当文案**。这张 SVG 不写 `viewBox`、宽高 100%，字永远是 14px 真实像素，不管占位图显示成 96px 还是 288px 宽；底色、虚线框、字色取这个站自己的 tokens，和页面配套。字太长时按中文 6 个字、英文 14 个字符一行折行。`<img>` 上带 `data-ph` 属性。样板间不要在占位图上再盖说明字。拼装不因此失败，这一页也不挂「演示占位图」。
 
-不带 `--demo-images` 时，`--images` 目录里有同名文件就用那张，没有就出这块占位，拼装不失败。`check.mjs` 在正式模式里，对没写 `tier` 的 `client` 位发现站点里没有 `images/<id>` 文件，给警告，不阻断。写了 `tier` 的位改走上面的 must / nice 规则，不再重复这条。演示模式不为此警告。
+不带 `--demo-images` 时，`--images` 目录里有同名文件就用那张；没有就**不画占位**，这个位当没有图：`qr-` 开头的位所在的列表项整项不出（连同图下面的说明字），单张图的位按空处理，板块里用 `{{#if}}` 包住的整块不出。正式站不会出现「上线前替换」。拼装不失败。`check.mjs` 在正式模式里，对没写 `tier` 的 `client` 位发现站点里没有 `images/<id>` 文件，给警告，不阻断。写了 `tier` 的位改走上面的 must / nice 规则，不再重复这条。演示模式不为此警告。
 
 ## 交给真实客户
 

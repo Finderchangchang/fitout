@@ -1,0 +1,140 @@
+.site-header {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 30;
+  background: transparent;
+  border-bottom: 0;
+  color: var(--on-media);
+}
+
+.site-header .bar {
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  min-height: 4.25rem;
+}
+
+.site-header .brand,
+.site-header .nav-list a,
+.site-header .hotline,
+.site-header .menu-button {
+  color: var(--on-media);
+}
+
+.site-header .brand {
+  font-size: 0.875rem;
+  font-weight: 650;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+.site-header .nav-list {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.site-header .nav-list a {
+  font-size: 0.875rem;
+  padding-inline: 0.7rem;
+  white-space: nowrap;
+  min-width: 0;
+  justify-content: center;
+}
+
+.site-header .hotline {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 44px;
+  line-height: 1.15;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .hotline-label,
+.site-header .hotline .nums {
+  font-size: 0.875rem;
+}
+
+.site-header .menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--on-media);
+  background: rgb(27 34 40 / 0.92);
+  color: var(--on-media);
+}
+
+.mobile-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--text);
+  color: var(--on-media);
+  padding: 1rem 1rem 2rem;
+  overflow: auto;
+}
+
+.mobile-panel a,
+.mobile-panel .menu-button {
+  color: var(--on-media);
+}
+
+.mobile-panel nav {
+  display: grid;
+}
+
+.mobile-panel nav a {
+  font-size: 1.125rem;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.section-head .section-title {
+  font-size: var(--fs-5);
+  line-height: 1.15;
+}
+
+.section-head .section-title::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 3px;
+  margin-top: 0.7rem;
+  background: var(--primary);
+}
+
+[data-tone="dark"] a:not(.btn),
+[data-tone="image"] a:not(.btn) {
+  color: var(--on-media);
+}
+
+[data-tone="dark"] .card a:not(.btn),
+[data-tone="image"] .card a:not(.btn) {
+  color: var(--primary);
+}
+
+@media (min-width: 1180px) {
+  .site-header .hotline {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header .nav-list a {
+    padding-inline: 0.7rem;
+  }
+}
+
+/* 信号黄只做按钮底。同一颗黄当链接字，在钢灰上对比度约 1.3，过不了 4.5。深色带里的按钮选择器更具体，这里一起盖住。 */
+.btn-primary,
+[data-tone="dark"] .btn-primary,
+[data-tone="image"] .btn-primary,
+.site-footer .btn-primary {
+  background: #e0a106;
+  border-color: #e0a106;
+  color: #1b2228;
+}

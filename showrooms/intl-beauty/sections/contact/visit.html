@@ -1,0 +1,32 @@
+<section class="section" data-section="contact" data-family="visit" id="{{anchor}}">
+  <div class="container visit-grid">
+    <div class="visit-intro">
+      <div class="section-head">
+        {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+        {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      </div>
+      <div class="visit-hours">
+        <p class="subhead">{{ui.hours}}</p>
+        {{#each hours}}
+        <p class="hour-line">{{day}} <span class="nums">{{time}}</span></p>
+        {{/each}}
+      </div>
+    </div>
+    <div class="card visit-card">
+      <div class="visit-lines">
+        <p><a href="{{amapUrl}}">{{icon:map-pin:20}}{{address}}</a></p>
+        <p><a href="tel:{{phoneTel}}">{{icon:phone:20}}{{phone}}</a></p>
+        {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:20}}{{email}}</a></p>{{/if}}
+        {{#if wechat}}<p class="visit-wechat">{{icon:chat:20}}<span class="nums">{{wechat}}</span></p>{{/if}}
+      </div>
+      {{#if wechatQrSrc}}<img class="qr" src="{{wechatQrSrc}}" alt="{{name}}{{ui.wechatQrAlt}}" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">{{/if}}
+      <div class="btn-row visit-actions">
+        {{#if formUrl}}<a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{icon:external:16}}{{formLabel}}</a>{{/if}}
+        <a class="btn" href="{{amapUrl}}">{{ui.amap}}</a>
+        {{#if wechat}}<button type="button" class="btn" data-copy="{{wechat}}">{{ui.copyWechat}}</button>{{/if}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,6 +10,18 @@
   min-width: 0;
 }
 
+/* 地址、营业时间行：图标一列、文字一列，图标对齐第一行字（以前图标贴着字）。 */
+.detail-copy p:has(> .icon) {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.detail-copy p > .icon {
+  margin-top: calc((1lh - 1.25rem) / 2);
+}
+
 .detail-photo {
   width: min(100%, 36rem);
   height: auto;

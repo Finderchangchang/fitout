@@ -1,0 +1,42 @@
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1rem;
+}
+
+.cert {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  min-width: 0;
+}
+
+.cert img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #e7e2d8;
+}
+
+@media (max-width: 767px) {
+  .cert img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.cert h3,
+.cert p {
+  margin: 0;
+  padding-inline: 0.9rem;
+}
+
+.cert h3 {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+}
+
+.cert p {
+  margin-top: 0.2rem;
+  margin-bottom: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}

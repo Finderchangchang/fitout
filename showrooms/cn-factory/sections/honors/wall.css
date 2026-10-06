@@ -14,3 +14,9 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* 证书还没拿到时的占位图：显示 9rem，里面的字约 20px，不再撑满整格显示 40px 的大字。
+   真证书照片仍然撑满一格。 */
+.seal-grid img[src^="data:"] {
+  width: 9rem;
+}

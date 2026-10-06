@@ -3,14 +3,22 @@
   gap: 1.25rem;
 }
 
+/* 卡片里标题、价格、说明、按钮之间一个间距；按钮不贴着上面的字，底下也留出一圈和左右一样的边。 */
 .rate-card {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
   min-width: 0;
   background: var(--surface);
-  padding: 1rem;
+  padding: 1.25rem;
+}
+
+.rate-card > p:last-child {
+  margin-top: 0.5rem;
 }
 
 .rate-price {
-  margin: 0.35rem 0;
+  margin: 0;
   font-family: var(--font-heading);
   font-size: 2rem;
   line-height: 1.1;

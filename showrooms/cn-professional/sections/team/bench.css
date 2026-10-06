@@ -23,4 +23,10 @@
   .bench-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  /* 6 人排 3 × 2；3 人排一行三列：不再 4 + 2 留末行空位。 */
+  .bench-grid:has(> :nth-child(6):last-child),
+  .bench-grid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

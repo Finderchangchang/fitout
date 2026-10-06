@@ -1,7 +1,12 @@
-.invite-copy {
+/* 容器自己不限宽（以前把 max-width 挂在 container 上，自动外边距把整块推到 x=400，和 logo 对不上）。
+   标题块限宽，三条要点铺满，按钮一排。 */
+.invite {
   display: grid;
-  gap: 0.9rem;
-  max-width: 40rem;
+  gap: var(--gap);
+}
+
+.invite .section-head {
+  margin-bottom: 0;
 }
 
 .invite-list {
@@ -15,12 +20,14 @@
 @media (min-width: 768px) {
   .invite-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 }
 
 .invite-list li {
   display: grid;
   gap: 0.15rem;
+  align-content: start;
   padding-left: 0.85rem;
   border-left: 3px solid var(--primary);
 }

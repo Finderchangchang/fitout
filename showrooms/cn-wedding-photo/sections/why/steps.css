@@ -1,0 +1,33 @@
+.step-list {
+  display: grid;
+  gap: var(--gap);
+}
+
+/* 步骤序号：深色板块里用正文浅色，不用主色。主色（梅紫）压在深底上对比度只有 2.8:1。 */
+.step-no {
+  font-size: var(--fs-3);
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-tone="dark"] .step-no,
+[data-tone="image"] .step-no {
+  color: var(--on-media);
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+/* 桌面：四步一行排开（2 列、4 列），不再一步占一整行、右边空一大片。 */
+@media (min-width: 768px) {
+  .step-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .step-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

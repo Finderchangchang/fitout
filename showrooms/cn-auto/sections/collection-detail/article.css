@@ -48,9 +48,18 @@
   margin-top: 1.25rem;
 }
 
+/* 桌面：照片拉到和右栏文字一样高，照片裁切铺满（以前照片按原比例排，文字比图长时左下空一截；图比文字高时封顶 34rem）。 */
 @media (min-width: 900px) {
   .detail-grid {
     grid-template-columns: 0.9fr 1.1fr;
     align-items: start;
+  }
+
+  .detail-photo {
+    align-self: stretch;
+    height: 100%;
+    min-height: 20rem;
+    max-height: 34rem;
+    object-fit: cover;
   }
 }

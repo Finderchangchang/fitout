@@ -20,3 +20,27 @@
   line-height: 1.2;
   color: var(--primary);
 }
+
+
+/* 桌面：四步横排，每步一条顶线，数字在上、说明在下，整行铺满。 */
+@media (min-width: 768px) {
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .timeline li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+    padding: 1rem 0 0;
+    border-top: 2px solid var(--primary);
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

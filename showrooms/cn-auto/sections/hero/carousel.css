@@ -87,8 +87,15 @@
   opacity: 0.7;
 }
 
+.hero-dots button[aria-current="true"] {
+  background: transparent;
+  color: transparent;
+}
+
 .hero-dots button[aria-current="true"]::after {
-  background: var(--primary);
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--on-media);
   opacity: 1;
 }
 

@@ -1,7 +1,10 @@
 .invite-copy {
   display: grid;
   gap: 0.9rem;
-  max-width: 40rem;
+}
+
+.invite-copy .section-head {
+  margin-bottom: 0;
 }
 
 .invite-list {
@@ -12,8 +15,43 @@
 .invite-list li {
   display: grid;
   gap: 0.15rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 3px solid color-mix(in srgb, currentColor 45%, transparent);
 }
 
 .invite-list strong {
   font-weight: 700;
+}
+
+.invite-cta {
+  margin-top: 0.25rem;
+}
+
+/* 桌面：左边标题和按钮，右边三条说明，整行铺满，不再只占左边 40%。 */
+@media (min-width: 1024px) {
+  .invite-copy {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-areas:
+      "head list"
+      "cta list";
+    grid-template-rows: auto 1fr;
+    column-gap: 4rem;
+    align-content: start;
+  }
+
+  .invite-copy .section-head {
+    grid-area: head;
+  }
+
+  .invite-list {
+    grid-area: list;
+    gap: 1rem;
+    align-content: start;
+  }
+
+  .invite-cta {
+    grid-area: cta;
+    align-self: start;
+    margin-top: 0;
+  }
 }

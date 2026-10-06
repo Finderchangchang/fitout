@@ -1,0 +1,41 @@
+.quote-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.quote {
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  border-left: 2px solid var(--accent);
+  padding: 0.25rem 0 0.25rem 1rem;
+}
+
+/* 客人的话是整页最该被读到的一句，不该和正文一个字号。用标题字体，大一号。 */
+.quote > p:first-child {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.6;
+}
+
+.quote footer {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.quote footer p {
+  margin: 0;
+}
+
+[data-tone="dark"] .quote {
+  border-left-color: var(--on-media);
+}
+
+@media (min-width: 1024px) {
+  .quote-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

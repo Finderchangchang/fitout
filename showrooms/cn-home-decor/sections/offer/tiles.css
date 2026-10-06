@@ -1,7 +1,3 @@
-.section[data-section="offer"] {
-  padding-block: 56px;
-}
-
 .offer-grid {
   display: grid;
   gap: var(--gap);

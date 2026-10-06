@@ -1,3 +1,22 @@
+/* 问答：手机和平板上下叠，手风琴最宽 40rem。
+   桌面（1024 起）左边标题和导语、右边手风琴两栏，铺满容器，右边不再空一大半。 */
 .faq-list {
   max-width: 40rem;
+}
+
+@media (min-width: 1024px) {
+  [data-section="faq"] > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--gap);
+    align-items: start;
+  }
+
+  [data-section="faq"] .section-head {
+    margin-bottom: 0;
+  }
+
+  [data-section="faq"] .faq-list {
+    max-width: none;
+  }
 }

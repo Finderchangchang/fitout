@@ -1,0 +1,9 @@
+{
+  "id": "intl-professional",
+  "name": "国际风 · 咨询律所",
+  "industry": "咨询律所财税设计",
+  "niche": "consulting",
+  "fit": "给管理咨询、律师事务所、财税顾问和设计事务所。",
+  "preview": "intl-professional/preview.jpg",
+  "pages": ["首页", "关于", "服务", "团队", "案例", "洞察", "面谈"]
+}

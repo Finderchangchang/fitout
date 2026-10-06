@@ -1,4 +1,4 @@
-/* 菜单、复制微信号、整页入场、数字滚动、首屏轮播、桌面悬浮条。不注册 scroll，不引第三方。 */
+/* Menu, copy-to-clipboard, below-fold enter, count-up, hero carousel, desktop dock. No scroll listener. No third-party code. */
 (function () {
   document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -49,7 +49,7 @@
       var prev = el.textContent;
       var timer = 0;
       var show = function () {
-        el.textContent = "已复制";
+        el.textContent = document.documentElement.getAttribute("data-copied") || "OK";
         window.clearTimeout(timer);
         timer = window.setTimeout(function () { el.textContent = prev; }, 1600);
       };
@@ -101,8 +101,28 @@
     window.requestAnimationFrame(frame);
   }
 
-  var watch = document.querySelectorAll("[data-enter],[data-count]");
-  if (!reduce && "IntersectionObserver" in window) {
+  function armEnter() {
+    var vh = window.innerHeight || document.documentElement.clientHeight || 0;
+    var pending = [];
+    var laterCounts = [];
+    if (!reduce) {
+      document.querySelectorAll("[data-enter]").forEach(function (el) {
+        if (el.getBoundingClientRect().top >= vh) {
+          el.classList.add("is-pending");
+          pending.push(el);
+        }
+      });
+      document.querySelectorAll("[data-count]").forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < vh) runCount(el);
+        else laterCounts.push(el);
+      });
+    }
+    if (!pending.length && !laterCounts.length) return;
+    if (!("IntersectionObserver" in window)) {
+      pending.forEach(function (el) { el.classList.remove("is-pending"); });
+      return;
+    }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -112,12 +132,12 @@
         io.unobserve(el);
       });
     }, { threshold: 0.2 });
-    watch.forEach(function (el) { io.observe(el); });
-  } else {
-    watch.forEach(function (el) {
-      if (el.hasAttribute("data-enter")) el.classList.add("is-in");
-    });
+    pending.forEach(function (el) { io.observe(el); });
+    laterCounts.forEach(function (el) { io.observe(el); });
   }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", armEnter);
+  else armEnter();
 
   document.querySelectorAll("[data-carousel]").forEach(function (root) {
     var slides = Array.prototype.slice.call(root.querySelectorAll("[data-slide]"));
@@ -188,5 +208,31 @@
       if (typeof desktop.addEventListener === "function") desktop.addEventListener("change", placeDock);
       placeDock();
     }
+
+    /* 悬浮条实际高度写到 --dock-h：窄屏时页脚按它垫底。
+       桌面右下角的悬浮条：页脚进到它头顶时加 is-over-foot（样式里让开），页脚底部不用再垫空白。 */
+    var footer = document.querySelector(".site-footer");
+    var footWatch = 0;
+    var lastHeight = 0;
+    var armFootWatch = function (height) {
+      if (!footer || !("IntersectionObserver" in window)) return;
+      if (footWatch) footWatch.disconnect();
+      footWatch = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          dock.classList.toggle("is-over-foot", entry.isIntersecting);
+        });
+      }, { rootMargin: "0px 0px -" + (height + 24) + "px 0px", threshold: 0 });
+      footWatch.observe(footer);
+    };
+    var measureDock = function () {
+      var height = Math.ceil(dock.getBoundingClientRect().height);
+      if (!height || Math.abs(height - lastHeight) < 2) return;
+      lastHeight = height;
+      document.documentElement.style.setProperty("--dock-h", height + "px");
+      armFootWatch(height);
+    };
+    measureDock();
+    if ("ResizeObserver" in window) new ResizeObserver(measureDock).observe(dock);
+    else window.addEventListener("resize", measureDock);
   }
 })();

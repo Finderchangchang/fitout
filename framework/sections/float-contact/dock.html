@@ -1,17 +1,17 @@
 <!-- 悬浮联系。调研没有可抄的开源区块。 -->
 <div class="float-dock" data-float>
-  <a class="btn" href="tel:{{phoneTel}}">{{icon:phone:20}}打电话</a>
+  <a class="btn" href="tel:{{phoneTel}}">{{icon:phone:20}}{{ui.call}}</a>
   {{#if hasWechat}}
   <details class="wechat-pop">
-    <summary class="btn">{{icon:chat:20}}加微信</summary>
+    <summary class="btn">{{icon:chat:20}}{{ui.addWechat}}</summary>
     <div class="wechat-panel">
-      {{#if wechatQrSrc}}<img src="{{wechatQrSrc}}" alt="{{name}}的微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">{{/if}}
+      {{#if wechatQrSrc}}<img src="{{wechatQrSrc}}" alt="{{name}}{{ui.wechatQrAlt}}" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">{{/if}}
       {{#if wechat}}
       <p class="nums">{{wechat}}</p>
-      <button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button>
+      <button type="button" class="btn" data-copy="{{wechat}}">{{ui.copyWechat}}</button>
       {{/if}}
     </div>
   </details>
   {{/if}}
-  <a class="btn" href="{{amapUrl}}">{{icon:map-pin:20}}导航</a>
+  <a class="btn" href="{{amapUrl}}">{{icon:map-pin:20}}{{ui.directions}}</a>
 </div>

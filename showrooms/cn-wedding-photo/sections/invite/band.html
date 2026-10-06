@@ -1,14 +1,18 @@
 <section class="section" data-section="invite" data-family="close" id="{{anchor}}">
-  <div class="container invite-copy">
-    {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
-    {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
-    {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+  <div class="container invite">
+    <div class="section-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
     <ul class="invite-list">
       {{#each items}}
       <li><strong>{{name}}</strong><span>{{text}}</span></li>
       {{/each}}
     </ul>
-    <p><a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a></p>
-    <p><a class="btn" href="tel:{{phoneTel}}">{{phone}}</a></p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+      <a class="btn" href="tel:{{phoneTel}}">{{phone}}</a>
+    </div>
   </div>
 </section>

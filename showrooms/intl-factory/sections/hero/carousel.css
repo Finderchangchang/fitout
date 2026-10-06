@@ -1,0 +1,153 @@
+.hero-full {
+  display: block;
+  height: 92vh;
+  min-height: 92vh;
+  max-height: 92vh;
+  overflow: hidden;
+}
+
+.hero-full .hero-scrim {
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 0.72) 0%, rgb(0 0 0 / 0.22) 28%, rgb(0 0 0 / 0.12) 48%),
+    linear-gradient(90deg, rgb(0 0 0 / 0.82) 0%, rgb(0 0 0 / 0.55) 46%, rgb(0 0 0 / 0.28) 100%);
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}
+
+.hero-stack {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero-full .hero-copy {
+  padding-block: 0 1rem;
+  gap: 1rem;
+}
+
+.hero-full .section-title {
+  line-height: 1.05;
+  max-width: 16ch;
+}
+
+/* 标题 92px，和导语只隔 12px 会贴在一起：标题到导语多留一档。 */
+.hero-full .section-lead {
+  color: var(--on-media);
+  max-width: 38rem;
+  margin-top: 0.35rem;
+}
+
+.hero-full .meta {
+  color: var(--on-media);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.hero-full .btn {
+  background: #1b2228;
+  color: var(--on-media);
+  border-color: #1b2228;
+}
+
+.hero-full .btn-primary {
+  background: #e0a106;
+  color: #1b2228;
+  border-color: #e0a106;
+}
+
+.hero-full .hero-ui {
+  padding: 0.75rem 0 1rem;
+}
+
+.carousel-btn,
+.hero-dots button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #1b2228;
+  color: var(--on-media);
+}
+
+.hero-dots button[aria-current="true"] {
+  background: var(--on-media);
+  color: var(--text);
+}
+
+/* 上一张、下一张的按钮里只有屏读文字，画出来是两个空圆。用边框画一个箭头。 */
+.carousel-btn[data-carousel-prev],
+.carousel-btn[data-carousel-next] {
+  display: inline-grid;
+  place-items: center;
+}
+
+.carousel-btn[data-carousel-prev]::before,
+.carousel-btn[data-carousel-next]::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.carousel-btn[data-carousel-prev]::before {
+  transform: translateX(2px) rotate(-135deg);
+}
+
+.carousel-btn[data-carousel-next]::before {
+  transform: translateX(-2px) rotate(45deg);
+}
+
+.fact-bar {
+  background: #1b2228;
+  color: var(--on-media);
+}
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+  padding-block: 0.85rem;
+}
+
+.fact {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+  min-height: 44px;
+  align-content: center;
+}
+
+.fact-label {
+  font-size: 0.875rem;
+  color: var(--on-media);
+}
+
+.fact-value {
+  font-size: 1.125rem;
+  font-weight: 650;
+}
+
+@media (max-width: 700px) {
+  .fact-grid {
+    grid-template-columns: 1fr;
+    padding-block: 0.5rem;
+  }
+
+  /* 手机上标题 29px 偏小，和 92px 的桌面标题比差得太多。提到 38px，三行排下。 */
+  .hero-full .section-title {
+    max-width: 13ch;
+    font-size: clamp(2.125rem, 10.2vw, 2.75rem);
+  }
+}

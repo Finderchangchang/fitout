@@ -1,0 +1,33 @@
+.studio-split img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-height: 28rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* 标题、导语、列表三段原来紧贴着排，没有 section-head 包着，间距是 0。补上同一档。 */
+.studio-split .section-title {
+  margin-bottom: 0.75rem;
+}
+
+.studio-split .section-lead {
+  margin: 0;
+}
+
+.studio-split .stack {
+  margin-top: 1.75rem;
+}
+
+.studio-split .stack .item-title {
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .studio-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+}

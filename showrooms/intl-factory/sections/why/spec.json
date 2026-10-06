@@ -1,0 +1,31 @@
+{
+  "note": "首页是报价四步。关于页和检验页是格子里的事实。不编号。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "rail": {
+      "needsImage": false,
+      "family": "sequence",
+      "fit": "四步并排，从图纸到木箱",
+      "source": "样板间自写"
+    },
+    "cells": {
+      "needsImage": false,
+      "family": "cells",
+      "fit": "顶上一条短线的事实格",
+      "source": "样板间自写"
+    }
+  }
+}

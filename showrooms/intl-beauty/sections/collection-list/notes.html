@@ -1,0 +1,50 @@
+<section class="section" data-section="collection-list" data-family="notes" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="shelf">
+      {{#if filters}}
+      <div class="cat-switch">
+        <input class="clip" type="radio" name="shelf-{{anchor}}" id="cat-{{anchor}}-all" checked>
+        <label class="btn" for="cat-{{anchor}}-all">全部</label>
+        {{#each filters}}
+        <input class="clip" type="radio" name="shelf-{{anchor}}" id="cat-{{anchor}}-{{key}}">
+        <label class="btn" for="cat-{{anchor}}-{{key}}">{{label}}</label>
+        {{/each}}
+      </div>
+      <style>
+        .shelf:has(#cat-{{anchor}}-all:checked) label[for="cat-{{anchor}}-all"] {
+          background: var(--primary);
+          color: var(--primary-contrast);
+          border-color: var(--primary);
+        }
+        {{#each filters}}
+        .shelf:has(#cat-{{anchor}}-{{key}}:checked) label[for="cat-{{anchor}}-{{key}}"] {
+          background: var(--primary);
+          color: var(--primary-contrast);
+          border-color: var(--primary);
+        }
+        .shelf:has(#cat-{{anchor}}-{{key}}:checked) .entry:not([data-cat="{{key}}"]) {
+          display: none;
+        }
+        {{/each}}
+      </style>
+      {{/if}}
+      <div class="note-list" data-media-group="noteimg">
+        {{#each items}}
+        <article class="entry note-row" data-cat="{{catKey}}">
+          {{#if image}}<a class="note-photo" href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+          <div>
+            <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
+            {{#if summary}}<p>{{summary}}</p>{{/if}}
+          </div>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

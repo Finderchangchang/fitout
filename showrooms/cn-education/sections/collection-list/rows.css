@@ -17,3 +17,11 @@
 .item-title {
   font-size: var(--fs-3);
 }
+
+/* 桌面（1024 起）条数是偶数时排两列，不再一整列只占左边一半。 */
+@media (min-width: 1024px) {
+  .row-list:has(> :nth-child(even):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--gap);
+  }
+}

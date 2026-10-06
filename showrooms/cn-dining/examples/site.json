@@ -845,14 +845,14 @@
           "data": {
             "title": "联系方式",
             "lead": "门店事务请打热线。公众号发通知，点单码在店内使用。",
-            "items": [
+            "qrs": [
               {
-                "name": "公众号",
+                "label": "公众号",
                 "image": "qr-wechat",
                 "imageAlt": "麓茶记公众号二维码"
               },
               {
-                "name": "点单码",
+                "label": "点单码",
                 "image": "qr-mini",
                 "imageAlt": "店内点单二维码"
               }

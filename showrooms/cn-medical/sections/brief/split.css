@@ -11,8 +11,36 @@
   display: block;
 }
 
+/* 文字短、图片高：文字放大一档，图片限高，左右两栏高度接近，文字不再悬在一大片空白中间。 */
+.brief-grid > div {
+  display: grid;
+  gap: 0.85rem;
+  align-content: center;
+}
+
+.brief-grid .section-head {
+  margin-bottom: 0;
+}
+
+.brief-grid .section-lead {
+  font-size: var(--fs-2);
+}
+
+.brief-grid > div > p:not(.section-lead) {
+  font-size: 1.0625rem;
+}
+
+.brief-grid .btn {
+  margin-top: 0.5rem;
+}
+
 @media (min-width: 768px) {
   .brief-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .brief-grid img {
+    aspect-ratio: auto;
+    height: clamp(17rem, 26vw, 21rem);
   }
 }

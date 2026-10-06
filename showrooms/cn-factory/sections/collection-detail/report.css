@@ -1,6 +1,8 @@
+/* 新闻详情：桌面文字在左、配图在右；没有配图就保持单栏。 */
 .report {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .report-copy {
@@ -9,6 +11,22 @@
   max-width: 42rem;
 }
 
+.report-copy .btn-row {
+  margin-top: 0.75rem;
+}
+
 .report-photo {
   max-width: 40rem;
+}
+
+@media (min-width: 1024px) {
+  .report:has(.report-photo) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .report:has(.report-photo) .report-copy,
+  .report:has(.report-photo) .report-photo {
+    max-width: none;
+  }
 }

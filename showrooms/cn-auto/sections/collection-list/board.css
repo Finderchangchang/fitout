@@ -37,12 +37,25 @@
   }
 }
 
+/* 桌面六列：每张占两列，一行三张；最后一行只剩两张时各占三列，铺满整行。
+   以前第一张跨两行，文字只有两行，卡片底下空 400px。 */
 @media (min-width: 1024px) {
   .board-grid {
-    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
-  .board-card:first-child {
-    grid-row: span 2;
+  .board-card {
+    grid-column: span 2;
+  }
+
+  .board-grid:has(> :nth-child(5):last-child) > :nth-child(n + 4),
+  .board-grid:has(> :nth-child(4):last-child) > * {
+    grid-column: span 3;
+  }
+
+  /* 占三列的卡片图扁一点（2:1），不要 570 宽 380 高压过上一行。 */
+  .board-grid:has(> :nth-child(5):last-child) > :nth-child(n + 4) img,
+  .board-grid:has(> :nth-child(4):last-child) > * img {
+    aspect-ratio: 2 / 1;
   }
 }

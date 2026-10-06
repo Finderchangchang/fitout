@@ -1,0 +1,21 @@
+<header class="site-header" data-overlay>
+  <div class="container bar">
+    <a class="brand" href="{{homeHref}}">{{name}}</a>
+    <nav class="desktop-nav" aria-label="{{ui.navMain}}">
+      <ul class="nav-list">
+        {{#each nav}}<li><a href="{{href}}">{{label}}</a></li>{{/each}}
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <a class="hotline" href="tel:{{phoneTel}}"><span class="hotline-label">{{ui.phoneConsult}}</span><span class="nums">{{phone}}</span></a>
+      <button type="button" class="menu-button" data-menu-button aria-expanded="false" aria-controls="mobile-menu">{{icon:menu:24}}<span class="sr">{{ui.menu}}</span></button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobile-menu" data-menu-panel hidden>
+    <button type="button" class="menu-button" data-menu-button aria-expanded="false">{{icon:close:20}}<span class="sr">{{ui.close}}</span></button>
+    <nav aria-label="{{ui.navMobile}}">
+      {{#each nav}}<a href="{{href}}">{{label}}</a>{{/each}}
+      <a href="tel:{{phoneTel}}">{{phone}}</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,203 @@
+{
+  "id": "intl-beauty",
+  "name": "国际风 · 高端门店",
+  "note": "给美容院、SPA、美发沙龙和高端养生馆。环境和人是卖点。版式也能给精品健身房和精品餐厅复用：会员页改成会员档或套餐价，手艺人页改成教练或主厨。不写祛斑、抗衰、永久这类功效，不写医疗美容项目，不写第一和最。",
+  "industry": "store-service",
+  "niche": "beauty",
+  "flavor": "intl",
+  "buttons": {
+    "primary": "预约到店",
+    "primaryHref": "contact/index.html",
+    "secondary": "看服务项目",
+    "secondaryHref": "services/index.html",
+    "form": "在线留言"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": {
+      "min": 3,
+      "max": 9,
+      "interval": "4500ms"
+    }
+  },
+  "collections": [
+    {
+      "id": "services",
+      "label": "服务项目",
+      "listFile": "services/index.html"
+    },
+    {
+      "id": "team",
+      "label": "手艺人",
+      "listFile": "team/index.html"
+    },
+    {
+      "id": "cases",
+      "label": "环境和作品",
+      "listFile": "album/index.html"
+    },
+    {
+      "id": "news",
+      "label": "店里记事",
+      "listFile": "news/index.html"
+    }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "optional": false,
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "why", "required": false, "variants": ["points"] },
+        { "type": "trust", "required": false, "variants": ["stats"] },
+        { "type": "services", "required": true, "variants": ["rows"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "team", "required": false, "variants": ["cards"] },
+        { "type": "testimonials", "required": false, "variants": ["grid-cards"] },
+        { "type": "cases", "required": false, "variants": ["gallery"] },
+        { "type": "rates", "required": false, "variants": ["columns"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "optional": false,
+      "order": [
+        { "type": "why", "required": false, "variants": ["points"] },
+        { "type": "years", "required": false, "variants": ["rail"] },
+        { "type": "trust", "required": false, "variants": ["stats"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "services",
+      "file": "services/index.html",
+      "kind": "list",
+      "optional": false,
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["menu"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "item",
+      "file": "services/{slug}.html",
+      "kind": "detail",
+      "optional": false,
+      "from": "services",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "team",
+      "file": "team/index.html",
+      "kind": "team",
+      "optional": true,
+      "when": "档案里有可以放上姓名的美容师、发型师或理疗师。精品健身房复用时改成教练，精品餐厅复用时改成主厨。没有可公开的真人就关掉。",
+      "deny": ["没有团队", "没有真人", "不公开人员"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["people"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "maker",
+      "file": "team/{slug}.html",
+      "kind": "detail",
+      "optional": true,
+      "when": "手艺人页开着，并且有对应的人。列表关掉就不生成。",
+      "from": "team",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "cases",
+      "file": "album/index.html",
+      "kind": "list",
+      "optional": true,
+      "when": "有可以公开的环境或作品照片。不要放医疗前后对比，也不要把客人正脸当成案例。没有照片就关掉。精品健身房放训练区，精品餐厅放座位和出餐口。",
+      "deny": ["没有相册", "没有环境照片", "没有作品"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["shots"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "pic",
+      "file": "album/{slug}.html",
+      "kind": "detail",
+      "optional": true,
+      "when": "相册开着，并且有对应的一张。列表关掉就不生成。",
+      "from": "cases",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "tiers",
+      "file": "cards/index.html",
+      "kind": "list",
+      "optional": true,
+      "when": "店里有会员、次卡或套餐。只卖单次就关掉。精品健身房复用时写成会员档，精品餐厅复用时写成套餐价目。",
+      "deny": ["没有会员", "没有套餐", "只卖单次"],
+      "order": [
+        { "type": "rates", "required": true, "variants": ["columns"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "optional": true,
+      "when": "有可以单独成篇的店内记事，例如放假、换供应商、预约规则。不发记事就关掉。",
+      "deny": ["没有新闻", "没有动态", "不发新闻"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["notes"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "note",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "optional": true,
+      "when": "记事列表开着，并且有对应的一篇。列表关掉就不生成。",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "optional": false,
+      "order": [
+        { "type": "contact", "required": true, "variants": ["visit"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    }
+  ]
+}

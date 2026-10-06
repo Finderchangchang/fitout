@@ -1,5 +1,44 @@
+.place {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.place-copy {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  min-width: 0;
+}
+
 .place-photo {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* 地点、时间：图标和字隔 0.5rem，图标对齐第一行字，地址折行也不歪。 */
+.detail-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.detail-fact .icon {
+  margin-top: calc((1lh - 1.25rem) / 2);
+}
+
+/* 桌面：照片在左、文字在右，两栏一样高。以前照片整行铺开（1200×750），文字全挤在照片下面。 */
+@media (min-width: 1024px) {
+  .place {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--gap);
+  }
+
+  .place-photo {
+    align-self: stretch;
+    height: 100%;
+    min-height: 20rem;
+    max-height: 40rem;
+  }
 }

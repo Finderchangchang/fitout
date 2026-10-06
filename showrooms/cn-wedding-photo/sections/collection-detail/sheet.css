@@ -1,3 +1,27 @@
+.sheet {
+  display: grid;
+  gap: var(--gap);
+}
+
+.sheet-intro {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 48rem;
+}
+
+.sheet-body {
+  display: grid;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.sheet-side {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-width: 0;
+}
+
 .product-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,4 +47,17 @@
   color: var(--accent);
   font-family: var(--font-heading);
   font-size: 1.75rem;
+}
+
+/* 桌面：两张产品图并排在左，参数表和按钮在右，两栏差不多高。以前参数表拉成整行宽，标签和数值隔得很远。
+   没有产品图时（正式站客户没给图），参数表自己占一行，限宽。 */
+@media (min-width: 1024px) {
+  .sheet-body {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+
+  .sheet-side:only-child {
+    grid-column: 1 / -1;
+    max-width: 40rem;
+  }
 }

@@ -1,0 +1,47 @@
+{
+  "note": "课程卡。课时、学费、适合谁写在卡上。分类用单选下划线，不写搜索框。集合列表会丢掉这些字段，所以列表页单独写。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "groups": {
+      "type": "list",
+      "required": false,
+      "min": 0,
+      "max": 6,
+      "item": {
+        "key": { "type": "string", "required": true, "maxChars": 12 },
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "on": { "type": "string", "required": false, "maxChars": 4 },
+        "hide": { "type": "string", "required": false, "maxChars": 4 }
+      }
+    },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 8,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 20 },
+        "summary": { "type": "string", "required": false, "maxChars": 80 },
+        "href": { "type": "string", "required": true, "maxChars": 200 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+        "cat": { "type": "string", "required": true, "maxChars": 12 },
+        "catName": { "type": "string", "required": false, "maxChars": 12 },
+        "hours": { "type": "string", "required": false, "maxChars": 16 },
+        "price": { "type": "string", "required": false, "maxChars": 16 },
+        "audience": { "type": "string", "required": false, "maxChars": 24 },
+        "teacher": { "type": "string", "required": false, "maxChars": 12 }
+      }
+    }
+  },
+  "variants": {
+    "board": {
+      "needsImage": false,
+      "family": "catalog",
+      "fit": "分类下划线加课程卡",
+      "source": "样板间自写"
+    }
+  }
+}

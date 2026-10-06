@@ -17,12 +17,12 @@
     </div>
   </div>
   <div class="container hero-ui">
-    <button type="button" class="carousel-btn" data-carousel-prev aria-label="上一张">上一张</button>
+    <button type="button" class="carousel-btn" data-carousel-prev aria-label="{{ui.prev}}">{{ui.prev}}</button>
     <div class="hero-dots">
       {{#each slides}}
-      <button type="button" data-carousel-dot aria-label="第{{@index}}张">{{@index}}</button>
+      <button type="button" data-carousel-dot aria-label="{{ui.slidePrefix}}{{@index}}{{ui.slideSuffix}}">{{@index}}</button>
       {{/each}}
     </div>
-    <button type="button" class="carousel-btn" data-carousel-next aria-label="下一张">下一张</button>
+    <button type="button" class="carousel-btn" data-carousel-next aria-label="{{ui.next}}">{{ui.next}}</button>
   </div>
 </section>

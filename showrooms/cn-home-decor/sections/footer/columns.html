@@ -13,11 +13,14 @@
       </div>
       <div>
         <p class="footer-label">联系方式</p>
-        <p><a href="tel:{{phoneTel}}">{{phone}}</a></p>
-        {{#if email}}<p><a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
-        {{#if wechat}}<p class="nums">{{wechat}}</p><p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
-        <p><a class="footer-address" href="{{amapUrl}}">{{address}}</a></p>
-        {{#each hours}}<p>{{day}} <span class="nums">{{time}}</span></p>{{/each}}
+        <div class="footer-contact">
+          <p><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+          {{#if email}}<p><a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
+          {{#if wechat}}<p><span class="nums">微信 {{wechat}}</span></p>{{/if}}
+          <p><a class="footer-address" href="{{amapUrl}}">{{address}}</a></p>
+          {{#each hours}}<p><span>{{day}} <span class="nums">{{time}}</span></span></p>{{/each}}
+          {{#if wechat}}<p class="footer-copy"><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
+        </div>
       </div>
       {{#if wechatQrSrc}}
       <div>

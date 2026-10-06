@@ -1,0 +1,29 @@
+{
+  "note": "四类课的入口。图在上，名称在图外。链到课程列表，不带锚点。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 },
+        "href": { "type": "string", "required": true, "maxChars": 200 },
+        "image": { "type": "image", "required": true, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "grid": {
+      "needsImage": false,
+      "family": "lanes",
+      "fit": "分类照片宫格，名称在图下",
+      "source": "样板间自写"
+    }
+  }
+}

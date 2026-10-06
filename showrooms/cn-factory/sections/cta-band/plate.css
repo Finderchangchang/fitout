@@ -1,17 +1,21 @@
+/* 同 why/overlay：文字左缘对齐容器左缘。 */
 .np-quote {
   display: grid;
   padding: 0;
+  background: var(--surface);
 }
 
 .np-quote-copy {
-  background: var(--surface);
   color: var(--text);
   display: flex;
   align-items: center;
-  padding: var(--section-y) clamp(1rem, 4vw, 3.5rem);
+  padding: var(--section-y) 1rem;
 }
 
 .np-quote-inner {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
   max-width: 34rem;
 }
 
@@ -22,7 +26,10 @@
 .np-quote-line {
   font-size: var(--fs-3);
   font-weight: 700;
-  margin-top: 0.35rem;
+}
+
+.np-quote-inner .btn-primary {
+  margin-top: 0.25rem;
 }
 
 .np-quote-line a {
@@ -39,7 +46,20 @@
 
 @media (min-width: 1024px) {
   .np-quote {
-    grid-template-columns: 0.86fr 1.14fr;
+    grid-template-columns:
+      1fr
+      calc(min(100% - 2rem, var(--container)) * 0.43)
+      calc(min(100% - 2rem, var(--container)) * 0.57)
+      1fr;
+  }
+
+  .np-quote-copy {
+    grid-column: 2;
+    padding-inline: 0 clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .np-quote-photo {
+    grid-column: 3 / -1;
   }
 
   .np-quote-photo img {

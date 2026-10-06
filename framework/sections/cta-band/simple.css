@@ -2,3 +2,16 @@
   display: grid;
   gap: var(--gap);
 }
+
+/* 桌面（768 起）左边标题和说明、右边按钮，一行铺满容器，不再只占左边三成、右边整片空。 */
+@media (min-width: 768px) {
+  .cta-simple {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 3rem;
+    align-items: center;
+  }
+
+  .cta-simple .section-head {
+    margin-bottom: 0;
+  }
+}

@@ -73,3 +73,10 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* 桌面三列，和首页课程一样的卡片尺寸；两列时每张 588px 宽、735px 高，太重。 */
+@media (min-width: 1024px) {
+  .lane-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

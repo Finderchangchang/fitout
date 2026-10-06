@@ -94,7 +94,7 @@ export const RULES = {
   A11: { level: "block", text: "米色加陶土按注册表：ok 不报，warn 只警告，block 失败" },
   B1: { level: "block", text: "整份 CSS 里实际用到的字体族不超过 2 个" },
   B3: { level: "block", text: "字号不小于 14px" },
-  B6: { level: "block", text: "桌面首屏标题 60 到 110px。手写展示字可以到 173px，并且不超过 4 个词" },
+  B6: { level: "block", text: "桌面首屏标题 60 到 110px。手写展示字可以到 173px，并且不超过 4 个词。国际风同样到 110px" },
   B7: { level: "block", text: "正文字体栈的第一个不能是中文字体" },
   B10: { level: "block", text: "衬线标题只给注册表里 serifTitles 为真的行业或细分。不再因为字体名字本身拦截" },
   C3: { level: "block", text: "有 viewport，且不许禁止缩放。容器宽 1152 到 1340" },
@@ -108,23 +108,23 @@ export const RULES = {
   D6: { level: "block", text: "首屏轮播 3 到 9 张，间隔 3 到 5 秒，有箭头和指示点，悬停暂停，减少动效时停止" },
   E2: { level: "block", text: "可见文字和 alt、说明文字里不用 emoji，也不打星" },
   E4: { level: "block", text: "样板间首页至少 12 张图，其中至少 2 张满宽。演示模式降为警告" },
-  E5: { level: "block", text: "空话。英文营销词和「打造」单独降为警告" },
+  E5: { level: "block", text: "空话。中文站：赋能等为失败，打造和 Elevate、Seamless、Unleash、Next-Gen 为警告。英文站改用英文词表，命中即失败" },
   E6: { level: "block", text: "按钮不用提交、了解更多、点击这里，以及绕过写法" },
   E9: { level: "block", text: "档案里有备案号时，页脚必须出现原文" },
   F3: { level: "block", text: "框架 CSS 不写死颜色、圆角、阴影，不用 transition:all 和 background-clip:text" },
   SEO: { level: "block", text: "语言、title、description、Open Graph、首页 JSON-LD" },
   ALT: { level: "block", text: "有图片就必须有非空 alt" },
   结构: { level: "block", text: "页面骨架：h1、header、footer、悬浮、电话、id 不重复" },
-  口径: { level: "block", text: "标题和按钮不用破折号" },
+  口径: { level: "block", text: "标题和按钮不用 em dash。中文站和英文站一样，正文不查" },
   链接: { level: "block", text: "站内链接、锚点和图片都要存在，目录链接不行" },
   残留: { level: "block", text: "不留模板残留和占位词" },
-  篇幅: { level: "block", text: "店名、标题、说明、地址有字数上限" },
+  篇幅: { level: "block", text: "店名、标题、说明、地址有字数上限。英文站同一上限乘 2.2，向上取整，仍按去掉空白后的码点" },
   spec: { level: "block", text: "字段符合板块 spec" },
   图片: { level: "warn", text: "单张图片超过 400KB，或一页合计超过 1.5MB" },
   图片位: { level: "block", text: "每个 img 要有 width 和 height，或写 aspect-ratio。同一组若用 aspect-ratio 和 object-fit:cover 锁住显示框，就按框检查；否则仍比原图比例" },
   降级: { level: "warn", text: "拼装时缺图改了版式。退出码仍看有没有 block" },
   口号: { level: "warn", text: "首屏口号不要套示例句式，按企业档案重写" },
-  重复: { level: "warn", text: "首页同一个短句出现 3 次及以上，或同一个数字加单位出现在 3 个板块里" },
+  重复: { level: "warn", text: "首页同一个短句出现 3 次及以上，或同一个数字加单位出现在 3 个板块里。英文站按词，短句至少 4 个词" },
   实拍: { level: "block", text: "mustBeReal 的位不能标成 ai。没有 sources.json 时只警告，无法确认实拍" },
   样板间: { level: "block", text: "样板间版式不写死这套示例站的 slug、id、专有名词和电话" },
 };
@@ -132,6 +132,12 @@ export const RULES = {
 export const HIGH_SAT_BANDS = 3;
 export const HERO_PX = { min: 60, max: 110, script: 173 };
 export const SECTION_Y = { desktopMin: 80, desktopMax: 160, mobileMin: 48, mobileMax: 72 };
+/** 国际风首屏高度只在 check-visual 里量。国内风不套这道，凡科中位大约 0.74 屏。 */
+export const FLAVOR_LIMITS = {
+  cn: { heroMin: 60, heroMax: 110, sectionYMin: 80, sectionYMax: 160, heroViewport: null },
+  intl: { heroMin: 60, heroMax: 110, sectionYMin: 80, sectionYMax: 160, heroViewport: { min: 0.85, max: 1 } },
+};
+export const EN_CHAR_FACTOR = 2.2;
 export const NAV_PX = { max: 110, overlay: 160 };
 export const CONTAINER = { min: 1152, max: 1340 };
 
@@ -148,6 +154,30 @@ export const E5_WORDS = [
   { word: "Unleash", level: "warn", boundary: "en" },
   { word: "Next-Gen", level: "warn", boundary: "en" },
 ];
+
+/** 英文站空话。整词命中即失败。连字符算在词里面，大小写不敏感。 */
+export const E5_WORDS_EN = [
+  { word: "Seamless", level: "block", boundary: "en" },
+  { word: "Elevate", level: "block", boundary: "en" },
+  { word: "Unleash", level: "block", boundary: "en" },
+  { word: "Cutting-edge", level: "block", boundary: "en" },
+  { word: "World-class", level: "block", boundary: "en" },
+  { word: "Next-gen", level: "block", boundary: "en" },
+  { word: "Revolutionary", level: "block", boundary: "en" },
+  { word: "One-stop", level: "block", boundary: "en" },
+];
+
+export function phrasesFor(lang) {
+  return lang === "en" ? E5_WORDS_EN : E5_WORDS;
+}
+
+/** 英文上限 = ceil(中文上限 × 2.2)。中文站原数不动。 */
+export function textLimit(maxChars, lang) {
+  const n = Number(maxChars);
+  if (!Number.isFinite(n)) return n;
+  if (lang !== "en") return n;
+  return Math.ceil(n * EN_CHAR_FACTOR - 1e-9);
+}
 
 export const E6_WORDS = [
   "提交",

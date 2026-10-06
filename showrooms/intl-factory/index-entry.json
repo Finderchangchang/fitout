@@ -1,0 +1,17 @@
+{
+  "id": "intl-factory",
+  "name": "国际风 · 外贸工厂",
+  "industry": "机械五金零部件外贸工厂",
+  "niche": "manufacturing",
+  "fit": "给做外贸的零部件、五金、机械和 OEM 加工厂。",
+  "preview": "intl-factory/preview.jpg",
+  "pages": [
+    "Home",
+    "About",
+    "Products",
+    "Applications",
+    "Quality",
+    "News",
+    "Contact"
+  ]
+}

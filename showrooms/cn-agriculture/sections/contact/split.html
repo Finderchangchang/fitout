@@ -1,6 +1,6 @@
 <section class="section" data-section="contact" data-family="desk" id="{{anchor}}">
   <div class="container contact-split">
-    <div>
+    <div class="contact-main">
       <div class="section-head">
         <span class="grain-kicker" aria-hidden="true"></span>
         {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
@@ -8,14 +8,28 @@
         {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
       </div>
       <p class="contact-phone"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
-      {{#if email}}<p><a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
-      {{#if wechat}}<p>微信 <span class="nums">{{wechat}}</span></p><p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
-      <p><a href="{{amapUrl}}">{{address}}</a></p>
-      <h3 class="contact-sub">接待时间</h3>
-      {{#each hours}}
-      <p>{{day}} <span class="nums">{{time}}</span></p>
-      {{/each}}
-      <div class="contact-codes">
+      <ul class="contact-rows">
+        {{#if email}}<li>{{icon:mail:20}}<a href="mailto:{{email}}">{{email}}</a></li>{{/if}}
+        {{#if wechat}}<li>{{icon:chat:20}}<span>微信 <span class="nums">{{wechat}}</span></span></li>{{/if}}
+        <li>{{icon:map-pin:20}}<a href="{{amapUrl}}">{{address}}</a></li>
+        {{#each hours}}<li>{{icon:clock:20}}<span>接待 {{day}} <span class="nums">{{time}}</span></span></li>{{/each}}
+      </ul>
+      <div class="btn-row">
+        <a class="btn" href="{{amapUrl}}">打开导航</a>
+        {{#if wechat}}<button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button>{{/if}}
+      </div>
+    </div>
+    <div class="contact-aside">
+      <aside class="inquiry-plate">
+        <span class="grain-kicker" aria-hidden="true"></span>
+        <h3>留言预约</h3>
+        <p>写明品类、数量和到货地。晚稻从一吨起，干货从一百斤起。</p>
+        <div class="inquiry-foot">
+          {{#if formUrl}}<a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a>{{/if}}
+          <p class="meta">也可以直接打采购热线，把袋重说清楚。</p>
+        </div>
+      </aside>
+      <div class="contact-codes" data-media-group="qr">
         {{#if wechatQrSrc}}
         <figure class="contact-qr">
           <img src="{{wechatQrSrc}}" alt="{{name}}公众号二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
@@ -30,12 +44,5 @@
         {{/if}}
       </div>
     </div>
-    <aside class="inquiry-plate">
-      <span class="grain-kicker" aria-hidden="true"></span>
-      <h3>留言预约</h3>
-      <p>写明品类、数量和到货地。晚稻从一吨起，干货从一百斤起。</p>
-      {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
-      <p class="meta">也可以直接打采购热线，把袋重说清楚。</p>
-    </aside>
   </div>
 </section>

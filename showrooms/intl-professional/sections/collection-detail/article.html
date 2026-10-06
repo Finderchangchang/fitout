@@ -1,0 +1,88 @@
+<section class="section" data-section="collection-detail" data-family="dossier" id="{{anchor}}">
+  <div class="container dossier{{#if role}} is-person{{/if}}">
+    <div class="dossier-head">
+      {{#if role}}<p class="kicker">{{role}}{{#if years}} · {{years}}{{/if}}{{#if focus}} · {{focus}}{{/if}}</p>{{/if}}
+      {{#if date}}<p class="kicker">{{date}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+      <p class="section-lead">{{summary}}</p>
+    </div>
+    {{#if image}}
+    <img class="dossier-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+    {{/if}}
+    <div class="dossier-cols">
+      <div class="dossier-main">
+        {{#if body}}
+        <div class="dossier-block">
+          {{#if bodyLabel}}<h3 class="item-title">{{bodyLabel}}</h3>{{/if}}
+          <p class="prose">{{body}}</p>
+        </div>
+        {{/if}}
+        {{#if background}}
+        <div class="dossier-block">
+          <h3 class="item-title">背景</h3>
+          <p>{{background}}</p>
+        </div>
+        {{/if}}
+        {{#if approach}}
+        <div class="dossier-block">
+          <h3 class="item-title">做法</h3>
+          <p>{{approach}}</p>
+        </div>
+        {{/if}}
+        {{#if result}}
+        <div class="dossier-block">
+          <h3 class="item-title">结果</h3>
+          <p>{{result}}</p>
+        </div>
+        {{/if}}
+        {{#if steps}}
+        <div class="dossier-block">
+          <h3 class="item-title">过程</h3>
+          <ol class="dossier-steps">
+            {{#each steps}}
+            <li>
+              <h3 class="item-title">{{name}}</h3>
+              <p>{{text}}</p>
+            </li>
+            {{/each}}
+          </ol>
+        </div>
+        {{/if}}
+        {{#if faqs}}
+        <div class="dossier-block">
+          <h3 class="item-title">常见问题</h3>
+          <div class="faq-list">
+            {{#each faqs}}
+            <details>
+              <summary>{{q}}<span class="chev">{{icon:chevron-down:20}}</span></summary>
+              <p>{{a}}</p>
+            </details>
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+      </div>
+      <aside class="dossier-side">
+        {{#if specs}}
+        <dl class="spec-list">
+          {{#each specs}}
+          <div><dt>{{label}}</dt><dd>{{value}}</dd></div>
+          {{/each}}
+        </dl>
+        {{/if}}
+        <div class="summon">
+          <h3 class="item-title">约一次面谈</h3>
+          <p><a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a></p>
+        </div>
+        <div class="visit-triad">
+          <a href="tel:{{phoneTel}}"><span>电话</span>{{phone}}</a>
+          {{#if email}}<a href="mailto:{{email}}"><span>邮件</span>{{email}}</a>{{/if}}
+          <a href="{{amapUrl}}"><span>地址</span>{{address}}</a>
+        </div>
+        <p class="hours-line">{{hoursText}}</p>
+        <p class="back-row"><a class="btn" href="{{backHref}}">{{backLabel}}</a></p>
+      </aside>
+    </div>
+  </div>
+</section>

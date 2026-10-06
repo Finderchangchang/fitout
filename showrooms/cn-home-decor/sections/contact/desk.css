@@ -1,41 +1,99 @@
+/* 联系区：左（标题、大号热线、联系方式一列、两个按钮）、右（留言预约卡片 + 二维码），两栏顶边对齐、高度接近。
+   二维码不放在左栏底下拉高左栏。没有二维码时（正式站客户没给文件）右栏只剩留言卡片，卡片拉到和左栏一样高。 */
 .contact-split {
   display: grid;
   gap: var(--gap);
+  align-items: stretch;
 }
 
-.contact-split > * {
+.contact-main {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  justify-items: start;
   min-width: 0;
 }
 
+.contact-main .section-head {
+  margin-bottom: 0.25rem;
+}
+
 .contact-phone {
-  font-size: var(--fs-3);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
-  margin: 0;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
 }
 
 .contact-phone a {
   color: var(--accent);
   text-decoration: none;
-  min-height: 44px;
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
 }
 
-.contact-sub {
-  margin-top: 1.25rem;
-  font-size: var(--fs-3);
+/* 联系方式：一行一项，图标和字隔 0.5rem，图标对齐第一行字（地址折行也不歪），项和项之间一条分隔线。 */
+.contact-rows {
+  display: grid;
+  width: 100%;
+  border-top: 1px solid var(--border);
+}
+
+.contact-rows li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-block: 0.65rem;
+  min-height: 44px;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-rows .icon {
+  margin-top: calc((1lh - 1.25rem) / 2);
+  color: var(--primary);
+}
+
+.contact-aside {
+  display: grid;
+  gap: var(--gap);
+  align-content: start;
+  min-width: 0;
+}
+
+.inquiry-plate {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  justify-items: start;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.inquiry-plate h3 {
+  font-size: 1.5rem;
+}
+
+.inquiry-foot {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
 }
 
 .contact-codes {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.5rem;
+}
+
+.contact-codes:not(:has(figure)) {
+  display: none;
 }
 
 .contact-qr {
+  position: relative;
   width: 7.5rem;
-  min-width: 0;
   margin: 0;
 }
 
@@ -51,17 +109,24 @@
   min-height: 44px;
   line-height: 44px;
   text-align: center;
-}
-
-.inquiry-plate {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 1.25rem;
+  font-size: 0.875rem;
 }
 
 @media (min-width: 768px) {
   .contact-split {
     grid-template-columns: 1.1fr 0.9fr;
-    align-items: start;
+  }
+
+  /* 右栏只有留言卡片时（没二维码），卡片拉到和左栏一样高，按钮和小字贴底。 */
+  .contact-aside:not(:has(.contact-codes figure)) {
+    grid-template-rows: 1fr;
+  }
+
+  .contact-aside:not(:has(.contact-codes figure)) .inquiry-plate {
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .inquiry-foot {
+    align-self: end;
   }
 }

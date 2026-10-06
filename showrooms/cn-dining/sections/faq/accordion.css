@@ -1,0 +1,17 @@
+/* 问答：桌面左边标题、右边手风琴两栏，不再只占左边一半、右边整片空。 */
+[data-section="faq"] > .container {
+  display: grid;
+  gap: var(--gap);
+}
+
+[data-section="faq"] .section-head {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  [data-section="faq"] > .container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    gap: 3rem;
+    align-items: start;
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "note": "列表条目由拼装注入。分类筛选只在目录版式里出现。facets 的 text 写在筛选项旁。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 },
+    "facets": {
+      "type": "list",
+      "required": false,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 24 }
+      }
+    }
+  },
+  "variants": {
+    "brief": {
+      "needsImage": false,
+      "family": "brief",
+      "fit": "首页六件目录，方图，没有筛选",
+      "source": "样板间自写"
+    },
+    "catalog": {
+      "needsImage": false,
+      "family": "filter",
+      "fit": "顶上一排工艺筛选，下面方图卡片",
+      "source": "样板间自写"
+    },
+    "tiles": {
+      "needsImage": false,
+      "family": "mosaic",
+      "fit": "用途图在上，名称在下",
+      "source": "样板间自写"
+    },
+    "index": {
+      "needsImage": false,
+      "family": "ledger",
+      "fit": "动态按行排，月份写在说明开头",
+      "source": "样板间自写"
+    }
+  }
+}

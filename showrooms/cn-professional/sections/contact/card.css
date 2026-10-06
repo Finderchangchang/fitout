@@ -9,11 +9,30 @@
   display: grid;
   gap: 0.75rem;
   align-content: start;
+  min-width: 0;
 }
 
+.contact-hotline .section-head {
+  margin-bottom: 0;
+}
+
+/* 营业时间、地址、邮箱：图标一列、文字一列，图标对齐第一行字，图标和字之间 0.5rem。 */
 .hours-list {
   display: grid;
   gap: 0.35rem;
+}
+
+.hours-list li,
+.contact-line {
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.hours-list li > .icon,
+.contact-line > .icon {
+  margin-top: calc((1lh - 1rem) / 2);
 }
 
 .contact-book {
@@ -23,25 +42,49 @@
   border-top: 3px solid var(--accent);
 }
 
+.contact-book .subhead {
+  margin-bottom: 0;
+}
+
+/* 微信号 + 复制按钮同一行：图标、号码、按钮；行高 44px，图标跟着垂直居中。 */
+.contact-book .contact-wx {
+  grid-template-columns: 1.25rem auto auto;
+  align-items: center;
+  justify-content: start;
+}
+
+.contact-book .contact-wx > .icon {
+  margin-top: 0;
+}
+
+/* 二维码放在预约卡片里，右栏和左栏高度接近。占位图字号是画布短边的 14%，显示 7rem 约 15px，再淡一档。 */
 .qr-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1rem 1.25rem;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.qr-grid figure {
+  width: 7rem;
 }
 
 .qr-grid img {
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: 7rem;
   object-fit: cover;
   background: var(--surface);
 }
 
 .qr-grid figcaption {
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .contact-split {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.1fr 0.9fr;
   }
 }

@@ -78,3 +78,10 @@
   background: var(--on-media);
   color: var(--text);
 }
+
+/* 主按钮：深炭墨压在深色照片上几乎看不见，改用印章朱（强调色），字用 on-media。 */
+.hero-full .btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-media);
+}

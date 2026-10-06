@@ -4,14 +4,32 @@ h3 {
   font-weight: 800;
 }
 
+/* 标题前的小方块画在容器左缘之外（悬挂），标题文字、下面的导语、正文的左缘都是容器左缘。
+   以前方块在行内，把标题文字推右 15px，导语留在原位，左缘对不上。 */
+.section .section-title {
+  position: relative;
+}
+
 .section .section-title::before {
   content: "";
-  display: inline-block;
+  position: absolute;
+  left: -0.85rem;
+  top: 0.5em;
   width: 0.5rem;
   height: 0.5rem;
-  margin-right: 0.45rem;
   background: var(--accent);
-  vertical-align: 0.12em;
+}
+
+/* 手机：容器左边只有 1rem，小方块挂在外面会贴到屏幕边；改成标题上面的一小条橙色短线，
+   标题文字、导语的左缘仍然都是容器左缘。 */
+@media (max-width: 767px) {
+  .section .section-title::before {
+    position: static;
+    display: block;
+    width: 1.75rem;
+    height: 3px;
+    margin-bottom: 0.6rem;
+  }
 }
 
 .site-header .bar {
@@ -49,12 +67,15 @@ h3 {
   }
 
   .nav-list {
-    gap: 0.15rem 0.35rem;
+    gap: 0.15rem 0.15rem;
   }
 
+  /* 所有导航项左右各 0.5rem：两个字的项（首页）正好 44px 宽，不再靠 min-width 撑，
+     相邻两项文字之间的间距处处一样。 */
   .nav-list a {
     font-size: 0.875rem;
     white-space: nowrap;
-    padding-inline: 0.2rem;
+    min-width: 0;
+    padding-inline: 0.5rem;
   }
 }

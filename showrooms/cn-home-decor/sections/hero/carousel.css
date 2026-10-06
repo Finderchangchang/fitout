@@ -50,6 +50,34 @@
   justify-content: center;
 }
 
+/* 指示点：44px 的点击区里放一个 10px 的小圆，当前页实心、别的页空心。以前五个点都是 44px 的大圆圈，和箭头按钮分不出来。 */
+.hero-dots {
+  gap: 0.15rem;
+}
+
+.hero-dots button {
+  border: 0;
+  background: transparent;
+}
+
+.hero-dots button::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--on-media);
+  box-sizing: border-box;
+}
+
+.hero-dots button[aria-current="true"] {
+  background: transparent;
+  color: transparent;
+}
+
+.hero-dots button[aria-current="true"]::after {
+  background: var(--on-media);
+}
+
 .carousel-btn::before {
   content: "";
   width: 0.55rem;

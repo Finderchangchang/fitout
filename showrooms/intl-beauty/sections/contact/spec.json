@@ -1,0 +1,16 @@
+{
+  "note": "营业时间、地址、电话来自 contact。不嵌地图，不做站内可提交表单。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 }
+  },
+  "variants": {
+    "visit": {
+      "needsImage": false,
+      "family": "visit",
+      "fit": "左边营业时间，右边地址电话和高德链接",
+      "source": "样板间自写。不嵌地图。"
+    }
+  }
+}

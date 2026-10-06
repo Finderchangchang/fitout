@@ -8,25 +8,32 @@
     <div class="desk-grid">
       <div class="desk-hot">
         <p class="desk-label">热线</p>
-        <p><a href="tel:{{phoneTel}}">{{icon:phone:20}}<span class="nums">{{phone}}</span></a></p>
-        {{#each hours}}<p>{{icon:clock:20}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
-        <p><a href="{{amapUrl}}">{{icon:map-pin:20}}{{address}}</a></p>
-        {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:20}}{{email}}</a></p>{{/if}}
-        {{#if wechat}}<p>{{icon:chat:20}}{{wechat}}</p>{{/if}}
+        <p class="desk-phone"><a href="tel:{{phoneTel}}"><span class="nums">{{phone}}</span></a></p>
+        <ul class="desk-rows">
+          {{#each hours}}<li>{{icon:clock:20}}<span>{{day}} <span class="nums">{{time}}</span></span></li>{{/each}}
+          <li>{{icon:map-pin:20}}<a href="{{amapUrl}}">{{address}}</a></li>
+          {{#if email}}<li>{{icon:mail:20}}<a href="mailto:{{email}}">{{email}}</a></li>{{/if}}
+          {{#if wechat}}<li>{{icon:chat:20}}<span>微信 <span class="nums">{{wechat}}</span></span></li>{{/if}}
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="{{amapUrl}}">打开导航</a>
+          {{#if wechat}}<button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button>{{/if}}
+        </div>
+      </div>
+      <div class="desk-aside">
+        <div class="card desk-book">
+          <p class="desk-label">预约</p>
+          <p>进厂前先约工位。电话说车牌和要做的项目就行。</p>
+          {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
+        </div>
         {{#if wechatQrSrc}}
-        <div class="code-row desk-codes">
+        <div class="desk-codes">
           <figure>
             <img src="{{wechatQrSrc}}" alt="门店微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">
             <figcaption>加门店微信</figcaption>
           </figure>
         </div>
         {{/if}}
-        {{#if wechat}}<p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
-      </div>
-      <div class="card desk-book">
-        <p class="desk-label">预约</p>
-        <p>进厂前先约工位。电话说车牌和要做的项目就行。</p>
-        {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
       </div>
     </div>
   </div>

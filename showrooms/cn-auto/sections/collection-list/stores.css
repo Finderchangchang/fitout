@@ -32,13 +32,20 @@
   text-decoration: none;
 }
 
+/* 桌面：图定宽 22rem（以前一半宽，每张卡 330px 高，字只有一小行，右边大片空）。字放大一档，卡片和图一样高。 */
 @media (min-width: 768px) {
   .store-card {
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: minmax(12rem, 22rem) minmax(0, 1fr);
     align-items: center;
+    gap: 1.5rem;
   }
 
   .store-card div {
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem 1.5rem 1rem 0;
+  }
+
+  .store-card h2 {
+    font-size: var(--fs-4);
+    margin-bottom: 0.5rem;
   }
 }

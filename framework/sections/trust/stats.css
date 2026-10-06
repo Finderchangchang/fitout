@@ -1,7 +1,7 @@
 .stat-value {
   font-size: var(--fs-4);
   color: var(--primary);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .stat-grid {

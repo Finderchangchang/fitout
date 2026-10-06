@@ -1,0 +1,18 @@
+<section class="section" data-section="preface" data-family="opening" id="{{anchor}}">
+  <div class="container preface-split">
+    <div class="preface-copy">
+      <div class="preface-head">
+        {{#if kicker}}<p class="kicker">{{kicker}}</p>{{/if}}
+        {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      </div>
+      <div class="preface-body">
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+        {{#if text}}<p class="prose preface-text">{{text}}</p>{{/if}}
+      </div>
+    </div>
+    {{#if image}}
+    <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+    {{/if}}
+  </div>
+</section>

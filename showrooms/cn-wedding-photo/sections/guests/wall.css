@@ -1,6 +1,6 @@
 .voice-grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem 1.25rem;
 }
 
 .voice-card {
@@ -13,6 +13,14 @@
   object-fit: cover;
 }
 
+.voice-card .item-title {
+  margin-top: 0.75rem;
+}
+
+.voice-card p {
+  margin-top: 0.35rem;
+}
+
 .voice-more {
   margin-top: 1.5rem;
 }
@@ -23,15 +31,27 @@
   }
 }
 
+/* 桌面：照片在左（10.5rem），名字和原话在右，名字顶边对齐照片顶边，原话紧跟在名字下面。
+   以前三个子元素按顺序占格：名字挤在照片旁，原话掉到第一列只有 168px 宽，三张卡的原话起点还高低不一。
+   现在照片跨两行，第二行吃掉多出来的高度，原话从名字下面开始，三张卡一致。 */
 @media (min-width: 1024px) {
   .voice-card {
     display: grid;
     grid-template-columns: 10.5rem minmax(0, 1fr);
-    gap: 0.75rem;
+    grid-template-rows: auto 1fr;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
     align-items: start;
   }
 
   .voice-card img {
+    grid-row: 1 / span 2;
     width: 10.5rem;
+  }
+
+  .voice-card .item-title,
+  .voice-card p {
+    grid-column: 2;
+    margin: 0;
   }
 }

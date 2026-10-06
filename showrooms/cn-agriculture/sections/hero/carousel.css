@@ -19,12 +19,16 @@
   opacity: 1;
 }
 
+/* 文案宽度限在子元素上；容器自己和页头一样宽，文案左缘才对得上 logo。 */
 .hero-full .hero-copy {
   display: grid;
   gap: 0.75rem;
   justify-items: start;
-  max-width: 38rem;
   padding-bottom: 0.5rem;
+}
+
+.hero-full .hero-copy > * {
+  max-width: 38rem;
 }
 
 .hero-full .section-title {

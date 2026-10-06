@@ -1,39 +1,43 @@
 <section class="section" data-section="collection-detail" data-family="article" id="{{anchor}}">
   <div class="container article-col">
-    {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
-    {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
-    <p class="section-lead">{{summary}}</p>
+    <div class="article-head">
+      {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+      <p class="section-lead">{{summary}}</p>
+    </div>
     {{#if image}}<img class="detail-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
-    <dl class="fact-row">
-      {{#if years}}<div><dt>执业年限</dt><dd>{{years}}</dd></div>{{/if}}
-      {{#if focus}}<div><dt>擅长项目</dt><dd>{{focus}}</dd></div>{{/if}}
-      {{#if price}}<div><dt>价格区间</dt><dd class="price">{{price}}</dd></div>{{/if}}
-      {{#if date}}<div><dt>日期</dt><dd>{{date}}</dd></div>{{/if}}
-    </dl>
-    {{#if body}}<p>{{body}}</p>{{/if}}
-    {{#if fit}}
-    <h3 class="block-label">适用情况</h3>
-    <p>{{fit}}</p>
-    {{/if}}
-    {{#if steps}}
-    <h3 class="block-label">诊疗流程</h3>
-    <ol class="flow-list">
-      {{#each steps}}
-      <li><strong>{{name}}</strong> {{text}}</li>
-      {{/each}}
-    </ol>
-    {{/if}}
-    {{#if cautions}}
-    <h3 class="block-label">注意事项</h3>
-    <ul class="caution-list">
-      {{#each cautions}}
-      <li>{{text}}</li>
-      {{/each}}
-    </ul>
-    {{/if}}
-    <div class="btn-row">
-      <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
-      {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+    <div class="article-main">
+      <dl class="fact-row">
+        {{#if years}}<div><dt>执业年限</dt><dd>{{years}}</dd></div>{{/if}}
+        {{#if focus}}<div><dt>擅长项目</dt><dd>{{focus}}</dd></div>{{/if}}
+        {{#if price}}<div><dt>价格区间</dt><dd class="price">{{price}}</dd></div>{{/if}}
+        {{#if date}}<div><dt>日期</dt><dd>{{date}}</dd></div>{{/if}}
+      </dl>
+      {{#if body}}<p>{{body}}</p>{{/if}}
+      {{#if fit}}
+      <h3 class="block-label">适用情况</h3>
+      <p>{{fit}}</p>
+      {{/if}}
+      {{#if steps}}
+      <h3 class="block-label">诊疗流程</h3>
+      <ol class="flow-list">
+        {{#each steps}}
+        <li><strong>{{name}}</strong> {{text}}</li>
+        {{/each}}
+      </ol>
+      {{/if}}
+      {{#if cautions}}
+      <h3 class="block-label">注意事项</h3>
+      <ul class="caution-list">
+        {{#each cautions}}
+        <li>{{text}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,84 @@
+<section class="section" data-section="collection-detail" data-family="matter" data-tone="light" id="{{anchor}}">
+  <div class="container matter">
+    <div class="matter-top{{#if image}} has-photo{{/if}}">
+      {{#if image}}<img class="detail-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+      <div class="matter-main">
+        <div class="section-head">
+          {{#if date}}<p class="kicker">{{date}}</p>{{/if}}
+          {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+          <p class="section-lead">{{summary}}</p>
+          {{#if price}}<p class="price nums">{{price}}</p>{{/if}}
+          {{#if role}}<p class="meta">{{role}}{{#if years}} · {{years}}{{/if}}{{#if focus}} · {{focus}}{{/if}}</p>{{/if}}
+        </div>
+        {{#if specs}}
+        <div class="matter-block">
+          {{#if specsLabel}}<h2 class="subhead">{{specsLabel}}</h2>{{/if}}
+          <table class="specs">
+            <tbody>
+              {{#each specs}}
+              <tr>
+                <th>{{label}}</th>
+                <td>{{value}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        {{/if}}
+        {{#if body}}
+        <div class="matter-block">
+          <h2 class="subhead">{{#if bodyLabel}}{{bodyLabel}}{{else}}说明{{/if}}</h2>
+          <p class="prose">{{body}}</p>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    {{#if steps}}
+    <div class="matter-block matter-steps">
+      <h2 class="subhead">{{#if stepsLabel}}{{stepsLabel}}{{else}}怎么做{{/if}}</h2>
+      <ol class="steps">
+        {{#each steps}}
+        <li>
+          <span class="step-no nums">{{@index}}</span>
+          <div>
+            <h3 class="item-title">{{name}}</h3>
+            <p>{{text}}</p>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+    {{/if}}
+    {{#if faqs}}
+    <div class="matter-block matter-faq">
+      <h2 class="subhead">常见问题</h2>
+      <div class="faq-items">
+        {{#each faqs}}
+        <details class="faq-item">
+          <summary>{{q}}<span class="chev">{{icon:chevron-down:20}}</span></summary>
+          <p>{{a}}</p>
+        </details>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    <div class="card consult">
+      <div class="consult-main">
+        <h2 class="subhead">预约</h2>
+        <p><a href="tel:{{phoneTel}}">{{icon:phone:20}}{{phone}}</a></p>
+        <p><a href="{{amapUrl}}">{{icon:map-pin:20}}{{address}}</a></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+          <a class="btn" href="{{amapUrl}}">{{ui.amap}}</a>
+          {{#if formUrl}}<a class="btn" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a>{{/if}}
+          {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+        </div>
+      </div>
+      <div class="consult-hours">
+        {{#each hours}}
+        <p class="hour-line">{{day}} <span class="nums">{{time}}</span></p>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

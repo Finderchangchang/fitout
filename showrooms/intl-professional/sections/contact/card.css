@@ -1,0 +1,75 @@
+/* 联系区：左边标题、导语、营业时间，右边三张联系卡竖排，值用大一号的字。
+   以前三张小卡横着挤在标题下面，右边一半是空的。窄屏单栏，三张卡竖排。 */
+.contact-desk {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.contact-intro {
+  display: grid;
+  gap: 2rem;
+  align-content: start;
+}
+
+.contact-intro .section-head {
+  margin-bottom: 0;
+}
+
+.contact-hours {
+  display: grid;
+  gap: 0;
+  width: min(100%, 24rem);
+}
+
+.contact-hours .kicker {
+  margin: 0 0 0.5rem;
+}
+
+.contact-hours .hour-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding-block: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-hours .hour-row:nth-of-type(1) {
+  border-top: 1px solid var(--border);
+}
+
+.contact-desk .visit-triad {
+  margin-top: 0;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.contact-desk .visit-triad a {
+  gap: 0.35rem;
+  padding: 1.1rem 1.4rem;
+}
+
+.contact-desk .visit-triad a:not(:first-child) {
+  font-size: 1.0625rem;
+}
+
+.contact-desk .visit-triad a:first-child {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.contact-desk .visit-triad a span {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+}
+
+@media (min-width: 900px) {
+  .contact-desk {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5rem;
+  }
+}

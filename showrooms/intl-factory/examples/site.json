@@ -1,0 +1,823 @@
+{
+  "id": "gauge-pin",
+  "lang": "en",
+  "showroom": "intl-factory",
+  "industry": "factory-trade",
+  "niche": "manufacturing",
+  "businessType": "Organization",
+  "name": "Gauge & Pin Co. (Fictional)",
+  "summary": "Turned pins, stamped brackets, and welded frames from Ningbo, for buyers who send a drawing.",
+  "contact": {
+    "phone": "+86 574 8688 2140",
+    "wechat": "gaugepin-export",
+    "wechatQr": "qr-wechat",
+    "email": "export@gaugepin.example",
+    "address": "88 Fixture Lane, Beilun, Ningbo, Zhejiang, China",
+    "hours": [
+      { "day": "Mon-Fri", "time": "08:30-17:30 CST" },
+      { "day": "Sat", "time": "08:30-12:00 CST" }
+    ],
+    "formUrl": "https://example.com/gauge-pin-quote"
+  },
+  "nav": [
+    { "label": "Home", "href": "index.html" },
+    { "label": "About", "href": "about/index.html" },
+    { "label": "Products", "href": "products/index.html" },
+    { "label": "Applications", "href": "applications/index.html" },
+    { "label": "Quality", "href": "quality/index.html" },
+    { "label": "News", "href": "news/index.html" },
+    { "label": "Contact", "href": "contact/index.html" }
+  ],
+  "shell": {
+    "header": "standard",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
+  "collections": {
+    "products": [
+      {
+        "slug": "dowel-pin",
+        "category": "Turned",
+        "name": "Hardened dowel pin",
+        "summary": "100Cr6 dowel, hardened 58-62 HRC. Kept on the catalog shelf.",
+        "body": "Ground after heat treat. Diameter holds ±0.01 mm, h6, unless the drawing asks tighter. Catalog MOQ is 500 pieces. Repeat lots ship 18 days after the deposit. Sample lot is 50 pieces.",
+        "image": "part-dowel",
+        "imageAlt": "Hardened steel dowel pin on a gray sweep",
+        "specs": [
+          { "label": "Material", "value": "100Cr6" },
+          { "label": "Hardness", "value": "58-62 HRC" },
+          { "label": "Diameter", "value": "±0.01 mm, h6" },
+          { "label": "MOQ", "value": "500 pieces" },
+          { "label": "Lead", "value": "18 days after deposit" },
+          { "label": "Sample", "value": "50-piece lot" }
+        ]
+      },
+      {
+        "slug": "shoulder-bolt",
+        "category": "Turned",
+        "name": "304 shoulder bolt",
+        "summary": "304 shoulder bolt. The shoulder is ground to the drawing.",
+        "body": "Shoulder holds ±0.02 mm. Catalog MOQ is 500 pieces. Repeat lots ship 18 days after the deposit.",
+        "image": "part-bolt",
+        "imageAlt": "Stainless shoulder bolt on a gray sweep",
+        "specs": [
+          { "label": "Material", "value": "304 stainless" },
+          { "label": "Shoulder", "value": "±0.02 mm" },
+          { "label": "MOQ", "value": "500 pieces" },
+          { "label": "Lead", "value": "18 days after deposit" }
+        ]
+      },
+      {
+        "slug": "hinge-bracket",
+        "category": "Stamped",
+        "name": "SPCC hinge bracket",
+        "summary": "SPCC hinge bracket. Hole sizes are on the drawing.",
+        "body": "Stock is 2.0 mm SPCC. Critical holes hold ±0.05 mm. Custom stampings start at 1,000 pieces. First article is 25 days. Repeat production is 35 days after sample sign-off.",
+        "image": "part-bracket",
+        "imageAlt": "Stamped steel hinge bracket on a gray sweep",
+        "specs": [
+          { "label": "Material", "value": "SPCC" },
+          { "label": "Stock", "value": "2.0 mm" },
+          { "label": "Holes", "value": "±0.05 mm" },
+          { "label": "MOQ", "value": "1,000 pieces" },
+          { "label": "First article", "value": "25 days" },
+          { "label": "Production", "value": "35 days after sign-off" }
+        ]
+      },
+      {
+        "slug": "weld-frame",
+        "category": "Welded",
+        "name": "Q235 rack upright",
+        "summary": "Q235 rack upright. Quoted from the weld drawing.",
+        "body": "Hole position holds ±0.5 mm after the jig is checked. Price is quoted from the drawing. Repeat production is 35 days after sample sign-off.",
+        "image": "part-frame",
+        "imageAlt": "Welded rack upright on a gray sweep",
+        "specs": [
+          { "label": "Material", "value": "Q235" },
+          { "label": "Hole position", "value": "±0.5 mm" },
+          { "label": "Lead", "value": "35 days after sign-off" },
+          { "label": "Quote", "value": "From the drawing" }
+        ]
+      },
+      {
+        "slug": "standoff",
+        "category": "Turned",
+        "name": "6061-T6 aluminum standoff",
+        "summary": "6061-T6 aluminum standoff for panel builds.",
+        "body": "Turned diameter holds ±0.02 mm. Catalog MOQ is 500 pieces. Repeat lots ship 18 days after the deposit.",
+        "image": "part-standoff",
+        "imageAlt": "Aluminum standoff on a gray sweep",
+        "specs": [
+          { "label": "Material", "value": "6061-T6" },
+          { "label": "Tolerance", "value": "±0.02 mm" },
+          { "label": "MOQ", "value": "500 pieces" },
+          { "label": "Lead", "value": "18 days after deposit" }
+        ]
+      },
+      {
+        "slug": "kit-fastener",
+        "category": "Hardware",
+        "name": "304 cabinet kit",
+        "summary": "304 cabinet kit. Screws, nuts, and washers in one bag.",
+        "body": "One kit is the bag a cabinet line calls for. MOQ is 500 sets. Repeat lots ship 18 days after the deposit.",
+        "image": "part-kit",
+        "imageAlt": "Bag of stainless screws nuts and washers",
+        "specs": [
+          { "label": "Material", "value": "304 stainless" },
+          { "label": "Contents", "value": "Screws, nuts, washers" },
+          { "label": "MOQ", "value": "500 sets" },
+          { "label": "Lead", "value": "18 days after deposit" }
+        ]
+      }
+    ],
+    "uses": [
+      {
+        "slug": "cabinet-hardware",
+        "name": "Cabinet hardware",
+        "summary": "Hinges, pins, and kits for sheet-metal cabinets.",
+        "body": "The cabinet line takes the hinge bracket, the dowel, and the bagged kit. Stampings come from Cixi. Machining and the kit pack happen in Beilun.",
+        "image": "use-cabinet",
+        "imageAlt": "Sheet-metal cabinet hinge and pins"
+      },
+      {
+        "slug": "farm-implements",
+        "name": "Farm implements",
+        "summary": "Brackets and pins for implements that see mud and washdown.",
+        "body": "Brackets are stamped SPCC. Pins are turned 304 or C45. The buyer marks which faces see washdown.",
+        "image": "use-farm",
+        "imageAlt": "Steel bracket on a farm implement"
+      },
+      {
+        "slug": "rack-uprights",
+        "name": "Warehouse racking",
+        "summary": "Uprights and connectors for pallet rack frames.",
+        "body": "Uprights are welded Q235. Hole position is held to ±0.5 mm. The drawing sets the beam pitch.",
+        "image": "use-rack",
+        "imageAlt": "Welded rack upright on a pallet frame"
+      },
+      {
+        "slug": "appliance-oem",
+        "name": "Appliance OEM",
+        "summary": "Standoffs and brackets for appliance chassis.",
+        "body": "Standoffs are 6061-T6. Brackets are SPCC. Both ship in the buyer's carton mark.",
+        "image": "use-appliance",
+        "imageAlt": "Aluminum standoff on an appliance chassis"
+      }
+    ],
+    "news": [
+      {
+        "slug": "press-250",
+        "name": "250 t press in Cixi",
+        "date": "2026-03",
+        "summary": "Mar 2026. The 250 t press replaced an older 160 t line. The press count is still 18.",
+        "body": "Cixi still runs 18 presses. The new 250 t press took the place of a 160 t line. It did not add a nineteenth press. Stampings that also need machining still go to Beilun.",
+        "image": "news-press",
+        "imageAlt": "A large stamping press in a shop"
+      },
+      {
+        "slug": "sample-window",
+        "name": "Sample window stays 25 days",
+        "date": "2026-01",
+        "summary": "Jan 2026. First article stays at 25 days. Custom repeats stay at 35 days after sign-off. Catalog repeats stay at 18 days.",
+        "body": "The sample window did not move. First article is still 25 days. After the buyer signs the sample, repeat production is 35 days. Catalog repeats stay at 18 days after the deposit.",
+        "image": "news-sample",
+        "imageAlt": "A small sample lot of turned pins"
+      },
+      {
+        "slug": "hamburg-lane",
+        "name": "Ningbo to Hamburg lane",
+        "date": "2025-11",
+        "summary": "Nov 2025. Ningbo to Hamburg is a regular lane. Germany was already among the 16 countries.",
+        "body": "The Hamburg sailing is a lane, not a new country. The 2025 export list stays at 16 countries. Germany has been on it since the first shipment in 2018.",
+        "image": "news-lane",
+        "imageAlt": "Plywood crates staged for a vessel"
+      },
+      {
+        "slug": "gauge-room",
+        "name": "2025 gauge calibration",
+        "date": "2025-08",
+        "summary": "Aug 2025. Calibration log for the year is closed. The CMM is the same one in the Beilun gauge room.",
+        "body": "The log is closed for 2025. The gauge room did not move. It has sat beside the CNC aisle since 2024. The room still has one CMM.",
+        "image": "news-gauge",
+        "imageAlt": "A CMM beside a row of machines"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "Gauge & Pin Co. (Fictional)",
+      "description": "Turned pins, stamped brackets, and welded frames from Ningbo, for buyers who send a drawing.",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "carousel",
+          "anchor": "top",
+          "tone": "image",
+          "data": {
+            "label": "Beilun and Cixi",
+            "title": "Pins and brackets, made for export",
+            "lead": "Turned pins, stamped brackets, and welded frames for buyers who send a drawing.",
+            "primaryLabel": "Request a Quote",
+            "primaryHref": "contact/index.html",
+            "secondaryLabel": "See the catalog",
+            "secondaryHref": "products/index.html",
+            "interval": "4500",
+            "slides": [
+              { "image": "hero-turn", "imageAlt": "Lathe tool cutting a steel pin" },
+              { "image": "hero-stamp", "imageAlt": "Press die closing on sheet steel" },
+              { "image": "hero-weld", "imageAlt": "Cooled weld bead on a steel frame" },
+              { "image": "hero-gauge", "imageAlt": "Caliper on a ground pin diameter" }
+            ],
+            "desk": [
+              { "label": "Catalog MOQ", "value": "500 pieces" },
+              { "label": "First article", "value": "25 days" },
+              { "label": "Catalog repeat", "value": "18 days" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "floor",
+          "tone": "dark",
+          "data": {
+            "title": "On the floor",
+            "lead": "1.8 million pieces a month. 74% of 2025 shipments left China.",
+            "items": [
+              { "value": "186", "label": "People on the floor" },
+              { "value": "42", "label": "CNC lathes and mills" },
+              { "value": "18", "label": "Stamping presses" },
+              { "value": "16", "label": "Countries in 2025" }
+            ]
+          }
+        },
+        {
+          "type": "services",
+          "variant": "lanes",
+          "anchor": "processes",
+          "tone": "light",
+          "data": {
+            "title": "Four processes",
+            "lead": "Tolerances below are what we hold unless the drawing is tighter.",
+            "items": [
+              {
+                "name": "Turned parts",
+                "text": "Diameters hold ±0.02 mm on C45, 304, 316, and 6061-T6.",
+                "href": "products/index.html#catalog-kkbxnhn"
+              },
+              {
+                "name": "Stamped parts",
+                "text": "Critical holes hold ±0.05 mm. The largest press is 250 t.",
+                "href": "products/index.html#catalog-kkbmfth"
+              },
+              {
+                "name": "Welded frames",
+                "text": "Hole position holds ±0.5 mm after the jig is signed off.",
+                "href": "products/index.html#catalog-k1xf6n2w"
+              },
+              {
+                "name": "Hardware kits",
+                "text": "304 kits stay tooled. Screws, nuts, and washers ship together.",
+                "href": "products/index.html#catalog-k1nygwm1"
+              }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "chip",
+          "tone": "image",
+          "data": {
+            "image": "band-chip",
+            "imageAlt": "Coolant on a steel pin in a lathe",
+            "caption": "Coolant on a turned pin. Not a plant tour."
+          }
+        },
+        {
+          "type": "why",
+          "variant": "rail",
+          "anchor": "steps",
+          "tone": "light",
+          "data": {
+            "title": "From drawing to crate",
+            "lead": "Four steps. The ship date on the quote is the date we ship.",
+            "items": [
+              { "name": "Drawing", "text": "PDF or STEP. Mark the datums before we quote." },
+              { "name": "Sample", "text": "A 50-piece sample lot. Sign it before production." },
+              { "name": "Production", "text": "Repeat lots start after sign-off. The slot is on the quote." },
+              { "name": "Crates", "text": "Plywood crates, photos, then EXW or FOB Ningbo." }
+            ]
+          }
+        },
+        {
+          "type": "cases",
+          "variant": "tiles",
+          "anchor": "places",
+          "tone": "image",
+          "data": {
+            "title": "Where the parts go",
+            "lead": "Four places these parts go.",
+            "items": [
+              {
+                "name": "Cabinet hardware",
+                "text": "Hinges, pins, and kits for sheet-metal cabinets.",
+                "href": "applications/cabinet-hardware.html",
+                "image": "use-cabinet",
+                "imageAlt": "Sheet-metal cabinet hinge and pins"
+              },
+              {
+                "name": "Farm implements",
+                "text": "Brackets and pins for implements that see mud and washdown.",
+                "href": "applications/farm-implements.html",
+                "image": "use-farm",
+                "imageAlt": "Steel bracket on a farm implement"
+              },
+              {
+                "name": "Warehouse racking",
+                "text": "Uprights and connectors for pallet rack frames.",
+                "href": "applications/rack-uprights.html",
+                "image": "use-rack",
+                "imageAlt": "Welded rack upright on a pallet frame"
+              },
+              {
+                "name": "Appliance OEM",
+                "text": "Standoffs and brackets for appliance chassis.",
+                "href": "applications/appliance-oem.html",
+                "image": "use-appliance",
+                "imageAlt": "Aluminum standoff on an appliance chassis"
+              }
+            ]
+          }
+        },
+        {
+          "type": "collection-list",
+          "variant": "brief",
+          "anchor": "catalog",
+          "tone": "light",
+          "data": {
+            "title": "Catalog",
+            "lead": "Six parts we keep tooling for. Custom work is quoted from your drawing.",
+            "collection": "products"
+          }
+        },
+        {
+          "type": "plant",
+          "variant": "split",
+          "anchor": "plants",
+          "tone": "dark",
+          "data": {
+            "title": "Two plants",
+            "lead": "Machining and welding sit in Beilun. Stampings sit in Cixi.",
+            "items": [
+              {
+                "name": "Beilun",
+                "text": "42 CNC lathes and mills, plus weld jigs. 186 people work across both plants.",
+                "image": "plant-cnc",
+                "imageAlt": "CNC lathe with coolant on a steel part"
+              },
+              {
+                "name": "Cixi",
+                "text": "18 presses, largest 250 t. Stampings return to Beilun if the job also needs machining.",
+                "image": "plant-press",
+                "imageAlt": "Stamping press die on sheet steel"
+              }
+            ]
+          }
+        },
+        {
+          "type": "honors",
+          "variant": "wall",
+          "anchor": "files",
+          "tone": "light",
+          "data": {
+            "title": "Files we send",
+            "lead": "The scan goes out with the quote. This page does not keep the file.",
+            "items": [
+              {
+                "name": "ISO 9001 file",
+                "issuer": "Sent with the quote",
+                "image": "cert-iso",
+                "imageAlt": "Scan of a quality file"
+              },
+              {
+                "name": "Material certificate",
+                "issuer": "When the mill issues it",
+                "image": "cert-mat",
+                "imageAlt": "Scan of a material file"
+              },
+              {
+                "name": "Gauge calibration log",
+                "issuer": "Sent with the quote",
+                "image": "cert-gauge",
+                "imageAlt": "Scan of a calibration log"
+              },
+              {
+                "name": "Packing photos",
+                "issuer": "Before the vessel",
+                "image": "cert-pack",
+                "imageAlt": "Photo of a plywood crate"
+              }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "band",
+          "anchor": "quote",
+          "tone": "dark",
+          "data": {
+            "title": "Send a drawing",
+            "lead": "PDF or STEP. We answer with price, MOQ, and a date.",
+            "primaryHref": "contact/index.html"
+          }
+        },
+        {
+          "type": "faq",
+          "variant": "accordion",
+          "anchor": "questions",
+          "tone": "light",
+          "data": {
+            "title": "Before you send a file",
+            "items": [
+              {
+                "q": "Which drawing files do you take?",
+                "a": "PDF and STEP. Mark the datums on the PDF. We quote from those two files."
+              },
+              {
+                "q": "Which plant runs which job?",
+                "a": "Stampings run in Cixi. Machining and welding run in Beilun. One desk quotes both."
+              },
+              {
+                "q": "How do the parts leave Ningbo?",
+                "a": "Export cartons, then plywood crates. Photos go out before the vessel."
+              },
+              {
+                "q": "Who answers the export desk?",
+                "a": "The export desk in Beilun answers both plants. The first Germany shipment was in 2018."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "About | Gauge & Pin Co. (Fictional)",
+      "description": "Two plants in Ningbo. Machining and welding in Beilun, stamping in Cixi, since 2006.",
+      "banner": "banner-floor",
+      "bannerAlt": "Machining aisle with coolant on the floor",
+      "crumbs": [{ "label": "About", "href": "" }],
+      "sections": [
+        {
+          "type": "timeline",
+          "variant": "rail",
+          "anchor": "years",
+          "tone": "light",
+          "data": {
+            "title": "Since 2006",
+            "lead": "The year is the opening. Headcount today is 186.",
+            "items": [
+              { "name": "2006", "text": "Beilun shop opened with 12 people." },
+              { "name": "2012", "text": "Cixi opened. The first 4 presses went in." },
+              { "name": "2018", "text": "Export desk opened. First crates went to Germany." },
+              { "name": "2024", "text": "The gauge room moved beside the CNC aisle." }
+            ]
+          }
+        },
+        {
+          "type": "why",
+          "variant": "cells",
+          "anchor": "output",
+          "tone": "light",
+          "data": {
+            "title": "Plant and output",
+            "lead": "186 people, 42 CNC, 18 presses, 16 countries. The list is the 2025 shipments.",
+            "items": [
+              { "name": "People", "text": "186 people on the floor across both plants." },
+              { "name": "Machining", "text": "42 CNC lathes and mills in Beilun." },
+              { "name": "Stamping", "text": "18 presses in Cixi. The largest is 250 t." },
+              { "name": "Output", "text": "1.8 million pieces a month. 74% of 2025 shipments left China." },
+              { "name": "Export list", "text": "16 countries in 2025: DE, US, JP, AU, NL, MX, KR, CA, GB, FR, IT, ES, SE, PL, NZ, SG." }
+            ]
+          }
+        },
+        {
+          "type": "plant",
+          "variant": "split",
+          "anchor": "plants",
+          "tone": "dark",
+          "data": {
+            "title": "Two plants",
+            "lead": "Machining and welding sit in Beilun. Stampings sit in Cixi.",
+            "items": [
+              {
+                "name": "Beilun",
+                "text": "42 CNC lathes and mills, plus the weld jigs.",
+                "image": "plant-cnc",
+                "imageAlt": "CNC lathe with coolant on a steel part"
+              },
+              {
+                "name": "Cixi",
+                "text": "18 presses, largest 250 t. Mixed jobs go back to Beilun for machining.",
+                "image": "plant-press",
+                "imageAlt": "Stamping press die on sheet steel"
+              }
+            ]
+          }
+        },
+        {
+          "type": "honors",
+          "variant": "wall",
+          "anchor": "files",
+          "tone": "light",
+          "data": {
+            "title": "Files we send",
+            "lead": "The scan goes out with the quote. This page does not keep the file.",
+            "items": [
+              {
+                "name": "ISO 9001 file",
+                "issuer": "Sent with the quote",
+                "image": "cert-iso",
+                "imageAlt": "Scan of a quality file"
+              },
+              {
+                "name": "Material certificate",
+                "issuer": "When the mill issues it",
+                "image": "cert-mat",
+                "imageAlt": "Scan of a material file"
+              },
+              {
+                "name": "Gauge calibration log",
+                "issuer": "Sent with the quote",
+                "image": "cert-gauge",
+                "imageAlt": "Scan of a calibration log"
+              },
+              {
+                "name": "Packing photos",
+                "issuer": "Before the vessel",
+                "image": "cert-pack",
+                "imageAlt": "Photo of a plywood crate"
+              }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "band",
+          "anchor": "quote",
+          "tone": "dark",
+          "data": {
+            "title": "Send a drawing",
+            "lead": "PDF or STEP. We answer with price, MOQ, and a date.",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "title": "Products | Gauge & Pin Co. (Fictional)",
+      "description": "Turned pins, stamped brackets, welded frames, and hardware kits. Filter by process.",
+      "banner": "banner",
+      "bannerAlt": "Turned pins and sheet parts on a bench",
+      "crumbs": [{ "label": "Products", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "catalog",
+          "anchor": "catalog",
+          "tone": "light",
+          "data": {
+            "title": "Products",
+            "lead": "Filter by process. Each card opens the drawing data.",
+            "collection": "products",
+            "facets": [
+              { "name": "Turned", "text": "Pins, bolts, and standoffs." },
+              { "name": "Stamped", "text": "Brackets from sheet." },
+              { "name": "Welded", "text": "Frames and uprights." },
+              { "name": "Hardware", "text": "Kits in one bag." }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "band",
+          "anchor": "quote",
+          "tone": "dark",
+          "data": {
+            "title": "Send a drawing",
+            "lead": "PDF or STEP. We answer with price, MOQ, and a date.",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uses",
+      "title": "Applications | Gauge & Pin Co. (Fictional)",
+      "description": "Cabinet hardware, farm implements, warehouse racking, and appliance chassis.",
+      "banner": "banner",
+      "bannerAlt": "Turned pins and sheet parts on a bench",
+      "crumbs": [{ "label": "Applications", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "tiles",
+          "anchor": "places",
+          "tone": "light",
+          "data": {
+            "title": "Applications",
+            "lead": "Where these parts are installed.",
+            "collection": "uses"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "band",
+          "anchor": "quote",
+          "tone": "dark",
+          "data": {
+            "title": "Send a drawing",
+            "lead": "PDF or STEP. We answer with price, MOQ, and a date.",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Quality | Gauge & Pin Co. (Fictional)",
+      "description": "Incoming, in-process, and final checks. Tolerances, the CMM, and the gauge room.",
+      "banner": "banner-inspect",
+      "bannerAlt": "Coordinate measuring machine on a steel bench",
+      "crumbs": [{ "label": "Quality", "href": "" }],
+      "sections": [
+        {
+          "type": "why",
+          "variant": "cells",
+          "anchor": "checks",
+          "tone": "light",
+          "data": {
+            "title": "What we check",
+            "lead": "The number on the drawing wins when it is tighter than these.",
+            "items": [
+              { "name": "Incoming", "text": "Material grade is checked against the drawing before a lot starts." },
+              { "name": "In process", "text": "Turned diameters hold ±0.02 mm unless the drawing is tighter." },
+              { "name": "Final", "text": "Stamped holes hold ±0.05 mm. Welded hole position holds ±0.5 mm." },
+              { "name": "Packing", "text": "Cartons, then plywood. Photos go out before the crate leaves." }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "cmm",
+          "tone": "image",
+          "data": {
+            "image": "inspect-cmm",
+            "imageAlt": "Coordinate measuring machine on a bench",
+            "caption": "The CMM in the Beilun gauge room."
+          }
+        },
+        {
+          "type": "plant",
+          "variant": "split",
+          "anchor": "gauges",
+          "tone": "dark",
+          "data": {
+            "title": "Gauges and machines",
+            "lead": "These counts match the home page: 42 CNC, 18 presses, and the gauge room.",
+            "items": [
+              { "name": "Machining", "text": "42 CNC lathes and mills." },
+              { "name": "Stamping", "text": "18 presses. The largest is 250 t." },
+              { "name": "Gauge room", "text": "1 CMM and 2 hardness testers." },
+              { "name": "Salt spray", "text": "1 salt-spray cabinet." }
+            ]
+          }
+        },
+        {
+          "type": "faq",
+          "variant": "accordion",
+          "anchor": "questions",
+          "tone": "light",
+          "data": {
+            "title": "Tighter than the catalog",
+            "items": [
+              {
+                "q": "What if the drawing is tighter?",
+                "a": "The dowel catalog holds ±0.01 mm, h6. Anything tighter is quoted from the drawing, not from the catalog line."
+              },
+              {
+                "q": "What sits in the gauge room?",
+                "a": "One CMM, two hardness testers, and one salt-spray cabinet. The room is beside the CNC aisle in Beilun."
+              }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "band",
+          "anchor": "quote",
+          "tone": "dark",
+          "data": {
+            "title": "Send a drawing",
+            "lead": "PDF or STEP. We answer with price, MOQ, and a date.",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "News | Gauge & Pin Co. (Fictional)",
+      "description": "Shop notes on the press line, the sample window, and the Hamburg lane.",
+      "banner": "banner",
+      "bannerAlt": "Turned pins and sheet parts on a bench",
+      "crumbs": [{ "label": "News", "href": "" }],
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "index",
+          "anchor": "notes",
+          "tone": "light",
+          "data": {
+            "title": "News",
+            "lead": "Shop notes. The month in each line is the month we posted it.",
+            "collection": "news"
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "band",
+          "anchor": "quote",
+          "tone": "dark",
+          "data": {
+            "title": "Send a drawing",
+            "lead": "PDF or STEP. We answer with price, MOQ, and a date.",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact | Gauge & Pin Co. (Fictional)",
+      "description": "Send a drawing. Phone, email, and the export desk in Beilun, Ningbo.",
+      "banner": "banner",
+      "bannerAlt": "Turned pins and sheet parts on a bench",
+      "crumbs": [{ "label": "Contact", "href": "" }],
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "split",
+          "anchor": "desk",
+          "tone": "light",
+          "data": {
+            "title": "Get a quote",
+            "lead": "Send a drawing. The desk answers with price, MOQ, and a date."
+          }
+        },
+        {
+          "type": "faq",
+          "variant": "accordion",
+          "anchor": "questions",
+          "tone": "light",
+          "data": {
+            "title": "Quote terms",
+            "items": [
+              {
+                "q": "What is the catalog MOQ?",
+                "a": "Catalog hardware is 500 pieces. Custom stampings start at 1,000. Turned parts are quoted from the drawing. The sample lot is 50 pieces."
+              },
+              {
+                "q": "What are the lead times?",
+                "a": "Catalog repeats ship 18 days after the deposit. First article is 25 days. Repeat production is 35 days after sample sign-off."
+              },
+              {
+                "q": "How is the payment split?",
+                "a": "Deposit is 30%, then the balance before the crate leaves. Terms are EXW Ningbo or FOB Ningbo."
+              },
+              {
+                "q": "Which files should I send?",
+                "a": "PDF and STEP. Mark the datums on the PDF before the desk quotes."
+              }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "band",
+          "anchor": "quote",
+          "tone": "dark",
+          "data": {
+            "title": "Send a drawing",
+            "lead": "PDF or STEP. We answer with price, MOQ, and a date.",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -3,10 +3,14 @@
   min-height: 28rem;
 }
 
+/* 文案宽度限在子元素上，容器自己和页头、别的板块一样宽，文案左缘才对得上 logo。 */
 .hero-full .hero-copy {
   text-align: left;
-  max-width: 40rem;
   padding-bottom: 1.25rem;
+}
+
+.hero-full .hero-copy > :not(.hero-ui) {
+  max-width: 40rem;
 }
 
 .hero-full .hero-ui {

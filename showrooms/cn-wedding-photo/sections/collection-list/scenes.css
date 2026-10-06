@@ -22,3 +22,12 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* 图下面的标题和说明各留一个间距（以前标题顶着图、说明顶着标题）。 */
+.scene-card .item-title {
+  margin-top: 0.75rem;
+}
+
+.scene-card p {
+  margin-top: 0.35rem;
+}

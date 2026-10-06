@@ -1,7 +1,3 @@
-.section[data-section="why"] {
-  padding-block: 56px;
-}
-
 .step-list {
   display: grid;
   gap: var(--gap);

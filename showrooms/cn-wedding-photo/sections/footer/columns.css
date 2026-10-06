@@ -1,7 +1,8 @@
 .site-footer {
   background: var(--text);
   color: var(--on-media);
-  border-top: 0;
+  /* 上面常常是同色的深底板块（咨询档期、新闻），页脚顶上画一条细线分开。 */
+  border-top: 1px solid color-mix(in srgb, var(--on-media) 22%, transparent);
 }
 
 .site-footer a,
@@ -31,6 +32,7 @@
 }
 
 .code-row figure {
+  position: relative;
   min-width: 0;
 }
 
@@ -46,6 +48,7 @@
   margin-top: 0.35rem;
 }
 
+/* 版权字是普通文字，备案号是 44px 高的链接：居中对齐，两边的字落在一条线上。 */
 .footer-legal {
   border-top-color: rgb(255 248 246 / 0.24);
 }

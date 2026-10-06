@@ -1,0 +1,21 @@
+.page-banner {
+  min-height: clamp(25rem, 42vh, 36.25rem);
+}
+
+.page-banner-scrim {
+  background: rgb(16 12 10 / 0.78);
+}
+
+.page-banner-copy {
+  padding-top: 5.5rem;
+  padding-bottom: 2.25rem;
+}
+
+.page-banner .section-title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.page-banner .crumbs,
+.page-banner .crumbs a {
+  color: var(--on-media);
+}

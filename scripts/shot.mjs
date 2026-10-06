@@ -6,16 +6,11 @@
 import fs from "fs";
 import path from "path";
 import { pathToFileURL, fileURLToPath } from "url";
+import { findPlaywright } from "./images/lib.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const shotDir = path.join(root, "out", "shots");
-const candidates = [
-  process.env.PLAYWRIGHT_PATH,
-  "H:/ai_tool/site-studio-refs/scripts/node_modules/playwright/index.mjs",
-  "H:/ai_tool/site-studio-refs/scripts/node_modules/playwright/index.js",
-].filter(Boolean);
-
-const found = candidates.find((file) => fs.existsSync(file));
+const found = findPlaywright();
 if (!found) {
   console.log("跳过：没有找到 Playwright");
   process.exit(0);

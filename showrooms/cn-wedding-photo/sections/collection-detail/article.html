@@ -1,14 +1,16 @@
 <section class="section" data-section="collection-detail" data-family="article" id="{{anchor}}">
-  <div class="container detail-copy">
-    {{#if date}}<p class="meta">{{date}}</p>{{/if}}
-    {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
-    {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
-    <p class="section-lead">{{summary}}</p>
+  <div class="container story">
     {{#if image}}<img class="story-photo" src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
-    {{#if body}}<p class="prose">{{body}}</p>{{/if}}
-    <div class="btn-row">
-      <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
-      {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+    <div class="detail-copy">
+      {{#if date}}<p class="meta">{{date}}</p>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{name}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{name}}</h2>{{/if}}
+      <p class="section-lead">{{summary}}</p>
+      {{#if body}}<p class="prose">{{body}}</p>{{/if}}
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+        {{#if backHref}}<a class="btn" href="{{backHref}}">{{backLabel}}</a>{{/if}}
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,6 @@
+/* 四条要点一行排四列，不留 3 + 1 的孤儿卡。三条、六条照旧三列。 */
+@media (min-width: 1024px) {
+  [data-family="points"] .grid-3:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

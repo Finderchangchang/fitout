@@ -31,7 +31,9 @@
       "required": ["font-heading", "font-body"],
       "properties": {
         "font-heading": { "type": "string", "minLength": 3 },
-        "font-body": { "type": "string", "minLength": 3 }
+        "font-body": { "type": "string", "minLength": 3 },
+        "font-heading-en": { "type": "string", "minLength": 3, "description": "英文站标题字体栈。不写就用系统栈，不加载字体文件" },
+        "font-body-en": { "type": "string", "minLength": 3, "description": "英文站正文字体栈。不写就用系统栈，不加载字体文件" }
       }
     },
     "type": {

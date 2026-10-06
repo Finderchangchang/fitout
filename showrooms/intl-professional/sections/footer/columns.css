@@ -1,0 +1,39 @@
+.footer-links {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.site-footer {
+  background: var(--primary);
+  color: var(--on-media);
+  border-top: 0;
+}
+
+.site-footer a,
+.site-footer .footer-name,
+.site-footer .footer-label {
+  color: var(--on-media);
+}
+
+/* 品牌名按标题的行高排，不继承正文 1.75 的行高。 */
+.site-footer .footer-name {
+  display: block;
+  min-height: 0;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer p:has(> button) {
+  margin-block: 0.25rem 0.5rem;
+}
+
+.footer-legal {
+  border-top-color: color-mix(in srgb, var(--on-media) 28%, transparent);
+}
+
+/* 导航七项排成两列，不拉成一条 330px 高的竖线，页脚三栏的高度就接近了。 */
+@media (min-width: 768px) {
+  .footer-links {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 2.5rem;
+  }
+}

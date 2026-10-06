@@ -96,11 +96,12 @@ showrooms/<id>/
 - `color.on-media`：压在图片上的字色。不写就用 `primary-contrast`
 - `type.hero`：桌面首屏标题像素，60 到 110。手写展示字把 `type.display` 设为 `script`，可以到 173，标题同时不能超过 4 个词
 - `type.display`：`sans`、`serif` 或 `script`
-- `sectionY`：盖过 density 的桌面上下留白，例如 `140px`。固定长度要在 80px 到 160px
+- `sectionY`：盖过 density 的桌面上下留白，例如 `140px`。固定长度要在 80px 到 160px。国内风和国际风都是这一档
+- `font.font-heading-en`、`font.font-body-en`：只给 `lang: en` 的站。不写就用系统栈 Inter、Segoe UI、Helvetica Neue、Arial。不从网上加载字体
 
 颜色仍是 `#RRGGBB`。对比度按机检的九对，都要 ≥4.5。衬线标题栈的第一个字体要真是衬线，并且注册表里这个行业或细分的 `serifTitles` 为真。工厂和教培没有放开。
 
-`motion` 为 1 时，微交互 200ms，整页入场 700ms。脚本会给每个板块加上 `data-enter="fade"`。板块自己的 `tone` 写成 `light`、`dark` 或 `image`，首页要深浅切换至少 3 次。
+`motion` 为 1 时，微交互 200ms，视口以下的板块入场 700ms。脚本会给每个板块加上 `data-enter="fade"`，但只有顶边在首屏以下的才会等滚动再淡入。板块自己的 `tone` 写成 `light`、`dark` 或 `image`，首页要深浅切换至少 3 次。
 
 ## images.json
 
@@ -127,7 +128,7 @@ showrooms/<id>/
 
 档案里的图片字段写图片位 id，或写成 `slot:<id>`。
 
-`node scripts/build.mjs <site.json> --demo-images <目录>` 会按 id 找同名的 jpg、jpeg、png、webp、svg、gif。找到就拷进站点。找不到时，`source` 为 `client` 的位画浅色用途占位，不挂角标，见 `docs/IMAGES.md`。其他位在带了这个参数时画一块带比例和 id 的深色块。只有这一页真的画出了这种块，角落才标「演示占位图」。不带这个参数时，图库图和 AI 图缺了走无图：能换版式就换，纯图片带整块不出，其余板块留文字。降级写进 `build-report.json` 的 `fallbacks`，不因此失败。`client` 位没有文件时同样画浅色占位，不报错。正式配图目录用 `--images`，不要和 `--demo-images` 一起用。
+`node scripts/build.mjs <site.json> --demo-images <目录>` 会按 id 找同名的 jpg、jpeg、png、webp、svg、gif。找到就拷进站点。找不到时，`source` 为 `client` 的位画浅色用途占位（字是 14px 真实像素，不随图缩放，不露出图片位 id；占位的说明字由 `build.mjs` 统一画，版式里不要再盖一层），不挂角标，见 `docs/IMAGES.md`。其他位在带了这个参数时画一块带比例和 id 的深色块。只有这一页真的画出了这种块，角落才标「演示占位图」。不带这个参数时，图库图和 AI 图缺了走无图：能换版式就换，纯图片带整块不出，其余板块留文字。降级写进 `build-report.json` 的 `fallbacks`，不因此失败。`client` 位没有文件时：演示模式画浅色占位；正式拼装（不带 `--demo-images`）不画占位，二维码（`qr-` 开头的位）所在的列表项整项不出，单张图的位当没有图，版式里用 `{{#if}}` 把整块包住，整块就不出。不报错。正式配图目录用 `--images`，不要和 `--demo-images` 一起用。
 
 挑样板间用的预览图是 `showrooms/<id>/preview.jpg`（720×450，80KB 以内，首页首屏）。`showrooms/index.json` 的 `showrooms` 数组给助手读，不参与拼装。每项有 `id`、`name`（中文名）、`industry`（行业）、`niche`、`fit`（适合谁，取 `showroom.json` 的 `note` 第一句）、`preview`（相对 `showrooms/` 的路径）、`pages`（`examples/site.json` 导航上的文字）。
 
@@ -137,18 +138,22 @@ showrooms/<id>/
 
 板块根节点是一个 `<section>`，带 `data-section`、`data-family`。一组图片的外层加 `data-media-group`，组里的比例必须一样。每个 `<img>` 写 `width`、`height`。非首屏再加 `loading="lazy"` `decoding="async"`。
 
+**限宽写在里面的子元素上，不要写在带 `.container` 的元素上**（比如首屏的 `.container hero-copy`）：`.container` 自带 `margin-inline: auto`，给它加 `max-width` 会被推到中间，文案左缘和页头 logo、别的板块对不上，L11 会拦。**占位图的说明字、`dd` 的左外边距、页脚版权行基线、数字的等高 / 等宽**这些框架已经统一处理，版式里不要再各写一份，见 `docs/FRAMEWORK.md`「间距和对齐的框架约定」。
+
 模板语法见 `scripts/lib/tpl.mjs`。没定义的变量会让拼装失败。可选图片写在 `{{#if image}}` 里面，宽高用 `{{imageWidth}}` 和 `{{imageHeight}}`，脚本会填。
 
 首页板块可以在档案里写 `tone`。深色底上的卡片会回到正文色，不要在深色板块里再放一枚深色链接。
 
 内页 Banner 是框架板块 `page-banner`，高约 400 到 580px，图上有压暗、页名和面包屑。页名是这一页的 h1，下面的板块标题降成 h2。
 
+联系区先用框架的 `contact/card`（左：标题、导语、营业时间、一排等宽按钮；右：联系方式卡片；二维码 `qrs` 另起一整行）。确实要自己写，守框架约定（见 `docs/FRAMEWORK.md`「间距和对齐的框架约定」）：按钮不要每个包一个 `<p>` 各排各的宽度；二维码组用 `.code-pair` 或 `.qr-grid` 当联系区网格的直接子项；二维码的数据字段叫 `qrs`，条目 `{ image, imageAlt, label }`，和框架一致（不要另起 `items` / `name`），列表里写 `{{#if qrs}}` 把整块包住，正式站客户没给二维码，这一块才会整个不出。右栏的高度要跟上左栏（联系区左右栏内容高度比 ≥ 0.6），`check-visual.mjs` 的 L9 会量。
+
 ## 动效
 
 不要引第三方库，不要监听 `scroll`。`framework/shell/site.js` 已经做了这些事，样板间不要再写一套：
 
-- 整页入场：淡入，位移 30px，约 0.7 秒，进入视口播一次。系统开了减少动效就不动，也不要把内容藏起来。
-- 数字滚动：信任条的 `value` 里有数字时，进入视口从 0 计到这个数，最后恢复原来的单位。
+- 整页入场：页头、首屏（hero）、内页 Banner，以及打开时顶边已经在视口里的板块，第一次绘制就是完全可见的，不淡入。只有顶边在视口以下的板块，滚进视口时淡入一次，位移 30px，约 0.7 秒。样式不默认把板块藏起来。系统开了减少动效就全部直接可见，也不要把内容藏起来。禁用脚本时页面保持完全可见。
+- 数字滚动：信任条的 `value` 里有数字时，进入视口从 0 计到这个数，最后恢复原来的单位。已经在首屏里的不先藏起来，直接显示终值，或在看得见的时候滚动。
 - 首屏轮播：版式 `hero/carousel`。3 到 9 张，`interval` 写 3000 到 5000。有上一张、下一张和指示点，悬停暂停。减少动效时停在第一张。
 - 桌面悬浮条：宽 1024 及以上，首屏里不显示，滚过一屏后淡入。手机仍贴底常驻。系统开了减少动效就直接出现，不做淡入。
 
@@ -198,7 +203,9 @@ node scripts/extract-ref-tokens.mjs <measure.json> --out <仓库外的 tokens.re
 node scripts/check-distinct.mjs
 ```
 
-脚本读 `showrooms/*/tokens.json`，目录名以 `_` 开头的跳过，按 `showroom.json` 的 `flavor` 分组。同一组里主色两两 ΔE00 至少 20，强调色两两至少 15，两套的主色和强调色不能同时都小于 20。它打印两两距离表，有冲突时退出码 1。
+脚本读 `showrooms/*/tokens.json`，目录名以 `_` 开头的跳过，按 `showroom.json` 的 `flavor` 分组。同一组里主色两两 ΔE00 至少 20，强调色两两至少 15，两套的主色和强调色不能同时都小于 20。它打印两两距离表，有冲突时退出码 1。不同 flavor 不放在一起比。
+
+国际风（`flavor: intl`）另有一条，只在 `check-visual.mjs` 里、桌面宽度（≥1024）量：首屏区块高度要在 0.85 到 1.0 屏，容差 ±0.02；首屏 `h1` 的计算字号不超过 110px。国内风不套首屏高度，凡科中位大约 0.74 屏。首屏标题像素两边都是 60 到 110（手写展示字仍可到 173）。留白 `sectionY` 两边都是 80 到 160，拼装时已经卡住，不另做一道。
 
 ## 拼装和检查
 
@@ -210,4 +217,4 @@ node scripts/check-visual.mjs out/<site id>
 
 `--demo-images` 指到一个空目录也可以，用来出占位图。演示模式下，缺图和首页张数不足降为警告，而且只在这一页真的画出了演示占位时才降。正式拼装不要带这个参数。`source` 为 `client` 的位见 `docs/IMAGES.md`。
 
-视觉检查需要本机已有的 Playwright。没有时它打印「跳过」并退出 0。它会先把页面收到确定状态：Playwright 开减少动效，并给 `<html>` 加上 `data-fitout-check="settle"`。轮播不自动翻，入场和数字直接到终值。悬浮条按桌面 / 手机规则摆（1024 及以上首屏不显示，滚过一屏再出现；更窄的贴底）。首屏轮播每一张都点开查图上文字，不过的那张会写第几张。
+视觉检查需要本机已有的 Playwright。`PLAYWRIGHT_PATH` 指到入口文件（`.../playwright/index.mjs`）或指到包目录（`.../playwright`）都行，指到目录时自动找里面的 `index.mjs`；没设置就按 Node 正常的模块解析找 `playwright`。没有时它打印「跳过」并退出 0。除了下面这些，每个页面、每个宽度还会跑版式检查 L1 到 L19（面包屑基线、页脚空白、图标间距、占位图字号、小字、内部键名、文字被裁、按钮列宽、联系区栏高、同行顶边、左缘对齐、网格末行孤儿卡、半宽空白板块、统计数字基线、页头文字被截断……），列表和阈值见 `docs/FRAMEWORK.md`。`--layout-only` 只跑版式检查，`--page`、`--widths` 缩小范围。它会先把页面收到确定状态：Playwright 开减少动效，并给 `<html>` 加上 `data-fitout-check="settle"`。轮播不自动翻，入场和数字直接到终值。悬浮条按桌面 / 手机规则摆（1024 及以上首屏不显示，滚过一屏再出现；更窄的贴底）。首屏轮播每一张都点开查图上文字，不过的那张会写第几张。另外会在允许动效时立刻量首页和一页内页：首屏标题、按钮和内页 Banner 的 opacity 必须是 1。

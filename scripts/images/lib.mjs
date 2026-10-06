@@ -4,8 +4,11 @@
  */
 import fs from "fs";
 import path from "path";
+import { createRequire } from "node:module";
 import { pathToFileURL, fileURLToPath } from "url";
 import { readJson } from "../lib/json.mjs";
+
+const require = createRequire(import.meta.url);
 
 export const NEGATIVE = "无文字、无 logo、无水印、不要真实品牌";
 export const INPUT_EXT = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
@@ -198,18 +201,33 @@ export function sniffImage(buf) {
   return null;
 }
 
+/**
+ * 找 Playwright 的入口文件。先看环境变量 PLAYWRIGHT_PATH：
+ * 指到入口文件（.../playwright/index.mjs）或指到包目录（.../playwright）都行，指到目录时自动找里面的 index.mjs / index.js。
+ * 没设置，或设置的路径不存在，就按 Node 正常的模块解析去找 playwright。找不到返回空串。
+ * check-visual.mjs、shot.mjs、配图脚本都用这一个函数。
+ */
 export function findPlaywright() {
-  const candidates = [
-    process.env.PLAYWRIGHT_PATH,
-    "H:/ai_tool/site-studio-refs/scripts/node_modules/playwright/index.mjs",
-    "H:/ai_tool/site-studio-refs/scripts/node_modules/playwright/index.js",
-  ].filter(Boolean);
-  return candidates.find((file) => fs.existsSync(file)) || "";
+  const fromEnv = process.env.PLAYWRIGHT_PATH;
+  if (fromEnv && fs.existsSync(fromEnv)) {
+    if (!fs.statSync(fromEnv).isDirectory()) return fromEnv;
+    for (const name of ["index.mjs", "index.js"]) {
+      const file = path.join(fromEnv, name);
+      if (fs.existsSync(file) && fs.statSync(file).isFile()) return file;
+    }
+  }
+  try {
+    const resolved = require.resolve("playwright");
+    if (resolved && fs.existsSync(resolved)) return resolved;
+  } catch {
+    // 从当前文件往上没有这个包
+  }
+  return "";
 }
 
 export async function launchBrowser() {
   const found = findPlaywright();
-  if (!found) die("没有找到 Playwright。设置 PLAYWRIGHT_PATH，或放到 H:\\ai_tool\\site-studio-refs\\scripts\\node_modules\\playwright");
+  if (!found) die("没有找到 Playwright。设置环境变量 PLAYWRIGHT_PATH，或把它装到 Node 能解析到的位置。");
   const loaded = await import(pathToFileURL(found).href);
   const chromium = loaded.chromium || loaded.default?.chromium;
   if (!chromium) die("Playwright 在，但没有 chromium 导出");

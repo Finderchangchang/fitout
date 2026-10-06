@@ -1,0 +1,202 @@
+{
+  "id": "en-smoke",
+  "lang": "en",
+  "style": "_neutral",
+  "industry": "factory-trade",
+  "businessType": "Organization",
+  "name": "Northbridge (sample)",
+  "summary": "A Yongkang hardware shop that makes hinges, latches, pulls and slides in small runs.",
+  "buttons": {
+    "primary": "Request a quote",
+    "secondary": "View products",
+    "form": "Send a note"
+  },
+  "hero": {
+    "buttons": [
+      { "label": "Request a quote", "href": "contact/index.html" },
+      { "label": "View products", "href": "products/index.html" }
+    ]
+  },
+  "contact": {
+    "phone": "0579-87002266",
+    "wechat": "northbridge-hw",
+    "wechatQr": "",
+    "email": "sales@northbridge.example",
+    "address": "18 Northbridge Road, Yongkang, Jinhua, Zhejiang",
+    "hours": [
+      { "day": "Mon to Fri", "time": "8:00-17:30" },
+      { "day": "Sat", "time": "8:00-12:00" }
+    ],
+    "formUrl": "",
+    "icp": "",
+    "police": ""
+  },
+  "nav": [
+    { "label": "Home", "href": "index.html" },
+    { "label": "Products", "href": "products/index.html" },
+    { "label": "About", "href": "about/index.html" },
+    { "label": "Contact", "href": "contact/index.html" }
+  ],
+  "shell": {
+    "header": "centered",
+    "footer": "columns",
+    "floatContact": "dock"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "Northbridge (sample) | Small-batch hinges",
+      "description": "A Yongkang hardware shop that makes hinges, latches, pulls and drawer slides in small runs, and will match a physical sample before the first box.",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "text",
+          "anchor": "hero",
+          "data": {
+            "label": "Yongkang plant",
+            "title": "Small-batch hinges matched to your sample",
+            "lead": "Hinges, latches, pulls and slides, made to the sample you send.",
+            "primaryLabel": "Request a quote",
+            "primaryHref": "contact/index.html",
+            "secondaryLabel": "View products",
+            "secondaryHref": "products/index.html"
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "trust",
+          "data": {
+            "title": "Shop figures",
+            "lead": "Current figures from the floor.",
+            "items": [
+              { "value": "12 years", "label": "Making hinges" },
+              { "value": "48 hours", "label": "Sample reply" },
+              { "value": "4 lines", "label": "In production" }
+            ]
+          }
+        },
+        {
+          "type": "services",
+          "variant": "list-rows",
+          "anchor": "services",
+          "data": {
+            "title": "Processes on the floor",
+            "lead": "Hinges and the hardware around them.",
+            "items": [
+              { "name": "Match the sample", "text": "You send a sample, we check the size.", "price": "" },
+              { "name": "Small runs", "text": "The minimum sits on each product page.", "price": "" },
+              { "name": "Surface finish", "text": "Brush or plate only when the part allows it.", "price": "" }
+            ]
+          }
+        },
+        {
+          "type": "why",
+          "variant": "points",
+          "anchor": "why",
+          "data": {
+            "title": "How an order moves",
+            "lead": "Three steps, then a written price.",
+            "items": [
+              { "name": "Check the sample", "text": "We say yes or no before any tooling." },
+              { "name": "Price the run", "text": "Unit price, minimum and freight stay separate." },
+              { "name": "Ship the box", "text": "The first box leaves after you confirm the date." }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "simple",
+          "anchor": "cta",
+          "data": {
+            "title": "Send the sample first",
+            "lead": "A photo is not enough for the first quote.",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "title": "Hinges and latches | Northbridge (sample)",
+      "description": "Four hardware lines. Minimums are on each product.",
+      "sections": [
+        {
+          "type": "product-list",
+          "variant": "grid",
+          "anchor": "catalog",
+          "data": {
+            "title": "Hardware we make",
+            "lead": "Open a product for the size and the minimum."
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "How orders move | Northbridge (sample)",
+      "description": "Who checks the sample, who writes the price, and how long a first run takes.",
+      "sections": [
+        {
+          "type": "why",
+          "variant": "points",
+          "anchor": "why",
+          "data": {
+            "title": "Who does what",
+            "lead": "Two people, one floor.",
+            "items": [
+              { "name": "Floor lead", "text": "Checks the sample and the tooling." },
+              { "name": "Desk", "text": "Writes the price and the ship date." }
+            ]
+          }
+        },
+        {
+          "type": "faq",
+          "variant": "accordion",
+          "anchor": "faq",
+          "data": {
+            "title": "Before you order",
+            "lead": "",
+            "items": [
+              {
+                "q": "How long is a first run?",
+                "a": "First articles ship in six weeks — we confirm the date after your sample arrives at the plant."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Visit the shop | Northbridge (sample)",
+      "description": "Phone 0579-87002266. The shop is on Northbridge Road in Yongkang.",
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "card",
+          "anchor": "visit",
+          "data": {
+            "title": "Come to the floor",
+            "lead": "Call before you drive over."
+          }
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "hinge-80",
+      "name": "Stainless butt hinge 80mm",
+      "summary": "Thickness is 2.5 mm. Sold by the box.",
+      "image": "",
+      "imageAlt": "",
+      "date": "2025-09",
+      "specs": [
+        { "label": "Thickness", "value": "2.5 mm" },
+        { "label": "Finish", "value": "Brushed" },
+        { "label": "Minimum", "value": "One box" }
+      ]
+    }
+  ]
+}

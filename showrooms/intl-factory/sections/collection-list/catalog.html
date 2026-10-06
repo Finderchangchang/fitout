@@ -1,0 +1,47 @@
+<section class="section" data-section="collection-list" data-family="filter" id="{{anchor}}">
+  <div class="container catalog">
+    {{#if filters}}
+    <style>
+      .catalog:not(:has(.hook:target)) .facet-row a[href="#{{anchor}}"] {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+      }
+      {{#each filters}}
+      .catalog:has(#{{anchor}}-{{key}}:target) .facet-row a[href$="#{{anchor}}-{{key}}"] {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+      }
+      .part-pane:has(#{{anchor}}-{{key}}:target) .part-card { display: none; }
+      .part-pane:has(#{{anchor}}-{{key}}:target) .part-card[data-cat="{{key}}"] { display: block; }
+      {{/each}}
+    </style>
+    {{/if}}
+    <div class="part-pane">
+      {{#each filters}}
+      <span id="{{anchor}}-{{key}}" class="hook"></span>
+      {{/each}}
+      <div class="section-head">
+        {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      </div>
+      {{#if filters}}
+      <nav class="facet-row" aria-label="{{title}}">
+        <a href="#{{anchor}}">All</a>
+        {{#each filters}}
+        <a href="#{{anchor}}-{{key}}">{{label}}{{#if text}}<span class="facet-note">{{text}}</span>{{/if}}</a>
+        {{/each}}
+      </nav>
+      {{/if}}
+      <div class="part-grid" data-media-group="part">
+        {{#each items}}
+        <article class="card part-card" data-cat="{{catKey}}">
+          {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+          <h3><a href="{{href}}">{{name}}</a></h3>
+          <p>{{summary}}</p>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

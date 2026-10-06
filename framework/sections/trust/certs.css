@@ -9,3 +9,8 @@
 .item-title {
   font-size: var(--fs-3);
 }
+
+/* 图标和证书名第一行的中心对齐：名字行高 1.3 倍字号，图标 1.5rem。 */
+.cert-row > .icon {
+  margin-top: calc((var(--fs-3) * 1.3 - 1.5rem) / 2);
+}

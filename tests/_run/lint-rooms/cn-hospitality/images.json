@@ -1,0 +1,589 @@
+{
+  "grade": "整套偏暖、略压饱和。院子和房间是午后的暖沙光，阴影带一点苔绿，不要冷蓝，不要霓虹绿。菜品是浅底棚拍。不要把字烤进图。",
+  "gradeParams": {
+    "brightness": 1.02,
+    "contrast": 1.04,
+    "saturate": 0.86,
+    "warmth": 0.28
+  },
+  "slots": [
+    {
+      "id": "hero-court",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "wood",
+        "hinge",
+        "door"
+      ],
+      "prompt": "老木门楼的门轴和门板纹理，午后暖沙光，阴影带一点苔绿，不要整座院子，不要文字。",
+      "grade": "整套偏暖、略压饱和。院子和房间是午后的暖沙光，阴影带一点苔绿，不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must",
+      "desc": "首屏，老木门的门轴。"
+    },
+    {
+      "id": "hero-creek",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "linen",
+        "window",
+        "creek"
+      ],
+      "prompt": "亚麻床品的褶皱，窗外星星点点的溪光，午后暖光，不要整间客房，不要文字。",
+      "grade": "整套偏暖、略压饱和。院子和房间是午后的暖沙光，阴影带一点苔绿，不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must",
+      "desc": "首屏，亚麻床品和窗光。"
+    },
+    {
+      "id": "hero-river",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "river",
+        "mist",
+        "ridge"
+      ],
+      "prompt": "江面上一层清晨薄雾，远处山只留一条边，暖色，不要码头全景，不要文字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must",
+      "desc": "首屏，江面和薄雾。",
+      "fallback": "omit"
+    },
+    {
+      "id": "hero-table",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "bowl",
+        "table",
+        "lamp"
+      ],
+      "prompt": "晚饭长桌上的一只碗和暖色灯，桌面是旧木，不要整桌客人，不要文字。",
+      "grade": "整套偏暖、略压饱和。院子是午后到傍晚的暖沙光，不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must",
+      "desc": "首屏，长桌上的碗。"
+    },
+    {
+      "id": "banner-yard",
+      "page": "inner",
+      "block": "banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "courtyard",
+        "wall",
+        "homestay",
+        "china",
+        "afternoon"
+      ],
+      "prompt": "民宿院墙横幅，暖沙墙面，午后，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must"
+    },
+    {
+      "id": "banner-river",
+      "page": "inner",
+      "block": "banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "river",
+        "hills",
+        "china",
+        "mist",
+        "wide"
+      ],
+      "prompt": "富春江芦茨段横幅，远山和江面，暖雾，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must"
+    },
+    {
+      "id": "room-creek",
+      "page": "rooms",
+      "block": "stays",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "king",
+        "bed",
+        "homestay",
+        "window",
+        "linen"
+      ],
+      "prompt": "溪口大床房实拍，1.8米床，窗对溪，暖沙光，没有字。",
+      "grade": "整套偏暖、略压饱和。房间是午后暖沙光，不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "room-bamboo",
+      "page": "rooms",
+      "block": "stays",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "twin",
+        "beds",
+        "bamboo",
+        "corridor",
+        "homestay"
+      ],
+      "prompt": "竹廊双床房实拍，两张单床，廊外是竹，暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。房间是午后暖沙光，不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "room-loft",
+      "page": "rooms",
+      "block": "stays",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "loft",
+        "family",
+        "room",
+        "sofa",
+        "bed"
+      ],
+      "prompt": "阁楼家庭房实拍，大床和沙发床，木楼梯，暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。房间是午后暖沙光，不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "room-suite",
+      "page": "rooms",
+      "block": "stays",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "suite",
+        "courtyard",
+        "bedroom",
+        "homestay",
+        "private"
+      ],
+      "prompt": "院落套房实拍，独立小院和一张大床，暖沙光，没有字。",
+      "grade": "整套偏暖、略压饱和。房间是午后暖沙光，不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "story-gate",
+      "page": "about",
+      "block": "story",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "wooden",
+        "gate",
+        "homestay",
+        "village",
+        "china"
+      ],
+      "prompt": "老木门楼和院墙，桐庐村落，午后，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "story-host",
+      "page": "about",
+      "block": "story",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "east",
+        "asian",
+        "innkeeper",
+        "courtyard",
+        "middle-aged"
+      ],
+      "prompt": "东亚面孔的中年店主站在中式民宿院门边，麻布衫，不是西装抠图，午后暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。人物是实拍，不要西装抠图，不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "yard-wide",
+      "page": "home",
+      "block": "yard",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "courtyard",
+        "view",
+        "hills",
+        "homestay",
+        "wide"
+      ],
+      "prompt": "从院门望向对面的山，通栏，午后暖沙光，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must"
+    },
+    {
+      "id": "place-pier",
+      "page": "places",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "pier",
+        "river",
+        "boat",
+        "china",
+        "village"
+      ],
+      "prompt": "村口小码头和一条船，江边，暖雾，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "place-terrace",
+      "page": "places",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "cliff",
+        "pavilion",
+        "river",
+        "china",
+        "hiking"
+      ],
+      "prompt": "江边钓台和亭子，山路，白天，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "place-raft",
+      "page": "places",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "bamboo",
+        "raft",
+        "river",
+        "china",
+        "day"
+      ],
+      "prompt": "江上竹筏，两岸是山，白天暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "place-tea",
+      "page": "places",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "tea",
+        "picking",
+        "hill",
+        "china",
+        "spring"
+      ],
+      "prompt": "春茶山坡，有人在采茶，东亚面孔，白天，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "place-stove",
+      "page": "places",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "wood",
+        "stove",
+        "village",
+        "cooking",
+        "china"
+      ],
+      "prompt": "溪边土灶和铁锅，村落，暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "place-soy",
+      "page": "places",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "breakfast",
+        "soy",
+        "milk",
+        "village",
+        "shop"
+      ],
+      "prompt": "镇口早点摊，豆浆和油条，早晨暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "dine-hall",
+      "page": "dining",
+      "block": "hall",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "dining",
+        "hall",
+        "courtyard",
+        "table",
+        "homestay"
+      ],
+      "prompt": "民宿院里的灶房和长桌，暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝，不要霓虹绿。不要把字烤进图。",
+      "tier": "must"
+    },
+    {
+      "id": "dish-duck",
+      "page": "dining",
+      "block": "dish",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "duck",
+        "bamboo",
+        "shoot",
+        "ceramic",
+        "studio"
+      ],
+      "prompt": "电商主图。浅色干净背景，柔光，正面居中，主体清楚，道具少。一盘笋干老鸭，白瓷盘，没有文字，没有 logo。",
+      "grade": "菜品是浅底棚拍。浅色干净背景，柔光，正面居中。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "dish-fish",
+      "page": "dining",
+      "block": "dish",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "steamed",
+        "fish",
+        "ceramic",
+        "studio",
+        "plate"
+      ],
+      "prompt": "电商主图。浅色干净背景，柔光，正面居中，主体清楚，道具少。一盘清蒸溪鱼，白瓷盘，没有文字，没有 logo。",
+      "grade": "菜品是浅底棚拍。浅色干净背景，柔光，正面居中。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "dish-cake",
+      "page": "dining",
+      "block": "dish",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "keywords": [
+        "mugwort",
+        "rice",
+        "cake",
+        "studio",
+        "plate"
+      ],
+      "prompt": "电商主图。浅色干净背景，柔光，正面居中，主体清楚，道具少。一碟艾草青团，浅瓷碟，没有文字，没有 logo。",
+      "grade": "菜品是浅底棚拍。浅色干净背景，柔光，正面居中。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "note-fog",
+      "page": "journal",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "fog",
+        "creek",
+        "village",
+        "morning",
+        "china"
+      ],
+      "prompt": "溪口早晨的雾，村落轮廓，暖灰，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "note-rain",
+      "page": "journal",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "rain",
+        "bamboo",
+        "corridor",
+        "homestay",
+        "day"
+      ],
+      "prompt": "竹廊里的雨，地面湿，白天，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "note-breakfast",
+      "page": "journal",
+      "block": "card",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "breakfast",
+        "table",
+        "courtyard",
+        "morning",
+        "china"
+      ],
+      "prompt": "院里灶的早餐桌，粥和青团，早晨暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "album-lane",
+      "page": "album",
+      "block": "wall",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "keywords": [
+        "village",
+        "lane",
+        "stone",
+        "china",
+        "day"
+      ],
+      "prompt": "村里的石板路，两边是墙，白天暖光，没有字。",
+      "grade": "整套偏暖、略压饱和。不要冷蓝。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "album-night",
+      "page": "album",
+      "block": "wall",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "bamboo",
+        "corridor",
+        "night",
+        "lantern",
+        "homestay"
+      ],
+      "prompt": "夜里的竹廊，一盏暖灯，没有字。",
+      "grade": "整套偏暖、略压饱和。夜景仍是暖灯，不要冷蓝霓虹。不要把字烤进图。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-wechat",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": false,
+      "desc": "微信二维码",
+      "keywords": [
+        "wechat",
+        "qr",
+        "code"
+      ],
+      "prompt": "客户提供的微信二维码，上线前替换。",
+      "grade": "二维码用客户原图，不调色，不重画。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-book",
+      "page": "contact",
+      "block": "qr",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": false,
+      "desc": "预订二维码",
+      "keywords": [
+        "booking",
+        "qr",
+        "code"
+      ],
+      "prompt": "客户提供的预订二维码，上线前替换。",
+      "grade": "二维码用客户原图，不调色，不重画。",
+      "tier": "nice"
+    }
+  ]
+}

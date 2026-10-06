@@ -1,0 +1,740 @@
+{
+  "id": "andeng",
+  "showroom": "intl-education",
+  "industry": "education",
+  "niche": "vocational",
+  "businessType": "LocalBusiness",
+  "name": "岸灯课室（虚构）",
+  "summary": "徐汇天钥桥路的夜课，设计、编程、语言和职业技能按课时报名。",
+  "contact": {
+    "phone": "021-64081276",
+    "wechat": "andeng-night",
+    "wechatQr": "qr-advisor",
+    "email": "hello@andeng.example",
+    "address": "上海市徐汇区天钥桥路 128 号 3 楼（虚构地址）",
+    "hours": [
+      { "day": "周二至周五", "time": "18:30-21:30" },
+      { "day": "周六", "time": "10:00-17:00" }
+    ],
+    "formUrl": "https://andeng.example/apply",
+    "icp": "沪ICP备20937641号"
+  },
+  "nav": [
+    { "label": "首页", "href": "index.html" },
+    { "label": "关于", "href": "about/index.html" },
+    { "label": "课程", "href": "courses/index.html" },
+    { "label": "讲师", "href": "teachers/index.html" },
+    { "label": "学员作业", "href": "works/index.html" },
+    { "label": "资讯", "href": "news/index.html" },
+    { "label": "报名咨询", "href": "contact/index.html" }
+  ],
+  "shell": { "header": "standard", "footer": "columns", "floatContact": "dock" },
+  "collections": {
+    "courses": [
+      {
+        "slug": "layout-night",
+        "name": "品牌版式",
+        "category": "视觉设计",
+        "summary": "36 课时，学费 4,800 元。适合想自己排海报的人。",
+        "body": "从你自己的一张海报改起。课在周二、周四晚上。打印自己出，课上只排。",
+        "image": "course-layout",
+        "imageAlt": "网格纸和印样",
+        "teacher": "周晚宁",
+        "teacherHref": "../teachers/zhou.html",
+        "specs": [
+          { "label": "课时", "value": "36 课时" },
+          { "label": "学费", "value": "4,800 元" },
+          { "label": "适合", "value": "想自己排海报的人" },
+          { "label": "讲师", "value": "周晚宁" }
+        ],
+        "outline": [
+          { "name": "看你的旧海报", "text": "只看边距、字号和图片位置" },
+          { "name": "定一张网格", "text": "栏宽按你要印的尺寸" },
+          { "name": "换你的照片", "text": "照片自己准备" },
+          { "name": "导出去印", "text": "印厂的事课上不代做" }
+        ]
+      },
+      {
+        "slug": "ui-review",
+        "name": "界面走查",
+        "category": "视觉设计",
+        "summary": "24 课时，学费 3,600 元。适合改自己产品的人。",
+        "body": "把自己的产品界面带来，当堂改一版。课在周二、周四晚上，和品牌版式错开。",
+        "image": "course-ui",
+        "imageAlt": "浅灰背景上的手机",
+        "teacher": "周晚宁",
+        "teacherHref": "../teachers/zhou.html",
+        "specs": [
+          { "label": "课时", "value": "24 课时" },
+          { "label": "学费", "value": "3,600 元" },
+          { "label": "适合", "value": "改自己产品的人" },
+          { "label": "讲师", "value": "周晚宁" }
+        ],
+        "outline": [
+          { "name": "打开你的界面", "text": "用你正在改的那一版" },
+          { "name": "标出挡路的地方", "text": "只标看不懂的按钮和间距" },
+          { "name": "改一版间距", "text": "当场调，不讲风格史" },
+          { "name": "留下修改单", "text": "你带走，回去自己改" }
+        ]
+      },
+      {
+        "slug": "front-end",
+        "name": "网页前端",
+        "category": "编程",
+        "summary": "48 课时，学费 6,800 元。适合零基础转行的人。",
+        "body": "从看懂一个页面的结构开始，写到能把一页菜单传到网上。课在周三晚上，周六下午也开一班。一个班最多 12 人。学费不含你自己的域名。",
+        "image": "course-front",
+        "imageAlt": "打开的笔记本电脑",
+        "teacher": "韩述",
+        "teacherHref": "../teachers/han.html",
+        "specs": [
+          { "label": "课时", "value": "48 课时" },
+          { "label": "学费", "value": "6,800 元" },
+          { "label": "适合", "value": "零基础转行的人" },
+          { "label": "讲师", "value": "韩述" }
+        ],
+        "outline": [
+          { "name": "认识页面结构", "text": "用浏览器看一个现成页面的块" },
+          { "name": "写一个单页", "text": "导航、一段介绍、一个按钮" },
+          { "name": "接上自己的图", "text": "图片自己准备，课上只排位置" },
+          { "name": "发给别人看", "text": "传到一个能打开的地址" }
+        ]
+      },
+      {
+        "slug": "sql-desk",
+        "name": "数据表查询",
+        "category": "编程",
+        "summary": "32 课时，学费 4,200 元。适合要自己查数的运营。",
+        "body": "用一张真实的销售表练习筛选和汇总。课在周三晚上。电脑自己带。",
+        "image": "course-sql",
+        "imageAlt": "屏幕上糊掉的表格",
+        "teacher": "韩述",
+        "teacherHref": "../teachers/han.html",
+        "specs": [
+          { "label": "课时", "value": "32 课时" },
+          { "label": "学费", "value": "4,200 元" },
+          { "label": "适合", "value": "要自己查数的运营" },
+          { "label": "讲师", "value": "韩述" }
+        ],
+        "outline": [
+          { "name": "认清一张表", "text": "哪一列是日期，哪一列是金额" },
+          { "name": "按条件筛选", "text": "只留下你要的那几行" },
+          { "name": "做一次汇总", "text": "按门店或按星期加总" },
+          { "name": "把结果交给同事", "text": "导出你已经会用的格式" }
+        ]
+      },
+      {
+        "slug": "biz-en",
+        "name": "商务英语",
+        "category": "语言",
+        "summary": "40 课时，学费 5,200 元。适合要开会发言的人。",
+        "body": "把下周会上要说的话先写下来再开口。课在周二晚上，周六上午也开。",
+        "image": "course-en",
+        "imageAlt": "打开的笔记本和笔",
+        "teacher": "井口葵",
+        "teacherHref": "../teachers/jing.html",
+        "specs": [
+          { "label": "课时", "value": "40 课时" },
+          { "label": "学费", "value": "5,200 元" },
+          { "label": "适合", "value": "要开会发言的人" },
+          { "label": "讲师", "value": "井口葵" }
+        ],
+        "outline": [
+          { "name": "写下三句", "text": "会上你真正要说的" },
+          { "name": "改掉含糊的词", "text": "只改这一段" },
+          { "name": "对着人说一遍", "text": "班上互相当听众" },
+          { "name": "带回你的稿", "text": "下周开会用这一份" }
+        ]
+      },
+      {
+        "slug": "jp-start",
+        "name": "日语入门",
+        "category": "语言",
+        "summary": "42 课时，学费 4,600 元。适合准备赴日的人。",
+        "body": "从假名和自我介绍开始。课在周六上午。不去讲考试技巧。",
+        "image": "course-jp",
+        "imageAlt": "耳机和笔记本",
+        "teacher": "井口葵",
+        "teacherHref": "../teachers/jing.html",
+        "specs": [
+          { "label": "课时", "value": "42 课时" },
+          { "label": "学费", "value": "4,600 元" },
+          { "label": "适合", "value": "准备赴日的人" },
+          { "label": "讲师", "value": "井口葵" }
+        ],
+        "outline": [
+          { "name": "假名读写", "text": "当堂写完两套假名" },
+          { "name": "自我介绍", "text": "名字、城市、做什么" },
+          { "name": "点餐和问路", "text": "只练这两段" },
+          { "name": "听一段慢对话", "text": "材料课上发" }
+        ]
+      },
+      {
+        "slug": "cut-reel",
+        "name": "短视频剪辑",
+        "category": "职业技能",
+        "summary": "28 课时，学费 3,400 元。适合要自己出片的店主。",
+        "body": "用店里的素材剪一条门口短片。课在周四晚上，周六下午也开。电脑自己带。",
+        "image": "course-cut",
+        "imageAlt": "支架上的手机",
+        "teacher": "林可",
+        "teacherHref": "../teachers/lin.html",
+        "specs": [
+          { "label": "课时", "value": "28 课时" },
+          { "label": "学费", "value": "3,400 元" },
+          { "label": "适合", "value": "要自己出片的店主" },
+          { "label": "讲师", "value": "林可" }
+        ],
+        "outline": [
+          { "name": "导入你的素材", "text": "店里拍的就行" },
+          { "name": "剪到十五秒", "text": "只留门口这一段" },
+          { "name": "配你自己的声音", "text": "不另找配音" },
+          { "name": "导出给店里用", "text": "分辨率按手机" }
+        ]
+      },
+      {
+        "slug": "sheet-report",
+        "name": "表格与汇报",
+        "category": "职业技能",
+        "summary": "20 课时，学费 2,400 元。适合要做周报的职员。",
+        "body": "用你自己的周报改一版。课在周四晚上。表格软件用你电脑里已有的。",
+        "image": "course-sheet",
+        "imageAlt": "一叠印出的表格",
+        "teacher": "林可",
+        "teacherHref": "../teachers/lin.html",
+        "specs": [
+          { "label": "课时", "value": "20 课时" },
+          { "label": "学费", "value": "2,400 元" },
+          { "label": "适合", "value": "要做周报的职员" },
+          { "label": "讲师", "value": "林可" }
+        ],
+        "outline": [
+          { "name": "打开你的周报", "text": "用你正在交的那份" },
+          { "name": "删掉重复的数", "text": "同一件事只留一列" },
+          { "name": "写成三句结论", "text": "给主管看的那几句" },
+          { "name": "定下周的表", "text": "下次直接往里填" }
+        ]
+      }
+    ],
+    "teachers": [
+      {
+        "slug": "zhou",
+        "name": "周晚宁",
+        "summary": "带品牌版式和界面走查。周二、周四 18:30 到课。",
+        "body": "2016年起在出版社做版式。现在只带品牌版式和界面走查。周二、周四 18:30 到课。",
+        "image": "teacher-zhou",
+        "imageAlt": "视觉讲师在看印样",
+        "specs": [{ "label": "到课", "value": "周二、周四 18:30" }]
+      },
+      {
+        "slug": "han",
+        "name": "韩述",
+        "summary": "带网页前端和数据表查询。周三 18:30、周六 10:00 到课。",
+        "body": "以前在外包公司写页面。现在带网页前端和数据表查询。周三 18:30、周六 10:00 到课。",
+        "image": "teacher-han",
+        "imageAlt": "编程讲师在键盘前",
+        "specs": [{ "label": "到课", "value": "周三 18:30、周六 10:00" }]
+      },
+      {
+        "slug": "jing",
+        "name": "井口葵",
+        "summary": "带商务英语和日语入门。周二 18:30、周六 10:00 到课。",
+        "body": "在大阪工作过四年。现在带商务英语和日语入门。周二 18:30、周六 10:00 到课。",
+        "image": "teacher-jing",
+        "imageAlt": "语言讲师在翻笔记本",
+        "specs": [{ "label": "到课", "value": "周二 18:30、周六 10:00" }]
+      },
+      {
+        "slug": "lin",
+        "name": "林可",
+        "summary": "带短视频剪辑和表格与汇报。周四 18:30、周六 14:00 到课。",
+        "body": "以前做店里的出片。现在带短视频剪辑和表格与汇报。周四 18:30、周六 14:00 到课。",
+        "image": "teacher-lin",
+        "imageAlt": "技能讲师在看手机",
+        "specs": [{ "label": "到课", "value": "周四 18:30、周六 14:00" }]
+      }
+    ],
+    "works": [
+      {
+        "slug": "shop-poster",
+        "name": "超市周末海报",
+        "summary": "品牌版式课作业。苏小满给自家超市排的周末价目。",
+        "body": "品牌版式课作业。苏小满用自家超市的周末价目改了一版，课上只排，印刷她自己出。",
+        "image": "work-poster",
+        "imageAlt": "桌上的一张印刷海报",
+        "specs": [{ "label": "来自", "value": "品牌版式课" }]
+      },
+      {
+        "slug": "menu-page",
+        "name": "小店菜单页",
+        "summary": "网页前端课作业。陈麦做的一页菜单。",
+        "body": "网页前端课作业。陈麦把店里的菜单做成一页，能打开给别人看。",
+        "image": "work-web",
+        "imageAlt": "屏幕上的一页菜单",
+        "specs": [{ "label": "来自", "value": "网页前端课" }]
+      },
+      {
+        "slug": "door-clip",
+        "name": "门口十五秒",
+        "summary": "短视频剪辑课作业。一条店门口的短片。",
+        "body": "短视频剪辑课作业。店主用自己拍的门口画面剪了一条，配的是自己的声音。",
+        "image": "work-reel",
+        "imageAlt": "手机里的店门口画面",
+        "specs": [{ "label": "来自", "value": "短视频剪辑课" }]
+      },
+      {
+        "slug": "week-file",
+        "name": "周一周报底",
+        "summary": "表格与汇报课作业。一份可以接着填的周报。",
+        "body": "表格与汇报课作业。学员把自己正在交的周报删到能接着填，下周直接用。",
+        "image": "work-sheet",
+        "imageAlt": "一张印出的周报",
+        "specs": [{ "label": "来自", "value": "表格与汇报课" }]
+      }
+    ],
+    "news": [
+      {
+        "slug": "oct-board",
+        "name": "十月夜课课表",
+        "date": "2026年9月12日",
+        "summary": "2026年9月12日贴出十月课表，8 门课都开。",
+        "body": "十月夜课按课表开。8 门课都在。报名还是先看课时和学费。",
+        "image": "news-oct",
+        "imageAlt": "墙上贴着的课表"
+      },
+      {
+        "slug": "new-proj",
+        "name": "教室换了投影",
+        "date": "2026年8月3日",
+        "summary": "2026年8月3日，3 楼靠窗那间换了投影。",
+        "body": "靠窗那间换了投影。英语和编程还是用这间。",
+        "image": "news-proj",
+        "imageAlt": "墙上的投影光"
+      },
+      {
+        "slug": "en-extra",
+        "name": "英语班加了一节",
+        "date": "2026年6月18日",
+        "summary": "2026年6月18日，商务英语周六上午加一节会前口语，学费不加。",
+        "body": "周六上午多一节会前口语。学费不加，还是课卡上的那个数。",
+        "image": "news-en",
+        "imageAlt": "桌上打开的笔记本"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "岸灯课室（虚构）",
+      "description": "徐汇天钥桥路的夜课，设计、编程、语言和职业技能按课时报名。",
+      "sections": [
+        {
+          "type": "hero",
+          "variant": "carousel",
+          "anchor": "top",
+          "tone": "image",
+          "data": {
+            "label": "徐汇夜课",
+            "title": "晚上把课上完",
+            "lead": "设计、编程、语言和职业技能，按课时报名。",
+            "primaryLabel": "报名咨询",
+            "primaryHref": "contact/index.html",
+            "secondaryLabel": "看课程",
+            "secondaryHref": "courses/index.html",
+            "interval": "4500",
+            "slides": [
+              { "image": "hero-desk", "imageAlt": "台灯照着印样" },
+              { "image": "hero-hands", "imageAlt": "按在键盘上的手" },
+              { "image": "hero-talk", "imageAlt": "课桌边的笔记本" }
+            ],
+            "posters": [
+              { "image": "course-layout", "imageAlt": "网格纸和印样" },
+              { "image": "course-front", "imageAlt": "打开的笔记本电脑" },
+              { "image": "course-en", "imageAlt": "打开的笔记本和笔" },
+              { "image": "course-cut", "imageAlt": "支架上的手机" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "numbers",
+          "tone": "dark",
+          "data": {
+            "title": "课室现在",
+            "lead": "截至 2026年9月。",
+            "items": [
+              { "value": "8", "label": "在开课程" },
+              { "value": "4", "label": "常驻讲师" },
+              { "value": "186", "label": "在读学员" },
+              { "value": "2019", "label": "开课年份" }
+            ]
+          }
+        },
+        {
+          "type": "tracks",
+          "variant": "grid",
+          "anchor": "tracks",
+          "tone": "light",
+          "data": {
+            "label": "方向",
+            "title": "四类课",
+            "lead": "设计、编程、语言和职业技能。",
+            "items": [
+              { "name": "视觉设计", "text": "品牌版式、界面走查", "href": "courses/index.html", "image": "track-design", "imageAlt": "桌上的一叠印样" },
+              { "name": "编程", "text": "网页前端、数据表查询", "href": "courses/index.html", "image": "track-code", "imageAlt": "键盘和屏幕光" },
+              { "name": "语言", "text": "商务英语、日语入门", "href": "courses/index.html", "image": "track-lang", "imageAlt": "两本笔记本和笔" },
+              { "name": "职业技能", "text": "短视频剪辑、表格与汇报", "href": "courses/index.html", "image": "track-skill", "imageAlt": "桌上的手机支架" }
+            ]
+          }
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "room",
+          "tone": "image",
+          "data": {
+            "image": "band-room",
+            "imageAlt": "靠窗的一排空桌",
+            "caption": "3 楼靠窗的夜课"
+          }
+        },
+        {
+          "type": "course-board",
+          "variant": "board",
+          "anchor": "pick",
+          "tone": "dark",
+          "data": {
+            "label": "夜课",
+            "title": "先看这四门",
+            "lead": "每张卡上都有课时、学费和适合谁。",
+            "items": [
+              { "name": "品牌版式", "href": "courses/layout-night.html", "image": "course-layout", "imageAlt": "网格纸和印样", "cat": "d1", "catName": "视觉设计", "hours": "36 课时", "price": "4,800 元", "audience": "想自己排海报的人", "teacher": "周晚宁" },
+              { "name": "网页前端", "href": "courses/front-end.html", "image": "course-front", "imageAlt": "打开的笔记本电脑", "cat": "d2", "catName": "编程", "hours": "48 课时", "price": "6,800 元", "audience": "零基础转行的人", "teacher": "韩述" },
+              { "name": "商务英语", "href": "courses/biz-en.html", "image": "course-en", "imageAlt": "打开的笔记本和笔", "cat": "d3", "catName": "语言", "hours": "40 课时", "price": "5,200 元", "audience": "要开会发言的人", "teacher": "井口葵" },
+              { "name": "短视频剪辑", "href": "courses/cut-reel.html", "image": "course-cut", "imageAlt": "支架上的手机", "cat": "d4", "catName": "职业技能", "hours": "28 课时", "price": "3,400 元", "audience": "要自己出片的店主", "teacher": "林可" }
+            ]
+          }
+        },
+        {
+          "type": "why",
+          "variant": "steps",
+          "anchor": "enroll",
+          "tone": "light",
+          "data": {
+            "title": "怎么报名",
+            "lead": "先看课，再来一次试听。",
+            "items": [
+              { "name": "选一门课", "text": "先看课时、学费和适合谁" },
+              { "name": "来试听 1 次", "text": "每门课可以试听 1 次，不另收费" },
+              { "name": "开课前付款", "text": "开课前 7 天可退学费，开课后不退" }
+            ]
+          }
+        },
+        {
+          "type": "team",
+          "variant": "cards",
+          "anchor": "people",
+          "tone": "dark",
+          "data": {
+            "title": "常驻讲师",
+            "lead": "四位常驻，每人带两门。",
+            "items": [
+              { "name": "周晚宁", "role": "视觉讲师", "text": "带品牌版式和界面走查。周二、周四 18:30 到课。", "image": "teacher-zhou", "imageAlt": "视觉讲师在看印样", "href": "teachers/zhou.html" },
+              { "name": "韩述", "role": "编程讲师", "text": "带网页前端和数据表查询。周三 18:30、周六 10:00 到课。", "image": "teacher-han", "imageAlt": "编程讲师在键盘前", "href": "teachers/han.html" },
+              { "name": "井口葵", "role": "语言讲师", "text": "带商务英语和日语入门。周二 18:30、周六 10:00 到课。", "image": "teacher-jing", "imageAlt": "语言讲师在翻笔记本", "href": "teachers/jing.html" },
+              { "name": "林可", "role": "技能讲师", "text": "带短视频剪辑和表格与汇报。周四 18:30、周六 14:00 到课。", "image": "teacher-lin", "imageAlt": "技能讲师在看手机", "href": "teachers/lin.html" }
+            ]
+          }
+        },
+        {
+          "type": "testimonials",
+          "variant": "grid-cards",
+          "anchor": "quotes",
+          "tone": "light",
+          "data": {
+            "title": "学员原话",
+            "lead": "都是上过课的人。",
+            "items": [
+              { "name": "陈麦", "role": "网页前端", "quote": "韩述让我先交一个菜单页。我现在能自己改店里的页面。" },
+              { "name": "苏小满", "role": "品牌版式", "quote": "周晚宁只改我的海报，不讲大道理。周末价目我自己排了。" },
+              { "name": "何舟", "role": "商务英语", "quote": "井口葵让我把下周要说的三句先写下来，再开口。" }
+            ]
+          }
+        },
+        {
+          "type": "cases",
+          "variant": "gallery",
+          "anchor": "jobs",
+          "tone": "dark",
+          "data": {
+            "title": "学员作业",
+            "lead": "课上交的东西，不是宣传图。",
+            "items": [
+              { "name": "超市周末海报", "text": "品牌版式课作业。苏小满排的周末价目。", "href": "works/shop-poster.html", "image": "work-poster", "imageAlt": "桌上的一张印刷海报" },
+              { "name": "小店菜单页", "text": "网页前端课作业。陈麦做的一页菜单。", "href": "works/menu-page.html", "image": "work-web", "imageAlt": "屏幕上的一页菜单" },
+              { "name": "门口十五秒", "text": "短视频剪辑课作业。一条店门口的短片。", "href": "works/door-clip.html", "image": "work-reel", "imageAlt": "手机里的店门口画面" },
+              { "name": "周一周报底", "text": "表格与汇报课作业。一份可以接着填的周报。", "href": "works/week-file.html", "image": "work-sheet", "imageAlt": "一张印出的周报" }
+            ]
+          }
+        },
+        {
+          "type": "bulletin",
+          "variant": "feed",
+          "anchor": "feed",
+          "tone": "light",
+          "data": {
+            "title": "课室动态",
+            "lead": "日期和事情写在下面。",
+            "items": [
+              { "date": "2026年9月12日", "name": "十月夜课课表", "summary": "贴出十月课表，8 门课都开。", "href": "news/oct-board.html", "image": "news-oct", "imageAlt": "墙上贴着的课表" },
+              { "date": "2026年8月3日", "name": "教室换了投影", "summary": "3 楼靠窗那间换了投影。", "href": "news/new-proj.html", "image": "news-proj", "imageAlt": "墙上的投影光" },
+              { "date": "2026年6月18日", "name": "英语班加了一节", "summary": "商务英语周六上午加一节会前口语，学费不加。", "href": "news/en-extra.html", "image": "news-en", "imageAlt": "桌上打开的笔记本" }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "call",
+          "tone": "dark",
+          "data": {
+            "title": "先看课，再报名",
+            "lead": "8 门课都在课程页，电话 021-64081276。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "关于课室｜岸灯课室（虚构）",
+      "description": "2019年3月租下天钥桥路 3 楼，两间教室，四位讲师。",
+      "banner": "banner",
+      "bannerAlt": "课室走廊和门",
+      "sections": [
+        {
+          "type": "why",
+          "variant": "steps",
+          "anchor": "how",
+          "tone": "light",
+          "data": {
+            "title": "课怎么开",
+            "items": [
+              { "name": "课写在前面", "text": "课时、学费、适合谁，课卡上就有，不藏到咨询里" },
+              { "name": "讲师只带自己的课", "text": "设计是周晚宁，编程是韩述，语言是井口葵，技能是林可" },
+              { "name": "晚课为主", "text": "周二到周五 18:30 上课，周六白天也开" },
+              { "name": "一个班 12 人", "text": "满 12 人就等下一期，不往班里加人" }
+            ]
+          }
+        },
+        {
+          "type": "studio",
+          "variant": "split",
+          "anchor": "rooms",
+          "tone": "dark",
+          "data": {
+            "title": "两间教室",
+            "lead": "2019年3月租下天钥桥路 3 楼，两间教室到现在。",
+            "image": "studio-room",
+            "imageAlt": "靠窗教室的夜课桌",
+            "items": [
+              { "name": "靠窗那间", "text": "有投影，英语和编程多用这间" },
+              { "name": "靠里那间", "text": "桌面大，版式和剪辑在这边看稿" }
+            ]
+          }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "now",
+          "tone": "light",
+          "data": {
+            "title": "课室现在",
+            "lead": "截至 2026年9月。",
+            "items": [
+              { "value": "8", "label": "在开课程" },
+              { "value": "4", "label": "常驻讲师" },
+              { "value": "186", "label": "在读学员" },
+              { "value": "2019", "label": "开课年份" }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "call",
+          "tone": "dark",
+          "data": {
+            "title": "先来试听",
+            "lead": "每门课可试听 1 次。电话 021-64081276。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "courses",
+      "title": "八门夜课｜岸灯课室（虚构）",
+      "description": "设计、编程、语言和职业技能。课时、学费和适合谁都在卡上。",
+      "banner": "banner",
+      "bannerAlt": "课室走廊和门",
+      "sections": [
+        {
+          "type": "course-board",
+          "variant": "board",
+          "anchor": "board",
+          "tone": "light",
+          "data": {
+            "label": "分类",
+            "title": "八门夜课",
+            "lead": "课时、学费和适合谁都在卡上。",
+            "groups": [
+              { "key": "all", "name": "全部", "on": "1", "hide": "" },
+              { "key": "d1", "name": "视觉设计", "hide": "1" },
+              { "key": "d2", "name": "编程", "hide": "1" },
+              { "key": "d3", "name": "语言", "hide": "1" },
+              { "key": "d4", "name": "职业技能", "hide": "1" }
+            ],
+            "items": [
+              { "name": "品牌版式", "href": "courses/layout-night.html", "image": "course-layout", "imageAlt": "网格纸和印样", "cat": "d1", "catName": "视觉设计", "hours": "36 课时", "price": "4,800 元", "audience": "想自己排海报的人", "teacher": "周晚宁" },
+              { "name": "界面走查", "href": "courses/ui-review.html", "image": "course-ui", "imageAlt": "浅灰背景上的手机", "cat": "d1", "catName": "视觉设计", "hours": "24 课时", "price": "3,600 元", "audience": "改自己产品的人", "teacher": "周晚宁" },
+              { "name": "网页前端", "href": "courses/front-end.html", "image": "course-front", "imageAlt": "打开的笔记本电脑", "cat": "d2", "catName": "编程", "hours": "48 课时", "price": "6,800 元", "audience": "零基础转行的人", "teacher": "韩述" },
+              { "name": "数据表查询", "href": "courses/sql-desk.html", "image": "course-sql", "imageAlt": "屏幕上糊掉的表格", "cat": "d2", "catName": "编程", "hours": "32 课时", "price": "4,200 元", "audience": "要自己查数的运营", "teacher": "韩述" },
+              { "name": "商务英语", "href": "courses/biz-en.html", "image": "course-en", "imageAlt": "打开的笔记本和笔", "cat": "d3", "catName": "语言", "hours": "40 课时", "price": "5,200 元", "audience": "要开会发言的人", "teacher": "井口葵" },
+              { "name": "日语入门", "href": "courses/jp-start.html", "image": "course-jp", "imageAlt": "耳机和笔记本", "cat": "d3", "catName": "语言", "hours": "42 课时", "price": "4,600 元", "audience": "准备赴日的人", "teacher": "井口葵" },
+              { "name": "短视频剪辑", "href": "courses/cut-reel.html", "image": "course-cut", "imageAlt": "支架上的手机", "cat": "d4", "catName": "职业技能", "hours": "28 课时", "price": "3,400 元", "audience": "要自己出片的店主", "teacher": "林可" },
+              { "name": "表格与汇报", "href": "courses/sheet-report.html", "image": "course-sheet", "imageAlt": "一叠印出的表格", "cat": "d4", "catName": "职业技能", "hours": "20 课时", "price": "2,400 元", "audience": "要做周报的职员", "teacher": "林可" }
+            ]
+          }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "call",
+          "tone": "dark",
+          "data": {
+            "title": "选好再联系",
+            "lead": "电话 021-64081276。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "teachers",
+      "title": "讲师｜岸灯课室（虚构）",
+      "description": "四位常驻讲师，每人带两门夜课。",
+      "banner": "banner",
+      "bannerAlt": "课室走廊和门",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "portraits",
+          "anchor": "list",
+          "tone": "light",
+          "data": { "title": "四位讲师", "lead": "每人带两门，到课时间写在名字下面。", "collection": "teachers" }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "call",
+          "tone": "dark",
+          "data": {
+            "title": "想听哪位的课",
+            "lead": "电话 021-64081276。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "works",
+      "title": "学员作业｜岸灯课室（虚构）",
+      "description": "课上交出来的海报、网页、短片和周报。",
+      "banner": "banner",
+      "bannerAlt": "课室走廊和门",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "cards",
+          "anchor": "list",
+          "tone": "light",
+          "data": { "title": "学员作业", "lead": "课上交出来的东西。", "collection": "works" }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "call",
+          "tone": "dark",
+          "data": {
+            "title": "想看自己的课",
+            "lead": "电话 021-64081276。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "资讯｜岸灯课室（虚构）",
+      "description": "课表、教室和加课，按日期写。",
+      "banner": "banner",
+      "bannerAlt": "课室走廊和门",
+      "sections": [
+        {
+          "type": "collection-list",
+          "variant": "rows",
+          "anchor": "list",
+          "tone": "light",
+          "data": { "title": "课室动态", "lead": "按日期往下看。", "collection": "news" }
+        },
+        {
+          "type": "cta-band",
+          "variant": "inline",
+          "anchor": "call",
+          "tone": "dark",
+          "data": {
+            "title": "想报名这期",
+            "lead": "电话 021-64081276。",
+            "primaryHref": "contact/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "报名咨询｜岸灯课室（虚构）",
+      "description": "电话、微信或留言。课室在天钥桥路 3 楼。",
+      "banner": "banner",
+      "bannerAlt": "课室走廊和门",
+      "sections": [
+        {
+          "type": "contact",
+          "variant": "card",
+          "anchor": "visit",
+          "tone": "light",
+          "data": {
+            "title": "报名咨询",
+            "lead": "电话、微信或留言，课室在天钥桥路 3 楼。"
+          }
+        },
+        {
+          "type": "faq",
+          "variant": "accordion",
+          "anchor": "ask",
+          "tone": "dark",
+          "data": {
+            "title": "报名之前",
+            "items": [
+              { "q": "可以只试听吗", "a": "可以。每门课试听 1 次，不另收费。试听算进那一期，不是单独开班。" },
+              { "q": "什么时候能退学费", "a": "开课前 7 天可退学费。开课后不退。" },
+              { "q": "一个班几个人", "a": "一个班最多 12 人。满了就等下一期。" },
+              { "q": "周末有课吗", "a": "周六 10:00-17:00 有课。周日休息。周二到周五是 18:30-21:30。" }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

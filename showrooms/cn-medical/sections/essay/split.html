@@ -1,8 +1,12 @@
 <section class="section" data-section="essay" data-family="prose" id="{{anchor}}">
   <div class="container prose-col">
-    {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
-    {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
-    {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
-    {{#each items}}<p>{{text}}</p>{{/each}}
+    <div class="prose-head">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="prose-body">
+      {{#each items}}<p>{{text}}</p>{{/each}}
+    </div>
   </div>
 </section>

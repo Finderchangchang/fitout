@@ -1,0 +1,15 @@
+<section class="section" data-section="chronicle" data-family="chronicle" id="{{anchor}}">
+  <div class="container split">
+    <div class="chronicle-copy">
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      <p class="prose">{{body}}</p>
+      {{#if href}}{{#if linkLabel}}<p><a class="btn" href="{{href}}">{{linkLabel}}</a></p>{{/if}}{{/if}}
+    </div>
+    <figure class="chronicle-photo">
+      <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
+      {{#if caption}}<figcaption>{{caption}}</figcaption>{{/if}}
+    </figure>
+  </div>
+</section>

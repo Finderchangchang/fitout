@@ -1,0 +1,35 @@
+{
+  "note": "房型、周边和游记共用列表。周边分类读每条的 category，不看链接前缀。面积和价格写进说明。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "collection": { "type": "string", "required": true, "maxChars": 40 },
+    "groups": {
+      "type": "list",
+      "required": false,
+      "max": 6,
+      "item": {
+        "key": { "type": "string", "required": true, "maxChars": 12 },
+        "label": { "type": "string", "required": true, "maxChars": 8 },
+        "on": { "type": "string", "required": false, "maxChars": 2 }
+      }
+    }
+  },
+  "variants": {
+    "rooms": {
+      "needsImage": false,
+      "family": "register",
+      "fit": "房型四列，说明里带面积和参考价"
+    },
+    "board": {
+      "needsImage": false,
+      "family": "catalog",
+      "fit": "周边按景点、体验、美食筛选"
+    },
+    "feed": {
+      "needsImage": false,
+      "family": "feed",
+      "fit": "游记图文"
+    }
+  }
+}

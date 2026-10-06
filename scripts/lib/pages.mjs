@@ -97,13 +97,23 @@ export function expandTel(href, phone) {
   return digits ? `tel:${digits}` : "";
 }
 
-function fallbackButton(contact, used) {
-  if (!used.has("电话咨询")) return { label: "电话咨询", href: contact };
-  if (!used.has("联系我们")) return { label: "联系我们", href: contact };
+const ZH_FALLBACK = { phoneConsult: "电话咨询", contactUs: "联系我们" };
+
+function fallbackLabels(labels) {
+  return {
+    phoneConsult: labels?.phoneConsult || ZH_FALLBACK.phoneConsult,
+    contactUs: labels?.contactUs || ZH_FALLBACK.contactUs,
+  };
+}
+
+function fallbackButton(contact, used, labels) {
+  const copy = fallbackLabels(labels);
+  if (!used.has(copy.phoneConsult)) return { label: copy.phoneConsult, href: contact };
+  if (!used.has(copy.contactUs)) return { label: copy.contactUs, href: contact };
   return null;
 }
 
-export function resolveHeroButtons({ site, house, data, phone }) {
+export function resolveHeroButtons({ site, house, data, phone, labels }) {
   const closed = closedTargets(house, site);
   const contact = contactFile(house);
   let buttons = [];
@@ -137,13 +147,13 @@ export function resolveHeroButtons({ site, house, data, phone }) {
       used.add(button.label);
       continue;
     }
-    const next = fallbackButton(contact, used);
+    const next = fallbackButton(contact, used, labels);
     if (next) {
       out.push(next);
       used.add(next.label);
     }
   }
-  if (!out.length) out.push({ label: "电话咨询", href: contact });
+  if (!out.length) out.push({ label: fallbackLabels(labels).phoneConsult, href: contact });
   return out.slice(0, 2);
 }
 
@@ -169,7 +179,7 @@ function scrubTree(node, closed) {
   }
 }
 
-export function scrubSection(section, { house, site, required }) {
+export function scrubSection(section, { house, site, required, labels }) {
   if (!section || section.type === "hero" || section.type === "page-banner") return section;
   const closed = closedTargets(house, site);
   if (closed.files.size === 0 && closed.prefixes.size === 0) return section;
@@ -184,7 +194,7 @@ export function scrubSection(section, { house, site, required }) {
   if (pointsClosed(data.primaryHref, closed)) {
     if (required) {
       data.primaryHref = contactFile(house);
-      data.primaryLabel = "电话咨询";
+      data.primaryLabel = fallbackLabels(labels).phoneConsult;
     } else drop = true;
   }
   if (pointsClosed(data.secondaryHref, closed)) {

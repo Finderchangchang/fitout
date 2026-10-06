@@ -1,18 +1,38 @@
+/* 详情页：容器和其他页一样宽、左缘一样（x=容器左缘）。
+   桌面左边是标题、导语、要点、正文、流程，右边是配图；手机配图在标题下面。
+   以前整页缩进到 42rem 居中的窄栏，配图只占半栏，标题的下划线直接贴着副标题。 */
 .article-col {
+  display: grid;
+  gap: 1.25rem 3rem;
+  align-items: start;
+}
+
+.article-head {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.article-head .section-lead {
+  margin: 0;
+}
+
+.article-main {
+  min-width: 0;
   max-width: 42rem;
 }
 
 .detail-photo {
-  width: min(100%, 22rem);
+  width: min(100%, 26rem);
   height: auto;
   display: block;
-  margin: 0.5rem 0 1rem;
+  margin: 0;
 }
 
 .fact-row {
   display: grid;
   gap: 1rem;
-  margin: 1.25rem 0;
+  margin: 0 0 1.25rem;
 }
 
 .fact-row div {
@@ -36,7 +56,7 @@
 }
 
 .block-label {
-  margin: 1.25rem 0 0.5rem;
+  margin: 1.5rem 0 0.75rem;
   font-size: var(--fs-3);
   box-shadow: inset 0 -2px 0 var(--primary);
   width: fit-content;
@@ -55,11 +75,31 @@
 }
 
 .article-col .btn-row {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
 @media (min-width: 768px) {
   .fact-row {
     grid-template-columns: repeat(3, minmax(0, 14rem));
+  }
+}
+
+@media (min-width: 1024px) {
+  .article-col:has(> .detail-photo) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 26rem);
+    grid-template-rows: auto 1fr;
+  }
+
+  .article-col:has(> .detail-photo) > .article-head,
+  .article-col:has(> .detail-photo) > .article-main {
+    grid-column: 1;
+  }
+
+  .article-col:has(> .detail-photo) > .detail-photo {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 100%;
+    position: sticky;
+    top: 1.5rem;
   }
 }

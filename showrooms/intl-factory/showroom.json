@@ -1,0 +1,175 @@
+{
+  "id": "intl-factory",
+  "name": "国际风 · 外贸工厂",
+  "industry": "factory-trade",
+  "niche": "manufacturing",
+  "flavor": "intl",
+  "note": "给做外贸的零部件、五金、机械和 OEM 加工厂。客户是海外采购。首页是满屏实拍、询价和产能，内页能翻到公差、MOQ 和交期。",
+  "buttons": {
+    "primary": "Request a Quote",
+    "primaryHref": "contact/index.html",
+    "secondary": "See the catalog",
+    "secondaryHref": "products/index.html",
+    "form": "Send a drawing"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4500ms"
+    }
+  },
+  "collections": [
+    {
+      "id": "products",
+      "label": "Products",
+      "listFile": "products/index.html"
+    },
+    {
+      "id": "uses",
+      "label": "Applications",
+      "listFile": "applications/index.html"
+    },
+    {
+      "id": "news",
+      "label": "News",
+      "listFile": "news/index.html"
+    }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "optional": false,
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel"] },
+        { "type": "trust", "required": false, "variants": ["stats"] },
+        { "type": "services", "required": true, "variants": ["lanes"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "why", "required": false, "variants": ["rail"] },
+        { "type": "cases", "required": false, "variants": ["tiles"] },
+        { "type": "collection-list", "required": false, "variants": ["brief"] },
+        { "type": "plant", "required": false, "variants": ["split"] },
+        { "type": "honors", "required": false, "variants": ["wall"] },
+        { "type": "cta-band", "required": false, "variants": ["band"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "optional": false,
+      "order": [
+        { "type": "timeline", "required": false, "variants": ["rail"] },
+        { "type": "why", "required": false, "variants": ["cells"] },
+        { "type": "plant", "required": false, "variants": ["split"] },
+        { "type": "honors", "required": false, "variants": ["wall"] },
+        { "type": "cta-band", "required": false, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "products",
+      "file": "products/index.html",
+      "kind": "list",
+      "optional": false,
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["catalog"] },
+        { "type": "cta-band", "required": false, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "product",
+      "file": "products/{slug}.html",
+      "kind": "detail",
+      "optional": false,
+      "from": "products",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+      ]
+    },
+    {
+      "id": "uses",
+      "file": "applications/index.html",
+      "kind": "list",
+      "optional": true,
+      "when": "档案写了零件用在哪些设备或行业",
+      "deny": ["没有应用场景", "没有应用"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["tiles"] },
+        { "type": "cta-band", "required": false, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "use-detail",
+      "file": "applications/{slug}.html",
+      "kind": "detail",
+      "optional": true,
+      "when": "应用列表开着，并且有对应条目。",
+      "from": "uses",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["story"] }
+      ]
+    },
+    {
+      "id": "quality",
+      "file": "quality/index.html",
+      "kind": "about",
+      "optional": true,
+      "when": "档案写了检验、公差或检测设备。",
+      "deny": ["没有质检", "没有质量"],
+      "order": [
+        { "type": "why", "required": false, "variants": ["cells"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "plant", "required": false, "variants": ["split"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] },
+        { "type": "cta-band", "required": false, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "optional": true,
+      "when": "档案里有可以单独成篇的动态，例如换设备、交期或航线。",
+      "deny": ["没有新闻", "没有动态", "不发新闻"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["index"] },
+        { "type": "cta-band", "required": false, "variants": ["band"] }
+      ]
+    },
+    {
+      "id": "news-item",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "optional": true,
+      "when": "新闻列表开着，并且有对应稿件。列表关掉就不生成。",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["report"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "optional": false,
+      "order": [
+        { "type": "contact", "required": true, "variants": ["split"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] },
+        { "type": "cta-band", "required": false, "variants": ["band"] }
+      ]
+    }
+  ]
+}

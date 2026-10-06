@@ -1,13 +1,18 @@
 .footer-links {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
 .site-footer {
   background: var(--text);
   color: var(--on-media);
-  border-top: 0;
-  padding-top: var(--section-y);
+  /* 上面常常是同色的深底板块（预约量房带），页脚顶上画一条细线分开。 */
+  border-top: 1px solid color-mix(in srgb, var(--on-media) 22%, transparent);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--gap);
 }
 
 .site-footer a,
@@ -34,8 +39,9 @@
   border-color: var(--surface);
 }
 
+/* 版权字是普通文字，备案号是 44px 高的链接：居中对齐，两边的字落在一条线上。 */
 .footer-legal {
-  border-top-color: var(--border);
+  border-top: 1px solid var(--border);
 }
 
 .qr-pair {
@@ -45,6 +51,7 @@
 }
 
 .qr-pair figure {
+  position: relative;
   width: 7.5rem;
   min-width: 0;
 }
@@ -72,6 +79,6 @@
 
 @media (min-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 1.15fr 0.8fr 1.15fr 0.9fr;
+    grid-template-columns: 1.15fr 0.8fr 1.2fr 0.95fr;
   }
 }

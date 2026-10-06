@@ -1,0 +1,18 @@
+<section class="section" data-section="years" data-family="rail" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <ol class="year-rail">
+      {{#each items}}
+      <li class="year-item">
+        <h3 class="item-title nums">{{name}}</h3>
+        <p>{{text}}</p>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

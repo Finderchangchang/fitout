@@ -1,0 +1,99 @@
+.contact-split {
+  display: grid;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.contact-facts,
+.contact-aside {
+  min-width: 0;
+  height: 100%;
+  padding: 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+/* 右栏做成深色卡：标题和左栏同一档字号，两栏重量接近，顶边对齐。 */
+.contact-aside {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--on-media);
+}
+
+.contact-aside h3 {
+  color: var(--on-media);
+  font-size: var(--fs-4);
+  line-height: 1.15;
+}
+
+.contact-aside h3::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 3px;
+  margin-top: 0.7rem;
+  background: #e0a106;
+}
+
+.contact-aside p {
+  color: var(--on-media);
+}
+
+.contact-aside .btn-row {
+  margin-top: 0.25rem;
+}
+
+.contact-facts {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+}
+
+.contact-facts p,
+.contact-aside h3,
+.contact-aside p {
+  margin: 0;
+}
+
+.contact-facts a,
+.contact-facts p:has(> .icon) {
+  min-height: 44px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.contact-facts .icon {
+  flex: none;
+  margin-top: calc((1lh - 1rem) / 2);
+}
+
+.contact-qr {
+  margin: 0.5rem 0 0;
+  width: min(100%, 12rem);
+}
+
+.contact-qr img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.contact-aside {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.contact-aside .btn {
+  width: min(100%, 15rem);
+  justify-content: flex-start;
+}
+
+@media (min-width: 800px) {
+  .contact-split {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}

@@ -1,7 +1,3 @@
-.section[data-section="cases"] {
-  padding-block: 56px;
-}
-
 .gallery-grid {
   display: grid;
   gap: var(--gap);

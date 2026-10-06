@@ -3,8 +3,14 @@
   padding-bottom: 1rem;
 }
 
+/* 文案宽度限制挂在子元素上，不挂在 .container 上：挂在容器上会被自动外边距居中，
+   文字左缘跑到 x=400，和页头 logo、下面板块的左缘（x=120）对不上。 */
 .hero-full .hero-copy {
   text-align: start;
+  max-width: none;
+}
+
+.hero-full .hero-copy > * {
   max-width: 40rem;
 }
 

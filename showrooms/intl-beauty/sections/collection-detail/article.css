@@ -1,0 +1,192 @@
+.matter {
+  display: grid;
+  gap: 3rem;
+}
+
+/* 上半部：有图时左图右文，两栏顶对齐；没图（记事）时单栏，正文限宽。 */
+.matter-top {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.matter-main {
+  display: grid;
+  gap: 2rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.matter-main .section-lead {
+  max-width: none;
+  color: var(--text);
+  font-size: 1.1875rem;
+  line-height: 1.75;
+}
+
+.matter-top:not(.has-photo) .matter-main {
+  max-width: 46rem;
+}
+
+.matter-block > .subhead {
+  margin-bottom: 1rem;
+}
+
+.detail-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: 34rem;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .matter-top.has-photo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4rem;
+  }
+
+  .matter-top.has-photo .detail-photo {
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+.price {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+.specs th {
+  width: 6.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.steps {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.step-no {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+}
+
+/* 预约卡：左边电话、地址和按钮，右边营业时间。以前所有东西挤在左三分之一，右边整片空。 */
+.consult {
+  display: grid;
+  gap: 1.5rem 3rem;
+  padding: 1.75rem;
+  align-items: start;
+}
+
+.consult-main {
+  display: grid;
+  gap: 0.25rem;
+  justify-items: start;
+  min-width: 0;
+}
+
+.consult-main .subhead {
+  margin-bottom: 0.5rem;
+}
+
+.consult-main p {
+  margin: 0;
+}
+
+.consult a:has(> .icon) {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 100%;
+  min-height: 44px;
+  padding-block: 0.5rem;
+}
+
+.consult a > .icon {
+  flex: none;
+  margin-top: calc((1lh - 1.25rem) / 2);
+}
+
+.consult-main .btn-row {
+  margin-top: 0.75rem;
+}
+
+.consult-hours {
+  min-width: 0;
+}
+
+.consult .hour-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: none;
+  padding-block: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.consult .hour-line:first-child {
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 900px) {
+  .consult {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+/* 常见问题：小标题在左，问答在右，和首页的问答同一个排法。 */
+@media (min-width: 900px) {
+  .matter-faq {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .matter-faq > .subhead {
+    margin: 0;
+  }
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 44px;
+  padding-block: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}

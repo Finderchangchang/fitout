@@ -8,16 +8,18 @@
   gap: 0.9rem;
 }
 
+/* 小卡片的标题和图顶边对齐，不再按各自内容高度居中、标题高低不一。 */
 .brief-card {
   display: grid;
   grid-template-columns: 7.5rem 1fr;
   gap: 0.75rem;
-  align-items: center;
+  align-items: start;
   padding: 0.65rem;
 }
 
 .brief-card:first-child {
   grid-template-columns: 16rem 1fr;
+  align-items: center;
 }
 
 .brief-card h3 {

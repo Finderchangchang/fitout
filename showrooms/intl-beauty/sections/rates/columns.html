@@ -1,0 +1,19 @@
+<section class="section" data-section="rates" data-family="plans" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="plan-grid">
+      {{#each items}}
+      <article class="card plan">
+        <h3 class="item-title">{{name}}</h3>
+        <p class="price nums">{{price}}</p>
+        <p>{{text}}</p>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

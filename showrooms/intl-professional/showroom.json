@@ -1,0 +1,172 @@
+{
+  "id": "intl-professional",
+  "name": "国际风 · 咨询律所",
+  "note": "给管理咨询、律师事务所、财税顾问和设计事务所。版式按机构、服务、人和项目来排，电话在页头、页脚和每页末尾都能看见。",
+  "industry": "professional",
+  "niche": "consulting",
+  "flavor": "intl",
+  "buttons": {
+    "primary": "预约面谈",
+    "primaryHref": "contact/index.html",
+    "secondary": "看服务",
+    "secondaryHref": "services/index.html",
+    "form": "预约面谈"
+  },
+  "shell": {
+    "header": ["standard"],
+    "footer": ["columns"],
+    "floatContact": ["dock"]
+  },
+  "motion": {
+    "enter": "fade",
+    "distance": "30px",
+    "duration": "700ms",
+    "once": true,
+    "count": true,
+    "carousel": { "min": 3, "max": 9, "interval": "4500ms" }
+  },
+  "collections": [
+    { "id": "services", "label": "服务领域", "listFile": "services/index.html" },
+    { "id": "team", "label": "顾问团队", "listFile": "team/index.html" },
+    { "id": "cases", "label": "项目记录", "listFile": "cases/index.html" },
+    { "id": "news", "label": "书房笔记", "listFile": "news/index.html" }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "kind": "home",
+      "optional": false,
+      "order": [
+        { "type": "hero", "required": true, "variants": ["carousel", "text"] },
+        { "type": "preface", "required": false, "variants": ["split"] },
+        { "type": "trust", "required": false, "variants": ["stats"] },
+        { "type": "services", "required": true, "variants": ["grid-cards"] },
+        { "type": "photo-band", "required": false, "variants": ["wide"] },
+        { "type": "team", "required": false, "variants": ["cards", "roster"] },
+        { "type": "cases", "required": false, "variants": ["gallery", "list"] },
+        { "type": "why", "required": false, "variants": ["steps"] },
+        { "type": "still", "required": false, "variants": ["frame"] },
+        { "type": "faq", "required": false, "variants": ["accordion"] },
+        { "type": "collection-list", "required": false, "variants": ["grid"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] }
+      ]
+    },
+    {
+      "id": "about",
+      "file": "about/index.html",
+      "kind": "about",
+      "optional": false,
+      "order": [
+        { "type": "preface", "required": true, "variants": ["split"] },
+        { "type": "timeline", "required": false, "variants": ["rail"] },
+        { "type": "why", "required": false, "variants": ["method"] },
+        { "type": "trust", "required": false, "variants": ["stats"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] },
+        { "type": "contact", "required": false, "variants": ["card"] }
+      ]
+    },
+    {
+      "id": "services",
+      "file": "services/index.html",
+      "kind": "list",
+      "optional": false,
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] },
+        { "type": "contact", "required": false, "variants": ["card"] }
+      ]
+    },
+    {
+      "id": "service",
+      "file": "services/{slug}.html",
+      "kind": "detail",
+      "optional": false,
+      "from": "services",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "team",
+      "file": "team/index.html",
+      "kind": "team",
+      "optional": true,
+      "when": "有可以署名的顾问或合伙人",
+      "deny": ["没有团队", "没有真人", "不公开人员"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] },
+        { "type": "contact", "required": false, "variants": ["card"] }
+      ]
+    },
+    {
+      "id": "member",
+      "file": "team/{slug}.html",
+      "kind": "detail",
+      "optional": true,
+      "when": "团队列表开着就生成",
+      "from": "team",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "cases",
+      "file": "cases/index.html",
+      "kind": "list",
+      "optional": true,
+      "when": "有可公开的项目",
+      "deny": ["没有案例"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] },
+        { "type": "contact", "required": false, "variants": ["card"] }
+      ]
+    },
+    {
+      "id": "case",
+      "file": "cases/{slug}.html",
+      "kind": "detail",
+      "optional": true,
+      "when": "项目列表开着就生成",
+      "from": "cases",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "news",
+      "file": "news/index.html",
+      "kind": "news-list",
+      "optional": true,
+      "when": "有可成篇的文章",
+      "deny": ["没有文章", "不发文章"],
+      "order": [
+        { "type": "collection-list", "required": true, "variants": ["grid"] },
+        { "type": "cta-band", "required": false, "variants": ["inline"] },
+        { "type": "contact", "required": false, "variants": ["card"] }
+      ]
+    },
+    {
+      "id": "story",
+      "file": "news/{slug}.html",
+      "kind": "news-detail",
+      "optional": true,
+      "when": "文章列表开着就生成",
+      "from": "news",
+      "order": [
+        { "type": "collection-detail", "required": true, "variants": ["article"] }
+      ]
+    },
+    {
+      "id": "contact",
+      "file": "contact/index.html",
+      "kind": "contact",
+      "optional": false,
+      "order": [
+        { "type": "contact", "required": true, "variants": ["card"] }
+      ]
+    }
+  ]
+}

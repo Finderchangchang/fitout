@@ -1,0 +1,22 @@
+.photo-band {
+  position: relative;
+}
+
+.photo-band img {
+  width: 100%;
+  aspect-ratio: 2.4 / 1;
+  object-fit: cover;
+  max-height: 36rem;
+}
+
+.photo-band .meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: auto;
+  bottom: 0;
+  margin: 0;
+  padding: 1.5rem max(1rem, calc((100% - var(--container)) / 2)) 1.25rem;
+  color: var(--on-media);
+  background: linear-gradient(180deg, rgb(0 0 0 / 0), rgb(0 0 0 / 0.78));
+}

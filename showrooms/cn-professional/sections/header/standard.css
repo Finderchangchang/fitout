@@ -31,6 +31,7 @@
 }
 
 .nav-list a {
+  white-space: nowrap;
   padding-inline: 0.35rem;
   color: var(--text);
   border-bottom: 2px solid transparent;
@@ -123,7 +124,7 @@
   }
 
   .header-tools .btn-primary {
-    display: inline-flex;
+    display: none;
   }
 
   .nav-list {
@@ -147,6 +148,13 @@
   }
 
   .header-phone {
+    display: inline-flex;
+  }
+}
+
+/* 1280 以上才放得下「电话咨询」按钮；再窄时热线号码已经在旁边，按钮收起，导航保持一行。 */
+@media (min-width: 1280px) {
+  .header-tools .btn-primary {
     display: inline-flex;
   }
 }

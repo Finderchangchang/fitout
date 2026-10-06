@@ -30,3 +30,12 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
+/* 3 条、6 条排三列，整行排满；其余（2、4 条）排两列。 */
+@media (min-width: 1024px) {
+  .feed-grid:has(> :nth-child(3):last-child),
+  .feed-grid:has(> :nth-child(6):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

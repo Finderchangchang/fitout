@@ -1,0 +1,47 @@
+.site-footer {
+  background: var(--text);
+  color: var(--on-media);
+  /* 和上面同色的深色横幅之间画一条细线，不让两块深底糊成一块。 */
+  border-top: 1px solid color-mix(in srgb, var(--on-media) 16%, transparent);
+}
+
+.site-footer a,
+.site-footer .footer-name,
+.site-footer .footer-label {
+  color: var(--on-media);
+}
+
+/* 品牌名按标题的行高排，不继承正文 1.75 的行高。 */
+.site-footer .footer-name {
+  display: block;
+  min-height: 0;
+  margin-bottom: 0.75rem;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.site-footer p:has(> button) {
+  margin-block: 0.25rem 0.5rem;
+}
+
+.footer-legal {
+  border-top-color: color-mix(in srgb, var(--on-media) 28%, transparent);
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 2.5rem;
+  }
+}
+
+/* 页面最后一块是深色板块、紧跟深色页脚：板块下留白加页脚上留白，中间一片 250px 的空黑。板块下留白收到六成。 */
+@media (min-width: 768px) {
+  main > section:last-child[data-tone="dark"] {
+    padding-bottom: calc(var(--section-y) * 0.6);
+  }
+}
+

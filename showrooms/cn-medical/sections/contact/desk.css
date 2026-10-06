@@ -1,26 +1,32 @@
 .contact-grid {
   display: grid;
   gap: var(--gap);
-}
-
-.contact-grid p {
-  margin-top: 0.35rem;
-}
-
-.group-label {
-  margin-top: 1rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.qr-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
   align-items: start;
 }
 
+/* 左栏：标题、导语、二维码。二维码放在左栏里，右栏是一张联系信息卡片，
+   两栏顶边对齐、高度接近，不留大块空白。 */
+.contact-copy {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.contact-copy .section-head {
+  margin-bottom: 0;
+}
+
+.qr-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+/* 占位图的字号是画布短边的 14%，显示 7rem（112px）时约 15px：不重、不抢。
+   占位图再淡一档；客户给真二维码时不受影响。 */
 .qr-grid figure {
+  width: 7rem;
   margin: 0;
 }
 
@@ -32,12 +38,98 @@
 }
 
 .qr-grid figcaption {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
-@media (min-width: 768px) {
+.contact-hours {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-hours p {
+  margin: 0;
+}
+
+.contact-card {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  min-width: 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
+  border-radius: var(--radius-md);
+}
+
+.contact-card p {
+  margin: 0;
+}
+
+.group-label {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.contact-line {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.contact-line > .icon {
+  margin-top: calc((1lh - 1.25rem) / 2);
+}
+
+/* 微信号一行、复制按钮在它下面，图标永远对齐微信号这一行（号码长短都不会折行错位）。 */
+.contact-wx {
+  display: grid;
+  justify-items: start;
+  gap: 0.5rem;
+}
+
+/* 一排两个等宽按钮：电话、到门诊；放不下两个就各占一行。 */
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 1024px) {
   .contact-grid {
     grid-template-columns: 1.1fr 0.9fr;
-    align-items: start;
+  }
+}
+
+/* 手机：标题 → 联系卡片 → 二维码。联系方式在前，二维码在后。 */
+@media (max-width: 1023px) {
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .contact-copy {
+    display: contents;
+  }
+
+  .contact-copy .section-head {
+    order: 1;
+    margin-bottom: calc(var(--gap) * -0.5);
+  }
+
+  .contact-card {
+    order: 2;
+  }
+
+  .contact-hours {
+    order: 3;
+  }
+
+  .qr-grid {
+    order: 4;
   }
 }

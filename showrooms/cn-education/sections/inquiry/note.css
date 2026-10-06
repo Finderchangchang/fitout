@@ -1,3 +1,18 @@
 .section[data-section="inquiry"] .section-head {
   margin-bottom: 1rem;
 }
+
+
+/* 左边标题和说明，右边按钮，一行铺满，不再只占左半边。 */
+@media (min-width: 768px) {
+  .section[data-section="inquiry"] > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 3rem;
+    align-items: center;
+  }
+
+  .section[data-section="inquiry"] .section-head {
+    margin-bottom: 0;
+  }
+}

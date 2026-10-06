@@ -1,0 +1,55 @@
+.cell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1.25rem 1.5rem;
+}
+
+/* 列数按条数定：5 件时第五件独占一行，不留一格孤零零在末行。 */
+@media (min-width: 640px) {
+  .cell-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cell-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .cell-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .cell-grid > :last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .cell-grid > :last-child:nth-child(4n + 1) {
+    grid-column: 1 / -1;
+  }
+
+  .cell-grid:has(> :nth-child(3):last-child),
+  .cell-grid:has(> :nth-child(6):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cell-grid:has(> :nth-child(3):last-child) > :last-child,
+  .cell-grid:has(> :nth-child(6):last-child) > :last-child {
+    grid-column: auto;
+  }
+}
+
+.cell {
+  border-top: 3px solid var(--primary);
+  padding-top: 0.9rem;
+  min-width: 0;
+}
+
+.cell h3 {
+  margin: 0 0 0.45rem;
+  font-size: var(--fs-3);
+}
+
+.cell p {
+  margin: 0;
+}

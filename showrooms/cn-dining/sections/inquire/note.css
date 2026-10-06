@@ -22,3 +22,22 @@
     grid-template-columns: 1.05fr 0.95fr;
   }
 }
+
+
+/* 没有配图时：左边标题和说明，右边按钮，一行铺满，不再只占左半边。 */
+@media (min-width: 768px) {
+  .inquire:not(:has(img)) .inquire-copy {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 3rem;
+    align-items: center;
+  }
+
+  .inquire:not(:has(img)) .inquire-copy > :is(h1, h2, .section-lead) {
+    grid-column: 1;
+  }
+
+  .inquire:not(:has(img)) .inquire-copy > p:has(.btn) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}

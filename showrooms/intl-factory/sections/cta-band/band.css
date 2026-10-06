@@ -1,0 +1,17 @@
+.cta-inner {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+@media (min-width: 800px) {
+  .cta-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.cta-inner .section-lead {
+  color: var(--on-media);
+}

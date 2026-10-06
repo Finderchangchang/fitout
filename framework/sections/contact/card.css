@@ -1,7 +1,16 @@
-.group-label,
-.contact-list {
+.contact-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* 左栏：元素之间统一 0.75rem，不靠各自的 margin。 */
+.contact-main {
   display: grid;
   gap: 0.75rem;
+  justify-items: start;
+  align-content: start;
+  min-width: 0;
 }
 
 .group-label {
@@ -10,4 +19,77 @@
   gap: 0.5rem;
   font-weight: 600;
   margin-top: 0.5rem;
+}
+
+/* 右栏：一张联系方式卡片。 */
+.contact-card {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.contact-rows {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contact-rows li,
+.contact-rows a {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding-block: 0.5rem;
+}
+
+.contact-rows li > a {
+  min-height: 0;
+  padding-block: 0;
+}
+
+.contact-rows .icon {
+  margin-top: 0.25rem;
+}
+
+/* 一排按钮等宽，放在左栏营业时间下面。 */
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 36rem);
+  margin-top: 0.5rem;
+}
+
+/* 二维码：整行居中，和上面两栏之间一条分隔线。不挤进右栏，右栏不会比左栏高出一大截。 */
+.contact-qrs {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: var(--gap);
+  border-top: 1px solid var(--border);
+}
+
+.contact-qrs figure {
+  width: 10rem;
+}
+
+.contact-qrs img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.contact-qrs figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
 }

@@ -49,3 +49,18 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+/* 1024 到 1099 宽五张排 2 + 2 + 1，末行孤零零一张：改成 3 + 2，末行两张各占半行。 */
+@media (min-width: 1024px) and (max-width: 1099px) {
+  .bay-grid:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .bay-grid:has(> :nth-child(5):last-child) > * {
+    grid-column: span 2;
+  }
+
+  .bay-grid:has(> :nth-child(5):last-child) > :nth-child(n + 4) {
+    grid-column: span 3;
+  }
+}

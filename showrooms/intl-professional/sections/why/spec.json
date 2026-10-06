@@ -1,0 +1,33 @@
+{
+  "note": "做法。有先后就用步骤。方法页可以带一张笔记局部。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "steps": {
+      "needsImage": false,
+      "family": "sequence",
+      "fit": "有先后的做法",
+      "source": "自写有序列表。不画圆标，不编号到两位数"
+    },
+    "method": {
+      "needsImage": false,
+      "family": "method",
+      "fit": "做法配一张笔记或桌面",
+      "source": "自写。图是房间局部，不是流程图标"
+    }
+  }
+}

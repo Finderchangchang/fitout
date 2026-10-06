@@ -1,0 +1,25 @@
+{
+  "note": "年份用第二种墨色。事情写在右侧。年份不是当前人数。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 3,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 8 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    }
+  },
+  "variants": {
+    "rail": {
+      "needsImage": false,
+      "family": "chronicle",
+      "fit": "左侧年份，右侧一句事实",
+      "source": "样板间自写"
+    }
+  }
+}

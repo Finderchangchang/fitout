@@ -9,3 +9,8 @@
 .item-title {
   font-size: var(--fs-3);
 }
+
+/* 图标和姓名第一行的中心对齐：姓名行高 1.3 倍字号，图标 1.25rem。 */
+.person-row > .icon {
+  margin-top: calc((var(--fs-3) * 1.3 - 1.25rem) / 2);
+}

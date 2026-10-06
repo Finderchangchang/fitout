@@ -1,0 +1,57 @@
+{
+  "note": "服务、人、项目、文章共用。没有的字段留空。",
+  "fields": {
+    "name": { "type": "string", "required": true, "maxChars": 20 },
+    "summary": { "type": "string", "required": true, "maxChars": 80 },
+    "body": { "type": "string", "required": false, "maxChars": 200 },
+    "bodyLabel": { "type": "string", "required": false, "maxChars": 8 },
+    "date": { "type": "string", "required": false, "maxChars": 16 },
+    "role": { "type": "string", "required": false, "maxChars": 16 },
+    "years": { "type": "string", "required": false, "maxChars": 8 },
+    "focus": { "type": "string", "required": false, "maxChars": 16 },
+    "image": { "type": "image", "required": false, "maxChars": 200 },
+    "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+    "background": { "type": "string", "required": false, "maxChars": 120 },
+    "approach": { "type": "string", "required": false, "maxChars": 120 },
+    "result": { "type": "string", "required": false, "maxChars": 80 },
+    "specs": {
+      "type": "list",
+      "required": false,
+      "max": 8,
+      "item": {
+        "label": { "type": "string", "required": true, "maxChars": 8 },
+        "value": { "type": "string", "required": true, "maxChars": 24 }
+      }
+    },
+    "steps": {
+      "type": "list",
+      "required": false,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "text": { "type": "string", "required": true, "maxChars": 40 }
+      }
+    },
+    "faqs": {
+      "type": "list",
+      "required": false,
+      "max": 6,
+      "item": {
+        "q": { "type": "string", "required": true, "maxChars": 24 },
+        "a": { "type": "string", "required": true, "maxChars": 80 }
+      }
+    },
+    "primaryLabel": { "type": "string", "required": false, "maxChars": 8, "filledBy": "build" },
+    "primaryHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backHref": { "type": "string", "required": false, "maxChars": 200, "filledBy": "build" },
+    "backLabel": { "type": "string", "required": false, "maxChars": 12, "filledBy": "build" }
+  },
+  "variants": {
+    "article": {
+      "needsImage": false,
+      "family": "dossier",
+      "fit": "内容、过程、问题和页末联系",
+      "source": "自写档案页。联系三格写在这一块里"
+    }
+  }
+}

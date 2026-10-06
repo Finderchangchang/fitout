@@ -1,0 +1,38 @@
+{
+  "note": "有照片用 cards。缺图改 roster。宽屏三列，不要挤成一行五个。",
+  "fields": {
+    "label": { "type": "string", "required": false, "maxChars": 12 },
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 12 },
+        "role": { "type": "string", "required": true, "maxChars": 16 },
+        "text": { "type": "string", "required": false, "maxChars": 40 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+        "href": { "type": "string", "required": false, "maxChars": 200 }
+      }
+    }
+  },
+  "variants": {
+    "cards": {
+      "needsImage": true,
+      "imageField": "items.image",
+      "fallback": "roster",
+      "family": "portraits",
+      "fit": "每个人都有照片，站在同一块底上",
+      "source": "样板间自写。不抠图，不放社交图标。"
+    },
+    "roster": {
+      "needsImage": false,
+      "family": "people",
+      "fit": "没有照片时只写是谁",
+      "source": "框架无图名单"
+    }
+  }
+}

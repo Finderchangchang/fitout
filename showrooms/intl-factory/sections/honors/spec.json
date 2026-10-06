@@ -1,0 +1,27 @@
+{
+  "note": "证照一样大。说明写明扫描件是占位。",
+  "fields": {
+    "title": { "type": "string", "required": true, "maxChars": 16 },
+    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "items": {
+      "type": "list",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "item": {
+        "name": { "type": "string", "required": true, "maxChars": 20 },
+        "issuer": { "type": "string", "required": false, "maxChars": 16 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 }
+      }
+    }
+  },
+  "variants": {
+    "wall": {
+      "needsImage": false,
+      "family": "wall",
+      "fit": "四张等大正方形，没有中间放大",
+      "source": "样板间自写"
+    }
+  }
+}

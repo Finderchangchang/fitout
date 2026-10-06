@@ -1,9 +1,30 @@
+/* 简介：桌面左边标题和导语，右边正文，整行铺满，不再缩进到 42rem 居中的窄栏
+   （以前容器自己挂 max-width，被自动外边距居中，左缘 x=384，和页头、其他板块的 x=120 对不上）。 */
 .prose-col {
-  max-width: 42rem;
   display: grid;
-  gap: 0.85rem;
+  gap: 1.5rem;
+  align-items: start;
 }
 
-.prose-col .section-lead {
+.prose-head {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.prose-head .section-lead {
   margin: 0;
+}
+
+.prose-body {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 42rem;
+}
+
+@media (min-width: 1024px) {
+  .prose-col {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 3rem;
+  }
 }

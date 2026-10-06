@@ -1,0 +1,39 @@
+.hero-full {
+  min-height: 92svh;
+}
+
+.hero .section-title {
+  font-size: clamp(2.5rem, 10vw, var(--fs-hero));
+  max-width: 10em;
+}
+
+.hero-full .hero-copy {
+  padding-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+/* 导语比正文大一号，和 88px 的标题拉开层级。 */
+.hero-full .section-lead {
+  font-size: 1.1875rem;
+  margin-top: 0.25rem;
+}
+
+.hero-full .btn {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--surface);
+}
+
+.hero-full .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.hero-full .hero-slide {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}

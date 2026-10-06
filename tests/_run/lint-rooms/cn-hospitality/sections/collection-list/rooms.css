@@ -1,0 +1,41 @@
+.room-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.room-card {
+  min-width: 0;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  padding: 0 0 1rem;
+  overflow: hidden;
+}
+
+.room-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.room-card h3,
+.room-card p,
+.room-card .btn-row {
+  padding-inline: 1rem;
+}
+
+.room-card a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .room-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .room-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

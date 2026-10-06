@@ -1,0 +1,55 @@
+.year-rail {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid var(--border);
+}
+
+.year-rail li {
+  display: grid;
+  gap: 0.25rem 1.25rem;
+  padding: 0 0 1.25rem 1.1rem;
+}
+
+.year-num {
+  margin: 0;
+  color: var(--accent);
+  font-size: var(--fs-3);
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.year-rail li p {
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .year-rail li {
+    grid-template-columns: 6rem 1fr;
+    align-items: start;
+  }
+}
+
+/* 宽屏：标题和导语占左栏，年份轨在右栏。以前年份轨只占左边一半，右边整片空。 */
+@media (min-width: 900px) {
+  [data-section="timeline"] > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--gap) 4rem;
+    align-items: start;
+  }
+
+  [data-section="timeline"] .section-head {
+    margin-bottom: 0;
+  }
+
+  [data-section="timeline"] .year-rail li {
+    padding-bottom: 1.75rem;
+  }
+
+  [data-section="timeline"] .year-num {
+    font-size: var(--fs-4);
+  }
+}

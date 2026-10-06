@@ -1,0 +1,23 @@
+<section class="section" data-section="cases" data-family="gallery" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">
+      {{#if label}}<p class="kicker">{{label}}</p><div class="kicker-rule" aria-hidden="true"></div>{{/if}}
+      {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+      {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+      {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+    </div>
+    <div class="frame-grid" data-media-group="frame">
+      {{#each items}}
+      <figure class="frame">
+        {{#if image}}
+        {{#if href}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{else}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
+        {{/if}}
+        <figcaption>
+          <h3 class="item-title">{{#if href}}<a href="{{href}}">{{name}}</a>{{else}}{{name}}{{/if}}</h3>
+          <p>{{text}}</p>
+        </figcaption>
+      </figure>
+      {{/each}}
+    </div>
+  </div>
+</section>

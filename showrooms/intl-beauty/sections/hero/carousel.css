@@ -1,0 +1,128 @@
+.hero-full {
+  align-items: end;
+  min-height: 92svh;
+}
+
+.hero-full .hero-scrim {
+  background: linear-gradient(180deg, rgb(36 28 24 / 0.78) 0%, rgb(36 28 24 / 0.62) 34%, rgb(36 28 24 / 0.7) 66%, rgb(36 28 24 / 0.9) 100%);
+}
+
+.hero-full .hero-copy {
+  text-align: left;
+  max-width: none;
+  padding-top: 6.5rem;
+  padding-bottom: 1.5rem;
+  display: grid;
+  justify-items: start;
+  gap: 0.85rem;
+}
+
+.hero-full .hero-copy > :not(.hero-ui) {
+  max-width: 40rem;
+}
+
+/* 首屏上方的小标签压在图上，要用图上文字的颜色。以前沿用强调色，压在深色遮罩上对比度只有 3 到 4。 */
+.hero-full .kicker {
+  color: var(--on-media);
+}
+
+.hero-full .kicker-rule {
+  background: var(--on-media);
+}
+
+/* 中文标题只在标点后换行：「进门先坐下，」「再看手艺」。以前断成「进门先坐」「下，再看手艺」，逗号跟着一个字掉到第二行。 */
+.hero-full .section-title {
+  word-break: keep-all;
+}
+
+.hero-full .section-lead {
+  color: var(--on-media);
+  max-width: 28em;
+}
+
+.hero-full .btn {
+  border-color: var(--on-media);
+  color: var(--on-media);
+  background: transparent;
+}
+
+.hero-full .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.hero-full .hero-ui {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.hero-slides:not(:has(.is-current)) .hero-slide:first-child {
+  opacity: 1;
+}
+
+.hero-ui .carousel-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-icon {
+  display: inline-flex;
+  transform: rotate(180deg);
+}
+
+.hero-dots {
+  gap: 0;
+}
+
+.hero-dots button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  position: relative;
+}
+
+.hero-dots button::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--on-media);
+  opacity: 0.45;
+}
+
+.hero-dots button[aria-current="true"] {
+  background: transparent;
+  color: transparent;
+}
+
+.hero-dots button[aria-current="true"]::after {
+  opacity: 1;
+  width: 22px;
+  height: 2px;
+  border-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .hero-full .hero-copy {
+    padding-top: 5.5rem;
+  }
+
+  .hero .section-title {
+    font-size: 2.5rem;
+  }
+}

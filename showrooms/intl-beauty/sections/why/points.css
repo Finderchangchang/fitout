@@ -1,0 +1,33 @@
+.point-list {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.point-list li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.point-no {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  .point-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .point-list {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+}

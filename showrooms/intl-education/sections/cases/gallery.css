@@ -1,0 +1,17 @@
+.gallery-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.gallery-grid img {
+  width: calc(100% + 2.5rem);
+  max-width: none;
+  margin: -1.25rem -1.25rem 1rem;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

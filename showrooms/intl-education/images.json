@@ -1,0 +1,847 @@
+{
+  "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+  "gradeParams": {
+    "brightness": 0.96,
+    "contrast": 1.08,
+    "saturate": 0.92,
+    "tint": {
+      "color": "#087A91",
+      "opacity": 0.08
+    }
+  },
+  "slots": [
+    {
+      "id": "hero-desk",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "desk",
+        "lamp",
+        "paper",
+        "night"
+      ],
+      "prompt": "夜课桌的局部：一盏暖台灯照着几张印样，字小到读不清，不要教室全景，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "首屏，台灯和印样。"
+    },
+    {
+      "id": "hero-hands",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "hands",
+        "keyboard",
+        "laptop",
+        "night"
+      ],
+      "prompt": "两只手按在键盘上，屏幕只剩一团光，内容看不清，夜课，不要机房全景，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "首屏，键盘和屏幕光。"
+    },
+    {
+      "id": "hero-talk",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "adults",
+        "notebook",
+        "classroom",
+        "evening"
+      ],
+      "prompt": "两个成年人坐在课桌边看一本笔记本，晚上的教室局部，不要正脸特写，不要全景，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "首屏，笔记本和两个人。"
+    },
+    {
+      "id": "band-room",
+      "page": "home",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "classroom",
+        "desks",
+        "window",
+        "night"
+      ],
+      "prompt": "夜课教室横幅：靠窗一排空桌子和一盏灯，没有人的正脸，不要招牌，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "首页切开用的夜课教室。"
+    },
+    {
+      "id": "banner",
+      "page": "inner",
+      "block": "page-banner",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "corridor",
+        "door",
+        "interior",
+        "night"
+      ],
+      "prompt": "课室走廊和一扇关着的门，晚上的室内光，不要校门全景，不要门牌上的字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "内页页眉，走廊和门。"
+    },
+    {
+      "id": "course-front",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "laptop",
+        "studio",
+        "screen",
+        "gray"
+      ],
+      "prompt": "电商棚拍：一台打开的笔记本电脑，浅灰背景，柔光，屏幕内容糊掉，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "网页前端课封面。"
+    },
+    {
+      "id": "teacher-zhou",
+      "page": "teachers",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "woman",
+        "teacher",
+        "portrait",
+        "desk"
+      ],
+      "prompt": "一位成年女性坐在夜课桌边看印样，环境人像，不要抠到纯色底，不要正对镜头微笑摆拍，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "视觉讲师人像。"
+    },
+    {
+      "id": "work-poster",
+      "page": "works",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "must",
+      "keywords": [
+        "poster",
+        "print",
+        "desk",
+        "classroom"
+      ],
+      "prompt": "夜课桌上摊开一张印好的海报，字小到读不清，没有品牌名，不要人脸特写。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "学员海报作业。"
+    },
+    {
+      "id": "course-layout",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "paper",
+        "grid",
+        "studio",
+        "print"
+      ],
+      "prompt": "电商棚拍：几张带网格的白纸叠在浅灰背景上，字读不清，柔光，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "品牌版式课封面。"
+    },
+    {
+      "id": "course-ui",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "phone",
+        "studio",
+        "screen",
+        "gray"
+      ],
+      "prompt": "电商棚拍：一只手机竖在浅灰背景上，屏幕糊掉，柔光，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "界面走查课封面。"
+    },
+    {
+      "id": "course-sql",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "spreadsheet",
+        "laptop",
+        "studio",
+        "gray"
+      ],
+      "prompt": "电商棚拍：笔记本电脑上是一张糊掉的表格，浅灰背景，柔光，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "数据表查询课封面。"
+    },
+    {
+      "id": "course-en",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "notebook",
+        "pen",
+        "studio",
+        "gray"
+      ],
+      "prompt": "电商棚拍：一本打开的笔记本和一支笔，浅灰背景，字读不清，柔光，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "商务英语课封面。"
+    },
+    {
+      "id": "course-jp",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "headphones",
+        "notebook",
+        "studio",
+        "gray"
+      ],
+      "prompt": "电商棚拍：一副耳机放在笔记本上，浅灰背景，柔光，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "日语入门课封面。"
+    },
+    {
+      "id": "course-cut",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "phone",
+        "tripod",
+        "studio",
+        "gray"
+      ],
+      "prompt": "电商棚拍：手机夹在小支架上，浅灰背景，屏幕糊掉，柔光，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "短视频剪辑课封面。"
+    },
+    {
+      "id": "course-sheet",
+      "page": "courses",
+      "block": "course-board",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "paper",
+        "table",
+        "studio",
+        "gray"
+      ],
+      "prompt": "电商棚拍：一叠报表平放在浅灰背景上，字读不清，柔光，单主体，不要文字，不要 logo。",
+      "grade": "浅暖象牙无缝背景棚拍，柔光，单主体。不要教室，不要人物，不要文字，不要 logo。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.04,
+        "saturate": 0.95
+      },
+      "desc": "表格与汇报课封面。"
+    },
+    {
+      "id": "track-design",
+      "page": "home",
+      "block": "tracks",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "print",
+        "paper",
+        "desk",
+        "lamp"
+      ],
+      "prompt": "夜课桌上的一叠印样，局部，字读不清，不要人，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "视觉设计入口。"
+    },
+    {
+      "id": "track-code",
+      "page": "home",
+      "block": "tracks",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "keyboard",
+        "laptop",
+        "desk",
+        "night"
+      ],
+      "prompt": "夜课桌上的键盘和一团屏幕光，屏幕看不清，不要机房全景，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "编程入口。"
+    },
+    {
+      "id": "track-lang",
+      "page": "home",
+      "block": "tracks",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "notebook",
+        "pen",
+        "desk",
+        "evening"
+      ],
+      "prompt": "夜课桌上两本笔记本和一支笔，字读不清，不要人，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "语言入口。"
+    },
+    {
+      "id": "track-skill",
+      "page": "home",
+      "block": "tracks",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "smartphone",
+        "tripod",
+        "desk",
+        "night"
+      ],
+      "prompt": "夜课桌上的手机支架，屏幕糊掉，不要人，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "职业技能入口。"
+    },
+    {
+      "id": "teacher-han",
+      "page": "teachers",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "man",
+        "teacher",
+        "portrait",
+        "keyboard"
+      ],
+      "prompt": "一位成年男性坐在夜课键盘前，环境人像，不要抠图，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "编程讲师人像。"
+    },
+    {
+      "id": "teacher-jing",
+      "page": "teachers",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "woman",
+        "teacher",
+        "notebook",
+        "portrait"
+      ],
+      "prompt": "一位成年女性在夜课桌边翻笔记本，环境人像，不要抠图，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "语言讲师人像。"
+    },
+    {
+      "id": "teacher-lin",
+      "page": "teachers",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "800x1000",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "woman",
+        "teacher",
+        "phone",
+        "portrait"
+      ],
+      "prompt": "一位成年女性在夜课桌边看手机屏幕，屏幕糊掉，环境人像，不要抠图，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "技能讲师人像。"
+    },
+    {
+      "id": "work-web",
+      "page": "works",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "laptop",
+        "screen",
+        "desk",
+        "night"
+      ],
+      "prompt": "夜课桌上的笔记本电脑，屏幕里是糊掉的菜单页，不要可读文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "菜单页作业。"
+    },
+    {
+      "id": "work-reel",
+      "page": "works",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "smartphone",
+        "video",
+        "desk",
+        "night"
+      ],
+      "prompt": "夜课桌上躺着一只手机，屏幕里是糊掉的店门口画面，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "门口短片作业。"
+    },
+    {
+      "id": "work-sheet",
+      "page": "works",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "spreadsheet",
+        "paper",
+        "desk",
+        "office"
+      ],
+      "prompt": "夜课桌上摊着一张印出的表格，字读不清，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "周报作业。"
+    },
+    {
+      "id": "news-oct",
+      "page": "news",
+      "block": "bulletin",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "schedule",
+        "paper",
+        "wall",
+        "classroom"
+      ],
+      "prompt": "夜课教室墙上贴着一张课表，字小到读不清，不要全景，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "十月课表动态。"
+    },
+    {
+      "id": "news-proj",
+      "page": "news",
+      "block": "bulletin",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "projector",
+        "classroom",
+        "wall",
+        "night"
+      ],
+      "prompt": "夜课教室墙上的投影光斑，画面内容看不清，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "换投影动态。"
+    },
+    {
+      "id": "news-en",
+      "page": "news",
+      "block": "bulletin",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "notebook",
+        "window",
+        "desk",
+        "daylight"
+      ],
+      "prompt": "教室桌上打开的笔记本，白天的窗光，字读不清，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "英语加课动态。"
+    },
+    {
+      "id": "studio-room",
+      "page": "about",
+      "block": "studio",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "classroom",
+        "window",
+        "desks",
+        "night"
+      ],
+      "prompt": "靠窗的夜课教室，空桌子和窗，没有人的正脸，不要招牌，不要文字，不要 logo。",
+      "grade": "夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "关于页的教室。"
+    },
+    {
+      "id": "qr-advisor",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "800x800",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "tier": "nice",
+      "keywords": [
+        "wechat",
+        "qr",
+        "placeholder"
+      ],
+      "prompt": "上线前换成真码。不要绘制可扫描的假码。浅灰方块占位即可。",
+      "grade": "浅灰方块占位，不要可扫描的假码。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1,
+        "saturate": 1
+      },
+      "desc": "顾问微信二维码，客户提供。"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<section class="section" data-section="contact" data-family="desk" id="{{anchor}}">
+  <div class="container contact-split">
+    <div class="contact-facts">
+      <div class="section-head">
+        {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
+        {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+      </div>
+      <p><a href="tel:{{phoneTel}}">{{icon:phone:16}}{{phone}}</a></p>
+      {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:16}}{{email}}</a></p>{{/if}}
+      {{#if wechat}}<p>{{icon:chat:16}}{{wechat}}</p>{{/if}}
+      <p><a href="{{amapUrl}}">{{icon:map-pin:16}}{{address}}</a></p>
+      {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
+    </div>
+    <aside class="card contact-aside">
+      <h3>Drawing desk</h3>
+      <p>PDF or STEP. Mark the datums. The reply has price, MOQ, and a date.</p>
+      {{#if formUrl}}<p class="btn-row"><a class="btn btn-primary" href="{{formUrl}}">{{formLabel}}</a></p>{{/if}}
+      {{#if wechatQrSrc}}
+      <figure class="contact-qr">
+        <img src="{{wechatQrSrc}}" alt="{{name}}{{ui.wechatQrAlt}}" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
+      </figure>
+      {{/if}}
+    </aside>
+  </div>
+</section>

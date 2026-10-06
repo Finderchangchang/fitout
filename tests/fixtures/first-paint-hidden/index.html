@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>首屏仍被藏起来</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #111820; color: #f4f7f9; font: 16px/1.5 sans-serif; }
+    header, footer { background: #1c2836; }
+    header a, footer a, [data-float] a, .btn {
+      display: inline-flex;
+      align-items: center;
+      min-width: 44px;
+      min-height: 44px;
+      color: #f4f7f9;
+      padding: 0 12px;
+    }
+    .btn { background: #1f4f82; color: #ffffff; text-decoration: none; }
+    [data-float] { position: fixed; top: 8px; right: 8px; }
+    .js [data-enter="fade"]:not(.is-in) { opacity: 0; transform: translateY(30px); }
+    .js [data-enter="fade"].is-in { animation: enter 700ms linear forwards; }
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: none; }
+    }
+    .hero, .page-banner { min-height: 70vh; padding: 4rem 1rem; }
+    h1 { margin: 0 0 1rem; }
+  </style>
+</head>
+<body>
+  <header><a href="about/index.html">关于</a></header>
+  <main>
+    <section class="hero" data-section="hero" data-enter="fade">
+      <h1>隐藏的标题</h1>
+      <a class="btn btn-primary" href="about/index.html">联系</a>
+    </section>
+  </main>
+  <footer><p>页脚文字留在这里</p></footer>
+  <div data-float><a href="about/index.html">电话</a></div>
+  <script>document.documentElement.classList.add("js");</script>
+</body>
+</html>

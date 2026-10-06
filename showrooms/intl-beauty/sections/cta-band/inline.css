@@ -1,0 +1,17 @@
+.cta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+}
+
+.cta-inline .section-head {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .cta-inline .section-head {
+    max-width: 36rem;
+  }
+}

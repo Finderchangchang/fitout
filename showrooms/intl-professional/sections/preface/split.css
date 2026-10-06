@@ -1,0 +1,57 @@
+.preface-split {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.preface-copy {
+  display: grid;
+  gap: 1.25rem;
+  align-content: center;
+}
+
+.preface-head .kicker {
+  margin-bottom: 0.5rem;
+}
+
+.preface-head .section-title {
+  margin: 0;
+}
+
+.preface-body {
+  display: grid;
+  gap: 1rem;
+}
+
+.preface-body p {
+  margin: 0;
+}
+
+.preface-split img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+@media (min-width: 1024px) {
+  .preface-split {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  /* 没有配图时：标题在左，导语和正文在右，不留右半边整片空白。 */
+  .preface-split:not(:has(img)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .preface-split:not(:has(img)) .preface-copy {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .preface-split:not(:has(img)) .preface-body {
+    max-width: 36em;
+    padding-top: 0.5rem;
+  }
+}

@@ -1,16 +1,25 @@
 .mosaic-grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem 1.25rem;
 }
 
 .mosaic-card {
   min-width: 0;
 }
 
+/* 竖幅 4:5。婚纱照以人为主，竖着裁比横着裁留得住人；一排每张一样大，不再有一张撑两行、别处留空洞。 */
 .mosaic-card img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+
+.mosaic-card .item-title {
+  margin-top: 0.75rem;
+}
+
+.mosaic-card p {
+  margin-top: 0.35rem;
 }
 
 .mosaic-card a {
@@ -25,11 +34,6 @@
 
 @media (min-width: 1024px) {
   .mosaic-grid {
-    grid-template-columns: 1.35fr 1fr 1fr;
-  }
-
-  .mosaic-card:first-child {
-    grid-column: 1;
-    grid-row: span 2;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

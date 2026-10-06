@@ -1,0 +1,758 @@
+{
+  "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+  "gradeParams": {
+    "brightness": 1.01,
+    "contrast": 1.05,
+    "saturate": 0.68,
+    "warmth": 0.12
+  },
+  "slots": [
+    {
+      "id": "hero-desk",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "书桌一角，灯和空白纸",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "desk",
+        "lamp",
+        "paper"
+      ],
+      "prompt": "书桌一角，一盏台灯和几张空白纸，侧光。不要整间书房，不要人。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "hero-stone",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "石墙和窄窗的侧光",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "stone",
+        "window",
+        "sidelight"
+      ],
+      "prompt": "石墙和一扇窄窗的侧光，没有人，不要整栋建筑。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "hero-table",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "空会议桌和两把椅子",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "table",
+        "chairs",
+        "empty"
+      ],
+      "prompt": "空会议桌和两把椅子，没有人，没有屏幕。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "band-room",
+      "page": "home",
+      "block": "photo-band",
+      "ratio": "2.4:1",
+      "px": "1440x600",
+      "desc": "书房朝西的那面墙",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "wall",
+        "shelf",
+        "sidelight"
+      ],
+      "prompt": "书房朝西的那面墙，木架和侧光，横幅构图，不要整座房子。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "still-window",
+      "page": "home",
+      "block": "still",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "窗边空椅和石墙",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "chair",
+        "window",
+        "stone"
+      ],
+      "prompt": "窗边一把空椅和石墙，没有人。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "about-shelf",
+      "page": "about",
+      "block": "preface",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "木架上的档案盒",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "shelf",
+        "archive",
+        "boxes"
+      ],
+      "prompt": "木架上的档案盒，盒脊没有可读文字，不要档案室全景。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "method-note",
+      "page": "about",
+      "block": "why",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "摊开的笔记和铅笔",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "notebook",
+        "pencil",
+        "desk"
+      ],
+      "prompt": "摊开的笔记和一支铅笔，纸上不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "banner-study",
+      "page": "contact",
+      "block": "page-banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "书房深处的一排空椅",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "chairs",
+        "study",
+        "depth"
+      ],
+      "prompt": "书房深处的一排空椅，侧光，没有人，不要整座建筑。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "must"
+    },
+    {
+      "id": "svc-organize",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "职责表和铅笔",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "duty",
+        "sheet",
+        "pencil"
+      ],
+      "prompt": "一张职责表和一支铅笔，纸面不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "svc-strategy",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "空白的年度清单",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "blank",
+        "yearly",
+        "list"
+      ],
+      "prompt": "一张空白的年度清单，纸面没有字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "svc-finance",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "摊开的报表",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "spreadsheet",
+        "desk"
+      ],
+      "prompt": "摊开的报表，数字和字都不要可读。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "svc-contract",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "合同页的一角",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "contract",
+        "page",
+        "corner"
+      ],
+      "prompt": "合同页的一角，纸面不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "svc-identity",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "物料和平面草图",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "samples",
+        "floor",
+        "plan"
+      ],
+      "prompt": "物料样品和一张平面草图，不要可读文字和标志。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "svc-handover",
+      "page": "services",
+      "block": "services",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "交接清单的一页",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "handover",
+        "list",
+        "page"
+      ],
+      "prompt": "交接清单的一页，纸面不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "case-shifts",
+      "page": "cases",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "车间职责表",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "workshop",
+        "duty",
+        "sheet"
+      ],
+      "prompt": "车间桌上的职责表，纸面不要可读文字，不要厂房全景。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "case-quotes",
+      "page": "cases",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "两页报价单",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "two",
+        "quote",
+        "pages"
+      ],
+      "prompt": "两页报价单叠在桌上，纸面不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "case-equity",
+      "page": "cases",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "股权材料封面",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "equity",
+        "folder",
+        "cover"
+      ],
+      "prompt": "股权材料封面，封面不要可读文字和标志。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "case-route",
+      "page": "cases",
+      "block": "cases",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "前台后的档案柜",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cabinet",
+        "behind",
+        "desk"
+      ],
+      "prompt": "前台后面的档案柜，不要整层办公室，不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "news-papers",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "一叠空白材料",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "blank",
+        "paper",
+        "stack"
+      ],
+      "prompt": "一叠空白材料，纸面没有字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "news-fees",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "范围写在纸上",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "scope",
+        "on",
+        "paper"
+      ],
+      "prompt": "一张纸上写着范围，字不要可读。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "news-seats",
+      "page": "news",
+      "block": "news",
+      "ratio": "3:2",
+      "px": "1200x800",
+      "desc": "翻开的章程",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "open",
+        "charter"
+      ],
+      "prompt": "翻开的章程，纸面不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "banner-about",
+      "page": "about",
+      "block": "page-banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "书架和侧光",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "bookshelf",
+        "sidelight"
+      ],
+      "prompt": "书架和侧光，不要可读书名，不要整座建筑。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "banner-services",
+      "page": "services",
+      "block": "page-banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "会议桌和空白纸",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "meeting",
+        "table",
+        "paper"
+      ],
+      "prompt": "会议桌和几张空白纸，没有人。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "banner-team",
+      "page": "team",
+      "block": "page-banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "书房里的空椅",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "empty",
+        "chair",
+        "study"
+      ],
+      "prompt": "书房里的空椅，没有人。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "banner-cases",
+      "page": "cases",
+      "block": "page-banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "摊开的项目材料",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "project",
+        "papers",
+        "desk"
+      ],
+      "prompt": "摊开的项目材料，纸面不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "banner-news",
+      "page": "news",
+      "block": "page-banner",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "desc": "桌上的笔记",
+      "source": "stock",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "notes",
+        "on",
+        "desk"
+      ],
+      "prompt": "桌上的笔记，纸面不要可读文字。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "team-zhou",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "960x1200",
+      "desc": "周衡在书架前",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "advisor",
+        "bookshelf",
+        "portrait"
+      ],
+      "prompt": "一位中年顾问站在书架前，环境人像，人带着房间，不是抠图，不看镜头，不要渐变底。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "team-chen",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "960x1200",
+      "desc": "陈屿在账册桌边",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "advisor",
+        "ledger",
+        "portrait"
+      ],
+      "prompt": "一位顾问坐在账册桌边，环境人像，人带着房间，不是抠图，不看镜头，不要渐变底。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "team-liang",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "960x1200",
+      "desc": "梁朔在会议桌侧",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "advisor",
+        "meeting",
+        "portrait"
+      ],
+      "prompt": "一位顾问站在会议桌侧，环境人像，人带着房间，不是抠图，不看镜头，不要渐变底。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    },
+    {
+      "id": "team-shen",
+      "page": "team",
+      "block": "team",
+      "ratio": "4:5",
+      "px": "960x1200",
+      "desc": "沈澄在窗边",
+      "source": "stock",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "advisor",
+        "window",
+        "portrait"
+      ],
+      "prompt": "一位顾问站在窗边，环境人像，人带着房间，不是抠图，不看镜头，不要渐变底。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "tier": "nice"
+    }
+  ]
+}

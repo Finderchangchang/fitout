@@ -1,0 +1,23 @@
+.year-rail {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.year-item {
+  min-width: 0;
+  border-top: 2px solid var(--accent);
+  padding-top: 0.85rem;
+}
+
+[data-tone="dark"] .year-item {
+  border-top-color: var(--on-media);
+}
+
+@media (min-width: 768px) {
+  .year-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

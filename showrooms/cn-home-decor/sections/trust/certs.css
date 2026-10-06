@@ -7,6 +7,10 @@
   min-width: 0;
 }
 
+.cert-card {
+  position: relative;
+}
+
 .cert-card img {
   width: 100%;
   aspect-ratio: 1 / 1;

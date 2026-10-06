@@ -1,5 +1,19 @@
+.story {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
 .story-photo {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+/* 桌面：照片在左、文字在右。以前照片整行铺开，1200 宽 800 高，文字被推到一屏以下。 */
+@media (min-width: 1024px) {
+  .story {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--gap);
+  }
 }
