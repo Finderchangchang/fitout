@@ -18,8 +18,8 @@
     }
     .btn { background: #1f4f82; color: #ffffff; text-decoration: none; }
     [data-float] { position: fixed; top: 8px; right: 8px; }
-    .js [data-enter="fade"]:not(.is-in) { opacity: 0; transform: translateY(30px); }
-    .js [data-enter="fade"].is-in { animation: enter 700ms linear forwards; }
+    [data-enter="fade"]:not(.is-in) { opacity: 0; transform: translateY(30px); }
+    [data-enter="fade"].is-in { animation: enter 700ms linear forwards; }
     @keyframes enter {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: none; }

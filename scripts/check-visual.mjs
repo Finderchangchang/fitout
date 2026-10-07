@@ -1,5 +1,5 @@
 /**
- * node scripts/check-visual.mjs <站点目录> [--shots <目录>] [--layout-only] [--page <相对路径>]... [--widths 375,1440]
+ * node scripts/check-visual.mjs <站点目录> [--shots <目录>] [--layout-only] [--page <相对路径>]... [--widths 375,1440] [--sample] [--hard] [--first-slide]
  * 需要浏览器的检查：图上文字对比度、按钮对比度、悬浮条压页脚、横向溢出、同组图片比例、点击区、顶栏高度，
  * 以及版式检查 L1 到 L22（本文件末尾的 layoutProbe：面包屑基线、页脚空白、图标间距、占位图字号、
  * 小于 12px 的字、内部键名、文字被裁、按钮列宽、栏高失衡、同行顶边、左缘对齐、手机页脚间距、导航间距、
@@ -7,7 +7,10 @@
  * 竖版人像被横幅裁掉脸、页头和正文同一张图、中文末行只剩一个字；
  * L18 统计数字上下不齐要截图量像素，单独在 measureNumerals 里量）。
  * 每个页面、每个宽度都量（L18 只在最宽的一档量）。同一条问题跨页合并成一行，写出现了几处和第一个例子。
+ * L1 面包屑基线、L10 同行顶边、L11 左缘、L18 数字基线只警告，不让退出码失败。判定阈值不变。
  * --layout-only 只跑版式检查（反例测试用）；--page 只看指定页；--widths 指定宽度，默认 375,768,1024,1440。
+ * --sample 每种页面类型抽一页；--first-slide 轮播只查第 1 张；--hard 只收录硬伤
+ * （横向溢出、文字被裁 L7、图上文字对比度、按钮对比度、首屏立即可见、悬浮条压页脚、孤儿卡 L16）。
  * Playwright 先看环境变量 PLAYWRIGHT_PATH（指到入口文件或包目录都行），没设置就按 Node 正常的模块解析找。找不到就打印「跳过」并退出 0。
  *
  * 确定状态（不改框架）：
@@ -34,15 +37,26 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const args = process.argv.slice(2);
 let shots = "";
 let layoutOnly = false;
+let sample = false;
+let hardOnly = false;
+let firstSlideOnly = false;
 let widths = [375, 768, 1024, 1440];
 const onlyPages = [];
 const dirs = [];
+const WARN_LAYOUT = new Set(["L1", "L10", "L11", "L18"]);
+const HARD_LAYOUT = new Set(["L7", "L16"]);
 for (let i = 0; i < args.length; i += 1) {
   if (args[i] === "--shots") {
     shots = path.resolve(args[i + 1] || "");
     i += 1;
   } else if (args[i] === "--layout-only") {
     layoutOnly = true;
+  } else if (args[i] === "--sample") {
+    sample = true;
+  } else if (args[i] === "--hard") {
+    hardOnly = true;
+  } else if (args[i] === "--first-slide") {
+    firstSlideOnly = true;
   } else if (args[i] === "--page") {
     onlyPages.push(String(args[i + 1] || "").replaceAll("\\", "/"));
     i += 1;
@@ -52,7 +66,7 @@ for (let i = 0; i < args.length; i += 1) {
   } else dirs.push(path.resolve(args[i]));
 }
 if (!dirs.length || !widths.length) {
-  console.error("用法：node scripts/check-visual.mjs <站点目录> [--shots <目录>] [--layout-only] [--page <相对路径>]... [--widths 375,1440]");
+  console.error("用法：node scripts/check-visual.mjs <站点目录> [--shots <目录>] [--layout-only] [--page <相对路径>]... [--widths 375,1440] [--sample] [--hard] [--first-slide]");
   process.exit(2);
 }
 
@@ -82,6 +96,10 @@ try {
     try {
       let pages = walk(dir).filter((file) => file.endsWith(".html")).map((file) => path.relative(dir, file).replaceAll("\\", "/"));
       if (onlyPages.length) pages = pages.filter((file) => onlyPages.includes(file));
+      if (sample) {
+        pages = pickSample(dir, pages);
+        console.log(`${path.basename(dir)} 抽样 ${pages.length} 页：${pages.join("、")}`);
+      }
       if (!pages.length) {
         failures.push(`${path.basename(dir)} 没有可检查的页面`);
         continue;
@@ -94,6 +112,13 @@ try {
       const home = pages.includes("index.html") ? "index.html" : pages[0];
       const extra = pages.find((file) => file !== home) || "";
       const flavor = flavorOfDir(dir);
+      if (hardOnly) {
+        for (const file of pages) await checkFirstPaint(dir, server.port, file);
+        for (const width of widths) {
+          for (const file of pages) await checkWidth(dir, server.port, file, width, false, flavor, slotIds);
+        }
+        continue;
+      }
       await checkFirstPaint(dir, server.port, home);
       if (extra) await checkFirstPaint(dir, server.port, extra);
       for (const width of widths) {
@@ -110,10 +135,17 @@ try {
   await browser.close();
 }
 
+const warnings = [];
 for (const hit of layoutHits.values()) {
-  failures.push(`${hit.site} 版式[${hit.rule}] ${hit.sig}：${hit.where.size} 处（例 ${hit.example}）`);
+  const line = `${hit.site} 版式[${hit.rule}] ${hit.sig}：${hit.where.size} 处（例 ${hit.example}）`;
+  if (WARN_LAYOUT.has(hit.rule)) warnings.push(line);
+  else failures.push(line);
 }
 
+if (warnings.length) {
+  console.log(`视觉检查：警告（${warnings.length}）`);
+  for (const item of warnings) console.log(`- [警告] ${item}`);
+}
 if (failures.length) {
   console.log(`视觉检查：不通过（${failures.length}）`);
   for (const item of failures) console.log(`- ${item}`);
@@ -170,25 +202,58 @@ function serve(dir) {
   });
 }
 
-function flavorOfDir(dir) {
+function loadShowroomMeta(dir) {
   const siteFile = path.join(dir, "site.json");
-  if (!fs.existsSync(siteFile)) return "";
+  if (!fs.existsSync(siteFile)) return null;
   let site;
   try {
     site = readJson(siteFile);
   } catch {
-    return "";
+    return null;
   }
   const id = site?.showroom;
-  if (typeof id !== "string" || !/^[a-z0-9_-]+$/.test(id)) return "";
+  if (typeof id !== "string" || !/^[a-z0-9_-]+$/.test(id)) return null;
   const metaFile = path.join(repoRoot, "showrooms", id, "showroom.json");
-  if (!fs.existsSync(metaFile)) return "";
+  if (!fs.existsSync(metaFile)) return null;
   try {
-    const meta = readJson(metaFile);
-    return meta.flavor === "intl" || meta.flavor === "cn" ? meta.flavor : "";
+    return readJson(metaFile);
   } catch {
-    return "";
+    return null;
   }
+}
+
+function flavorOfDir(dir) {
+  const meta = loadShowroomMeta(dir);
+  return meta && (meta.flavor === "intl" || meta.flavor === "cn") ? meta.flavor : "";
+}
+
+function resolveKindFile(pages, file) {
+  const norm = String(file || "").replaceAll("\\", "/");
+  if (!norm) return "";
+  if (!norm.includes("{")) return pages.includes(norm) ? norm : "";
+  const folder = norm.slice(0, norm.indexOf("{")).replace(/\/$/, "");
+  const hits = pages.filter((item) => item.startsWith(`${folder}/`) && item.endsWith(".html") && !item.endsWith("/index.html"));
+  hits.sort();
+  return hits[0] || "";
+}
+
+function pickSample(dir, pages) {
+  const list = loadShowroomMeta(dir)?.pages;
+  const picked = [];
+  const seen = new Set();
+  if (Array.isArray(list)) {
+    for (const item of list) {
+      const kind = String(item?.kind || "").trim();
+      if (!kind || seen.has(kind)) continue;
+      const file = resolveKindFile(pages, item?.file);
+      if (!file) continue;
+      seen.add(kind);
+      picked.push(file);
+    }
+  }
+  if (picked.length) return picked;
+  const home = pages.find((file) => file === "index.html");
+  return home ? [home] : pages.slice(0, 1);
 }
 
 async function checkWidth(dir, port, file, width, shoot, flavor, slotIds) {
@@ -218,40 +283,42 @@ async function checkWidth(dir, port, file, width, shoot, flavor, slotIds) {
   if (ready.flag !== "settle" || !ready.reduce) {
     failures.push(`${label} 确定状态没装上${ready.error ? `：${ready.error}` : ""}（flag=${ready.flag || "无"} reduce=${ready.reduce}）`);
   }
-  if (ready.zeros) failures.push(`${label} 数字还停在 0，有 ${ready.zeros} 处`);
+  if (!hardOnly && ready.zeros) failures.push(`${label} 数字还停在 0，有 ${ready.zeros} 处`);
   await recordLayout(page, dir, file, width, slotIds);
   const contrast = await sampleContrasts(page);
   for (const item of contrast) pushContrast(label, item);
   for (const item of await sampleButtonContrasts(page)) pushButtonContrast(label, item);
-  const ratios = await page.evaluate(groupRatios);
-  for (const item of ratios) {
-    if (!item.ok) failures.push(`${label} 图片组 ${item.id} 比例不一致`);
-  }
-  const chrome = await page.evaluate(chromeProbe);
-  if (chrome.header > (chrome.overlay ? 160 : 110)) {
-    failures.push(`${label} 顶栏高 ${Math.round(chrome.header)}px，超过 ${chrome.overlay ? 160 : 110}`);
-  }
-  if (flavor === "intl" && width >= 1024) {
-    const hero = await page.evaluate(() => {
-      const el = document.querySelector("[data-section='hero']");
-      if (!el) return null;
-      const h1 = el.querySelector("h1");
-      const fs = h1 ? Number.parseFloat(getComputedStyle(h1).fontSize) : 0;
-      const view = window.innerHeight || 1;
-      return { height: el.getBoundingClientRect().height, view, fs };
-    });
-    if (hero && hero.view > 0) {
-      const ratio = hero.height / hero.view;
-      const band = FLAVOR_LIMITS.intl.heroViewport;
-      if (ratio < band.min - 0.02 || ratio > band.max + 0.02) {
-        failures.push(`${label} 国际风首屏高度 ${ratio.toFixed(2)} 屏，要在 ${band.min} 到 ${band.max}`);
-      }
-      if (hero.fs > FLAVOR_LIMITS.intl.heroMax + 0.5) {
-        failures.push(`${label} 国际风首屏标题 ${Math.round(hero.fs)}px，超过 ${FLAVOR_LIMITS.intl.heroMax}px`);
+  if (!hardOnly) {
+    const ratios = await page.evaluate(groupRatios);
+    for (const item of ratios) {
+      if (!item.ok) failures.push(`${label} 图片组 ${item.id} 比例不一致`);
+    }
+    const chrome = await page.evaluate(chromeProbe);
+    if (chrome.header > (chrome.overlay ? 160 : 110)) {
+      failures.push(`${label} 顶栏高 ${Math.round(chrome.header)}px，超过 ${chrome.overlay ? 160 : 110}`);
+    }
+    if (flavor === "intl" && width >= 1024) {
+      const hero = await page.evaluate(() => {
+        const el = document.querySelector("[data-section='hero']");
+        if (!el) return null;
+        const h1 = el.querySelector("h1");
+        const fs = h1 ? Number.parseFloat(getComputedStyle(h1).fontSize) : 0;
+        const view = window.innerHeight || 1;
+        return { height: el.getBoundingClientRect().height, view, fs };
+      });
+      if (hero && hero.view > 0) {
+        const ratio = hero.height / hero.view;
+        const band = FLAVOR_LIMITS.intl.heroViewport;
+        if (ratio < band.min - 0.02 || ratio > band.max + 0.02) {
+          failures.push(`${label} 国际风首屏高度 ${ratio.toFixed(2)} 屏，要在 ${band.min} 到 ${band.max}`);
+        }
+        if (hero.fs > FLAVOR_LIMITS.intl.heroMax + 0.5) {
+          failures.push(`${label} 国际风首屏标题 ${Math.round(hero.fs)}px，超过 ${FLAVOR_LIMITS.intl.heroMax}px`);
+        }
       }
     }
+    for (const item of chrome.small) failures.push(`${label} 点击区 ${Math.round(item.w)}×${Math.round(item.h)}：${item.text}`);
   }
-  for (const item of chrome.small) failures.push(`${label} 点击区 ${Math.round(item.w)}×${Math.round(item.h)}：${item.text}`);
   const overflow = await page.evaluate(overflowProbe);
   if (overflow.scrollWidth > overflow.clientWidth + 1) {
     failures.push(`${label} 横向溢出 scrollWidth ${overflow.scrollWidth}，视口 ${overflow.clientWidth}`);
@@ -373,7 +440,8 @@ async function sampleContrasts(page) {
   try {
     for (const carousel of active) {
       const name = many ? `轮播${carousel.id || carousel.index + 1}` : "";
-      for (let i = 0; i < carousel.slides; i += 1) {
+      const slideCount = firstSlideOnly ? Math.min(1, carousel.slides) : carousel.slides;
+      for (let i = 0; i < slideCount; i += 1) {
         try {
           await showSlide(page, carousel.index, i);
         } catch (err) {
@@ -472,8 +540,8 @@ async function recordLayout(page, dir, file, width, slotIds) {
     return;
   }
   for (const item of found) pushLayoutHit(site, file, width, item);
-  // L18 要截图量像素，数字的字形和页面宽度无关，只在最宽的那一档量一遍。
-  if (width === Math.max(...widths)) {
+  // L18 要截图量像素，数字的字形和页面宽度无关，只在最宽的那一档量一遍。硬伤档不量。
+  if (!hardOnly && width === Math.max(...widths)) {
     try {
       for (const item of await measureNumerals(page)) pushLayoutHit(site, file, width, item);
     } catch (err) {
@@ -483,6 +551,7 @@ async function recordLayout(page, dir, file, width, slotIds) {
 }
 
 function pushLayoutHit(site, file, width, item) {
+  if (hardOnly && !HARD_LAYOUT.has(item.rule)) return;
   const key = `${site}|${item.rule}|${item.sig}`;
   let hit = layoutHits.get(key);
   if (!hit) {

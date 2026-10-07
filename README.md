@@ -62,6 +62,20 @@ node scripts/fitout.mjs --profile examples/profiles/巷口半糖.md --out out/xi
 
 打开 `out/xiangkou/site/index.html`，摘要在 `out/xiangkou/交付说明.md`。老板照片加 `--photos <目录>`，氛围图加 `--gen-images`。给 AI 助手的装法在 [skill/fitout/SKILL.md](skill/fitout/SKILL.md)。
 
+### 三档检查
+
+改完先跑快的，发版前再跑全的。Node 18+，不用装依赖。
+
+```bash
+node tests/quick.mjs
+node tests/visual.mjs --showroom cn-factory
+node tests/release.mjs
+```
+
+- `quick`：静态检查。`check.mjs`、`--lint-framework`、`--lint-showrooms`、`check-distinct.mjs`。不开浏览器。`--showroom <id>` 可重复，只拼、只 lint 点名的样板间；撞色仍两两比较全目录。
+- `visual`：只查视觉硬伤（横向溢出、文字被裁、图上文字对比度、按钮对比度、首屏立即可见、悬浮条压页脚、孤儿卡）。只看 1440 和 375，每种页面类型抽一页，轮播只查第 1 张。演示图加 `--demo-images <目录>`（某一套的图片目录，或按样板间 id 分子目录的根）。浏览器走环境变量 `PLAYWRIGHT_PATH`。
+- `release`：14 套重建、完整视觉检查、精简回归。演示图同样用 `--demo-images`。
+
 ### 分步用法
 
 只拼示例站：
