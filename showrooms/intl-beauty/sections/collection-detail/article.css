@@ -40,6 +40,15 @@
   object-fit: cover;
 }
 
+/* 竖版人像不要压成 3:2。原图 4:5，cover 居中会把头顶切掉。整张放下，不裁。横图仍走上面的 3:2。 */
+.detail-photo.is-portrait {
+  aspect-ratio: auto;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center top;
+}
+
 @media (min-width: 900px) {
   .matter-top.has-photo {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

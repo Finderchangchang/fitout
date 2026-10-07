@@ -1100,10 +1100,10 @@ function retargetBanner(queued) {
   for (const section of clashes) clearImageField(section.data, bannerId);
 }
 
-// 竖图进了横幅时打上 is-portrait，样式把裁切焦点抬到靠上，避免居中裁只剩下巴。
+// 竖图进了横幅或正文主图时打上 is-portrait。页头把裁切焦点抬到靠上；正文版式可据此不把人像裁成横条。
 function markPortraitBanners(html) {
   return html.replace(/<img\b[^>]*>/gi, (tag) => {
-    if (!/\bpage-banner-img\b/.test(tag) || /\bis-portrait\b/.test(tag)) return tag;
+    if (!(/\bpage-banner-img\b/.test(tag) || /\bdetail-photo\b/.test(tag)) || /\bis-portrait\b/.test(tag)) return tag;
     const width = Number((tag.match(/\bwidth="(\d+)"/) || [])[1]);
     const height = Number((tag.match(/\bheight="(\d+)"/) || [])[1]);
     if (!(width > 0 && height > width * 1.02)) return tag;

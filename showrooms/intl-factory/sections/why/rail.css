@@ -4,6 +4,13 @@
   gap: 1rem;
 }
 
+/* 768 宽放得下 3 列、放不下 4 列，第四步会孤零零在左边。这个宽度改两列。网格同时带 fit-rows。 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .step-row:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .step {
   background: var(--surface);
   border: 1px solid var(--border);

@@ -19,8 +19,9 @@
 }
 
 
-/* 3、6 条排三列；5 条排「2 + 3」：用 6 列网格，前两张各占 3 格、后三张各占 2 格，不留末行孤儿。 */
-@media (min-width: 1024px) {
+/* 3、6 条排三列；5 条排「2 + 3」：用 6 列网格，前两张各占 3 格、后三张各占 2 格，不留末行孤儿。
+   768 起就生效。以前只写在 1024，平板五张会剩「2 + 2 + 1」。 */
+@media (min-width: 768px) {
   .gallery-grid:has(> :nth-child(3):last-child),
   .gallery-grid:has(> :nth-child(6):last-child) {
     grid-template-columns: repeat(3, minmax(0, 1fr));

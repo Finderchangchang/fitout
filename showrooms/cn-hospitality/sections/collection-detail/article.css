@@ -10,6 +10,12 @@
   min-width: 0;
 }
 
+@media (max-width: 767px) {
+  .detail-copy > .btn-row > .btn {
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+}
+
 /* 地点、时间：图标和字隔 0.5rem，图标对齐第一行字（地址折行也不歪）。 */
 .detail-fact {
   display: flex;

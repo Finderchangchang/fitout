@@ -4,6 +4,13 @@
   gap: 1rem;
 }
 
+/* 四张证书在 768 会被 auto-fit 收成 3 + 1。这个宽度改两列。网格同时带 fit-rows。 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cert-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .cert {
   background: var(--surface);
   border: 1px solid var(--border);

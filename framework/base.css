@@ -657,6 +657,43 @@ html {
   }
 }
 
+/* 末行不剩一张。网格加上 fit-rows 即可，各套不用再各写一套断点。
+   从 768 起按张数收口（375 仍由各套自己的一列规则管）：
+   3 张、6 张 → 三列，排满；
+   5 张 → 六列跨格，前三张各占两格、后两张各占三格（3 + 2，末行铺满）。
+   4 张在 768–1023 排成两列（2 + 2）。auto-fit 在这个宽度常常收成 3 + 1，这里压回两列；
+   1024 及以上不改各套自己的四列或 auto-fit。
+   1、2、7 张及以上不动。
+   某套在更宽处要另一种列数（例如五张排五列），用同样具体的 :has 写在后面的断点里盖过这里。 */
+@media (min-width: 768px) {
+  .fit-rows:has(> :nth-child(3):last-child),
+  .fit-rows:has(> :nth-child(6):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .fit-rows:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .fit-rows:has(> :nth-child(5):last-child) > * {
+    grid-column: span 2;
+  }
+
+  .fit-rows:has(> :nth-child(5):last-child) > :nth-child(n + 4) {
+    grid-column: span 3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fit-rows:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fit-rows:has(> :nth-child(4):last-child) > * {
+    grid-column: auto;
+  }
+}
+
 @media (min-width: 1024px) {
   .grid-3 {
     grid-template-columns: 1fr 1fr 1fr;
@@ -682,6 +719,11 @@ html {
     left: auto;
     flex-direction: column;
     padding: 0.5rem;
+  }
+
+  /* 微信面板相对整条悬浮条向上打开。相对「加微信」按钮定位时，会盖住堆在它上面的「打电话」。 */
+  .float-dock > .wechat-pop {
+    position: static;
   }
 
   .js .float-dock {

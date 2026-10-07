@@ -36,6 +36,7 @@
 .bay-price {
   color: var(--accent);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 @media (min-width: 640px) {
@@ -46,12 +47,12 @@
 
 @media (min-width: 1100px) {
   .bay-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
-/* 1024 到 1099 宽五张排 2 + 2 + 1，末行孤零零一张：改成 3 + 2，末行两张各占半行。 */
-@media (min-width: 1024px) and (max-width: 1099px) {
+/* 两列宽度（640 起）五张会 2 + 2 + 1。改成 3 + 2，末行两张各占半行。1100 起上面已经是五列。 */
+@media (min-width: 640px) and (max-width: 1099px) {
   .bay-grid:has(> :nth-child(5):last-child) {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }

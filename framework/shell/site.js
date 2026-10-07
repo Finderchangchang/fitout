@@ -81,11 +81,19 @@
   });
 
   function runCount(el) {
-    var raw = el.getAttribute("data-count") || "";
-    var target = Number(String(raw).replace(/,/g, ""));
+    var raw = String(el.getAttribute("data-count") || "").replace(/,/g, "").trim();
+    var target = Number(raw);
     if (!raw || !Number.isFinite(target)) return;
     var initial = el.textContent;
     if (reduce) return;
+    // 小数按原有位数走，单位留在数字后面。不能先写成整数：0.2 mm 会变成 0，1.86 万会变成 2。
+    var dot = raw.indexOf(".");
+    var decimals = dot >= 0 ? raw.length - dot - 1 : 0;
+    var shown = decimals ? target.toFixed(decimals) : String(Math.round(target));
+    var idx = initial.indexOf(shown);
+    if (idx < 0) return;
+    var prefix = initial.slice(0, idx);
+    var suffix = initial.slice(idx + shown.length);
     var start = 0;
     var dur = 1200;
     var t0 = 0;
@@ -93,11 +101,13 @@
       if (!t0) t0 = now;
       var p = Math.min(1, (now - t0) / dur);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = String(Math.round(start + (target - start) * eased));
+      var current = start + (target - start) * eased;
+      var body = decimals ? current.toFixed(decimals) : String(Math.round(current));
+      el.textContent = prefix + body + suffix;
       if (p < 1) window.requestAnimationFrame(frame);
       else el.textContent = initial;
     }
-    el.textContent = "0";
+    el.textContent = prefix + (decimals ? start.toFixed(decimals) : "0") + suffix;
     window.requestAnimationFrame(frame);
   }
 

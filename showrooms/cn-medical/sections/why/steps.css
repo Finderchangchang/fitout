@@ -26,4 +26,17 @@
   .step-list {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* 五步不要停在两列。和框架 .fit-rows 一样：前三步各占两格，后两步各占三格，末行铺满。这一段 HTML 在框架里，类名加在这里。 */
+  .step-list:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .step-list:has(> :nth-child(5):last-child) > li {
+    grid-column: span 2;
+  }
+
+  .step-list:has(> :nth-child(5):last-child) > :nth-child(n + 4) {
+    grid-column: span 3;
+  }
 }

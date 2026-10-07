@@ -38,8 +38,9 @@
 }
 
 .catalog-grid .catalog-card img {
-  /* 框架把所有目录图压成 3:2。顾问的竖版肖像被压成横条，只剩一截外套，脸没了。按图自己的比例排：服务、案例是 3:2，顾问是 4:5。 */
-  aspect-ratio: auto;
+  /* 框架把目录图一律压成 3:2。这里按每张图自己的宽高留比例：服务、案例、笔记是 3:2，顾问是 4:5，竖图不裁成横条。
+     宽高写在属性上，图还没加载时也占好位子，滚到底时不会把页脚顶进悬浮条。 */
+  aspect-ratio: attr(width number) / attr(height number);
 }
 
 .catalog-card .item-title {
@@ -55,6 +56,10 @@
 @media (min-width: 768px) {
   .catalog-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .catalog-grid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

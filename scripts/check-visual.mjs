@@ -1654,11 +1654,11 @@ function layoutProbe(opts) {
     add("L15", `短文字折成了几行：${sel(t.p)}`, `${t.lines} 行：${t.text}`);
   }
 
-  // L16 网格末行孤儿卡：桌面宽度（≥ 1024）下一排排的等宽卡片（grid 或 flex-wrap），前面每行至少 2 张，最后一行只剩 1 张，
+  // L16 网格末行孤儿卡：375 / 768 / 1024 / 1440 都查。一排排的等宽卡片（grid 或 flex-wrap），前面每行至少 2 张，最后一行只剩 1 张，
   // 而且这张和上一行的卡片一样宽、贴着第一列。5 张排 3 + 2 不算（末行 2 张），3 + 1、4 + 1、3 + 3 + 1 才算。
   // 「卡片」指带框、带底色、带阴影或带图的块；只有一条分隔线的文字行（步骤、要点列表）、小标签、按钮、导航项不算。
-  // 平板（768）下两列排奇数张本来就会 2 + 1，是响应式的常态，不在这条里。
-  for (const e of W >= 1024 ? main.querySelectorAll("*") : []) {
+  // 末张横贯整行时宽度和上一行不同，不报。
+  for (const e of main.querySelectorAll("*")) {
     const s = cs(e);
     const grid = s.display.includes("grid");
     const wrap = s.display.includes("flex") && s.flexWrap.startsWith("wrap") && !s.flexDirection.startsWith("column");

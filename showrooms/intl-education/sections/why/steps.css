@@ -41,3 +41,10 @@
     gap: 2rem;
   }
 }
+
+/* 四步在 768 放得下 3 列、放不下 4 列，第四步掉到左边，窄栏还会把「下一期」拆开。这个宽度改 2 + 2。 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .step-list:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

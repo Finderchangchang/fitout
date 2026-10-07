@@ -35,6 +35,17 @@
   .board-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* 五张在两列里是 2 + 2 + 1。末张横贯，右侧不再空一列，价格「元起」也落在同一行。1024 起改走下面的六列跨格。 */
+  .board-grid:has(> :nth-child(5):last-child) > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .board-grid:has(> :nth-child(5):last-child) > :last-child {
+    grid-column: span 3;
+  }
 }
 
 /* 桌面六列：每张占两列，一行三张；最后一行只剩两张时各占三列，铺满整行。

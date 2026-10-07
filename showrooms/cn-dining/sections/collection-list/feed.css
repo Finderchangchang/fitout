@@ -32,8 +32,8 @@
 }
 
 
-/* 3 条、6 条排三列，整行排满；其余（2、4 条）排两列。 */
-@media (min-width: 1024px) {
+/* 3 条、6 条从 768 起就排三列。以前只写在 1024，平板两列会把第三条剩在左边。 */
+@media (min-width: 768px) {
   .feed-grid:has(> :nth-child(3):last-child),
   .feed-grid:has(> :nth-child(6):last-child) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
