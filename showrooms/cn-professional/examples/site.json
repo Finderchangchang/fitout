@@ -553,8 +553,8 @@
       "id": "cases",
       "title": "典型案例｜青砖律师事务所（虚构）",
       "description": "去年146件。股权回购、劳动仲裁、租赁解除和税务稽查四件已结案件。",
-      "banner": "banner-archive",
-      "bannerAlt": "档案室的木架",
+      "banner": "band-yard",
+      "bannerAlt": "青砖院门口的石阶",
       "bannerTitle": "典型案例",
       "crumbs": [
         {
@@ -580,8 +580,8 @@
       "id": "news",
       "title": "法律知识｜青砖律师事务所（虚构）",
       "description": "年报、章程、解除通知和押金，四篇给客户看的说明。",
-      "banner": "banner-desk",
-      "bannerAlt": "阅卷桌和台灯",
+      "banner": "hero-desk",
+      "bannerAlt": "阅卷桌上的书和钢笔",
       "bannerTitle": "法律知识",
       "crumbs": [
         {
@@ -607,8 +607,8 @@
       "id": "contact",
       "title": "联系我们｜青砖律师事务所（虚构）",
       "description": "清吟街 27 号。咨询电话 0571-8688-2146。周六只到中午。",
-      "banner": "banner-yard",
-      "bannerAlt": "青砖院门口",
+      "banner": "hero-room",
+      "bannerAlt": "会客室的长桌",
       "bannerTitle": "联系我们",
       "crumbs": [
         {

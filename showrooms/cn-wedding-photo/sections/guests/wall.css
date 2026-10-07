@@ -34,7 +34,7 @@
 /* 桌面：照片在左（10.5rem），名字和原话在右，名字顶边对齐照片顶边，原话紧跟在名字下面。
    以前三个子元素按顺序占格：名字挤在照片旁，原话掉到第一列只有 168px 宽，三张卡的原话起点还高低不一。
    现在照片跨两行，第二行吃掉多出来的高度，原话从名字下面开始，三张卡一致。 */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .voice-card {
     display: grid;
     grid-template-columns: 10.5rem minmax(0, 1fr);

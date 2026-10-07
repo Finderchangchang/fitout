@@ -1,7 +1,7 @@
 .dossier {
   display: grid;
   gap: var(--gap);
-  align-items: center;
+  align-items: start;
 }
 
 /* 顶上一条印章朱横线，标题、导语、正文的左缘都是容器左缘；
@@ -39,7 +39,7 @@
 /* 没有配图时：三条要点横排，整行铺满，不再只占左边一条窄栏。 */
 @media (min-width: 768px) {
   .dossier:not(:has(.dossier-photo)) .dossier-points {
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
     gap: 1.5rem 2.5rem;
   }
 }

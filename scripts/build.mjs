@@ -235,12 +235,18 @@ function writeCollection(page) {
     if (seen.has(slug)) fail(`slug 重复：${slug}`);
     seen.add(slug);
     const file = page.file.replaceAll("{slug}", slug);
+    const bodyImage = item.image || "";
+    const headerImage = pickDetailBanner(bodyImage, id);
+    // 页头和正文不许用同一张。只有一张横图时页头留着、正文拿掉；只有一张竖图时竖图留在正文，页头不放图。
+    const articleImage = headerImage && bodyImage === headerImage ? "" : bodyImage;
+    const listPage = pagesById.get(id);
     const section = {
       type: rule.type,
       variant,
       anchor: "detail",
       data: {
         ...item,
+        image: articleImage,
         imageAlt: item.imageAlt || item.name || "",
         primaryLabel: defaultPrimaryClosed() ? copy.phoneConsult : buttonLabel("primary"),
         primaryHref: contactHref(),
@@ -256,8 +262,10 @@ function writeCollection(page) {
       order: page.order,
       banner: {
         title: item.name,
-        image: item.image || defaultBannerImage(),
-        imageAlt: item.imageAlt || item.name || "",
+        image: headerImage,
+        imageAlt: headerImage && headerImage !== bodyImage
+          ? (listPage?.bannerAlt || listPage?.bannerTitle || item.name || "")
+          : (item.imageAlt || item.name || ""),
         crumbs: [
           { label: collectionLabel(id), href: listFileOf(id) },
           { label: item.name, href: "" },
@@ -286,6 +294,7 @@ function writePage({ file, title, description, sections, order, banner }) {
     const kept = adaptSection(section, order);
     if (kept) queued.push(kept);
   }
+  if (showroom && file !== "index.html") retargetBanner(queued);
   const globals = makeGlobals(file);
   let main = "";
   let first = true;
@@ -354,6 +363,7 @@ function writePage({ file, title, description, sections, order, banner }) {
   }
   if (tiered && !demoMode) html = html.replace(/<img\b[^>]*\bsrc=""[^>]*>/gi, "");
   html = markPlaceholders(html);
+  html = markPortraitBanners(html);
   const dest = path.join(outDir, ...file.split("/"));
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, "utf8");
@@ -978,6 +988,127 @@ function detailHref(id, slug) {
 
 function defaultBannerImage() {
   return imageSlots.has("banner") ? "banner" : "";
+}
+
+function slotRatio(id) {
+  const slot = imageSlots.get(id);
+  const matched = String(slot?.ratio || "").match(/^(\d+(?:\.\d+)?)\s*:\s*(\d+(?:\.\d+)?)$/);
+  if (!matched) return null;
+  return { w: Number(matched[1]), h: Number(matched[2]) };
+}
+
+function isPortraitSlot(id) {
+  const ratio = slotRatio(id);
+  return Boolean(ratio && ratio.w > 0 && ratio.h > ratio.w * 1.02);
+}
+
+function isSquareSlot(id) {
+  const ratio = slotRatio(id);
+  if (!ratio || !(ratio.w > 0)) return false;
+  return Math.abs(ratio.h - ratio.w) / ratio.w <= 0.02;
+}
+
+// 详情页页头：先用列表页指定的横幅，再用名为 banner 的图位，再用 block 是 page-banner / banner 的横图。
+// 跳过和正文同一张、以及竖图、方图。一张横图都没有时：正文是横图就用它（调用方清掉正文），正文是竖图就返回空。
+function pickDetailBanner(bodyImage, collectionId) {
+  const list = pagesById.get(collectionId);
+  const candidates = [];
+  if (list?.banner) candidates.push(list.banner);
+  const fallback = defaultBannerImage();
+  if (fallback) candidates.push(fallback);
+  for (const slot of imageSlots.values()) {
+    if (slot?.block === "page-banner" || slot?.block === "banner") candidates.push(slot.id);
+  }
+  const seen = new Set();
+  for (const id of candidates) {
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
+    if (id === bodyImage) continue;
+    if (isPortraitSlot(id) || isSquareSlot(id)) continue;
+    return id;
+  }
+  if (bodyImage && !isPortraitSlot(bodyImage)) return bodyImage;
+  return "";
+}
+
+function imageFields(data) {
+  const ids = [];
+  const walk = (node) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      node.forEach(walk);
+      return;
+    }
+    for (const [key, value] of Object.entries(node)) {
+      if ((key === "image" || key === "wechatQr") && typeof value === "string" && value) ids.push(value);
+      else if (value && typeof value === "object") walk(value);
+    }
+  };
+  walk(data);
+  return ids;
+}
+
+function alternateBanner(used) {
+  const ranked = [];
+  for (const slot of imageSlots.values()) {
+    const id = slot?.id;
+    if (!id || used.has(id)) continue;
+    if (isPortraitSlot(id) || isSquareSlot(id)) continue;
+    if (/^qr(-|$)/i.test(id)) continue;
+    const block = String(slot.block || "");
+    let score = 1;
+    if (block === "page-banner" || block === "banner" || id === "banner" || id.startsWith("banner-")) score = 4;
+    else if (block === "hero" || id.startsWith("hero-")) score = 3;
+    else if (block === "photo-band") score = 2;
+    ranked.push({ id, score });
+  }
+  ranked.sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
+  return ranked[0]?.id || "";
+}
+
+function clearImageField(node, slotId) {
+  if (!node || typeof node !== "object") return;
+  if (Array.isArray(node)) {
+    node.forEach((item) => clearImageField(item, slotId));
+    return;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    if ((key === "image" || key === "wechatQr") && value === slotId) node[key] = "";
+    else if (value && typeof value === "object") clearImageField(value, slotId);
+  }
+}
+
+// 内页页头和本页主图（不含列表缩略图）撞车时，换成另一张横图。没有第二张就清掉正文里那张。
+function retargetBanner(queued) {
+  const banner = queued.find((section) => section.type === "page-banner");
+  const bannerId = banner?.data?.image || "";
+  if (!bannerId) return;
+  const used = new Set([bannerId]);
+  const clashes = [];
+  for (const section of queued) {
+    if (section.type === "page-banner" || section.type === "collection-list" || section.type === "product-list") continue;
+    const ids = imageFields(section.data);
+    for (const id of ids) used.add(id);
+    if (ids.includes(bannerId)) clashes.push(section);
+  }
+  if (!clashes.length) return;
+  const alt = alternateBanner(used);
+  if (alt) {
+    banner.data = { ...banner.data, image: alt };
+    return;
+  }
+  for (const section of clashes) clearImageField(section.data, bannerId);
+}
+
+// 竖图进了横幅时打上 is-portrait，样式把裁切焦点抬到靠上，避免居中裁只剩下巴。
+function markPortraitBanners(html) {
+  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+    if (!/\bpage-banner-img\b/.test(tag) || /\bis-portrait\b/.test(tag)) return tag;
+    const width = Number((tag.match(/\bwidth="(\d+)"/) || [])[1]);
+    const height = Number((tag.match(/\bheight="(\d+)"/) || [])[1]);
+    if (!(width > 0 && height > width * 1.02)) return tag;
+    return tag.replace(/\bclass="([^"]*)"/, (full, cls) => `class="${cls} is-portrait"`);
+  });
 }
 
 function bannerFromTitle(title) {

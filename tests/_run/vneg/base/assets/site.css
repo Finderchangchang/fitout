@@ -1,0 +1,1435 @@
+:root {
+  --bg: #f3f5f4;
+  --surface: #fbfcfb;
+  --text: #1c211e;
+  --text-muted: #3e4642;
+  --border: #d5dad6;
+  --primary: #1f4d3a;
+  --primary-contrast: #f3f6f4;
+  --accent: #6b4518;
+  --on-media: #f3f6f4;
+  --scrim: linear-gradient(180deg, rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.8));
+  --font-heading: "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-body: "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --fs-1: 17px;
+  --fs-2: 21.3px;
+  --fs-3: 26.6px;
+  --fs-4: 33.2px;
+  --fs-5: 41.5px;
+  --fs-6: 51.9px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --shadow-card: none;
+  --section-y: clamp(3rem, 2.4rem + 3vw, 5rem);
+  --gap: 1.5rem;
+  --container: 1184px;
+  --dur: 200ms;
+  --dur-enter: 700ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* 框架底样式。颜色、圆角、阴影、字号阶梯、疏密、动效时长全部走变量，数值只在风格 tokens 里。 */
+
+/* 数字一律用「等高数字」（lining）。Georgia、Palatino 这类衬线体默认是老式数字，
+   3、4、5、7、9 会沉到基线下面，一排统计数字、年份、价格上下不齐。需要等宽的地方写 lining-nums tabular-nums，
+   别只写 tabular-nums：font-variant-numeric 整个值一起继承，只写 tabular-nums 会把这里的 lining-nums 盖掉。 */
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-size: 100%;
+  font-variant-numeric: lining-nums;
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  position: relative;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-1);
+  line-height: 1.75;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+/* 标题和短段落：balance。Chromium 的 pretty 对中文不避末行孤字，balance 在大约 6 行以内会把行长拉匀。
+   更长的正文 pretty / balance 都管不到末行，拼装时在末尾几个字之间加了词连接符。 */
+p,
+li,
+dd,
+figcaption,
+.section-lead,
+.footer-summary {
+  text-wrap: balance;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: var(--primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  opacity: 0.92;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+/* dd 浏览器默认有 40px 左外边距，数字条里的 dd 会比下面的标签靠右一截。 */
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.nums {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.skip {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  transform: translateY(-200%);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  z-index: 30;
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+@media (min-width: 375px) {
+  .container {
+    width: min(100% - 2rem, var(--container));
+  }
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section-head {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: var(--gap);
+  max-width: 36em;
+}
+
+.section-title {
+  font-size: var(--fs-4);
+}
+
+.section-lead,
+.prose {
+  max-width: 36em;
+  color: var(--text-muted);
+}
+
+.hero .section-title {
+  font-size: var(--fs-hero, var(--fs-6));
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 767px) {
+  .hero .section-title {
+    font-size: clamp(1.8125rem, 7vw, 3.125rem);
+  }
+
+  /* 国际风桌面首屏标题是 88 到 92px，手机上只有 29px 落差太大。手机下限抬到 2.25rem（375 宽约 40px）。
+     :where() 不加权重：样板间自己写了首屏标题字号的，照它的来。 */
+  :where(html[data-flavor="intl"]) .hero .section-title {
+    font-size: clamp(2.25rem, 10.6vw, 3rem);
+  }
+
+  .section {
+    padding-block: clamp(3rem, 6vw, 4.5rem);
+  }
+}
+
+/* 相邻两块同色（浅 + 浅、深 + 深）的板块：上一块的下留白加下一块的上留白，间隔是单块的两倍（240px 以上）。
+   后一块的上留白收到三成。手机本来就是 3 到 4.5rem，不用收。 */
+@media (min-width: 768px) {
+  .section[data-tone="light"] + .section[data-tone="light"],
+  .section[data-tone="dark"] + .section[data-tone="dark"] {
+    padding-top: calc(var(--section-y) * 0.3);
+  }
+}
+
+/* 不默认隐藏。脚本只给顶边在视口以下的板块加 is-pending，滚进视口后再加 is-in。 */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-enter="fade"].is-pending:not(.is-in) {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .js [data-enter="fade"].is-in {
+    animation: enter var(--dur-enter) var(--ease) forwards;
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.meta {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* 图下面的说明条（photo-band）：上下各留 0.75rem，字不贴着图的底边、也不顶着深色条的上沿（以前条只有 23px 高）。
+   写在这里不写在 photo-band/wide.css 里：样板间有自己的 wide.css 就整份替换框架那份，这条要一直在。 */
+.photo-band .meta {
+  padding-block: 0.75rem;
+}
+
+.btn-row,
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  opacity: 0.92;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 1.25rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.price {
+  color: var(--accent);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  display: inline-block;
+  vertical-align: -0.2em;
+}
+
+.icon-16 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-20 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon-24 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.grid-2,
+.grid-3,
+.split {
+  display: grid;
+  gap: var(--gap);
+}
+
+.stack {
+  display: grid;
+  gap: var(--gap);
+}
+
+.stack > * + * {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+details {
+  border-top: 1px solid var(--border);
+}
+
+summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary .chev {
+  transition: transform var(--dur) var(--ease);
+}
+
+details[open] summary .chev {
+  transform: rotate(180deg);
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.site-header .bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 4rem;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-2);
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid-2 > *,
+.grid-3 > *,
+.split > * {
+  min-width: 0;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.25rem;
+  align-items: center;
+}
+
+/* 导航项靠 padding 撑出点击区：两个字加两边 0.375rem 已经是 44px，所有项之间文字间距都是 0.75rem + 0.25rem。
+   以前用 min-width 撑，字靠左，两字项（首页、餐饮）后面的间距比四字项大一截。
+   min-width 留着兜底：字更小、更少的项仍有 44px，字居中，多出来的宽度左右均分。 */
+.nav-list a {
+  color: var(--text);
+  text-decoration: none;
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.mobile-panel {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.5rem 1rem 1rem;
+}
+
+.mobile-panel a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding-block: var(--section-y);
+}
+
+.site-footer a,
+.site-footer button,
+.site-footer .footer-name {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 页脚联系行：每行 44px 一个节奏，图标和字隔 0.5rem，图标对齐第一行字。
+   链接行是 flex；纯文字行（营业时间）保持行内排版，用悬挂缩进，折行时第二行也对齐文字。 */
+.site-footer a:has(> .icon) {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-block: 0.5rem;
+  text-wrap: balance;
+}
+
+.site-footer a > .icon-16 {
+  margin-top: 0.375rem;
+  margin-top: calc((1lh - 1rem) / 2);
+}
+
+.site-footer p:has(> .icon-16) {
+  padding-block: 0.5rem;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+}
+
+.site-footer p > .icon-16 {
+  margin-right: 0.5rem;
+}
+
+/* 品牌名是 44px 高的行内弹性盒，行高沿用 body 的 1.75，名字折成两行时行距 50px。收到 1.25。 */
+.footer-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-3);
+  line-height: 1.25;
+}
+
+.footer-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.footer-summary {
+  max-width: 24rem;
+}
+
+/* 手机：各栏之间一个 --gap，导航两列排，不拉成一长条。 */
+.footer-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--gap);
+  }
+}
+
+/* 版权行：版权字是普通文字，备案号是 44px 高的链接，两边的字不在一条线上（差 0.5 到 3.7px）。
+   各项垂直居中，每一项都撑到 44px，字落在同一条线上。 */
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin-top: var(--gap);
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer-legal p {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* 联系列的行：电话、邮箱、微信号、地址、营业时间、复制按钮，每行一个节奏（44px），竖直居中，行与行之间 0.25rem。
+   用法：联系列包一层 .footer-contact，每行一个 <p>，p 里放一个链接或一段字（flex 行，别在 p 里把字和 span 混排）。
+   复制按钮那一行加 .footer-copy，和上面隔开一点。 */
+.footer-contact {
+  display: grid;
+  gap: 0.25rem;
+  justify-items: start;
+}
+
+.footer-contact > p {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.footer-contact > .footer-copy {
+  margin-top: 0.25rem;
+}
+
+.float-dock {
+  position: fixed;
+  z-index: 20;
+  display: flex;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+}
+
+/* 手机悬浮条里三个按钮等分一行，不许把「WeChat」「Directions」折成两行。 */
+.float-dock a,
+.float-dock button,
+.float-dock summary {
+  min-height: 44px;
+  min-width: 44px;
+  white-space: nowrap;
+}
+
+/* 弹层里的二维码占位：显示 7rem。占位图撑满弹层（198px）太重。真二维码不受这条影响，仍按各版式自己的宽度。 */
+.wechat-panel img[data-ph] {
+  width: 7rem;
+  height: auto;
+}
+
+@media (max-width: 1023px) {
+  .float-dock > * {
+    min-width: 0;
+    flex: 1 1 0;
+  }
+}
+
+.band {
+  background: var(--surface);
+}
+
+/* 悬浮条高度：按钮 44px + 上下 0.25rem + 边框 2px + 底部安全区。
+   脚本会用实测值盖掉它（site.js 的 --dock-h）。窄屏时贴底的悬浮条占多高，页脚就多垫多高，
+   垫在页脚里面，底色连着，页面底部不再露出一条浅色。 */
+html {
+  --dock-h: calc(44px + 0.5rem + 2px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 1023px) {
+  .float-dock {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: space-around;
+    padding: 0.25rem 0.5rem calc(0.25rem + env(safe-area-inset-bottom));
+  }
+
+  body:has(.float-dock) .site-footer {
+    padding-bottom: calc(var(--section-y) + var(--dock-h));
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+}
+
+/* 手机页脚上下留白：沿用 --section-y 在 375 宽有 120 到 140px，太厚。收到 3rem（和手机板块的下限一样），
+   贴底悬浮条的高度仍然垫在页脚里面。 */
+@media (max-width: 767px) {
+  .site-footer {
+    padding-block: 3rem;
+  }
+
+  body:has(.float-dock) .site-footer {
+    padding-bottom: calc(3rem + var(--dock-h));
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+
+  .menu-button,
+  .mobile-panel {
+    display: none !important;
+  }
+
+  .desktop-nav {
+    display: block;
+  }
+
+  .float-dock {
+    right: 1rem;
+    bottom: 1rem;
+    left: auto;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .js .float-dock {
+    transition: opacity var(--dur) var(--ease);
+  }
+
+  .js .float-dock:not(.is-dock) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+  .js .float-dock,
+  .js .float-dock:not(.is-dock) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* 桌面悬浮条在右下角。页脚进到它头顶时脚本给它加 is-over-foot，让开，不压页脚的字。
+   页脚里本来就有电话、微信、地址，这时候不缺这个入口。页脚底部因此不用再垫一块空白。 */
+@media (min-width: 1024px) {
+  .js .float-dock.is-over-foot {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+[data-fold-mark] {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: min(100% - 3rem, var(--container));
+  }
+}
+
+[data-tone="dark"] {
+  background: var(--text);
+  color: var(--on-media, var(--primary-contrast));
+}
+
+[data-tone="light"] {
+  background: var(--bg);
+  color: var(--text);
+}
+
+[data-tone="image"] {
+  background: var(--text);
+  color: var(--on-media, var(--primary-contrast));
+}
+
+[data-tone="dark"] .section-lead,
+[data-tone="dark"] .meta,
+[data-tone="image"] .section-lead,
+[data-tone="image"] .meta {
+  color: var(--on-media, var(--primary-contrast));
+}
+
+[data-tone="dark"] .card,
+[data-tone="image"] .card {
+  color: var(--text);
+}
+
+[data-tone="dark"] .card .meta,
+[data-tone="image"] .card .meta {
+  color: var(--text-muted);
+}
+
+[data-tone="dark"] .btn,
+[data-tone="image"] .btn {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+[data-tone="dark"] .btn-primary,
+[data-tone="image"] .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+/* 页脚链色会盖过 .btn 的字色。复制按钮仍用实底，避免字和底贴在一起。 */
+.site-footer .btn {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.site-footer .btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+/* 首屏图全缺：主色作深底，加一层细斜线，不用图片。 */
+.hero[data-hero-bare] {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  overflow: hidden;
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.hero[data-hero-bare]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    -32deg,
+    transparent 0 18px,
+    color-mix(in srgb, var(--primary-contrast) 20%, transparent) 18px 19px
+  );
+}
+
+.hero[data-hero-bare]::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: clamp(0.75rem, 2.2vw, 1.75rem);
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--primary-contrast) 36%, transparent);
+}
+
+.hero[data-hero-bare] > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero[data-hero-bare] .section-title,
+.hero[data-hero-bare] .section-lead,
+.hero[data-hero-bare] .meta {
+  color: var(--primary-contrast);
+}
+
+.hero[data-hero-bare] .btn {
+  background: transparent;
+  color: var(--primary-contrast);
+  border-color: color-mix(in srgb, var(--primary-contrast) 78%, transparent);
+}
+
+.hero[data-hero-bare] .btn-primary {
+  background: var(--primary-contrast);
+  color: var(--primary);
+  border-color: var(--primary-contrast);
+}
+
+[data-media-group="card"] img,
+.gallery-grid img,
+.catalog-card img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  width: 100%;
+}
+
+[data-media-group="portrait"] img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+}
+
+[data-media-group="hero"] img,
+.hero-photo {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+  max-height: 70vh;
+}
+
+html[data-flavor="intl"] {
+  --hero-min: 85svh;
+}
+
+.hero-full {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: var(--hero-min, calc(100svh - 4.5rem));
+  padding-block: 0;
+  overflow: hidden;
+  background: var(--text);
+}
+
+.hero-full .hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-full .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  max-height: none;
+  aspect-ratio: auto;
+}
+
+.hero-full .hero-slide.is-current {
+  opacity: 1;
+}
+
+.hero-scrim,
+.page-banner-scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+  pointer-events: none;
+}
+
+.hero-full .hero-copy,
+.page-banner-copy {
+  position: relative;
+  z-index: 1;
+  color: var(--on-media, var(--primary-contrast));
+  padding-block: clamp(3rem, 8vh, 6rem);
+}
+
+/* 首屏文案栈：标签 → 大标题 → 导语 → 按钮，间距走同一档阶梯（板块标题到导语也是 0.75rem）。
+   以前这几项 margin 全是 0，72px 的标题和导语只隔几像素。 */
+.hero-in,
+.hero-full .hero-copy {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.hero-in .btn-row,
+.hero-full .hero-copy .btn-row {
+  margin-top: 0.5rem;
+}
+
+/* 满屏首屏的文案贴底排。栈里加了 3 个 0.75rem 和 0.5rem（共 2.75rem），底部留白相应减掉，
+   整块文案的顶边不往上挪：压在图上的字落在原来的位置，对比度不会因为间距变化而掉。 */
+.hero-full .hero-copy {
+  padding-bottom: max(1rem, calc(clamp(3rem, 8vh, 6rem) - 2.75rem));
+}
+
+.hero-ui {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0 0 1.5rem;
+}
+
+.hero-ui .container,
+.hero-full .hero-copy.container {
+  width: min(100% - 2rem, var(--container));
+}
+
+.carousel-btn,
+.hero-dots button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--on-media, var(--primary-contrast));
+  background: transparent;
+  color: var(--on-media, var(--primary-contrast));
+  border-radius: var(--radius-md);
+}
+
+.hero-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero-dots button[aria-current="true"] {
+  background: var(--on-media, var(--primary-contrast));
+  color: var(--text);
+}
+
+.page-banner {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: clamp(25rem, 42vh, 36.25rem);
+  overflow: hidden;
+  background: var(--text);
+  color: var(--on-media, var(--primary-contrast));
+}
+
+.page-banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 竖版人像塞进横幅时默认居中裁，只剩躯干或下巴。拼装给这类图加上 is-portrait，焦点靠上，脸留在画面里。 */
+.page-banner-img.is-portrait {
+  object-position: center 15%;
+}
+
+/* 面包屑：链接撑到 44px 高，「/」和当前页也跟着居中，三项的字落在同一条线上。
+   链接横向加 padding、再用等量负外边距抵回去：点击区到 44px 宽，可见文字和间距不动。 */
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.crumbs > * {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.crumbs a {
+  color: var(--on-media, var(--primary-contrast));
+  min-width: 44px;
+  justify-content: center;
+  padding-inline: 0.5rem;
+  margin-inline: -0.5rem;
+}
+
+/* 联系区约定（样板间的联系版式都套这两条，不再各写各的）
+   1. 单独成行的按钮同一宽度：电话、导航、复制微信号上下排成一列，不再 172 / 126 / 114 各一个宽。
+   2. 二维码组（.code-pair / .qr-grid）直接放在联系区网格里当右栏时，撑满右栏：
+      方块等宽（最宽 16rem），顶对齐，右栏高度跟上左栏，不留一大块空白。 */
+[data-section="contact"] p > .btn:only-child {
+  display: flex;
+  width: min(100%, 15rem);
+}
+
+[data-section="contact"] > .container > :is(.code-pair, .qr-grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 1rem;
+  align-content: start;
+  align-items: start;
+}
+
+/* 窄于 1280：右栏只有 400 多像素，二维码要么挤小、要么竖排拉得比左栏还高。
+   改成单栏：文字在上，二维码整行在下面，方块定宽、靠左并排。 */
+@media (max-width: 1279px) {
+  [data-section="contact"] > .container:has(> :is(.code-pair, .qr-grid)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  [data-section="contact"] > .container > :is(.code-pair, .qr-grid) {
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 16rem));
+  }
+}
+
+[data-section="contact"] > .container > :is(.code-pair, .qr-grid) figure {
+  width: auto;
+  max-width: 16rem;
+  margin: 0;
+}
+
+[data-section="contact"] > .container > :is(.code-pair, .qr-grid) img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.demo-badge {
+  position: fixed;
+  z-index: 25;
+  top: 4.75rem;
+  left: 0.75rem;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1023px) {
+  .demo-badge {
+    top: 8rem;
+  }
+}
+
+.stat-value {
+  font-size: var(--fs-4);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+.contact-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.contact-main {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  align-content: start;
+  min-width: 0;
+}
+
+.group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.contact-card {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.contact-rows {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contact-rows li,
+.contact-rows a {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding-block: 0.5rem;
+}
+
+.contact-rows li > a {
+  min-height: 0;
+  padding-block: 0;
+}
+
+.contact-rows .icon {
+  margin-top: 0.25rem;
+}
+
+/* 一排按钮等宽，放在左栏营业时间下面。 */
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 36rem);
+  margin-top: 0.5rem;
+}
+
+/* 二维码：整行居中，和上面两栏之间一条分隔线。不挤进右栏，右栏不会比左栏高出一大截。 */
+.contact-qrs {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: var(--gap);
+  border-top: 1px solid var(--border);
+}
+
+.contact-qrs figure {
+  width: 10rem;
+}
+
+.contact-qrs img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.contact-qrs figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contact-banner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cta-inline {
+  display: grid;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .cta-inline {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .cta-inline .section-head {
+    margin-bottom: 0;
+  }
+}
+
+.faq-columns {
+  display: grid;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .faq-columns {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.float-dock {
+  max-width: 100%;
+}
+
+.wechat-pop {
+  position: relative;
+}
+
+.wechat-panel {
+  position: absolute;
+  z-index: 21;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  display: grid;
+  gap: 0.5rem;
+  width: 14rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.float-dock .btn,
+.float-dock summary {
+  padding-inline: 0.5rem;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .bar-center {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .bar-center .brand {
+    justify-self: center;
+  }
+
+  .bar-center .header-tools {
+    justify-self: end;
+  }
+}
+
+.hero .btn-row {
+  margin-top: 0.5rem;
+}
+
+.product-photo {
+  width: min(100%, 36rem);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--gap);
+}
+
+.specs {
+  margin-bottom: var(--gap);
+}
+
+.specs th {
+  width: 30%;
+  font-weight: 600;
+}
+
+.catalog-card {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+.catalog-card img {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+.menu-row {
+  display: grid;
+  gap: 0.25rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+@media (min-width: 768px) {
+  .menu-row {
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+  }
+}
+
+.person-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+/* 图标和姓名第一行的中心对齐：姓名行高 1.3 倍字号，图标 1.25rem。 */
+.person-row > .icon {
+  margin-top: calc((var(--fs-3) * 1.3 - 1.25rem) / 2);
+}
+
+.stat-value {
+  font-size: var(--fs-4);
+  color: var(--primary);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.stat-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.stat-grid .card {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.point-card {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+.step-list {
+  display: grid;
+  gap: var(--gap);
+}
+
+.step-no {
+  font-size: var(--fs-3);
+  color: var(--primary);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.item-title {
+  font-size: var(--fs-3);
+}
+
+/* 桌面（1024 起）左边标题和说明、右边步骤，铺满容器，不再只挤在左边四分之一、右边整片空。 */
+@media (min-width: 1024px) {
+  [data-section="why"] > .container:has(> .step-list) {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--gap);
+    align-items: start;
+  }
+
+  [data-section="why"] > .container:has(> .step-list) > .section-head {
+    margin-bottom: 0;
+  }
+}

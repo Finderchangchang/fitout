@@ -5,7 +5,9 @@
 
 /* 步骤序号：深色板块里用正文浅色，不用主色。主色（梅紫）压在深底上对比度只有 2.8:1。 */
 .step-no {
+  font-family: var(--font-heading);
   font-size: var(--fs-3);
+  font-weight: 600;
   color: var(--primary);
   font-variant-numeric: tabular-nums;
 }

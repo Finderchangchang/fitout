@@ -158,8 +158,62 @@ function stringify(value, path) {
   throw new Error(`模板错误：${path} 不是可输出的文本`);
 }
 
+// 中文末行孤字：Chromium 的 text-wrap:pretty 对汉字基本不换行调整。
+// 6 个汉字以内的标签、按钮、导航靠 CSS 的 balance。再短的句子如果粘住，窄格子里会被迫折行。
+// 更长的正文只把末尾连续的三个汉字（和紧跟着的句读、不含数字字母的短括号）粘住。
+// 词连接符不占宽。不插进备案号和电话，避免把「浙ICP备…」粘成一串。
+const WORD_JOINER = "\u2060";
+const HAN_CHAR = /\p{Script=Han}/u;
+const TAIL_PUNCT = "。！？!?…，、；：）」』】》.";
+
+function guardCjkTail(text) {
+  if (!HAN_CHAR.test(text)) return text;
+  const chars = [...text];
+  const hanAt = [];
+  for (let i = 0; i < chars.length; i += 1) {
+    if (HAN_CHAR.test(chars[i])) hanAt.push(i);
+  }
+  if (hanAt.length <= 6) return text;
+  const joinAfter = new Set();
+  const source = chars.join("");
+  const glueInside = (start, end, raw) => {
+    if (/[A-Za-z0-9]/.test(raw)) return;
+    for (let i = start; i < end; i += 1) joinAfter.add(i);
+  };
+  for (const match of source.matchAll(/（[^（）]{1,8}）/g)) {
+    glueInside(match.index, match.index + match[0].length - 1, match[0]);
+  }
+  for (const match of source.matchAll(/\([^()]{1,12}\)/g)) {
+    if (!HAN_CHAR.test(match[0])) continue;
+    glueInside(match.index, match.index + match[0].length - 1, match[0]);
+  }
+  if (hanAt.length >= 3) {
+    const from = hanAt[hanAt.length - 3];
+    const last = hanAt[hanAt.length - 1];
+    let consecutive = true;
+    for (let i = from; i < last; i += 1) {
+      if (!HAN_CHAR.test(chars[i]) && !TAIL_PUNCT.includes(chars[i])) {
+        consecutive = false;
+        break;
+      }
+    }
+    if (consecutive) {
+      let to = last;
+      while (to + 1 < chars.length && TAIL_PUNCT.includes(chars[to + 1])) to += 1;
+      for (let i = from; i < to; i += 1) joinAfter.add(i);
+    }
+  }
+  if (joinAfter.size === 0) return text;
+  let out = "";
+  for (let i = 0; i < chars.length; i += 1) {
+    out += chars[i];
+    if (joinAfter.has(i)) out += WORD_JOINER;
+  }
+  return out;
+}
+
 function escapeHtml(text) {
-  return text
+  return guardCjkTail(text)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")

@@ -3,9 +3,13 @@
   gap: 1.75rem;
 }
 
+/* 平板及以下铺满容器，横图按 3:2 裁；竖版人像焦点靠上，脸不被切成躯干。桌面右栏改回原比例。 */
 .detail-photo {
-  width: min(100%, 36rem);
+  width: 100%;
   height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 /* 桌面：正文、参数表、流程、问答都在左栏，配图在右栏、保持原比例、跟着页面粘住；
@@ -27,6 +31,9 @@
     grid-row: 1 / span 5;
     width: 100%;
     height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center center;
     position: sticky;
     top: 1.5rem;
   }
@@ -73,7 +80,8 @@
   color: var(--accent);
 }
 
-.faq {
+/* details 已有上边线。每条再加底边会叠成 2px。只给最后一条留底边。 */
+.faq:last-of-type {
   border-bottom: 1px solid var(--border);
 }
 

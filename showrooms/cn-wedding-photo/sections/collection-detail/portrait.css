@@ -11,8 +11,9 @@
   object-fit: cover;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .person {
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+    column-gap: 2rem;
   }
 }

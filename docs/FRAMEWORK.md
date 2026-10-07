@@ -114,7 +114,7 @@ node scripts/check.mjs --lint-framework
 | B6 | 样板间写了 `type.hero` 时，桌面首屏 60 到 110px。国际风同样到 110px，不另放宽。`type.display` 为 `script` 时可到 173px，标题不超过 4 个词。没写 `type.hero` 的旧例子仍走字阶，不卡 60px 下限 |
 | B7 | token 示例和机检。正文字体栈按逗号取第一段，去掉引号。这一段不能是中文（含微软雅黑、华文、Hiragino、黑体、思源）。英文站用 `font-heading-en` / `font-body-en`，没有就用 Inter、Segoe UI、Helvetica Neue、Arial，不加载字体文件 |
 | B8 | 没加载任何字体文件，所以没有子集。机检不查字体文件 |
-| B9 | 样式。标题 `text-wrap: balance`，正文 `pretty`，数字 `tabular-nums` |
+| B9 | 样式。标题和短段落 `text-wrap: balance`。正文仍设 `pretty`（Chromium 对中文几乎不避末行孤字）。长正文在拼装转义时用词连接符把末尾三个汉字粘住。数字 `tabular-nums` |
 | B10 | 机检只看衬线。注册表 `serifTitles` 为真才放行，细分盖过行业。美业、餐饮、律所、咨询可以；工厂和教培不行。不再按字体名字黑名单拦截 |
 | C1 | 样式用 0.25rem 的倍数。机检不逐条量间距 |
 | C2 | 拼装按 density 注入。样板间可写 `sectionY`，固定长度 80 到 160px。窄屏样式把板块上下收在 48 到 72px |
@@ -208,9 +208,9 @@ node scripts/check.mjs --lint-framework
 - **限宽挂在内层，别挂在 `.container` 上。** `.container` 自带 `margin-inline: auto`，给它加 `max-width`（首屏文案块 `.hero-copy` 就是 `.container hero-copy`）会被自动外边距推到中间：文案从 x=400 起，页头 logo 在 x=120，左边空 280px，板块之间左缘跳变。要限宽，把 `max-width` 写在里面的子元素上（`.hero-full .hero-copy > * { max-width: 40rem }`），容器本身 `max-width: none`。L11 会拦这个。
 - **轮播指示点要换成小圆点时**：框架默认是 44px 的数字圆钮，当前页填满底色。改小圆点要三处一起改，漏一处就会留下一个 44px 的大白圆：按钮 `border: 0; background: transparent; color: transparent`，圆点画在 `::after` 里并写 `display: block`（不写 `display` 的 `::after` 宽高不生效），当前页的 `[aria-current="true"]` 底色改回 `transparent`、只改 `::after` 的颜色或大小。点击区仍是 44×44。
 
-### 版式检查 L1 到 L19
+### 版式检查 L1 到 L22
 
-`check-visual.mjs` 对每个页面、每个宽度跑 `scripts/check-visual.mjs` 里的探针。同一条问题跨页合并成一行，写出现了几处和第一个例子。L1 到 L15 的阈值来自对 10 套国内风样板间 226 页的校准，L16 到 L19 用 14 套样板间（国内风 10、国际风 4）校准。每一项都有反例，见 `tests/visual-negatives.mjs`。
+`check-visual.mjs` 对每个页面、每个宽度跑 `scripts/check-visual.mjs` 里的探针。同一条问题跨页合并成一行，写出现了几处和第一个例子。L1 到 L15 的阈值来自对 10 套国内风样板间 226 页的校准，L16 到 L19 用 14 套样板间（国内风 10、国际风 4）校准。L20 到 L22 按最终验收的三类问题加的。每一项都有反例，见 `tests/visual-negatives.mjs`。
 
 | 编号 | 查什么 | 阈值 |
 |---|---|---|
@@ -233,5 +233,8 @@ node scripts/check.mjs --lint-framework
 | L17 | 半宽空白板块：桌面（≥1024）下板块里所有内容（字、图、按钮、有框 / 底色 / 底图 / 分隔线的块）的外接盒只占容器宽的一小半，又贴左缘，右边空一大片 | 占比 < 56% 且左缘 ≤ 6px 且右边空 ≥ 35% 容器宽且板块高 ≥ 160px 才报。首屏、Banner、整屏图板块、居中排版不算 |
 | L18 | 统计数字上下不齐：大字号（≥ 26px）的短数字串（≤ 16 个字符、≥ 2 个数字），截图量每个数字墨迹的最低一行。老式数字的 3、4、5、7、9 会沉到基线下 | 极差 ≤ max(3px, 字号的 10%)。只在最宽的一档量；字和底色反差太小（背景是照片）的不量 |
 | L19 | 页头文字被省略号截断（`text-overflow: ellipsis` 且内容比盒子宽），品牌名被挤成半截 | 0 |
+| L20 | 竖版人像被横幅裁掉脸：页头图高大于宽，横幅宽高比 ≥ 1.8，`object-fit: cover`，可见窗口盖住原图顶部 35% 不到一半 | 0。焦点约在 15%（`.page-banner-img.is-portrait`）不报。手机横幅不够宽（宽高比 < 1.8）不报 |
+| L21 | 页头图和正文主图 src 相同（文章、随笔、照片带里的 img）。列表缩略图和二维码不算 | 0 |
+| L22 | 中文末行只剩一个字：段落、列表项、标题、图注、页脚联系行折成至少两行，整段 ≥ 4 个汉字，末行恰好 1 个汉字 | 0。面包屑和导航不查。末行里有数字的不报（价格、数量） |
 
 另外 `chromeProbe` 的点击区检查把 `.crumbs a` 也算进去（小于 44×44 失败），`footerProbe` 不再把已经让开（隐藏）的桌面悬浮条算作压住页脚。

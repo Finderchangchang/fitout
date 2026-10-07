@@ -37,10 +37,12 @@
 }
 
 .code-row img {
-  width: 5.5rem;
-  height: 5.5rem;
-  object-fit: cover;
-  background: var(--surface);
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .code-row figcaption {

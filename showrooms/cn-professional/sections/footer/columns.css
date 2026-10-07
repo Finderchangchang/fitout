@@ -35,17 +35,30 @@
 .qr-slot img {
   width: 7rem;
   height: 7rem;
-  object-fit: cover;
-  background: var(--surface);
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .footer-legal {
   border-top-color: var(--primary-contrast);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .footer-grid {
-    grid-template-columns: 1.2fr 0.8fr 1.1fr 1.1fr;
+    grid-template-columns: 1.2fr 0.8fr 1.1fr 1fr;
+  }
+
+  /* 这一档导航列大约 130px，里面再拆两列，四个字的链接会折成两行。改回一列。 */
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

@@ -1,9 +1,10 @@
 /**
  * node scripts/check-visual.mjs <站点目录> [--shots <目录>] [--layout-only] [--page <相对路径>]... [--widths 375,1440]
  * 需要浏览器的检查：图上文字对比度、按钮对比度、悬浮条压页脚、横向溢出、同组图片比例、点击区、顶栏高度，
- * 以及版式检查 L1 到 L19（本文件末尾的 layoutProbe：面包屑基线、页脚空白、图标间距、占位图字号、
+ * 以及版式检查 L1 到 L22（本文件末尾的 layoutProbe：面包屑基线、页脚空白、图标间距、占位图字号、
  * 小于 12px 的字、内部键名、文字被裁、按钮列宽、栏高失衡、同行顶边、左缘对齐、手机页脚间距、导航间距、
- * 首屏文案间距、短文字折行、网格末行孤儿卡、半宽空白板块、页头文字被省略号截断；
+ * 首屏文案间距、短文字折行、网格末行孤儿卡、半宽空白板块、页头文字被省略号截断、
+ * 竖版人像被横幅裁掉脸、页头和正文同一张图、中文末行只剩一个字；
  * L18 统计数字上下不齐要截图量像素，单独在 measureNumerals 里量）。
  * 每个页面、每个宽度都量（L18 只在最宽的一档量）。同一条问题跨页合并成一行，写出现了几处和第一个例子。
  * --layout-only 只跑版式检查（反例测试用）；--page 只看指定页；--widths 指定宽度，默认 375,768,1024,1440。
@@ -1182,12 +1183,12 @@ function walk(dir) {
 }
 
 /**
- * 版式探针（L1 到 L17、L19；L18 要截图，见 measureNumerals）。整个函数会被序列化后送进浏览器，所以：
+ * 版式探针（L1 到 L17、L19 到 L22；L18 要截图，见 measureNumerals）。整个函数会被序列化后送进浏览器，所以：
  * 只能用浏览器里有的东西，不能引用本文件外的变量。
  *
  * 返回 [{ rule, sig, detail }]。同一页同一条 sig 只报一次，跨页的合并由调用方做。
- * 规则编号 L1 到 L19，意思写在每一段的注释里。L1 到 L15 的阈值来自对 10 套国内风样板间 226 页的校准，
- * L16 到 L19 用 14 套样板间（国内 10、国际 4）校准。
+ * 规则编号 L1 到 L22，意思写在每一段的注释里。L1 到 L15 的阈值来自对 10 套国内风样板间 226 页的校准，
+ * L16 到 L19 用 14 套样板间（国内 10、国际 4）校准。L20 到 L22 按最终验收的三类问题加的。
  *
  * opts: { slotIds: string[]  样板间 images.json 里的图片位 id，可见文字里不许出现 }
  */
@@ -1739,6 +1740,106 @@ function layoutProbe(opts) {
       if (s.textOverflow !== "ellipsis" || !clean(e.textContent)) continue;
       if (e.scrollWidth > e.clientWidth + 1) add("L19", `页头文字被省略号截断：${sel(e)}`, `${where(e)} 内容宽 ${e.scrollWidth}，盒子宽 ${e.clientWidth}：${tx(e)}`);
     }
+  }
+
+  // L20 竖版人像被横幅裁掉脸：页头图比宽高、横幅比图宽（约 ≥1.8），object-fit 是 cover，
+  // 可见窗口盖住原图顶部 35%（脸的大概位置）不到一半。焦点抬到 15% 左右的不报。图还没解码时用 width/height 属性。
+  const axisOf = (token) => {
+    const t = String(token || "").trim().toLowerCase();
+    if (!t || t === "center") return 0.5;
+    if (t === "top" || t === "left") return 0;
+    if (t === "bottom" || t === "right") return 1;
+    if (t.endsWith("%")) {
+      const n = parseFloat(t);
+      return Number.isFinite(n) ? n / 100 : 0.5;
+    }
+    return 0.5;
+  };
+  for (const img of document.querySelectorAll("img.page-banner-img")) {
+    if (!visible(img)) continue;
+    const iw = img.naturalWidth || Number(img.getAttribute("width")) || 0;
+    const ih = img.naturalHeight || Number(img.getAttribute("height")) || 0;
+    if (!(iw > 0 && ih > iw * 1.02)) continue;
+    const box = img.getBoundingClientRect();
+    if (box.width < 8 || box.height < 8 || box.width / box.height < 1.8) continue;
+    if (cs(img).objectFit !== "cover") continue;
+    const bits = (cs(img).objectPosition || "50% 50%").trim().split(/\s+/);
+    const posY = axisOf(bits.length >= 2 ? bits[1] : "center");
+    const scale = Math.max(box.width / iw, box.height / ih);
+    const visH = box.height / scale;
+    if (visH >= ih * 0.98) continue;
+    const y = (ih - visH) * posY;
+    const face = ih * 0.35;
+    const overlap = Math.max(0, Math.min(y + visH, face) - y);
+    if (overlap / face < 0.5) {
+      add("L20", "竖版人像被横幅裁掉脸", `${where(img)} 原图 ${Math.round(iw)}×${Math.round(ih)}，横幅 ${Math.round(box.width)}×${Math.round(box.height)}，焦点 ${Math.round(posY * 100)}%`);
+    }
+  }
+
+  // L21 页头和正文同一张图。比的是页头 img 和正文主图（文章、随笔、照片带），不含列表缩略图和二维码。
+  const srcKey = (img) => {
+    const raw = img.getAttribute("src") || "";
+    if (!raw) return "";
+    if (raw.startsWith("data:")) return raw;
+    try { return new URL(raw, document.baseURI).pathname; } catch { return raw; }
+  };
+  const bannerImg = [...document.querySelectorAll("img.page-banner-img")].find((img) => visible(img) && srcKey(img));
+  if (bannerImg) {
+    const key = srcKey(bannerImg);
+    const skip = ".page-banner, [data-section='collection-list'], [data-section='product-list'], .qr-slot, .code-row, .contact-qrs, .qr-grid, .code-pair, .footer-qr";
+    for (const img of main.querySelectorAll("img")) {
+      if (!visible(img) || img.closest(skip)) continue;
+      if (srcKey(img) === key) {
+        add("L21", "页头和正文用了同一张图", `${where(img)} 与页头 src 相同`);
+        break;
+      }
+    }
+  }
+
+  // L22 中文末行只剩一个字。多行的段落、列表、标题、图注、页脚联系行，整段至少 4 个汉字，末行恰好 1 个汉字。
+  // 词连接符不占位，不计入。面包屑和导航不查。里面还套着段落的列表项跳过，改查里面的段落。
+  const hanRe = /\p{Script=Han}/gu;
+  const hanCount = (s) => (s.match(hanRe) || []).length;
+  for (const el of document.querySelectorAll("p, li, dd, figcaption, h1, h2, h3, .section-lead, .site-footer a")) {
+    if (!visible(el) || overlay(el)) continue;
+    if (el.closest(".crumbs, .nav-list, .mobile-panel")) continue;
+    if (el.querySelector("p, li, h1, h2, h3, figcaption, dd")) continue;
+    const units = [];
+    const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let tn;
+    while ((tn = tw.nextNode())) {
+      const value = tn.nodeValue || "";
+      for (let i = 0; i < value.length; i += 1) {
+        if (value[i] === "\u2060") continue;
+        units.push({ n: tn, i, ch: value[i] });
+      }
+    }
+    if (hanCount(units.map((u) => u.ch).join("")) < 4) continue;
+    const whole = document.createRange();
+    whole.setStart(units[0].n, units[0].i);
+    whole.setEnd(units[units.length - 1].n, units[units.length - 1].i + 1);
+    const rects = [...whole.getClientRects()].filter((r) => r.width > 0.5 && r.height > 0.5);
+    if (rects.length < 2) continue;
+    const lastTop = rects[rects.length - 1].top;
+    const onLast = (idx) => {
+      const u = units[idx];
+      const r = document.createRange();
+      r.setStart(u.n, u.i);
+      r.setEnd(u.n, u.i + 1);
+      const box = r.getClientRects()[0];
+      return Boolean(box && box.width > 0.1 && box.top >= lastTop - 1);
+    };
+    if (!onLast(units.length - 1)) continue;
+    let lo = 0;
+    let hi = units.length - 1;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (onLast(mid)) hi = mid;
+      else lo = mid + 1;
+    }
+    const tail = units.slice(lo).map((u) => u.ch).join("");
+    // 末行带数字的是价格、数量（「899 元/㎡」），不是句子末尾剩一个字。
+    if (hanCount(tail) === 1 && !/\d/.test(tail)) add("L22", "中文末行只剩一个字", `${where(el)} 末行「${clean(tail).slice(0, 8)}」：${tx(el)}`);
   }
 
   return hits;

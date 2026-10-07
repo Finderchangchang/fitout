@@ -1,0 +1,26 @@
+{
+  "notes": [],
+  "fallbacks": [
+    "hero：carousel 缺图，改用 text",
+    "stays：cards 缺图，图片留空",
+    "yard：wide 缺图，图片留空",
+    "chronicle：split 缺图，图片留空",
+    "nearby：cards 缺图，图片留空",
+    "supper：board 缺图，图片留空",
+    "chronicle：split 缺图，图片留空",
+    "yard：wide 缺图，图片留空",
+    "supper：board 缺图，图片留空",
+    "album：wall 缺图，图片留空"
+  ],
+  "demo": false,
+  "showroom": "cn-hospitality",
+  "missingMust": [
+    "hero-court",
+    "hero-creek",
+    "hero-river",
+    "hero-table",
+    "banner-river"
+  ],
+  "sparse": true,
+  "baseUrl": "https://example.com/"
+}

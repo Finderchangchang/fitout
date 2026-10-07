@@ -87,12 +87,12 @@
 
 @media (max-width: 767px) {
   .hero-full {
-    min-height: 17rem;
+    min-height: 26rem;
   }
 
   .hero-full .hero-copy {
     padding-top: 1.25rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .hero-full .hero-ui {

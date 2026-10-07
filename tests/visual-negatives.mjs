@@ -16,6 +16,12 @@ const args = process.argv.slice(2);
 const only = args.includes("--only") ? args[args.indexOf("--only") + 1].split(",") : null;
 
 const svg = (text, size) => `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800"><rect width="100%" height="100%" fill="#e7e2d8"/><text x="50%" y="50%" text-anchor="middle" font-size="${size}">${text}</text></svg>`)}`;
+const portraitSvg = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000"><rect width="100%" height="100%" fill="#c4b8a8"/></svg>')}`;
+const landSvg = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><rect width="100%" height="100%" fill="#8a9a88"/></svg>')}`;
+const landSvgB = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><rect width="100%" height="100%" fill="#445566"/></svg>')}`;
+const faceBanner = (extra) => `<section class="page-banner" data-section="page-banner" data-family="pagehead" data-fullbleed><img class="page-banner-img${extra}" src="${portraitSvg}" alt="" width="800" height="1000"><div class="page-banner-scrim"></div><div class="container page-banner-copy" data-on-media><p class="crumbs"><a href="index.html">首页</a><span aria-hidden="true">/</span><span>当前页</span></p><h1 class="section-title">页名</h1></div></section>`;
+const landBanner = (src) => `<section class="page-banner" data-section="page-banner" data-family="pagehead" data-fullbleed><img class="page-banner-img" src="${src}" alt="" width="1200" height="800"><div class="page-banner-scrim"></div><div class="container page-banner-copy" data-on-media><p class="crumbs"><a href="index.html">首页</a><span aria-hidden="true">/</span><span>当前页</span></p><h1 class="section-title">页名</h1></div></section>`;
+const orphanBox = (text) => sec(`<div style="border-bottom:1px solid var(--border)"></div><h2 class="section-title">配图说明</h2><p style="width:4.15em;max-width:4.15em;font-size:20px;line-height:1.4;text-wrap:wrap;letter-spacing:0;overflow-wrap:anywhere;font-family:'Microsoft YaHei','Segoe UI',sans-serif">${text}</p>`);
 const sec = (inner) => `<section class="section" data-section="neg" data-family="neg"><div class="container">${inner}</div></section>`;
 const banner = `<section class="page-banner" data-section="page-banner" data-family="pagehead" data-fullbleed><div class="page-banner-scrim"></div><div class="container page-banner-copy" data-on-media><p class="crumbs"><a href="index.html">首页</a><span aria-hidden="true">/</span><a href="about/index.html">关于</a><span aria-hidden="true">/</span><span>当前页</span></p><h1 class="section-title">页名</h1></div></section>`;
 const lines = (n) => Array.from({ length: n }, (_, i) => `<p>第 ${i + 1} 行文字，占着高度。</p>`).join("");
@@ -56,6 +62,12 @@ const cases = [
   { id: "TAP", rule: "点击区", page: "about/index.html", width: 375, full: true, top: true, html: banner, css: ".crumbs a{min-width:0 !important;padding-inline:0 !important;margin-inline:0 !important}", note: "手机面包屑「首页」链接只有 32px 宽" },
   { id: "DOCK", rule: "悬浮条压住页脚", page: "index.html", width: 1440, full: true, css: ".footer-legal{justify-content:flex-end}.footer-legal p{margin-right:-5rem}.site-footer{padding-bottom:0 !important}.js .float-dock.is-over-foot{opacity:1 !important;visibility:visible !important;pointer-events:auto !important}", note: "页脚内容顶到右下角、桌面悬浮条又不让开" },
   { id: "DOCK-ok", control: true, page: "index.html", width: 1440, full: true, css: ".footer-legal{justify-content:flex-end}.footer-legal p{margin-right:-5rem}.site-footer{padding-bottom:0 !important}", note: "同样的页脚，但悬浮条按规矩让开：必须通过" },
+  { id: "L20", rule: "版式[L20]", page: "about/index.html", width: 1440, top: true, html: faceBanner(""), note: "800×1000 竖图塞进约 1440×400 的横幅，居中裁，顶部脸的位置几乎不在画面里" },
+  { id: "L20-ok", control: true, page: "about/index.html", width: 1440, top: true, html: faceBanner(" is-portrait"), note: "同一张竖图，焦点抬到 15%：必须通过" },
+  { id: "L21", rule: "版式[L21]", page: "index.html", width: 1440, top: true, html: landBanner(landSvg) + sec(`<h2 class="section-title">正文标题</h2><p>这段说明铺开，避免板块被看成只有左边一条。</p><img src="${landSvg}" alt="" width="1200" height="800">`), note: "页头和正文 img 的 src 相同" },
+  { id: "L21-ok", control: true, page: "index.html", width: 1440, top: true, html: landBanner(landSvg) + sec(`<h2 class="section-title">正文标题</h2><p>这段说明铺开，避免板块被看成只有左边一条。</p><img src="${landSvgB}" alt="" width="1200" height="800">`), note: "页头和正文各一张图：必须通过" },
+  { id: "L22", rule: "版式[L22]", page: "index.html", width: 1440, html: orphanBox("一二三四五"), note: "五个汉字塞进四字宽，关掉 balance，末行只剩一个字" },
+  { id: "L22-ok", control: true, page: "index.html", width: 1440, html: orphanBox("一二三&#x2060;四&#x2060;五"), note: "末尾三个字用词连接符粘住，末行是三个字：必须通过" },
 ].filter((item) => !only || only.includes(item.id));
 
 const lines2 = [];

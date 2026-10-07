@@ -1,6 +1,6 @@
 .news-list {
   display: grid;
-  gap: 1.25rem;
+  gap: 0;
 }
 
 .news-row {
@@ -8,6 +8,8 @@
   gap: 1rem;
   min-width: 0;
   align-items: center;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .news-row img {

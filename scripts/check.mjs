@@ -126,7 +126,8 @@ function checkSite(dir) {
     if (!fs.existsSync(indexFile)) report("链接", `小工具入口缺少 ${toolRel}/index.html`);
   }
   for (const file of htmlFiles) {
-    const html = fs.readFileSync(file, "utf8");
+    // 拼装在长中文末尾插入的词连接符（U+2060）不占宽，比对正文、按钮和备案号时去掉。
+    const html = fs.readFileSync(file, "utf8").replace(/\u2060/g, "");
     const where = path.relative(dir, file).replaceAll("\\", "/");
     if (isToolHtml(where, toolRel)) {
       checkLinks(dir, file, where, html, demoMode);

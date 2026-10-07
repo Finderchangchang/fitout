@@ -23,6 +23,17 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* 标题和短段落：balance。Chromium 的 pretty 对中文不避末行孤字，balance 在大约 6 行以内会把行长拉匀。
+   更长的正文 pretty / balance 都管不到末行，拼装时在末尾几个字之间加了词连接符。 */
+p,
+li,
+dd,
+figcaption,
+.section-lead,
+.footer-summary {
+  text-wrap: balance;
+}
+
 *,
 *::before,
 *::after {
@@ -472,6 +483,7 @@ details[open] summary .chev {
   align-items: flex-start;
   gap: 0.5rem;
   padding-block: 0.5rem;
+  text-wrap: balance;
 }
 
 .site-footer a > .icon-16 {
@@ -978,6 +990,11 @@ html[data-flavor="intl"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 竖版人像塞进横幅时默认居中裁，只剩躯干或下巴。拼装给这类图加上 is-portrait，焦点靠上，脸留在画面里。 */
+.page-banner-img.is-portrait {
+  object-position: center 15%;
 }
 
 /* 面包屑：链接撑到 44px 高，「/」和当前页也跟着居中，三项的字落在同一条线上。

@@ -820,8 +820,8 @@
       "id": "about",
       "title": "品牌介绍｜晚棠婚纱摄影（虚构）",
       "description": "2016年开在学院路。店里有棚、礼服间和看样室，外景在龙井和南山路。",
-      "banner": "about-room",
-      "bannerAlt": "二楼看样室的窗",
+      "banner": "hero-studio",
+      "bannerAlt": "试纱间的缎面",
       "crumbs": [
         {
           "label": "品牌介绍",
@@ -921,8 +921,8 @@
       "id": "works",
       "title": "作品欣赏｜晚棠婚纱摄影（虚构）",
       "description": "四组样片：南窗、龙井湖岸、宴会厅和南山路。点进去看拍摄地和套系。",
-      "banner": "banner",
-      "bannerAlt": "学院路店庭院",
+      "banner": "hero-veil",
+      "bannerAlt": "南窗的头纱褶皱",
       "crumbs": [
         {
           "label": "作品欣赏",
@@ -947,8 +947,8 @@
       "id": "packages",
       "title": "套系价格｜晚棠婚纱摄影（虚构）",
       "description": "轻纱9680元、园林13860元、胶片18600元。服装、张数、精修和相册见各档。",
-      "banner": "banner",
-      "bannerAlt": "学院路店庭院",
+      "banner": "offer-dress",
+      "bannerAlt": "礼服间的藕粉婚纱",
       "crumbs": [
         {
           "label": "套系价格",
@@ -973,8 +973,8 @@
       "id": "team",
       "title": "团队｜晚棠婚纱摄影（虚构）",
       "description": "摄影师林晚秋、周予安，化妆师何清禾、苏小满。都在店里，不外包。",
-      "banner": "banner",
-      "bannerAlt": "学院路店庭院",
+      "banner": "offer-photo",
+      "bannerAlt": "南窗边的摄影师",
       "crumbs": [
         {
           "label": "团队",
@@ -999,8 +999,8 @@
       "id": "bases",
       "title": "拍摄基地｜晚棠婚纱摄影（虚构）",
       "description": "学院路棚、龙井庭院、南山路。地址和能拍什么写在各处。",
-      "banner": "banner",
-      "bannerAlt": "学院路店庭院",
+      "banner": "hero-garden",
+      "bannerAlt": "回廊边的花和纱",
       "crumbs": [
         {
           "label": "拍摄基地",
@@ -1025,8 +1025,8 @@
       "id": "guests",
       "title": "客片评价｜晚棠婚纱摄影（虚构）",
       "description": "去年客片86组。页上是陈予和周宁、吴澄、马晓和梁川三则原话。",
-      "banner": "banner",
-      "bannerAlt": "学院路店庭院",
+      "banner": "hero-aisle",
+      "bannerAlt": "椅背上的一小束花",
       "crumbs": [
         {
           "label": "客片评价",
@@ -1070,8 +1070,8 @@
       "id": "news",
       "title": "新闻动态｜晚棠婚纱摄影（虚构）",
       "description": "南窗换纱、档期说明会、12寸皮册到店。日期写在每条说明里。",
-      "banner": "banner",
-      "bannerAlt": "学院路店庭院",
+      "banner": "offer-makeup",
+      "bannerAlt": "化妆台前盘发",
       "crumbs": [
         {
           "label": "新闻动态",
@@ -1096,8 +1096,8 @@
       "id": "contact",
       "title": "预约看样｜晚棠婚纱摄影（虚构）",
       "description": "热线0571-86924715。看样请打电话，问档期用页面上的表。",
-      "banner": "banner",
-      "bannerAlt": "学院路店庭院",
+      "banner": "offer-select",
+      "bannerAlt": "看样室的木桌和相册",
       "crumbs": [
         {
           "label": "预约看样",
