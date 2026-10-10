@@ -1,0 +1,382 @@
+# 企业档案：Gauge & Pin Co. (Fictional)
+
+本档案整理自 3abfb84 的已提交演示内容，全部为虚构企业信息。只用于演示，不对应真实经营主体。新增事实必须另行确认。
+
+## 1. 一句话介绍
+Turned pins, stamped brackets, and welded frames from Ningbo, for buyers who send a drawing.
+
+## 2. 基本信息
+| 项 | 内容 |
+|---|---|
+| 品牌名 / 门店名 | Gauge & Pin Co. (Fictional) |
+| 站点 id | gauge-pin |
+| 行业 | factory-trade |
+| 城市、地址 | 88 Fixture Lane, Beilun, Ningbo, Zhejiang, China |
+| 电话 | +86 574 8688 2140 |
+| 微信 | gaugepin-export |
+| 邮箱 | export@gaugepin.example |
+| 备案号 |  |
+| 营业时间 | Mon-Fri 08:30-17:30 CST；Sat 08:30-12:00 CST |
+
+## 3. 已确认的演示内容
+下列原文是事实基准。字段路径用于回查来源；图片位、链接和排版配置不是企业事实。
+
+- `contact.phone`：+86 574 8688 2140
+- `contact.wechat`：gaugepin-export
+- `contact.wechatQr`：qr-wechat
+- `contact.email`：export@gaugepin.example
+- `contact.address`：88 Fixture Lane, Beilun, Ningbo, Zhejiang, China
+- `contact.hours[0].day`：Mon-Fri
+- `contact.hours[0].time`：08:30-17:30 CST
+- `contact.hours[1].day`：Sat
+- `contact.hours[1].time`：08:30-12:00 CST
+- `contact.formUrl`：https://example.com/gauge-pin-quote
+- `contact.qrcodes[0].label`：WeChat
+- `contact.qrcodes[1].label`：Drawings
+- `name`：Gauge & Pin Co. (Fictional)
+- `summary`：Turned pins, stamped brackets, and welded frames from Ningbo, for buyers who send a drawing.
+- `pages.home.title`：Gauge & Pin Co. (Fictional)
+- `pages.home.description`：Turned pins, stamped brackets, and welded frames from Ningbo, for buyers who send a drawing.
+- `pages.home.hero.label`：Beilun and Cixi
+- `pages.home.hero.title`：Pins and brackets, made for export
+- `pages.home.hero.lead`：Turned pins, stamped brackets, and welded frames for buyers who send a drawing.
+- `pages.home.hero.primaryLabel`：Request a Quote
+- `pages.home.hero.secondaryLabel`：See the catalog
+- `pages.home.hero.slides[0].title`：Hold the diameter on your drawing
+- `pages.home.hero.slides[0].lead`：Turned pins, quoted from the print you send.
+- `pages.home.hero.slides[1].title`：Stamp it, then check the holes
+- `pages.home.hero.slides[1].lead`：Critical holes stay within the drawing.
+- `pages.home.hero.slides[2].title`：Keep the frame square after welding
+- `pages.home.hero.slides[2].lead`：Hole position is checked on the jig.
+- `pages.home.hero.slides[3].title`：Measure it before the crate closes
+- `pages.home.hero.slides[3].lead`：The gauge room signs the lot.
+- `pages.home.hero.slides[4].title`：Box the lot that already passed
+- `pages.home.hero.slides[4].lead`：Plywood crates, then EXW or FOB Ningbo.
+- `pages.home.hero.desk[0].label`：Catalog MOQ
+- `pages.home.hero.desk[0].value`：500 pieces
+- `pages.home.hero.desk[1].label`：First article
+- `pages.home.hero.desk[1].value`：25 days
+- `pages.home.hero.desk[2].label`：Catalog repeat
+- `pages.home.hero.desk[2].value`：18 days
+- `pages.home.trust.title`：On the floor
+- `pages.home.trust.lead`：1.8 million pieces a month. 74% of 2025 shipments left China.
+- `pages.home.trust.items[0].value`：186
+- `pages.home.trust.items[0].label`：People on the floor
+- `pages.home.trust.items[1].value`：42
+- `pages.home.trust.items[1].label`：CNC lathes and mills
+- `pages.home.trust.items[2].value`：18
+- `pages.home.trust.items[2].label`：Stamping presses
+- `pages.home.trust.items[3].value`：16
+- `pages.home.trust.items[3].label`：Countries in 2025
+- `pages.home.services.title`：Four processes
+- `pages.home.services.lead`：Tolerances below are what we hold unless the drawing is tighter.
+- `pages.home.services.items[0].name`：Turned parts
+- `pages.home.services.items[0].text`：Diameters hold ±0.02 mm on C45, 304, 316, and 6061-T6.
+- `pages.home.services.items[0].tag`：Turned
+- `pages.home.services.items[1].name`：Stamped parts
+- `pages.home.services.items[1].text`：Critical holes hold ±0.05 mm. The largest press is 250 t.
+- `pages.home.services.items[1].tag`：Stamped
+- `pages.home.services.items[2].name`：Welded frames
+- `pages.home.services.items[2].text`：Hole position holds ±0.5 mm after the jig is signed off.
+- `pages.home.services.items[2].tag`：Welded
+- `pages.home.services.items[3].name`：Hardware kits
+- `pages.home.services.items[3].text`：304 kits stay tooled. Screws, nuts, and washers ship together.
+- `pages.home.services.items[3].tag`：Kits
+- `pages.home.photo-band.caption`：Coolant on a turned pin. Not a plant tour.
+- `pages.home.why.title`：From drawing to crate
+- `pages.home.why.lead`：Four steps. The ship date on the quote is the date we ship.
+- `pages.home.why.items[0].name`：Drawing
+- `pages.home.why.items[0].text`：PDF or STEP. Mark the datums before we quote.
+- `pages.home.why.items[1].name`：Sample
+- `pages.home.why.items[1].text`：A 50-piece sample lot. Sign it before production.
+- `pages.home.why.items[2].name`：Production
+- `pages.home.why.items[2].text`：Repeat lots start after sign-off. The slot is on the quote.
+- `pages.home.why.items[3].name`：Crates
+- `pages.home.why.items[3].text`：Plywood crates, photos, then EXW or FOB Ningbo.
+- `pages.home.cases.title`：Where the parts go
+- `pages.home.cases.lead`：Four places these parts go.
+- `pages.home.cases.items[0].name`：Cabinet hardware
+- `pages.home.cases.items[0].text`：Hinges, pins, and kits for sheet-metal cabinets.
+- `pages.home.cases.items[1].name`：Farm implements
+- `pages.home.cases.items[1].text`：Brackets and pins for implements that see mud and washdown.
+- `pages.home.cases.items[2].name`：Warehouse racking
+- `pages.home.cases.items[2].text`：Uprights and connectors for pallet rack frames.
+- `pages.home.cases.items[3].name`：Appliance OEM
+- `pages.home.cases.items[3].text`：Standoffs and brackets for appliance chassis.
+- `pages.home.collection-list.title`：Catalog
+- `pages.home.collection-list.lead`：Six parts we keep tooling for. Custom work is quoted from your drawing.
+- `pages.home.plant.title`：Two plants
+- `pages.home.plant.lead`：Machining and welding sit in Beilun. Stampings sit in Cixi.
+- `pages.home.plant.items[0].name`：Beilun
+- `pages.home.plant.items[0].text`：42 CNC lathes and mills, plus weld jigs. 186 people work across both plants.
+- `pages.home.plant.items[1].name`：Cixi
+- `pages.home.plant.items[1].text`：18 presses, largest 250 t. Stampings return to Beilun if the job also needs machining.
+- `pages.home.honors.title`：Files we send
+- `pages.home.honors.lead`：The scan goes out with the quote. This page does not keep the file.
+- `pages.home.honors.items[0].name`：ISO 9001 file
+- `pages.home.honors.items[0].issuer`：Sent with the quote
+- `pages.home.honors.items[1].name`：Material certificate
+- `pages.home.honors.items[1].issuer`：When the mill issues it
+- `pages.home.honors.items[2].name`：Gauge calibration log
+- `pages.home.honors.items[2].issuer`：Sent with the quote
+- `pages.home.honors.items[3].name`：Packing photos
+- `pages.home.honors.items[3].issuer`：Before the vessel
+- `pages.home.cta-band.title`：Send a drawing
+- `pages.home.cta-band.lead`：PDF or STEP. We answer with price, MOQ, and a date.
+- `pages.home.faq.title`：Before you send a file
+- `pages.home.faq.items[0].q`：Which drawing files do you take?
+- `pages.home.faq.items[0].a`：PDF and STEP. Mark the datums on the PDF. We quote from those two files.
+- `pages.home.faq.items[1].q`：Which plant runs which job?
+- `pages.home.faq.items[1].a`：Stampings run in Cixi. Machining and welding run in Beilun. One desk quotes both.
+- `pages.home.faq.items[2].q`：How do the parts leave Ningbo?
+- `pages.home.faq.items[2].a`：Export cartons, then plywood crates. Photos go out before the vessel.
+- `pages.home.faq.items[3].q`：Who answers the export desk?
+- `pages.home.faq.items[3].a`：The export desk in Beilun answers both plants. The first Germany shipment was in 2018.
+- `pages.about.title`：About | Gauge & Pin Co. (Fictional)
+- `pages.about.description`：Two plants in Ningbo. Machining and welding in Beilun, stamping in Cixi, since 2006.
+- `pages.about.timeline.title`：Since 2006
+- `pages.about.timeline.lead`：The year is the opening. Headcount today is 186.
+- `pages.about.timeline.items[0].name`：2006
+- `pages.about.timeline.items[0].text`：Beilun shop opened with 12 people.
+- `pages.about.timeline.items[1].name`：2012
+- `pages.about.timeline.items[1].text`：Cixi opened. The first 4 presses went in.
+- `pages.about.timeline.items[2].name`：2018
+- `pages.about.timeline.items[2].text`：Export desk opened. First crates went to Germany.
+- `pages.about.timeline.items[3].name`：2024
+- `pages.about.timeline.items[3].text`：The gauge room moved beside the CNC aisle.
+- `pages.about.why.title`：Plant and output
+- `pages.about.why.lead`：186 people, 42 CNC, 18 presses, 16 countries. The list is the 2025 shipments.
+- `pages.about.why.items[0].name`：People
+- `pages.about.why.items[0].text`：186 people on the floor across both plants.
+- `pages.about.why.items[1].name`：Machining
+- `pages.about.why.items[1].text`：42 CNC lathes and mills in Beilun.
+- `pages.about.why.items[2].name`：Stamping
+- `pages.about.why.items[2].text`：18 presses in Cixi. The largest is 250 t.
+- `pages.about.why.items[3].name`：Output
+- `pages.about.why.items[3].text`：1.8 million pieces a month. 74% of 2025 shipments left China.
+- `pages.about.why.items[4].name`：Export list
+- `pages.about.why.items[4].text`：16 countries in 2025: DE, US, JP, AU, NL, MX, KR, CA, GB, FR, IT, ES, SE, PL, NZ, SG.
+- `pages.about.plant.title`：Two plants
+- `pages.about.plant.lead`：Machining and welding sit in Beilun. Stampings sit in Cixi.
+- `pages.about.plant.items[0].name`：Beilun
+- `pages.about.plant.items[0].text`：42 CNC lathes and mills, plus the weld jigs.
+- `pages.about.plant.items[1].name`：Cixi
+- `pages.about.plant.items[1].text`：18 presses, largest 250 t. Mixed jobs go back to Beilun for machining.
+- `pages.about.honors.title`：Files we send
+- `pages.about.honors.lead`：The scan goes out with the quote. This page does not keep the file.
+- `pages.about.honors.items[0].name`：ISO 9001 file
+- `pages.about.honors.items[0].issuer`：Sent with the quote
+- `pages.about.honors.items[1].name`：Material certificate
+- `pages.about.honors.items[1].issuer`：When the mill issues it
+- `pages.about.honors.items[2].name`：Gauge calibration log
+- `pages.about.honors.items[2].issuer`：Sent with the quote
+- `pages.about.honors.items[3].name`：Packing photos
+- `pages.about.honors.items[3].issuer`：Before the vessel
+- `pages.about.cta-band.title`：Send a drawing
+- `pages.about.cta-band.lead`：PDF or STEP. We answer with price, MOQ, and a date.
+- `pages.products.title`：Products | Gauge & Pin Co. (Fictional)
+- `pages.products.description`：Turned pins, stamped brackets, welded frames, and hardware kits. Filter by process.
+- `pages.products.collection-list.title`：Products
+- `pages.products.collection-list.lead`：Filter by process. Each card opens the drawing data.
+- `pages.products.collection-list.facets[0].name`：Turned
+- `pages.products.collection-list.facets[0].text`：Pins, bolts, and standoffs.
+- `pages.products.collection-list.facets[1].name`：Stamped
+- `pages.products.collection-list.facets[1].text`：Brackets from sheet.
+- `pages.products.collection-list.facets[2].name`：Welded
+- `pages.products.collection-list.facets[2].text`：Frames and uprights.
+- `pages.products.collection-list.facets[3].name`：Hardware
+- `pages.products.collection-list.facets[3].text`：Kits in one bag.
+- `pages.products.cta-band.title`：Send a drawing
+- `pages.products.cta-band.lead`：PDF or STEP. We answer with price, MOQ, and a date.
+- `pages.uses.title`：Applications | Gauge & Pin Co. (Fictional)
+- `pages.uses.description`：Cabinet hardware, farm implements, warehouse racking, and appliance chassis.
+- `pages.uses.collection-list.title`：Applications
+- `pages.uses.collection-list.lead`：Where these parts are installed.
+- `pages.uses.cta-band.title`：Send a drawing
+- `pages.uses.cta-band.lead`：PDF or STEP. We answer with price, MOQ, and a date.
+- `pages.quality.title`：Quality | Gauge & Pin Co. (Fictional)
+- `pages.quality.description`：Incoming, in-process, and final checks. Tolerances, the CMM, and the gauge room.
+- `pages.quality.why.title`：What we check
+- `pages.quality.why.lead`：The number on the drawing wins when it is tighter than these.
+- `pages.quality.why.items[0].name`：Incoming
+- `pages.quality.why.items[0].text`：Material grade is checked against the drawing before a lot starts.
+- `pages.quality.why.items[1].name`：In process
+- `pages.quality.why.items[1].text`：Turned diameters hold ±0.02 mm unless the drawing is tighter.
+- `pages.quality.why.items[2].name`：Final
+- `pages.quality.why.items[2].text`：Stamped holes hold ±0.05 mm. Welded hole position holds ±0.5 mm.
+- `pages.quality.why.items[3].name`：Packing
+- `pages.quality.why.items[3].text`：Cartons, then plywood. Photos go out before the crate leaves.
+- `pages.quality.photo-band.caption`：The CMM in the Beilun gauge room.
+- `pages.quality.plant.title`：Gauges and machines
+- `pages.quality.plant.lead`：These counts match the home page: 42 CNC, 18 presses, and the gauge room.
+- `pages.quality.plant.items[0].name`：Machining
+- `pages.quality.plant.items[0].text`：42 CNC lathes and mills.
+- `pages.quality.plant.items[1].name`：Stamping
+- `pages.quality.plant.items[1].text`：18 presses. The largest is 250 t.
+- `pages.quality.plant.items[2].name`：Gauge room
+- `pages.quality.plant.items[2].text`：1 CMM and 2 hardness testers.
+- `pages.quality.plant.items[3].name`：Salt spray
+- `pages.quality.plant.items[3].text`：1 salt-spray cabinet.
+- `pages.quality.faq.title`：Tighter than the catalog
+- `pages.quality.faq.items[0].q`：What if the drawing is tighter?
+- `pages.quality.faq.items[0].a`：The dowel catalog holds ±0.01 mm, h6. Anything tighter is quoted from the drawing, not from the catalog line.
+- `pages.quality.faq.items[1].q`：What sits in the gauge room?
+- `pages.quality.faq.items[1].a`：One CMM, two hardness testers, and one salt-spray cabinet. The room is beside the CNC aisle in Beilun.
+- `pages.quality.cta-band.title`：Send a drawing
+- `pages.quality.cta-band.lead`：PDF or STEP. We answer with price, MOQ, and a date.
+- `pages.news.title`：News | Gauge & Pin Co. (Fictional)
+- `pages.news.description`：Shop notes on the press line, the sample window, and the Hamburg lane.
+- `pages.news.collection-list.title`：News
+- `pages.news.collection-list.lead`：Shop notes. The month in each line is the month we posted it.
+- `pages.news.cta-band.title`：Send a drawing
+- `pages.news.cta-band.lead`：PDF or STEP. We answer with price, MOQ, and a date.
+- `pages.contact.title`：Contact | Gauge & Pin Co. (Fictional)
+- `pages.contact.description`：Send a drawing. Phone, email, and the export desk in Beilun, Ningbo.
+- `pages.contact.contact.title`：Get a quote
+- `pages.contact.contact.lead`：Send a drawing. The desk answers with price, MOQ, and a date.
+- `pages.contact.faq.title`：Quote terms
+- `pages.contact.faq.items[0].q`：What is the catalog MOQ?
+- `pages.contact.faq.items[0].a`：Catalog hardware is 500 pieces. Custom stampings start at 1,000. Turned parts are quoted from the drawing. The sample lot is 50 pieces.
+- `pages.contact.faq.items[1].q`：What are the lead times?
+- `pages.contact.faq.items[1].a`：Catalog repeats ship 18 days after the deposit. First article is 25 days. Repeat production is 35 days after sample sign-off.
+- `pages.contact.faq.items[2].q`：How is the payment split?
+- `pages.contact.faq.items[2].a`：Deposit is 30%, then the balance before the crate leaves. Terms are EXW Ningbo or FOB Ningbo.
+- `pages.contact.faq.items[3].q`：Which files should I send?
+- `pages.contact.faq.items[3].a`：PDF and STEP. Mark the datums on the PDF before the desk quotes.
+- `pages.contact.cta-band.title`：Send a drawing
+- `pages.contact.cta-band.lead`：PDF or STEP. We answer with price, MOQ, and a date.
+- `collections.products.dowel-pin.slug`：dowel-pin
+- `collections.products.dowel-pin.category`：Turned
+- `collections.products.dowel-pin.name`：Hardened dowel pin
+- `collections.products.dowel-pin.summary`：100Cr6 dowel, hardened 58-62 HRC. Kept on the catalog shelf.
+- `collections.products.dowel-pin.body`：Ground after heat treat. Diameter holds ±0.01 mm, h6, unless the drawing asks tighter. Catalog MOQ is 500 pieces. Repeat lots ship 18 days after the deposit. Sample lot is 50 pieces.
+- `collections.products.dowel-pin.specs[0].label`：Material
+- `collections.products.dowel-pin.specs[0].value`：100Cr6
+- `collections.products.dowel-pin.specs[1].label`：Hardness
+- `collections.products.dowel-pin.specs[1].value`：58-62 HRC
+- `collections.products.dowel-pin.specs[2].label`：Diameter
+- `collections.products.dowel-pin.specs[2].value`：±0.01 mm, h6
+- `collections.products.dowel-pin.specs[3].label`：MOQ
+- `collections.products.dowel-pin.specs[3].value`：500 pieces
+- `collections.products.dowel-pin.specs[4].label`：Lead
+- `collections.products.dowel-pin.specs[4].value`：18 days after deposit
+- `collections.products.dowel-pin.specs[5].label`：Sample
+- `collections.products.dowel-pin.specs[5].value`：50-piece lot
+- `collections.products.shoulder-bolt.slug`：shoulder-bolt
+- `collections.products.shoulder-bolt.category`：Turned
+- `collections.products.shoulder-bolt.name`：304 shoulder bolt
+- `collections.products.shoulder-bolt.summary`：304 shoulder bolt. The shoulder is ground to the drawing.
+- `collections.products.shoulder-bolt.body`：Shoulder holds ±0.02 mm. Catalog MOQ is 500 pieces. Repeat lots ship 18 days after the deposit.
+- `collections.products.shoulder-bolt.specs[0].label`：Material
+- `collections.products.shoulder-bolt.specs[0].value`：304 stainless
+- `collections.products.shoulder-bolt.specs[1].label`：Shoulder
+- `collections.products.shoulder-bolt.specs[1].value`：±0.02 mm
+- `collections.products.shoulder-bolt.specs[2].label`：MOQ
+- `collections.products.shoulder-bolt.specs[2].value`：500 pieces
+- `collections.products.shoulder-bolt.specs[3].label`：Lead
+- `collections.products.shoulder-bolt.specs[3].value`：18 days after deposit
+- `collections.products.hinge-bracket.slug`：hinge-bracket
+- `collections.products.hinge-bracket.category`：Stamped
+- `collections.products.hinge-bracket.name`：SPCC hinge bracket
+- `collections.products.hinge-bracket.summary`：SPCC hinge bracket. Hole sizes are on the drawing.
+- `collections.products.hinge-bracket.body`：Stock is 2.0 mm SPCC. Critical holes hold ±0.05 mm. Custom stampings start at 1,000 pieces. First article is 25 days. Repeat production is 35 days after sample sign-off.
+- `collections.products.hinge-bracket.specs[0].label`：Material
+- `collections.products.hinge-bracket.specs[0].value`：SPCC
+- `collections.products.hinge-bracket.specs[1].label`：Stock
+- `collections.products.hinge-bracket.specs[1].value`：2.0 mm
+- `collections.products.hinge-bracket.specs[2].label`：Holes
+- `collections.products.hinge-bracket.specs[2].value`：±0.05 mm
+- `collections.products.hinge-bracket.specs[3].label`：MOQ
+- `collections.products.hinge-bracket.specs[3].value`：1,000 pieces
+- `collections.products.hinge-bracket.specs[4].label`：First article
+- `collections.products.hinge-bracket.specs[4].value`：25 days
+- `collections.products.hinge-bracket.specs[5].label`：Production
+- `collections.products.hinge-bracket.specs[5].value`：35 days after sign-off
+- `collections.products.weld-frame.slug`：weld-frame
+- `collections.products.weld-frame.category`：Welded
+- `collections.products.weld-frame.name`：Q235 rack upright
+- `collections.products.weld-frame.summary`：Q235 rack upright. Quoted from the weld drawing.
+- `collections.products.weld-frame.body`：Hole position holds ±0.5 mm after the jig is checked. Price is quoted from the drawing. Repeat production is 35 days after sample sign-off.
+- `collections.products.weld-frame.specs[0].label`：Material
+- `collections.products.weld-frame.specs[0].value`：Q235
+- `collections.products.weld-frame.specs[1].label`：Hole position
+- `collections.products.weld-frame.specs[1].value`：±0.5 mm
+- `collections.products.weld-frame.specs[2].label`：Lead
+- `collections.products.weld-frame.specs[2].value`：35 days after sign-off
+- `collections.products.weld-frame.specs[3].label`：Quote
+- `collections.products.weld-frame.specs[3].value`：From the drawing
+- `collections.products.standoff.slug`：standoff
+- `collections.products.standoff.category`：Turned
+- `collections.products.standoff.name`：6061-T6 aluminum standoff
+- `collections.products.standoff.summary`：6061-T6 aluminum standoff for panel builds.
+- `collections.products.standoff.body`：Turned diameter holds ±0.02 mm. Catalog MOQ is 500 pieces. Repeat lots ship 18 days after the deposit.
+- `collections.products.standoff.specs[0].label`：Material
+- `collections.products.standoff.specs[0].value`：6061-T6
+- `collections.products.standoff.specs[1].label`：Tolerance
+- `collections.products.standoff.specs[1].value`：±0.02 mm
+- `collections.products.standoff.specs[2].label`：MOQ
+- `collections.products.standoff.specs[2].value`：500 pieces
+- `collections.products.standoff.specs[3].label`：Lead
+- `collections.products.standoff.specs[3].value`：18 days after deposit
+- `collections.products.kit-fastener.slug`：kit-fastener
+- `collections.products.kit-fastener.category`：Hardware
+- `collections.products.kit-fastener.name`：304 cabinet kit
+- `collections.products.kit-fastener.summary`：304 cabinet kit. Screws, nuts, and washers in one bag.
+- `collections.products.kit-fastener.body`：One kit is the bag a cabinet line calls for. MOQ is 500 sets. Repeat lots ship 18 days after the deposit.
+- `collections.products.kit-fastener.specs[0].label`：Material
+- `collections.products.kit-fastener.specs[0].value`：304 stainless
+- `collections.products.kit-fastener.specs[1].label`：Contents
+- `collections.products.kit-fastener.specs[1].value`：Screws, nuts, washers
+- `collections.products.kit-fastener.specs[2].label`：MOQ
+- `collections.products.kit-fastener.specs[2].value`：500 sets
+- `collections.products.kit-fastener.specs[3].label`：Lead
+- `collections.products.kit-fastener.specs[3].value`：18 days after deposit
+- `collections.uses.cabinet-hardware.slug`：cabinet-hardware
+- `collections.uses.cabinet-hardware.name`：Cabinet hardware
+- `collections.uses.cabinet-hardware.summary`：Hinges, pins, and kits for sheet-metal cabinets.
+- `collections.uses.cabinet-hardware.body`：The cabinet line takes the hinge bracket, the dowel, and the bagged kit. Stampings come from Cixi. Machining and the kit pack happen in Beilun.
+- `collections.uses.cabinet-hardware.category`：Cabinets
+- `collections.uses.farm-implements.slug`：farm-implements
+- `collections.uses.farm-implements.name`：Farm implements
+- `collections.uses.farm-implements.summary`：Brackets and pins for implements that see mud and washdown.
+- `collections.uses.farm-implements.body`：Brackets are stamped SPCC. Pins are turned 304 or C45. The buyer marks which faces see washdown.
+- `collections.uses.farm-implements.category`：Farm
+- `collections.uses.rack-uprights.slug`：rack-uprights
+- `collections.uses.rack-uprights.name`：Warehouse racking
+- `collections.uses.rack-uprights.summary`：Uprights and connectors for pallet rack frames.
+- `collections.uses.rack-uprights.body`：Uprights are welded Q235. Hole position is held to ±0.5 mm. The drawing sets the beam pitch.
+- `collections.uses.rack-uprights.category`：Racking
+- `collections.uses.appliance-oem.slug`：appliance-oem
+- `collections.uses.appliance-oem.name`：Appliance OEM
+- `collections.uses.appliance-oem.summary`：Standoffs and brackets for appliance chassis.
+- `collections.uses.appliance-oem.body`：Standoffs are 6061-T6. Brackets are SPCC. Both ship in the buyer's carton mark.
+- `collections.uses.appliance-oem.category`：Appliances
+- `collections.news.press-250.slug`：press-250
+- `collections.news.press-250.name`：250 t press in Cixi
+- `collections.news.press-250.date`：2026-03
+- `collections.news.press-250.summary`：Mar 2026. The 250 t press replaced an older 160 t line. The press count is still 18.
+- `collections.news.press-250.body`：Cixi still runs 18 presses. The new 250 t press took the place of a 160 t line. It did not add a nineteenth press. Stampings that also need machining still go to Beilun.
+- `collections.news.sample-window.slug`：sample-window
+- `collections.news.sample-window.name`：Sample window stays 25 days
+- `collections.news.sample-window.date`：2026-01
+- `collections.news.sample-window.summary`：Jan 2026. First article stays at 25 days. Custom repeats stay at 35 days after sign-off. Catalog repeats stay at 18 days.
+- `collections.news.sample-window.body`：The sample window did not move. First article is still 25 days. After the buyer signs the sample, repeat production is 35 days. Catalog repeats stay at 18 days after the deposit.
+- `collections.news.hamburg-lane.slug`：hamburg-lane
+- `collections.news.hamburg-lane.name`：Ningbo to Hamburg lane
+- `collections.news.hamburg-lane.date`：2025-11
+- `collections.news.hamburg-lane.summary`：Nov 2025. Ningbo to Hamburg is a regular lane. Germany was already among the 16 countries.
+- `collections.news.hamburg-lane.body`：The Hamburg sailing is a lane, not a new country. The 2025 export list stays at 16 countries. Germany has been on it since the first shipment in 2018.
+- `collections.news.gauge-room.slug`：gauge-room
+- `collections.news.gauge-room.name`：2025 gauge calibration
+- `collections.news.gauge-room.date`：2025-08
+- `collections.news.gauge-room.summary`：Aug 2025. Calibration log for the year is closed. The CMM is the same one in the Beilun gauge room.
+- `collections.news.gauge-room.body`：The log is closed for 2025. The gauge room did not move. It has sat beside the CNC aisle since 2024. The room still has one CMM.
+
+## 4. 图片与待补信息
+演示照片是行业素材，不能作为本企业实拍证据。二维码和证书图片未提供时不展示。已存在但互相矛盾的陈述应删除或另行确认，不自行生成新数值。
+
+## 5. 可用网站表述
+以下表述从上述原文归纳，不增加经营事实。
+
+Metal parts made to your drawing
+Turned pins, stamped brackets and welded frames from Ningbo.

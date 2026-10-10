@@ -13,9 +13,15 @@
     "form": "Send a drawing"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -53,17 +59,84 @@
       "kind": "home",
       "optional": false,
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "trust", "required": false, "variants": ["stats"] },
-        { "type": "services", "required": true, "variants": ["lanes"] },
-        { "type": "photo-band", "required": false, "variants": ["wide"] },
-        { "type": "why", "required": false, "variants": ["rail"] },
-        { "type": "cases", "required": false, "variants": ["tiles"] },
-        { "type": "collection-list", "required": false, "variants": ["brief"] },
-        { "type": "plant", "required": false, "variants": ["split"] },
-        { "type": "honors", "required": false, "variants": ["wall"] },
-        { "type": "cta-band", "required": false, "variants": ["band"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "brief",
+            "catalog-preview"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "rail"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "plant",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "tiles"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        },
+        {
+          "type": "services",
+          "required": false,
+          "variants": [
+            "lanes"
+          ]
+        },
+        {
+          "type": "honors",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     },
     {
@@ -72,11 +145,41 @@
       "kind": "about",
       "optional": false,
       "order": [
-        { "type": "timeline", "required": false, "variants": ["rail"] },
-        { "type": "why", "required": false, "variants": ["cells"] },
-        { "type": "plant", "required": false, "variants": ["split"] },
-        { "type": "honors", "required": false, "variants": ["wall"] },
-        { "type": "cta-band", "required": false, "variants": ["band"] }
+        {
+          "type": "timeline",
+          "required": false,
+          "variants": [
+            "rail"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "cells"
+          ]
+        },
+        {
+          "type": "plant",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "honors",
+          "required": false,
+          "variants": [
+            "wall"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -85,8 +188,20 @@
       "kind": "list",
       "optional": false,
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["catalog"] },
-        { "type": "cta-band", "required": false, "variants": ["band"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "catalog"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -96,7 +211,13 @@
       "optional": false,
       "from": "products",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["sheet"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "sheet"
+          ]
+        }
       ]
     },
     {
@@ -105,10 +226,25 @@
       "kind": "list",
       "optional": true,
       "when": "档案写了零件用在哪些设备或行业",
-      "deny": ["没有应用场景", "没有应用"],
+      "deny": [
+        "没有应用场景",
+        "没有应用"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["tiles"] },
-        { "type": "cta-band", "required": false, "variants": ["band"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "tiles"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -119,7 +255,13 @@
       "when": "应用列表开着，并且有对应条目。",
       "from": "uses",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["story"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "story"
+          ]
+        }
       ]
     },
     {
@@ -128,13 +270,46 @@
       "kind": "about",
       "optional": true,
       "when": "档案写了检验、公差或检测设备。",
-      "deny": ["没有质检", "没有质量"],
+      "deny": [
+        "没有质检",
+        "没有质量"
+      ],
       "order": [
-        { "type": "why", "required": false, "variants": ["cells"] },
-        { "type": "photo-band", "required": false, "variants": ["wide"] },
-        { "type": "plant", "required": false, "variants": ["split"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] },
-        { "type": "cta-band", "required": false, "variants": ["band"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "cells"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "plant",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -143,10 +318,26 @@
       "kind": "news-list",
       "optional": true,
       "when": "档案里有可以单独成篇的动态，例如换设备、交期或航线。",
-      "deny": ["没有新闻", "没有动态", "不发新闻"],
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["index"] },
-        { "type": "cta-band", "required": false, "variants": ["band"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "index"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     },
     {
@@ -157,7 +348,13 @@
       "when": "新闻列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["report"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "report"
+          ]
+        }
       ]
     },
     {
@@ -166,10 +363,30 @@
       "kind": "contact",
       "optional": false,
       "order": [
-        { "type": "contact", "required": true, "variants": ["split"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] },
-        { "type": "cta-band", "required": false, "variants": ["band"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "band"
+          ]
+        }
       ]
     }
-  ]
+  ],
+  "missingClientImages": "omit",
+  "layout": "business"
 }

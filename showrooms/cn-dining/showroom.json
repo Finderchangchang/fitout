@@ -67,17 +67,11 @@
           ]
         },
         {
-          "type": "trust",
-          "required": false,
+          "type": "tasting",
+          "required": true,
           "variants": [
-            "stats"
-          ]
-        },
-        {
-          "type": "photo-band",
-          "required": false,
-          "variants": [
-            "wide"
+            "picker",
+            "menu"
           ]
         },
         {
@@ -88,17 +82,38 @@
           ]
         },
         {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "catalog-preview"
+          ]
+        },
+        {
+          "type": "contact",
+          "required": false,
+          "variants": [
+            "card"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
           "type": "mosaic",
           "required": false,
           "variants": [
             "quad"
-          ]
-        },
-        {
-          "type": "tasting",
-          "required": true,
-          "variants": [
-            "picker"
           ]
         },
         {
@@ -322,5 +337,7 @@
         }
       ]
     }
-  ]
+  ],
+  "missingClientImages": "omit",
+  "layout": "business"
 }

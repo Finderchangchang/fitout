@@ -219,8 +219,6 @@
         "mapHref": "https://uri.amap.com/search?keyword=杭州市西湖区龙井路88号",
         "summary": "杭州市西湖区龙井路88号（虚构）。每天10:00-21:30营业，座位36个。",
         "body": "2017年开业的第一家店。2019年把门灯换成暖色，座位仍是36个。",
-        "image": "store-longjing",
-        "imageAlt": "龙井路店夜间门头",
         "specs": [
           {
             "label": "座位",
@@ -241,8 +239,6 @@
         "mapHref": "https://uri.amap.com/search?keyword=杭州市上城区平海路126号",
         "summary": "杭州市上城区平海路126号（虚构）。每天10:30-22:00营业，座位28个。",
         "body": "位于西湖湖滨一侧。晚间客流较多，司康通常在十九点前售完。",
-        "image": "store-hubin",
-        "imageAlt": "湖滨店靠窗座位",
         "specs": [
           {
             "label": "座位",
@@ -263,8 +259,6 @@
         "mapHref": "https://uri.amap.com/search?keyword=苏州市姑苏区平江路54号",
         "summary": "苏州市姑苏区平江路54号（虚构）。每天11:00-21:00营业，座位22个。",
         "body": "铺面较窄，座位22个。热食从十一点开始，比杭州门店晚半小时。",
-        "image": "store-pingjiang",
-        "imageAlt": "平江路店窄巷门头",
         "specs": [
           {
             "label": "座位",
@@ -285,8 +279,6 @@
         "mapHref": "https://uri.amap.com/search?keyword=宁波市海曙区偃月街17号",
         "summary": "宁波市海曙区偃月街17号（虚构）。每天10:00-21:00营业，座位19个。",
         "body": "四家门店里座位最少的一家，没有包间。茶泡饭的销量高于拌面。",
-        "image": "store-yuehu",
-        "imageAlt": "月湖店门口石阶",
         "specs": [
           {
             "label": "座位",
@@ -346,137 +338,48 @@
           "tone": "image",
           "data": {
             "label": "创立于2017",
-            "title": "焙火乌龙，当天现烤",
-            "lead": "原叶现泡，司康当天出炉，热食有茶泡饭和葱油拌面。",
+            "title": "乌龙茶与当天烘焙",
+            "lead": "杭州、苏州、宁波的茶饮门店，供应乌龙茶、现烤司康和热食。",
             "primaryLabel": "谈加盟",
             "primaryHref": "join/index.html",
-            "secondaryLabel": "看产品",
-            "secondaryHref": "products/index.html",
+            "secondaryLabel": "查找门店",
+            "secondaryHref": "stores/index.html",
             "interval": "4500",
             "slides": [
               {
                 "image": "hero-tea",
                 "imageAlt": "杯沿的茶汤和暖色侧光",
-                "title": "焙火乌龙，当天现烤",
-                "lead": "原叶现泡，司康当天出炉，热食有茶泡饭和葱油拌面。"
+                "title": "乌龙茶与当天烘焙",
+                "lead": "杭州、苏州、宁波的茶饮门店，供应乌龙茶、现烤司康和热食。"
               },
               {
                 "image": "hero-bake",
                 "imageAlt": "烤盘上刚出炉的司康",
-                "title": "司康当天出炉即止",
+                "title": "当天现烤司康",
                 "lead": "低筋面粉配发酵黄油，晚间售完就收。"
               },
               {
                 "image": "hero-door",
                 "imageAlt": "夜间门灯下的窄门局部",
-                "title": "三十六座，今晚还开",
+                "title": "四家门店，三座城市",
                 "lead": "龙井路店十点到九点半，座位三十六个。"
               },
               {
                 "image": "hero-table",
                 "imageAlt": "旧木桌上的杯子和盘子",
-                "title": "热食十一点后上桌",
+                "title": "茶汤热食，十一点供应",
                 "lead": "茶泡饭配腌萝卜，葱油拌面可以加蛋。"
               }
             ]
           }
         },
         {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "light",
-          "data": {
-            "title": "品牌实力",
-            "lead": "四家门店，在杭州、苏州、宁波，2017年开业。",
-            "items": [
-              {
-                "value": "4 家",
-                "label": "在营门店"
-              },
-              {
-                "value": "9 年",
-                "label": "品牌年限"
-              },
-              {
-                "value": "3 城",
-                "label": "覆盖城市"
-              },
-              {
-                "value": "2017",
-                "label": "创立年份"
-              }
-            ]
-          }
-        },
-        {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "door",
-          "tone": "image",
-          "data": {
-            "image": "front-longjing",
-            "imageAlt": "龙井路店沿街门头",
-            "caption": "杭州龙井路店，2017年开出的第一家门店。"
-          }
-        },
-        {
-          "type": "essay",
-          "variant": "split",
-          "anchor": "story",
-          "tone": "light",
-          "data": {
-            "title": "品牌故事",
-            "lead": "茶用建德焙火乌龙，面包在余杭后厨当天烤。",
-            "body": "2017年，麓茶记在杭州龙井路开出第一家店，36个座位。菜单一直是焙火乌龙、当天司康和桂花卷，加上茶泡饭、葱油拌面。余杭后厨约860平方米，给杭州、苏州、宁波的4家门店供货。",
-            "image": "about-table",
-            "imageAlt": "木桌上的茶和司康",
-            "caption": "同一张桌上的茶和司康"
-          }
-        },
-        {
-          "type": "mosaic",
-          "variant": "quad",
-          "anchor": "ingredients",
-          "tone": "image",
-          "data": {
-            "title": "核心原料",
-            "lead": "茶、面粉、黄油和当季水果，菜单围着这四样。",
-            "items": [
-              {
-                "name": "焙火乌龙",
-                "text": "建德茶山，清明后进一批。",
-                "image": "ing-tea",
-                "imageAlt": "摊开的焙火乌龙茶叶"
-              },
-              {
-                "name": "低筋面粉",
-                "text": "司康和桂花卷用同一款粉。",
-                "image": "ing-flour",
-                "imageAlt": "木勺里的低筋面粉"
-              },
-              {
-                "name": "发酵黄油",
-                "text": "当天揉面，当天出炉。",
-                "image": "ing-butter",
-                "imageAlt": "一块发酵黄油"
-              },
-              {
-                "name": "当季水果",
-                "text": "青提只在当季上菜单。",
-                "image": "ing-fruit",
-                "imageAlt": "一盘当季青提"
-              }
-            ]
-          }
-        },
-        {
           "type": "tasting",
-          "variant": "picker",
+          "variant": "menu",
           "anchor": "cups",
           "tone": "light",
           "data": {
-            "title": "产品系列",
+            "title": "菜单与价格",
             "lead": "茶饮、烘焙和热食，价格标在每一款旁边。",
             "moreHref": "products/index.html",
             "moreLabel": "全部产品",
@@ -514,96 +417,43 @@
           }
         },
         {
-          "type": "triptych",
-          "variant": "spread",
-          "anchor": "ops",
-          "tone": "image",
-          "data": {
-            "title": "中央厨房",
-            "lead": "余杭后厨出货，新茶在龙井路店试饮后再上菜单。",
-            "items": [
-              {
-                "name": "余杭后厨",
-                "text": "约860平方米，负责茶叶和烘焙出货。",
-                "image": "ops-warehouse",
-                "imageAlt": "余杭后厨的货架和操作台"
-              },
-              {
-                "name": "试饮台",
-                "text": "新茶先在龙井路店试饮，再决定是否上菜单。",
-                "image": "ops-tasting",
-                "imageAlt": "店里的试饮长桌"
-              },
-              {
-                "name": "门店早班",
-                "text": "司康上午十点出炉，热食十一点开始供应。",
-                "image": "ops-kitchen",
-                "imageAlt": "早晨的烤炉和托盘"
-              }
-            ]
-          }
-        },
-        {
-          "type": "briefs",
-          "variant": "cards",
-          "anchor": "news",
-          "tone": "light",
-          "data": {
-            "title": "新闻动态",
-            "lead": "门店设备、茶山采购和加盟说明会。",
-            "items": [
-              {
-                "name": "龙井路店完成烤炉更新",
-                "text": "司康出炉改为上午十点。",
-                "href": "news/oven.html",
-                "image": "news-oven",
-                "imageAlt": "龙井路店新安装的烤炉",
-                "date": "2026年3月12日"
-              },
-              {
-                "name": "春季建德茶山原料到仓",
-                "text": "今年焙火原料完成采购。",
-                "href": "news/hill.html",
-                "image": "news-hill",
-                "imageAlt": "建德茶山春季茶园",
-                "date": "2026年4月4日"
-              },
-              {
-                "name": "四月加盟说明会开放报名",
-                "text": "龙井路店，限额十二人。",
-                "href": "news/meeting.html",
-                "image": "news-meet",
-                "imageAlt": "龙井路店说明会长桌",
-                "date": "2026年4月18日"
-              }
-            ]
-          }
-        },
-        {
-          "type": "invite",
-          "variant": "band",
-          "anchor": "join",
+          "type": "essay",
+          "variant": "split",
+          "anchor": "story",
           "tone": "dark",
           "data": {
-            "title": "加盟合作",
-            "lead": "先到现有门店坐一坐，再谈费用和培训。",
-            "primaryHref": "join/index.html",
-            "items": [
-              {
-                "name": "实地看店",
-                "text": "龙井路、湖滨、平江路、月湖都可以坐。"
-              },
-              {
-                "name": "费用标准",
-                "text": "加盟费18.6万元，保证金6.2万元。"
-              },
-              {
-                "name": "跟班培训",
-                "text": "前厅到店跟班18天，从早班开始。"
-              }
-            ]
+            "title": "茶和烘焙的来处",
+            "lead": "茶用建德焙火乌龙，面包在余杭后厨当天烤。",
+            "body": "2017年，麓茶记在杭州龙井路开出第一家店，36个座位。菜单一直是焙火乌龙、当天司康和桂花卷，加上茶泡饭、葱油拌面。余杭后厨约860平方米，给杭州、苏州、宁波的4家门店供货。",
+            "image": "about-table",
+            "imageAlt": "木桌上的茶和司康",
+            "caption": "同一张桌上的茶和司康"
           },
-          "bg": "bg-join"
+          "bg": "hero-table"
+        },
+        {
+          "type": "collection-list",
+          "variant": "catalog-preview",
+          "anchor": "stores-preview",
+          "tone": "light",
+          "data": {
+            "title": "找到附近的门店",
+            "lead": "杭州、苏州、宁波，四家门店的地址和营业时间。",
+            "collection": "stores",
+            "moreHref": "stores/index.html",
+            "moreLabel": "查看门店信息"
+          }
+        },
+        {
+          "type": "contact",
+          "variant": "card",
+          "anchor": "visit",
+          "tone": "dark",
+          "bg": "hero-tea",
+          "data": {
+            "title": "到店与联系",
+            "lead": "门店电话与营业时间，来之前可以先问一声。"
+          }
         }
       ]
     },
@@ -694,7 +544,7 @@
           "anchor": "list",
           "tone": "light",
           "data": {
-            "title": "产品中心",
+            "title": "菜单与价格",
             "lead": "按茶饮、烘焙、热食分类查看。",
             "collection": "products",
             "groups": [
@@ -715,8 +565,7 @@
                 "key": "meal",
                 "label": "热食"
               }
-            ],
-            "pageSize": "3"
+            ]
           }
         }
       ]
@@ -742,8 +591,7 @@
           "data": {
             "title": "门店分布",
             "lead": "四家门店的地址、营业时间和座位数。",
-            "collection": "stores",
-            "pageSize": "3"
+            "collection": "stores"
           }
         }
       ]
@@ -851,10 +699,9 @@
           "anchor": "list",
           "tone": "light",
           "data": {
-            "title": "新闻动态",
+            "title": "门店与产品动态",
             "lead": "门店、采购和加盟说明，按日期排列。",
-            "collection": "news",
-            "pageSize": "2"
+            "collection": "news"
           }
         }
       ]
@@ -878,7 +725,7 @@
           "anchor": "visit",
           "tone": "light",
           "data": {
-            "title": "联系方式",
+            "title": "到店信息",
             "lead": "门店事务请打热线。公众号发通知，点单码在店内使用。",
             "qrs": [
               {
@@ -907,5 +754,22 @@
         }
       ]
     }
-  ]
+  ],
+  "hero": {
+    "buttons": [
+      {
+        "label": "查看菜单",
+        "href": "products/index.html"
+      },
+      {
+        "label": "查找门店",
+        "href": "stores/index.html"
+      }
+    ]
+  },
+  "buttons": {
+    "primary": "到店咨询",
+    "secondary": "查看菜单",
+    "form": "联系品牌"
+  }
 }

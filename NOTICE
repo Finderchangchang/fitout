@@ -1,55 +1,29 @@
-精装 · FitOut 的板块结构和图标路径借自下面这些仓库。许可证都是 MIT。
-没有复制它们的文案、库存照片、logo，也没有复制 GPL、无许可或非商用仓库里的代码。
+精装 · FitOut 的部分框架结构与图标路径使用 MIT 授权资料。
+不包含第三方示例文案、图库原图、logo 或未获得许可的代码。
 
-localbiz-site
-https://github.com/Ricky1800/localbiz-site
+保留原著作权声明：
 Copyright (c) 2026 Ricky1800 and orbitwebsites-cloud
-MIT License
-借了结构，没有原样搬 React 组件：顶栏、首屏、服务、评价、FAQ、营业与联系、行动条、页脚，以及 lib/theme/styles.ts 里的疏密和动效时长。
-不包含该仓库的渐变占位图、星级、服务行的 01 编号、评价横向滚动。
-
-hyperui
-https://github.com/markmead/hyperui
 Copyright (c) Mark Mead
-MIT License
-借了营销示例的 HTML 结构：headers/1（菜单）、stats/1（数字条）、feature-grids/1（要点卡）、team-sections/1（姓名和岗位）、product-cards/1（产品名链接）。
-图标路径取自该仓库示例里内联的 Heroicons outline，文件见下。不包含示例里的 Unsplash 图片和假文案。
-
-ui-ux-pro-max-skill
-https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 Copyright (c) 2024 Next Level Builder
-MIT License
-规则表是 A 报告的来源之一，本仓库没有复制该技能的文档正文。
-下列图标路径出现在它的示例里，和 Heroicons outline 相同：check、chevron-right。
-
-PageTemplatify
-https://github.com/GeekAt/PageTemplatify
 Copyright (c) 2025 GeekAt
+Copyright Tailwind Labs, Inc.
+
 MIT License
-只参考 themes/enterprise/template.html 里「有备案号才显示 ICP / 公安备案」的页脚结构。没有复制该主题的 Bootstrap 样式。
 
-Heroicons
-https://github.com/tailwindlabs/heroicons
-MIT License. Copyright Tailwind Labs, Inc.
-framework/icons/*.svg 的 path 数据是 Heroicons v1 outline（viewBox 0 0 24 24），从上面两个 MIT 仓库的示例里原样抄出，统一写成 fill="none"、stroke="currentColor"、stroke-width="2"。没有改路径，没有手画。
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-| 文件 | 抄自 |
-|---|---|
-| phone.svg、mail.svg、map-pin.svg | hyperui public/examples/marketing/footers/10.html |
-| clock.svg | hyperui public/examples/marketing/cards/8.html |
-| menu.svg | hyperui public/examples/marketing/headers/1.html |
-| close.svg | hyperui public/examples/marketing/pricing/2.html |
-| arrow-right.svg | hyperui public/examples/marketing/footers/12.html |
-| chevron-down.svg | hyperui public/examples/marketing/faqs/1.html |
-| home.svg | hyperui public/examples/application/breadcrumbs/2.html |
-| user.svg、users.svg | hyperui public/examples/application/vertical-menu/7.html |
-| badge-check.svg、chat.svg | hyperui public/examples/marketing/cards/9.html |
-| building.svg | hyperui public/examples/marketing/cards/5.html |
-| check.svg | ui-ux-pro-max-skill projects/saas-landing/index.html |
-| chevron-right.svg | ui-ux-pro-max-skill gallery/components/ExpandableSection.tsx |
-| calendar.svg | ui-ux-pro-max-skill projects/healthcare-dashboard/index.html |
-| external.svg | ui-ux-pro-max-skill projects/portfolio-dark/index.html |
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-huashu-design、taste-skill 只作为 A 报告里的规则来源，没有复制它们的文章或技能正文。
-
-没有使用 Cruip、Halo、astroship、personal-homepage-skill、x1xhlol 合集、awesome-landing-pages 的代码、图片或 logo。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

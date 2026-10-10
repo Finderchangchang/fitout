@@ -46,7 +46,7 @@
 - 框架固定文案（首页、复制微信号、跳到正文等）走 `framework/i18n/en.json`。户型主按钮不会自动翻译，英文站用 `buttons.primary` 盖掉，否则顶栏仍是户型里的中文。
 - 字体用 token 的 `font-heading-en` / `font-body-en`。不写就用 `"Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif`。不加载字体文件。
 
-`scripts/fill.mjs` 仍按中文规则填，不读 `lang`。英文站先手写 `site.json`。
+`scripts/fill.mjs` 默认跟随样板间示例语言，可用 `--lang en|zh-CN` 指定。agent 校验读取 site.json.lang，和机检共用语言规则。中文档案可以生成英文站。
 
 ## contact
 
@@ -295,14 +295,22 @@ node scripts/fitout.mjs --profile <站点目录>/企业档案.md --out <站点�
 `scripts/fill.mjs` 把本页规则、这套样板间的 `examples/site.json`（只作结构，不抄公司名、电话、数字和句式）、各板块 `spec.json` 的字段和字数上限、企业档案全文拼成提示词，请 DeepSeek 输出 `site.json`。只有这条和 `--fill deepseek` 才需要密钥。
 
 ```bash
-node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2]
+node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2] [--lang zh-CN|en]
 ```
 
-一条命令从企业档案做到整站，批量填法加 `--fill deepseek`：`node scripts/fitout.mjs --profile <档案.md> --out <目录> --showroom auto --fill deepseek`，见 README 的「进阶」。
+一条命令从企业档案做到整站，批量填法加 `--fill deepseek`：`node scripts/fitout.mjs --profile <档案.md> --out <目录> --showroom auto --fill deepseek`，见 README 的「批量填写」。
 
 - `--model` 默认 `deepseek-chat`。
 - `--max-retries` 默认 `2`。校验不过就把错误清单发回给模型改，最多再改这么多轮。
 - 密钥只读环境变量 `DEEPSEEK_API_KEY`，不要写进命令行、日志或档案。
 - 每次调用用了多少 token，记在旁边的 `<out>.log.json`。
 
-校验先看本仓库的填写规则（必填、字数、空话、可选页开关），再实际拼一次、跑一次机检。`fill.mjs` 这条仍按中文站的字数和空话，不按英文 ×2.2。缺图警告，以及「上线前要换真实网址」，不会拿去要求模型重写。首页把同一短句说满 3 次，或同一个数字加单位出现在 3 个板块里，会要求重写。英文站的这一条按词，短句至少 4 个词。
+校验先看本仓库的填写规则（必填、字数、空话、可选页开关），再实际拼一次、跑一次机检。`fill.mjs`、agent 和机检共用英文 ×2.2、首屏词数和英文空话规则。缺图警告，以及「上线前要换真实网址」，不会拿去要求模型重写。首页把同一短句说满 3 次，或同一个数字加单位出现在 3 个板块里，会要求重写。英文站的这一条按词，短句至少 4 个词。
+
+## v0.6 分类页与三套标杆
+
+实际超过 pageSize 的集合有至少两个分类时，额外生成 `category/<分类键>/index.html`，分类分页在该目录的 `page/2.html`。分类键沿用稳定键，自动导航指向完整分类页。三套 business 版式即使未分页，也为至少两个真实分类生成独立入口。旧列表文件、详情文件和分类锚点仍可用；旧锚点在有脚本时转到对应分类页。没有脚本也能直接访问新分类页。
+
+三套标杆的首页顺序由 showroom.json 定义，模型仍只能在允许版式里填内容。无图菜单、产品导读不需要图片，缺图不保留空位。首屏只有一张照片时可以用 single；三张及以上才建议轮播。
+
+填写入口的 `--lang` 可覆盖语言。批量未指定跟随样板间示例；agent 未指定沿用 site.json.lang 和旧的中文默认。图片位 `descEn` 提供英文说明。

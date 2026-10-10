@@ -1,0 +1,10 @@
+.catalog-preview-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.catalog-preview-card { background: var(--surface); border: 1px solid var(--border); min-width: 0; }
+.catalog-preview-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.catalog-preview-copy { display: grid; gap: 0.5rem; padding: 1.25rem; }
+.catalog-preview-copy a { text-decoration: none; }
+.catalog-preview-copy .price { color: var(--accent); font-size: var(--fs-2); }
+.catalog-preview-more { margin-top: var(--gap); }
+.catalog-preview[data-no-media] .catalog-preview-card { background: transparent; border-width: 0 0 1px; }
+.catalog-preview[data-no-media] .catalog-preview-copy { padding-inline: 0; }
+@media (max-width: 767px) { .catalog-preview-grid { grid-template-columns: 1fr; } .catalog-preview-card { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: start; } .catalog-preview[data-no-media] .catalog-preview-card { display: block; } .catalog-preview-card img { height: auto; aspect-ratio: 1; } .catalog-preview-copy { padding: 1rem; } }

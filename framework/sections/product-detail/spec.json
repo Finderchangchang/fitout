@@ -72,7 +72,7 @@
       "needsImage": false,
       "family": "article",
       "fit": "名称、说明、规格表、去联系页",
-      "source": "自写文章。产品卡的名称链接来自 hyperui product-cards/1.html"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

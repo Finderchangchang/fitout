@@ -132,7 +132,7 @@ export const RULES = {
 export const HIGH_SAT_BANDS = 3;
 export const HERO_PX = { min: 60, max: 110, script: 173 };
 export const SECTION_Y = { desktopMin: 80, desktopMax: 160, mobileMin: 48, mobileMax: 72 };
-/** 国际风首屏高度只在 check-visual 里量。国内风不套这道，凡科中位大约 0.74 屏。 */
+/** 国际风首屏高度只在 check-visual 里量。国内风不套这道，已有国内风样板间首屏约 0.74 屏。 */
 export const FLAVOR_LIMITS = {
   cn: { heroMin: 60, heroMax: 110, sectionYMin: 80, sectionYMax: 160, heroViewport: null },
   intl: { heroMin: 60, heroMax: 110, sectionYMin: 80, sectionYMax: 160, heroViewport: { min: 0.85, max: 1 } },

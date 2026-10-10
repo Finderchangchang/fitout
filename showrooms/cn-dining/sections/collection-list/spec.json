@@ -1,18 +1,52 @@
 {
   "note": "产品分类读每条的 category。拼装按分类生成筛选，不看链接前缀。门店和新闻不写 category 时不出现筛选。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "collection": { "type": "string", "required": true, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "collection": {
+      "type": "string",
+      "required": true,
+      "maxChars": 40
+    },
     "groups": {
       "type": "list",
       "required": false,
       "max": 6,
       "item": {
-        "key": { "type": "string", "required": true, "maxChars": 12 },
-        "label": { "type": "string", "required": true, "maxChars": 8 },
-        "on": { "type": "string", "required": false, "maxChars": 2 }
+        "key": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "label": {
+          "type": "string",
+          "required": true,
+          "maxChars": 8
+        },
+        "on": {
+          "type": "string",
+          "required": false,
+          "maxChars": 2
+        }
       }
+    },
+    "moreHref": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "moreLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
     }
   },
   "variants": {
@@ -25,6 +59,11 @@
       "needsImage": false,
       "family": "feed",
       "fit": "图文列表，说明里带地址或日期"
+    },
+    "catalog-preview": {
+      "needsImage": false,
+      "family": "product-overview",
+      "fit": "首页产品或门店导读；无图时是精简文字列表。"
     }
   }
 }

@@ -6,9 +6,11 @@
       {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
       <p class="prose">{{body}}</p>
     </div>
+    {{#if image}}
     <figure class="essay-figure">
       <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
       {{#if caption}}<figcaption class="meta">{{caption}}</figcaption>{{/if}}
     </figure>
+    {{/if}}
   </div>
 </section>

@@ -25,7 +25,7 @@
       "needsImage": false,
       "family": "band",
       "fit": "标题在上，按钮在下",
-      "source": "localbiz-site components/sections/ctaBand/CtaBandSimple.tsx。不搬渐变那一版"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "inline": {
       "needsImage": false,

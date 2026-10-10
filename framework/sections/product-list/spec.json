@@ -19,7 +19,7 @@
       "needsImage": false,
       "family": "catalog",
       "fit": "产品卡片。没图就不出图片",
-      "source": "hyperui public/examples/marketing/product-cards/1.html 的名称加链接。不搬库存图，不做出图切换"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "rows": {
       "needsImage": false,

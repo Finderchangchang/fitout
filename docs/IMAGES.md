@@ -228,3 +228,11 @@ node scripts/images/grade.mjs --showroom cn-dining --in <原始图目录> --out 
 值不是 `photo`、`ai`、`stock` 时，拼装直接失败。
 
 正式拼装不要带 `--demo-images`。那个参数是演示用的：缺的图库图和 AI 图会画深色占位，只有这一页真画出了这种块，才标「演示占位图」。演示模式仍给 `mustBeReal` 的位画占位，方便看版式。见 `docs/SHOWROOM.md`。
+
+## 普通照片名与来源清单
+
+对话助手负责看图、分配用途，用户不用把文件改成内部编号。photos/sources.json 可以采用 `{ "items": [{ "id": "hero-tea", "file": "茶杯照片.jpg", "source": "photo" }] }`，或既有 id 对应来源的对象。file 只能是本目录里的文件名。来源记录随调色、拼装保留；生成图指向必须实拍的位会被拦下。
+
+图片位可有 descEn，供英文站填写。三套标杆的 showroom.json 写 missingClientImages: omit，因此没有客户文件的二维码和证书在演示、正式模式都收起。不要生成一个看似真实的二维码来顶替未知的公众号。
+
+产品示意图须与产品形状相符，明确区分示意图和企业实拍。演示素材、生成原图、调色产物和来源记录都保留在仓库外。

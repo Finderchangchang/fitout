@@ -1,0 +1,417 @@
+# 企业档案：宁浦精工（虚构）
+
+本档案整理自 3abfb84 的已提交演示内容，全部为虚构企业信息。只用于演示，不对应真实经营主体。新增事实必须另行确认。
+
+## 1. 一句话介绍
+桐乡宁浦精工，做金属机件的折弯、冲压、机加和组焊，内销为主。
+
+## 2. 基本信息
+| 项 | 内容 |
+|---|---|
+| 品牌名 / 门店名 | 宁浦精工（虚构） |
+| 站点 id | cn-factory |
+| 行业 | factory-trade |
+| 城市、地址 | 浙江省嘉兴市桐乡市屠甸镇振业路26号（虚构地址） |
+| 电话 | 0573-88162740 |
+| 微信 | ningpu-sales |
+| 邮箱 | sales@ningpu.example |
+| 备案号 | 浙ICP备20260915号-6 |
+| 营业时间 | 周一至周五 08:00-17:30；周六 08:00-11:30 |
+
+## 3. 已确认的演示内容
+下列原文是事实基准。字段路径用于回查来源；图片位、链接和排版配置不是企业事实。
+
+- `contact.phone`：0573-88162740
+- `contact.wechat`：ningpu-sales
+- `contact.wechatQr`：qr-wechat
+- `contact.email`：sales@ningpu.example
+- `contact.address`：浙江省嘉兴市桐乡市屠甸镇振业路26号（虚构地址）
+- `contact.hours[0].day`：周一至周五
+- `contact.hours[0].time`：08:00-17:30
+- `contact.hours[1].day`：周六
+- `contact.hours[1].time`：08:00-11:30
+- `contact.formUrl`：https://example.com/ningpu-inquiry
+- `contact.icp`：浙ICP备20260915号-6
+- `contact.qrcodes[0].label`：关注公众号
+- `contact.qrcodes[1].label`：顾问微信
+- `name`：宁浦精工（虚构）
+- `summary`：桐乡宁浦精工，做金属机件的折弯、冲压、机加和组焊，内销为主。
+- `pages.home.title`：宁浦精工（虚构）
+- `pages.home.description`：桐乡金属机件厂，折弯、冲压、机加、组焊都在厂里完成。
+- `pages.home.hero.label`：宁浦精工
+- `pages.home.hero.title`：十七年只做金属机件
+- `pages.home.hero.lead`：图纸确认后在桐乡排产，折弯、冲压、机加和组焊都做。
+- `pages.home.hero.primaryLabel`：索取报价
+- `pages.home.hero.secondaryLabel`：产品中心
+- `pages.home.hero.slides[0].title`：十七年只做金属机件
+- `pages.home.hero.slides[0].lead`：图纸确认后在桐乡排产，折弯、冲压、机加和组焊都做。
+- `pages.home.hero.slides[1].title`：折弯公差按零点二
+- `pages.home.hero.slides[1].lead`：门框加强板按图折弯，对角线抽检后再批量。
+- `pages.home.hero.slides[2].title`：轴套车铣不外协
+- `pages.home.hero.slides[2].lead`：45钢轴套在厂里车完，内孔按客户的轴配。
+- `pages.home.hero.slides[3].title`：焊完进质检再出厂
+- `pages.home.hero.slides[3].lead`：支架按图组焊，焊点交检合格才装箱。
+- `pages.home.hero.rail[0].name`：折弯
+- `pages.home.hero.rail[0].text`：公差 ±0.2 毫米
+- `pages.home.hero.rail[1].name`：冲压
+- `pages.home.hero.rail[1].text`：冲床到 160 吨
+- `pages.home.hero.rail[2].name`：机加
+- `pages.home.hero.rail[2].text`：车铣都在厂里
+- `pages.home.hero.rail[3].name`：组焊
+- `pages.home.hero.rail[3].text`：焊完交检出厂
+- `pages.home.trust.title`：企业实力
+- `pages.home.trust.lead`：年份、人数和设备，是厂里现在的情况。
+- `pages.home.trust.items[0].value`：17 年
+- `pages.home.trust.items[0].label`：从事机件加工
+- `pages.home.trust.items[1].value`：126 人
+- `pages.home.trust.items[1].label`：在册员工
+- `pages.home.trust.items[2].value`：38 台
+- `pages.home.trust.items[2].label`：折弯机和冲床
+- `pages.home.trust.items[3].value`：0.2 mm
+- `pages.home.trust.items[3].label`：折弯常规公差
+- `pages.home.services.title`：生产设备
+- `pages.home.services.lead`：折弯、冲压、机加、组焊四条线，都在振业路厂区。
+- `pages.home.services.items[0].name`：数控折弯机
+- `pages.home.services.items[0].text`：板厚到 6 毫米，常规公差 ±0.2 毫米。
+- `pages.home.services.items[0].tag`：折弯
+- `pages.home.services.items[1].name`：160吨冲床
+- `pages.home.services.items[1].text`：连续模和单工序都做，冲床到 160 吨。
+- `pages.home.services.items[1].tag`：冲压
+- `pages.home.services.items[2].name`：车床和铣床
+- `pages.home.services.items[2].text`：轴套和安装底板在厂里车铣，不外协。
+- `pages.home.services.items[2].tag`：机加
+- `pages.home.services.items[3].name`：组焊工位
+- `pages.home.services.items[3].text`：支架按图组焊，焊完进质检再出厂。
+- `pages.home.services.items[3].tag`：组焊
+- `pages.home.why.title`：品质管理
+- `pages.home.why.lead`：材料、公差、首件和交期，报价前先对清楚。
+- `pages.home.why.items[0].name`：材料牌号先确认
+- `pages.home.why.items[0].text`：图上没写牌号，先问清楚再下料。
+- `pages.home.why.items[1].name`：公差写进工艺单
+- `pages.home.why.items[1].text`：折弯按 ±0.2 毫米，孔位按图。
+- `pages.home.why.items[2].name`：首件确认再批量
+- `pages.home.why.items[2].text`：首件尺寸对过，才开后面的数量。
+- `pages.home.why.items[3].name`：交期每周四核对
+- `pages.home.why.items[3].text`：插单和改期，周四会上说清楚。
+- `pages.home.cases.title`：应用领域
+- `pages.home.cases.lead`：农机、配电柜和货架，都用厂里做的零件。
+- `pages.home.cases.items[0].name`：农机罩壳支架
+- `pages.home.cases.items[0].text`：折弯加组焊，装在罩壳内侧。
+- `pages.home.cases.items[0].result`：月产约 800 件
+- `pages.home.cases.items[1].name`：配电柜侧板
+- `pages.home.cases.items[1].text`：冲压落料，喷粉前交给柜厂。
+- `pages.home.cases.items[1].result`：料厚 1.5 毫米
+- `pages.home.cases.items[2].name`：货架连接件
+- `pages.home.cases.items[2].text`：冲孔折弯，用在立柱和横梁之间。
+- `pages.home.cases.items[2].result`：孔径公差 0.1
+- `pages.home.collection-list.title`：新闻动态
+- `pages.home.collection-list.lead`：设备进厂、接待时间和报价上的变动。
+- `pages.home.honors.title`：资质荣誉
+- `pages.home.honors.lead`：质量、环境和职业健康安全的体系证书。
+- `pages.home.honors.items[0].name`：质量管理体系
+- `pages.home.honors.items[0].issuer`：衡准认证
+- `pages.home.honors.items[1].name`：环境管理体系
+- `pages.home.honors.items[1].issuer`：衡准认证
+- `pages.home.honors.items[2].name`：职业健康安全
+- `pages.home.honors.items[2].issuer`：衡准认证
+- `pages.home.honors.items[3].name`：企业技术中心
+- `pages.home.honors.items[3].issuer`：桐乡经济开发区
+- `pages.home.cta-band.title`：欢迎来厂询价
+- `pages.home.cta-band.lead`：图纸注明材料、数量和表面处理，工作日当天回复。
+- `pages.about.title`：公司简介｜宁浦精工（虚构）
+- `pages.about.description`：2009 年在桐乡屠甸建厂，厂址一直在振业路 26 号。
+- `pages.about.timeline.title`：发展历程
+- `pages.about.timeline.lead`：从一间冲压房做到折弯、机加和组焊都在厂里。
+- `pages.about.timeline.items[0].name`：2009
+- `pages.about.timeline.items[0].text`：在屠甸租下第一间冲压房，开始做铰链座。
+- `pages.about.timeline.items[1].name`：2013
+- `pages.about.timeline.items[1].text`：折弯机进厂，门框件不再外发。
+- `pages.about.timeline.items[2].name`：2016
+- `pages.about.timeline.items[2].text`：机加车间建成，轴套改由厂内车削。
+- `pages.about.timeline.items[3].name`：2021
+- `pages.about.timeline.items[3].text`：组焊单独隔开，焊完的件进质检室。
+- `pages.about.timeline.items[4].name`：2024
+- `pages.about.timeline.items[4].text`：质检室添置影像仪，孔位抽检改用影像。
+- `pages.about.timeline.items[5].name`：2026
+- `pages.about.timeline.items[5].text`：160 吨折弯机进厂，100 吨那台停用。
+- `pages.about.why.title`：质量方针
+- `pages.about.why.lead`：工艺、首件、材料和交期，车间按这四条做。
+- `pages.about.why.items[0].name`：图纸先过工艺
+- `pages.about.why.items[0].text`：工艺没签字，车间不开机。
+- `pages.about.why.items[1].name`：首件留样对照
+- `pages.about.why.items[1].text`：首件挂在看板上，对得上才放行。
+- `pages.about.why.items[2].name`：牌号写到出货单
+- `pages.about.why.items[2].text`：材料和表面写在同一张单上。
+- `pages.about.why.items[3].name`：周四核对交期
+- `pages.about.why.items[3].text`：改期当场说，不攒到出货前一天。
+- `pages.about.cases.title`：厂区环境
+- `pages.about.cases.lead`：来访从厂门进，再看车间和质检室。
+- `pages.about.cases.items[0].name`：振业路厂门
+- `pages.about.cases.items[0].text`：门牌在南侧，货车从东门进。
+- `pages.about.cases.items[1].name`：冲压和折弯车间
+- `pages.about.cases.items[1].text`：两条线隔一条通道，料架分开。
+- `pages.about.cases.items[2].name`：质检室
+- `pages.about.cases.items[2].text`：卡尺、影像仪和首件看板在同一间。
+- `pages.about.trust.title`：厂房规模
+- `pages.about.trust.lead`：厂房面积，以及折弯、冲压设备的台数。
+- `pages.about.trust.items[0].value`：1.86 万
+- `pages.about.trust.items[0].label`：厂房平方米
+- `pages.about.trust.items[1].value`：38 台
+- `pages.about.trust.items[1].label`：折弯机和冲床
+- `pages.about.trust.items[2].value`：11 人
+- `pages.about.trust.items[2].label`：质检在编人员
+- `pages.about.trust.items[3].value`：62 天
+- `pages.about.trust.items[3].label`：新模最长周期
+- `pages.about.honors.title`：资质荣誉
+- `pages.about.honors.lead`：质量、环境和职业健康安全的体系证书。
+- `pages.about.honors.items[0].name`：质量管理体系
+- `pages.about.honors.items[0].issuer`：衡准认证
+- `pages.about.honors.items[1].name`：环境管理体系
+- `pages.about.honors.items[1].issuer`：衡准认证
+- `pages.about.honors.items[2].name`：职业健康安全
+- `pages.about.honors.items[2].issuer`：衡准认证
+- `pages.about.honors.items[3].name`：企业技术中心
+- `pages.about.honors.items[3].issuer`：桐乡经济开发区
+- `pages.products.title`：产品中心｜宁浦精工（虚构）
+- `pages.products.description`：折弯件、冲压件、机加件和焊接组件，按型号看参数和产能。
+- `pages.products.collection-list.title`：产品中心
+- `pages.products.collection-list.lead`：六种在产零件，写了型号、材质、公差和产能。
+- `pages.products.collection-list.facets[0].name`：全部
+- `pages.products.collection-list.facets[0].text`：六件都列在右边。
+- `pages.products.collection-list.facets[1].name`：折弯件
+- `pages.products.collection-list.facets[1].text`：门框加强板，按图折。
+- `pages.products.collection-list.facets[2].name`：冲压件
+- `pages.products.collection-list.facets[2].text`：柜体侧板和铰链座。
+- `pages.products.collection-list.facets[3].name`：机加件
+- `pages.products.collection-list.facets[3].text`：轴套和安装底板。
+- `pages.products.collection-list.facets[4].name`：焊接组件
+- `pages.products.collection-list.facets[4].text`：支架总成，按套出货。
+- `pages.applications.title`：应用领域｜宁浦精工（虚构）
+- `pages.applications.description`：农机、配电柜、货架和厨电四类零件，写清工艺和产能。
+- `pages.applications.collection-list.title`：应用领域
+- `pages.applications.collection-list.lead`：农机、配电、货架和厨电，写了工艺和月产能。
+- `pages.news.title`：新闻动态｜宁浦精工（虚构）
+- `pages.news.description`：设备进厂、接待时间和报价要求，有变动记在这里。
+- `pages.news.collection-list.title`：新闻动态
+- `pages.news.collection-list.lead`：设备、接待和报价上的最近几条。
+- `pages.contact.title`：联系我们｜宁浦精工（虚构）
+- `pages.contact.description`：询价请打电话，或把图纸发到留言里。工作日回复。
+- `pages.contact.contact.title`：联系我们
+- `pages.contact.contact.lead`：电话、微信或来图都可以，请写明材料和数量。
+- `pages.contact.faq.title`：询价说明
+- `pages.contact.faq.lead`：报价前通常先确认下面四件事。
+- `pages.contact.faq.items[0].q`：报价要提供什么
+- `pages.contact.faq.items[0].a`：图纸用 PDF 或 STEP。写上材料牌号、数量、表面处理，以及要不要开模。
+- `pages.contact.faq.items[1].q`：最小起订怎么算
+- `pages.contact.faq.items[1].a`：冲压新模大约 500 件起。老模按库存和排产，折弯可以再少一些。
+- `pages.contact.faq.items[2].q`：能不能只做一道工序
+- `pages.contact.faq.items[2].a`：可以。只折弯、只冲孔或只车削都行，请在图纸上把工序圈出来。
+- `pages.contact.faq.items[3].q`：外贸询盘用什么格式
+- `pages.contact.faq.items[3].a`：中文或英文邮件都行。附件用 PDF 或 STEP，电话里也可以先对尺寸。
+- `collections.products.frame.slug`：frame
+- `collections.products.frame.category`：折弯件
+- `collections.products.frame.name`：门框加强板
+- `collections.products.frame.summary`：型号 NP-ZW-186。材质 Q235B，料厚 1.5 毫米，折弯后装在钢木门内侧。
+- `collections.products.frame.body`：展开尺寸按客户图下料。折弯后抽检对角线，去毛刺，本色交货。月产能约 1200 件。
+- `collections.products.frame.specs[0].label`：型号
+- `collections.products.frame.specs[0].value`：NP-ZW-186
+- `collections.products.frame.specs[1].label`：材质
+- `collections.products.frame.specs[1].value`：Q235B 冷轧板
+- `collections.products.frame.specs[2].label`：料厚
+- `collections.products.frame.specs[2].value`：1.5 mm
+- `collections.products.frame.specs[3].label`：展开
+- `collections.products.frame.specs[3].value`：186×42 mm
+- `collections.products.frame.specs[4].label`：公差
+- `collections.products.frame.specs[4].value`：折弯 ±0.2 mm
+- `collections.products.frame.specs[5].label`：表面
+- `collections.products.frame.specs[5].value`：本色，去毛刺
+- `collections.products.frame.specs[6].label`：产能
+- `collections.products.frame.specs[6].value`：约 1200 件/月
+- `collections.products.side.slug`：side
+- `collections.products.side.category`：冲压件
+- `collections.products.side.name`：柜体侧板
+- `collections.products.side.summary`：型号 NP-CY-420。材质 SPCC，料厚 1.2 毫米，配电柜侧板，喷粉前交货。
+- `collections.products.side.body`：单工序落料，孔位按柜厂图纸。边缘去毛刺、去油后装箱，表面不喷粉。月产能约 600 件。
+- `collections.products.side.specs[0].label`：型号
+- `collections.products.side.specs[0].value`：NP-CY-420
+- `collections.products.side.specs[1].label`：材质
+- `collections.products.side.specs[1].value`：SPCC
+- `collections.products.side.specs[2].label`：料厚
+- `collections.products.side.specs[2].value`：1.2 mm
+- `collections.products.side.specs[3].label`：外形
+- `collections.products.side.specs[3].value`：420×680 mm
+- `collections.products.side.specs[4].label`：公差
+- `collections.products.side.specs[4].value`：孔距 ±0.15 mm
+- `collections.products.side.specs[5].label`：表面
+- `collections.products.side.specs[5].value`：去油，不喷粉
+- `collections.products.side.specs[6].label`：产能
+- `collections.products.side.specs[6].value`：约 600 件/月
+- `collections.products.hinge.slug`：hinge
+- `collections.products.hinge.category`：冲压件
+- `collections.products.hinge.name`：铰链座
+- `collections.products.hinge.summary`：型号 NP-JL-20。材质 Q235，料厚 2.0 毫米，连续模生产，供柜门铰链。
+- `collections.products.hinge.body`：2009 年起在做。模具在厂里，改孔需要重开模。表面镀锌，起订约 500 件。
+- `collections.products.hinge.specs[0].label`：型号
+- `collections.products.hinge.specs[0].value`：NP-JL-20
+- `collections.products.hinge.specs[1].label`：材质
+- `collections.products.hinge.specs[1].value`：Q235
+- `collections.products.hinge.specs[2].label`：料厚
+- `collections.products.hinge.specs[2].value`：2.0 mm
+- `collections.products.hinge.specs[3].label`：模具
+- `collections.products.hinge.specs[3].value`：连续模
+- `collections.products.hinge.specs[4].label`：公差
+- `collections.products.hinge.specs[4].value`：孔 ±0.1 mm
+- `collections.products.hinge.specs[5].label`：表面
+- `collections.products.hinge.specs[5].value`：镀锌
+- `collections.products.hinge.specs[6].label`：产能
+- `collections.products.hinge.specs[6].value`：起订约 500 件
+- `collections.products.plate.slug`：plate
+- `collections.products.plate.category`：机加件
+- `collections.products.plate.name`：安装底板
+- `collections.products.plate.summary`：型号 NP-DB-160。材质 Q235B，料厚 8 毫米，铣平面后按图钻攻。
+- `collections.products.plate.body`：来料或厂里下料都可以。螺纹孔按图攻丝，不做热处理。月产能约 300 件。
+- `collections.products.plate.specs[0].label`：型号
+- `collections.products.plate.specs[0].value`：NP-DB-160
+- `collections.products.plate.specs[1].label`：材质
+- `collections.products.plate.specs[1].value`：Q235B
+- `collections.products.plate.specs[2].label`：料厚
+- `collections.products.plate.specs[2].value`：8 mm
+- `collections.products.plate.specs[3].label`：外形
+- `collections.products.plate.specs[3].value`：160×90 mm
+- `collections.products.plate.specs[4].label`：公差
+- `collections.products.plate.specs[4].value`：平面 0.1 mm
+- `collections.products.plate.specs[5].label`：表面
+- `collections.products.plate.specs[5].value`：本色
+- `collections.products.plate.specs[6].label`：产能
+- `collections.products.plate.specs[6].value`：约 300 件/月
+- `collections.products.bush.slug`：bush
+- `collections.products.bush.category`：机加件
+- `collections.products.bush.name`：轴套
+- `collections.products.bush.summary`：型号 NP-ZT-2818。材质 45 钢，车削，内孔按轴配，表面发黑。
+- `collections.products.bush.body`：棒料在厂里车。内孔要留磨量的，请在图纸上写明。月产能约 2000 件。
+- `collections.products.bush.specs[0].label`：型号
+- `collections.products.bush.specs[0].value`：NP-ZT-2818
+- `collections.products.bush.specs[1].label`：材质
+- `collections.products.bush.specs[1].value`：45 钢
+- `collections.products.bush.specs[2].label`：外径
+- `collections.products.bush.specs[2].value`：28 mm
+- `collections.products.bush.specs[3].label`：内孔
+- `collections.products.bush.specs[3].value`：18 H8
+- `collections.products.bush.specs[4].label`：长度
+- `collections.products.bush.specs[4].value`：22 mm
+- `collections.products.bush.specs[5].label`：表面
+- `collections.products.bush.specs[5].value`：发黑
+- `collections.products.bush.specs[6].label`：产能
+- `collections.products.bush.specs[6].value`：约 2000 件/月
+- `collections.products.bracket.slug`：bracket
+- `collections.products.bracket.category`：焊接组件
+- `collections.products.bracket.name`：支架总成
+- `collections.products.bracket.summary`：型号 NP-ZJ-240。材质 Q235B，折弯件组焊，焊后交检，喷粉前出厂。
+- `collections.products.bracket.body`：零件先折弯再组焊。焊缝按图，不擅自加筋。安装孔公差 ±0.3 毫米。月产能约 400 套。
+- `collections.products.bracket.specs[0].label`：型号
+- `collections.products.bracket.specs[0].value`：NP-ZJ-240
+- `collections.products.bracket.specs[1].label`：材质
+- `collections.products.bracket.specs[1].value`：Q235B
+- `collections.products.bracket.specs[2].label`：焊缝
+- `collections.products.bracket.specs[2].value`：角焊 4 mm
+- `collections.products.bracket.specs[3].label`：外形
+- `collections.products.bracket.specs[3].value`：240×80×60 mm
+- `collections.products.bracket.specs[4].label`：公差
+- `collections.products.bracket.specs[4].value`：安装孔 ±0.3 mm
+- `collections.products.bracket.specs[5].label`：表面
+- `collections.products.bracket.specs[5].value`：喷粉前
+- `collections.products.bracket.specs[6].label`：产能
+- `collections.products.bracket.specs[6].value`：约 400 套/月
+- `collections.applications.farm.slug`：farm
+- `collections.applications.farm.name`：农机罩壳支架
+- `collections.applications.farm.summary`：型号 NP-NJ-20。折弯加组焊，固定农机罩壳，月产能约 800 件。
+- `collections.applications.farm.body`：装在罩壳内侧做加强。焊缝打磨到不刮罩壳。图纸给 STEP 即可，料厚 2.0 毫米。
+- `collections.applications.farm.specs[0].label`：型号
+- `collections.applications.farm.specs[0].value`：NP-NJ-20
+- `collections.applications.farm.specs[1].label`：材质
+- `collections.applications.farm.specs[1].value`：Q235B
+- `collections.applications.farm.specs[2].label`：工艺
+- `collections.applications.farm.specs[2].value`：折弯加组焊
+- `collections.applications.farm.specs[3].label`：料厚
+- `collections.applications.farm.specs[3].value`：2.0 mm
+- `collections.applications.farm.specs[4].label`：产能
+- `collections.applications.farm.specs[4].value`：约 800 件/月
+- `collections.applications.farm.category`：农机
+- `collections.applications.cabinet.slug`：cabinet
+- `collections.applications.cabinet.name`：配电柜侧板
+- `collections.applications.cabinet.summary`：型号 NP-PD-15。冲压落料，料厚 1.5 毫米，喷粉前交给柜厂。
+- `collections.applications.cabinet.body`：孔位按柜厂图纸。去毛刺后覆膜，避免运输划伤。表面处理由柜厂自己做。
+- `collections.applications.cabinet.specs[0].label`：型号
+- `collections.applications.cabinet.specs[0].value`：NP-PD-15
+- `collections.applications.cabinet.specs[1].label`：材质
+- `collections.applications.cabinet.specs[1].value`：SPCC
+- `collections.applications.cabinet.specs[2].label`：工艺
+- `collections.applications.cabinet.specs[2].value`：冲压落料
+- `collections.applications.cabinet.specs[3].label`：料厚
+- `collections.applications.cabinet.specs[3].value`：1.5 mm
+- `collections.applications.cabinet.specs[4].label`：表面
+- `collections.applications.cabinet.specs[4].value`：喷粉前
+- `collections.applications.cabinet.category`：柜体
+- `collections.applications.rack.slug`：rack
+- `collections.applications.rack.name`：货架连接件
+- `collections.applications.rack.summary`：型号 NP-HJ-10。冲孔折弯，用在立柱和横梁之间，孔径公差 0.1 毫米。
+- `collections.applications.rack.body`：孔径按货架图。表面由客户自己做，厂里交本色件。
+- `collections.applications.rack.specs[0].label`：型号
+- `collections.applications.rack.specs[0].value`：NP-HJ-10
+- `collections.applications.rack.specs[1].label`：材质
+- `collections.applications.rack.specs[1].value`：Q235
+- `collections.applications.rack.specs[2].label`：工艺
+- `collections.applications.rack.specs[2].value`：冲孔折弯
+- `collections.applications.rack.specs[3].label`：公差
+- `collections.applications.rack.specs[3].value`：孔径 0.1 mm
+- `collections.applications.rack.specs[4].label`：表面
+- `collections.applications.rack.specs[4].value`：客户自做
+- `collections.applications.rack.category`：货架
+- `collections.applications.kitchen.slug`：kitchen
+- `collections.applications.kitchen.name`：厨电底托
+- `collections.applications.kitchen.summary`：型号 NP-CD-10。冲压卷圆，托住厨电底板，料厚 1.0 毫米。
+- `collections.applications.kitchen.body`：边缘卷圆，避免割到线束。模具在厂里，改外形需要重开模。
+- `collections.applications.kitchen.specs[0].label`：型号
+- `collections.applications.kitchen.specs[0].value`：NP-CD-10
+- `collections.applications.kitchen.specs[1].label`：材质
+- `collections.applications.kitchen.specs[1].value`：SPCC
+- `collections.applications.kitchen.specs[2].label`：工艺
+- `collections.applications.kitchen.specs[2].value`：冲压卷圆
+- `collections.applications.kitchen.specs[3].label`：料厚
+- `collections.applications.kitchen.specs[3].value`：1.0 mm
+- `collections.applications.kitchen.specs[4].label`：表面
+- `collections.applications.kitchen.specs[4].value`：去毛刺
+- `collections.applications.kitchen.category`：厨电
+- `collections.news.press.slug`：press
+- `collections.news.press.name`：160吨数控折弯机进厂试产
+- `collections.news.press.date`：2026-03-12
+- `collections.news.press.summary`：2026-03-12。新折弯机已进折弯车间，试折门框加强板合格，旧的 100 吨停用。
+- `collections.news.press.body`：3 月 12 日到厂并完成就位。试折了门框加强板 NP-ZW-186，对角线在 ±0.2 毫米以内。操作工还是原来的班组。
+- `collections.news.press.category`：设备
+- `collections.news.saturday.slug`：saturday
+- `collections.news.saturday.name`：周六来访接待改到上午十一点半
+- `collections.news.saturday.date`：2026-05-20
+- `collections.news.saturday.summary`：2026-05-20。周六接待改到上午 11 点半结束，下午不安排看厂。
+- `collections.news.saturday.body`：看厂请在工作日预约。周六只留到 11 点半，过了时间门卫不再放行。
+- `collections.news.saturday.category`：接待
+- `collections.news.quote.slug`：quote
+- `collections.news.quote.name`：报价单从即日起填写材料牌号
+- `collections.news.quote.date`：2026-07-08
+- `collections.news.quote.summary`：2026-07-08。报价单增加材料牌号一栏，没写牌号的图纸先不报价。
+- `collections.news.quote.body`：同一张图，Q235 和 304 的价格差一截。牌号空着的，销售先问清楚再回传报价。
+- `collections.news.quote.category`：报价
+- `collections.news.meter.slug`：meter
+- `collections.news.meter.name`：质检室投入一台影像测量仪
+- `collections.news.meter.date`：2026-09-02
+- `collections.news.meter.summary`：2026-09-02。孔位改用影像测量仪抽检，卡尺仍用来量厚度。
+- `collections.news.meter.body`：影像仪测量孔径和孔距。首件先过影像仪，尺寸对过再放到看板上，然后才批量。
+- `collections.news.meter.category`：质检
+
+## 4. 图片与待补信息
+演示照片是行业素材，不能作为本企业实拍证据。二维码和证书图片未提供时不展示。已存在但互相矛盾的陈述应删除或另行确认，不自行生成新数值。
+
+## 5. 可用网站表述
+以下表述从上述原文归纳，不增加经营事实。
+
+金属机件按图加工
+桐乡工厂，承接折弯、冲压、机加和组焊。

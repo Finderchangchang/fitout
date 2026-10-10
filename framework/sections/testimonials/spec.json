@@ -46,13 +46,13 @@
       "needsImage": false,
       "family": "quotes",
       "fit": "几条评价并列",
-      "source": "localbiz-site components/sections/testimonials/TestimonialsGridCards.tsx。不搬星级"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "spotlight": {
       "needsImage": false,
       "family": "quote",
       "fit": "第一条放大，其余放下面。不横向滚动",
-      "source": "localbiz-site components/sections/testimonials/TestimonialsSpotlight.tsx。不搬横向滚动条"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

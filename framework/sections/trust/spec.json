@@ -52,7 +52,7 @@
       "needsImage": false,
       "family": "metrics",
       "fit": "少量不整齐的真数字",
-      "source": "hyperui public/examples/marketing/stats/1.html 的 dl 结构。不搬示例里的假文案"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "certs": {
       "needsImage": false,

@@ -1,0 +1,9 @@
+<section class="section menu-overview" data-section="tasting" data-family="menu" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">{{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}{{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}{{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}</div>
+    <div class="menu-grid fit-rows" data-media-group="menu">
+      {{#each items}}<article class="menu-item">{{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}<div class="menu-copy"><h3>{{name}}</h3><p>{{text}}</p><p class="price">{{price}}</p></div></article>{{/each}}
+    </div>
+    <p class="catalog-preview-more"><a class="btn" href="{{moreHref}}">{{moreLabel}}</a></p>
+  </div>
+</section>

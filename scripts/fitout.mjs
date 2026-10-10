@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * node scripts/fitout.mjs --profile <档案.md> --out <站点目录> [--fill agent|deepseek] [--showroom <id>|auto] [--photos <照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]
+ * node scripts/fitout.mjs --profile <档案.md> --out <站点目录> [--fill agent|deepseek] [--lang zh-CN|en] [--showroom <id>|auto] [--photos <照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]
  * 一条命令：挑样板间、校验或填写、配图、拼装、机检，并写交付说明。
  * 默认 --fill agent：不调用 DeepSeek，校验站点目录里已有的 site.json。
  * --fill deepseek 才读 DEEPSEEK_API_KEY。生图没有 MINIMAX_API_KEY 就跳过并提示。
@@ -13,6 +13,7 @@ import { spawnSync } from "child_process";
 import { fileURLToPath } from "url";
 import { readJson } from "./lib/json.mjs";
 import { fillProfile, lintAgentSite } from "./fill.mjs";
+import { matchPhotos } from "./lib/photos.mjs";
 import {
   aspectRatioFor,
   buildPrompt,
@@ -30,7 +31,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
 const GEN_CAP = 8;
 const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
-const USAGE = "用法：node scripts/fitout.mjs --profile <档案.md> --out <站点目录> [--fill agent|deepseek] [--showroom <id>|auto] [--photos <照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]\n默认 --fill agent，不需要密钥。--fill deepseek 才读 DEEPSEEK_API_KEY。";
+const USAGE = "用法：node scripts/fitout.mjs --profile <档案.md> --out <站点目录> [--fill agent|deepseek] [--lang zh-CN|en] [--showroom <id>|auto] [--photos <照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]\n默认 --fill agent，不需要密钥。--fill deepseek 才读 DEEPSEEK_API_KEY。";
 
 const KEYWORDS = {
   "cn-dining": ["奶茶", "茶饮", "餐饮", "烘焙", "咖啡", "甜品", "面包", "饭店", "餐厅", "火锅", "小吃"],
@@ -43,6 +44,10 @@ const KEYWORDS = {
   "cn-home-decor": ["装修", "家装", "全屋定制", "量房", "软装", "工装"],
   "cn-hospitality": ["民宿", "客栈", "酒店", "客房", "房型", "度假"],
   "cn-wedding-photo": ["婚纱", "写真", "婚庆", "影楼", "摄影"],
+  "intl-factory": ["外贸", "出口", "OEM", "工厂", "制造", "紧固件", "五金", "零部件", "机械", "螺栓", "冲压", "模具", "车间"],
+  "intl-beauty": ["美容", "SPA", "美发", "沙龙", "养生"],
+  "intl-education": ["培训", "学校", "课程", "学员", "编程", "设计", "语言"],
+  "intl-professional": ["咨询", "律师", "律所", "财税", "管理咨询"],
 };
 
 const ALIASES = [
@@ -112,7 +117,7 @@ async function main() {
 
   mark("填内容");
   if (opts.fill === "agent") {
-    validateAgentSite(outDir, profilePath, picked.id);
+    validateAgentSite(outDir, profilePath, picked.id, opts.lang);
     say("填内容：已校验 site.json。没有调用外部模型。");
   } else {
     say("填内容：正在按档案写 site.json。");
@@ -123,6 +128,7 @@ async function main() {
         showroomId: picked.id,
         outPath: path.join(outDir, "site.json"),
         model: opts.model,
+        lang: opts.lang,
         maxRetries: 2,
       });
     } catch (error) {
@@ -243,9 +249,10 @@ export function loadCatalog() {
   return (index.showrooms || []).filter((item) => item && item.id && !String(item.id).startsWith("_"));
 }
 
-export function rankShowrooms(parsed, catalog) {
+export function rankShowrooms(parsed, catalog, lang = "") {
   const industry = parsed.industry || "";
   const intro = parsed.intro || "";
+  const languages = new Map(catalog.map((room) => [room.id, room.lang || "zh-CN"]));
   const ranked = catalog.map((room) => {
     const words = KEYWORDS[room.id] || [];
     let score = 0;
@@ -275,7 +282,7 @@ export function rankShowrooms(parsed, catalog) {
       reasons: reasons.slice(0, 3),
     };
   });
-  ranked.sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
+  ranked.sort((a, b) => b.score - a.score || (lang ? Number(languages.get(b.id) === lang) - Number(languages.get(a.id) === lang) : 0) || a.id.localeCompare(b.id));
   return ranked;
 }
 
@@ -313,7 +320,7 @@ async function chooseShowroom(opts, parsed, catalog) {
     console.log(`指定样板间：${room.id} ${room.name}`);
     return { ...room, ranked: [], why: "命令里指定了这一套。", modelNote: "" };
   }
-  const ranked = rankShowrooms(parsed, catalog);
+  const ranked = rankShowrooms(parsed, catalog, opts.lang);
   const top = ranked.slice(0, 3);
   console.log("推荐样板间：");
   top.forEach((item, index) => {
@@ -380,6 +387,8 @@ function photoSource(outDir, photosOpt) {
   }
   if (src !== path.resolve(dest)) {
     for (const file of listImages(src)) fs.copyFileSync(file, path.join(dest, path.basename(file)));
+    const manifest = path.join(src, "sources.json");
+    if (fs.existsSync(manifest)) fs.copyFileSync(manifest, path.join(dest, "sources.json"));
   }
   return listImages(dest).length ? dest : "";
 }
@@ -477,7 +486,7 @@ function lintFrameworkFields(site) {
   return errors;
 }
 
-function validateAgentSite(outDir, profilePath, showroomId) {
+function validateAgentSite(outDir, profilePath, showroomId, lang) {
   const siteFile = path.join(outDir, "site.json");
   if (!fs.existsSync(siteFile)) {
     stepFail(
@@ -493,6 +502,10 @@ function validateAgentSite(outDir, profilePath, showroomId) {
     stepFail("填内容", `site.json 不是合法的 JSON：${error.message}\n请改 ${siteFile} 后再跑同一条命令。`, 1);
   }
   let errors;
+  if (lang) {
+    if (!["zh-CN", "en"].includes(lang)) stepFail("填内容", "lang 只能是 zh-CN 或 en", 2);
+    site.lang = lang;
+  }
   try {
     errors = lintAgentSite({ profilePath, showroomId, site: siteForLint(site) });
   } catch (error) {
@@ -501,7 +514,10 @@ function validateAgentSite(outDir, profilePath, showroomId) {
   for (const item of lintFrameworkFields(site)) {
     if (!errors.includes(item)) errors.push(item);
   }
-  if (!errors.length) return;
+  if (!errors.length) {
+    if (lang) fs.writeFileSync(siteFile, `${JSON.stringify(site, null, 2)}\n`, "utf8");
+    return;
+  }
   const lines = errors.slice(0, 40).map((item, index) => `${index + 1}. ${item}`);
   const more = errors.length > 40 ? `\n……还有 ${errors.length - 40} 条，先改上面这些。` : "";
   stepFail(
@@ -534,11 +550,18 @@ async function prepareImages({ outDir, showroomId, doc, photos, genImages, model
       stepFail("配图", `找不到照片目录：${photoDir}\n--photos 要指到放图片的文件夹。`, 2);
     }
     const files = listImages(photoDir);
-    const { paired, leftover } = matchByName(files, slots);
+    let matched;
+    try {
+      const manifestFile = path.join(photoDir, "sources.json");
+      matched = matchPhotos(files, slots, fs.existsSync(manifestFile) ? readJson(manifestFile) : {});
+    } catch (error) {
+      stepFail("配图", error.message, 1);
+    }
+    const { paired, leftover } = matched;
     for (const pair of paired) {
       const saved = copyOnto(pair.file, work, pair.slot.id);
       taken.add(pair.slot.id);
-      items.push(itemOf(pair.slot, "photo", path.basename(saved), "文件名对上图片位"));
+      items.push(itemOf(pair.slot, pair.source, path.basename(saved), "按清单或文件名对上图片位"));
     }
     if (leftover.length && fill === "deepseek") {
       const matched = await matchByModel(leftover, slots.filter((slot) => !taken.has(slot.id)), model);
@@ -551,7 +574,7 @@ async function prepareImages({ outDir, showroomId, doc, photos, genImages, model
       const idle = leftover.filter((file) => !used.has(file));
       if (idle.length) say(`这几张没对上图片位，没有用：${idle.map((file) => path.basename(file)).join("、")}`);
     } else if (leftover.length) {
-      say(`这几张文件名没对上图片位，没有用：${leftover.map((file) => path.basename(file)).join("、")}。把文件名改成图片位 id，例如 hero-tea.jpg，再跑。`);
+      say(`这些照片还没有分配用途：${leftover.map((file) => path.basename(file)).join("、")}。请助手查看照片，在 photos/sources.json 的 items 里填写 id、file、source；原照片不必改名。`);
     }
   }
 
@@ -612,10 +635,12 @@ async function prepareImages({ outDir, showroomId, doc, photos, genImages, model
     }
   }
   fs.rmSync(work, { recursive: true, force: true });
-  say(`配图：实拍 ${items.filter((item) => item.source === "photo").length}，生成 ${generated.length}，${gradeNote}`);
+  say(`配图：实拍 ${items.filter((item) => item.source === "photo").length}，生成 ${items.filter((item) => item.source === "ai").length}，${gradeNote}`);
 
   const banned = items.filter((item) => item.source === "ai" && item.mustBeReal);
   if (banned.length) stepFail("配图", `生成图落在必须实拍的位：${banned.map((item) => item.id).join("、")}`, 1);
+
+  fs.writeFileSync(path.join(dir, "sources.json"), JSON.stringify(Object.fromEntries(items.filter((item) => item.file && ["photo", "ai", "stock"].includes(item.source)).map((item) => [item.id, item.source])), null, 2) + "\n", "utf8");
 
   const sources = {
     showroom: showroomId,
@@ -799,23 +824,6 @@ async function matchByModel(files, slots, model) {
     paired.push({ file, slot });
   }
   return paired;
-}
-
-function matchByName(files, slots) {
-  const paired = [];
-  const leftover = [];
-  const used = new Set();
-  for (const file of files) {
-    const base = path.basename(file, path.extname(file)).toLowerCase();
-    const slot = slots.find((item) => item.id.toLowerCase() === base && !used.has(item.id));
-    if (!slot) {
-      leftover.push(file);
-      continue;
-    }
-    used.add(slot.id);
-    paired.push({ file, slot });
-  }
-  return { paired, leftover };
 }
 
 function copyOnto(file, dir, id) {
@@ -1062,8 +1070,8 @@ function run(script, args, timeout) {
 }
 
 function parseArgs(argv) {
-  const opts = { profile: "", out: "", showroom: "auto", photos: "", genImages: false, baseUrl: "", model: "deepseek-chat", fill: "agent" };
-  const needs = new Set(["--profile", "--out", "--showroom", "--photos", "--base-url", "--model", "--fill"]);
+  const opts = { profile: "", out: "", showroom: "auto", photos: "", genImages: false, baseUrl: "", model: "deepseek-chat", fill: "agent", lang: "" };
+  const needs = new Set(["--profile", "--out", "--showroom", "--photos", "--base-url", "--model", "--fill", "--lang"]);
   for (let i = 0; i < argv.length; i += 1) {
     const token = argv[i];
     if (token === "--gen-images") {
@@ -1087,6 +1095,7 @@ function parseArgs(argv) {
     else if (token === "--base-url") opts.baseUrl = value;
     else if (token === "--model") opts.model = value;
     else if (token === "--fill") opts.fill = value;
+    else if (token === "--lang") opts.lang = value;
   }
   if (!opts.profile || !opts.out) {
     console.error(USAGE);

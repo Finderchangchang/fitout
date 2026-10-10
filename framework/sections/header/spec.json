@@ -6,13 +6,13 @@
       "needsImage": false,
       "family": "bar",
       "fit": "商标在左，导航在中间，电话在右。一行。",
-      "source": "localbiz-site components/sections/header/HeaderStandard.tsx；菜单按钮结构参考 components/MobileNav.tsx 与 hyperui public/examples/marketing/headers/1.html"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "centered": {
       "needsImage": false,
       "family": "bar",
       "fit": "桌面一行：导航在左，商标居中，电话在右。不是两行叠起来的居中导航。",
-      "source": "localbiz-site components/sections/header/HeaderCentered.tsx，改成一行"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

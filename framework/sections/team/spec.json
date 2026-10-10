@@ -66,7 +66,7 @@
       "fallback": "roster",
       "family": "portraits",
       "fit": "每个人都有照片",
-      "source": "hyperui public/examples/marketing/team-sections/1.html 的姓名加岗位。不搬库存头像，不搬品牌社交图标"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "roster": {
       "needsImage": false,

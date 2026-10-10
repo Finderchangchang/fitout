@@ -30,13 +30,13 @@
       "needsImage": false,
       "family": "visit",
       "fit": "时间一块，地址和电话一块",
-      "source": "localbiz-site components/sections/hoursContact/HoursContactCard.tsx"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "banner": {
       "needsImage": false,
       "family": "banner",
       "fit": "横过来的同一组信息",
-      "source": "localbiz-site components/sections/hoursContact/HoursContactBanner.tsx"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

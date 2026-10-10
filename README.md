@@ -1,61 +1,41 @@
 # 精装 · FitOut
 
-> 便宜模型，也能装出好门面。
+把企业资料，做成客户看得懂的静态官网。**默认不需要额外 API key，零 npm 依赖，Node 18+。**
 
-**不用任何密钥就能出站。** 装上 skill，跟 AI 说「给我公司做个官网」。AI 自己问企业信息、写好内容、跑一条命令。DeepSeek 密钥只在后面的批量填法里才要。没有生图密钥就跳过生图，站点照样能拼。
+14 套行业样板间。v0.6.0 第一阶段重做了国内工厂、英文外贸工厂、餐饮门店三套的首页、内页和无图版；其余 11 套保留原版，等待视觉方向确认后继续。
 
-**v0.1 预览**：10 个行业的国内风「样板间」已经能用。[精酿 · BrewReel](https://github.com/Finderchangchang/brewreel) 的兄弟项目：精酿出片，精装出官网。
+## 跟 AI 说一句话出站
 
-## 三步上手
-
-1. 装 skill。仓库放在本机任意目录，下面写成 `<精装仓库目录>`。把 `skill\fitout` 整个文件夹拷出去，文件夹名保持 `fitout`，里面要有 `SKILL.md`。
-
-Claude Code：
+1. 下载仓库，在仓库根目录安装 Skill：
 
 ```powershell
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills" | Out-Null
-Copy-Item -Recurse -Force "<精装仓库目录>\skill\fitout" "$env:USERPROFILE\.claude\skills\fitout"
+node scripts/install-skill.mjs --target codex
 ```
 
-Codex：同样拷到 `$env:USERPROFILE\.codex\skills\fitout`。
+Claude Code 把 target 换成 `claude`；其他兼容助手用 `agents`。安装器把仓库位置记录在安装副本中，仓库移动后重装一次。也可以把 `skill/fitout` 整个文件夹手工复制到助手的 skills 目录，并在首次对话告诉助手仓库位置。
 
-Grok：同样拷到 `$env:USERPROFILE\.agents\skills\fitout`，或 `$env:USERPROFILE\.grok\skills\fitout`。
+2. 新开对话，说：
 
-2. 新开一轮对话，对 AI 说「给我公司做个官网」。它会问企业信息，确认后在一个站点目录里出站。
+> 给我公司做一个官网。这是企业介绍和产品资料，客户主要是……，希望看完能……。
 
-3. 打开该目录的 `site/index.html`。要上线，按同一目录的 `交付说明.md` 发到 GitHub Pages。这条命令不会替你发布。
+助手先读你已有的资料，补问必要信息，再推荐样板间；整理照片、填写内容、生成网站并验收。你不用写 JSON，不用给照片改内部编号。
+
+3. 打开交付目录的 `site/index.html`。同时查看桌面、手机截图和 `交付说明.md`。没有照片也能生成完整的精简版，有素材再增强。
 
 一个站点一个目录：
 
-| 文件 | 是什么 |
+| 文件 | 用途 |
 |---|---|
-| `企业档案.md` | 事实。AI 问答后写在这里 |
-| `site.json` | AI 填的站点内容 |
-| `photos/` | 你给的照片 |
-| `img/` | 生成或处理后的图 |
-| `site/` | 生成的网站 |
-| `交付说明.md` | 用了哪套样板间、缺哪些实拍、怎么发布 |
+| `企业档案.md` | 可公开事实，修改数字、价格和时间先改这里 |
+| `site.json` | 网站内容，助手按档案填写 |
+| `photos/` | 原素材的副本和用途清单 |
+| `img/` | 处理后的图片和来源记录 |
+| `site/` | 完整静态网站 |
+| `交付说明.md` | 页面、检查结果、缺失素材、发布方式 |
 
-改内容：改 `企业档案.md` 或 `site.json`，让 AI 重跑同一条命令。细节在 [skill/fitout/SKILL.md](skill/fitout/SKILL.md)。
-
-`site.json` 里这几处用框架现在的字段：首屏是 hero 板块的 `mode` 和 `slides`，导航是 `children` 或 `autoChildren`，深色板块可写 `bg`，列表写 `pageSize`，页脚二维码是 `contact.qrcodes`。说明在 [docs/SITE_JSON.md](docs/SITE_JSON.md)。
-
-给中小企业一键生成**好看、统一、拎包入住**的官网：挑一套样板间，按企业档案填内容，脚本拼出一整套静态官网（首页 + 关于 + 产品 / 服务列表和详情 + 团队 + 新闻 + 联系），传上 GitHub Pages 就能上线，手机打开不乱。
-
-![14 套样板间：10 套国内风，4 套国际风](docs/screenshots/overview.jpg)
-
-## 要解决什么
-
-让 AI 给小公司做官网，常见的结果是：
-- 每次长得都不一样，同一个人做十家，十种水平；
-- 一股 AI 味，或者反过来太素，不像一家正规公司；
-- 换成便宜模型，排版就崩。
-
-精装的办法和精酿一样：**审美写进样板间，模型只填空。**
+默认交本地站。明确要求上线后才发布，发布只使用 `site/`；档案和原始素材不上传。
 
 ## 样板间
-
-每套样板间 = 一整套成熟官网的版面（整站页面、图片位、动效）+ 我们自己的配色和细节。客户挑一套，换上自己的内容就能交房。
 
 | 行业 | 样板间 | 适合谁 | 主要页面 |
 |---|---|---|---|
@@ -74,92 +54,91 @@ Grok：同样拷到 `$env:USERPROFILE\.agents\skills\fitout`，或 `$env:USERPRO
 | 课程平台 | `intl-education` | 职业技能、设计、编程、语言课程 | 首页、关于、课程、讲师、学员作业、资讯、报名 |
 | 咨询律所 | `intl-professional` | 管理咨询、律师事务所、财税顾问 | 首页、关于、服务、团队、案例、洞察、面谈 |
 
-前 10 套是「国内风」：满屏轮播首屏、数字条、深浅色块交替、成套内页、深色页脚带二维码和备案位。后 4 套是「国际风」：留白更大、横幅首屏，其中外贸工厂整站是英文。
+第一阶段三套重点：
 
-## 怎么做
+三套新版的仓库预览图展示无图版；有图演示使用仓库外图库，预览不打包图库照片。
 
-| 装修行话 | 在精装里是什么 |
-|---|---|
-| **样板间** | 一整套成熟官网版面，按行业分；配色、字体、间距、圆角全部写成数值，模型不碰 |
-| **户型** | 行业配方：有哪些页面、首页板块顺序、语气、必备件（行业见 `industries/registry.json`，可以继续加） |
-| **构件** | 导航、页脚、首屏轮播、数字条、服务、案例、团队、常见问题、联系……每个板块几种版式 |
-| **开工** | 对话里的 AI 按企业档案写 `site.json`，脚本校验后按框架拼成官网。批量才另调 DeepSeek |
-| **交房** | 一套静态网页 + 图片文件夹，上线不用装任何东西 |
+- `cn-factory`：产品与参数先于企业宣传，工艺、品控和询价形成连贯阅读顺序。
+- `intl-factory`：英文产品、生产流程、能力和询价；填写、校验、呈现使用相同语言规则。
+- `cn-dining`：菜单、价格、门店体验、地址和营业时间优先；无照片时是清楚的文字菜单。
 
-流程：**量房**（读企业档案）→ **选样板间** → **出效果图** → **交房**。
+保留每套主色和行业特点。样板间确定版式，助手填写事实。未确认的数字、评价、资质和经营承诺不补写。
 
-## 进阶
+## 命令行
 
-日常出站走上面的三步，不需要密钥。下面是命令行和批量。Node 18+，不用装依赖。档案怎么写见 [docs/PROFILE.md](docs/PROFILE.md)。
+已有 `site.json` 时校验并生成，不调用外部模型：
 
-`site.json` 已经写在站点目录里时，校验并出站（不调用 DeepSeek）：
-
-```bash
-node scripts/fitout.mjs --profile examples/profiles/巷口半糖.md --out out/xiangkou --showroom cn-dining --fill agent
+```powershell
+node scripts/fitout.mjs --profile "<站点目录>/企业档案.md" --out "<站点目录>" --showroom cn-factory --fill agent
 ```
 
-打开 `out/xiangkou/site/index.html`，摘要在 `out/xiangkou/交付说明.md`。`--fill` 不写也是 `agent`。照片放进 `out/xiangkou/photos/`，或加 `--photos <目录>`。氛围图加 `--gen-images`；没有 `MINIMAX_API_KEY` 就跳过并提示，不因此失败。
+`--fill` 默认是 `agent`。语言需要覆盖时加 `--lang en` 或 `--lang zh-CN`。照片已放进 photos 不用再加参数；外部照片目录用 `--photos "<目录>"`。
 
-批量让 DeepSeek 填内容，才需要环境变量 `DEEPSEEK_API_KEY`。不要写进命令、档案或聊天：
+普通照片名可以通过 `photos/sources.json` 对应到用途，助手应负责完成这个清单：
 
-```bash
-node scripts/fitout.mjs --profile examples/profiles/巷口半糖.md --out out/xiangkou --showroom auto --fill deepseek
+```json
+{
+  "items": [
+    { "id": "hero-tea", "file": "茶杯照片.jpg", "source": "photo" }
+  ]
+}
 ```
 
-只填 json、不拼站：`node scripts/fill.mjs --profile 企业档案.md --showroom cn-factory --out site.json`。这条同样要密钥。填法和重试见 [docs/SITE_JSON.md](docs/SITE_JSON.md)。
+`id` 来自所选样板间的图片清单；来源是 `photo`、`stock` 或 `ai`。也支持既有的 `{ "hero-tea": "photo" }` 写法。实拍限制会在配图和拼装时检查，来源记录随图片保留。
 
-DeepSeek `deepseek-chat` 按 3 份虚构档案填了 6 个站，这一轮拼装、机检和视觉检查都通过，疑似编造 0，示例泄漏 0。
+只看示例，不需要密钥：
 
-### 三档检查
+```powershell
+node scripts/build.mjs showrooms/cn-factory/examples/site.json --site-dir out/demo
+```
 
-改完先跑快的，发版前再跑全的。Node 18+，不用装依赖。
+打开 `out/demo/index.html`。仓库不带演示照片，缺图会换成无图版。用自己合法持有的图，可加 `--images "<图片目录>"`；开发者演示图库用 `--demo-images "<仓库外图片目录>"`，照片不进入仓库。
 
-```bash
+### 批量填写
+
+只有主动选择 DeepSeek 批量填写才需要 `DEEPSEEK_API_KEY`，密钥只放环境变量：
+
+```powershell
+node scripts/fitout.mjs --profile "<档案.md>" --out "<站点目录>" --showroom intl-factory --fill deepseek --lang en
+```
+
+批量默认跟随样板间语言，中文档案可以生成英文站。提示词中的示例只提供字段骨架，不携带示例公司的整套文案和数字。
+
+MiniMax 生图是可选项；没有生图密钥不会阻止出站。助手已有生图能力时也可整理生成的氛围图，标记为 ai，不能冒充企业实拍。
+
+## 验证
+
+```powershell
 node tests/quick.mjs
-node tests/visual.mjs --showroom cn-factory
-node tests/release.mjs
+node tests/visual.mjs --showroom cn-factory --demo-images "<演示图根目录>"
+node tests/release.mjs --demo-images "<演示图根目录>"
 ```
 
-- `quick`：静态检查。`check.mjs`、`--lint-framework`、`--lint-showrooms`、`check-distinct.mjs`。不开浏览器。`--showroom <id>` 可重复，只拼、只 lint 点名的样板间；撞色仍两两比较全目录。
-- `visual`：只查视觉硬伤（横向溢出、文字被裁、图上文字对比度、按钮对比度、首屏立即可见、悬浮条压页脚、孤儿卡）。只看 1440 和 375，每种页面类型抽一页，轮播只查第 1 张。演示图加 `--demo-images <目录>`（某一套的图片目录，或按样板间 id 分子目录的根）。浏览器走环境变量 `PLAYWRIGHT_PATH`。
-- `release`：14 套重建、完整视觉检查、精简回归。演示图同样用 `--demo-images`。
+- quick：静态检查、框架和样板间 lint、颜色区分。
+- visual：受影响样板间的视觉硬伤，1440 和 375。
+- release：14 套完整视觉检查、既有回归、新增企业站回归，最终跑一次。
 
-### 分步用法
+视觉检查使用本机已有 Playwright，`PLAYWRIGHT_PATH` 可指到包目录或入口。程序不安装 npm 依赖。没有 Playwright 时明确报告未验，不能把跳过当通过。
 
-只拼示例站：
+三套示例的事实来源在 `examples/profiles/showrooms/`：
 
-```bash
-node scripts/build.mjs showrooms/cn-factory/examples/site.json --out out
+```powershell
+node scripts/check-profile.mjs
+node tests/business.mjs
 ```
 
-打开 `out/` 里生成的 `index.html` 就能看。仓库里**不带演示图片**（图库照片的许可证不允许原样再分发），缺图的位置会自动换成不需要图的版式；自己配图的流程（图库下载 / AI 生图 / 统一调色）见 [docs/IMAGES.md](docs/IMAGES.md)。新做一套样板间见 [docs/SHOWROOM.md](docs/SHOWROOM.md)。
+程序检查之外还要看完整页面、核对图文、点导航和分类。零横向溢出不等于企业信息已经表达清楚。
 
-## 交房前的机检
+## 文档
 
-审美和规矩不靠模型自觉，靠脚本拦：
-- `check.mjs`：对比度、字号、配色数、空话词表、按钮文案、标题字数、残留占位、站内链接、图片体积、备案位……
-- `check-visual.mjs`：375 / 768 / 1024 / 1440 四个宽度无横向溢出，图上文字对比度（轮播逐张查），悬浮条不压页脚
-- `check-originality.mjs`：配色组合和招牌细节离参考作品够远——学方法，不学长相
-- `check-distinct.mjs`：样板间之间不撞色
-
-## 出图纸：学方法，不学长相
-
-每套样板间都从成熟作品里来，但不照搬：
-1. 拆解成熟的商业主题、国内主流建站平台的行业模板、优秀企业官网，量出真实的首屏高度、字号、间距、板块顺序；
-2. 只留骨架（结构、节奏、版式原则、转化链）；
-3. 皮肤（配色、招牌细节、固定句式）全部换成我们自己的；
-4. 过原创性检查和对抗评审：熟悉原站的人一眼看得出不是同一家。
-
-## 进度
-
-- [x] 调研：开源官网模板、区块库、现成的网页设计 skills、成熟商业主题
-- [x] 拆解：10 个行业、近 150 套成熟模板和企业官网
-- [x] 样板间引擎 + 四道机检
-- [x] 第一批 10 套国内风样板间
-- [x] 国际风样板间（外贸工厂、高端门店、课程平台、咨询律所）
-- [x] 便宜模型实测（按企业档案自动填 `site.json`）
-- [x] 一句话出站的 skill
+- [Skill 工作流](skill/fitout/SKILL.md)
+- [企业档案](docs/PROFILE.md)
+- [站点字段与语言](docs/SITE_JSON.md)
+- [样板间](docs/SHOWROOM.md)
+- [素材与来源](docs/IMAGES.md)
+- [框架约定](docs/FRAMEWORK.md)
+- [更新记录](CHANGELOG.md)
 
 ## 许可
 
-[Apache-2.0](LICENSE)，开源可商用。
+[Apache-2.0](LICENSE)，开源可商用。演示照片的使用权与项目代码许可独立，照片保留在仓库外。

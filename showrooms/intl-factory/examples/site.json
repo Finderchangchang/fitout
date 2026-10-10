@@ -343,8 +343,8 @@
           "tone": "image",
           "data": {
             "label": "Beilun and Cixi",
-            "title": "Pins and brackets, made for export",
-            "lead": "Turned pins, stamped brackets, and welded frames for buyers who send a drawing.",
+            "title": "Metal parts made to your drawing",
+            "lead": "Turned pins, stamped brackets and welded frames from Ningbo.",
             "primaryLabel": "Request a Quote",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "See the catalog",
@@ -354,31 +354,31 @@
               {
                 "image": "hero-turn",
                 "imageAlt": "Lathe tool cutting a steel pin",
-                "title": "Hold the diameter on your drawing",
-                "lead": "Turned pins, quoted from the print you send."
+                "title": "Metal parts made to your drawing",
+                "lead": "Turned pins, stamped brackets and welded frames from Ningbo."
               },
               {
                 "image": "hero-stamp",
                 "imageAlt": "Press die closing on sheet steel",
-                "title": "Stamp it, then check the holes",
+                "title": "Stamped brackets and panels",
                 "lead": "Critical holes stay within the drawing."
               },
               {
                 "image": "hero-weld",
                 "imageAlt": "Cooled weld bead on a steel frame",
-                "title": "Keep the frame square after welding",
+                "title": "Welded frames to drawing",
                 "lead": "Hole position is checked on the jig."
               },
               {
                 "image": "hero-gauge",
                 "imageAlt": "Caliper on a ground pin diameter",
-                "title": "Measure it before the crate closes",
+                "title": "Inspection before shipment",
                 "lead": "The gauge room signs the lot."
               },
               {
                 "image": "hero-pack",
                 "imageAlt": "Finished pins in a divided tray",
-                "title": "Box the lot that already passed",
+                "title": "Packing for shipment",
                 "lead": "Plywood crates, then EXW or FOB Ningbo."
               }
             ],
@@ -399,94 +399,23 @@
           }
         },
         {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "floor",
-          "tone": "dark",
-          "data": {
-            "title": "On the floor",
-            "lead": "1.8 million pieces a month. 74% of 2025 shipments left China.",
-            "items": [
-              {
-                "value": "186",
-                "label": "People on the floor"
-              },
-              {
-                "value": "42",
-                "label": "CNC lathes and mills"
-              },
-              {
-                "value": "18",
-                "label": "Stamping presses"
-              },
-              {
-                "value": "16",
-                "label": "Countries in 2025"
-              }
-            ]
-          },
-          "bg": "bg-bench"
-        },
-        {
-          "type": "services",
-          "variant": "lanes",
-          "anchor": "processes",
+          "type": "collection-list",
+          "variant": "catalog-preview",
+          "anchor": "catalog",
           "tone": "light",
           "data": {
-            "title": "Four processes",
-            "lead": "Tolerances below are what we hold unless the drawing is tighter.",
-            "items": [
-              {
-                "name": "Turned parts",
-                "text": "Diameters hold ±0.02 mm on C45, 304, 316, and 6061-T6.",
-                "href": "products/index.html#catalog-kkbxnhn",
-                "image": "part-dowel",
-                "imageAlt": "Hardened steel dowel pin",
-                "tag": "Turned"
-              },
-              {
-                "name": "Stamped parts",
-                "text": "Critical holes hold ±0.05 mm. The largest press is 250 t.",
-                "href": "products/index.html#catalog-kkbmfth",
-                "image": "part-bracket",
-                "imageAlt": "Stamped steel hinge bracket",
-                "tag": "Stamped"
-              },
-              {
-                "name": "Welded frames",
-                "text": "Hole position holds ±0.5 mm after the jig is signed off.",
-                "href": "products/index.html#catalog-k1xf6n2w",
-                "image": "part-frame",
-                "imageAlt": "Welded rack upright",
-                "tag": "Welded"
-              },
-              {
-                "name": "Hardware kits",
-                "text": "304 kits stay tooled. Screws, nuts, and washers ship together.",
-                "href": "products/index.html#catalog-k1nygwm1",
-                "image": "part-kit",
-                "imageAlt": "Bag of stainless fasteners",
-                "tag": "Kits"
-              }
-            ]
-          }
-        },
-        {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "chip",
-          "tone": "image",
-          "data": {
-            "image": "band-chip",
-            "imageAlt": "Coolant on a steel pin in a lathe",
-            "caption": "Coolant on a turned pin. Not a plant tour."
+            "title": "Products",
+            "lead": "Compare materials, tolerances and order quantities.",
+            "collection": "products",
+            "moreHref": "products/index.html",
+            "moreLabel": "See the catalog"
           }
         },
         {
           "type": "why",
           "variant": "rail",
           "anchor": "steps",
-          "tone": "light",
+          "tone": "dark",
           "data": {
             "title": "From drawing to crate",
             "lead": "Four steps. The ship date on the quote is the date we ship.",
@@ -508,13 +437,78 @@
                 "text": "Plywood crates, photos, then EXW or FOB Ningbo."
               }
             ]
+          },
+          "bg": "hero-gauge"
+        },
+        {
+          "type": "photo-band",
+          "variant": "wide",
+          "anchor": "chip",
+          "tone": "image",
+          "data": {
+            "image": "band-chip",
+            "imageAlt": "Metal cutting with coolant",
+            "caption": "Metal cutting with coolant."
           }
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "floor",
+          "tone": "light",
+          "data": {
+            "title": "Manufacturing capacity",
+            "lead": "1.8 million pieces a month. 74% of 2025 shipments left China.",
+            "items": [
+              {
+                "value": "186",
+                "label": "People on the floor"
+              },
+              {
+                "value": "42",
+                "label": "CNC lathes and mills"
+              },
+              {
+                "value": "18",
+                "label": "Stamping presses"
+              },
+              {
+                "value": "16",
+                "label": "Countries in 2025"
+              }
+            ]
+          }
+        },
+        {
+          "type": "plant",
+          "variant": "split",
+          "anchor": "plants",
+          "tone": "image",
+          "data": {
+            "title": "Two plants",
+            "lead": "Machining and welding sit in Beilun. Stampings sit in Cixi.",
+            "items": [
+              {
+                "name": "Beilun",
+                "text": "42 CNC lathes and mills, plus weld jigs. 186 people work across both plants.",
+                "image": "plant-cnc",
+                "imageAlt": "CNC machining a metal part"
+              },
+              {
+                "name": "Cixi",
+                "text": "18 presses, largest 250 t. Stampings return to Beilun if the job also needs machining.",
+                "image": "plant-press",
+                "imageAlt": "Stamping press production floor"
+              }
+            ]
+          },
+          "bg": "hero-stamp"
         },
         {
           "type": "cases",
           "variant": "tiles",
           "anchor": "places",
-          "tone": "image",
+          "tone": "light",
           "data": {
             "title": "Where the parts go",
             "lead": "Four places these parts go.",
@@ -551,78 +545,6 @@
           }
         },
         {
-          "type": "collection-list",
-          "variant": "brief",
-          "anchor": "catalog",
-          "tone": "light",
-          "data": {
-            "title": "Catalog",
-            "lead": "Six parts we keep tooling for. Custom work is quoted from your drawing.",
-            "collection": "products"
-          }
-        },
-        {
-          "type": "plant",
-          "variant": "split",
-          "anchor": "plants",
-          "tone": "dark",
-          "data": {
-            "title": "Two plants",
-            "lead": "Machining and welding sit in Beilun. Stampings sit in Cixi.",
-            "items": [
-              {
-                "name": "Beilun",
-                "text": "42 CNC lathes and mills, plus weld jigs. 186 people work across both plants.",
-                "image": "plant-cnc",
-                "imageAlt": "CNC lathe with coolant on a steel part"
-              },
-              {
-                "name": "Cixi",
-                "text": "18 presses, largest 250 t. Stampings return to Beilun if the job also needs machining.",
-                "image": "plant-press",
-                "imageAlt": "Stamping press die on sheet steel"
-              }
-            ]
-          },
-          "bg": "bg-press"
-        },
-        {
-          "type": "honors",
-          "variant": "wall",
-          "anchor": "files",
-          "tone": "light",
-          "data": {
-            "title": "Files we send",
-            "lead": "The scan goes out with the quote. This page does not keep the file.",
-            "items": [
-              {
-                "name": "ISO 9001 file",
-                "issuer": "Sent with the quote",
-                "image": "cert-iso",
-                "imageAlt": "Scan of a quality file"
-              },
-              {
-                "name": "Material certificate",
-                "issuer": "When the mill issues it",
-                "image": "cert-mat",
-                "imageAlt": "Scan of a material file"
-              },
-              {
-                "name": "Gauge calibration log",
-                "issuer": "Sent with the quote",
-                "image": "cert-gauge",
-                "imageAlt": "Scan of a calibration log"
-              },
-              {
-                "name": "Packing photos",
-                "issuer": "Before the vessel",
-                "image": "cert-pack",
-                "imageAlt": "Photo of a plywood crate"
-              }
-            ]
-          }
-        },
-        {
           "type": "cta-band",
           "variant": "band",
           "anchor": "quote",
@@ -633,33 +555,6 @@
             "primaryHref": "contact/index.html"
           },
           "bg": "bg-crate"
-        },
-        {
-          "type": "faq",
-          "variant": "accordion",
-          "anchor": "questions",
-          "tone": "light",
-          "data": {
-            "title": "Before you send a file",
-            "items": [
-              {
-                "q": "Which drawing files do you take?",
-                "a": "PDF and STEP. Mark the datums on the PDF. We quote from those two files."
-              },
-              {
-                "q": "Which plant runs which job?",
-                "a": "Stampings run in Cixi. Machining and welding run in Beilun. One desk quotes both."
-              },
-              {
-                "q": "How do the parts leave Ningbo?",
-                "a": "Export cartons, then plywood crates. Photos go out before the vessel."
-              },
-              {
-                "q": "Who answers the export desk?",
-                "a": "The export desk in Beilun answers both plants. The first Germany shipment was in 2018."
-              }
-            ]
-          }
         }
       ]
     },
@@ -749,13 +644,13 @@
                 "name": "Beilun",
                 "text": "42 CNC lathes and mills, plus the weld jigs.",
                 "image": "plant-cnc",
-                "imageAlt": "CNC lathe with coolant on a steel part"
+                "imageAlt": "CNC machining a metal part"
               },
               {
                 "name": "Cixi",
                 "text": "18 presses, largest 250 t. Mixed jobs go back to Beilun for machining.",
                 "image": "plant-press",
-                "imageAlt": "Stamping press die on sheet steel"
+                "imageAlt": "Stamping press production floor"
               }
             ]
           },
@@ -830,7 +725,7 @@
           "anchor": "catalog",
           "tone": "light",
           "data": {
-            "title": "Products",
+            "title": "Parts by process",
             "lead": "Filter by process. Each card opens the drawing data.",
             "collection": "products",
             "facets": [
@@ -850,8 +745,7 @@
                 "name": "Hardware",
                 "text": "Kits in one bag."
               }
-            ],
-            "pageSize": 4
+            ]
           }
         },
         {
@@ -889,8 +783,7 @@
           "data": {
             "title": "Applications",
             "lead": "Where these parts are installed.",
-            "collection": "uses",
-            "pageSize": 2
+            "collection": "uses"
           }
         },
         {
@@ -1040,10 +933,9 @@
           "anchor": "notes",
           "tone": "light",
           "data": {
-            "title": "News",
+            "title": "Workshop updates",
             "lead": "Shop notes. The month in each line is the month we posted it.",
-            "collection": "news",
-            "pageSize": 2
+            "collection": "news"
           }
         },
         {
@@ -1079,7 +971,7 @@
           "anchor": "desk",
           "tone": "light",
           "data": {
-            "title": "Get a quote",
+            "title": "Discuss your drawing",
             "lead": "Send a drawing. The desk answers with price, MOQ, and a date."
           }
         },

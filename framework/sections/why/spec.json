@@ -40,13 +40,13 @@
       "needsImage": false,
       "family": "points",
       "fit": "几条并列的理由",
-      "source": "hyperui public/examples/marketing/feature-grids/1.html 的三列卡片。图标换成线宽 2 的 check，不搬 stroke 1.5 的闪电图"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "steps": {
       "needsImage": false,
       "family": "sequence",
       "fit": "有先后的做法，用有序列表",
-      "source": "自写 ol。不搬 localbiz 服务行的 01 角标"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

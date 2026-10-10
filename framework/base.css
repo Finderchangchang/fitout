@@ -1011,6 +1011,7 @@ html[data-flavor="intl"] {
   color: var(--on-media, var(--primary-contrast));
   border-radius: var(--radius-md);
 }
+.carousel-btn { white-space: nowrap; flex-shrink: 0; padding-inline: 0.75rem; }
 
 .hero-dots {
   display: flex;
@@ -1545,4 +1546,15 @@ html[data-flavor="intl"] {
     grid-column: auto;
     max-width: none;
   }
+}
+
+/* 分类页和分页末页按实际条目数排版，少量条目仍占完整内容宽度。 */
+@media (min-width: 768px) {
+  [data-section] [data-list-grid="rows"] { grid-template-columns: minmax(0, 1fr); }
+  [data-section] [data-list-grid]:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
+  [data-section] [data-list-grid="cards"]:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-section] [data-list-grid]:has(> :only-child) > article:has(img) { display: grid; grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr); gap: 0.75rem 1.5rem; align-content: start; }
+  [data-section] [data-list-grid]:has(> :only-child) > article:has(img) > * { grid-column: 2; margin-top: 0; }
+  [data-section] [data-list-grid]:has(> :only-child) > article > :is(img, a:has(img)) { grid-column: 1; grid-row: 1 / span 12; }
+  [data-section] [data-list-grid]:has(> :only-child) > article img { width: 100%; height: auto; max-height: 360px; object-fit: cover; }
 }

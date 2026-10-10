@@ -168,6 +168,79 @@
         "新闻动态",
         "预约看样"
       ]
+    },
+    {
+      "id": "intl-factory",
+      "name": "国际风 · 外贸工厂",
+      "industry": "factory-trade",
+      "niche": "manufacturing",
+      "lang": "en",
+      "fit": "给做外贸的零部件、五金、机械和 OEM 加工厂。客户是海外采购。首页是满屏实拍、询价和产能，内页能翻到公差、MOQ 和交期。",
+      "preview": "intl-factory/preview.jpg",
+      "pages": [
+        "Home",
+        "About",
+        "Products",
+        "Applications",
+        "Quality",
+        "News",
+        "Contact"
+      ]
+    },
+    {
+      "id": "intl-beauty",
+      "name": "国际风 · 高端门店",
+      "industry": "store-service",
+      "niche": "beauty",
+      "lang": "zh-CN",
+      "fit": "给美容院、SPA、美发沙龙和高端养生馆。环境和人是卖点。版式也能给精品健身房和精品餐厅复用：会员页改成会员档或套餐价，手艺人页改成教练或主厨。不写祛斑、抗衰、永久这类功效，不写医疗美容项目，不写第一和最。",
+      "preview": "intl-beauty/preview.jpg",
+      "pages": [
+        "首页",
+        "品牌",
+        "项目",
+        "手艺人",
+        "环境",
+        "会员",
+        "记事",
+        "预约"
+      ]
+    },
+    {
+      "id": "intl-education",
+      "name": "国际风 · 课程平台",
+      "industry": "education",
+      "niche": "vocational",
+      "lang": "zh-CN",
+      "fit": "给职业技能、设计、编程和语言这类课程是主角的培训机构和线上课。先看课（封面、课时、价格、适合谁），再报名。",
+      "preview": "intl-education/preview.jpg",
+      "pages": [
+        "首页",
+        "关于",
+        "课程",
+        "讲师",
+        "学员作业",
+        "资讯",
+        "报名咨询"
+      ]
+    },
+    {
+      "id": "intl-professional",
+      "name": "国际风 · 咨询律所",
+      "industry": "professional",
+      "niche": "consulting",
+      "lang": "zh-CN",
+      "fit": "给管理咨询、律师事务所、财税顾问和设计事务所。版式按机构、服务、人和项目来排，电话在页头、页脚和每页末尾都能看见。",
+      "preview": "intl-professional/preview.jpg",
+      "pages": [
+        "首页",
+        "关于",
+        "服务",
+        "团队",
+        "案例",
+        "洞察",
+        "面谈"
+      ]
     }
   ]
 }

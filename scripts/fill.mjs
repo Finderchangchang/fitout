@@ -14,7 +14,8 @@ import path from "path";
 import { spawnSync } from "child_process";
 import { fileURLToPath } from "url";
 import { readJson } from "./lib/json.mjs";
-import { E5_WORDS, E6_WORDS, PLACEHOLDERS, LIMITS, heroTitleIssue } from "./lib/rules.mjs";
+import { E6_WORDS, PLACEHOLDERS, LIMITS, heroTitleIssue, phrasesFor, textLimit } from "./lib/rules.mjs";
+import { siteLang, langError } from "./lib/i18n.mjs";
 import { closedTargets, isOn, parentOfCollection, pointsClosed } from "./lib/pages.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -24,7 +25,7 @@ const RETRY_RULES = new Set([
   "spec", "篇幅", "C14", "E5", "E6", "E2", "口径", "残留", "SEO", "结构", "链接", "D6", "C9", "C8", "口号", "A9", "重复",
 ]);
 
-const USAGE = "用法：node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2]";
+const USAGE = "用法：node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2] [--lang zh-CN|en]";
 
 let profileFile = "";
 let showroomId = "";
@@ -41,6 +42,7 @@ let businessType = "LocalBusiness";
 let apiKey = "";
 let callLog = [];
 let lastErrors = [];
+let language = "zh-CN";
 
 export function lintAgentSite({ profilePath, showroomId: showroomArg, site }) {
   openShowroom(profilePath, showroomArg);
@@ -61,7 +63,7 @@ function openShowroom(profilePath, showroomArg) {
   specs = loadSpecs(showroomDir);
   slots = Array.isArray(images.slots) ? images.slots : [];
   heroSlots = slots.filter((slot) => slot.block === "hero" && slot.tier === "must" && slot.mustBeReal === false);
-  bans = exampleBans(example, showroomId);
+  bans = exampleBans(example, showroomId).filter((value) => !profile.includes(value));
   businessType = example.businessType === "Organization" || example.businessType === "LocalBusiness"
     ? example.businessType
     : (showroom.industry === "factory-trade" ? "Organization" : "LocalBusiness");
@@ -82,6 +84,8 @@ export async function fillProfile(options = {}) {
   outFile = path.resolve(outPath);
   logFile = `${outFile}.log.json`;
   const { example } = openShowroom(profilePath, showroomArg);
+  language = options.lang || siteLang(example);
+  if (langError({ lang: language })) fail(langError({ lang: language }), 2);
   const rulesDoc = fs.readFileSync(path.join(root, "docs", "SITE_JSON.md"), "utf8").replace(/^\uFEFF/, "");
   const outline = showroomOutline(showroom, heroSlots, slots);
   const specText = specPrompt(showroom, specs);
@@ -134,6 +138,7 @@ for (let attempt = 1; attempt <= maxRetries + 1; attempt += 1) {
     continue;
   }
   lastSite = site;
+  site.lang = language;
   const errors = await engineErrors(site);
   if (!errors.length) {
     passedOn = attempt;
@@ -180,16 +185,17 @@ function remember(history, assistant, errors) {
 }
 
 function systemPrompt(room, banned, businessType) {
-  const words = E5_WORDS.map((item) => item.word).join("、");
+  const words = phrasesFor(language).map((item) => item.word).join("、");
   const buttons = E6_WORDS.join("、");
   const primary = room.buttons?.primary || "";
   return [
     "你是给中小企业填官网档案的人。只输出一个 JSON 对象，不要 Markdown，不要解释，不要缩进。",
+    `站点 lang 必须是 ${language}。${language === "en" ? "可见文案写自然英文；输入档案可以是中文。只翻译已提供的事实，不换算数字、价格或单位。英文长度使用中文上限 × 2.2，首屏标题最多 10 个词。" : "可见文案写中文。"}`,
     "写短。集合只收档案里有的条目，正文一两句，不要把示例站的篇幅照抄过来。",
     "事实只来自企业档案。档案写「待补」、空着、或明确说没有的，当成没有：那一项整段删掉。输出里禁止出现「待补」「暂无」「详情咨询」这几个字。",
     "每个板块都要写 tone，只能是 light、dark、image。hero 的 tone 必须是 image。首页至少 4 个板块，相邻 tone 不能相同，深浅切换至少 3 次。",
     "不要写 interval。年月照档案的写法，例如「2025年9月」。不要写成 2025-09-01，不要补档案里没有的日子，也不要把 9 写成 09。",
-    "首屏 slides 的 imageAlt 必须原样照抄给出的画面说明。首屏 label 可以不写；要写就不超过 4 个字。",
+    `首屏 slides 的 imageAlt 必须原样照抄给出的画面说明。首屏 label 可以不写；要写就不超过 ${language === "en" ? textLimit(12, language) : 4} 个字符。`,
     "不要编电话、微信、邮箱、备案号、价格、年份、人数、客户数、评分、证号、评价原话、人名。数字照档案里的那一串抄，不要换算，不要凑整。",
     "可选板块没有对应事实就整块不出。样板间必填板块必须在，内容仍只能用档案里有的话，不够就写短。",
     "可选页看骨架里的「什么情况下该有」。对不上，或档案写了否定，就把该页 enabled 设为 false。关掉的页不要留在导航里，首页也不要做它的入口。必有页不能关。",
@@ -221,7 +227,7 @@ function userPrompt({ rulesDoc: doc, outline: frame, specText: fields, example: 
     "字数按去掉空白后的 Unicode 码点计。超了会失败。",
     fields,
     "## 示例站（只看结构，不要抄内容）",
-    JSON.stringify(stripInterval(sample), null, 2),
+    JSON.stringify(structureOnly(sample), null, 2),
     "## 企业档案（唯一事实来源）",
     brief,
     "请输出这一家的 site.json。id 用档案里的站点 id。店名用品牌名，品牌名里已有「（虚构）」就不要再加。",
@@ -260,11 +266,11 @@ function showroomOutline(room, heroes, allSlots) {
   }
   lines.push("导航 href 用上面的文件路径，例如 index.html、about/index.html。");
   lines.push("首屏 slides 按这个顺序全部放上，image 只写 id：");
-  for (const slot of heroes) lines.push(`- ${slot.id}：${slot.desc || ""}`);
+  for (const slot of heroes) lines.push(`- ${slot.id}：${slotDescription(slot)}`);
   lines.push("其他图片位（必填 image 才能用，alt 用冒号后的画面，不要编 id）：");
   for (const slot of allSlots) {
     if (heroes.includes(slot)) continue;
-    lines.push(`- ${slot.id}：${slot.desc || slot.id}`);
+    lines.push(`- ${slot.id}：${slotDescription(slot) || slot.id}`);
   }
   return lines.join("\n");
 }
@@ -297,7 +303,7 @@ function compactFields(fields, indent) {
       lines.push(`${indent}${key}：列表，${def.required ? "必填" : "可无"}，${min}到${max}项`);
       lines.push(...compactFields(def.item, `${indent}  `));
     } else {
-      const max = def.maxChars ? `，≤${def.maxChars}` : "";
+      const max = def.maxChars ? `，≤${textLimit(def.maxChars, language)}` : "";
       lines.push(`${indent}${key}：${def.type || "string"}，${def.required ? "必填" : "可无"}${max}`);
     }
   }
@@ -430,13 +436,15 @@ function lintSite(site, { leak, model }) {
     if (!errors.includes(message)) errors.push(message);
   };
   if (!site || typeof site !== "object" || Array.isArray(site)) return ["根节点必须是对象"];
+  language = siteLang(site);
+  if (langError(site)) push(langError(site));
   if (site.showroom !== showroomId) push(`showroom 必须是 ${showroomId}`);
   if (site.industry !== showroom.industry) push(`industry 必须是 ${showroom.industry}`);
   if (showroom.niche && site.niche !== showroom.niche) push(`niche 必须是 ${showroom.niche}`);
   if (site.businessType !== businessType) push(`businessType 必须是 ${businessType}`);
   if (!/^_?[a-z0-9][a-z0-9-]*$/.test(site.id || "")) push("id 只能是小写字母、数字和连字符");
   if (!site.name) push("缺少 name");
-  else if (countChars(site.name) > LIMITS.name) push(`店名有 ${countChars(site.name)} 字，上限 ${LIMITS.name}`);
+  else if (countChars(site.name) > textLimit(LIMITS.name, language)) push(`店名有 ${countChars(site.name)} 字，上限 ${textLimit(LIMITS.name, language)}`);
   if (!Array.isArray(site.nav) || site.nav.length === 0) push("缺少 nav");
   for (const item of site.nav || []) {
     if (!item?.label || !item?.href) push("nav 每一项都要有 label 和 href");
@@ -445,7 +453,7 @@ function lintSite(site, { leak, model }) {
   const address = site.contact?.address;
   if (!phone) push("缺少 contact.phone");
   if (!address) push("缺少 contact.address");
-  else if (countChars(address) > LIMITS.address) push(`地址有 ${countChars(address)} 字，上限 ${LIMITS.address}`);
+  else if (countChars(address) > textLimit(LIMITS.address, language)) push(`地址有 ${countChars(address)} 字，上限 ${textLimit(LIMITS.address, language)}`);
   const hours = Array.isArray(site.contact?.hours) ? site.contact.hours : [];
   if (!hours.length) push("缺少营业时间 contact.hours");
   for (const row of hours) {
@@ -468,9 +476,9 @@ function lintSite(site, { leak, model }) {
       continue;
     }
     if (!page.title) push(`${page.id || "?"} 缺少 title`);
-    else if (countChars(page.title) > LIMITS.title) push(`页面 ${page.id} 的 title 有 ${countChars(page.title)} 字，上限 ${LIMITS.title}`);
+    else if (countChars(page.title) > textLimit(LIMITS.title, language)) push(`页面 ${page.id} 的 title 有 ${countChars(page.title)} 字，上限 ${textLimit(LIMITS.title, language)}`);
     if (!page.description) push(`${page.id || "?"} 缺少 description`);
-    else if (countChars(page.description) > LIMITS.description) push(`页面 ${page.id} 的 description 有 ${countChars(page.description)} 字，上限 ${LIMITS.description}`);
+    else if (countChars(page.description) > textLimit(LIMITS.description, language)) push(`页面 ${page.id} 的 description 有 ${countChars(page.description)} 字，上限 ${textLimit(LIMITS.description, language)}`);
     const order = (showroom.pages || []).find((item) => item.id === page.id && !item.from)?.order || [];
     lintOrder(page.sections || [], order, page.file || page.id, push);
     for (const section of page.sections || []) {
@@ -516,7 +524,7 @@ function lintSite(site, { leak, model }) {
   walkStrings(site, (text, keys) => {
     const key = keys[keys.length - 1];
     const where = keys.join(".");
-    for (const entry of E5_WORDS) {
+    for (const entry of phrasesFor(language)) {
       if (hitPhrase(text, entry)) push(`[E5] ${where} 出现空话「${entry.word}」`);
     }
     if (hasEmoji(text)) push(`[E2] ${where} 用了 emoji`);
@@ -566,7 +574,7 @@ function lintHeroButtons(site, push, model) {
         push("hero.buttons 每一项都要有 label 和 href");
         continue;
       }
-      if (countChars(String(button.label)) > 8) push(`首屏按钮「${button.label}」超过 8 个字`);
+      if (countChars(String(button.label)) > textLimit(8, language)) push(`首屏按钮「${button.label}」超过 ${textLimit(8, language)} 个字符`);
       if (pointsClosed(button.href, closed)) push(`首屏按钮「${button.label}」指向已关闭的页面，改到联系页或还开着的页`);
     }
     return;
@@ -608,10 +616,12 @@ function lintHomeTones(site, push) {
 }
 
 function lintHeroExtra(data, push) {
-  if (data.label && countChars(data.label) > 4) push(`首屏 label 有 ${countChars(data.label)} 字，最多 4 个字`);
+  const labelLimit = language === "en" ? textLimit(12, language) : 4;
+  if (data.label && countChars(data.label) > labelLimit) push(`首屏 label 有 ${countChars(data.label)} 字，最多 ${labelLimit} 个字符`);
   for (const slide of data.slides || []) {
     const slot = slots.find((item) => item.id === slide?.image);
-    if (slot?.desc && slide?.imageAlt !== slot.desc) push(`首屏 ${slide?.image || "?"} 的说明必须原样是「${slot.desc}」`);
+    const desc = slotDescription(slot);
+    if (desc && slide?.imageAlt !== desc) push(`首屏 ${slide?.image || "?"} 的说明必须原样是「${desc}」`);
   }
 }
 
@@ -624,6 +634,23 @@ function stripInterval(value) {
     out[key] = stripInterval(item);
   }
   return out;
+}
+
+function slotDescription(slot) {
+  if (!slot) return "";
+  return language === "en" ? (slot.descEn || slot.desc || "") : (slot.desc || "");
+}
+
+// 只展示字段形状；示例企业的句子和数字不进入填写材料。
+function structureOnly(node, key = "", parents = []) {
+  if (Array.isArray(node)) return node.slice(0, 1).map((value) => structureOnly(value, "", [...parents, key]));
+  if (node && typeof node === "object") {
+    return Object.fromEntries(Object.entries(node).filter(([name]) => name !== "interval" && !name.startsWith("_")).map(([name, value]) => [name, structureOnly(value, name, [...parents, key])]));
+  }
+  if (typeof node !== "string") return node;
+  const structural = ["showroom", "industry", "niche", "businessType", "lang", "type", "variant", "tone", "collection", "header", "footer", "floatContact"];
+  if (structural.includes(key) || (key === "id" && parents.includes("pages"))) return node;
+  return "";
 }
 
 function tokensOf(text) {
@@ -706,8 +733,8 @@ function lintFields(data, fields, label, type, push) {
       if (type === "hero" && key === "title") {
         const issue = heroTitleIssue(value);
         if (issue) push(`[C14] ${label}.${key} ${issue}`);
-      } else if (def.maxChars && countChars(value) > def.maxChars) {
-        push(`${label}.${key} 有 ${countChars(value)} 字，上限 ${def.maxChars}`);
+      } else if (def.maxChars && countChars(value) > textLimit(def.maxChars, language)) {
+        push(`${label}.${key} 有 ${countChars(value)} 字，上限 ${textLimit(def.maxChars, language)}`);
       }
       if ((key === "image" || key === "wechatQr") && value.trim()) {
         const id = value.startsWith("slot:") ? value.slice(5).trim() : value.trim();
@@ -945,6 +972,7 @@ if (isMain) {
     outPath: flag("--out"),
     model: flag("--model", "deepseek-chat"),
     maxRetries: flag("--max-retries", "2"),
+    lang: flag("--lang"),
     dryRun: args.includes("--dry-run"),
   }).then((result) => {
     if (result.message && result.ok) console.log(result.message);

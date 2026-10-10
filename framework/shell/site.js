@@ -3,6 +3,23 @@
   document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // 旧分类锚点与单选筛选仍可用；分页时转向完整的静态分类列表。
+  document.querySelectorAll("[data-category-links]").forEach(function (section) {
+    var links = JSON.parse(section.getAttribute("data-category-links"));
+    var hashes = JSON.parse(section.getAttribute("data-category-hashes"));
+    function followHash() {
+      if (hashes[window.location.hash]) window.location.replace(hashes[window.location.hash]);
+    }
+    followHash();
+    window.addEventListener("hashchange", followHash);
+    section.addEventListener("change", function (event) {
+      var input = event.target;
+      if (!input || input.type !== "radio") return;
+      var key = Object.keys(links).find(function (value) { return input.value === value || input.id.indexOf(value) !== -1; });
+      window.location.assign(key ? links[key] : section.getAttribute("data-category-all"));
+    });
+  });
+
   var buttons = document.querySelectorAll("[data-menu-button]");
   var panel = document.querySelector("[data-menu-panel]");
 

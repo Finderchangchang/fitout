@@ -487,8 +487,8 @@
           "tone": "image",
           "data": {
             "label": "宁浦精工",
-            "title": "十七年只做金属机件",
-            "lead": "图纸确认后在桐乡排产，折弯、冲压、机加和组焊都做。",
+            "title": "金属机件按图加工",
+            "lead": "桐乡工厂，承接折弯、冲压、机加和组焊。",
             "primaryLabel": "索取报价",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "产品中心",
@@ -498,25 +498,25 @@
               {
                 "image": "hero-press",
                 "imageAlt": "冲床落料的金属板局部",
-                "title": "十七年只做金属机件",
-                "lead": "图纸确认后在桐乡排产，折弯、冲压、机加和组焊都做。"
+                "title": "金属机件按图加工",
+                "lead": "桐乡工厂，承接折弯、冲压、机加和组焊。"
               },
               {
                 "image": "hero-bend",
                 "imageAlt": "折弯机钳口咬住钢板",
-                "title": "折弯公差按零点二",
+                "title": "折弯件，按图交付",
                 "lead": "门框加强板按图折弯，对角线抽检后再批量。"
               },
               {
                 "image": "hero-cnc",
                 "imageAlt": "车刀和轴套上的冷却液",
-                "title": "轴套车铣不外协",
+                "title": "厂内完成车铣加工",
                 "lead": "45钢轴套在厂里车完，内孔按客户的轴配。"
               },
               {
                 "image": "hero-weld",
                 "imageAlt": "支架焊点的金属本色",
-                "title": "焊完进质检再出厂",
+                "title": "组焊后交检出厂",
                 "lead": "支架按图组焊，焊点交检合格才装箱。"
               }
             ],
@@ -545,83 +545,24 @@
           }
         },
         {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "meter",
-          "tone": "dark",
-          "data": {
-            "title": "企业实力",
-            "lead": "年份、人数和设备，是厂里现在的情况。",
-            "items": [
-              {
-                "value": "17 年",
-                "label": "从事机件加工"
-              },
-              {
-                "value": "126 人",
-                "label": "在册员工"
-              },
-              {
-                "value": "38 台",
-                "label": "折弯机和冲床"
-              },
-              {
-                "value": "0.2 mm",
-                "label": "折弯常规公差"
-              }
-            ]
-          },
-          "bg": "bg-meter"
-        },
-        {
-          "type": "services",
-          "variant": "stagger",
-          "anchor": "lines",
+          "type": "collection-list",
+          "variant": "catalog-preview",
+          "anchor": "news",
           "tone": "light",
           "data": {
-            "title": "生产设备",
-            "lead": "折弯、冲压、机加、组焊四条线，都在振业路厂区。",
-            "items": [
-              {
-                "name": "数控折弯机",
-                "text": "板厚到 6 毫米，常规公差 ±0.2 毫米。",
-                "href": "products/index.html#catalog-k1ph8kiy",
-                "image": "line-bend",
-                "imageAlt": "折弯机在弯一块门框加强板",
-                "tag": "折弯"
-              },
-              {
-                "name": "160吨冲床",
-                "text": "连续模和单工序都做，冲床到 160 吨。",
-                "href": "products/index.html#catalog-k6a87dw",
-                "image": "line-stamp",
-                "imageAlt": "冲床在落一块柜体侧板",
-                "tag": "冲压"
-              },
-              {
-                "name": "车床和铣床",
-                "text": "轴套和安装底板在厂里车铣，不外协。",
-                "href": "products/index.html#catalog-k15se72r",
-                "image": "line-cnc",
-                "imageAlt": "车床卡着一根轴套棒料",
-                "tag": "机加"
-              },
-              {
-                "name": "组焊工位",
-                "text": "支架按图组焊，焊完进质检再出厂。",
-                "href": "products/index.html#catalog-kms2wja",
-                "image": "line-weld",
-                "imageAlt": "焊工在组一支支架",
-                "tag": "组焊"
-              }
-            ]
-          }
+            "title": "产品与加工范围",
+            "lead": "按图纸做机件，材料、规格和工艺写在每款产品里。",
+            "collection": "products",
+            "moreHref": "products/index.html",
+            "moreLabel": "查看全部产品"
+          },
+          "bg": "bg-news"
         },
         {
           "type": "why",
           "variant": "overlay",
           "anchor": "method",
-          "tone": "image",
+          "tone": "dark",
           "data": {
             "title": "品质管理",
             "lead": "材料、公差、首件和交期，报价前先对清楚。",
@@ -645,13 +586,42 @@
                 "text": "插单和改期，周四会上说清楚。"
               }
             ]
+          },
+          "bg": "hero-cnc"
+        },
+        {
+          "type": "trust",
+          "variant": "stats",
+          "anchor": "meter",
+          "tone": "light",
+          "data": {
+            "title": "企业实力",
+            "lead": "2009年起在桐乡加工金属机件。",
+            "items": [
+              {
+                "value": "17 年",
+                "label": "从事机件加工"
+              },
+              {
+                "value": "126 人",
+                "label": "在册员工"
+              },
+              {
+                "value": "38 台",
+                "label": "折弯机和冲床"
+              },
+              {
+                "value": "0.2 mm",
+                "label": "折弯常规公差"
+              }
+            ]
           }
         },
         {
           "type": "cases",
           "variant": "linked",
           "anchor": "uses",
-          "tone": "light",
+          "tone": "image",
           "data": {
             "title": "应用领域",
             "lead": "农机、配电柜和货架，都用厂里做的零件。",
@@ -678,53 +648,14 @@
                 "imageAlt": "货架上的冲孔连接件"
               }
             ]
-          }
-        },
-        {
-          "type": "collection-list",
-          "variant": "brief",
-          "anchor": "news",
-          "tone": "dark",
-          "data": {
-            "title": "新闻动态",
-            "lead": "设备进厂、接待时间和报价上的变动。",
-            "collection": "news"
           },
-          "bg": "bg-news"
-        },
-        {
-          "type": "honors",
-          "variant": "wall",
-          "anchor": "seals",
-          "tone": "light",
-          "data": {
-            "title": "资质荣誉",
-            "lead": "质量、环境和职业健康安全的体系证书。",
-            "items": [
-              {
-                "name": "质量管理体系",
-                "issuer": "衡准认证"
-              },
-              {
-                "name": "环境管理体系",
-                "issuer": "衡准认证"
-              },
-              {
-                "name": "职业健康安全",
-                "issuer": "衡准认证"
-              },
-              {
-                "name": "企业技术中心",
-                "issuer": "桐乡经济开发区"
-              }
-            ]
-          }
+          "bg": "hero-weld"
         },
         {
           "type": "cta-band",
           "variant": "plate",
           "anchor": "quote",
-          "tone": "image",
+          "tone": "light",
           "data": {
             "title": "欢迎来厂询价",
             "lead": "图纸注明材料、数量和表面处理，工作日当天回复。",
@@ -920,7 +851,7 @@
           "anchor": "catalog",
           "tone": "light",
           "data": {
-            "title": "产品中心",
+            "title": "按工艺查看产品",
             "lead": "六种在产零件，写了型号、材质、公差和产能。",
             "collection": "products",
             "facets": [
@@ -949,8 +880,7 @@
                 "text": "支架总成，按套出货。",
                 "href": "products/index.html#catalog-kms2wja"
               }
-            ],
-            "pageSize": "3"
+            ]
           }
         }
       ]
@@ -976,8 +906,7 @@
           "data": {
             "title": "应用领域",
             "lead": "农机、配电、货架和厨电，写了工艺和月产能。",
-            "collection": "applications",
-            "pageSize": "3"
+            "collection": "applications"
           }
         }
       ]
@@ -1001,10 +930,9 @@
           "anchor": "posts",
           "tone": "light",
           "data": {
-            "title": "新闻动态",
+            "title": "设备与生产记录",
             "lead": "设备、接待和报价上的最近几条。",
-            "collection": "news",
-            "pageSize": "3"
+            "collection": "news"
           }
         }
       ]
@@ -1028,7 +956,7 @@
           "anchor": "desk",
           "tone": "light",
           "data": {
-            "title": "联系我们",
+            "title": "图纸询价与来访",
             "lead": "电话、微信或来图都可以，请写明材料和数量。",
             "image": "qr-advisor",
             "imageAlt": "宁浦精工销售顾问二维码"

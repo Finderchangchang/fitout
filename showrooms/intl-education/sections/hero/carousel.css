@@ -6,6 +6,7 @@
 .hero-full .hero-slide {
   transition: opacity var(--dur) var(--ease);
 }
+.hero-full .hero-scrim { background: color-mix(in srgb, var(--text) 75%, transparent); }
 
 .hero-slides:not(:has(.is-current)) .hero-slide:first-child {
   opacity: 1;

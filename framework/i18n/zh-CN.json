@@ -31,5 +31,6 @@
   "pagerPrev": "上一页",
   "pagerNext": "下一页",
   "pagerLabel": "分页",
-  "qrButton": "二维码"
+  "qrButton": "二维码",
+  "details": "详细信息"
 }

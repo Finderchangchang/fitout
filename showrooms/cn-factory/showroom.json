@@ -67,17 +67,11 @@
           ]
         },
         {
-          "type": "trust",
-          "required": false,
-          "variants": [
-            "stats"
-          ]
-        },
-        {
-          "type": "services",
+          "type": "collection-list",
           "required": true,
           "variants": [
-            "stagger"
+            "brief",
+            "catalog-preview"
           ]
         },
         {
@@ -88,6 +82,13 @@
           ]
         },
         {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
           "type": "cases",
           "required": false,
           "variants": [
@@ -95,10 +96,17 @@
           ]
         },
         {
-          "type": "collection-list",
+          "type": "cta-band",
           "required": false,
           "variants": [
-            "brief"
+            "plate"
+          ]
+        },
+        {
+          "type": "services",
+          "required": false,
+          "variants": [
+            "stagger"
           ]
         },
         {
@@ -106,13 +114,6 @@
           "required": false,
           "variants": [
             "wall"
-          ]
-        },
-        {
-          "type": "cta-band",
-          "required": false,
-          "variants": [
-            "plate"
           ]
         }
       ]
@@ -288,5 +289,7 @@
         }
       ]
     }
-  ]
+  ],
+  "missingClientImages": "omit",
+  "layout": "business"
 }

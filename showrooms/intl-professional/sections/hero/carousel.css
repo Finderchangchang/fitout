@@ -1,6 +1,11 @@
 .hero-full {
   min-height: 92svh;
 }
+@media (max-width: 767px) {
+  .hero-full .hero-copy { padding-top: 5rem; }
+  .hero-full .hero-ui { flex-wrap: wrap; }
+  .hero-full .hero-dots { flex-wrap: wrap; }
+}
 
 .hero .section-title {
   font-size: clamp(2.5rem, 10vw, var(--fs-hero));

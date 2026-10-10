@@ -22,7 +22,7 @@
 
 衬线栈 `"Noto Serif SC", "Songti SC", "SimSun", serif` 只留给以后的专业服务。`_neutral` 标题和正文同一套无衬线系统字体，文件里写了「不是正式装修风格」。
 
-疏密（来自 localbiz `lib/theme/styles.ts`）：
+疏密的三档约定：
 
 - compact：`clamp(2.5rem, 2rem + 2vw, 3.5rem)`，间隙 1rem
 - standard：`clamp(3rem, 2.4rem + 3vw, 5rem)`，间隙 1.5rem
@@ -36,20 +36,20 @@
 
 | type | 版式 | 家族 | 结构来源 |
 |---|---|---|---|
-| header | standard / centered | bar | localbiz `HeaderStandard.tsx`、`HeaderCentered.tsx`（收成一行）；菜单参考 `MobileNav.tsx` 与 hyperui `marketing/headers/1.html` |
-| hero | split-image / text / centered（未启用） | split / editorial / centered | localbiz `HeroSplitImage.tsx`、`HeroCentered.tsx`。不搬渐变占位。centered 不进门店和工厂户型，现在没有户型能选到 |
-| trust | stats / certs | metrics / credentials | hyperui `marketing/stats/1.html` 的 dl。certs 没有现成区块，自写 |
-| services | grid-cards / list-rows | grid / menu | localbiz `ServicesGridCards.tsx`、`ServicesListRows.tsx`。不搬 01 编号 |
-| why | points / steps | points / sequence | hyperui `marketing/feature-grids/1.html`。steps 用 `ol`，不搬 01 角标 |
+| header | standard / centered | bar | 通用语义结构；许可信息见 NOTICE |
+| hero | split-image / text / centered（未启用） | split / editorial / centered | 通用语义结构；许可信息见 NOTICE |
+| trust | stats / certs | metrics / credentials | 通用语义结构；许可信息见 NOTICE |
+| services | grid-cards / list-rows | grid / menu | 通用语义结构；许可信息见 NOTICE |
+| why | points / steps | points / sequence | 通用语义结构；许可信息见 NOTICE |
 | cases | gallery / list | gallery / stories | 自写。不使用参考仓库里的库存照片 |
-| testimonials | grid-cards / spotlight | quotes / quote | localbiz `TestimonialsGridCards.tsx`、`TestimonialsSpotlight.tsx`。不打星，不横向滚动 |
-| team | cards / roster | portraits / people | hyperui `marketing/team-sections/1.html` 的姓名和岗位。不搬头像和品牌图标 |
-| faq | accordion / two-column | accordion / columns | localbiz `FaqAccordion.tsx`、`FaqTwoColumn.tsx`。原生 `details` |
-| contact | card / banner | visit / banner | localbiz `HoursContactCard.tsx`、`HoursContactBanner.tsx`。框架标准版：左栏标题、导语、营业时间、一排等宽按钮，右栏联系方式卡片，二维码 `qrs` 另起一整行居中。样板间要联系区，先用这一份，不要本地重写（见下「联系区约定」） |
-| cta-band | simple / inline | band / split-cta | localbiz `CtaBandSimple.tsx`。不搬渐变版 |
-| footer | simple / columns | plain / columns | localbiz `FooterSimple.tsx`、`FooterColumns.tsx`。备案行参考 PageTemplatify `themes/enterprise/template.html` |
+| testimonials | grid-cards / spotlight | quotes / quote | 通用语义结构；许可信息见 NOTICE |
+| team | cards / roster | portraits / people | 通用语义结构；许可信息见 NOTICE |
+| faq | accordion / two-column | accordion / columns | 通用语义结构；许可信息见 NOTICE |
+| contact | card / banner | visit / banner | 通用语义结构；许可信息见 NOTICE |
+| cta-band | simple / inline | band / split-cta | 通用语义结构；许可信息见 NOTICE |
+| footer | simple / columns | plain / columns | 通用语义结构；许可信息见 NOTICE |
 | float-contact | dock | dock | 调研没有现成区块，按任务书自写 |
-| product-list | grid / rows | catalog / menu | hyperui `marketing/product-cards/1.html` 的名称链接。没图不出图 |
+| product-list | grid / rows | catalog / menu | 通用语义结构；许可信息见 NOTICE |
 | product-detail | article | article | 自写规格表。没图不出图，不换版式 |
 
 带图版式在 spec 里声明 `fallback`：`split-image` → `text`，`gallery` → `list`，`cards` → `roster`。缺图就换版式。
@@ -248,3 +248,11 @@ node tests/release.mjs [--demo-images <目录>]
 | L22 | 中文末行只剩一个字：段落、列表项、标题、图注、页脚联系行折成至少两行，整段 ≥ 4 个汉字，末行恰好 1 个汉字 | 0。面包屑和导航不查。末行里有数字的不报（价格、数量） |
 
 另外 `chromeProbe` 的点击区检查把 `.crumbs a` 也算进去（小于 44×44 失败），`footerProbe` 不再把已经让开（隐藏）的桌面悬浮条算作压住页脚。
+
+## 企业站补充验证
+
+release 包含 tests/business.mjs，验证分页分类能找到完整集合、分类内翻页和旧锚点、英文规则与机检一致、普通照片名和来源、档案数值篡改，以及三套无图正文的真实计算对比度。它不更改原有检查阈值。
+
+集合模板用 data-media-group 标记图片集合。拼装器据直属 article 的图文行类名区分 rows 和 cards，写入 data-list-grid；图文行保留整行阅读，卡片按实际条目数排列，单条改成图文并列。框架的通用修复也覆盖其余样板间，第一阶段的首页结构重做仍只涉及三套标杆。
+
+安装器只把实际仓库路径写到安装副本 runtime.json；源码不包含作者机器路径。photos 清单保留来源，处理后的 img/sources.json 是拼装认可的 id 对应来源结构。

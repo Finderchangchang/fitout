@@ -58,13 +58,13 @@
       "needsImage": false,
       "family": "grid",
       "fit": "三项上下，适合扫一眼",
-      "source": "localbiz-site components/sections/services/ServicesGridCards.tsx"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "list-rows": {
       "needsImage": false,
       "family": "menu",
       "fit": "像菜单一样逐行。不编号",
-      "source": "localbiz-site components/sections/services/ServicesListRows.tsx。不搬 01 编号"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

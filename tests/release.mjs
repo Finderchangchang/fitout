@@ -56,4 +56,10 @@ if (reg.status !== 0) {
   console.log(`release 不通过  回归  ${seconds(Date.now() - started)}`);
   process.exit(1);
 }
+const business = await runFile(path.join(root, "tests", "business.mjs"), [], { timeout: 180000 });
+process.stdout.write(business.out);
+if (business.status !== 0) {
+  console.log(`release 不通过  企业站回归  ${seconds(Date.now() - started)}`);
+  process.exit(business.status);
+}
 console.log(`release 通过  ${ids.length} 套  ${seconds(Date.now() - started)}`);

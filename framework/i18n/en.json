@@ -31,5 +31,6 @@
   "pagerPrev": "Previous",
   "pagerNext": "Next",
   "pagerLabel": "Pages",
-  "qrButton": "QR code"
+  "qrButton": "QR code",
+  "details": "Details"
 }

@@ -40,13 +40,13 @@
       "needsImage": false,
       "family": "accordion",
       "fit": "问题不多，竖着叠",
-      "source": "localbiz-site components/sections/faq/FaqAccordion.tsx。展开图标用 chevron，不用加号"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "two-column": {
       "needsImage": false,
       "family": "columns",
       "fit": "问题分成两列",
-      "source": "localbiz-site components/sections/faq/FaqTwoColumn.tsx"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

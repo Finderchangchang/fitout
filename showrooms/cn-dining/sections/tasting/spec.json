@@ -67,6 +67,11 @@
       "family": "picker",
       "fit": "大图加横排缩略",
       "fallback": "omit"
+    },
+    "menu": {
+      "needsImage": false,
+      "family": "menu",
+      "fit": "图文菜单，缺图仍完整显示菜名、说明和价格。"
     }
   }
 }

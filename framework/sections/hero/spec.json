@@ -132,7 +132,7 @@
       "fallback": "text",
       "family": "split",
       "fit": "有一张真实照片时，左文右图",
-      "source": "localbiz-site components/sections/hero/HeroSplitImage.tsx。不搬它的渐变占位图"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "text": {
       "needsImage": false,
@@ -144,7 +144,7 @@
       "needsImage": false,
       "family": "centered",
       "fit": "居中、无图。门店和工厂户型不允许，只留给以后的专业服务",
-      "source": "localbiz-site components/sections/hero/HeroCentered.tsx"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "carousel": {
       "needsImage": true,

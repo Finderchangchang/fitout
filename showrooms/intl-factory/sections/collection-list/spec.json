@@ -1,17 +1,47 @@
 {
   "note": "列表条目由拼装注入。分类筛选只在目录版式里出现。facets 的 text 写在筛选项旁。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "collection": { "type": "string", "required": true, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "collection": {
+      "type": "string",
+      "required": true,
+      "maxChars": 40
+    },
     "facets": {
       "type": "list",
       "required": false,
       "max": 6,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 12 },
-        "text": { "type": "string", "required": true, "maxChars": 24 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 24
+        }
       }
+    },
+    "moreHref": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "moreLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
     }
   },
   "variants": {
@@ -38,6 +68,11 @@
       "family": "ledger",
       "fit": "动态按行排，月份写在说明开头",
       "source": "样板间自写"
+    },
+    "catalog-preview": {
+      "needsImage": false,
+      "family": "product-overview",
+      "fit": "首页产品或门店导读；无图时是精简文字列表。"
     }
   }
 }

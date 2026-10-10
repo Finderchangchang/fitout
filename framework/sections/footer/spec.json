@@ -6,13 +6,13 @@
       "needsImage": false,
       "family": "plain",
       "fit": "信息顺着排",
-      "source": "localbiz-site components/sections/footer/FooterSimple.tsx；备案行参考 PageTemplatify themes/enterprise/template.html 的备案信息"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     },
     "columns": {
       "needsImage": false,
       "family": "columns",
       "fit": "导航、联系分成几列",
-      "source": "localbiz-site components/sections/footer/FooterColumns.tsx，加上同一段备案"
+      "source": "语义结构与实现约定见 docs/FRAMEWORK.md；第三方许可见 NOTICE。"
     }
   }
 }

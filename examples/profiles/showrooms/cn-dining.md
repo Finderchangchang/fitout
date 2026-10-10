@@ -1,0 +1,329 @@
+# 企业档案：麓茶记（虚构）
+
+本档案整理自 3abfb84 的已提交演示内容，全部为虚构企业信息。只用于演示，不对应真实经营主体。新增事实必须另行确认。
+
+## 1. 一句话介绍
+麓茶记是杭州起家的茶饮连锁，主营焙火乌龙、当日烘焙和热食，门店覆盖杭州、苏州、宁波。
+
+## 2. 基本信息
+| 项 | 内容 |
+|---|---|
+| 品牌名 / 门店名 | 麓茶记（虚构） |
+| 站点 id | lucha-ji |
+| 行业 | store-service |
+| 城市、地址 | 杭州市西湖区龙井路88号（虚构地址） |
+| 电话 | 0571-87926340 |
+| 微信 | luchaji2017 |
+| 邮箱 | hi@luchaji.example |
+| 备案号 | 浙ICP备17028394号 |
+| 营业时间 | 周一至周日 10:00-21:30 |
+
+## 3. 已确认的演示内容
+下列原文是事实基准。字段路径用于回查来源；图片位、链接和排版配置不是企业事实。
+
+- `contact.phone`：0571-87926340
+- `contact.wechat`：luchaji2017
+- `contact.wechatQr`：qr-wechat
+- `contact.email`：hi@luchaji.example
+- `contact.address`：杭州市西湖区龙井路88号（虚构地址）
+- `contact.hours[0].day`：周一至周日
+- `contact.hours[0].time`：10:00-21:30
+- `contact.formUrl`：https://example.com/lucha-join
+- `contact.icp`：浙ICP备17028394号
+- `contact.police`：浙公网安备33010602017028号
+- `contact.qrcodes[0].label`：关注公众号
+- `contact.qrcodes[1].label`：点单小程序
+- `name`：麓茶记（虚构）
+- `summary`：麓茶记是杭州起家的茶饮连锁，主营焙火乌龙、当日烘焙和热食，门店覆盖杭州、苏州、宁波。
+- `pages.home.title`：麓茶记（虚构）｜焙火乌龙当天现烤
+- `pages.home.description`：建德原叶焙火乌龙，余杭后厨当天烘焙。杭州、苏州、宁波共4家门店。
+- `pages.home.hero.label`：创立于2017
+- `pages.home.hero.title`：焙火乌龙，当天现烤
+- `pages.home.hero.lead`：原叶现泡，司康当天出炉，热食有茶泡饭和葱油拌面。
+- `pages.home.hero.primaryLabel`：谈加盟
+- `pages.home.hero.secondaryLabel`：看产品
+- `pages.home.hero.slides[0].title`：焙火乌龙，当天现烤
+- `pages.home.hero.slides[0].lead`：原叶现泡，司康当天出炉，热食有茶泡饭和葱油拌面。
+- `pages.home.hero.slides[1].title`：司康当天出炉即止
+- `pages.home.hero.slides[1].lead`：低筋面粉配发酵黄油，晚间售完就收。
+- `pages.home.hero.slides[2].title`：三十六座，今晚还开
+- `pages.home.hero.slides[2].lead`：龙井路店十点到九点半，座位三十六个。
+- `pages.home.hero.slides[3].title`：热食十一点后上桌
+- `pages.home.hero.slides[3].lead`：茶泡饭配腌萝卜，葱油拌面可以加蛋。
+- `pages.home.trust.title`：品牌实力
+- `pages.home.trust.lead`：四家门店，在杭州、苏州、宁波，2017年开业。
+- `pages.home.trust.items[0].value`：4 家
+- `pages.home.trust.items[0].label`：在营门店
+- `pages.home.trust.items[1].value`：9 年
+- `pages.home.trust.items[1].label`：品牌年限
+- `pages.home.trust.items[2].value`：3 城
+- `pages.home.trust.items[2].label`：覆盖城市
+- `pages.home.trust.items[3].value`：2017
+- `pages.home.trust.items[3].label`：创立年份
+- `pages.home.photo-band.caption`：杭州龙井路店，2017年开出的第一家门店。
+- `pages.home.essay.title`：品牌故事
+- `pages.home.essay.lead`：茶用建德焙火乌龙，面包在余杭后厨当天烤。
+- `pages.home.essay.body`：2017年，麓茶记在杭州龙井路开出第一家店，36个座位。菜单一直是焙火乌龙、当天司康和桂花卷，加上茶泡饭、葱油拌面。余杭后厨约860平方米，给杭州、苏州、宁波的4家门店供货。
+- `pages.home.essay.caption`：同一张桌上的茶和司康
+- `pages.home.mosaic.title`：核心原料
+- `pages.home.mosaic.lead`：茶、面粉、黄油和当季水果，菜单围着这四样。
+- `pages.home.mosaic.items[0].name`：焙火乌龙
+- `pages.home.mosaic.items[0].text`：建德茶山，清明后进一批。
+- `pages.home.mosaic.items[1].name`：低筋面粉
+- `pages.home.mosaic.items[1].text`：司康和桂花卷用同一款粉。
+- `pages.home.mosaic.items[2].name`：发酵黄油
+- `pages.home.mosaic.items[2].text`：当天揉面，当天出炉。
+- `pages.home.mosaic.items[3].name`：当季水果
+- `pages.home.mosaic.items[3].text`：青提只在当季上菜单。
+- `pages.home.tasting.title`：产品系列
+- `pages.home.tasting.lead`：茶饮、烘焙和热食，价格标在每一款旁边。
+- `pages.home.tasting.moreLabel`：全部产品
+- `pages.home.tasting.items[0].name`：青提冷萃
+- `pages.home.tasting.items[0].text`：冷萃绿茶加当季青提，默认少冰。
+- `pages.home.tasting.items[0].price`：28元
+- `pages.home.tasting.items[1].name`：焙火乌龙
+- `pages.home.tasting.items[1].text`：建德原叶，火候停在栗香，清饮。
+- `pages.home.tasting.items[1].price`：32元
+- `pages.home.tasting.items[2].name`：原味司康
+- `pages.home.tasting.items[2].text`：上午十点出炉，当天卖完即止。
+- `pages.home.tasting.items[2].price`：19元
+- `pages.home.tasting.items[3].name`：茶泡饭
+- `pages.home.tasting.items[3].text`：十一点后供应，用当日焙火茶汤。
+- `pages.home.tasting.items[3].price`：36元
+- `pages.home.triptych.title`：中央厨房
+- `pages.home.triptych.lead`：余杭后厨出货，新茶在龙井路店试饮后再上菜单。
+- `pages.home.triptych.items[0].name`：余杭后厨
+- `pages.home.triptych.items[0].text`：约860平方米，负责茶叶和烘焙出货。
+- `pages.home.triptych.items[1].name`：试饮台
+- `pages.home.triptych.items[1].text`：新茶先在龙井路店试饮，再决定是否上菜单。
+- `pages.home.triptych.items[2].name`：门店早班
+- `pages.home.triptych.items[2].text`：司康上午十点出炉，热食十一点开始供应。
+- `pages.home.briefs.title`：新闻动态
+- `pages.home.briefs.lead`：门店设备、茶山采购和加盟说明会。
+- `pages.home.briefs.items[0].name`：龙井路店完成烤炉更新
+- `pages.home.briefs.items[0].text`：司康出炉改为上午十点。
+- `pages.home.briefs.items[0].date`：2026年3月12日
+- `pages.home.briefs.items[1].name`：春季建德茶山原料到仓
+- `pages.home.briefs.items[1].text`：今年焙火原料完成采购。
+- `pages.home.briefs.items[1].date`：2026年4月4日
+- `pages.home.briefs.items[2].name`：四月加盟说明会开放报名
+- `pages.home.briefs.items[2].text`：龙井路店，限额十二人。
+- `pages.home.briefs.items[2].date`：2026年4月18日
+- `pages.home.invite.title`：加盟合作
+- `pages.home.invite.lead`：先到现有门店坐一坐，再谈费用和培训。
+- `pages.home.invite.items[0].name`：实地看店
+- `pages.home.invite.items[0].text`：龙井路、湖滨、平江路、月湖都可以坐。
+- `pages.home.invite.items[1].name`：费用标准
+- `pages.home.invite.items[1].text`：加盟费18.6万元，保证金6.2万元。
+- `pages.home.invite.items[2].name`：跟班培训
+- `pages.home.invite.items[2].text`：前厅到店跟班18天，从早班开始。
+- `pages.about.title`：品牌故事｜麓茶记（虚构）
+- `pages.about.description`：2017年从杭州龙井路起步，现有4家门店，在杭州、苏州、宁波。
+- `pages.about.essay.title`：发展历程
+- `pages.about.essay.lead`：从龙井路一家店，开到杭州、苏州和宁波。
+- `pages.about.essay.body`：第一家店在杭州龙井路，36个座位。后来开到湖滨、苏州平江路和宁波月湖，一共四家。菜单仍是焙火乌龙、当天烘焙，以及茶泡饭和葱油拌面。想来加盟的，请先到现有门店坐一坐。
+- `pages.about.essay.caption`：余杭后厨的早班
+- `pages.about.photo-band.caption`：茶和司康从这条过道送出，再发到各门店。
+- `pages.about.faq.title`：常见问题
+- `pages.about.faq.lead`：烘焙、加盟费用、供货和看店。
+- `pages.about.faq.items[0].q`：可以只做茶饮、不做烘焙吗？
+- `pages.about.faq.items[0].a`：可以。烘焙要当天出炉，门店没有人值早班，可以先不做烘焙。
+- `pages.about.faq.items[1].q`：加盟费需要一次付清吗？
+- `pages.about.faq.items[1].a`：加盟费18.6万元，保证金6.2万元，签约时各付一次。
+- `pages.about.faq.items[2].q`：茶叶和烘焙从哪里供货？
+- `pages.about.faq.items[2].a`：茶叶和司康从余杭后厨配送，热食酱料按周补到门店。
+- `pages.about.faq.items[3].q`：已经有铺面，还要看店吗？
+- `pages.about.faq.items[3].a`：需要。已有铺面也请先到现有门店看过，再决定是否沿用。
+- `pages.products.title`：产品中心｜麓茶记（虚构）
+- `pages.products.description`：茶饮、烘焙、热食三个系列，杯型、出炉时间和价格见各款。
+- `pages.products.collection-list.title`：产品中心
+- `pages.products.collection-list.lead`：按茶饮、烘焙、热食分类查看。
+- `pages.products.collection-list.groups[0].key`：all
+- `pages.products.collection-list.groups[0].label`：全部
+- `pages.products.collection-list.groups[1].key`：tea
+- `pages.products.collection-list.groups[1].label`：茶饮
+- `pages.products.collection-list.groups[2].key`：bake
+- `pages.products.collection-list.groups[2].label`：烘焙
+- `pages.products.collection-list.groups[3].key`：meal
+- `pages.products.collection-list.groups[3].label`：热食
+- `pages.stores.title`：门店分布｜麓茶记（虚构）
+- `pages.stores.description`：杭州龙井路、湖滨，苏州平江路，宁波月湖。地址和营业时间见各店。
+- `pages.stores.collection-list.title`：门店分布
+- `pages.stores.collection-list.lead`：四家门店的地址、营业时间和座位数。
+- `pages.join.title`：加盟合作｜麓茶记（虚构）
+- `pages.join.description`：加盟费18.6万元，保证金6.2万元。流程是咨询、看店、试做、开业。
+- `pages.join.why.title`：加盟流程
+- `pages.join.why.lead`：咨询、看店、试做，通过后安排开业。
+- `pages.join.why.items[0].name`：来信咨询
+- `pages.join.why.items[0].text`：写明意向城市、投资预算，以及是否已有铺面。
+- `pages.join.why.items[1].name`：到店考察
+- `pages.join.why.items[1].text`：到龙井路店或湖滨店坐一下午，再继续谈。
+- `pages.join.why.items[2].name`：后厨试做
+- `pages.join.why.items[2].text`：在余杭后厨完成一杯焙火乌龙和一只司康。
+- `pages.join.why.items[3].name`：培训开业
+- `pages.join.why.items[3].text`：前厅跟班培训结束后，按开业清单开门营业。
+- `pages.join.merits.title`：加盟支持
+- `pages.join.merits.lead`：选址、培训、供货和费用，签约前一次说清。
+- `pages.join.merits.items[0].name`：选址
+- `pages.join.merits.items[0].text`：按门口人流评估，不按城市均价打包推荐铺位。
+- `pages.join.merits.items[1].name`：培训
+- `pages.join.merits.items[1].text`：前厅到店跟班18天，从门店早班开始。
+- `pages.join.merits.items[2].name`：供货
+- `pages.join.merits.items[2].text`：茶叶和司康由余杭后厨配送，门店不自行采购。
+- `pages.join.merits.items[3].name`：费用
+- `pages.join.merits.items[3].text`：加盟费18.6万元，保证金6.2万元，签约时支付。
+- `pages.join.inquire.title`：加盟咨询
+- `pages.join.inquire.lead`：留下城市和预算，我们按来信顺序回复。
+- `pages.news.title`：新闻动态｜麓茶记（虚构）
+- `pages.news.description`：烤炉更新、春季茶山采购、四月加盟说明会。
+- `pages.news.collection-list.title`：新闻动态
+- `pages.news.collection-list.lead`：门店、采购和加盟说明，按日期排列。
+- `pages.contact.title`：联系我们｜麓茶记（虚构）
+- `pages.contact.description`：热线0571-87926340，地址在杭州龙井路，公众号和点单码见本页。
+- `pages.contact.contact.title`：联系方式
+- `pages.contact.contact.lead`：门店事务请打热线。公众号发通知，点单码在店内使用。
+- `pages.contact.contact.qrs[0].label`：公众号
+- `pages.contact.contact.qrs[1].label`：点单码
+- `pages.contact.inquire.title`：招商咨询
+- `pages.contact.inquire.lead`：门店营业问题请打热线，加盟合作请来信说明。
+- `collections.products.tea-grape.slug`：tea-grape
+- `collections.products.tea-grape.category`：茶饮
+- `collections.products.tea-grape.name`：青提冷萃
+- `collections.products.tea-grape.summary`：冷萃绿茶打底，加入当季青提汁，默认少冰，仅在青提当季供应。
+- `collections.products.tea-grape.body`：茶底冷萃一夜，青提去皮后压汁。冰量默认少冰，需要多冰请在点单时说明。杯型360毫升，售价28元。
+- `collections.products.tea-grape.specs[0].label`：杯型
+- `collections.products.tea-grape.specs[0].value`：360毫升
+- `collections.products.tea-grape.specs[1].label`：茶底
+- `collections.products.tea-grape.specs[1].value`：冷萃绿茶
+- `collections.products.tea-grape.specs[2].label`：价格
+- `collections.products.tea-grape.specs[2].value`：28元
+- `collections.products.tea-oolong.slug`：tea-oolong
+- `collections.products.tea-oolong.category`：茶饮
+- `collections.products.tea-oolong.name`：焙火乌龙
+- `collections.products.tea-oolong.summary`：建德焙火乌龙，火候停在栗香，菜单上这一杯是清饮。
+- `collections.products.tea-oolong.body`：热饮用盖碗闷泡约两分钟。如需加奶请另点，这一款按清饮出品。杯型420毫升，售价32元。
+- `collections.products.tea-oolong.specs[0].label`：杯型
+- `collections.products.tea-oolong.specs[0].value`：420毫升
+- `collections.products.tea-oolong.specs[1].label`：茶底
+- `collections.products.tea-oolong.specs[1].value`：焙火乌龙
+- `collections.products.tea-oolong.specs[2].label`：价格
+- `collections.products.tea-oolong.specs[2].value`：32元
+- `collections.products.bake-scone.slug`：bake-scone
+- `collections.products.bake-scone.category`：烘焙
+- `collections.products.bake-scone.name`：原味司康
+- `collections.products.bake-scone.summary`：低筋面粉配发酵黄油，当天揉制、当天出炉，晚间售完即止。
+- `collections.products.bake-scone.body`：出炉时间在上午十点。卖完后由桂花卷接上，不再补烤隔夜司康。单个售价19元。
+- `collections.products.bake-scone.specs[0].label`：出炉
+- `collections.products.bake-scone.specs[0].value`：当天上午
+- `collections.products.bake-scone.specs[1].label`：份量
+- `collections.products.bake-scone.specs[1].value`：1个
+- `collections.products.bake-scone.specs[2].label`：价格
+- `collections.products.bake-scone.specs[2].value`：19元
+- `collections.products.bake-roll.slug`：bake-roll
+- `collections.products.bake-roll.category`：烘焙
+- `collections.products.bake-roll.name`：桂花卷
+- `collections.products.bake-roll.summary`：糖渍桂花卷在面里，不撒在表面，和司康共用同一炉。
+- `collections.products.bake-roll.body`：桂花用的是去年腌制的糖渍桂花，新花要到秋天再换。当天上午出炉，单个售价23元。
+- `collections.products.bake-roll.specs[0].label`：出炉
+- `collections.products.bake-roll.specs[0].value`：当天上午
+- `collections.products.bake-roll.specs[1].label`：份量
+- `collections.products.bake-roll.specs[1].value`：1个
+- `collections.products.bake-roll.specs[2].label`：价格
+- `collections.products.bake-roll.specs[2].value`：23元
+- `collections.products.meal-rice.slug`：meal-rice
+- `collections.products.meal-rice.category`：热食
+- `collections.products.meal-rice.name`：茶泡饭
+- `collections.products.meal-rice.summary`：焙火乌龙茶汤泡饭，配一碟腌萝卜，十一点后供应。
+- `collections.products.meal-rice.body`：茶汤用当日焙火乌龙，配一碟腌萝卜。十一点后供应，一碗售价36元。
+- `collections.products.meal-rice.specs[0].label`：茶底
+- `collections.products.meal-rice.specs[0].value`：焙火乌龙
+- `collections.products.meal-rice.specs[1].label`：份量
+- `collections.products.meal-rice.specs[1].value`：一碗
+- `collections.products.meal-rice.specs[2].label`：价格
+- `collections.products.meal-rice.specs[2].value`：36元
+- `collections.products.meal-noodle.slug`：meal-noodle
+- `collections.products.meal-noodle.category`：热食
+- `collections.products.meal-noodle.name`：葱油拌面
+- `collections.products.meal-noodle.summary`：葱油在余杭后厨熬制，门店加热后拌碱面，可另加蛋。
+- `collections.products.meal-noodle.body`：碱水面，葱油由余杭后厨熬好后配送到店。加蛋按份另计。一碗售价31元。
+- `collections.products.meal-noodle.specs[0].label`：份量
+- `collections.products.meal-noodle.specs[0].value`：一碗
+- `collections.products.meal-noodle.specs[1].label`：酱料
+- `collections.products.meal-noodle.specs[1].value`：后厨葱油
+- `collections.products.meal-noodle.specs[2].label`：价格
+- `collections.products.meal-noodle.specs[2].value`：31元
+- `collections.stores.longjing.slug`：longjing
+- `collections.stores.longjing.name`：龙井路店
+- `collections.stores.longjing.address`：杭州市西湖区龙井路88号（虚构）
+- `collections.stores.longjing.hours`：每天 10:00-21:30
+- `collections.stores.longjing.mapHref`：https://uri.amap.com/search?keyword=杭州市西湖区龙井路88号
+- `collections.stores.longjing.summary`：杭州市西湖区龙井路88号（虚构）。每天10:00-21:30营业，座位36个。
+- `collections.stores.longjing.body`：2017年开业的第一家店。2019年把门灯换成暖色，座位仍是36个。
+- `collections.stores.longjing.specs[0].label`：座位
+- `collections.stores.longjing.specs[0].value`：36座
+- `collections.stores.longjing.specs[1].label`：城市
+- `collections.stores.longjing.specs[1].value`：杭州
+- `collections.stores.longjing.category`：杭州
+- `collections.stores.hubin.slug`：hubin
+- `collections.stores.hubin.name`：湖滨店
+- `collections.stores.hubin.address`：杭州市上城区平海路126号（虚构）
+- `collections.stores.hubin.hours`：每天 10:30-22:00
+- `collections.stores.hubin.mapHref`：https://uri.amap.com/search?keyword=杭州市上城区平海路126号
+- `collections.stores.hubin.summary`：杭州市上城区平海路126号（虚构）。每天10:30-22:00营业，座位28个。
+- `collections.stores.hubin.body`：位于西湖湖滨一侧。晚间客流较多，司康通常在十九点前售完。
+- `collections.stores.hubin.specs[0].label`：座位
+- `collections.stores.hubin.specs[0].value`：28座
+- `collections.stores.hubin.specs[1].label`：城市
+- `collections.stores.hubin.specs[1].value`：杭州
+- `collections.stores.hubin.category`：杭州
+- `collections.stores.pingjiang.slug`：pingjiang
+- `collections.stores.pingjiang.name`：平江路店
+- `collections.stores.pingjiang.address`：苏州市姑苏区平江路54号（虚构）
+- `collections.stores.pingjiang.hours`：每天 11:00-21:00
+- `collections.stores.pingjiang.mapHref`：https://uri.amap.com/search?keyword=苏州市姑苏区平江路54号
+- `collections.stores.pingjiang.summary`：苏州市姑苏区平江路54号（虚构）。每天11:00-21:00营业，座位22个。
+- `collections.stores.pingjiang.body`：铺面较窄，座位22个。热食从十一点开始，比杭州门店晚半小时。
+- `collections.stores.pingjiang.specs[0].label`：座位
+- `collections.stores.pingjiang.specs[0].value`：22座
+- `collections.stores.pingjiang.specs[1].label`：城市
+- `collections.stores.pingjiang.specs[1].value`：苏州
+- `collections.stores.pingjiang.category`：苏州
+- `collections.stores.yuehu.slug`：yuehu
+- `collections.stores.yuehu.name`：月湖店
+- `collections.stores.yuehu.address`：宁波市海曙区偃月街17号（虚构）
+- `collections.stores.yuehu.hours`：每天 10:00-21:00
+- `collections.stores.yuehu.mapHref`：https://uri.amap.com/search?keyword=宁波市海曙区偃月街17号
+- `collections.stores.yuehu.summary`：宁波市海曙区偃月街17号（虚构）。每天10:00-21:00营业，座位19个。
+- `collections.stores.yuehu.body`：四家门店里座位最少的一家，没有包间。茶泡饭的销量高于拌面。
+- `collections.stores.yuehu.specs[0].label`：座位
+- `collections.stores.yuehu.specs[0].value`：19座
+- `collections.stores.yuehu.specs[1].label`：城市
+- `collections.stores.yuehu.specs[1].value`：宁波
+- `collections.stores.yuehu.category`：宁波
+- `collections.news.oven.slug`：oven
+- `collections.news.oven.name`：龙井路店完成烤炉更新
+- `collections.news.oven.date`：2026-03-12
+- `collections.news.oven.summary`：龙井路店更换使用六年的烤炉，司康出炉时间调整为上午十点。
+- `collections.news.oven.body`：旧烤炉使用六年后温差开始不稳。新炉到店后空烤两天，2026年3月12日正式出货。
+- `collections.news.oven.category`：门店
+- `collections.news.hill.slug`：hill
+- `collections.news.hill.name`：春季建德茶山原料到仓
+- `collections.news.hill.date`：2026-04-04
+- `collections.news.hill.summary`：清明前往建德茶山，完成今年焙火乌龙原料采购。
+- `collections.news.hill.body`：今年的叶片比去年略厚。火候仍停在栗香。试饮安排在龙井路店。
+- `collections.news.hill.category`：原料
+- `collections.news.meeting.slug`：meeting
+- `collections.news.meeting.name`：四月加盟说明会开放报名
+- `collections.news.meeting.date`：2026-04-18
+- `collections.news.meeting.summary`：2026年4月18日在龙井路店举办加盟说明会，限额十二人。
+- `collections.news.meeting.body`：下午两点在龙井路店举行。先品一杯焙火乌龙，再介绍加盟费用和18天跟班培训。限额十二人，额满即止。
+- `collections.news.meeting.category`：加盟
+
+## 4. 图片与待补信息
+演示照片是行业素材，不能作为本企业实拍证据。二维码和证书图片未提供时不展示。已存在但互相矛盾的陈述应删除或另行确认，不自行生成新数值。
+
+## 5. 可用网站表述
+以下表述从上述原文归纳，不增加经营事实。
+
+乌龙茶与当天烘焙
+杭州、苏州、宁波的茶饮门店，供应乌龙茶、现烤司康和热食。

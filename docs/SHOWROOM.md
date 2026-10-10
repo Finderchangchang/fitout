@@ -2,7 +2,7 @@
 
 一套样板间是一个行业、一种气质的完整官网。客户选定之后，模型只填 `examples/site.json` 这种档案，`scripts/build.mjs` 负责拼页面。
 
-这一轮的 `showrooms/_smoke` 和 `showrooms/_template` 都不是正式样板间。正式的八套另做。公开仓库里不要写参考模板的品牌、主题名或网址。对照记在仓库外的 `showroom-refs.json`。
+这一轮的 `showrooms/_smoke` 和 `showrooms/_template` 都不是正式样板间。正式样板间以 showrooms/index.json 为准。公开仓库里不要写参考模板的品牌、主题名或网址。对照记在仓库外的 `showroom-refs.json`。
 
 ## 目录
 
@@ -216,7 +216,7 @@ node scripts/check-distinct.mjs
 
 脚本读 `showrooms/*/tokens.json`，目录名以 `_` 开头的跳过，按 `showroom.json` 的 `flavor` 分组。同一组里主色两两 ΔE00 至少 20，强调色两两至少 15，两套的主色和强调色不能同时都小于 20。它打印两两距离表，有冲突时退出码 1。不同 flavor 不放在一起比。
 
-国际风（`flavor: intl`）另有一条，只在 `check-visual.mjs` 里、桌面宽度（≥1024）量：首屏区块高度要在 0.85 到 1.0 屏，容差 ±0.02；首屏 `h1` 的计算字号不超过 110px。国内风不套首屏高度，凡科中位大约 0.74 屏。首屏标题像素两边都是 60 到 110（手写展示字仍可到 173）。留白 `sectionY` 两边都是 80 到 160，拼装时已经卡住，不另做一道。
+国际风（`flavor: intl`）另有一条，只在 `check-visual.mjs` 里、桌面宽度（≥1024）量：首屏区块高度要在 0.85 到 1.0 屏，容差 ±0.02；首屏 `h1` 的计算字号不超过 110px。国内风不套首屏高度，已有国内风样板间首屏约 0.74 屏。首屏标题像素两边都是 60 到 110（手写展示字仍可到 173）。留白 `sectionY` 两边都是 80 到 160，拼装时已经卡住，不另做一道。
 
 ## 拼装和检查
 
@@ -229,3 +229,9 @@ node scripts/check-visual.mjs out/<site id>
 `--demo-images` 指到一个空目录也可以，用来出占位图。演示模式下，缺图和首页张数不足降为警告，而且只在这一页真的画出了演示占位时才降。正式拼装不要带这个参数。`source` 为 `client` 的位见 `docs/IMAGES.md`。
 
 视觉检查需要本机已有的 Playwright。`PLAYWRIGHT_PATH` 指到入口文件（`.../playwright/index.mjs`）或指到包目录（`.../playwright`）都行，指到目录时自动找里面的 `index.mjs`；没设置就按 Node 正常的模块解析找 `playwright`。没有时它打印「跳过」并退出 0。除了下面这些，每个页面、每个宽度还会跑版式检查 L1 到 L22（面包屑基线、页脚空白、图标间距、占位图字号、小字、内部键名、文字被裁、按钮列宽、联系区栏高、同行顶边、左缘对齐、网格末行孤儿卡、半宽空白板块、统计数字基线、页头文字被截断、竖版人像被横幅裁脸、页头与正文同图、中文末行孤字……），列表和阈值见 `docs/FRAMEWORK.md`。`--layout-only` 只跑版式检查，`--page`、`--widths` 缩小范围。它会先把页面收到确定状态：Playwright 开减少动效，并给 `<html>` 加上 `data-fitout-check="settle"`。轮播不自动翻，入场和数字直接到终值。悬浮条按桌面 / 手机规则摆（1024 及以上首屏不显示，滚过一屏再出现；更窄的贴底）。首屏轮播每一张都点开查图上文字，不过的那张会写第几张。另外会在允许动效时立刻量首页和一页内页：首屏标题、按钮和内页 Banner 的 opacity 必须是 1。
+
+## 三套企业站版式
+
+layout: business 标识经过本轮重组的三套：首页按客户的决策顺序组织，内页先进入内容，无图版重排文字。missingClientImages: omit 会收起缺文件的客户二维码和证书；其他样板间沿用原演示占位行为。
+
+catalog-preview 是产品或门店导读，支持 moreHref、moreLabel；缺图时是文字列表。cn-dining 的 tasting/menu 同时适用于有图和无图菜单。配色主色保持原 token。

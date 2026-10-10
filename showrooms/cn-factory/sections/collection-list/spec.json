@@ -1,18 +1,52 @@
 {
   "note": "列表条目由拼装注入。分类读每条的 category，筛选锚点按分类生成。facets 里同名的 text 会写在筛选项下面，href 不再参与筛选。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "collection": { "type": "string", "required": true, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "collection": {
+      "type": "string",
+      "required": true,
+      "maxChars": 40
+    },
     "facets": {
       "type": "list",
       "required": false,
       "max": 6,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 12 },
-        "text": { "type": "string", "required": true, "maxChars": 24 },
-        "href": { "type": "string", "required": true, "maxChars": 200 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 24
+        },
+        "href": {
+          "type": "string",
+          "required": true,
+          "maxChars": 200
+        }
       }
+    },
+    "moreHref": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "moreLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
     }
   },
   "variants": {
@@ -39,6 +73,11 @@
       "family": "ledger",
       "fit": "新闻按行排，日期写在说明里",
       "source": "样板间自写"
+    },
+    "catalog-preview": {
+      "needsImage": false,
+      "family": "product-overview",
+      "fit": "首页产品或门店导读；无图时是精简文字列表。"
     }
   }
 }

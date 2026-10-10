@@ -162,6 +162,7 @@ const usedCss = new Set();
 const written = [];
 const turnedOff = requiredTurnedOff(house, site);
 if (turnedOff.length) fail(`必有页不能关：${turnedOff.join("、")}`);
+const categoryPlans = planCategories();
 
 for (const page of house.pages) {
   if (!isOn(house, site, page)) continue;
@@ -177,10 +178,23 @@ for (const page of house.pages) {
       order: page.order,
       banner: bannerFromPage(source),
     });
+    const categories = [...categoryPlans.values()].filter((item) => item.rootListFile === toRootPath(page.file));
+    for (const category of categories) {
+      writePage({
+        file: category.listFile,
+        title: `${category.category}${titleJoiner()}${site.name}`,
+        description: source.description,
+        sections: source.sections || [],
+        order: page.order,
+        banner: { ...bannerFromPage(source), title: category.category, crumbs: [{ label: collectionLabel(category.id), href: page.file }, { label: category.category, href: "" }] },
+        listState: { ...category, page: 1, file: category.listFile },
+      });
+    }
   }
 }
 
 const css = [cssRoot(tokens), readText(path.join(frameworkDir, "base.css"))];
+if (showroom?.layout === "business") css.push(readText(path.join(frameworkDir, "business.css")));
 for (const key of [...usedCss].sort()) {
   const [type, variant] = key.split("/");
   css.push(readText(sectionFile(type, variant, "css")));
@@ -245,7 +259,7 @@ function writeCollection(page) {
         ...item,
         image: articleImage,
         imageAlt: item.imageAlt || item.name || "",
-        primaryLabel: defaultPrimaryClosed() ? copy.phoneConsult : buttonLabel("primary"),
+        primaryLabel: buttonLabel("primary"),
         primaryHref: contactHref(),
         backHref: listFileOf(id),
         backLabel: copy.backList,
@@ -308,6 +322,7 @@ function writePage(opts) {
     const fillSpec = resolved.fillSpec || spec;
     usedCss.add(`${section.type}/${variant}`);
     const data = prepareData({ ...section, data: resolved.data }, fillSpec, file, variant, listState);
+    if (Array.isArray(data.items) && !data.items.length && section.data?.items?.length) continue;
     data.anchor = safeAnchor(section.anchor || section.type, file);
     data.isH1 = first;
     data.isH2 = !first;
@@ -363,6 +378,7 @@ function writePage(opts) {
     htmlLang: lang === "en" ? "en" : "zh-CN",
     ogLocale: lang === "en" ? "en_US" : "zh_CN",
     flavor,
+    layout: showroom?.layout || "",
     ui: copy,
   }, { icons });
   if (html.includes(DEMO_MARK)) {
@@ -376,7 +392,7 @@ function writePage(opts) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, "utf8");
   written.push(file);
-  if (!opts.listState && listState && listState.pages > 1) {
+  if (listState && listState.page === 1 && listState.pages > 1) {
     for (let page = 2; page <= listState.pages; page += 1) {
       writePage({
         ...opts,
@@ -410,6 +426,36 @@ function tagSection(html, section, resolved, file) {
     const img = `<div class="section-bg" aria-hidden="true"><img src="${escAttr(bg.src)}" alt="" width="${escAttr(bg.width)}" height="${escAttr(bg.height)}" decoding="async"><span class="section-bg-mask"></span></div>`;
     tagged = tagged.replace(/(<section\b[^>]*>)/, `$1${img}`);
   }
+  if (section.type === "collection-list" || section.type === "product-list") {
+    tagged = tagged.replace(/<div\b([^>]*\bdata-media-group="[^"]*"[^>]*)>/g, (full, attrs, offset) => {
+      const first = tagged.slice(offset + full.length).match(/^\s*<article\b[^>]*class="([^"]*)"/);
+      const rows = /(?:^|\s)(?:row-item|news-row|ledger-row|docket-row|sheet-row|note-row|note|line|entry)(?:\s|$)/.test(first?.[1] || "");
+      const fit = rows ? attrs : (/\bclass="/.test(attrs) ? attrs.replace(/class="([^"]*)"/, 'class="$1 fit-rows"') : `${attrs} class="fit-rows"`);
+      return `<div${fit} data-list-grid="${rows ? "rows" : "cards"}">`;
+    });
+    const id = section.type === "product-list" ? "products" : section.data?.collection;
+    const routes = [...categoryPlans.values()].filter((item) => item.id === id);
+    if (routes.length) {
+      const anchor = section.anchor || "list";
+      const links = Object.fromEntries(routes.map((item) => [item.key, rootHref(file, item.listFile)]));
+      const hashes = Object.fromEntries(routes.map((item) => [`#${anchor}-${item.key}`, links[item.key]]));
+      const all = rootHref(file, routes[0].rootListFile);
+      const current = routes.find((item) => covers(item.listFile, file));
+      tagged = tagged.replace(/(<section\b)/, `$1 data-category-links="${escAttr(JSON.stringify(links))}" data-category-hashes="${escAttr(JSON.stringify(hashes))}" data-category-all="${escAttr(all)}"`);
+      tagged = tagged.replace(/<a\b([^>]*?)href="(#[^"]*)"([^>]*)>/g, (full, before, hash, after) => {
+        const target = hashes[hash] || (hash === `#${anchor}` ? all : "");
+        if (!target) return full;
+        let attrs = `${before}href="${escAttr(target)}"${after}`;
+        const selected = current ? target === links[current.key] : target === all;
+        if (selected) {
+          attrs = /\bclass="/.test(attrs) ? attrs.replace(/class="([^"]*)"/, 'class="$1 is-category-current"') : `${attrs} class="is-category-current"`;
+          attrs += ' aria-current="page"';
+        }
+        return `<a${attrs}>`;
+      });
+    }
+  }
+  if (!/<img\b[^>]*\bsrc="[^"\s]+"/.test(tagged)) tagged = tagged.replace(/(<section\b)/, '$1 data-no-media=""');
   return tagged;
 }
 
@@ -427,10 +473,11 @@ function prepareData(section, spec, file, variant, listState) {
     raw._paginate = "";
     if (paging) {
       const start = (listState.page - 1) * listState.pageSize;
-      view = all.slice(start, start + listState.pageSize);
-      raw._paginate = "1";
+      const selected = listState.category ? all.filter((item) => String(item.category || "").trim() === listState.category) : all;
+      view = selected.slice(start, start + listState.pageSize);
+      raw._paginate = listState.pages > 1 ? "1" : "";
       raw.pager = [];
-      for (let page = 1; page <= listState.pages; page += 1) {
+      for (let page = 1; listState.pages > 1 && page <= listState.pages; page += 1) {
         raw.pager.push({
           label: String(page),
           href: pageFileOf(listState.listFile, page),
@@ -457,6 +504,7 @@ function prepareData(section, spec, file, variant, listState) {
         date: item.date || "",
         dateIso: dateIso(item.date),
         initial: firstChar(name),
+        price: item.price || item.specs?.find((row) => row.label === "价格" || row.label === "Price")?.value || "",
       };
     });
     raw.filters = filtersFrom(catKeys, raw.facets);
@@ -497,6 +545,10 @@ function fill(data, fields, label) {
 // 二维码这类「图就是内容」的列表项：正式拼装客户没给文件，整项不出（连同图下面的说明字）。
 // 演示模式有占位图，不受影响。证书、团队人像等有名字有说明的项不在此列，缺图仍保留文字。
 function dropsWithoutClientImage(item) {
+  if (showroom?.missingClientImages === "omit" && item && typeof item.image === "string") {
+    const slot = slotOf(item.image);
+    if (slot && imageSlots.get(slot)?.source === "client" && !findSlotFile(slot)) return true;
+  }
   if (demoMode || !item || typeof item !== "object" || Array.isArray(item)) return false;
   if (typeof item.image !== "string" || !item.image) return false;
   const slot = slotOf(item.image);
@@ -543,7 +595,8 @@ function resolveSection(section, spec, order) {
   if (tiered && !demoMode && meta.needsImage) {
     if (section.type === "hero" && meta.imageField === "slides.image" && Array.isArray(original.slides)) {
       const kept = original.slides.filter((item) => imageKept(item?.image));
-      if (kept.length >= 3 && kept.length <= 9) return { variant: section.variant, data: { ...original, slides: kept } };
+      const single = original.mode === "single" || kept.length === 1;
+      if ((kept.length >= 3 && kept.length <= 9) || (single && kept.length > 0)) return { variant: section.variant, data: { ...original, slides: kept, ...(single ? { mode: "single" } : {}) } };
     }
     if (!imagesReady(original, meta.imageField)) {
       const fb = usableFallback(section, spec, order, original);
@@ -734,7 +787,7 @@ function resolveSlot(id, file) {
   }
   if (meta?.mustBeReal && !demoMode) return { src: "", width: "", height: "" };
   // 客户提供的图（二维码、证书）：正式拼装没拿到文件就整块不出，不画「上线前替换」。演示模式才画占位。
-  if (meta?.source === "client") return demoMode ? clientPlaceholder(meta, id, box) : { src: "", width: "", height: "" };
+  if (meta?.source === "client") return demoMode && showroom?.missingClientImages !== "omit" ? clientPlaceholder(meta, id, box) : { src: "", width: "", height: "" };
   if (!demoMode) {
     if (!tiered && !notedMissing.has(id)) {
       notes.push(`图片不存在，已省略：${id}`);
@@ -1312,7 +1365,7 @@ function resolveChildren(item, auto, closed) {
   const hook = listHookOf(id);
   const children = [];
   for (const [label, key] of keys) {
-    const href = categoryHref(listFile, hook, key);
+    const href = categoryPlans.get(`${id}:${key}`)?.listFile || categoryHref(listFile, hook, key);
     if (pointsClosed(href, closed)) continue;
     children.push({ label, href });
   }
@@ -1421,6 +1474,29 @@ function planList(file, queued) {
     };
   }
   return null;
+}
+
+function planCategories() {
+  const plans = new Map();
+  for (const page of house.pages || []) {
+    if (page.from || !isOn(house, site, page)) continue;
+    const source = pagesById.get(page.id);
+    for (const section of source?.sections || []) {
+      if (!["collection-list", "product-list"].includes(section.type)) continue;
+      const id = section.type === "product-list" ? "products" : section.data?.collection;
+      if (!id || toRootPath(page.file) !== toRootPath(listFileOf(id))) continue;
+      const items = itemsOf(id) || [];
+      const pageSize = clampPageSize(section.data?.pageSize ?? site.pageSize);
+      const keys = categoryKeys(items);
+      if ((items.length <= pageSize && showroom?.layout !== "business") || keys.size < 2) continue;
+      for (const [category, key] of keys) {
+        const count = items.filter((item) => String(item.category || "").trim() === category).length;
+        const rootListFile = toRootPath(page.file);
+        plans.set(`${id}:${key}`, { id, key, category, type: section.type, rootListFile, listFile: path.posix.join(path.posix.dirname(rootListFile), "category", key, "index.html"), pageSize, pages: Math.ceil(count / pageSize) });
+      }
+    }
+  }
+  return plans;
 }
 
 function clampPageSize(value) {
@@ -1766,6 +1842,7 @@ function cssRoot(token) {
     `  --accent: ${token.color.accent};`,
     `  --on-media: ${token.color["on-media"] || token.color["primary-contrast"]};`,
     "  --scrim: linear-gradient(180deg, rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.8));",
+    "  --scrim-banner: linear-gradient(90deg, rgb(0 0 0 / 0.82), rgb(0 0 0 / 0.62));",
     `  --font-heading: ${lang === "en" ? (token.font["font-heading-en"] || EN_FONT) : token.font["font-heading"]};`,
     `  --font-body: ${lang === "en" ? (token.font["font-body-en"] || EN_FONT) : token.font["font-body"]};`,
     ...scale.map((size, index) => `  --fs-${index + 1}: ${size};`),
@@ -1957,7 +2034,10 @@ function readButtonOverrides(doc) {
 }
 
 function buttonLabel(key) {
-  return buttonOverrides[key] || house.buttons[key];
+  if (buttonOverrides[key]) return buttonOverrides[key];
+  if (defaultPrimaryClosed() && key === "primary") return copy.phoneConsult;
+  if (defaultPrimaryClosed() && key === "form") return copy.contactUs;
+  return house.buttons[key];
 }
 
 function titleJoiner() {
