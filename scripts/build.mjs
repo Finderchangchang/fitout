@@ -333,10 +333,23 @@ function writePage(opts) {
       data.featured = items[0];
       data.rest = items.slice(1);
     }
-    let html = render(readText(sectionFile(section.type, variant, "html")), data, { icons, globals });
+    const businessHero = section.type === "hero" && resolved.bare && showroom?.layout === "business";
+    if (businessHero) {
+      const collection = (house.collections || []).find((entry) => (itemsOf(entry.id) || []).length);
+      data.heroTopics = collection ? itemsOf(collection.id).slice(0, 3).map((item) => ({
+        name: item.name,
+        href: rootHref(file, detailHref(collection.id, item.slug)),
+        category: item.category || "",
+      })) : [];
+      data.heroTopicsTitle = collection?.label || "";
+      usedCss.add("hero/business-text");
+    }
+    const template = businessHero ? path.join(frameworkDir, "sections", "hero", "business-text.html") : sectionFile(section.type, variant, "html");
+    let html = render(readText(template), data, { icons, globals });
     if (section.type === "hero" && variant === "carousel") {
       if (!data.carouselOn && /\bdata-carousel\b/.test(html)) html = stripCarouselChrome(html);
       if (data.hasSlideCopy) html = injectHeroCopies(html, data);
+      if (data.hasSlideCopy) html = shareHeroActions(html, data);
     }
     if ((section.type === "collection-list" || section.type === "product-list") && data._paginate === "1") {
       html = upgradeListCards(html, data);
@@ -423,7 +436,8 @@ function tagSection(html, section, resolved, file) {
       else next += ' class="has-section-bg"';
       return `<section${next}>`;
     });
-    const img = `<div class="section-bg" aria-hidden="true"><img src="${escAttr(bg.src)}" alt="" width="${escAttr(bg.width)}" height="${escAttr(bg.height)}" decoding="async"><span class="section-bg-mask"></span></div>`;
+    const bgAlt = section.data?.title || (lang === "en" ? "Section background" : "板块背景");
+    const img = `<div class="section-bg" aria-hidden="true"><img src="${escAttr(bg.src)}" alt="${escAttr(bgAlt)}" aria-hidden="true" width="${escAttr(bg.width)}" height="${escAttr(bg.height)}" decoding="async"><span class="section-bg-mask"></span></div>`;
     tagged = tagged.replace(/(<section\b[^>]*>)/, `$1${img}`);
   }
   if (section.type === "collection-list" || section.type === "product-list") {
@@ -608,7 +622,7 @@ function resolveSection(section, spec, order) {
         fallbacks.push(`${section.type}：${section.variant} 缺图，改用 text`);
         return { variant: "text", data: original, fillSpec: frameworkSpecs.get("hero") || spec, bare: true };
       }
-      if (section.type === "photo-band") {
+      if (section.type === "photo-band" || (meta.fallback === "omit" && !spec.fields?.title)) {
         fallbacks.push(`${section.type}：${section.variant} 缺图，整块不出`);
         return null;
       }
@@ -901,6 +915,8 @@ function xmlText(value) {
 }
 
 function findSlotFile(id) {
+  // A showroom photo library cannot establish ownership of a company's QR codes or certificates.
+  if (demoMode && showroom?.missingClientImages === "omit" && imageSlots.get(id)?.source === "client") return null;
   const dir = demoDir || imagesDir;
   if (!dir) return null;
   let names = [];
@@ -1590,6 +1606,25 @@ function injectHeroCopies(html, data) {
     return `class="${cls} has-slide-copy"`;
   });
   next = next.replace(/(<div\b[^>]*\bhero-copy\b[^>]*>)/, `$1${block}`);
+  return next;
+}
+
+function shareHeroActions(html, data) {
+  let index = 0;
+  let next = html.replace(/<div\b([^>]*\bdata-hero-copy\b[^>]*)>/g, (full, attrs) => {
+    const slide = data.slides[index++] || {};
+    const values = ["primaryHref", "primaryLabel", "secondaryHref", "secondaryLabel"].map((key) => {
+      const attribute = key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+      return ` data-hero-${attribute}="${escAttr(slide[key] || "")}"`;
+    }).join("");
+    return `<div${attrs}${values}>`;
+  });
+  let first = true;
+  next = next.replace(/<div\b([^>]*\bclass="[^"]*\bbtn-row\b[^"]*"[^>]*)>[\s\S]*?<\/div>/g, (full, attrs) => {
+    if (!first) return "";
+    first = false;
+    return full.replace(/<div\b[^>]*>/, `<div${attrs} data-hero-actions>`);
+  });
   return next;
 }
 

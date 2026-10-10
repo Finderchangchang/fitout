@@ -83,7 +83,7 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .contact-split {
     grid-template-columns: 1.1fr 0.9fr;
   }

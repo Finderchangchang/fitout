@@ -1,0 +1,587 @@
+# 青砖律师事务所（虚构） · 虚构演示企业档案
+
+仅用于样板间演示，不对应真实企业。来源：v0.6.0 的示例内容，事实不随版式改写。重复的宣传句不构成新事实；现有数值只在相应业务语境中使用。
+
+- `contact.phone`：0571-8688-2146
+- `contact.wechat`：qingzhuan27
+- `contact.wechatQr`：qr-wechat
+- `contact.email`：desk@qingzhuan.example
+- `contact.address`：杭州市上城区清吟街27号青砖院（虚构地址）
+- `contact.hours[0].day`：周一至周五
+- `contact.hours[0].time`：09:00-18:00
+- `contact.hours[1].day`：周六
+- `contact.hours[1].time`：09:30-12:00
+- `contact.formUrl`：https://example.com/qingzhuan-visit
+- `contact.icp`：浙ICP备2026140837号
+- `contact.qrcodes[0].label`：事务所公众号
+- `contact.qrcodes[1].label`：顾问微信
+- `name`：青砖律师事务所（虚构）
+- `summary`：杭州清吟街的律师事务所，办公司、劳动、合同和婚姻家事。咨询电话 0571-8688-2146。
+- `pages.home.title`：青砖律师事务所（虚构）｜清吟街
+- `pages.home.description`：杭州清吟街律师事务所。公司、劳动、合同、婚姻家事。咨询电话 0571-8688-2146。
+- `pages.home.hero.label`：清吟街27号
+- `pages.home.hero.title`：公司劳动家事，找律师团队
+- `pages.home.hero.lead`：股权、解除、离婚和合同争议，可以先约一次面谈。
+- `pages.home.hero.primaryLabel`：电话咨询
+- `pages.home.hero.secondaryLabel`：看服务项目
+- `pages.home.hero.slides[0].title`：公司劳动家事，找律师团队
+- `pages.home.hero.slides[0].lead`：股权、解除、离婚和合同争议，可以先约一次面谈。
+- `pages.home.hero.slides[1].title`：见面先把材料带齐
+- `pages.home.hero.slides[1].lead`：股权请带执照和最近一次股东会决议。
+- `pages.home.hero.slides[2].title`：旧案卷宗按年可查
+- `pages.home.hero.slides[2].lead`：会客室旁的木架上，卷宗按年排好。
+- `pages.home.hero.slides[3].title`：面谈之前先约时间
+- `pages.home.hero.slides[3].lead`：股权、解除、离婚和合同，先约一次面谈。
+- `pages.home.trust.title`：律所数据
+- `pages.home.trust.lead`：截至 2026 年 3 月的所内统计。
+- `pages.home.trust.items[0].value`：28 年
+- `pages.home.trust.items[0].label`：开业年限
+- `pages.home.trust.items[1].value`：27 人
+- `pages.home.trust.items[1].label`：执业律师
+- `pages.home.trust.items[2].value`：146 件
+- `pages.home.trust.items[2].label`：去年结案
+- `pages.home.trust.items[3].value`：6 项
+- `pages.home.trust.items[3].label`：专业领域
+- `pages.home.services.title`：专业领域
+- `pages.home.services.lead`：公司、劳动、合同、婚姻家事，记账和税务也在本所办理。
+- `pages.home.services.items[0].name`：公司法律
+- `pages.home.services.items[0].text`：股权、章程、股东争议。第一次见面请带执照和章程。
+- `pages.home.services.items[0].tag`：公司合同
+- `pages.home.services.items[1].name`：合同纠纷
+- `pages.home.services.items[1].text`：买卖、服务和租赁合同。先看争议条款，再对证据。
+- `pages.home.services.items[1].tag`：公司合同
+- `pages.home.services.items[2].name`：劳动人事
+- `pages.home.services.items[2].text`：解除、加班费和规章制度。先核对考勤和工资表。
+- `pages.home.services.items[2].tag`：劳动家事
+- `pages.home.services.items[3].name`：婚姻家事
+- `pages.home.services.items[3].text`：离婚、抚养和财产分割。请带身份证和结婚证。
+- `pages.home.services.items[3].tag`：劳动家事
+- `pages.home.services.items[4].name`：代理记账
+- `pages.home.services.items[4].text`：小规模纳税人的月度做账和增值税申报。
+- `pages.home.services.items[4].price`：980元/月起
+- `pages.home.services.items[4].tag`：财税
+- `pages.home.services.items[5].name`：税务咨询
+- `pages.home.services.items[5].text`：稽查材料审阅、优惠备案和汇算清缴。
+- `pages.home.services.items[5].price`：2600元起
+- `pages.home.services.items[5].tag`：财税
+- `pages.home.why.title`：委托流程
+- `pages.home.why.lead`：先电话沟通，见面后再出书面报价。
+- `pages.home.why.items[0].name`：电话沟通
+- `pages.home.why.items[0].text`：打 0571-8688-2146，说明是公司、劳动还是家事。
+- `pages.home.why.items[1].name`：预约面谈
+- `pages.home.why.items[1].text`：到清吟街 27 号，或约在您公司的会议室。
+- `pages.home.why.items[2].name`：签订委托
+- `pages.home.why.items[2].text`：按件或按小时报价，签了委托合同再办理。
+- `pages.home.team.title`：律师团队
+- `pages.home.team.lead`：执业律师27人，税务顾问4人。页上常驻六位。
+- `pages.home.team.items[0].name`：沈砚秋
+- `pages.home.team.items[0].role`：主任
+- `pages.home.team.items[0].years`：19 年
+- `pages.home.team.items[0].focus`：公司法律
+- `pages.home.team.items[0].text`：1998 年进入本所，负责收案和公司业务。
+- `pages.home.team.items[1].name`：周晚白
+- `pages.home.team.items[1].role`：合伙人
+- `pages.home.team.items[1].years`：14 年
+- `pages.home.team.items[1].focus`：合同纠纷
+- `pages.home.team.items[1].text`：合同和仲裁为主，代理词由本人撰写。
+- `pages.home.team.items[2].name`：顾承川
+- `pages.home.team.items[2].role`：律师
+- `pages.home.team.items[2].years`：11 年
+- `pages.home.team.items[2].focus`：劳动人事
+- `pages.home.team.items[2].text`：办理劳动争议，进厂先核对考勤和工资。
+- `pages.home.team.items[3].name`：叶知夏
+- `pages.home.team.items[3].role`：律师
+- `pages.home.team.items[3].years`：8 年
+- `pages.home.team.items[3].focus`：婚姻家事
+- `pages.home.team.items[3].text`：办理离婚、子女抚养和夫妻财产分割。
+- `pages.home.team.items[4].name`：梁叔年
+- `pages.home.team.items[4].role`：税务顾问
+- `pages.home.team.items[4].years`：16 年
+- `pages.home.team.items[4].focus`：代理记账
+- `pages.home.team.items[4].text`：负责月报和申报，不是执业律师。
+- `pages.home.team.items[5].name`：陈予安
+- `pages.home.team.items[5].role`：律师
+- `pages.home.team.items[5].years`：6 年
+- `pages.home.team.items[5].focus`：税务争议
+- `pages.home.team.items[5].text`：审阅稽查材料，金额不大的争议自己办。
+- `pages.home.cases.title`：典型案例
+- `pages.home.cases.lead`：去年146件，本页三件，案例页四件。
+- `pages.home.cases.items[0].year`：2025
+- `pages.home.cases.items[0].name`：餐饮公司股权回购
+- `pages.home.cases.items[0].text`：三名股东按审计净资产确定回购价，分十四个月付清。
+- `pages.home.cases.items[0].result`：十四个月付清
+- `pages.home.cases.items[1].year`：2024
+- `pages.home.cases.items[1].name`：建材厂劳动仲裁
+- `pages.home.cases.items[1].text`：十二名员工主张加班费，九人调解，三人撤回申请。
+- `pages.home.cases.items[1].result`：九人调解结案
+- `pages.home.cases.items[2].year`：2024
+- `pages.home.cases.items[2].name`：写字楼租赁解除
+- `pages.home.cases.items[2].text`：漏水和免租期写进补充协议，租期提前四个月结束。
+- `pages.home.cases.items[2].result`：押金退回八成
+- `pages.home.photo-band.caption`：本所在杭州清吟街 27 号，进门即是会客室。
+- `pages.home.collection-list.title`：法律知识
+- `pages.home.collection-list.lead`：最近四篇：年报、章程、解除和押金。
+- `pages.home.cta-band.title`：欢迎来电咨询
+- `pages.home.cta-band.lead`：0571-8688-2146，工作日 9:00 至 18:00 有人接听。
+- `pages.about.title`：律所简介｜青砖律师事务所（虚构）
+- `pages.about.description`：1998年开业。执业律师27人，税务顾问4人。常驻接待六位。电话0571-8688-2146。
+- `pages.about.why.title`：律所简介
+- `pages.about.why.lead`：1998 年在杭州清吟街开业，楼下会客，楼上是档案室。
+- `pages.about.why.body`：青砖律师事务所 1998 年在杭州上城区清吟街 27 号开业。楼下会客，楼上存放卷宗。主要办理公司、劳动、合同和婚姻家事。2016 年起在同一地址办理代理记账和税务咨询。执业律师 27 人，税务顾问 4 人。网站列出常驻接待的六位，其余按领域预约。咨询电话 0571-8688-2146。
+- `pages.about.why.items[0].name`：业务范围
+- `pages.about.why.items[0].text`：公司、劳动、合同、婚姻家事，另加记账和税务。
+- `pages.about.why.items[1].name`：人员情况
+- `pages.about.why.items[1].text`：执业律师27人，税务顾问4人。页上常驻六位。
+- `pages.about.why.items[2].name`：交通指引
+- `pages.about.why.items[2].text`：地铁 1 号线定安路站，步行约八分钟。
+- `pages.about.timeline.title`：发展历程
+- `pages.about.timeline.lead`：四个节点都发生在清吟街 27 号。
+- `pages.about.timeline.items[0].year`：1998
+- `pages.about.timeline.items[0].name`：正式开业
+- `pages.about.timeline.items[0].text`：清吟街 27 号租下两层，先办理公司业务。
+- `pages.about.timeline.items[1].year`：2007
+- `pages.about.timeline.items[1].name`：设立劳动组
+- `pages.about.timeline.items[1].text`：劳动和合同分开办理，当时所里 8 名律师。
+- `pages.about.timeline.items[2].year`：2016
+- `pages.about.timeline.items[2].name`：设立财税部
+- `pages.about.timeline.items[2].text`：取得税务师事务所执业许可，开始代理记账。
+- `pages.about.timeline.items[3].year`：2023
+- `pages.about.timeline.items[3].name`：档案室
+- `pages.about.timeline.items[3].text`：二楼改成档案室，卷宗从会议室搬上去。
+- `pages.about.trust.title`：律所数据
+- `pages.about.trust.lead`：与首页同一份统计，口径不变。
+- `pages.about.trust.items[0].value`：28 年
+- `pages.about.trust.items[0].label`：开业年限
+- `pages.about.trust.items[1].value`：27 人
+- `pages.about.trust.items[1].label`：执业律师
+- `pages.about.trust.items[2].value`：146 件
+- `pages.about.trust.items[2].label`：去年结案
+- `pages.about.trust.items[3].value`：6 项
+- `pages.about.trust.items[3].label`：专业领域
+- `pages.about.honors.title`：资质荣誉
+- `pages.about.honors.lead`：以下三件均可核验证书。
+- `pages.about.honors.items[0].year`：2021
+- `pages.about.honors.items[0].name`：省律协公司专业委员会委员
+- `pages.about.honors.items[0].issuer`：浙江省律师协会
+- `pages.about.honors.items[1].year`：2019
+- `pages.about.honors.items[1].name`：市律协公益法律服务表扬
+- `pages.about.honors.items[1].issuer`：杭州市律师协会
+- `pages.about.honors.items[2].year`：2016
+- `pages.about.honors.items[2].name`：税务师事务所执业许可
+- `pages.about.honors.items[2].issuer`：浙江省税务局
+- `pages.about.cta-band.title`：预约面谈
+- `pages.about.cta-band.lead`：0571-8688-2146。周六只到 12:00。
+- `pages.services.title`：专业领域｜青砖律师事务所（虚构）
+- `pages.services.description`：公司、合同、劳动、婚姻家事，以及代理记账和税务咨询。
+- `pages.services.collection-list.title`：专业领域
+- `pages.services.collection-list.lead`：律师业务见面报价，记账和税务写明起步价。
+- `pages.team.title`：律师团队｜青砖律师事务所（虚构）
+- `pages.team.description`：执业律师27人，税务顾问4人。页上常驻六位，一位不是律师。电话0571-8688-2146。
+- `pages.team.collection-list.title`：律师团队
+- `pages.team.collection-list.lead`：执业律师27人，税务顾问4人。页上常驻六位。
+- `pages.cases.title`：典型案例｜青砖律师事务所（虚构）
+- `pages.cases.description`：去年146件。股权回购、劳动仲裁、租赁解除和税务稽查四件已结案件。
+- `pages.cases.collection-list.title`：典型案例
+- `pages.cases.collection-list.lead`：去年结案146件，本页公开四件。
+- `pages.news.title`：法律知识｜青砖律师事务所（虚构）
+- `pages.news.description`：年报、章程、解除通知和押金，四篇给客户看的说明。
+- `pages.news.collection-list.title`：法律知识
+- `pages.news.collection-list.lead`：按发布日期排列，写给客户看。
+- `pages.contact.title`：联系我们｜青砖律师事务所（虚构）
+- `pages.contact.description`：清吟街 27 号。咨询电话 0571-8688-2146。周六只到中午。
+- `pages.contact.contact.title`：联系我们
+- `pages.contact.contact.lead`：电话、微信和预约分开。到所请先来电。
+- `pages.contact.contact.qrs[0].label`：加顾问微信
+- `pages.contact.contact.qrs[1].label`：关注公众号
+- `collections.services.company.slug`：company
+- `collections.services.company.name`：公司法律
+- `collections.services.company.summary`：股权、章程和股东争议。第一次见面请带执照和最近一次股东会决议。
+- `collections.services.company.bodyLabel`：服务内容
+- `collections.services.company.body`：从工商档案和公司章程开始，核对签字权、出资和决议通知。适合股权回购、增资和股东僵局。本所不承办刑事案件。咨询电话 0571-8688-2146。
+- `collections.services.company.specs[0].label`：办理周期
+- `collections.services.company.specs[0].value`：两到六周
+- `collections.services.company.specs[1].label`：收费方式
+- `collections.services.company.specs[1].value`：按件，见面后报价
+- `collections.services.company.steps[0].name`：接收材料
+- `collections.services.company.steps[0].text`：营业执照、章程和最近一次股东会决议。
+- `collections.services.company.steps[1].name`：书面备忘
+- `collections.services.company.steps[1].text`：三页纸写清争议点和还缺的材料。
+- `collections.services.company.steps[2].name`：当面核对
+- `collections.services.company.steps[2].text`：在所里或客户处，只谈这一件事。
+- `collections.services.company.steps[3].name`：签订委托
+- `collections.services.company.steps[3].text`：书面报价，签了委托合同才开始起草。
+- `collections.services.company.faqs[0].q`：第一次要带什么
+- `collections.services.company.faqs[0].a`：营业执照、章程和最近一次股东会决议。缺了先列清单。
+- `collections.services.company.faqs[1].q`：能不能只在电话里问
+- `collections.services.company.faqs[1].a`：可以先判断接不接。报价在见面以后写进委托合同。电话 0571-8688-2146。
+- `collections.services.company.faqs[2].q`：刑事案件接吗
+- `collections.services.company.faqs[2].a`：不接。只办理公司和商事里的民事、仲裁。
+- `collections.services.company.category`：公司合同
+- `collections.services.dispute.slug`：dispute
+- `collections.services.dispute.name`：合同纠纷
+- `collections.services.dispute.summary`：买卖、服务和租赁合同纠纷，以及约定了仲裁条款的争议。先列请求，再对证据。
+- `collections.services.dispute.bodyLabel`：服务内容
+- `collections.services.dispute.body`：按证据目录推进。先固定请求金额和管辖，再核对对方已经提交的证据。开庭前把代理词写完。本所不承办刑事案件。
+- `collections.services.dispute.specs[0].label`：办理周期
+- `collections.services.dispute.specs[0].value`：三个月到一年
+- `collections.services.dispute.specs[1].label`：收费方式
+- `collections.services.dispute.specs[1].value`：按件，见面后报价
+- `collections.services.dispute.steps[0].name`：接收材料
+- `collections.services.dispute.steps[0].text`：合同、往来函件和已经形成的证据。
+- `collections.services.dispute.steps[1].name`：书面备忘
+- `collections.services.dispute.steps[1].text`：写清请求、管辖和还缺的证明。
+- `collections.services.dispute.steps[2].name`：当面核对
+- `collections.services.dispute.steps[2].text`：把对方证据过一遍，标出争点。
+- `collections.services.dispute.steps[3].name`：签订委托
+- `collections.services.dispute.steps[3].text`：签了委托合同后才起草起诉状或答辩状。
+- `collections.services.dispute.faqs[0].q`：仲裁和诉讼怎么选
+- `collections.services.dispute.faqs[0].a`：先看合同里的争议条款。写明了仲裁机构的，不去法院。
+- `collections.services.dispute.faqs[1].q`：证据还不全能来吗
+- `collections.services.dispute.faqs[1].a`：能。备忘里会列出缺的那几份，并写明补交期限。
+- `collections.services.dispute.faqs[2].q`：开庭谁去
+- `collections.services.dispute.faqs[2].a`：承办律师自己出庭。代理词不交给助理定稿。
+- `collections.services.dispute.category`：公司合同
+- `collections.services.labor.slug`：labor
+- `collections.services.labor.name`：劳动人事
+- `collections.services.labor.summary`：规章制度、解除劳动合同和劳动仲裁。先核对出勤记录和工资发放表。
+- `collections.services.labor.bodyLabel`：服务内容
+- `collections.services.labor.body`：多人争议按每个人的请求分别计算。修订规章制度时，先看民主程序有没有走完。咨询电话 0571-8688-2146。
+- `collections.services.labor.specs[0].label`：办理周期
+- `collections.services.labor.specs[0].value`：两周到四个月
+- `collections.services.labor.specs[1].label`：收费方式
+- `collections.services.labor.specs[1].value`：按件，见面后报价
+- `collections.services.labor.steps[0].name`：接收材料
+- `collections.services.labor.steps[0].text`：劳动合同、考勤、工资表和规章制度。
+- `collections.services.labor.steps[1].name`：书面备忘
+- `collections.services.labor.steps[1].text`：按人列出请求和能对上的月份。
+- `collections.services.labor.steps[2].name`：当面核对
+- `collections.services.labor.steps[2].text`：和人事把解除理由逐条核对。
+- `collections.services.labor.steps[3].name`：签订委托
+- `collections.services.labor.steps[3].text`：确认承办范围后再写答辩或仲裁申请。
+- `collections.services.labor.faqs[0].q`：员工很多怎么收费
+- `collections.services.labor.faqs[0].a`：按人数分段，不按人头乘一个单价。见面后写进委托合同。
+- `collections.services.labor.faqs[1].q`：规章制度能先改吗
+- `collections.services.labor.faqs[1].a`：可以审。民主程序没走完的，先补程序再谈效力。
+- `collections.services.labor.faqs[2].q`：刑事案件接吗
+- `collections.services.labor.faqs[2].a`：不接。只办理劳动争议和人事制度。
+- `collections.services.labor.category`：劳动家事
+- `collections.services.family.slug`：family
+- `collections.services.family.name`：婚姻家事
+- `collections.services.family.summary`：离婚、子女抚养和夫妻财产分割。第一次见面请带身份证、结婚证和财产清单。
+- `collections.services.family.bodyLabel`：服务内容
+- `collections.services.family.body`：先确认是否已经起诉，再核对房产、存款和子女抚养安排。财产有争议的，按清单逐项对。咨询电话 0571-8688-2146。
+- `collections.services.family.specs[0].label`：办理周期
+- `collections.services.family.specs[0].value`：一个月到半年
+- `collections.services.family.specs[1].label`：收费方式
+- `collections.services.family.specs[1].value`：按件，见面后报价
+- `collections.services.family.steps[0].name`：接收材料
+- `collections.services.family.steps[0].text`：身份证、结婚证、财产清单和起诉状。
+- `collections.services.family.steps[1].name`：书面备忘
+- `collections.services.family.steps[1].text`：标出抚养、房产和还缺的证明。
+- `collections.services.family.steps[2].name`：当面核对
+- `collections.services.family.steps[2].text`：在所里把财产和子女安排对完。
+- `collections.services.family.steps[3].name`：签订委托
+- `collections.services.family.steps[3].text`：书面报价后才起草起诉状或答辩状。
+- `collections.services.family.faqs[0].q`：还没起诉能来吗
+- `collections.services.family.faqs[0].a`：能。可以先做一次财产和抚养安排的咨询。
+- `collections.services.family.faqs[1].q`：房产证不在身边
+- `collections.services.family.faqs[1].a`：先带复印件或不动产查询结果，原件后补。
+- `collections.services.family.faqs[2].q`：只问一个问题呢
+- `collections.services.family.faqs[2].a`：可以。仍按一次咨询计，不按问题条数加价。电话 0571-8688-2146。
+- `collections.services.family.category`：劳动家事
+- `collections.services.books.slug`：books
+- `collections.services.books.name`：代理记账
+- `collections.services.books.summary`：月费 980 元起。含凭证整理、月报和增值税申报，适合小规模纳税人。
+- `collections.services.books.price`：980元/月起
+- `collections.services.books.bodyLabel`：服务内容
+- `collections.services.books.body`：按月收取凭证、做账、申报增值税。980 元这个起步价只含小规模纳税人。一般纳税人和年度汇算另计。
+- `collections.services.books.specs[0].label`：起步价格
+- `collections.services.books.specs[0].value`：980元/月起
+- `collections.services.books.specs[1].label`：收费方式
+- `collections.services.books.specs[1].value`：按月，一般纳税人另计
+- `collections.services.books.steps[0].name`：建立账套
+- `collections.services.books.steps[0].text`：执照和开户信息收齐后建套账。
+- `collections.services.books.steps[1].name`：收取凭证
+- `collections.services.books.steps[1].text`：每月 5 日前把上月票据送到所里。
+- `collections.services.books.steps[2].name`：月度申报
+- `collections.services.books.steps[2].text`：做账、报增值税，并把报表发回。
+- `collections.services.books.steps[3].name`：年度汇算
+- `collections.services.books.steps[3].text`：年度汇算单独报价，不在月费里。
+- `collections.services.books.faqs[0].q`：一般纳税人能做吗
+- `collections.services.books.faqs[0].a`：能。不在 980 元这个起步价里，见面后另报。
+- `collections.services.books.faqs[1].q`：票据晚了怎么办
+- `collections.services.books.faqs[1].a`：当月申报先按已收到的凭证。下月补上，并在月报里注明。
+- `collections.services.books.faqs[2].q`：汇算含在月费里吗
+- `collections.services.books.faqs[2].a`：不含。每年三月单独出一份报价。
+- `collections.services.books.category`：财税
+- `collections.services.tax.slug`：tax
+- `collections.services.tax.name`：税务咨询
+- `collections.services.tax.summary`：起步 2600 元。含一次稽查材料审阅和书面备忘，行政复议另计。
+- `collections.services.tax.price`：2600元起
+- `collections.services.tax.bodyLabel`：服务内容
+- `collections.services.tax.body`：办理稽查材料审阅、税收优惠备案和汇算清缴。起步价含一次书面备忘，不含行政复议代理。咨询电话 0571-8688-2146。
+- `collections.services.tax.specs[0].label`：起步价格
+- `collections.services.tax.specs[0].value`：2600元起
+- `collections.services.tax.specs[1].label`：收费方式
+- `collections.services.tax.specs[1].value`：按次，复议另计
+- `collections.services.tax.steps[0].name`：接收材料
+- `collections.services.tax.steps[0].text`：稽查通知、申报表和相关合同。
+- `collections.services.tax.steps[1].name`：材料审阅
+- `collections.services.tax.steps[1].text`：标出缺单据和可能要转出的进项。
+- `collections.services.tax.steps[2].name`：书面备忘
+- `collections.services.tax.steps[2].text`：书面写清建议。起步价含这一份。
+- `collections.services.tax.steps[3].name`：另行委托
+- `collections.services.tax.steps[3].text`：行政复议另计，不在起步价里。
+- `collections.services.tax.faqs[0].q`：只有一个问题呢
+- `collections.services.tax.faqs[0].a`：可以。仍按一次审阅计，不按问题条数加价。
+- `collections.services.tax.faqs[1].q`：备案材料谁交
+- `collections.services.tax.faqs[1].a`：清单由我们列。原件由财务准备，我们核对后交到窗口。
+- `collections.services.tax.faqs[2].q`：复议含在里面吗
+- `collections.services.tax.faqs[2].a`：不含。备忘写完如果要复议，另签委托合同。
+- `collections.services.tax.category`：财税
+- `collections.team.shen.slug`：shen
+- `collections.team.shen.name`：沈砚秋
+- `collections.team.shen.role`：主任
+- `collections.team.shen.years`：19 年
+- `collections.team.shen.focus`：公司法律
+- `collections.team.shen.summary`：主任，执业 19 年，擅长公司股权、章程和股东会。
+- `collections.team.shen.bodyLabel`：个人简介
+- `collections.team.shen.body`：1998 年进入本所，现负责收案和公司业务。开庭以外的下午在二楼核对章程。预约请打 0571-8688-2146。
+- `collections.team.shen.specs[0].label`：执业年限
+- `collections.team.shen.specs[0].value`：19 年
+- `collections.team.shen.specs[1].label`：擅长领域
+- `collections.team.shen.specs[1].value`：公司股权与章程
+- `collections.team.shen.specs[2].label`：执业证号
+- `collections.team.shen.specs[2].value`：A2001（虚构）
+- `collections.team.shen.faqs[0].q`：怎么约到本人
+- `collections.team.shen.faqs[0].a`：先打 0571-8688-2146，说明要约公司组。周三下午在二楼。
+- `collections.team.shen.faqs[1].q`：收费怎么说
+- `collections.team.shen.faqs[1].a`：见面后按件写进委托合同，电话里不定价。
+- `collections.team.shen.category`：律师
+- `collections.team.zhou.slug`：zhou
+- `collections.team.zhou.name`：周晚白
+- `collections.team.zhou.role`：合伙人
+- `collections.team.zhou.years`：14 年
+- `collections.team.zhou.focus`：合同纠纷
+- `collections.team.zhou.summary`：合伙人，执业 14 年，擅长合同纠纷和仲裁，代理词自己写。
+- `collections.team.zhou.bodyLabel`：个人简介
+- `collections.team.zhou.body`：2012 年加入本所。合同纠纷和仲裁为主，代理词自己写，不交给助理定稿。
+- `collections.team.zhou.specs[0].label`：执业年限
+- `collections.team.zhou.specs[0].value`：14 年
+- `collections.team.zhou.specs[1].label`：擅长领域
+- `collections.team.zhou.specs[1].value`：合同与仲裁
+- `collections.team.zhou.specs[2].label`：执业证号
+- `collections.team.zhou.specs[2].value`：A2008（虚构）
+- `collections.team.zhou.faqs[0].q`：开庭前能改请求吗
+- `collections.team.zhou.faqs[0].a`：能。改之前先看举证期限还剩几天。
+- `collections.team.zhou.faqs[1].q`：外地开庭去吗
+- `collections.team.zhou.faqs[1].a`：杭州以外的开庭，差旅另计，写在委托合同里。
+- `collections.team.zhou.category`：律师
+- `collections.team.gu.slug`：gu
+- `collections.team.gu.name`：顾承川
+- `collections.team.gu.role`：律师
+- `collections.team.gu.years`：11 年
+- `collections.team.gu.focus`：劳动人事
+- `collections.team.gu.summary`：律师，执业 11 年，擅长劳动争议和规章制度，先核对考勤。
+- `collections.team.gu.bodyLabel`：个人简介
+- `collections.team.gu.body`：2015 年加入劳动组。到企业先要三个月考勤和工资表，再谈解除理由。
+- `collections.team.gu.specs[0].label`：执业年限
+- `collections.team.gu.specs[0].value`：11 年
+- `collections.team.gu.specs[1].label`：擅长领域
+- `collections.team.gu.specs[1].value`：劳动人事
+- `collections.team.gu.specs[2].label`：执业证号
+- `collections.team.gu.specs[2].value`：A2014（虚构）
+- `collections.team.gu.faqs[0].q`：要到厂里去吗
+- `collections.team.gu.faqs[0].a`：多人争议会去一次。一个人的争议可以在所里谈。
+- `collections.team.gu.faqs[1].q`：只改制度怎么收费
+- `collections.team.gu.faqs[1].a`：按一次审阅收费，不按条文条数。
+- `collections.team.gu.category`：律师
+- `collections.team.ye.slug`：ye
+- `collections.team.ye.name`：叶知夏
+- `collections.team.ye.role`：律师
+- `collections.team.ye.years`：8 年
+- `collections.team.ye.focus`：婚姻家事
+- `collections.team.ye.summary`：律师，执业 8 年，擅长离婚、子女抚养和夫妻财产分割。
+- `collections.team.ye.bodyLabel`：个人简介
+- `collections.team.ye.body`：2018 年加入本所。离婚案件按财产清单和抚养安排逐项核对，缺证明的单独列出来。
+- `collections.team.ye.specs[0].label`：执业年限
+- `collections.team.ye.specs[0].value`：8 年
+- `collections.team.ye.specs[1].label`：擅长领域
+- `collections.team.ye.specs[1].value`：婚姻家事
+- `collections.team.ye.specs[2].label`：执业证号
+- `collections.team.ye.specs[2].value`：A2018（虚构）
+- `collections.team.ye.faqs[0].q`：还没起诉能约吗
+- `collections.team.ye.faqs[0].a`：能。先打 0571-8688-2146，说明是家事咨询。
+- `collections.team.ye.faqs[1].q`：外地的案件呢
+- `collections.team.ye.faqs[1].a`：长三角以内可以去。差旅写进委托合同。
+- `collections.team.ye.category`：律师
+- `collections.team.liang.slug`：liang
+- `collections.team.liang.name`：梁叔年
+- `collections.team.liang.role`：税务顾问
+- `collections.team.liang.years`：16 年
+- `collections.team.liang.focus`：代理记账
+- `collections.team.liang.summary`：税务顾问，从业 16 年，负责月报和申报，不是执业律师。
+- `collections.team.liang.bodyLabel`：个人简介
+- `collections.team.liang.body`：2016 年财税部成立时加入，负责月报和纳税申报。对外不就诉讼出具律师意见。
+- `collections.team.liang.specs[0].label`：从业年限
+- `collections.team.liang.specs[0].value`：16 年
+- `collections.team.liang.specs[1].label`：擅长领域
+- `collections.team.liang.specs[1].value`：代理记账
+- `collections.team.liang.specs[2].label`：资格证书
+- `collections.team.liang.specs[2].value`：税务师T2016（虚构）
+- `collections.team.liang.faqs[0].q`：能出庭吗
+- `collections.team.liang.faqs[0].a`：不能。诉讼由律师办理。他只对账册和申报负责。
+- `collections.team.liang.faqs[1].q`：月费含汇算吗
+- `collections.team.liang.faqs[1].a`：不含。汇算每年三月另报。
+- `collections.team.liang.category`：顾问
+- `collections.team.chen.slug`：chen
+- `collections.team.chen.name`：陈予安
+- `collections.team.chen.role`：律师
+- `collections.team.chen.years`：6 年
+- `collections.team.chen.focus`：税务争议
+- `collections.team.chen.summary`：律师，执业 6 年，擅长稽查材料审阅和金额不大的税务争议。
+- `collections.team.chen.bodyLabel`：个人简介
+- `collections.team.chen.body`：2020 年取得法律职业资格。与梁叔年一起看稽查材料，单独办理金额不大的税务争议。
+- `collections.team.chen.specs[0].label`：执业年限
+- `collections.team.chen.specs[0].value`：6 年
+- `collections.team.chen.specs[1].label`：擅长领域
+- `collections.team.chen.specs[1].value`：税务争议
+- `collections.team.chen.specs[2].label`：执业证号
+- `collections.team.chen.specs[2].value`：A2020（虚构）
+- `collections.team.chen.faqs[0].q`：稽查复议谁写
+- `collections.team.chen.faqs[0].a`：数字由梁叔年核对，复议书由陈予安起草。
+- `collections.team.chen.faqs[1].q`：起步价是多少
+- `collections.team.chen.faqs[1].a`：一次审阅 2600 元起，行政复议另计。
+- `collections.team.chen.category`：律师
+- `collections.cases.equity.slug`：equity
+- `collections.cases.equity.name`：餐饮公司股权回购
+- `collections.cases.equity.date`：2025-11-18
+- `collections.cases.equity.summary`：2025-11-18 结案。三名股东按审计净资产回购，分十四个月付清。
+- `collections.cases.equity.bodyLabel`：办案经过
+- `collections.cases.equity.body`：委托人是一家餐饮公司的小股东。两次审计把回购价拆开。最后按第二份净资产，分十四个月支付，已付六期。
+- `collections.cases.equity.specs[0].label`：结案时间
+- `collections.cases.equity.specs[0].value`：2025年11月
+- `collections.cases.equity.specs[1].label`：办理结果
+- `collections.cases.equity.specs[1].value`：十四个月付清
+- `collections.cases.equity.steps[0].name`：接收材料
+- `collections.cases.equity.steps[0].text`：章程、出资凭证和两份审计报告。
+- `collections.cases.equity.steps[1].name`：核对数字
+- `collections.cases.equity.steps[1].text`：把净资产差额拆到每个科目。
+- `collections.cases.equity.steps[2].name`：四轮谈判
+- `collections.cases.equity.steps[2].text`：四次会议后，价格改到第二份报告。
+- `collections.cases.equity.steps[3].name`：分期付款
+- `collections.cases.equity.steps[3].text`：十四期，已按约支付前六期。
+- `collections.cases.equity.faqs[0].q`：客户名称能写吗
+- `collections.cases.equity.faqs[0].a`：不写。页面只保留餐饮公司这个说法。
+- `collections.cases.equity.faqs[1].q`：现在还在付吗
+- `collections.cases.equity.faqs[1].a`：在付。前六期已到账，后面按月核对。
+- `collections.cases.labor.slug`：labor
+- `collections.cases.labor.name`：建材厂劳动仲裁
+- `collections.cases.labor.date`：2024-08-02
+- `collections.cases.labor.summary`：2024-08-02 结案。十二人主张加班费，九人调解，三人撤回申请。
+- `collections.cases.labor.bodyLabel`：办案经过
+- `collections.cases.labor.body`：一家建材厂的十二名员工申请仲裁。考勤和工资表对得上的九人调解，对不上的三人撤回申请。没有按全体相同金额处理。
+- `collections.cases.labor.specs[0].label`：结案时间
+- `collections.cases.labor.specs[0].value`：2024年8月
+- `collections.cases.labor.specs[1].label`：办理结果
+- `collections.cases.labor.specs[1].value`：九人调解结案
+- `collections.cases.labor.steps[0].name`：接收材料
+- `collections.cases.labor.steps[0].text`：十二人的合同、考勤和工资表。
+- `collections.cases.labor.steps[1].name`：按月核对
+- `collections.cases.labor.steps[1].text`：按人、按月核对加班时数。
+- `collections.cases.labor.steps[2].name`：分别调解
+- `collections.cases.labor.steps[2].text`：九人分别签调解书，金额不同。
+- `collections.cases.labor.steps[3].name`：撤回申请
+- `collections.cases.labor.steps[3].text`：三人对不上记录，撤回申请。
+- `collections.cases.labor.faqs[0].q`：为什么金额不一样
+- `collections.cases.labor.faqs[0].a`：出勤对得上的月份不一样，所以按人计算。
+- `collections.cases.labor.faqs[1].q`：厂名公开吗
+- `collections.cases.labor.faqs[1].a`：不公开。只写建材厂。
+- `collections.cases.lease.slug`：lease
+- `collections.cases.lease.name`：写字楼租赁解除
+- `collections.cases.lease.date`：2024-04-19
+- `collections.cases.lease.summary`：2024-04-19 结案。漏水和免租写进补充协议，押金退回八成。
+- `collections.cases.lease.bodyLabel`：办案经过
+- `collections.cases.lease.body`：写字楼漏水三个月。免租和维修责任补进协议，租期提前四个月结束。押金扣掉维修费用后的两成，其余退回。
+- `collections.cases.lease.specs[0].label`：结案时间
+- `collections.cases.lease.specs[0].value`：2024年4月
+- `collections.cases.lease.specs[1].label`：办理结果
+- `collections.cases.lease.specs[1].value`：押金退回八成
+- `collections.cases.lease.steps[0].name`：接收材料
+- `collections.cases.lease.steps[0].text`：租赁合同、报修记录和现场照片。
+- `collections.cases.lease.steps[1].name`：核对条款
+- `collections.cases.lease.steps[1].text`：对照返还条件和扣款清单。
+- `collections.cases.lease.steps[2].name`：补充协议
+- `collections.cases.lease.steps[2].text`：免租和维修责任写进补充协议。
+- `collections.cases.lease.steps[3].name`：提前退租
+- `collections.cases.lease.steps[3].text`：提前四个月交房，押金退回八成。
+- `collections.cases.lease.faqs[0].q`：扣掉的两成是什么
+- `collections.cases.lease.faqs[0].a`：协议里列明的维修费，有发票。
+- `collections.cases.lease.faqs[1].q`：楼的名字呢
+- `collections.cases.lease.faqs[1].a`：不写。只保留写字楼这个说法。
+- `collections.cases.audit.slug`：audit
+- `collections.cases.audit.name`：贸易公司税务稽查
+- `collections.cases.audit.date`：2023-12-06
+- `collections.cases.audit.summary`：2023-12-06 结案。进项转出和滞纳金一次结清，没有罚款。
+- `collections.cases.audit.bodyLabel`：办案经过
+- `collections.cases.audit.body`：一家贸易公司被稽查进项。能提供运输单据的留下，缺单据的做进项转出。滞纳金按税单缴纳，没有并处罚款。
+- `collections.cases.audit.specs[0].label`：结案时间
+- `collections.cases.audit.specs[0].value`：2023年12月
+- `collections.cases.audit.specs[1].label`：办理结果
+- `collections.cases.audit.specs[1].value`：补税并交滞纳金
+- `collections.cases.audit.steps[0].name`：接收材料
+- `collections.cases.audit.steps[0].text`：稽查通知、申报表和运输单据。
+- `collections.cases.audit.steps[1].name`：单据分类
+- `collections.cases.audit.steps[1].text`：有单据的进项留下，没有的转出。
+- `collections.cases.audit.steps[2].name`：书面备忘
+- `collections.cases.audit.steps[2].text`：书面说明转出金额和依据。
+- `collections.cases.audit.steps[3].name`：一次结清
+- `collections.cases.audit.steps[3].text`：补税和滞纳金一次缴完。
+- `collections.cases.audit.faqs[0].q`：为什么没有罚款
+- `collections.cases.audit.faqs[0].a`：材料在限期内补齐，主管机关没有并处罚款。
+- `collections.cases.audit.faqs[1].q`：公司名字呢
+- `collections.cases.audit.faqs[1].a`：不写。只保留贸易公司这个说法。
+- `collections.news.filing-2026.slug`：filing-2026
+- `collections.news.filing-2026.name`：2026年企业年报怎么备
+- `collections.news.filing-2026.date`：2026-03-12
+- `collections.news.filing-2026.summary`：2026-03-12。年报窗口打开前，先核对章程记载和实缴出资。
+- `collections.news.filing-2026.bodyLabel`：正文
+- `collections.news.filing-2026.body`：年报里最容易填错的是实缴出资和股东。章程改过、登记没有改的，先办变更再填报。代账客户由财税部在四月第二周前交表。
+- `collections.news.filing-2026.faqs[0].q`：代账客户要自己填吗
+- `collections.news.filing-2026.faqs[0].a`：不用。四月第二周前由财税部交表，有差异会先打电话。
+- `collections.news.filing-2026.faqs[1].q`：章程和登记不一致
+- `collections.news.filing-2026.faqs[1].a`：先办变更。直接按旧登记填写，第二年还会错。
+- `collections.news.filing-2026.category`：年报
+- `collections.news.charter.slug`：charter
+- `collections.news.charter.name`：章程里容易漏的三处
+- `collections.news.charter.date`：2026-01-20
+- `collections.news.charter.summary`：2026-01-20。出资期限、股权转让和表决比例，这三处最常漏。
+- `collections.news.charter.bodyLabel`：正文
+- `collections.news.charter.body`：不少章程只照着范本抄。出资期限写死、转让要全体同意、表决按人头而不是按出资，这三句最容易和实际做法不一致。修改前先看最近一次股东会决议。
+- `collections.news.charter.faqs[0].q`：范本能不能直接用
+- `collections.news.charter.faqs[0].a`：不要直接用。至少改出资、转让和表决这三处。
+- `collections.news.charter.faqs[1].q`：改章程要开会吗
+- `collections.news.charter.faqs[1].a`：要。先看现章程规定的表决比例，再发会议通知。
+- `collections.news.charter.category`：章程
+- `collections.news.severance.slug`：severance
+- `collections.news.severance.name`：解除通知怎么写日期
+- `collections.news.severance.date`：2025-11-03
+- `collections.news.severance.summary`：2025-11-03。通知送达的日期和最后工作日不是同一天。
+- `collections.news.severance.bodyLabel`：正文
+- `collections.news.severance.body`：解除劳动合同通知要写清送达方式和最后工作日。快递签收日、当面签收日、邮件送达日，选一个能够证明的。不要把通知落款日当成送达日。
+- `collections.news.severance.faqs[0].q`：邮件算送达吗
+- `collections.news.severance.faqs[0].a`：合同或规章制度写了邮箱的，请保留发送记录。
+- `collections.news.severance.faqs[1].q`：落款日能当送达日吗
+- `collections.news.severance.faqs[1].a`：不能。送达看签收，不看落款。
+- `collections.news.severance.category`：劳动
+- `collections.news.deposit.slug`：deposit
+- `collections.news.deposit.name`：押金不退时先看哪一页
+- `collections.news.deposit.date`：2025-09-16
+- `collections.news.deposit.summary`：2025-09-16。先看返还条件和扣款清单，再谈金额。
+- `collections.news.deposit.bodyLabel`：正文
+- `collections.news.deposit.body`：押金争议先翻返还条件、扣款有没有列明、交接日是哪一天。没有交接记录的，先补现场照片和钥匙清单，再发书面催告。需要协助可打 0571-8688-2146。
+- `collections.news.deposit.faqs[0].q`：没有钥匙清单呢
+- `collections.news.deposit.faqs[0].a`：先补照片和交接说明，再发催告，然后谈退还金额。
+- `collections.news.deposit.faqs[1].q`：扣款没写金额
+- `collections.news.deposit.faqs[1].a`：清单没有列明的项目，先书面询问对方依据。
+- `collections.news.deposit.category`：租赁

@@ -231,7 +231,32 @@
       });
       copies.forEach(function (copy, n) {
         copy.classList.toggle("is-current", n === index);
+        copy.setAttribute("aria-hidden", String(n !== index));
       });
+      var actions = root.querySelector("[data-hero-actions]");
+      var currentCopy = copies[index];
+      if (actions && currentCopy) {
+        currentCopy.appendChild(actions);
+        var primary = actions.querySelector(".btn-primary");
+        var secondary = actions.querySelector(".btn:not(.btn-primary)");
+        var primaryHref = currentCopy.getAttribute("data-hero-primary-href") || "";
+        var primaryLabel = currentCopy.getAttribute("data-hero-primary-label") || "";
+        actions.style.display = primaryHref && primaryLabel ? "" : "none";
+        if (primaryHref && primaryLabel && primary) {
+          primary.setAttribute("href", primaryHref);
+          primary.textContent = primaryLabel;
+        }
+        if (secondary) {
+          var secondaryHref = currentCopy.getAttribute("data-hero-secondary-href") || "";
+          var secondaryLabel = currentCopy.getAttribute("data-hero-secondary-label") || "";
+          secondary.hidden = !secondaryHref || !secondaryLabel;
+          secondary.style.display = secondary.hidden ? "none" : "";
+          if (!secondary.hidden) {
+            secondary.setAttribute("href", secondaryHref);
+            secondary.textContent = secondaryLabel;
+          }
+        }
+      }
       dots.forEach(function (dot, n) {
         if (n === index) dot.setAttribute("aria-current", "true");
         else dot.removeAttribute("aria-current");

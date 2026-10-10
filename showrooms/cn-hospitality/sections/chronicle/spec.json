@@ -48,7 +48,13 @@
       "imageField": "image",
       "family": "chronicle",
       "fit": "左文右图",
-      "fallback": "omit"
+      "fallback": "text-list"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "prose",
+      "fit": "无照片时保留业务、规格和联系信息",
+      "source": "样板间自写"
     }
   }
 }

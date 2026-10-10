@@ -22,8 +22,6 @@
         "time": "9:00-17:00"
       }
     ],
-    "formUrl": "https://example.com/forms/nanzhan-trial",
-    "icp": "浙ICP备20918463号",
     "qrcodes": [
       {
         "image": "qr-official",
@@ -333,7 +331,7 @@
         "name": "周宁的轴套",
         "summary": "课堂车完一只轴套。2025年6月结业，现在拱墅一家机加工厂做数控车工。",
         "body": "周宁用六个小时从下料到车外圆，公差按课堂图，没有返工。2025年6月结业，学校开了推荐表，现在在拱墅一家机加工厂做数控车工。",
-        "image": "work-shaft",
+        "image": "",
         "imageAlt": "车好的金属轴套放在量具旁",
         "specs": [
           {
@@ -360,7 +358,7 @@
         "name": "孙磊的配电箱",
         "summary": "照明回路自己接完并测了绝缘。结业后去物业做维修电工。",
         "body": "孙磊接的是教室照明那路线。绝缘电阻记在本子上，陈牧复核了一次。2025年4月结业，现在在一家物业公司做维修电工。",
-        "image": "work-panel",
+        "image": "",
         "imageAlt": "打开门的实训配电箱",
         "specs": [
           {
@@ -387,7 +385,7 @@
         "name": "吴迪的焊缝",
         "summary": "平焊试板没有烧穿。结业后去钢结构厂做焊工。",
         "body": "吴迪交的是一条平焊试板。起弧和收弧都在板内，留在焊接间的展示架上。2025年5月结业，现在在一家钢结构厂做焊工。",
-        "image": "work-weld",
+        "image": "",
         "imageAlt": "钢板上的一条平焊缝",
         "specs": [
           {
@@ -414,7 +412,7 @@
         "name": "郑凯的零件图",
         "summary": "轴套零件图标注改完。结业后去机械厂做制图。",
         "body": "郑凯画的轴套图被车工班拿去对过一次。漏标的粗糙度当晚改完，第二天才交。2025年3月结业，现在在一家机械厂做制图。",
-        "image": "work-draw",
+        "image": "",
         "imageAlt": "屏幕上的轴套零件图",
         "specs": [
           {
@@ -441,7 +439,7 @@
         "name": "钱薇的控制柜",
         "summary": "启停回路能跑通。结业后留在原车间做电工，兼看控制柜。",
         "body": "钱薇接的是按钮启停加一个延时。指示灯按她写的顺序亮，程序存在教室那台电脑里。结业后回原车间做电工，开始碰控制柜。",
-        "image": "work-cabinet",
+        "image": "",
         "imageAlt": "小型控制柜和亮着的指示灯",
         "specs": [
           {
@@ -510,8 +508,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "南栈技能学校（虚构）",
-      "description": "杭州拱墅石桥路的职业技能学校，六门工种课白天和晚班都开。",
+      "title": "南栈技能学校（虚构）｜职业技能培训与实操",
+      "description": "杭州拱墅，开设车工、电工、焊接、制图等课程，白天与晚班可选。",
       "sections": [
         {
           "type": "hero",
@@ -520,8 +518,8 @@
           "tone": "image",
           "data": {
             "label": "石桥路校区",
-            "title": "学会技术，好找工作",
-            "lead": "六门课在开，白天和晚班都有。",
+            "title": "职业技能培训与实操",
+            "lead": "杭州拱墅，开设车工、电工、焊接、制图等课程，白天与晚班可选。",
             "primaryLabel": "预约试听",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "看课程",
@@ -531,82 +529,26 @@
               {
                 "image": "hero-shop",
                 "imageAlt": "车床卡盘和金属屑的局部",
-                "title": "学会技术，好找工作",
-                "lead": "六门课在开，白天和晚班都有。"
+                "title": "职业技能培训与实操",
+                "lead": "课程列明课时、学费和适合人群。"
               },
               {
                 "image": "hero-class",
                 "imageAlt": "工位上的零件图和台灯光",
-                "title": "晚班也能上车床",
-                "lead": "数控车工96课时，学费7,860元，可考中级工。"
+                "title": "数控车工实训",
+                "lead": "96课时，学费7,860元，可报考车工中级工。"
               },
               {
                 "image": "hero-gate",
                 "imageAlt": "楼梯栏杆和门厅的日光",
-                "title": "周六上午来看车间",
-                "lead": "周六上午开放车间，可以当场预约试听。"
+                "title": "预约试听与校区参观",
+                "lead": "周六上午开放车间，可以预约试听。"
               },
               {
                 "image": "hero-bench",
                 "imageAlt": "钳工台上的卡尺和零件",
-                "title": "看懂图纸再上车",
-                "lead": "机械制图48课时，图改完才送去车床。"
-              }
-            ]
-          }
-        },
-        {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "light",
-          "data": {
-            "title": "办学实力",
-            "lead": "2009年开办，校区在拱墅石桥路。",
-            "items": [
-              {
-                "value": "2009",
-                "label": "开办年份"
-              },
-              {
-                "value": "4",
-                "label": "在岗老师"
-              },
-              {
-                "value": "6",
-                "label": "在开课程"
-              },
-              {
-                "value": "1286",
-                "label": "在册学员"
-              }
-            ]
-          }
-        },
-        {
-          "type": "campus",
-          "variant": "split",
-          "anchor": "campus",
-          "tone": "light",
-          "data": {
-            "title": "学校简介",
-            "lead": "车间、教室和晚班都在石桥路这一栋。",
-            "linkLabel": "看简介",
-            "href": "about/index.html",
-            "image": "campus-main",
-            "imageAlt": "石桥路校区楼外白天",
-            "thumbs": [
-              {
-                "image": "campus-hall",
-                "imageAlt": "门厅里的课表和楼梯"
-              },
-              {
-                "image": "campus-room",
-                "imageAlt": "二楼晚班教室的座位"
-              },
-              {
-                "image": "campus-yard",
-                "imageAlt": "楼侧停自行车的院子"
+                "title": "机械制图课程",
+                "lead": "48课时，学习零件图、标注与公差。"
               }
             ]
           }
@@ -615,9 +557,9 @@
           "type": "services",
           "variant": "lineup",
           "anchor": "courses",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "课程设置",
+            "title": "课程与学费",
             "lead": "六门都在开，学费不含考证费。",
             "items": [
               {
@@ -680,11 +622,11 @@
         },
         {
           "type": "advantage",
-          "variant": "switch",
+          "variant": "points",
           "anchor": "advantage",
-          "tone": "light",
+          "tone": "dark",
           "data": {
-            "title": "办学优势",
+            "title": "实操、晚班与考证安排",
             "lead": "实操有师傅带，晚班能上，结业可推荐。",
             "items": [
               {
@@ -712,99 +654,8 @@
                 "imageAlt": "老师把推荐表交给学员"
               }
             ]
-          }
-        },
-        {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "band",
-          "tone": "image",
-          "data": {
-            "image": "band-night",
-            "imageAlt": "晚班车间里还亮着的灯",
-            "caption": "石桥路车间，晚班还在上课。"
-          }
-        },
-        {
-          "type": "cases",
-          "variant": "gallery",
-          "anchor": "works",
-          "tone": "light",
-          "data": {
-            "title": "学员风采",
-            "lead": "学员交的作业，以及结业后的岗位。",
-            "items": [
-              {
-                "name": "周宁的轴套",
-                "text": "按课堂图车完。结业后去拱墅机加工厂做车工。",
-                "result": "现做数控车工",
-                "href": "works/shaft.html",
-                "image": "work-shaft",
-                "imageAlt": "车好的金属轴套放在量具旁"
-              },
-              {
-                "name": "孙磊的配电箱",
-                "text": "回路接完并测了绝缘。结业后去物业做维修电工。",
-                "result": "现做维修电工",
-                "href": "works/panel.html",
-                "image": "work-panel",
-                "imageAlt": "打开门的实训配电箱"
-              },
-              {
-                "name": "吴迪的焊缝",
-                "text": "平焊试板没有烧穿。结业后去钢结构厂做焊工。",
-                "result": "现做焊工",
-                "href": "works/seam.html",
-                "image": "work-weld",
-                "imageAlt": "钢板上的一条平焊缝"
-              },
-              {
-                "name": "郑凯的零件图",
-                "text": "轴套图标注改完。结业后去机械厂做制图。",
-                "result": "现做制图员",
-                "href": "works/drawing.html",
-                "image": "work-draw",
-                "imageAlt": "屏幕上的轴套零件图"
-              }
-            ]
-          }
-        },
-        {
-          "type": "bulletin",
-          "variant": "feed",
-          "anchor": "news",
-          "tone": "dark",
-          "data": {
-            "title": "招生资讯",
-            "lead": "开班、考证和剩余名额。",
-            "items": [
-              {
-                "date": "2026-03-02",
-                "name": "2026年春季招生开始",
-                "text": "数控、电工、焊接三个晚班同时收。",
-                "href": "news/spring-2026.html",
-                "image": "news-night",
-                "imageAlt": "二楼晚班教室亮着灯"
-              },
-              {
-                "date": "2026-04-02",
-                "name": "4月低压电工证报名通知",
-                "text": "四月考试还剩11个名额。",
-                "href": "news/exam-april.html",
-                "image": "news-exam",
-                "imageAlt": "教务室桌上的考证名单"
-              },
-              {
-                "date": "2026-06-18",
-                "name": "电工实训室材料已更换",
-                "text": "新导线已经换上，六月电工晚班照常招生。",
-                "href": "news/wire-lab.html",
-                "image": "news-wire",
-                "imageAlt": "电工室架子上的新导线"
-              }
-            ]
           },
-          "bg": "bg-news"
+          "bg": "band-night"
         },
         {
           "type": "team",
@@ -812,7 +663,7 @@
           "anchor": "team",
           "tone": "light",
           "data": {
-            "title": "师资力量",
+            "title": "任课老师",
             "lead": "车工、电工、制图、焊接，都在车间上课。",
             "items": [
               {
@@ -851,12 +702,56 @@
           }
         },
         {
+          "type": "cases",
+          "variant": "gallery",
+          "anchor": "works",
+          "tone": "dark",
+          "data": {
+            "title": "实训项目与学员去向",
+            "lead": "车工、接线、焊接与制图，了解实训内容和结业岗位。",
+            "items": [
+              {
+                "name": "周宁的轴套",
+                "text": "按课堂图车完。结业后去拱墅机加工厂做车工。",
+                "result": "现做数控车工",
+                "href": "works/shaft.html",
+                "image": "",
+                "imageAlt": "车好的金属轴套放在量具旁"
+              },
+              {
+                "name": "孙磊的配电箱",
+                "text": "回路接完并测了绝缘。结业后去物业做维修电工。",
+                "result": "现做维修电工",
+                "href": "works/panel.html",
+                "image": "",
+                "imageAlt": "打开门的实训配电箱"
+              },
+              {
+                "name": "吴迪的焊缝",
+                "text": "平焊试板没有烧穿。结业后去钢结构厂做焊工。",
+                "result": "现做焊工",
+                "href": "works/seam.html",
+                "image": "",
+                "imageAlt": "钢板上的一条平焊缝"
+              },
+              {
+                "name": "郑凯的零件图",
+                "text": "轴套图标注改完。结业后去机械厂做制图。",
+                "result": "现做制图员",
+                "href": "works/drawing.html",
+                "image": "",
+                "imageAlt": "屏幕上的轴套零件图"
+              }
+            ]
+          }
+        },
+        {
           "type": "cta-band",
           "variant": "inline",
           "anchor": "book",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "预约试听",
+            "title": "预约试听与课程咨询",
             "lead": "试听不收费。来之前打0571-86904326。",
             "primaryHref": "contact/index.html"
           },
@@ -1085,7 +980,7 @@
             "title": "师资力量",
             "lead": "车工、电工、制图、焊接，都是在岗老师。",
             "collection": "teachers",
-            "pageSize": "3"
+            "pageSize": 9
           }
         },
         {
@@ -1115,7 +1010,8 @@
           "data": {
             "title": "学员风采",
             "lead": "工件是课堂作业，岗位是结业后的去向。",
-            "collection": "works"
+            "collection": "works",
+            "pageSize": 9
           }
         },
         {
@@ -1146,7 +1042,7 @@
             "title": "招生资讯",
             "lead": "报名、考证和开班通知。",
             "collection": "news",
-            "pageSize": "3"
+            "pageSize": 9
           }
         },
         {
@@ -1175,7 +1071,7 @@
           "tone": "light",
           "data": {
             "title": "预约试听",
-            "lead": "电话、地址和二维码都在这里。",
+            "lead": "校区地址、联系电话和试听安排。",
             "qrs": [
               {
                 "image": "qr-advisor",
@@ -1189,17 +1085,6 @@
               }
             ]
           }
-        },
-        {
-          "type": "inquiry",
-          "variant": "note",
-          "anchor": "note",
-          "tone": "dark",
-          "data": {
-            "title": "留言预约",
-            "lead": "留下姓名和想学的工种，顾问会回电话。"
-          },
-          "bg": "bg-book"
         }
       ]
     }

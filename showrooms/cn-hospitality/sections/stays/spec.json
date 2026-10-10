@@ -66,7 +66,13 @@
       "imageField": "items.image",
       "family": "lodging",
       "fit": "四列房卡，图下写面积、床、人数和参考价",
-      "fallback": "omit"
+      "fallback": "text-list"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "room-comparison",
+      "fit": "无照片时保留业务、规格和联系信息",
+      "source": "样板间自写"
     }
   }
 }

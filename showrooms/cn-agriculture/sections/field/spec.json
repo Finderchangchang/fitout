@@ -1,19 +1,47 @@
 {
   "note": "产地说明。land 用横图，keeper 用竖图，两套比例不混在一个版式里。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
-    "text": { "type": "string", "required": true, "maxChars": 80 },
-    "linkLabel": { "type": "string", "required": false, "maxChars": 8 },
-    "href": { "type": "string", "required": false, "maxChars": 200 },
-    "image": { "type": "image", "required": true, "maxChars": 200 },
-    "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
+    "text": {
+      "type": "string",
+      "required": true,
+      "maxChars": 80
+    },
+    "linkLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
+    },
+    "href": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "image": {
+      "type": "image",
+      "required": true,
+      "maxChars": 200
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true,
+      "maxChars": 30
+    }
   },
   "variants": {
     "land": {
       "needsImage": true,
       "imageField": "image",
-      "fallback": "land",
+      "fallback": "text-list",
       "family": "field",
       "fit": "横图配田块说明",
       "source": "样板间自写"
@@ -21,9 +49,15 @@
     "keeper": {
       "needsImage": true,
       "imageField": "image",
-      "fallback": "keeper",
+      "fallback": "text-list",
       "family": "field",
       "fit": "竖图配库管侧影",
+      "source": "样板间自写"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "prose",
+      "fit": "无照片时保留业务、规格和联系信息",
       "source": "样板间自写"
     }
   }

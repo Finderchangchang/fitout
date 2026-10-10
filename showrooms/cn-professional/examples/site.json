@@ -22,8 +22,6 @@
         "time": "09:30-12:00"
       }
     ],
-    "formUrl": "https://example.com/qingzhuan-visit",
-    "icp": "浙ICP备2026140837号",
     "qrcodes": [
       {
         "image": "qr-office",
@@ -75,8 +73,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "青砖律师事务所（虚构）｜清吟街",
-      "description": "杭州清吟街律师事务所。公司、劳动、合同、婚姻家事。咨询电话 0571-8688-2146。",
+      "title": "青砖律师事务所（虚构）｜公司与家事法律服务",
+      "description": "杭州清吟街，办理公司、劳动、合同、婚姻家事与财税业务。",
       "sections": [
         {
           "type": "hero",
@@ -85,8 +83,8 @@
           "tone": "image",
           "data": {
             "label": "清吟街27号",
-            "title": "公司劳动家事，找律师团队",
-            "lead": "股权、解除、离婚和合同争议，可以先约一次面谈。",
+            "title": "公司与家事法律服务",
+            "lead": "杭州清吟街，办理公司、劳动、合同、婚姻家事与财税业务。",
             "primaryLabel": "电话咨询",
             "primaryHref": "tel:057186882146",
             "secondaryLabel": "看服务项目",
@@ -96,58 +94,29 @@
               {
                 "image": "hero-gate",
                 "imageAlt": "青砖门廊的石阶局部",
-                "title": "公司劳动家事，找律师团队",
-                "lead": "股权、解除、离婚和合同争议，可以先约一次面谈。"
+                "title": "公司与家事法律服务",
+                "lead": "了解业务范围和律师团队，再预约面谈。"
               },
               {
                 "image": "hero-room",
                 "imageAlt": "空会客桌和木椅的侧光",
-                "title": "见面先把材料带齐",
-                "lead": "股权请带执照和最近一次股东会决议。"
+                "title": "公司法律与股权事务",
+                "lead": "面谈前准备营业执照、章程和相关决议。"
               },
               {
                 "image": "hero-shelf",
                 "imageAlt": "木架上的卷宗盒脊",
-                "title": "旧案卷宗按年可查",
-                "lead": "会客室旁的木架上，卷宗按年排好。"
+                "title": "材料与案件管理",
+                "lead": "卷宗按年归档，委托流程可在服务页查看。"
               },
               {
                 "image": "hero-desk",
                 "imageAlt": "案头的书页、钢笔和法槌",
-                "title": "面谈之前先约时间",
-                "lead": "股权、解除、离婚和合同，先约一次面谈。"
+                "title": "预约面谈",
+                "lead": "先说明争议类型与现有材料，确认时间后到所。"
               }
             ]
           }
-        },
-        {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "dark",
-          "data": {
-            "title": "律所数据",
-            "lead": "截至 2026 年 3 月的所内统计。",
-            "items": [
-              {
-                "value": "28 年",
-                "label": "开业年限"
-              },
-              {
-                "value": "27 人",
-                "label": "执业律师"
-              },
-              {
-                "value": "146 件",
-                "label": "去年结案"
-              },
-              {
-                "value": "6 项",
-                "label": "专业领域"
-              }
-            ]
-          },
-          "bg": "bg-numbers"
         },
         {
           "type": "services",
@@ -155,7 +124,7 @@
           "anchor": "practice",
           "tone": "light",
           "data": {
-            "title": "专业领域",
+            "title": "业务范围",
             "lead": "公司、劳动、合同、婚姻家事，记账和税务也在本所办理。",
             "items": [
               {
@@ -212,36 +181,12 @@
           }
         },
         {
-          "type": "why",
-          "variant": "dossier",
-          "anchor": "method",
-          "tone": "light",
-          "data": {
-            "title": "委托流程",
-            "lead": "先电话沟通，见面后再出书面报价。",
-            "items": [
-              {
-                "name": "电话沟通",
-                "text": "打 0571-8688-2146，说明是公司、劳动还是家事。"
-              },
-              {
-                "name": "预约面谈",
-                "text": "到清吟街 27 号，或约在您公司的会议室。"
-              },
-              {
-                "name": "签订委托",
-                "text": "按件或按小时报价，签了委托合同再办理。"
-              }
-            ]
-          }
-        },
-        {
           "type": "team",
           "variant": "bench",
           "anchor": "people",
           "tone": "dark",
           "data": {
-            "title": "律师团队",
+            "title": "律师与财税团队",
             "lead": "执业律师27人，税务顾问4人。页上常驻六位。",
             "items": [
               {
@@ -306,7 +251,7 @@
               }
             ]
           },
-          "bg": "bg-team"
+          "bg": "band-yard"
         },
         {
           "type": "cases",
@@ -314,8 +259,8 @@
           "anchor": "matters",
           "tone": "light",
           "data": {
-            "title": "典型案例",
-            "lead": "去年146件，本页三件，案例页四件。",
+            "title": "案例与办理过程",
+            "lead": "展示已公开的争议背景、办理过程与结果。",
             "items": [
               {
                 "year": "2025",
@@ -348,34 +293,36 @@
           }
         },
         {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "yard",
-          "tone": "image",
+          "type": "why",
+          "variant": "dossier",
+          "anchor": "method",
+          "tone": "dark",
           "data": {
-            "image": "band-yard",
-            "imageAlt": "青砖院门口的石阶",
-            "caption": "本所在杭州清吟街 27 号，进门即是会客室。"
-          }
-        },
-        {
-          "type": "collection-list",
-          "variant": "briefs",
-          "anchor": "notes",
-          "tone": "light",
-          "data": {
-            "title": "法律知识",
-            "lead": "最近四篇：年报、章程、解除和押金。",
-            "collection": "news"
+            "title": "咨询与委托流程",
+            "lead": "先电话沟通，见面后再出书面报价。",
+            "items": [
+              {
+                "name": "电话沟通",
+                "text": "打 0571-8688-2146，说明是公司、劳动还是家事。"
+              },
+              {
+                "name": "预约面谈",
+                "text": "到清吟街 27 号，或约在您公司的会议室。"
+              },
+              {
+                "name": "签订委托",
+                "text": "按件或按小时报价，签了委托合同再办理。"
+              }
+            ]
           }
         },
         {
           "type": "cta-band",
           "variant": "inline",
           "anchor": "call",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "欢迎来电咨询",
+            "title": "预约法律咨询",
             "lead": "0571-8688-2146，工作日 9:00 至 18:00 有人接听。",
             "primaryHref": "tel:057186882146"
           },
@@ -549,7 +496,7 @@
             "title": "专业领域",
             "lead": "律师业务见面报价，记账和税务写明起步价。",
             "collection": "services",
-            "pageSize": "4"
+            "pageSize": 9
           }
         }
       ]
@@ -577,7 +524,7 @@
             "title": "律师团队",
             "lead": "执业律师27人，税务顾问4人。页上常驻六位。",
             "collection": "team",
-            "pageSize": "3"
+            "pageSize": 9
           }
         }
       ]
@@ -605,7 +552,7 @@
             "title": "典型案例",
             "lead": "去年结案146件，本页公开四件。",
             "collection": "cases",
-            "pageSize": "3"
+            "pageSize": 9
           }
         }
       ]
@@ -633,7 +580,7 @@
             "title": "法律知识",
             "lead": "按发布日期排列，写给客户看。",
             "collection": "news",
-            "pageSize": "3"
+            "pageSize": 9
           }
         }
       ]

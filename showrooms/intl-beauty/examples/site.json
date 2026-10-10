@@ -26,8 +26,6 @@
         "time": "休息"
       }
     ],
-    "formUrl": "https://example.com/chengshi-visit",
-    "icp": "浙ICP备2026101846号",
     "qrcodes": [
       {
         "image": "qr-wechat",
@@ -83,8 +81,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "澄石美学会（虚构）｜龙井路18号",
-      "description": "龙井路18号。剪染、面部清洁、肩颈和身体放松。",
+      "title": "澄石美学会（虚构）｜剪染造型与日常护理",
+      "description": "杭州龙井路，提供剪染、面部清洁、肩颈及身体放松，按项目预约。",
       "sections": [
         {
           "type": "hero",
@@ -93,8 +91,8 @@
           "tone": "image",
           "data": {
             "label": "西湖边的店",
-            "title": "进门先坐下，再看手艺",
-            "lead": "龙井路18号。剪染、面部清洁、肩颈和身体放松。",
+            "title": "剪染造型与日常护理",
+            "lead": "杭州龙井路，提供剪染、面部清洁、肩颈及身体放松，按项目预约。",
             "primaryLabel": "预约到店",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "看服务项目",
@@ -102,92 +100,31 @@
             "interval": "4500",
             "slides": [
               {
-                "image": "hero-basin",
-                "imageAlt": "洗手台上的铜龙头",
-                "title": "进门先坐下，再看手艺",
-                "lead": "龙井路18号。先坐下，再看这一剪。"
+                "image": "hero-chair",
+                "imageAlt": "剪发座椅与工作区域",
+                "title": "剪染造型与日常护理",
+                "lead": "项目页列明服务内容、时长和价格。"
               },
               {
                 "image": "hero-linen",
                 "imageAlt": "叠好的本色毛巾",
-                "title": "毛巾叠好，再请你坐",
-                "lead": "毛巾是本色的，手也先洗干净。"
-              },
-              {
-                "image": "hero-chair",
-                "imageAlt": "理发椅的皮革和金属脚",
-                "title": "椅子转过来，开始剪",
-                "lead": "剪和染，都在这把椅子上。"
+                "title": "护理与到店准备",
+                "lead": "预约后到店，护理用品由店内准备。"
               },
               {
                 "image": "hero-oil",
                 "imageAlt": "木托盘上的油瓶",
-                "title": "肩颈放松，做完再走",
-                "lead": "面部清洁、肩颈和身体放松。"
+                "title": "肩颈与身体放松",
+                "lead": "按项目选择，季卡和年卡不含剪染。"
               },
               {
                 "image": "hero-comb",
                 "imageAlt": "石台上的梳子和剪刀",
-                "title": "梳子和剪刀，先给你看",
-                "lead": "进门就能看见梳子和剪刀。"
+                "title": "预约到店",
+                "lead": "周末请提前一天预约，周一休息。"
               }
             ]
           }
-        },
-        {
-          "type": "why",
-          "variant": "points",
-          "anchor": "before",
-          "tone": "light",
-          "data": {
-            "label": "进门之后",
-            "title": "来之前先知道",
-            "lead": "三件事，店里都照做。",
-            "items": [
-              {
-                "name": "先预约",
-                "text": "周六和周日要前一天说好。"
-              },
-              {
-                "name": "进门",
-                "text": "地址在龙井路18号。"
-              },
-              {
-                "name": "按价目做",
-                "text": "项目页的价格就是店里的价格。"
-              }
-            ]
-          }
-        },
-        {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "dark",
-          "data": {
-            "label": "四个数",
-            "title": "店里这几个数",
-            "lead": "2016年开业。五位手艺人，四间护理室，八个项目。",
-            "items": [
-              {
-                "value": "2016",
-                "label": "开业年份"
-              },
-              {
-                "value": "5",
-                "label": "位手艺人"
-              },
-              {
-                "value": "4",
-                "label": "间护理室"
-              },
-              {
-                "value": "8",
-                "label": "个在册项目"
-              }
-            ]
-          },
-          "bg": "bg-basin"
         },
         {
           "type": "services",
@@ -196,7 +133,7 @@
           "tone": "light",
           "data": {
             "label": "在册项目",
-            "title": "常做的六项",
+            "title": "服务与价目",
             "lead": "店里一共八项。这一页列六项，头皮清洁和手足护理在项目页。",
             "items": [
               {
@@ -251,15 +188,33 @@
           }
         },
         {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "street",
-          "tone": "image",
+          "type": "rates",
+          "variant": "columns",
+          "anchor": "plans",
+          "tone": "dark",
           "data": {
-            "image": "band-street",
-            "imageAlt": "白天靠街的店面玻璃",
-            "caption": "靠街这一侧做剪染。"
-          }
+            "label": "价目",
+            "title": "单次与会员方案",
+            "lead": "单次按项目。季卡和年卡不含剪染。",
+            "items": [
+              {
+                "name": "单次",
+                "price": "按项目页",
+                "text": "八个项目各算各的，价在项目页。"
+              },
+              {
+                "name": "季卡",
+                "price": "1680元",
+                "text": "三个月，任选8次面部或身体，不含剪染和头皮清洁。"
+              },
+              {
+                "name": "年卡",
+                "price": "5280元",
+                "text": "十二个月，任选24次，范围和季卡一样。"
+              }
+            ]
+          },
+          "bg": "band-street"
         },
         {
           "type": "team",
@@ -268,7 +223,7 @@
           "tone": "light",
           "data": {
             "label": "坐班的人",
-            "title": "五位都在店里",
+            "title": "到店服务团队",
             "lead": "五位都坐班，没有挂名的人。",
             "items": [
               {
@@ -315,43 +270,14 @@
           }
         },
         {
-          "type": "testimonials",
-          "variant": "grid-cards",
-          "anchor": "voices",
-          "tone": "dark",
-          "data": {
-            "label": "客人原话",
-            "title": "做过的人这么说",
-            "lead": "三句到店之后说的话。",
-            "items": [
-              {
-                "quote": "肩颈做了45分钟，价钱和价目上的218元一样。",
-                "name": "林女士",
-                "role": "客人"
-              },
-              {
-                "quote": "刘海长度是和周晚宁商量的，剪完和说好的一样。",
-                "name": "陈先生",
-                "role": "客人"
-              },
-              {
-                "quote": "面部清洁做完没有加项目，328元就是328元。",
-                "name": "周小姐",
-                "role": "客人"
-              }
-            ]
-          },
-          "bg": "bg-linen"
-        },
-        {
           "type": "cases",
           "variant": "gallery",
           "anchor": "rooms",
-          "tone": "light",
+          "tone": "dark",
           "data": {
             "label": "白天的店",
-            "title": "四张白天的店",
-            "lead": "这四张是白天的店，相册里还有染发区和精油推车。",
+            "title": "门店空间",
+            "lead": "剪发区、护理室与休息区，到店前可以了解空间。",
             "items": [
               {
                 "name": "窗边护理室",
@@ -385,64 +311,12 @@
           }
         },
         {
-          "type": "rates",
-          "variant": "columns",
-          "anchor": "plans",
-          "tone": "dark",
-          "data": {
-            "label": "价目",
-            "title": "会员怎么算",
-            "lead": "单次按项目。季卡和年卡不含剪染。",
-            "items": [
-              {
-                "name": "单次",
-                "price": "按项目页",
-                "text": "八个项目各算各的，价在项目页。"
-              },
-              {
-                "name": "季卡",
-                "price": "1680元",
-                "text": "三个月，任选8次面部或身体，不含剪染和头皮清洁。"
-              },
-              {
-                "name": "年卡",
-                "price": "5280元",
-                "text": "十二个月，任选24次，范围和季卡一样。"
-              }
-            ]
-          },
-          "bg": "bg-oils"
-        },
-        {
-          "type": "faq",
-          "variant": "accordion",
-          "anchor": "questions",
-          "tone": "light",
-          "data": {
-            "title": "到店前先看",
-            "items": [
-              {
-                "q": "周一开门吗",
-                "a": "周一休息。周二至周五 11:00-21:00，周六至周日 10:00-21:00。"
-              },
-              {
-                "q": "周末怎么约",
-                "a": "周六和周日请提前一天。平日有空位可以当天来。"
-              },
-              {
-                "q": "价格会不会变",
-                "a": "项目页上的价格就是店里的价格，不加价。"
-              }
-            ]
-          }
-        },
-        {
           "type": "cta-band",
           "variant": "inline",
           "anchor": "book",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "想来就先预约",
+            "title": "预约服务项目",
             "lead": "周末请提前一天。电话在页头。",
             "primaryHref": "contact/index.html"
           },
@@ -519,7 +393,7 @@
           "tone": "light",
           "data": {
             "label": "四个数",
-            "title": "店里这几个数",
+            "title": "门店概况",
             "lead": "2016年开业。五位手艺人，四间护理室，八个项目。",
             "items": [
               {
@@ -583,7 +457,7 @@
             "title": "在册的项目",
             "lead": "八项都在这里。头皮清洁和手足护理首页没列，价在本页。",
             "collection": "services",
-            "pageSize": 4
+            "pageSize": 9
           }
         },
         {
@@ -617,7 +491,7 @@
             "title": "五位手艺人",
             "lead": "都在店里坐班。",
             "collection": "team",
-            "pageSize": 2
+            "pageSize": 9
           }
         },
         {
@@ -651,7 +525,7 @@
             "title": "店里的六个角落",
             "lead": "相册只拍房间和工具。",
             "collection": "cases",
-            "pageSize": 4
+            "pageSize": 9
           }
         },
         {
@@ -754,7 +628,7 @@
             "title": "店里记事",
             "lead": "放假、换毛巾、周末怎么约。",
             "collection": "news",
-            "pageSize": 2
+            "pageSize": 9
           }
         },
         {

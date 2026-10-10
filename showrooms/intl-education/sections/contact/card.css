@@ -63,6 +63,10 @@
   gap: 0.75rem;
 }
 
+.contact-grid:has(> :only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 /* 右栏：二维码、微信号、复制按钮居中，卡片和左栏等高时上下留白均分。 */
 .contact-code {
   margin: 0;
@@ -85,6 +89,10 @@
   gap: 0.5rem;
 }
 
+.contact-copy .contact-line {
+  justify-content: flex-start;
+}
+
 .contact-code .btn {
   display: flex;
   min-width: 11rem;
@@ -93,5 +101,16 @@
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 1fr);
+  }
+  .contact-grid:has(> :only-child) .contact-copy {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 1.5rem 3rem;
+  }
+  .contact-grid:has(> :only-child) .contact-group + .contact-group {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .contact-grid:has(> :only-child) .contact-actions {
+    grid-column: 1 / -1;
   }
 }

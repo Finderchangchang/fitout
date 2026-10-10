@@ -11,7 +11,8 @@ for (let i = 0; i < args.length; i += 2) {
   ids.push(args[i + 1]);
 }
 let failed = 0;
-for (const id of ids.length ? ids : ["cn-factory", "intl-factory", "cn-dining"]) {
+const showroomIds = JSON.parse(fs.readFileSync(path.join(root, "showrooms", "index.json"), "utf8")).showrooms.map((room) => room.id);
+for (const id of ids.length ? ids : showroomIds) {
   const site = JSON.parse(fs.readFileSync(path.join(root, "showrooms", id, "examples", "site.json"), "utf8"));
   const profile = fs.readFileSync(path.join(root, "examples", "profiles", "showrooms", `${id}.md`), "utf8");
   const errors = auditFacts(site, profile);

@@ -66,12 +66,18 @@
       "imageField": "items.image",
       "family": "picker",
       "fit": "大图加横排缩略",
-      "fallback": "omit"
+      "fallback": "text-list"
     },
     "menu": {
       "needsImage": false,
       "family": "menu",
       "fit": "图文菜单，缺图仍完整显示菜名、说明和价格。"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "text-catalog",
+      "fit": "无照片时保留业务、规格和联系信息",
+      "source": "样板间自写"
     }
   }
 }

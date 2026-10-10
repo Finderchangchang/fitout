@@ -71,14 +71,16 @@
           "required": true,
           "variants": [
             "picker",
-            "menu"
+            "menu",
+            "text-list"
           ]
         },
         {
           "type": "essay",
           "required": false,
           "variants": [
-            "split"
+            "split",
+            "text-list"
           ]
         },
         {
@@ -113,21 +115,24 @@
           "type": "mosaic",
           "required": false,
           "variants": [
-            "quad"
+            "quad",
+            "text-list"
           ]
         },
         {
           "type": "triptych",
           "required": false,
           "variants": [
-            "spread"
+            "spread",
+            "text-list"
           ]
         },
         {
           "type": "briefs",
           "required": false,
           "variants": [
-            "cards"
+            "cards",
+            "text-list"
           ]
         },
         {
@@ -149,7 +154,8 @@
           "type": "essay",
           "required": false,
           "variants": [
-            "split"
+            "split",
+            "text-list"
           ]
         },
         {

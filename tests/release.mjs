@@ -39,6 +39,11 @@ for (const id of ids) {
     console.log(`FAIL  ${id} 拼装  ${built.out.trim().split("\n").slice(0, 3).join(" | ")}`);
     process.exit(1);
   }
+  const checked = await runFile(path.join(root, "scripts", "check.mjs"), [dest], { timeout: 120000 });
+  if (checked.status !== 0) {
+    console.log(`FAIL  ${id} 有图机检\n${checked.out}`);
+    process.exit(1);
+  }
   console.log(`PASS  ${id} 拼装  ${seconds(Date.now() - mark)}`);
   dirs.push(dest);
 }

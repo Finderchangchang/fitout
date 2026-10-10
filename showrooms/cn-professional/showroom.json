@@ -72,24 +72,10 @@
           ]
         },
         {
-          "type": "trust",
-          "required": false,
-          "variants": [
-            "stats"
-          ]
-        },
-        {
           "type": "services",
           "required": true,
           "variants": [
             "rows"
-          ]
-        },
-        {
-          "type": "why",
-          "required": false,
-          "variants": [
-            "dossier"
           ]
         },
         {
@@ -107,17 +93,10 @@
           ]
         },
         {
-          "type": "photo-band",
+          "type": "why",
           "required": false,
           "variants": [
-            "wide"
-          ]
-        },
-        {
-          "type": "collection-list",
-          "required": false,
-          "variants": [
-            "briefs"
+            "dossier"
           ]
         },
         {
@@ -331,5 +310,7 @@
         }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

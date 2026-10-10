@@ -62,6 +62,22 @@
           ]
         },
         {
+          "type": "lots",
+          "required": true,
+          "variants": [
+            "board",
+            "text-list"
+          ]
+        },
+        {
+          "type": "field",
+          "required": false,
+          "variants": [
+            "land",
+            "text-list"
+          ]
+        },
+        {
           "type": "trust",
           "required": false,
           "variants": [
@@ -69,38 +85,10 @@
           ]
         },
         {
-          "type": "lots",
-          "required": true,
-          "variants": [
-            "board"
-          ]
-        },
-        {
-          "type": "photo-band",
-          "required": false,
-          "variants": [
-            "wide"
-          ]
-        },
-        {
-          "type": "field",
-          "required": false,
-          "variants": [
-            "land"
-          ]
-        },
-        {
           "type": "why",
           "required": false,
           "variants": [
             "line"
-          ]
-        },
-        {
-          "type": "collection-list",
-          "required": false,
-          "variants": [
-            "clips"
           ]
         },
         {
@@ -122,7 +110,8 @@
           "type": "field",
           "required": false,
           "variants": [
-            "keeper"
+            "keeper",
+            "text-list"
           ]
         },
         {
@@ -197,7 +186,8 @@
           "type": "stations",
           "required": false,
           "variants": [
-            "rail"
+            "rail",
+            "text-list"
           ]
         }
       ]
@@ -326,5 +316,7 @@
         }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

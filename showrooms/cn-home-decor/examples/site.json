@@ -18,8 +18,6 @@
         "time": "09:00-18:00"
       }
     ],
-    "formUrl": "https://example.com/chengmu-measure",
-    "icp": "浙ICP备20260318号-4",
     "qrcodes": [
       {
         "image": "qr-wechat",
@@ -578,8 +576,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "澄木整装（虚构）｜余杭家装",
-      "description": "良渚的家装和全屋定制。套餐标参考价，以实际量房为准。",
+      "title": "澄木整装（虚构）｜家装与全屋定制",
+      "description": "杭州余杭，提供半包、全包和整装，参考价以实际量房为准。",
       "sections": [
         {
           "type": "hero",
@@ -588,8 +586,8 @@
           "tone": "image",
           "data": {
             "label": "良渚整装",
-            "title": "先量房再开口价",
-            "lead": "半包、全包、整装都写参考价，以实际量房为准。",
+            "title": "家装与全屋定制",
+            "lead": "杭州余杭，提供半包、全包和整装，参考价以实际量房为准。",
             "primaryLabel": "免费量房",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "看看案例",
@@ -597,98 +595,37 @@
             "interval": "4000",
             "slides": [
               {
-                "image": "hero-living",
-                "imageAlt": "浅橡木地板和暖白墙角",
-                "title": "先量房再开口价",
-                "lead": "半包、全包、整装都写参考价，以实际量房为准。"
-              },
-              {
                 "image": "hero-kitchen",
                 "imageAlt": "浅色柜门和台面的接缝",
-                "title": "柜缝对齐再报价",
-                "lead": "浅色柜门和台面的接缝，量完再报柜体。"
+                "title": "家装与全屋定制",
+                "lead": "杭州余杭，提供半包、全包和整装，参考价以实际量房为准。"
+              },
+              {
+                "image": "hero-living",
+                "imageAlt": "浅橡木地板和暖白墙角",
+                "title": "客厅与整装方案",
+                "lead": "量房后确认平面布局、套餐范围与报价。"
               },
               {
                 "image": "hero-showroom",
                 "imageAlt": "并排木门的暖白墙面",
-                "title": "木门靠墙对色",
-                "lead": "几扇门并排看色差，当天指给你。"
+                "title": "材料与木门选样",
+                "lead": "到店对照木门样品与颜色。"
               },
               {
                 "image": "hero-site",
                 "imageAlt": "沿墙定位的水电管局部",
-                "title": "管线贴墙再验收",
-                "lead": "水电沿墙定位，验收时对着照片看。"
+                "title": "水电施工与验收",
+                "lead": "管线定位后留存照片，验收结果写进记录。"
               },
               {
                 "image": "hero-roller",
                 "imageAlt": "墙角刚滚过的乳胶漆",
-                "title": "墙面干透再进场",
-                "lead": "乳胶漆滚到墙角，干透再做柜。"
+                "title": "墙面与木作施工",
+                "lead": "墙面施工完成后再安排柜体进场。"
               }
             ]
           }
-        },
-        {
-          "type": "lanes",
-          "variant": "index",
-          "anchor": "paths",
-          "tone": "light",
-          "data": {
-            "title": "先看这四件事",
-            "lead": "量房、套餐、验收和主案，从这里进。",
-            "items": [
-              {
-                "name": "免费量房",
-                "text": "余杭上门，量完再写价",
-                "href": "contact/index.html"
-              },
-              {
-                "name": "套餐报价",
-                "text": "半包全包整装分开标",
-                "href": "packages/index.html"
-              },
-              {
-                "name": "工地验收",
-                "text": "水电木作油漆有节点",
-                "href": "craft/index.html"
-              },
-              {
-                "name": "主案对接",
-                "text": "四位主案对到交房",
-                "href": "designers/index.html"
-              }
-            ]
-          }
-        },
-        {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "dark",
-          "data": {
-            "title": "在册数字",
-            "lead": "这些数记到 2026 年 3 月。",
-            "items": [
-              {
-                "value": "12 年",
-                "label": "余杭做整装"
-              },
-              {
-                "value": "860 户",
-                "label": "余杭已交付"
-              },
-              {
-                "value": "4 位",
-                "label": "在册主案"
-              },
-              {
-                "value": "68 天",
-                "label": "三居参考工期"
-              }
-            ]
-          },
-          "bg": "bg-floor"
         },
         {
           "type": "cases",
@@ -696,24 +633,24 @@
           "anchor": "cases",
           "tone": "light",
           "data": {
-            "title": "完工案例",
+            "title": "装修案例",
             "lead": "先看三套。六套完工房在案例页。",
             "items": [
               {
-                "name": "良渚春漫里",
-                "text": "三室两厅，89㎡，现代，工期 68 天。",
-                "result": "参考价 18.6 万",
-                "href": "projects/chunman.html",
-                "image": "case-chunman",
-                "imageAlt": "春漫里客厅，浅橡木地板和暖白墙"
+                "name": "西溪蝶园",
+                "text": "两室一厅，76㎡，奶油，工期 55 天。",
+                "result": "参考价 14.2 万",
+                "href": "projects/dieyuan.html",
+                "image": "case-dieyuan",
+                "imageAlt": "西溪蝶园卧室，奶油色软包和窗帘"
               },
               {
-                "name": "勾庄云栖",
-                "text": "四室两厅，142㎡，新中式，工期 110 天。",
-                "result": "参考价 41.8 万",
-                "href": "projects/yunqi.html",
-                "image": "case-yunqi",
-                "imageAlt": "勾庄云栖客厅，木格栅和新中式沙发"
+                "name": "闲林南苑",
+                "text": "三室两厅，108㎡，北欧，工期 76 天。",
+                "result": "参考价 22.7 万",
+                "href": "projects/nanyuan.html",
+                "image": "case-nanyuan",
+                "imageAlt": "闲林南苑客厅，浅灰沙发和木色茶几"
               },
               {
                 "name": "仁和雅苑",
@@ -727,23 +664,12 @@
           }
         },
         {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "hall",
-          "tone": "image",
-          "data": {
-            "image": "band-hall",
-            "imageAlt": "港南路展厅一层的样板间连廊",
-            "caption": "良渚展厅一层，样板间按在售套餐搭。"
-          }
-        },
-        {
           "type": "offer",
           "variant": "tiles",
           "anchor": "packages",
-          "tone": "light",
+          "tone": "dark",
           "data": {
-            "title": "装修套餐",
+            "title": "套餐与参考价",
             "lead": "三档都标参考价，以实际量房为准。",
             "items": [
               {
@@ -771,7 +697,8 @@
                 "imageAlt": "整装套餐里的柜门和基础家电"
               }
             ]
-          }
+          },
+          "bg": "band-hall"
         },
         {
           "type": "team",
@@ -779,7 +706,7 @@
           "anchor": "team",
           "tone": "light",
           "data": {
-            "title": "设计团队",
+            "title": "主案设计师",
             "lead": "四位主案，量房之后对到交房。",
             "items": [
               {
@@ -823,7 +750,7 @@
           "anchor": "steps",
           "tone": "dark",
           "data": {
-            "title": "施工怎么走",
+            "title": "设计与施工流程",
             "lead": "从量房到验收，每步在工地留记录。",
             "items": [
               {
@@ -855,27 +782,13 @@
           "bg": "bg-pipe"
         },
         {
-          "type": "collection-list",
-          "variant": "digest",
-          "anchor": "notes",
-          "tone": "light",
-          "data": {
-            "title": "装修知识",
-            "lead": "半包全包、水电、柜子和付款。",
-            "collection": "notes",
-            "moreLabel": "看装修知识",
-            "moreHref": "notes/index.html",
-            "pageSize": 3
-          }
-        },
-        {
           "type": "cta-band",
           "variant": "simple",
           "anchor": "book",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "约一次免费量房",
-            "lead": "电话或留言都行。报价写参考价，以实际量房为准。",
+            "title": "预约免费量房",
+            "lead": "电话或微信预约量房，报价以实际量房为准。",
             "primaryHref": "contact/index.html"
           },
           "bg": "bg-sample"
@@ -1013,7 +926,7 @@
             "title": "装修案例",
             "lead": "参考价，以实际量房为准。西溪蝶园是外区。",
             "collection": "projects",
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]
@@ -1040,7 +953,7 @@
             "title": "设计团队",
             "lead": "量房之后由主案对到交房。",
             "collection": "designers",
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]
@@ -1067,7 +980,7 @@
             "title": "装修套餐",
             "lead": "三档参考价，以实际量房为准。",
             "collection": "packages",
-            "pageSize": 2
+            "pageSize": 9
           }
         }
       ]
@@ -1209,7 +1122,7 @@
             "title": "装修知识",
             "lead": "四篇短文，写选择和验收。",
             "collection": "notes",
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]

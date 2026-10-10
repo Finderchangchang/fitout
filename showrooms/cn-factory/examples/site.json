@@ -22,8 +22,6 @@
         "time": "08:00-11:30"
       }
     ],
-    "formUrl": "https://example.com/ningpu-inquiry",
-    "icp": "浙ICP备20260915号-6",
     "qrcodes": [
       {
         "image": "qr-wechat",
@@ -940,7 +938,7 @@
     {
       "id": "contact",
       "title": "联系我们｜宁浦精工（虚构）",
-      "description": "询价请打电话，或把图纸发到留言里。工作日回复。",
+      "description": "询价可打电话，或把图纸发到邮箱。工作日回复。",
       "banner": "banner",
       "bannerAlt": "振业路厂门外的门牌和停车空地",
       "crumbs": [

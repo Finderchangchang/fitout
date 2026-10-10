@@ -13,9 +13,15 @@
     "form": "在线留言"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -58,17 +64,48 @@
       "kind": "home",
       "optional": false,
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel"] },
-        { "type": "why", "required": false, "variants": ["points"] },
-        { "type": "trust", "required": false, "variants": ["stats"] },
-        { "type": "services", "required": true, "variants": ["rows"] },
-        { "type": "photo-band", "required": false, "variants": ["wide"] },
-        { "type": "team", "required": false, "variants": ["cards"] },
-        { "type": "testimonials", "required": false, "variants": ["grid-cards"] },
-        { "type": "cases", "required": false, "variants": ["gallery"] },
-        { "type": "rates", "required": false, "variants": ["columns"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel"
+          ]
+        },
+        {
+          "type": "services",
+          "required": true,
+          "variants": [
+            "rows"
+          ]
+        },
+        {
+          "type": "rates",
+          "required": false,
+          "variants": [
+            "columns"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -77,11 +114,41 @@
       "kind": "about",
       "optional": false,
       "order": [
-        { "type": "why", "required": false, "variants": ["points"] },
-        { "type": "years", "required": false, "variants": ["rail"] },
-        { "type": "trust", "required": false, "variants": ["stats"] },
-        { "type": "photo-band", "required": false, "variants": ["wide"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "points"
+          ]
+        },
+        {
+          "type": "years",
+          "required": false,
+          "variants": [
+            "rail"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "photo-band",
+          "required": false,
+          "variants": [
+            "wide"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -90,8 +157,20 @@
       "kind": "list",
       "optional": false,
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["menu"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "menu"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -101,8 +180,20 @@
       "optional": false,
       "from": "services",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -111,10 +202,26 @@
       "kind": "team",
       "optional": true,
       "when": "档案里有可以放上姓名的美容师、发型师或理疗师。精品健身房复用时改成教练，精品餐厅复用时改成主厨。没有可公开的真人就关掉。",
-      "deny": ["没有团队", "没有真人", "不公开人员"],
+      "deny": [
+        "没有团队",
+        "没有真人",
+        "不公开人员"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["people"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "people"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -125,8 +232,20 @@
       "when": "手艺人页开着，并且有对应的人。列表关掉就不生成。",
       "from": "team",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -135,10 +254,26 @@
       "kind": "list",
       "optional": true,
       "when": "有可以公开的环境或作品照片。不要放医疗前后对比，也不要把客人正脸当成案例。没有照片就关掉。精品健身房放训练区，精品餐厅放座位和出餐口。",
-      "deny": ["没有相册", "没有环境照片", "没有作品"],
+      "deny": [
+        "没有相册",
+        "没有环境照片",
+        "没有作品"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["shots"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "shots"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -149,7 +284,13 @@
       "when": "相册开着，并且有对应的一张。列表关掉就不生成。",
       "from": "cases",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -158,11 +299,33 @@
       "kind": "list",
       "optional": true,
       "when": "店里有会员、次卡或套餐。只卖单次就关掉。精品健身房复用时写成会员档，精品餐厅复用时写成套餐价目。",
-      "deny": ["没有会员", "没有套餐", "只卖单次"],
+      "deny": [
+        "没有会员",
+        "没有套餐",
+        "只卖单次"
+      ],
       "order": [
-        { "type": "rates", "required": true, "variants": ["columns"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "rates",
+          "required": true,
+          "variants": [
+            "columns"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -171,10 +334,26 @@
       "kind": "news-list",
       "optional": true,
       "when": "有可以单独成篇的店内记事，例如放假、换供应商、预约规则。不发记事就关掉。",
-      "deny": ["没有新闻", "没有动态", "不发新闻"],
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["notes"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "notes"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -185,8 +364,20 @@
       "when": "记事列表开着，并且有对应的一篇。列表关掉就不生成。",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -195,9 +386,23 @@
       "kind": "contact",
       "optional": false,
       "order": [
-        { "type": "contact", "required": true, "variants": ["visit"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "visit"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

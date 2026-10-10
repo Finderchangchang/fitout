@@ -1,0 +1,10 @@
+.plain-rooms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.plain-room { border: 1px solid var(--border); padding: 1.5rem; background: var(--surface); color: var(--text); }
+.plain-room h3 { margin: 0 0 1rem; }
+.plain-room a { color: inherit; }
+.plain-room > a { display: inline-flex; align-items: center; min-height: 44px; }
+.plain-room dl { margin: 0; }
+.plain-room dl > div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; padding-block: 0.4rem; }
+.plain-room dt { color: var(--text-muted); }
+.plain-room .plain-price { margin: 1rem 0; }
+@media (max-width: 767px) { .plain-rooms { grid-template-columns: 1fr; } }

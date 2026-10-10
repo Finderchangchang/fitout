@@ -1,18 +1,42 @@
 {
   "note": "优势。图在左，编号列表在右，用单选切换照片。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 1,
       "max": 4,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 16 },
-        "text": { "type": "string", "required": true, "maxChars": 40 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
@@ -21,6 +45,12 @@
       "needsImage": false,
       "family": "switcher",
       "fit": "左图右编号列表",
+      "source": "样板间自写"
+    },
+    "points": {
+      "needsImage": false,
+      "family": "points",
+      "fit": "文字优势清单；图片可无",
       "source": "样板间自写"
     }
   }

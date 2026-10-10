@@ -1,4 +1,4 @@
-/** 三套标杆的真实回归：分类分页、英文、照片来源、事实、无图文字。 */
+/** 企业站回归：分类分页、英文、照片来源、事实、无图文字。 */
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -27,7 +27,7 @@ expect("14 套可由主命令选择", catalog.length === 14 && catalog.some((roo
 expect("中文档案能推荐英文外贸", rankShowrooms({ industry: "外贸工厂", intro: "按图制造零部件出口" }, catalog)[0]?.id === "intl-factory");
 expect("英文选型仍优先匹配行业", rankShowrooms({ industry: "口腔诊所", intro: "洗牙和补牙" }, catalog, "en")[0]?.id === "cn-medical");
 
-for (const id of ["cn-factory", "intl-factory", "cn-dining"]) {
+for (const { id } of catalog) {
   expect(`${id} 事实`, auditFacts(readSite(id), fs.readFileSync(profilePath(id), "utf8")).length === 0);
 }
 const changed = readSite("cn-factory");
@@ -101,6 +101,32 @@ try {
   await page.waitForURL(/category/);
   expect("旧分类锚点兼容", await page.locator("main article").count() === 1 && page.url().includes("category"));
 
+  const carousel = readSite("cn-factory");
+  const hero = carousel.pages.find((p) => p.id === "home").sections.find((s) => s.type === "hero").data;
+  hero.slides[1].primaryLabel = "查看折弯产品";
+  hero.slides[1].primaryHref = "products/frame.html";
+  hero.slides[1].secondaryLabel = "联系我们";
+  hero.slides[1].secondaryHref = "contact/index.html";
+  const carouselImages = path.join(work, "carousel-images");
+  fs.mkdirSync(carouselImages, { recursive: true });
+  for (const slide of hero.slides.slice(0, 3)) fs.writeFileSync(path.join(carouselImages, slide.image + ".svg"), '<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900"><rect width="1440" height="900" fill="#142733"/></svg>');
+  const carouselInput = path.join(work, "carousel.json"), carouselOut = path.join(work, "carousel");
+  fs.writeFileSync(carouselInput, JSON.stringify(carousel));
+  const carouselBuild = run("scripts/build.mjs", [carouselInput, "--images", carouselImages, "--site-dir", carouselOut]);
+  expect("轮播按钮构建", carouselBuild.status === 0);
+  await page.goto(pathToFileURL(path.join(carouselOut, "index.html")).href);
+  expect("轮播只输出一组按钮", await page.locator("[data-carousel] .btn-primary").count() === 1 && await page.locator("[data-carousel] .btn").count() <= 2);
+  await page.locator("[data-carousel-next]").click();
+  expect("轮播按钮随当前页更新", (await page.locator("[data-hero-copy].is-current .btn-primary").textContent()) === "查看折弯产品" && (await page.locator("[data-hero-copy].is-current .btn-primary").getAttribute("href")) === "products/frame.html");
+  expect("轮播二级按钮随当前页更新", (await page.locator("[data-hero-copy].is-current .btn:not(.btn-primary)").getAttribute("href")) === "contact/index.html");
+  fs.writeFileSync(path.join(carouselImages, "qr-wechat.svg"), '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#111"/></svg>');
+  const demoClients = path.join(work, "demo-clients");
+  const demoClientBuild = run("scripts/build.mjs", [carouselInput, "--demo-images", carouselImages, "--site-dir", demoClients]);
+  expect("演示图库不冒充客户材料", demoClientBuild.status === 0 && !fs.existsSync(path.join(demoClients, "images", "qr-wechat.svg")));
+  const realClients = path.join(work, "provided-clients");
+  const realClientBuild = run("scripts/build.mjs", [carouselInput, "--images", carouselImages, "--site-dir", realClients]);
+  expect("正式素材仍可使用客户文件", realClientBuild.status === 0 && fs.existsSync(path.join(realClients, "images", "qr-wechat.svg")));
+
   for (const id of ["cn-factory", "intl-factory", "cn-dining"]) {
     const siteDir = path.join(work, id);
     const result = run("scripts/build.mjs", [path.join(root, "showrooms", id, "examples", "site.json"), "--site-dir", siteDir]);
@@ -109,7 +135,7 @@ try {
     const contrast = await page.evaluate(() => {
       function rgb(value) { const m = value.match(/[\d.]+/g); return m ? m.slice(0, 3).map(Number) : [255, 255, 255]; }
       function lum(c) { return c.map((v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }).reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0); }
-      const elements = [...document.querySelectorAll(".stat-value, .stat dt, .step p, .essay .prose, .use-card p")];
+      const elements = [...document.querySelectorAll('.stat-value, .stat dt, .step p, .essay .prose, .plain-intro p, [data-section="tasting"] p, .use-card p')];
       return elements.map((el) => {
         let ancestor = el;
         let bg = "rgb(255,255,255)";
@@ -120,6 +146,12 @@ try {
     });
     expect(`${id} 无图正文可读`, contrast.length > 0 && contrast.every((item) => item.ratio >= 4.5), contrast.filter((item) => item.ratio < 4.5).map((item) => `${item.text} ${item.ratio.toFixed(2)}`).join("；"));
     expect(`${id} 缺素材不留占位`, await page.locator("img").count() === 0 && !(await page.locator("body").textContent()).includes("上线前替换"));
+    if (id === "cn-factory" || id === "intl-factory") {
+      await page.locator(".business-hero-topics a").first().click();
+      const firstProduct = readSite(id).collections.products[0];
+      expect(`${id} 无图首屏进入产品详情`, (await page.locator("h1").textContent()).includes(firstProduct.name) && (await page.locator("header .is-current").first().textContent()).includes(id === "cn-factory" ? "产品" : "Products"));
+      await page.goto(pathToFileURL(path.join(siteDir, "index.html")).href);
+    }
     if (id === "intl-factory") {
       await page.setViewportSize({ width: 768, height: 900 });
       await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
@@ -139,6 +171,33 @@ try {
         expect(`英文无图 ${file} 不留大字母占位`, await page.locator(".media-card-fallback").count() === 0);
       }
     }
+  }
+  for (const { id } of catalog.filter((room) => !["cn-factory", "intl-factory", "cn-dining"].includes(room.id))) {
+    const site = readSite(id);
+    const siteDir = path.join(work, id);
+    const result = run("scripts/build.mjs", [path.join(root, "showrooms", id, "examples", "site.json"), "--site-dir", siteDir]);
+    expect(`${id} 无图构建`, result.status === 0);
+    await page.goto(pathToFileURL(path.join(siteDir, "index.html")).href);
+    const firstCatalog = site.pages.find((p) => p.id === "home").sections.find((s) => Array.isArray(s.data.items) && s.data.items.some((item) => item.name));
+    const text = await page.locator("main").textContent();
+    expect(`${id} 无图仍保留主要业务`, firstCatalog.data.items.every((item) => text.includes(item.name)));
+    const textVariant = { "cn-agriculture": "lots", "cn-auto": "services", "cn-hospitality": "stays", "cn-medical": "services" }[id];
+    if (textVariant) {
+      const report = JSON.parse(fs.readFileSync(path.join(siteDir, "build-report.json"), "utf8"));
+      expect(`${id} 使用专门的无图目录`, report.fallbacks.some((line) => line.startsWith(textVariant + "：") && line.includes("改用 text-list")));
+    }
+    const contrast = await page.evaluate(() => {
+      function rgb(value) { return (value.match(/[\d.]+/g) || [255, 255, 255]).slice(0, 3).map(Number); }
+      function lum(c) { return c.map((v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }).reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0); }
+      return [...document.querySelectorAll("main [data-section] p, main [data-section] h3, main [data-section] dt")].filter((el) => el.getBoundingClientRect().width && el.getBoundingClientRect().height).map((el) => {
+        let ancestor = el; let bg = "rgb(255,255,255)";
+        while (ancestor) { const color = getComputedStyle(ancestor).backgroundColor; if (!/rgba\([^)]*,\s*0\)$/.test(color) && color !== "transparent") { bg = color; break; } ancestor = ancestor.parentElement; }
+        const a = lum(rgb(getComputedStyle(el).color)), b = lum(rgb(bg));
+        return { text: el.textContent.trim().slice(0, 30), ratio: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) };
+      });
+    });
+    expect(`${id} 无图正文可读`, contrast.length > 0 && contrast.every((item) => item.ratio >= 4.5), contrast.filter((item) => item.ratio < 4.5).slice(0, 5).map((item) => `${item.text} ${item.ratio.toFixed(2)}`).join("；"));
+    expect(`${id} 缺素材不留占位`, await page.locator("img").count() === 0 && !(await page.locator("body").textContent()).includes("上线前替换"));
   }
   await page.close();
 } finally { await browser.close(); }

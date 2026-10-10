@@ -230,8 +230,12 @@ node scripts/check-visual.mjs out/<site id>
 
 视觉检查需要本机已有的 Playwright。`PLAYWRIGHT_PATH` 指到入口文件（`.../playwright/index.mjs`）或指到包目录（`.../playwright`）都行，指到目录时自动找里面的 `index.mjs`；没设置就按 Node 正常的模块解析找 `playwright`。没有时它打印「跳过」并退出 0。除了下面这些，每个页面、每个宽度还会跑版式检查 L1 到 L22（面包屑基线、页脚空白、图标间距、占位图字号、小字、内部键名、文字被裁、按钮列宽、联系区栏高、同行顶边、左缘对齐、网格末行孤儿卡、半宽空白板块、统计数字基线、页头文字被截断、竖版人像被横幅裁脸、页头与正文同图、中文末行孤字……），列表和阈值见 `docs/FRAMEWORK.md`。`--layout-only` 只跑版式检查，`--page`、`--widths` 缩小范围。它会先把页面收到确定状态：Playwright 开减少动效，并给 `<html>` 加上 `data-fitout-check="settle"`。轮播不自动翻，入场和数字直接到终值。悬浮条按桌面 / 手机规则摆（1024 及以上首屏不显示，滚过一屏再出现；更窄的贴底）。首屏轮播每一张都点开查图上文字，不过的那张会写第几张。另外会在允许动效时立刻量首页和一页内页：首屏标题、按钮和内页 Banner 的 opacity 必须是 1。
 
-## 三套企业站版式
+## 企业站版式与公开预览
 
-layout: business 标识经过本轮重组的三套：首页按客户的决策顺序组织，内页先进入内容，无图版重排文字。missingClientImages: omit 会收起缺文件的客户二维码和证书；其他样板间沿用原演示占位行为。
+14 套正式样板间均使用 layout: business：首页按客户的决策顺序组织，内页先进入内容，无图版重排文字。missingClientImages: omit 会收起缺文件的客户二维码和证书。
+
+需要照片的服务、房型、产品和企业介绍使用专门的 text-list 降级版式，缺图时保留业务内容。纯装饰图片带仍省略。人物照片和客户材料的来源限制保持。
+
+scripts/build-preview.mjs 构建可公开的样板间目录与 14 套无图库网站。示例事实来自 examples/profiles/showrooms/，企业及联系方式为虚构；演示照片始终留在仓库外。
 
 catalog-preview 是产品或门店导读，支持 moreHref、moreLabel；缺图时是文字列表。cn-dining 的 tasting/menu 同时适用于有图和无图菜单。配色主色保持原 token。

@@ -1,0 +1,421 @@
+# 南栈技能学校（虚构） · 虚构演示企业档案
+
+仅用于样板间演示，不对应真实企业。来源：v0.6.0 的示例内容，事实不随版式改写。重复的宣传句不构成新事实；现有数值只在相应业务语境中使用。
+
+- `contact.phone`：0571-86904326
+- `contact.wechat`：nanzhan-skill
+- `contact.wechatQr`：qr-advisor
+- `contact.email`：hello@nanzhan.example
+- `contact.address`：杭州市拱墅区石桥路 86 号（虚构地址）
+- `contact.hours[0].day`：周一至周五
+- `contact.hours[0].time`：9:00-20:30
+- `contact.hours[1].day`：周六
+- `contact.hours[1].time`：9:00-17:00
+- `contact.formUrl`：https://example.com/forms/nanzhan-trial
+- `contact.icp`：浙ICP备20918463号
+- `contact.qrcodes[0].label`：学校公众号
+- `contact.qrcodes[1].label`：课程顾问
+- `name`：南栈技能学校（虚构）
+- `summary`：拱墅石桥路的职业技能学校，六门工种课白天和晚班都开。
+- `pages.home.title`：南栈技能学校（虚构）
+- `pages.home.description`：杭州拱墅石桥路的职业技能学校，六门工种课白天和晚班都开。
+- `pages.home.hero.label`：石桥路校区
+- `pages.home.hero.title`：学会技术，好找工作
+- `pages.home.hero.lead`：六门课在开，白天和晚班都有。
+- `pages.home.hero.primaryLabel`：预约试听
+- `pages.home.hero.secondaryLabel`：看课程
+- `pages.home.hero.slides[0].title`：学会技术，好找工作
+- `pages.home.hero.slides[0].lead`：六门课在开，白天和晚班都有。
+- `pages.home.hero.slides[1].title`：晚班也能上车床
+- `pages.home.hero.slides[1].lead`：数控车工96课时，学费7,860元，可考中级工。
+- `pages.home.hero.slides[2].title`：周六上午来看车间
+- `pages.home.hero.slides[2].lead`：周六上午开放车间，可以当场预约试听。
+- `pages.home.hero.slides[3].title`：看懂图纸再上车
+- `pages.home.hero.slides[3].lead`：机械制图48课时，图改完才送去车床。
+- `pages.home.trust.title`：办学实力
+- `pages.home.trust.lead`：2009年开办，校区在拱墅石桥路。
+- `pages.home.trust.items[0].value`：2009
+- `pages.home.trust.items[0].label`：开办年份
+- `pages.home.trust.items[1].value`：4
+- `pages.home.trust.items[1].label`：在岗老师
+- `pages.home.trust.items[2].value`：6
+- `pages.home.trust.items[2].label`：在开课程
+- `pages.home.trust.items[3].value`：1286
+- `pages.home.trust.items[3].label`：在册学员
+- `pages.home.campus.title`：学校简介
+- `pages.home.campus.lead`：车间、教室和晚班都在石桥路这一栋。
+- `pages.home.campus.linkLabel`：看简介
+- `pages.home.services.title`：课程设置
+- `pages.home.services.lead`：六门都在开，学费不含考证费。
+- `pages.home.services.items[0].name`：数控车工
+- `pages.home.services.items[0].text`：96课时。适合想上车床的在职人员。
+- `pages.home.services.items[0].price`：7,860 元
+- `pages.home.services.items[0].tag`：机械加工
+- `pages.home.services.items[1].name`：电工上岗
+- `pages.home.services.items[1].text`：72课时。适合要考低压电工证的人。
+- `pages.home.services.items[1].price`：4,280 元
+- `pages.home.services.items[1].tag`：电控自动化
+- `pages.home.services.items[2].name`：焊条电弧焊
+- `pages.home.services.items[2].text`：64课时。适合想学平焊的在职人员。
+- `pages.home.services.items[2].price`：5,160 元
+- `pages.home.services.items[2].tag`：焊接
+- `pages.home.services.items[3].name`：机械制图
+- `pages.home.services.items[3].text`：48课时。适合要看图上车床的人。
+- `pages.home.services.items[3].price`：3,240 元
+- `pages.home.services.items[3].tag`：机械加工
+- `pages.home.services.items[4].name`：PLC入门
+- `pages.home.services.items[4].text`：56课时。适合已经学过电工的人。
+- `pages.home.services.items[4].price`：4,960 元
+- `pages.home.services.items[4].tag`：电控自动化
+- `pages.home.services.items[5].name`：电梯维保
+- `pages.home.services.items[5].text`：80课时。适合物业维修想考上岗的人。
+- `pages.home.services.items[5].price`：6,430 元
+- `pages.home.services.items[5].tag`：特种设备
+- `pages.home.advantage.title`：办学优势
+- `pages.home.advantage.lead`：实操有师傅带，晚班能上，结业可推荐。
+- `pages.home.advantage.items[0].name`：师傅在工位带
+- `pages.home.advantage.items[0].text`：实操时老师站在机床旁边看操作。
+- `pages.home.advantage.items[1].name`：晚班收到八点半
+- `pages.home.advantage.items[1].text`：周一到周五晚上六点到八点半。
+- `pages.home.advantage.items[2].name`：考证按月另排
+- `pages.home.advantage.items[2].text`：低压电工和焊工考证不占正课。
+- `pages.home.advantage.items[3].name`：结业推荐就业
+- `pages.home.advantage.items[3].text`：结业开推荐表，介绍到合作车间，不包分配。
+- `pages.home.photo-band.caption`：石桥路车间，晚班还在上课。
+- `pages.home.cases.title`：学员风采
+- `pages.home.cases.lead`：学员交的作业，以及结业后的岗位。
+- `pages.home.cases.items[0].name`：周宁的轴套
+- `pages.home.cases.items[0].text`：按课堂图车完。结业后去拱墅机加工厂做车工。
+- `pages.home.cases.items[0].result`：现做数控车工
+- `pages.home.cases.items[1].name`：孙磊的配电箱
+- `pages.home.cases.items[1].text`：回路接完并测了绝缘。结业后去物业做维修电工。
+- `pages.home.cases.items[1].result`：现做维修电工
+- `pages.home.cases.items[2].name`：吴迪的焊缝
+- `pages.home.cases.items[2].text`：平焊试板没有烧穿。结业后去钢结构厂做焊工。
+- `pages.home.cases.items[2].result`：现做焊工
+- `pages.home.cases.items[3].name`：郑凯的零件图
+- `pages.home.cases.items[3].text`：轴套图标注改完。结业后去机械厂做制图。
+- `pages.home.cases.items[3].result`：现做制图员
+- `pages.home.bulletin.title`：招生资讯
+- `pages.home.bulletin.lead`：开班、考证和剩余名额。
+- `pages.home.bulletin.items[0].date`：2026-03-02
+- `pages.home.bulletin.items[0].name`：2026年春季招生开始
+- `pages.home.bulletin.items[0].text`：数控、电工、焊接三个晚班同时收。
+- `pages.home.bulletin.items[1].date`：2026-04-02
+- `pages.home.bulletin.items[1].name`：4月低压电工证报名通知
+- `pages.home.bulletin.items[1].text`：四月考试还剩11个名额。
+- `pages.home.bulletin.items[2].date`：2026-06-18
+- `pages.home.bulletin.items[2].name`：电工实训室材料已更换
+- `pages.home.bulletin.items[2].text`：新导线已经换上，六月电工晚班照常招生。
+- `pages.home.team.title`：师资力量
+- `pages.home.team.lead`：车工、电工、制图、焊接，都在车间上课。
+- `pages.home.team.items[0].name`：周岚
+- `pages.home.team.items[0].role`：数控实训
+- `pages.home.team.items[0].text`：教龄11年，车工高级工，常驻车床区。
+- `pages.home.team.items[1].name`：陈牧
+- `pages.home.team.items[1].role`：电工实训
+- `pages.home.team.items[1].text`：教龄9年，持低压电工考评员证。
+- `pages.home.team.items[2].name`：何淑敏
+- `pages.home.team.items[2].role`：制图老师
+- `pages.home.team.items[2].text`：教龄14年，先改图，再送去车床。
+- `pages.home.team.items[3].name`：马峻
+- `pages.home.team.items[3].role`：焊接实训
+- `pages.home.team.items[3].text`：教龄16年，焊工高级工，只带电弧焊。
+- `pages.home.cta-band.title`：预约试听
+- `pages.home.cta-band.lead`：试听不收费。来之前打0571-86904326。
+- `pages.about.title`：学校简介｜南栈技能学校（虚构）
+- `pages.about.description`：2009年在拱墅石桥路租车间办学，现在六个工种同时开班。
+- `pages.about.why.title`：发展历程
+- `pages.about.why.lead`：从2009年租下石桥路车间办起。
+- `pages.about.why.items[0].name`：租下石桥路车间
+- `pages.about.why.items[0].text`：2009年先租一层，只开了车工班。
+- `pages.about.why.items[1].name`：电工班首届取证
+- `pages.about.why.items[1].text`：2014年第一批低压电工取证。
+- `pages.about.why.items[2].name`：拱墅校区加盖一层
+- `pages.about.why.items[2].text`：2018年往上加了一层教室。
+- `pages.about.why.items[3].name`：晚班收到八点半
+- `pages.about.why.items[3].text`：2023年起晚班收到晚上八点半。
+- `pages.about.yard.title`：校区环境
+- `pages.about.yard.lead`：石桥路校区的楼、门厅、教室和侧院。
+- `pages.about.yard.items[0].caption`：教学楼
+- `pages.about.yard.items[1].caption`：门厅
+- `pages.about.yard.items[2].caption`：晚班教室
+- `pages.about.yard.items[3].caption`：侧院
+- `pages.about.trust.title`：办学数据
+- `pages.about.trust.lead`：结业人数、在册班次、上期取证和合作车间。
+- `pages.about.trust.items[0].value`：1860
+- `pages.about.trust.items[0].label`：累计结业
+- `pages.about.trust.items[1].value`：42
+- `pages.about.trust.items[1].label`：在册班次
+- `pages.about.trust.items[2].value`：93.7%
+- `pages.about.trust.items[2].label`：上期取证
+- `pages.about.trust.items[3].value`：11
+- `pages.about.trust.items[3].label`：合作车间
+- `pages.about.cta-band.title`：预约看校区
+- `pages.about.cta-band.lead`：周六上午可以约来看车间。
+- `pages.courses.title`：课程设置｜南栈技能学校（虚构）
+- `pages.courses.description`：六门在开课程：机械加工、电控、焊接和特种设备。
+- `pages.courses.course-board.title`：课程设置
+- `pages.courses.course-board.lead`：按工种分三类，写清课时、学费和证书。
+- `pages.courses.course-board.groups[0].name`：机械加工
+- `pages.courses.course-board.groups[0].items[0].name`：数控车工
+- `pages.courses.course-board.groups[0].items[0].hours`：96 课时
+- `pages.courses.course-board.groups[0].items[0].price`：7,860 元
+- `pages.courses.course-board.groups[0].items[0].text`：适合想上车床的在职人员，可考车工中级工。
+- `pages.courses.course-board.groups[0].items[1].name`：机械制图
+- `pages.courses.course-board.groups[0].items[1].hours`：48 课时
+- `pages.courses.course-board.groups[0].items[1].price`：3,240 元
+- `pages.courses.course-board.groups[0].items[1].text`：适合要看图上车床的人，结业发制图员证明。
+- `pages.courses.course-board.groups[1].name`：电控自动化
+- `pages.courses.course-board.groups[1].items[0].name`：电工上岗
+- `pages.courses.course-board.groups[1].items[0].hours`：72 课时
+- `pages.courses.course-board.groups[1].items[0].price`：4,280 元
+- `pages.courses.course-board.groups[1].items[0].text`：适合要考低压电工证的人，考证按月另排。
+- `pages.courses.course-board.groups[1].items[1].name`：PLC入门
+- `pages.courses.course-board.groups[1].items[1].hours`：56 课时
+- `pages.courses.course-board.groups[1].items[1].price`：4,960 元
+- `pages.courses.course-board.groups[1].items[1].text`：适合已经学过电工、想碰控制柜的人。
+- `pages.courses.course-board.groups[2].name`：焊接与特种
+- `pages.courses.course-board.groups[2].items[0].name`：焊条电弧焊
+- `pages.courses.course-board.groups[2].items[0].hours`：64 课时
+- `pages.courses.course-board.groups[2].items[0].price`：5,160 元
+- `pages.courses.course-board.groups[2].items[0].text`：适合想学平焊的在职人员，可考焊工证。
+- `pages.courses.course-board.groups[2].items[1].name`：电梯维保
+- `pages.courses.course-board.groups[2].items[1].hours`：80 课时
+- `pages.courses.course-board.groups[2].items[1].price`：6,430 元
+- `pages.courses.course-board.groups[2].items[1].text`：适合物业维修想考上岗的人，按月开班。
+- `pages.courses.cta-band.title`：预约试听
+- `pages.courses.cta-band.lead`：还没定报哪门，可以先来听一节。
+- `pages.teachers.title`：师资力量｜南栈技能学校（虚构）
+- `pages.teachers.description`：车工、电工、制图、焊接四位在岗老师。
+- `pages.teachers.collection-list.title`：师资力量
+- `pages.teachers.collection-list.lead`：车工、电工、制图、焊接，都是在岗老师。
+- `pages.teachers.cta-band.title`：预约试听
+- `pages.teachers.cta-band.lead`：试听时可以对上带课的老师。
+- `pages.works.title`：学员风采｜南栈技能学校（虚构）
+- `pages.works.description`：学员的课堂作业，以及结业后的就业岗位。
+- `pages.works.collection-list.title`：学员风采
+- `pages.works.collection-list.lead`：工件是课堂作业，岗位是结业后的去向。
+- `pages.works.cta-band.title`：预约试听
+- `pages.works.cta-band.lead`：想来学同样的工种，先约一节试听。
+- `pages.news.title`：招生资讯｜南栈技能学校（虚构）
+- `pages.news.description`：春季招生、考证报名、实训材料更换和周六开放车间。
+- `pages.news.collection-list.title`：招生资讯
+- `pages.news.collection-list.lead`：报名、考证和开班通知。
+- `pages.news.cta-band.title`：预约试听
+- `pages.news.cta-band.lead`：看到想报的班，可以先来试听。
+- `pages.contact.title`：预约试听｜南栈技能学校（虚构）
+- `pages.contact.description`：石桥路校区热线0571-86904326，周一到周六可约试听。
+- `pages.contact.contact.title`：预约试听
+- `pages.contact.contact.lead`：电话、地址和二维码都在这里。
+- `pages.contact.contact.qrs[0].label`：课程顾问
+- `pages.contact.contact.qrs[1].label`：学校公众号
+- `pages.contact.inquiry.title`：留言预约
+- `pages.contact.inquiry.lead`：留下姓名和想学的工种，顾问会回电话。
+- `collections.courses.cnc-lathe.slug`：cnc-lathe
+- `collections.courses.cnc-lathe.name`：数控车工
+- `collections.courses.cnc-lathe.summary`：96课时，学费7,860元。适合想上车床的在职人员，可考车工中级工。
+- `collections.courses.cnc-lathe.body`：先认零件图，再上车床对刀、车外圆。晚班从晚上六点到八点半，一个班大约十二个人。学费不含考证费。想来可以先约一节试听。
+- `collections.courses.cnc-lathe.specs[0].label`：课时
+- `collections.courses.cnc-lathe.specs[0].value`：96 课时
+- `collections.courses.cnc-lathe.specs[1].label`：学费
+- `collections.courses.cnc-lathe.specs[1].value`：7,860 元
+- `collections.courses.cnc-lathe.specs[2].label`：适合人群
+- `collections.courses.cnc-lathe.specs[2].value`：想上车床的在职人员
+- `collections.courses.cnc-lathe.specs[3].label`：证书
+- `collections.courses.cnc-lathe.specs[3].value`：车工中级工，可报考
+- `collections.courses.cnc-lathe.category`：机械加工
+- `collections.courses.elec-install.slug`：elec-install
+- `collections.courses.elec-install.name`：电工上岗
+- `collections.courses.elec-install.summary`：72课时，学费4,280元。适合要考低压电工证的人，考证按月另排。
+- `collections.courses.elec-install.body`：从识图、接线到测绝缘，都在二楼电工室做。低压电工证单独排期，不塞进正课。报名带身份证复印件。白天班和晚班都有。
+- `collections.courses.elec-install.specs[0].label`：课时
+- `collections.courses.elec-install.specs[0].value`：72 课时
+- `collections.courses.elec-install.specs[1].label`：学费
+- `collections.courses.elec-install.specs[1].value`：4,280 元
+- `collections.courses.elec-install.specs[2].label`：适合人群
+- `collections.courses.elec-install.specs[2].value`：想考低压电工证的人
+- `collections.courses.elec-install.specs[3].label`：证书
+- `collections.courses.elec-install.specs[3].value`：低压电工证
+- `collections.courses.elec-install.category`：电控自动化
+- `collections.courses.weld-arc.slug`：weld-arc
+- `collections.courses.weld-arc.name`：焊条电弧焊
+- `collections.courses.weld-arc.summary`：64课时，学费5,160元。适合想学平焊的在职人员，可考焊工证。
+- `collections.courses.weld-arc.body`：平焊和对接焊在一楼焊接间。防护面罩和焊条由学校发，厚板材料按实际另计。晚班同样收到晚上八点半。结业可报考焊工证。
+- `collections.courses.weld-arc.specs[0].label`：课时
+- `collections.courses.weld-arc.specs[0].value`：64 课时
+- `collections.courses.weld-arc.specs[1].label`：学费
+- `collections.courses.weld-arc.specs[1].value`：5,160 元
+- `collections.courses.weld-arc.specs[2].label`：适合人群
+- `collections.courses.weld-arc.specs[2].value`：想学平焊的在职人员
+- `collections.courses.weld-arc.specs[3].label`：证书
+- `collections.courses.weld-arc.specs[3].value`：焊工证，电弧焊
+- `collections.courses.weld-arc.category`：焊接
+- `collections.courses.cad-mech.slug`：cad-mech
+- `collections.courses.cad-mech.name`：机械制图
+- `collections.courses.cad-mech.summary`：48课时，学费3,240元。适合要看图上车床的人，结业发制图员证明。
+- `collections.courses.cad-mech.body`：用学校的电脑画零件图，标注和公差当面改。画完的图可以交给车工班当练习件。晚班在二楼东侧。这门课不单独组织国家考证。
+- `collections.courses.cad-mech.specs[0].label`：课时
+- `collections.courses.cad-mech.specs[0].value`：48 课时
+- `collections.courses.cad-mech.specs[1].label`：学费
+- `collections.courses.cad-mech.specs[1].value`：3,240 元
+- `collections.courses.cad-mech.specs[2].label`：适合人群
+- `collections.courses.cad-mech.specs[2].value`：要看图上车床的人
+- `collections.courses.cad-mech.specs[3].label`：证书
+- `collections.courses.cad-mech.specs[3].value`：结业发制图员证明
+- `collections.courses.cad-mech.category`：机械加工
+- `collections.courses.plc-basic.slug`：plc-basic
+- `collections.courses.plc-basic.name`：PLC入门
+- `collections.courses.plc-basic.summary`：56课时，学费4,960元。适合已经学过电工、想碰控制柜的人。
+- `collections.courses.plc-basic.body`：用教室里的小型PLC和按钮盒，做启停和延时。不讲大项目投标。适合已经上过电工课的人。这门课不单独发证。
+- `collections.courses.plc-basic.specs[0].label`：课时
+- `collections.courses.plc-basic.specs[0].value`：56 课时
+- `collections.courses.plc-basic.specs[1].label`：学费
+- `collections.courses.plc-basic.specs[1].value`：4,960 元
+- `collections.courses.plc-basic.specs[2].label`：适合人群
+- `collections.courses.plc-basic.specs[2].value`：车间电工想学控制
+- `collections.courses.plc-basic.specs[3].label`：证书
+- `collections.courses.plc-basic.specs[3].value`：不单独发证
+- `collections.courses.plc-basic.category`：电控自动化
+- `collections.courses.lift-maint.slug`：lift-maint
+- `collections.courses.lift-maint.name`：电梯维保
+- `collections.courses.lift-maint.summary`：80课时，学费6,430元。适合物业维修想考上岗的人，按月开班。
+- `collections.courses.lift-maint.body`：讲井道安全、门机和日常保养记录。实操在合作车间，不在石桥路校区的车床间。名额按月收，满了就等下一期。结业可考电梯维修上岗证。
+- `collections.courses.lift-maint.specs[0].label`：课时
+- `collections.courses.lift-maint.specs[0].value`：80 课时
+- `collections.courses.lift-maint.specs[1].label`：学费
+- `collections.courses.lift-maint.specs[1].value`：6,430 元
+- `collections.courses.lift-maint.specs[2].label`：适合人群
+- `collections.courses.lift-maint.specs[2].value`：物业维修想考上岗
+- `collections.courses.lift-maint.specs[3].label`：证书
+- `collections.courses.lift-maint.specs[3].value`：电梯维修上岗证
+- `collections.courses.lift-maint.category`：特种设备
+- `collections.teachers.zhou-lan.slug`：zhou-lan
+- `collections.teachers.zhou-lan.name`：周岚
+- `collections.teachers.zhou-lan.summary`：数控实训老师。教龄11年，车工高级工，常驻车床区。
+- `collections.teachers.zhou-lan.body`：周岚从2014年起带车工班，白天和晚班都在石桥路车间。考证那一周不排新课，专门盯实操。持车工高级工证书。
+- `collections.teachers.zhou-lan.specs[0].label`：教龄
+- `collections.teachers.zhou-lan.specs[0].value`：11 年
+- `collections.teachers.zhou-lan.specs[1].label`：任教课程
+- `collections.teachers.zhou-lan.specs[1].value`：数控车工
+- `collections.teachers.zhou-lan.specs[2].label`：证书
+- `collections.teachers.zhou-lan.specs[2].value`：车工高级工
+- `collections.teachers.chen-mu.slug`：chen-mu
+- `collections.teachers.chen-mu.name`：陈牧
+- `collections.teachers.chen-mu.summary`：电工实训老师。教龄9年，持低压电工考评员证。
+- `collections.teachers.chen-mu.body`：陈牧负责电工室和考证名单。接线不对，他让学员自己复测，不代手。周六上午在教务室收身份证复印件。
+- `collections.teachers.chen-mu.specs[0].label`：教龄
+- `collections.teachers.chen-mu.specs[0].value`：9 年
+- `collections.teachers.chen-mu.specs[1].label`：任教课程
+- `collections.teachers.chen-mu.specs[1].value`：电工上岗
+- `collections.teachers.chen-mu.specs[2].label`：证书
+- `collections.teachers.chen-mu.specs[2].value`：低压电工考评员
+- `collections.teachers.he-shumin.slug`：he-shumin
+- `collections.teachers.he-shumin.name`：何淑敏
+- `collections.teachers.he-shumin.summary`：制图老师。教龄14年，图改完才让学员把图送去车床。
+- `collections.teachers.he-shumin.body`：何淑敏带机械制图。图上的漏标用红笔圈出来，改完才允许把图送到车床区。晚班在二楼东侧。持机械制图员证书。
+- `collections.teachers.he-shumin.specs[0].label`：教龄
+- `collections.teachers.he-shumin.specs[0].value`：14 年
+- `collections.teachers.he-shumin.specs[1].label`：任教课程
+- `collections.teachers.he-shumin.specs[1].value`：机械制图
+- `collections.teachers.he-shumin.specs[2].label`：证书
+- `collections.teachers.he-shumin.specs[2].value`：机械制图员
+- `collections.teachers.ma-jun.slug`：ma-jun
+- `collections.teachers.ma-jun.name`：马峻
+- `collections.teachers.ma-jun.summary`：焊接实训老师。教龄16年，焊工高级工，只带电弧焊。
+- `collections.teachers.ma-jun.body`：马峻只教焊条电弧焊，不带气保焊。焊接间的通风和面罩归他检查。材料用完按根数登记。持焊工高级工证书。
+- `collections.teachers.ma-jun.specs[0].label`：教龄
+- `collections.teachers.ma-jun.specs[0].value`：16 年
+- `collections.teachers.ma-jun.specs[1].label`：任教课程
+- `collections.teachers.ma-jun.specs[1].value`：焊条电弧焊
+- `collections.teachers.ma-jun.specs[2].label`：证书
+- `collections.teachers.ma-jun.specs[2].value`：焊工高级工
+- `collections.works.shaft.slug`：shaft
+- `collections.works.shaft.name`：周宁的轴套
+- `collections.works.shaft.summary`：课堂车完一只轴套。2025年6月结业，现在拱墅一家机加工厂做数控车工。
+- `collections.works.shaft.body`：周宁用六个小时从下料到车外圆，公差按课堂图，没有返工。2025年6月结业，学校开了推荐表，现在在拱墅一家机加工厂做数控车工。
+- `collections.works.shaft.specs[0].label`：工种
+- `collections.works.shaft.specs[0].value`：数控车工
+- `collections.works.shaft.specs[1].label`：用时
+- `collections.works.shaft.specs[1].value`：6 小时
+- `collections.works.shaft.specs[2].label`：学员
+- `collections.works.shaft.specs[2].value`：周宁
+- `collections.works.shaft.specs[3].label`：就业去向
+- `collections.works.shaft.specs[3].value`：拱墅机加工厂，车工
+- `collections.works.shaft.category`：数控
+- `collections.works.panel.slug`：panel
+- `collections.works.panel.name`：孙磊的配电箱
+- `collections.works.panel.summary`：照明回路自己接完并测了绝缘。结业后去物业做维修电工。
+- `collections.works.panel.body`：孙磊接的是教室照明那路线。绝缘电阻记在本子上，陈牧复核了一次。2025年4月结业，现在在一家物业公司做维修电工。
+- `collections.works.panel.specs[0].label`：工种
+- `collections.works.panel.specs[0].value`：电工上岗
+- `collections.works.panel.specs[1].label`：用时
+- `collections.works.panel.specs[1].value`：2 天
+- `collections.works.panel.specs[2].label`：学员
+- `collections.works.panel.specs[2].value`：孙磊
+- `collections.works.panel.specs[3].label`：就业去向
+- `collections.works.panel.specs[3].value`：物业公司，维修电工
+- `collections.works.panel.category`：电工
+- `collections.works.seam.slug`：seam
+- `collections.works.seam.name`：吴迪的焊缝
+- `collections.works.seam.summary`：平焊试板没有烧穿。结业后去钢结构厂做焊工。
+- `collections.works.seam.body`：吴迪交的是一条平焊试板。起弧和收弧都在板内，留在焊接间的展示架上。2025年5月结业，现在在一家钢结构厂做焊工。
+- `collections.works.seam.specs[0].label`：工种
+- `collections.works.seam.specs[0].value`：焊条电弧焊
+- `collections.works.seam.specs[1].label`：用时
+- `collections.works.seam.specs[1].value`：4 小时
+- `collections.works.seam.specs[2].label`：学员
+- `collections.works.seam.specs[2].value`：吴迪
+- `collections.works.seam.specs[3].label`：就业去向
+- `collections.works.seam.specs[3].value`：钢结构厂，焊工
+- `collections.works.seam.category`：焊接
+- `collections.works.drawing.slug`：drawing
+- `collections.works.drawing.name`：郑凯的零件图
+- `collections.works.drawing.summary`：轴套零件图标注改完。结业后去机械厂做制图。
+- `collections.works.drawing.body`：郑凯画的轴套图被车工班拿去对过一次。漏标的粗糙度当晚改完，第二天才交。2025年3月结业，现在在一家机械厂做制图。
+- `collections.works.drawing.specs[0].label`：工种
+- `collections.works.drawing.specs[0].value`：机械制图
+- `collections.works.drawing.specs[1].label`：用时
+- `collections.works.drawing.specs[1].value`：3 小时
+- `collections.works.drawing.specs[2].label`：学员
+- `collections.works.drawing.specs[2].value`：郑凯
+- `collections.works.drawing.specs[3].label`：就业去向
+- `collections.works.drawing.specs[3].value`：机械厂，制图员
+- `collections.works.drawing.category`：制图
+- `collections.works.cabinet.slug`：cabinet
+- `collections.works.cabinet.name`：钱薇的控制柜
+- `collections.works.cabinet.summary`：启停回路能跑通。结业后留在原车间做电工，兼看控制柜。
+- `collections.works.cabinet.body`：钱薇接的是按钮启停加一个延时。指示灯按她写的顺序亮，程序存在教室那台电脑里。结业后回原车间做电工，开始碰控制柜。
+- `collections.works.cabinet.specs[0].label`：工种
+- `collections.works.cabinet.specs[0].value`：PLC入门
+- `collections.works.cabinet.specs[1].label`：用时
+- `collections.works.cabinet.specs[1].value`：5 小时
+- `collections.works.cabinet.specs[2].label`：学员
+- `collections.works.cabinet.specs[2].value`：钱薇
+- `collections.works.cabinet.specs[3].label`：就业去向
+- `collections.works.cabinet.specs[3].value`：原车间电工
+- `collections.works.cabinet.category`：电工
+- `collections.news.spring-2026.slug`：spring-2026
+- `collections.news.spring-2026.name`：2026年春季招生开始
+- `collections.news.spring-2026.summary`：2026-03-02 · 数控、电工、焊接三个晚班开始报名。
+- `collections.news.spring-2026.date`：2026-03-02
+- `collections.news.spring-2026.body`：2026年春季晚班从3月16日开课。数控车工、电工上岗、焊条电弧焊三个班同时收，晚班晚上六点到八点半。名额到教务室登记，也可以先预约试听。课表贴在门厅。
+- `collections.news.spring-2026.category`：招生
+- `collections.news.exam-april.slug`：exam-april
+- `collections.news.exam-april.name`：4月低压电工证报名通知
+- `collections.news.exam-april.summary`：2026-04-02 · 四月低压电工证还剩11个名额。
+- `collections.news.exam-april.date`：2026-04-02
+- `collections.news.exam-april.body`：低压电工四月考试还剩11个名额。已经在读电工班的学员优先。要考的人周三前到教务室登记，带身份证复印件。考证费不包含在学费里。
+- `collections.news.exam-april.category`：考证
+- `collections.news.wire-lab.slug`：wire-lab
+- `collections.news.wire-lab.name`：电工实训室材料已更换
+- `collections.news.wire-lab.summary`：2026-06-18 · 电工室换上新导线，六月班照常招生。
+- `collections.news.wire-lab.date`：2026-06-18
+- `collections.news.wire-lab.body`：实训室这周换了2.5平方的导线和一批线槽，旧线已经清走。六月电工晚班照常招生，上课时间是晚上六点到八点半。想报名的人可以先来试听。
+- `collections.news.wire-lab.category`：实训
+- `collections.news.open-shop.slug`：open-shop
+- `collections.news.open-shop.name`：周六上午开放车间
+- `collections.news.open-shop.summary`：2026-09-05 · 9月12日上午开放车间，可当场预约试听。
+- `collections.news.open-shop.date`：2026-09-05
+- `collections.news.open-shop.body`：9月12日上午九点到十一点，石桥路车间开放。只看不操作。想报名的人可以当场预约试听，也可以看看学员留在车间的工件。
+- `collections.news.open-shop.category`：开放日

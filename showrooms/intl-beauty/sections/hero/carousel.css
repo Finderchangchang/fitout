@@ -31,9 +31,7 @@
 }
 
 /* 中文标题只在标点后换行：「进门先坐下，」「再看手艺」。以前断成「进门先坐」「下，再看手艺」，逗号跟着一个字掉到第二行。 */
-.hero-full .section-title {
-  word-break: keep-all;
-}
+.hero-full .section-title { word-break: normal; overflow-wrap: normal; text-wrap: balance; }
 
 .hero-full .section-lead {
   color: var(--on-media);

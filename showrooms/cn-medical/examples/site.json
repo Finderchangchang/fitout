@@ -22,8 +22,6 @@
         "time": "8:30-12:00"
       }
     ],
-    "formUrl": "https://example.com/forms/chengwan-book",
-    "icp": "浙ICP备20883721号",
     "qrcodes": [
       {
         "image": "qr-wechat",
@@ -43,7 +41,7 @@
       "href": "index.html"
     },
     {
-      "label": "医院介绍",
+      "label": "门诊介绍",
       "href": "about/index.html"
     },
     {
@@ -389,8 +387,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "澄湾口腔（虚构）",
-      "description": "杭州学院路社区口腔门诊，洗牙和补牙当天可以约。",
+      "title": "澄湾口腔（虚构）｜社区口腔，预约就诊",
+      "description": "学院路社区口腔门诊，提供洁牙、补牙、儿童口腔及修复咨询。",
       "sections": [
         {
           "type": "hero",
@@ -399,8 +397,8 @@
           "tone": "image",
           "data": {
             "label": "学院路门诊",
-            "title": "看牙不用排一整天",
-            "lead": "学院路社区门诊，洗牙和补牙当天可以约。",
+            "title": "社区口腔，预约就诊",
+            "lead": "学院路社区口腔门诊，提供洁牙、补牙、儿童口腔及修复咨询。",
             "primaryLabel": "预约挂号",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "看看项目",
@@ -410,95 +408,29 @@
               {
                 "image": "hero-chair",
                 "imageAlt": "治疗台托盘和冷白灯",
-                "title": "看牙不用排一整天",
-                "lead": "学院路社区门诊，洗牙和补牙当天可以约。"
+                "title": "社区口腔，预约就诊",
+                "lead": "先了解诊疗项目，再联系门诊预约。"
               },
               {
                 "image": "hero-room",
                 "imageAlt": "靠窗诊室的治疗台一角",
-                "title": "洗牙补牙当天能约",
-                "lead": "洁牙180到280元，一次大约四十分钟。"
+                "title": "洁牙与补牙",
+                "lead": "洁牙参考价180至280元，具体费用以检查后收费单为准。"
               },
               {
                 "image": "hero-lobby",
                 "imageAlt": "候诊椅和地面的反光",
-                "title": "约好时间按点来",
-                "lead": "预约之后按约定时间看，不占一整天。"
+                "title": "到店与就诊安排",
+                "lead": "按预约时间到店，就诊流程和交通信息可提前查看。"
               },
               {
                 "image": "hero-consult",
                 "imageAlt": "灯箱上的牙片，不见口腔",
-                "title": "种牙先看牙槽骨",
-                "lead": "种植检查80元起，方案确认后再约。"
+                "title": "种植咨询与检查",
+                "lead": "检查80元起，检查后确认方案与预约时间。"
               }
             ]
           }
-        },
-        {
-          "type": "gate",
-          "variant": "board",
-          "anchor": "gate",
-          "tone": "light",
-          "data": {
-            "title": "今天怎么看",
-            "lead": "电话、流程、医保和到店，四件事先看完。",
-            "note": "洗牙和补牙可以约当天下午。",
-            "items": [
-              {
-                "no": "01",
-                "name": "预约挂号",
-                "text": "留下姓名和想看的项目。",
-                "href": "contact/index.html"
-              },
-              {
-                "no": "02",
-                "name": "就诊流程",
-                "text": "先挂号，再检查，当天能做的当天做。",
-                "href": "guide/index.html#flow"
-              },
-              {
-                "no": "03",
-                "name": "医保怎么刷",
-                "text": "职工医保在一楼收费处结算。",
-                "href": "guide/index.html#insure"
-              },
-              {
-                "no": "04",
-                "name": "怎么到店",
-                "text": "地铁学院路站 B 口，步行约八分钟。",
-                "href": "guide/index.html#way"
-              }
-            ]
-          }
-        },
-        {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "dark",
-          "data": {
-            "title": "门诊数字",
-            "lead": "数字来自 2025 年门诊登记。",
-            "items": [
-              {
-                "value": "12860+",
-                "label": "去年接诊人次"
-              },
-              {
-                "value": "16年",
-                "label": "学院路开业"
-              },
-              {
-                "value": "6台",
-                "label": "综合治疗台"
-              },
-              {
-                "value": "4人",
-                "label": "执业医师"
-              }
-            ]
-          },
-          "bg": "bg-numbers"
         },
         {
           "type": "services",
@@ -506,7 +438,7 @@
           "anchor": "services",
           "tone": "light",
           "data": {
-            "title": "诊疗项目",
+            "title": "诊疗项目与参考费用",
             "lead": "价格是区间，检查之后按收费单算。",
             "items": [
               {
@@ -544,23 +476,26 @@
                 "image": "svc-fluor",
                 "imageAlt": "儿童诊室里的治疗椅",
                 "tag": "儿童口腔"
+              },
+              {
+                "name": "种植咨询",
+                "text": "检查 80 元起。先看牙槽骨，再谈方案。",
+                "href": "services/implant.html",
+                "image": "svc-plant",
+                "imageAlt": "咨询室里的看片灯",
+                "tag": "修复正畸",
+                "price": ""
+              },
+              {
+                "name": "正畸初诊",
+                "text": "120 元。先取记录，不在初诊贴托槽。",
+                "href": "services/ortho.html",
+                "image": "svc-brace",
+                "imageAlt": "正畸初诊用的取模台",
+                "tag": "修复正畸",
+                "price": ""
               }
             ]
-          }
-        },
-        {
-          "type": "brief",
-          "variant": "split",
-          "anchor": "about",
-          "tone": "light",
-          "data": {
-            "title": "医院介绍",
-            "lead": "2010 年在学院路开业，一楼候诊。",
-            "text": "二楼四间诊室，六台治疗台。社区门诊，不做住院。",
-            "linkLabel": "看医院介绍",
-            "linkHref": "about/index.html",
-            "image": "facade",
-            "imageAlt": "学院路门诊楼外白天"
           }
         },
         {
@@ -569,7 +504,7 @@
           "anchor": "team",
           "tone": "dark",
           "data": {
-            "title": "医生团队",
+            "title": "执业医师",
             "lead": "四位执业医师，年限写在名字下面。",
             "items": [
               {
@@ -606,81 +541,56 @@
               }
             ]
           },
-          "bg": "bg-team"
+          "bg": "band"
         },
         {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "hall",
-          "tone": "image",
+          "type": "brief",
+          "variant": "split",
+          "anchor": "about",
+          "tone": "light",
           "data": {
-            "image": "band",
-            "imageAlt": "一楼候诊区的长椅",
-            "caption": "一楼候诊，二楼是诊室。"
+            "title": "门诊介绍",
+            "lead": "2010 年在学院路开业，一楼候诊。",
+            "text": "二楼四间诊室，六台治疗台。社区门诊，不做住院。",
+            "linkLabel": "看门诊介绍",
+            "linkHref": "about/index.html",
+            "image": "facade",
+            "imageAlt": "学院路门诊楼外白天"
           }
         },
         {
-          "type": "gear",
-          "variant": "tiles",
-          "anchor": "gear",
-          "tone": "light",
+          "type": "gate",
+          "variant": "board",
+          "anchor": "gate",
+          "tone": "dark",
           "data": {
-            "title": "诊室设备",
-            "lead": "三台常用设备，都在二楼诊室。",
+            "title": "就诊指南",
+            "lead": "电话、流程、医保和到店，四件事先看完。",
+            "note": "洗牙和补牙可以约当天下午。",
             "items": [
               {
-                "name": "综合治疗台",
-                "text": "六台，每间诊室一台到两台。",
-                "image": "gear-chair",
-                "imageAlt": "综合治疗台和灯"
+                "no": "01",
+                "name": "预约挂号",
+                "text": "留下姓名和想看的项目。",
+                "href": "contact/index.html"
               },
               {
-                "name": "全景机",
-                "text": "拔牙和种植前用来看牙根。",
-                "image": "gear-pano",
-                "imageAlt": "全景机的拍片位"
+                "no": "02",
+                "name": "就诊流程",
+                "text": "先挂号，再检查，当天能做的当天做。",
+                "href": "guide/index.html#flow"
               },
               {
-                "name": "超声洁牙机",
-                "text": "洗牙用，头可拆下来消毒。",
-                "image": "gear-scaler",
-                "imageAlt": "超声洁牙机机头"
-              }
-            ]
-          }
-        },
-        {
-          "type": "bulletin",
-          "variant": "rows",
-          "anchor": "notes",
-          "tone": "light",
-          "data": {
-            "title": "口腔科普",
-            "lead": "就诊前可以先看这三篇。",
-            "items": [
-              {
-                "name": "孩子第一次看牙",
-                "text": "三岁前先看一次。",
-                "href": "articles/first-visit.html",
-                "image": "art-first",
-                "imageAlt": "儿童诊室门口的说明架",
-                "date": "2026-03-18"
+                "no": "03",
+                "name": "医保怎么刷",
+                "text": "职工医保在一楼收费处结算。",
+                "href": "guide/index.html#insure"
               },
               {
-                "name": "洗牙会把牙洗薄吗",
-                "text": "洗的是结石，不是牙面。",
-                "href": "articles/brush.html",
-                "image": "art-brush",
-                "imageAlt": "治疗台上的超声洁牙机",
-                "date": "2026-02-06"
-              },
-              {
-                "name": "牙龈出血先看哪",
-                "text": "先看牙周，再决定洗牙。",
-                "href": "articles/gum.html",
-                "image": "art-gum",
-                "imageAlt": "托盘上的牙周探针",
-                "date": "2026-01-14"
+                "no": "04",
+                "name": "怎么到店",
+                "text": "地铁学院路站 B 口，步行约八分钟。",
+                "href": "guide/index.html#way"
               }
             ]
           }
@@ -689,10 +599,10 @@
           "type": "cta-band",
           "variant": "inline",
           "anchor": "book",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "预约下午的号",
-            "lead": "电话留下姓名和项目，或走在线预约。",
+            "title": "预约与门诊咨询",
+            "lead": "电话或微信联系门诊，确认项目和就诊时间。",
             "primaryHref": "contact/index.html"
           },
           "bg": "bg-book"
@@ -701,7 +611,7 @@
     },
     {
       "id": "about",
-      "title": "医院介绍｜澄湾口腔（虚构）",
+      "title": "门诊介绍｜澄湾口腔（虚构）",
       "description": "2010 年在学院路开业，一楼候诊，二楼四间诊室。",
       "banner": "banner",
       "bannerAlt": "学院路门诊楼的外立面",
@@ -712,7 +622,7 @@
           "anchor": "story",
           "tone": "light",
           "data": {
-            "title": "医院介绍",
+            "title": "门诊介绍",
             "lead": "学院路这一栋，一楼候诊，二楼看牙。",
             "items": [
               {
@@ -841,7 +751,7 @@
             "title": "诊疗项目",
             "lead": "六项都在做，价格是区间。",
             "collection": "services",
-            "pageSize": "3"
+            "pageSize": 9
           }
         },
         {
@@ -874,7 +784,7 @@
             "title": "医生团队",
             "lead": "点名字看年限和擅长项目。",
             "collection": "doctors",
-            "pageSize": "3"
+            "pageSize": 9
           }
         },
         {
@@ -909,7 +819,7 @@
             "items": [
               {
                 "name": "预约",
-                "text": "电话或在线留下姓名和项目。"
+                "text": "电话或微信说明姓名和就诊项目。"
               },
               {
                 "name": "到店挂号",
@@ -1001,7 +911,7 @@
             "title": "口腔科普",
             "lead": "四篇都是就诊前该知道的事。",
             "collection": "articles",
-            "pageSize": "3"
+            "pageSize": 9
           }
         },
         {
@@ -1021,7 +931,7 @@
     {
       "id": "contact",
       "title": "预约挂号｜澄湾口腔（虚构）",
-      "description": "电话 0571-88021936，或填写在线预约，前台会回电话。",
+      "description": "电话 0571-88021936，咨询诊疗项目与就诊时间。",
       "banner": "banner",
       "bannerAlt": "学院路门诊楼的外立面",
       "sections": [
@@ -1032,7 +942,7 @@
           "tone": "light",
           "data": {
             "title": "预约挂号",
-            "lead": "电话留下姓名和项目，或走在线预约。",
+            "lead": "电话或微信联系门诊，确认项目和就诊时间。",
             "qrs": [
               {
                 "image": "qr-wechat",
@@ -1045,16 +955,6 @@
                 "label": "门诊服务号"
               }
             ]
-          }
-        },
-        {
-          "type": "inquiry",
-          "variant": "note",
-          "anchor": "form",
-          "tone": "light",
-          "data": {
-            "title": "在线预约",
-            "lead": "表单在外部页面，填完会有人回电话。"
           }
         }
       ]

@@ -6,19 +6,19 @@
         {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
         {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
       </div>
-      <p class="phone-line"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
       <ul class="hours-list">
         {{#each hours}}
         <li>{{icon:clock:16}}<span>{{day}} <span class="nums">{{time}}</span></span></li>
         {{/each}}
       </ul>
-      <p class="contact-line">{{icon:map-pin:16}}<span>{{address}}</span></p>
-      {{#if email}}<p class="contact-line">{{icon:mail:16}}<a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
       <p class="contact-go"><a class="btn" href="{{amapUrl}}">{{icon:map-pin:20}}高德导航</a></p>
     </div>
     <div class="contact-book">
       <h2 class="subhead">预约面谈</h2>
-      <p>预约表在所外。提交后，工作人员回电话确认时间。</p>
+      <p>通过电话或微信联系，确认面谈时间与地点。</p>
+      <p class="phone-line"><a href="tel:{{phoneTel}}">{{phone}}</a></p>
+      <p class="contact-line">{{icon:map-pin:16}}<span>{{address}}</span></p>
+      {{#if email}}<p class="contact-line">{{icon:mail:16}}<a href="mailto:{{email}}">{{email}}</a></p>{{/if}}
       {{#if formUrl}}<p><a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{formLabel}}</a></p>{{/if}}
       {{#if wechat}}
       <p class="contact-line contact-wx">{{icon:chat:20}}<span class="nums">{{wechat}}</span><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>

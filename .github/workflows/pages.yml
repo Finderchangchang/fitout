@@ -1,0 +1,49 @@
+name: Publish showroom previews
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Check source and examples
+        run: node tests/quick.mjs
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build public previews without demo photos
+        run: node scripts/build-preview.mjs --base-url "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload generated websites
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: out/preview
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy previews
+        id: deployment
+        uses: actions/deploy-pages@v4

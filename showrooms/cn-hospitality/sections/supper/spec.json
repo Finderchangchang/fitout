@@ -76,7 +76,13 @@
       "imageField": "image",
       "family": "supper",
       "fit": "文案加灶房，下面是带价格的菜",
-      "fallback": "omit"
+      "fallback": "text-list"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "menu-list",
+      "fit": "无照片时保留业务、规格和联系信息",
+      "source": "样板间自写"
     }
   }
 }

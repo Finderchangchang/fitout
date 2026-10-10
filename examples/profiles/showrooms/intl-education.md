@@ -1,0 +1,529 @@
+# 岸灯课室（虚构） · 虚构演示企业档案
+
+仅用于样板间演示，不对应真实企业。来源：v0.6.0 的示例内容，事实不随版式改写。重复的宣传句不构成新事实；现有数值只在相应业务语境中使用。
+
+- `contact.phone`：021-64081276
+- `contact.wechat`：andeng-night
+- `contact.wechatQr`：qr-advisor
+- `contact.email`：hello@andeng.example
+- `contact.address`：上海市徐汇区天钥桥路 128 号 3 楼（虚构地址）
+- `contact.hours[0].day`：周二至周五
+- `contact.hours[0].time`：18:30-21:30
+- `contact.hours[1].day`：周六
+- `contact.hours[1].time`：10:00-17:00
+- `contact.formUrl`：https://andeng.example/apply
+- `contact.icp`：沪ICP备20937641号
+- `contact.qrcodes[0].label`：课程顾问
+- `contact.qrcodes[1].label`：开课通知
+- `name`：岸灯课室（虚构）
+- `summary`：徐汇天钥桥路的夜课，设计、编程、语言和职业技能按课时报名。
+- `pages.home.title`：岸灯课室（虚构）
+- `pages.home.description`：徐汇天钥桥路的夜课，设计、编程、语言和职业技能按课时报名。
+- `pages.home.hero.label`：徐汇夜课
+- `pages.home.hero.title`：晚上把课上完
+- `pages.home.hero.lead`：设计、编程、语言和职业技能，按课时报名。
+- `pages.home.hero.primaryLabel`：报名咨询
+- `pages.home.hero.secondaryLabel`：看课程
+- `pages.home.hero.slides[0].title`：今晚这堂，上完再走
+- `pages.home.hero.slides[0].lead`：设计、编程、语言，按课时报名。
+- `pages.home.hero.slides[1].title`：手在键盘上，课还在
+- `pages.home.hero.slides[1].lead`：编程课按着键盘上完。
+- `pages.home.hero.slides[2].title`：笔记本摊开，课就开始
+- `pages.home.hero.slides[2].lead`：语言课把笔记本摊开。
+- `pages.home.hero.slides[3].title`：作业带走，下回接着
+- `pages.home.hero.slides[3].lead`：学员作业带走，下回接着。
+- `pages.home.hero.slides[4].title`：灯还亮着，这课没散
+- `pages.home.hero.slides[4].lead`：徐汇夜课，按课时报名。
+- `pages.home.trust.title`：课室现在
+- `pages.home.trust.lead`：截至 2026年9月。
+- `pages.home.trust.items[0].value`：8
+- `pages.home.trust.items[0].label`：在开课程
+- `pages.home.trust.items[1].value`：4
+- `pages.home.trust.items[1].label`：常驻讲师
+- `pages.home.trust.items[2].value`：186
+- `pages.home.trust.items[2].label`：在读学员
+- `pages.home.trust.items[3].value`：2019
+- `pages.home.trust.items[3].label`：开课年份
+- `pages.home.tracks.label`：方向
+- `pages.home.tracks.title`：四类课
+- `pages.home.tracks.lead`：设计、编程、语言和职业技能。
+- `pages.home.tracks.items[0].name`：视觉设计
+- `pages.home.tracks.items[0].text`：品牌版式、界面走查
+- `pages.home.tracks.items[1].name`：编程
+- `pages.home.tracks.items[1].text`：网页前端、数据表查询
+- `pages.home.tracks.items[2].name`：语言
+- `pages.home.tracks.items[2].text`：商务英语、日语入门
+- `pages.home.tracks.items[3].name`：职业技能
+- `pages.home.tracks.items[3].text`：短视频剪辑、表格与汇报
+- `pages.home.photo-band.caption`：3 楼靠窗的夜课
+- `pages.home.course-board.label`：夜课
+- `pages.home.course-board.title`：先看这四门
+- `pages.home.course-board.lead`：每张卡上都有课时、学费和适合谁。
+- `pages.home.course-board.items[0].name`：品牌版式
+- `pages.home.course-board.items[0].cat`：d1
+- `pages.home.course-board.items[0].catName`：视觉设计
+- `pages.home.course-board.items[0].hours`：36 课时
+- `pages.home.course-board.items[0].price`：4,800 元
+- `pages.home.course-board.items[0].audience`：想自己排海报的人
+- `pages.home.course-board.items[0].teacher`：周晚宁
+- `pages.home.course-board.items[1].name`：网页前端
+- `pages.home.course-board.items[1].cat`：d2
+- `pages.home.course-board.items[1].catName`：编程
+- `pages.home.course-board.items[1].hours`：48 课时
+- `pages.home.course-board.items[1].price`：6,800 元
+- `pages.home.course-board.items[1].audience`：零基础转行的人
+- `pages.home.course-board.items[1].teacher`：韩述
+- `pages.home.course-board.items[2].name`：商务英语
+- `pages.home.course-board.items[2].cat`：d3
+- `pages.home.course-board.items[2].catName`：语言
+- `pages.home.course-board.items[2].hours`：40 课时
+- `pages.home.course-board.items[2].price`：5,200 元
+- `pages.home.course-board.items[2].audience`：要开会发言的人
+- `pages.home.course-board.items[2].teacher`：井口葵
+- `pages.home.course-board.items[3].name`：短视频剪辑
+- `pages.home.course-board.items[3].cat`：d4
+- `pages.home.course-board.items[3].catName`：职业技能
+- `pages.home.course-board.items[3].hours`：28 课时
+- `pages.home.course-board.items[3].price`：3,400 元
+- `pages.home.course-board.items[3].audience`：要自己出片的店主
+- `pages.home.course-board.items[3].teacher`：林可
+- `pages.home.why.title`：怎么报名
+- `pages.home.why.lead`：先看课，再来一次试听。
+- `pages.home.why.items[0].name`：选一门课
+- `pages.home.why.items[0].text`：先看课时、学费和适合谁
+- `pages.home.why.items[1].name`：来试听 1 次
+- `pages.home.why.items[1].text`：每门课可以试听 1 次，不另收费
+- `pages.home.why.items[2].name`：开课前付款
+- `pages.home.why.items[2].text`：开课前 7 天可退学费，开课后不退
+- `pages.home.team.title`：常驻讲师
+- `pages.home.team.lead`：四位常驻，每人带两门。
+- `pages.home.team.items[0].name`：周晚宁
+- `pages.home.team.items[0].role`：视觉讲师
+- `pages.home.team.items[0].text`：带品牌版式和界面走查。周二、周四 18:30 到⁠课。
+- `pages.home.team.items[1].name`：韩述
+- `pages.home.team.items[1].role`：编程讲师
+- `pages.home.team.items[1].text`：带网页前端和数据表查询。周三 18:30、周六 10:00 到⁠课。
+- `pages.home.team.items[2].name`：井口葵
+- `pages.home.team.items[2].role`：语言讲师
+- `pages.home.team.items[2].text`：带商务英语和日语入门。周二 18:30、周六 10:00 到⁠课。
+- `pages.home.team.items[3].name`：林可
+- `pages.home.team.items[3].role`：技能讲师
+- `pages.home.team.items[3].text`：带短视频剪辑和表格与汇报。周四 18:30、周六 14:00 到⁠课。
+- `pages.home.testimonials.title`：学员原话
+- `pages.home.testimonials.lead`：都是上过课的人。
+- `pages.home.testimonials.items[0].name`：陈麦
+- `pages.home.testimonials.items[0].role`：网页前端
+- `pages.home.testimonials.items[0].quote`：韩述让我先交一个菜单页。我现在能自己改店里的页面。
+- `pages.home.testimonials.items[1].name`：苏小满
+- `pages.home.testimonials.items[1].role`：品牌版式
+- `pages.home.testimonials.items[1].quote`：周晚宁只改我的海报，不讲大道理。周末价目我自己排了。
+- `pages.home.testimonials.items[2].name`：何舟
+- `pages.home.testimonials.items[2].role`：商务英语
+- `pages.home.testimonials.items[2].quote`：井口葵让我把下周要说的三句先写下来，再开口。
+- `pages.home.cases.title`：学员作业
+- `pages.home.cases.lead`：课上交的东西，不是宣传图。
+- `pages.home.cases.items[0].name`：超市周末海报
+- `pages.home.cases.items[0].text`：品牌版式课作业。苏小满排的周末价目。
+- `pages.home.cases.items[1].name`：小店菜单页
+- `pages.home.cases.items[1].text`：网页前端课作业。陈麦做的一页菜单。
+- `pages.home.cases.items[2].name`：门口十五秒
+- `pages.home.cases.items[2].text`：短视频剪辑课作业。一条店门口的短片。
+- `pages.home.cases.items[3].name`：周一周报底
+- `pages.home.cases.items[3].text`：表格与汇报课作业。一份可以接着填的周报。
+- `pages.home.bulletin.title`：课室动态
+- `pages.home.bulletin.lead`：日期和事情写在下面。
+- `pages.home.bulletin.items[0].date`：2026年9月12日
+- `pages.home.bulletin.items[0].name`：十月夜课课表
+- `pages.home.bulletin.items[0].summary`：贴出十月课表，8 门课都开。
+- `pages.home.bulletin.items[1].date`：2026年8月3日
+- `pages.home.bulletin.items[1].name`：教室换了投影
+- `pages.home.bulletin.items[1].summary`：3 楼靠窗那间换了投影。
+- `pages.home.bulletin.items[2].date`：2026年6月18日
+- `pages.home.bulletin.items[2].name`：英语班加了一节
+- `pages.home.bulletin.items[2].summary`：商务英语周六上午加一节会前口语，学费不加。
+- `pages.home.cta-band.title`：先看课，再报名
+- `pages.home.cta-band.lead`：8 门课都在课程页，电话 021-64081276。
+- `pages.about.title`：关于课室｜岸灯课室（虚构）
+- `pages.about.description`：2019年3月租下天钥桥路 3 楼，两间教室，四位讲师。
+- `pages.about.why.title`：课怎么开
+- `pages.about.why.items[0].name`：课写在前面
+- `pages.about.why.items[0].text`：课时、学费、适合谁，课卡上就有，不藏到咨询里
+- `pages.about.why.items[1].name`：讲师只带自己的课
+- `pages.about.why.items[1].text`：设计是周晚宁，编程是韩述，语言是井口葵，技能是林可
+- `pages.about.why.items[2].name`：晚课为主
+- `pages.about.why.items[2].text`：周二到周五 18:30 上课，周六白天也开
+- `pages.about.why.items[3].name`：一个班 12 人
+- `pages.about.why.items[3].text`：满 12 人就等下一期，不往班里加人
+- `pages.about.studio.title`：两间教室
+- `pages.about.studio.lead`：2019年3月租下天钥桥路 3 楼，两间教室到现在。
+- `pages.about.studio.items[0].name`：靠窗那间
+- `pages.about.studio.items[0].text`：有投影，英语和编程多用这间
+- `pages.about.studio.items[1].name`：靠里那间
+- `pages.about.studio.items[1].text`：桌面大，版式和剪辑在这边看稿
+- `pages.about.trust.title`：课室现在
+- `pages.about.trust.lead`：截至 2026年9月。
+- `pages.about.trust.items[0].value`：8
+- `pages.about.trust.items[0].label`：在开课程
+- `pages.about.trust.items[1].value`：4
+- `pages.about.trust.items[1].label`：常驻讲师
+- `pages.about.trust.items[2].value`：186
+- `pages.about.trust.items[2].label`：在读学员
+- `pages.about.trust.items[3].value`：2019
+- `pages.about.trust.items[3].label`：开课年份
+- `pages.about.cta-band.title`：先来试听
+- `pages.about.cta-band.lead`：每门课可试听 1 次。电话 021-64081276。
+- `pages.courses.title`：八门夜课｜岸灯课室（虚构）
+- `pages.courses.description`：设计、编程、语言和职业技能。课时、学费和适合谁都在卡上。
+- `pages.courses.course-board.label`：分类
+- `pages.courses.course-board.title`：八门夜课
+- `pages.courses.course-board.lead`：课时、学费和适合谁都在卡上。
+- `pages.courses.course-board.groups[0].key`：all
+- `pages.courses.course-board.groups[0].name`：全部
+- `pages.courses.course-board.groups[1].key`：d1
+- `pages.courses.course-board.groups[1].name`：视觉设计
+- `pages.courses.course-board.groups[1].hide`：1
+- `pages.courses.course-board.groups[2].key`：d2
+- `pages.courses.course-board.groups[2].name`：编程
+- `pages.courses.course-board.groups[2].hide`：1
+- `pages.courses.course-board.groups[3].key`：d3
+- `pages.courses.course-board.groups[3].name`：语言
+- `pages.courses.course-board.groups[3].hide`：1
+- `pages.courses.course-board.groups[4].key`：d4
+- `pages.courses.course-board.groups[4].name`：职业技能
+- `pages.courses.course-board.groups[4].hide`：1
+- `pages.courses.course-board.items[0].name`：品牌版式
+- `pages.courses.course-board.items[0].cat`：d1
+- `pages.courses.course-board.items[0].catName`：视觉设计
+- `pages.courses.course-board.items[0].hours`：36 课时
+- `pages.courses.course-board.items[0].price`：4,800 元
+- `pages.courses.course-board.items[0].audience`：想自己排海报的人
+- `pages.courses.course-board.items[0].teacher`：周晚宁
+- `pages.courses.course-board.items[1].name`：界面走查
+- `pages.courses.course-board.items[1].cat`：d1
+- `pages.courses.course-board.items[1].catName`：视觉设计
+- `pages.courses.course-board.items[1].hours`：24 课时
+- `pages.courses.course-board.items[1].price`：3,600 元
+- `pages.courses.course-board.items[1].audience`：改自己产品的人
+- `pages.courses.course-board.items[1].teacher`：周晚宁
+- `pages.courses.course-board.items[2].name`：网页前端
+- `pages.courses.course-board.items[2].cat`：d2
+- `pages.courses.course-board.items[2].catName`：编程
+- `pages.courses.course-board.items[2].hours`：48 课时
+- `pages.courses.course-board.items[2].price`：6,800 元
+- `pages.courses.course-board.items[2].audience`：零基础转行的人
+- `pages.courses.course-board.items[2].teacher`：韩述
+- `pages.courses.course-board.items[3].name`：数据表查询
+- `pages.courses.course-board.items[3].cat`：d2
+- `pages.courses.course-board.items[3].catName`：编程
+- `pages.courses.course-board.items[3].hours`：32 课时
+- `pages.courses.course-board.items[3].price`：4,200 元
+- `pages.courses.course-board.items[3].audience`：要自己查数的运营
+- `pages.courses.course-board.items[3].teacher`：韩述
+- `pages.courses.course-board.items[4].name`：商务英语
+- `pages.courses.course-board.items[4].cat`：d3
+- `pages.courses.course-board.items[4].catName`：语言
+- `pages.courses.course-board.items[4].hours`：40 课时
+- `pages.courses.course-board.items[4].price`：5,200 元
+- `pages.courses.course-board.items[4].audience`：要开会发言的人
+- `pages.courses.course-board.items[4].teacher`：井口葵
+- `pages.courses.course-board.items[5].name`：日语入门
+- `pages.courses.course-board.items[5].cat`：d3
+- `pages.courses.course-board.items[5].catName`：语言
+- `pages.courses.course-board.items[5].hours`：42 课时
+- `pages.courses.course-board.items[5].price`：4,600 元
+- `pages.courses.course-board.items[5].audience`：准备赴日的人
+- `pages.courses.course-board.items[5].teacher`：井口葵
+- `pages.courses.course-board.items[6].name`：短视频剪辑
+- `pages.courses.course-board.items[6].cat`：d4
+- `pages.courses.course-board.items[6].catName`：职业技能
+- `pages.courses.course-board.items[6].hours`：28 课时
+- `pages.courses.course-board.items[6].price`：3,400 元
+- `pages.courses.course-board.items[6].audience`：要自己出片的店主
+- `pages.courses.course-board.items[6].teacher`：林可
+- `pages.courses.course-board.items[7].name`：表格与汇报
+- `pages.courses.course-board.items[7].cat`：d4
+- `pages.courses.course-board.items[7].catName`：职业技能
+- `pages.courses.course-board.items[7].hours`：20 课时
+- `pages.courses.course-board.items[7].price`：2,400 元
+- `pages.courses.course-board.items[7].audience`：要做周报的职员
+- `pages.courses.course-board.items[7].teacher`：林可
+- `pages.courses.cta-band.title`：选好再联系
+- `pages.courses.cta-band.lead`：电话 021-64081276。
+- `pages.teachers.title`：讲师｜岸灯课室（虚构）
+- `pages.teachers.description`：四位常驻讲师，每人带两门夜课。
+- `pages.teachers.collection-list.title`：四位讲师
+- `pages.teachers.collection-list.lead`：每人带两门，到⁠课时间写在名字下面。
+- `pages.teachers.cta-band.title`：想听哪位的课
+- `pages.teachers.cta-band.lead`：电话 021-64081276。
+- `pages.works.title`：学员作业｜岸灯课室（虚构）
+- `pages.works.description`：课上交出来的海报、网页、短片和周报。
+- `pages.works.collection-list.title`：学员作业
+- `pages.works.collection-list.lead`：课上交出来的东西。
+- `pages.works.cta-band.title`：想看自己的课
+- `pages.works.cta-band.lead`：电话 021-64081276。
+- `pages.news.title`：资讯｜岸灯课室（虚构）
+- `pages.news.description`：课表、教室和加课，按日期写。
+- `pages.news.collection-list.title`：课室动态
+- `pages.news.collection-list.lead`：按日期往下看。
+- `pages.news.cta-band.title`：想报名这期
+- `pages.news.cta-band.lead`：电话 021-64081276。
+- `pages.contact.title`：报名咨询｜岸灯课室（虚构）
+- `pages.contact.description`：电话、微信或留言。课室在天钥桥路 3 楼。
+- `pages.contact.contact.title`：报名咨询
+- `pages.contact.contact.lead`：电话、微信或留言，课室在天钥桥路 3 楼。
+- `pages.contact.faq.title`：报名之前
+- `pages.contact.faq.items[0].q`：可以只试听吗
+- `pages.contact.faq.items[0].a`：可以。每门课试听 1 次，不另收费。试听算进那一期，不是单独开班。
+- `pages.contact.faq.items[1].q`：什么时候能退学费
+- `pages.contact.faq.items[1].a`：开课前 7 天可退学费。开课后不退。
+- `pages.contact.faq.items[2].q`：一个班几个人
+- `pages.contact.faq.items[2].a`：一个班最多 12 人。满了就等下一期。
+- `pages.contact.faq.items[3].q`：周末有课吗
+- `pages.contact.faq.items[3].a`：周六 10:00-17:00 有课。周日休息。周二到周五是 18:30-21:30。
+- `collections.courses.layout-night.slug`：layout-night
+- `collections.courses.layout-night.name`：品牌版式
+- `collections.courses.layout-night.category`：视觉设计
+- `collections.courses.layout-night.summary`：36 课时，学费 4,800 元。适合想自己排海报的人。
+- `collections.courses.layout-night.body`：从你自己的一张海报改起。课在周二、周四晚上。打印自己出，课上只排。
+- `collections.courses.layout-night.teacher`：周晚宁
+- `collections.courses.layout-night.teacherHref`：../teachers/zhou.html
+- `collections.courses.layout-night.specs[0].label`：课时
+- `collections.courses.layout-night.specs[0].value`：36 课时
+- `collections.courses.layout-night.specs[1].label`：学费
+- `collections.courses.layout-night.specs[1].value`：4,800 元
+- `collections.courses.layout-night.specs[2].label`：适合
+- `collections.courses.layout-night.specs[2].value`：想自己排海报的人
+- `collections.courses.layout-night.specs[3].label`：讲师
+- `collections.courses.layout-night.specs[3].value`：周晚宁
+- `collections.courses.layout-night.outline[0].name`：看你的旧海报
+- `collections.courses.layout-night.outline[0].text`：只看边距、字号和图片位置
+- `collections.courses.layout-night.outline[1].name`：定一张网格
+- `collections.courses.layout-night.outline[1].text`：栏宽按你要印的尺寸
+- `collections.courses.layout-night.outline[2].name`：换你的照片
+- `collections.courses.layout-night.outline[2].text`：照片自己准备
+- `collections.courses.layout-night.outline[3].name`：导出去印
+- `collections.courses.layout-night.outline[3].text`：印厂的事课上不代做
+- `collections.courses.ui-review.slug`：ui-review
+- `collections.courses.ui-review.name`：界面走查
+- `collections.courses.ui-review.category`：视觉设计
+- `collections.courses.ui-review.summary`：24 课时，学费 3,600 元。适合改自己产品的人。
+- `collections.courses.ui-review.body`：把自己的产品界面带来，当堂改一版。课在周二、周四晚上，和品牌版式错开。
+- `collections.courses.ui-review.teacher`：周晚宁
+- `collections.courses.ui-review.teacherHref`：../teachers/zhou.html
+- `collections.courses.ui-review.specs[0].label`：课时
+- `collections.courses.ui-review.specs[0].value`：24 课时
+- `collections.courses.ui-review.specs[1].label`：学费
+- `collections.courses.ui-review.specs[1].value`：3,600 元
+- `collections.courses.ui-review.specs[2].label`：适合
+- `collections.courses.ui-review.specs[2].value`：改自己产品的人
+- `collections.courses.ui-review.specs[3].label`：讲师
+- `collections.courses.ui-review.specs[3].value`：周晚宁
+- `collections.courses.ui-review.outline[0].name`：打开你的界面
+- `collections.courses.ui-review.outline[0].text`：用你正在改的那一版
+- `collections.courses.ui-review.outline[1].name`：标出挡路的地方
+- `collections.courses.ui-review.outline[1].text`：只标看不懂的按钮和间距
+- `collections.courses.ui-review.outline[2].name`：改一版间距
+- `collections.courses.ui-review.outline[2].text`：当场调，不讲风格史
+- `collections.courses.ui-review.outline[3].name`：留下修改单
+- `collections.courses.ui-review.outline[3].text`：你带走，回去自己改
+- `collections.courses.front-end.slug`：front-end
+- `collections.courses.front-end.name`：网页前端
+- `collections.courses.front-end.category`：编程
+- `collections.courses.front-end.summary`：48 课时，学费 6,800 元。适合零基础转行的人。
+- `collections.courses.front-end.body`：从看懂一个页面的结构开始，写到能把一页菜单传到网上。课在周三晚上，周六下午也开一班。一个班最多 12 人。学费不含你自己的域名。
+- `collections.courses.front-end.teacher`：韩述
+- `collections.courses.front-end.teacherHref`：../teachers/han.html
+- `collections.courses.front-end.specs[0].label`：课时
+- `collections.courses.front-end.specs[0].value`：48 课时
+- `collections.courses.front-end.specs[1].label`：学费
+- `collections.courses.front-end.specs[1].value`：6,800 元
+- `collections.courses.front-end.specs[2].label`：适合
+- `collections.courses.front-end.specs[2].value`：零基础转行的人
+- `collections.courses.front-end.specs[3].label`：讲师
+- `collections.courses.front-end.specs[3].value`：韩述
+- `collections.courses.front-end.outline[0].name`：认识页面结构
+- `collections.courses.front-end.outline[0].text`：用浏览器看一个现成页面的块
+- `collections.courses.front-end.outline[1].name`：写一个单页
+- `collections.courses.front-end.outline[1].text`：导航、一段介绍、一个按钮
+- `collections.courses.front-end.outline[2].name`：接上自己的图
+- `collections.courses.front-end.outline[2].text`：图片自己准备，课上只排位置
+- `collections.courses.front-end.outline[3].name`：发给别人看
+- `collections.courses.front-end.outline[3].text`：传到一个能打开的地址
+- `collections.courses.sql-desk.slug`：sql-desk
+- `collections.courses.sql-desk.name`：数据表查询
+- `collections.courses.sql-desk.category`：编程
+- `collections.courses.sql-desk.summary`：32 课时，学费 4,200 元。适合要自己查数的运营。
+- `collections.courses.sql-desk.body`：用一张真实的销售表练习筛选和汇总。课在周三晚上。电脑自己带。
+- `collections.courses.sql-desk.teacher`：韩述
+- `collections.courses.sql-desk.teacherHref`：../teachers/han.html
+- `collections.courses.sql-desk.specs[0].label`：课时
+- `collections.courses.sql-desk.specs[0].value`：32 课时
+- `collections.courses.sql-desk.specs[1].label`：学费
+- `collections.courses.sql-desk.specs[1].value`：4,200 元
+- `collections.courses.sql-desk.specs[2].label`：适合
+- `collections.courses.sql-desk.specs[2].value`：要自己查数的运营
+- `collections.courses.sql-desk.specs[3].label`：讲师
+- `collections.courses.sql-desk.specs[3].value`：韩述
+- `collections.courses.sql-desk.outline[0].name`：认清一张表
+- `collections.courses.sql-desk.outline[0].text`：哪一列是日期，哪一列是金额
+- `collections.courses.sql-desk.outline[1].name`：按条件筛选
+- `collections.courses.sql-desk.outline[1].text`：只留下你要的那几行
+- `collections.courses.sql-desk.outline[2].name`：做一次汇总
+- `collections.courses.sql-desk.outline[2].text`：按门店或按星期加总
+- `collections.courses.sql-desk.outline[3].name`：把结果交给同事
+- `collections.courses.sql-desk.outline[3].text`：导出你已经会用的格式
+- `collections.courses.biz-en.slug`：biz-en
+- `collections.courses.biz-en.name`：商务英语
+- `collections.courses.biz-en.category`：语言
+- `collections.courses.biz-en.summary`：40 课时，学费 5,200 元。适合要开会发言的人。
+- `collections.courses.biz-en.body`：把下周会上要说的话先写下来再开口。课在周二晚上，周六上午也开。
+- `collections.courses.biz-en.teacher`：井口葵
+- `collections.courses.biz-en.teacherHref`：../teachers/jing.html
+- `collections.courses.biz-en.specs[0].label`：课时
+- `collections.courses.biz-en.specs[0].value`：40 课时
+- `collections.courses.biz-en.specs[1].label`：学费
+- `collections.courses.biz-en.specs[1].value`：5,200 元
+- `collections.courses.biz-en.specs[2].label`：适合
+- `collections.courses.biz-en.specs[2].value`：要开会发言的人
+- `collections.courses.biz-en.specs[3].label`：讲师
+- `collections.courses.biz-en.specs[3].value`：井口葵
+- `collections.courses.biz-en.outline[0].name`：写下三句
+- `collections.courses.biz-en.outline[0].text`：会上你真正要说的
+- `collections.courses.biz-en.outline[1].name`：改掉含糊的词
+- `collections.courses.biz-en.outline[1].text`：只改这一段
+- `collections.courses.biz-en.outline[2].name`：对着人说一遍
+- `collections.courses.biz-en.outline[2].text`：班上互相当听众
+- `collections.courses.biz-en.outline[3].name`：带回你的稿
+- `collections.courses.biz-en.outline[3].text`：下周开会用这一份
+- `collections.courses.jp-start.slug`：jp-start
+- `collections.courses.jp-start.name`：日语入门
+- `collections.courses.jp-start.category`：语言
+- `collections.courses.jp-start.summary`：42 课时，学费 4,600 元。适合准备赴日的人。
+- `collections.courses.jp-start.body`：从假名和自我介绍开始。课在周六上午。不去讲考试技巧。
+- `collections.courses.jp-start.teacher`：井口葵
+- `collections.courses.jp-start.teacherHref`：../teachers/jing.html
+- `collections.courses.jp-start.specs[0].label`：课时
+- `collections.courses.jp-start.specs[0].value`：42 课时
+- `collections.courses.jp-start.specs[1].label`：学费
+- `collections.courses.jp-start.specs[1].value`：4,600 元
+- `collections.courses.jp-start.specs[2].label`：适合
+- `collections.courses.jp-start.specs[2].value`：准备赴日的人
+- `collections.courses.jp-start.specs[3].label`：讲师
+- `collections.courses.jp-start.specs[3].value`：井口葵
+- `collections.courses.jp-start.outline[0].name`：假名读写
+- `collections.courses.jp-start.outline[0].text`：当堂写完两套假名
+- `collections.courses.jp-start.outline[1].name`：自我介绍
+- `collections.courses.jp-start.outline[1].text`：名字、城市、做什么
+- `collections.courses.jp-start.outline[2].name`：点餐和问路
+- `collections.courses.jp-start.outline[2].text`：只练这两段
+- `collections.courses.jp-start.outline[3].name`：听一段慢对话
+- `collections.courses.jp-start.outline[3].text`：材料课上发
+- `collections.courses.cut-reel.slug`：cut-reel
+- `collections.courses.cut-reel.name`：短视频剪辑
+- `collections.courses.cut-reel.category`：职业技能
+- `collections.courses.cut-reel.summary`：28 课时，学费 3,400 元。适合要自己出片的店主。
+- `collections.courses.cut-reel.body`：用店里的素材剪一条门口短片。课在周四晚上，周六下午也开。电脑自己带。
+- `collections.courses.cut-reel.teacher`：林可
+- `collections.courses.cut-reel.teacherHref`：../teachers/lin.html
+- `collections.courses.cut-reel.specs[0].label`：课时
+- `collections.courses.cut-reel.specs[0].value`：28 课时
+- `collections.courses.cut-reel.specs[1].label`：学费
+- `collections.courses.cut-reel.specs[1].value`：3,400 元
+- `collections.courses.cut-reel.specs[2].label`：适合
+- `collections.courses.cut-reel.specs[2].value`：要自己出片的店主
+- `collections.courses.cut-reel.specs[3].label`：讲师
+- `collections.courses.cut-reel.specs[3].value`：林可
+- `collections.courses.cut-reel.outline[0].name`：导入你的素材
+- `collections.courses.cut-reel.outline[0].text`：店里拍的就行
+- `collections.courses.cut-reel.outline[1].name`：剪到十五秒
+- `collections.courses.cut-reel.outline[1].text`：只留门口这一段
+- `collections.courses.cut-reel.outline[2].name`：配你自己的声音
+- `collections.courses.cut-reel.outline[2].text`：不另找配音
+- `collections.courses.cut-reel.outline[3].name`：导出给店里用
+- `collections.courses.cut-reel.outline[3].text`：分辨率按手机
+- `collections.courses.sheet-report.slug`：sheet-report
+- `collections.courses.sheet-report.name`：表格与汇报
+- `collections.courses.sheet-report.category`：职业技能
+- `collections.courses.sheet-report.summary`：20 课时，学费 2,400 元。适合要做周报的职员。
+- `collections.courses.sheet-report.body`：用你自己的周报改一版。课在周四晚上。表格软件用你电脑里已有的。
+- `collections.courses.sheet-report.teacher`：林可
+- `collections.courses.sheet-report.teacherHref`：../teachers/lin.html
+- `collections.courses.sheet-report.specs[0].label`：课时
+- `collections.courses.sheet-report.specs[0].value`：20 课时
+- `collections.courses.sheet-report.specs[1].label`：学费
+- `collections.courses.sheet-report.specs[1].value`：2,400 元
+- `collections.courses.sheet-report.specs[2].label`：适合
+- `collections.courses.sheet-report.specs[2].value`：要做周报的职员
+- `collections.courses.sheet-report.specs[3].label`：讲师
+- `collections.courses.sheet-report.specs[3].value`：林可
+- `collections.courses.sheet-report.outline[0].name`：打开你的周报
+- `collections.courses.sheet-report.outline[0].text`：用你正在交的那份
+- `collections.courses.sheet-report.outline[1].name`：删掉重复的数
+- `collections.courses.sheet-report.outline[1].text`：同一件事只留一列
+- `collections.courses.sheet-report.outline[2].name`：写成三句结论
+- `collections.courses.sheet-report.outline[2].text`：给主管看的那几句
+- `collections.courses.sheet-report.outline[3].name`：定下周的表
+- `collections.courses.sheet-report.outline[3].text`：下次直接往里填
+- `collections.teachers.zhou.slug`：zhou
+- `collections.teachers.zhou.name`：周晚宁
+- `collections.teachers.zhou.summary`：带品牌版式和界面走查。周二、周四 18:30 到⁠课。
+- `collections.teachers.zhou.body`：2016年起在出版社做版式。现在只带品牌版式和界面走查。周二、周四 18:30 到⁠课。
+- `collections.teachers.zhou.specs[0].label`：到⁠课
+- `collections.teachers.zhou.specs[0].value`：周二、周四 18:30
+- `collections.teachers.han.slug`：han
+- `collections.teachers.han.name`：韩述
+- `collections.teachers.han.summary`：带网页前端和数据表查询。周三 18:30、周六 10:00 到⁠课。
+- `collections.teachers.han.body`：以前在外包公司写页面。现在带网页前端和数据表查询。周三 18:30、周六 10:00 到⁠课。
+- `collections.teachers.han.specs[0].label`：到⁠课
+- `collections.teachers.han.specs[0].value`：周三 18:30、周六 10:00
+- `collections.teachers.jing.slug`：jing
+- `collections.teachers.jing.name`：井口葵
+- `collections.teachers.jing.summary`：带商务英语和日语入门。周二 18:30、周六 10:00 到⁠课。
+- `collections.teachers.jing.body`：在大阪工作过四年。现在带商务英语和日语入门。周二 18:30、周六 10:00 到⁠课。
+- `collections.teachers.jing.specs[0].label`：到⁠课
+- `collections.teachers.jing.specs[0].value`：周二 18:30、周六 10:00
+- `collections.teachers.lin.slug`：lin
+- `collections.teachers.lin.name`：林可
+- `collections.teachers.lin.summary`：带短视频剪辑和表格与汇报。周四 18:30、周六 14:00 到⁠课。
+- `collections.teachers.lin.body`：以前做店里的出片。现在带短视频剪辑和表格与汇报。周四 18:30、周六 14:00 到⁠课。
+- `collections.teachers.lin.specs[0].label`：到⁠课
+- `collections.teachers.lin.specs[0].value`：周四 18:30、周六 14:00
+- `collections.works.shop-poster.slug`：shop-poster
+- `collections.works.shop-poster.name`：超市周末海报
+- `collections.works.shop-poster.summary`：品牌版式课作业。苏小满给自家超市排的周末价目。
+- `collections.works.shop-poster.body`：品牌版式课作业。苏小满用自家超市的周末价目改了一版，课上只排，印刷她自己出。
+- `collections.works.shop-poster.specs[0].label`：来自
+- `collections.works.shop-poster.specs[0].value`：品牌版式课
+- `collections.works.menu-page.slug`：menu-page
+- `collections.works.menu-page.name`：小店菜单页
+- `collections.works.menu-page.summary`：网页前端课作业。陈麦做的一页菜单。
+- `collections.works.menu-page.body`：网页前端课作业。陈麦把店里的菜单做成一页，能打开给别人看。
+- `collections.works.menu-page.specs[0].label`：来自
+- `collections.works.menu-page.specs[0].value`：网页前端课
+- `collections.works.door-clip.slug`：door-clip
+- `collections.works.door-clip.name`：门口十五秒
+- `collections.works.door-clip.summary`：短视频剪辑课作业。一条店门口的短片。
+- `collections.works.door-clip.body`：短视频剪辑课作业。店主用自己拍的门口画面剪了一条，配的是自己的声音。
+- `collections.works.door-clip.specs[0].label`：来自
+- `collections.works.door-clip.specs[0].value`：短视频剪辑课
+- `collections.works.week-file.slug`：week-file
+- `collections.works.week-file.name`：周一周报底
+- `collections.works.week-file.summary`：表格与汇报课作业。一份可以接着填的周报。
+- `collections.works.week-file.body`：表格与汇报课作业。学员把自己正在交的周报删到能接着填，下周直接用。
+- `collections.works.week-file.specs[0].label`：来自
+- `collections.works.week-file.specs[0].value`：表格与汇报课
+- `collections.news.oct-board.slug`：oct-board
+- `collections.news.oct-board.name`：十月夜课课表
+- `collections.news.oct-board.date`：2026年9月12日
+- `collections.news.oct-board.summary`：2026年9月12日贴出十月课表，8 门课都开。
+- `collections.news.oct-board.body`：十月夜课按课表开。8 门课都在。报名还是先看课时和学费。
+- `collections.news.new-proj.slug`：new-proj
+- `collections.news.new-proj.name`：教室换了投影
+- `collections.news.new-proj.date`：2026年8月3日
+- `collections.news.new-proj.summary`：2026年8月3日，3 楼靠窗那间换了投影。
+- `collections.news.new-proj.body`：靠窗那间换了投影。英语和编程还是用这间。
+- `collections.news.en-extra.slug`：en-extra
+- `collections.news.en-extra.name`：英语班加了一节
+- `collections.news.en-extra.date`：2026年6月18日
+- `collections.news.en-extra.summary`：2026年6月18日，商务英语周六上午加一节会前口语，学费不加。
+- `collections.news.en-extra.body`：周六上午多一节会前口语。学费不加，还是课卡上的那个数。

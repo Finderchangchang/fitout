@@ -22,8 +22,6 @@
         "time": "09:00-18:30"
       }
     ],
-    "formUrl": "https://example.com/luzhun-visit",
-    "icp": "浙ICP备20261006号-8",
     "qrcodes": [
       {
         "image": "qr-wechat",
@@ -489,8 +487,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "路准汽车服务（虚构）｜先看工单，再动手",
-      "description": "滨江汽修。保养、维修、钣喷和贴膜。工时、配件参考价和质保，进厂前写在同一张单上。",
+      "title": "路准汽车服务（虚构）｜保养维修与车身服务",
+      "description": "杭州滨江、拱墅、萧山，提供保养、维修、钣喷、美容和贴膜。",
       "sections": [
         {
           "type": "hero",
@@ -499,8 +497,8 @@
           "tone": "image",
           "data": {
             "label": "路准汽修",
-            "title": "先看工单，再动手",
-            "lead": "工时、配件参考价和质保，进厂前写在同一张单上。",
+            "title": "保养维修与车身服务",
+            "lead": "杭州滨江、拱墅、萧山，提供保养、维修、钣喷、美容和贴膜。",
             "primaryLabel": "预约到店",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "看看服务",
@@ -510,32 +508,32 @@
               {
                 "image": "hero-bay",
                 "imageAlt": "举升机托着轿车底盘的局部",
-                "title": "先看工单，再动手",
-                "lead": "工时、配件参考价和质保，进厂前写在同一张单上。"
+                "title": "保养维修与车身服务",
+                "lead": "工时、配件参考价和质保写在同一张工单上。"
               },
               {
                 "image": "hero-order",
                 "imageAlt": "工装袖口和进厂单的桌面",
-                "title": "进厂先对工单",
-                "lead": "袖口边那张单，工时和配件写在一起。"
+                "title": "检查后确认工单",
+                "lead": "进厂先确认项目、工时与配件。"
               },
               {
                 "image": "hero-paint",
                 "imageAlt": "烤漆房门口的车漆反光",
-                "title": "漆干了再交车",
-                "lead": "烤漆房门口看反光，漆面质保十二个月。"
+                "title": "钣金与喷漆",
+                "lead": "漆面质保十二个月，交车前检查漆面。"
               },
               {
                 "image": "hero-film",
                 "imageAlt": "前挡玻璃上的贴膜刮板",
-                "title": "膜边贴平再交",
-                "lead": "前挡刮板走完，三天内别冲高压水。"
+                "title": "车衣与贴膜",
+                "lead": "贴膜后提供养护说明，三天内避免高压水冲洗。"
               },
               {
                 "image": "hero-brake",
                 "imageAlt": "举升机上的刹车盘局部",
-                "title": "先量刹车片厚度",
-                "lead": "轻点有金属声，先测厚度再决定换。"
+                "title": "刹车检查",
+                "lead": "先测刹车片厚度，再确认维修项目。"
               }
             ],
             "ticket": [
@@ -560,7 +558,7 @@
           "anchor": "bays",
           "tone": "light",
           "data": {
-            "title": "五个工位",
+            "title": "服务项目与参考价",
             "lead": "保养、维修、钣喷、美容和贴膜，参考价写在卡上。",
             "items": [
               {
@@ -612,7 +610,7 @@
           "anchor": "steps",
           "tone": "dark",
           "data": {
-            "title": "进厂四步",
+            "title": "预约与维修流程",
             "lead": "预约、检查、报价和交车，都写在同一张单上。",
             "items": [
               {
@@ -633,7 +631,7 @@
               }
             ]
           },
-          "bg": "bg-lift"
+          "bg": "band-bay"
         },
         {
           "type": "trust",
@@ -641,7 +639,7 @@
           "anchor": "numbers",
           "tone": "light",
           "data": {
-            "title": "店里这些数",
+            "title": "门店与技师",
             "lead": "开业年份、门店、技师和月进厂，都按店里的台账。",
             "items": [
               {
@@ -659,38 +657,6 @@
               {
                 "value": "860",
                 "label": "台月均进厂"
-              }
-            ]
-          }
-        },
-        {
-          "type": "floor",
-          "variant": "split",
-          "anchor": "floor",
-          "tone": "image",
-          "data": {
-            "title": "车间和设备",
-            "lead": "举升、定位、烤漆和持证，都在滨江店能看见。",
-            "image": "shop-floor",
-            "imageAlt": "滨江店保养工位和双柱举升机",
-            "linkLabel": "看看设备",
-            "linkHref": "about/index.html#tools",
-            "points": [
-              {
-                "name": "举升机",
-                "text": "双柱举升，轿车和SUV都能上。"
-              },
-              {
-                "name": "四轮定位",
-                "text": "定位仪在保养工位旁边。"
-              },
-              {
-                "name": "烤漆房",
-                "text": "小面积补漆进烤漆房，不在露天喷。"
-              },
-              {
-                "name": "技师持证",
-                "text": "机修和钣喷分开考，证书在店里。"
               }
             ]
           }
@@ -740,35 +706,12 @@
           }
         },
         {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "wide",
-          "tone": "image",
-          "data": {
-            "image": "band-bay",
-            "imageAlt": "一排举升机上的轿车",
-            "caption": "滨江店下午的保养工位，灯是冷白。"
-          }
-        },
-        {
-          "type": "collection-list",
-          "variant": "notes",
-          "anchor": "notes",
-          "tone": "light",
-          "data": {
-            "title": "养车知识",
-            "lead": "机油、补漆、贴膜和刹车，店里写过的四篇。",
-            "collection": "news",
-            "pageSize": 3
-          }
-        },
-        {
           "type": "yards",
           "variant": "row",
           "anchor": "yards",
           "tone": "dark",
           "data": {
-            "title": "三家直营店",
+            "title": "门店地址与营业时间",
             "lead": "滨江、拱墅、萧山，营业时间写在每家下面。",
             "items": [
               {
@@ -796,7 +739,7 @@
           "anchor": "desk",
           "tone": "light",
           "data": {
-            "title": "预约到店",
+            "title": "预约服务工位",
             "lead": "电话约工位，或填一张预约，进厂前对上时间。"
           }
         }
@@ -934,7 +877,7 @@
             "title": "五项服务",
             "lead": "每项都写时间和参考价，确认后才开工。",
             "collection": "services",
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]
@@ -961,7 +904,7 @@
             "title": "技师团队 23 人，以下为部分骨干",
             "lead": "页面上是滨江店这四位。点名字看工龄和证书。",
             "collection": "team",
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]
@@ -988,7 +931,7 @@
             "title": "三家门店",
             "lead": "点店名看地址、时间和导航。",
             "collection": "stores",
-            "pageSize": 2
+            "pageSize": 9
           }
         }
       ]
@@ -1015,7 +958,7 @@
             "title": "四篇笔记",
             "lead": "机油、补漆、贴膜和刹车，按店里的做法写。",
             "collection": "news",
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]

@@ -1,4 +1,4 @@
-/* 三套标杆的内页和无图版：内容先进入视野，图片缺席时重新组织文字。 */
+/* 行业官网的内页和无图版：内容先进入视野，图片缺席时重新组织文字。 */
 html[data-layout="business"] .page-banner { height: 280px; min-height: 280px; max-height: 280px; }
 html[data-layout="business"] .page-banner-copy { padding-block: 3rem; }
 html[data-layout="business"] .site-footer { padding-block: 3rem; }
@@ -10,6 +10,8 @@ html[data-layout="business"] .np-meter[data-tone="light"] :is(.np-title, .sectio
 html[data-layout="business"] .np-splitband[data-tone="dark"] { background: var(--text); color: var(--on-media); }
 html[data-layout="business"] .np-splitband[data-tone="dark"] :is(.np-splitband-copy, .section-lead) { color: var(--on-media); }
 html[data-layout="business"] .contact-grid { align-items: start; }
+html[data-layout="business"] .desk-grid:not(:has(img)) { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 1279px) { html[data-layout="business"] .contact-grid { grid-template-columns: minmax(0, 1fr); } }
 html[data-layout="business"] .contact-card { color: var(--text); }
 html[data-layout="business"] .contact-card a:not(.btn) { color: var(--primary); }
 html[data-layout="business"] .section[data-tone="light"] { background: var(--bg); }
@@ -58,3 +60,30 @@ html[data-layout="business"] .section[data-no-media] > .container { border-botto
 
 html[data-layout="business"] .note:not(:has(img)) { grid-template-columns: minmax(0, 1fr); }
 html[data-layout="business"] .note:not(:has(img)) > div { padding: 1.1rem; }
+
+.plain-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; }
+.plain-item { padding-top: 1.25rem; border-top: 1px solid currentColor; min-width: 0; }
+.plain-item .item-title { margin: 0 0 0.75rem; color: inherit; }
+.plain-item a { color: inherit; }
+.plain-item p { margin: 0.4rem 0; color: inherit; }
+.plain-price { font-size: var(--fs-2); font-weight: 650; }
+.plain-intro { max-width: 54rem; }
+@media (min-width: 1024px) {
+  .plain-section:has(.plain-intro) > .container { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 1rem 3rem; align-items: start; }
+  .plain-section:has(.plain-intro) .section-head { margin-bottom: 0; }
+  .plain-section:has(.plain-intro) .plain-intro { max-width: none; }
+  .plain-section:has(.plain-intro) > .container > p { grid-column: 2; }
+}
+html[data-layout="business"] :is(.ledger-row, .row-item.media-card, .docket-row.media-card, .sheet-row, .news-row, .note-row, .entry.line) { align-items: start; }
+html[data-layout="business"] :is(.ledger-row, .row-item.media-card, .docket-row.media-card, .sheet-row, .news-row, .note-row, .entry.line) > :is(h3, p, div) { margin-top: 0; }
+html[data-layout="business"] [data-tone="dark"] :is(.gate-item, .gate-note, .gate-no) { color: var(--on-media); }
+@media (max-width: 767px) { .plain-list { grid-template-columns: 1fr; gap: 1.25rem; } }
+
+html[data-layout="business"] .course-lineup[data-tone="light"] { color: var(--text); }
+html[data-layout="business"] .course-lineup[data-tone="light"] :is(p, h3, a, .meta) { color: var(--text); }
+html[data-layout="business"] .course-lineup[data-tone="light"] .price { color: var(--primary); }
+html[data-layout="business"] [data-tone="dark"] .step-no { color: var(--on-media); background: transparent; }
+@media (min-width: 768px) {
+  .plain-list:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .plain-list:has(> :nth-child(5):last-child) > :last-child { grid-column: 1 / -1; }
+}

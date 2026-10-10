@@ -23,7 +23,6 @@
         "time": "08:30-12:00 CST"
       }
     ],
-    "formUrl": "https://example.com/gauge-pin-quote",
     "qrcodes": [
       {
         "image": "qr-wechat",

@@ -1,18 +1,42 @@
 {
   "note": "种植到冷链的五步。每步一张同比例的图，顺着一条竖线往下读。",
   "fields": {
-    "title": { "type": "string", "required": true, "maxChars": 16 },
-    "lead": { "type": "string", "required": false, "maxChars": 40 },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 16
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "maxChars": 40
+    },
     "items": {
       "type": "list",
       "required": true,
       "min": 4,
       "max": 5,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 16 },
-        "text": { "type": "string", "required": true, "maxChars": 40 },
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 40
+        },
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        }
       }
     }
   },
@@ -20,9 +44,15 @@
     "rail": {
       "needsImage": true,
       "imageField": "items.image",
-      "fallback": "rail",
+      "fallback": "text-list",
       "family": "rail",
       "fit": "选种到冷链，竖着排五张图",
+      "source": "样板间自写"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "text-catalog",
+      "fit": "无照片时保留业务、规格和联系信息",
       "source": "样板间自写"
     }
   }

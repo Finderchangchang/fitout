@@ -22,9 +22,6 @@
         "time": "14:00-21:00"
       }
     ],
-    "formUrl": "https://example.com/luciyuan-stay",
-    "icp": "浙ICP备16042817号",
-    "police": "浙公网安备33012202016018号",
     "qrcodes": [
       {
         "image": "qr-wechat",
@@ -85,7 +82,7 @@
         "slug": "creek-king",
         "name": "溪口大床房",
         "category": "大床房",
-        "summary": "店里这种有四间。28平方米，1.8米大床，可住2人。窗对溪口，参考价680元\u2060起。",
+        "summary": "店里这种有四间。28平方米，1.8米大床，可住2人。窗对溪口，参考价680元⁠起。",
         "body": "窗对着溪口。夏天开窗能听见水。这种房有四间。空房以电话为准，周末建议提前一天。",
         "kit": "窗边一张茶桌，空调和独立卫浴。",
         "image": "room-creek",
@@ -105,7 +102,7 @@
           },
           {
             "label": "参考价",
-            "value": "680元\u2060起"
+            "value": "680元⁠起"
           },
           {
             "label": "间数",
@@ -121,7 +118,7 @@
         "slug": "bamboo-twin",
         "name": "竹廊双床房",
         "category": "双床房",
-        "summary": "店里这种有两间。32平方米，1.2米双床，可住2人。竹廊相连，参考价720元\u2060起。",
+        "summary": "店里这种有两间。32平方米，1.2米双床，可住2人。竹廊相连，参考价720元⁠起。",
         "body": "两张床隔一条过道。竹廊在窗外，下雨听得见。这种房有两间，和2022年加的竹廊连在一起。",
         "kit": "廊下听得见雨，两张床，有空调。",
         "image": "room-bamboo",
@@ -141,7 +138,7 @@
           },
           {
             "label": "参考价",
-            "value": "720元\u2060起"
+            "value": "720元⁠起"
           },
           {
             "label": "间数",
@@ -157,7 +154,7 @@
         "slug": "loft-family",
         "name": "阁楼家庭房",
         "category": "家庭房",
-        "summary": "店里这种有四间。46平方米，大床加沙发床，可住3人。参考价980元\u2060起。",
+        "summary": "店里这种有四间。46平方米，大床加沙发床，可住3人。参考价980元⁠起。",
         "body": "楼上是大床，沙发床在楼下。这种房有四间。楼梯稍陡，老人先看照片再订。",
         "kit": "楼下沙发床，楼梯稍陡，有空调。",
         "image": "room-loft",
@@ -177,7 +174,7 @@
           },
           {
             "label": "参考价",
-            "value": "980元\u2060起"
+            "value": "980元⁠起"
           },
           {
             "label": "间数",
@@ -193,7 +190,7 @@
         "slug": "court-suite",
         "name": "院落套房",
         "category": "大床房",
-        "summary": "店里这种有两间。58平方米，1.8米大床，可住2人。单独小院，参考价1280元\u2060起。",
+        "summary": "店里这种有两间。58平方米，1.8米大床，可住2人。单独小院，参考价1280元⁠起。",
         "body": "推门是自己的小院。这种房有两间。晚上安静些。参考价不含晚饭。",
         "kit": "推门是小院，院里一张石桌。",
         "image": "room-suite",
@@ -213,7 +210,7 @@
           },
           {
             "label": "参考价",
-            "value": "1280元\u2060起"
+            "value": "1280元⁠起"
           },
           {
             "label": "间数",
@@ -396,8 +393,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "芦茨院（虚构）｜今晚住进这处院子",
-      "description": "桐庐芦茨村十二间房。电话或微信订房，前台每天留到晚上九点。",
+      "title": "芦茨院（虚构）｜桐庐溪边民宿",
+      "description": "芦茨村十二间客房，提供院落晚餐，空房与房价请电话确认。",
       "sections": [
         {
           "type": "hero",
@@ -406,8 +403,8 @@
           "tone": "image",
           "data": {
             "label": "芦茨院",
-            "title": "今晚住进这处院子",
-            "lead": "桐庐芦茨村，十二间房。电话或微信订，前台留到晚上九点。",
+            "title": "桐庐溪边民宿",
+            "lead": "芦茨村十二间客房，提供院落晚餐，空房与房价请电话确认。",
             "primaryLabel": "电话预订",
             "primaryHref": "tel:057169821460",
             "secondaryLabel": "看看房型",
@@ -417,58 +414,29 @@
               {
                 "image": "hero-court",
                 "imageAlt": "老木门楼的门轴和午后光",
-                "title": "今晚住进这处院子",
-                "lead": "桐庐芦茨村，十二间房。电话或微信订，前台留到晚上九点。"
+                "title": "桐庐溪边民宿",
+                "lead": "十二间客房，电话或微信预订，前台服务到晚上九点。"
               },
               {
                 "image": "hero-creek",
                 "imageAlt": "亚麻床品和窗外的溪光",
-                "title": "溪光落在床上",
-                "lead": "溪口大床房窗对溪，参考价680元\u2060起。"
+                "title": "溪口大床房",
+                "lead": "28平方米，可住2人，参考价680元起。"
               },
               {
                 "image": "hero-river",
                 "imageAlt": "江面薄雾和远处的山",
-                "title": "雾散之前看江",
-                "lead": "院门出去步行8分钟，就是芦茨码头。"
+                "title": "周边与交通",
+                "lead": "从院门步行8分钟到芦茨码头。"
               },
               {
                 "image": "hero-table",
                 "imageAlt": "长桌上的碗和暖色灯",
-                "title": "晚饭留在院里",
-                "lead": "溪边土灶做晚饭，前台留到晚上九点。"
+                "title": "院落晚餐",
+                "lead": "住店客人优先，晚餐六点半开始，九点收灶。"
               }
             ]
           }
-        },
-        {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "dark",
-          "data": {
-            "title": "院子里的数",
-            "lead": "十二间房，2016年开业。回头客大约一半。",
-            "items": [
-              {
-                "value": "2016年",
-                "label": "开业"
-              },
-              {
-                "value": "12间",
-                "label": "客房"
-              },
-              {
-                "value": "46%",
-                "label": "回头客"
-              },
-              {
-                "value": "8分钟",
-                "label": "到码头"
-              }
-            ]
-          },
-          "bg": "bg-creek"
         },
         {
           "type": "stays",
@@ -476,15 +444,15 @@
           "anchor": "rooms",
           "tone": "light",
           "data": {
-            "title": "今晚可订的房",
-            "lead": "十二间分成四种：溪口四间、竹廊两间、阁楼四间、套房两间。",
+            "title": "房型与参考价",
+            "lead": "四种房型共十二间。参考价列在房型旁，空房以电话确认为准。",
             "items": [
               {
                 "name": "溪口大床房",
                 "area": "28平方米",
                 "bed": "1.8米大床",
                 "guests": "可住2人",
-                "price": "680元\u2060起",
+                "price": "680元⁠起",
                 "href": "rooms/creek-king.html",
                 "image": "room-creek",
                 "imageAlt": "溪口大床房实拍"
@@ -494,7 +462,7 @@
                 "area": "32平方米",
                 "bed": "1.2米双床",
                 "guests": "可住2人",
-                "price": "720元\u2060起",
+                "price": "720元⁠起",
                 "href": "rooms/bamboo-twin.html",
                 "image": "room-bamboo",
                 "imageAlt": "竹廊双床房实拍"
@@ -504,7 +472,7 @@
                 "area": "46平方米",
                 "bed": "大床加沙发床",
                 "guests": "可住3人",
-                "price": "980元\u2060起",
+                "price": "980元⁠起",
                 "href": "rooms/loft-family.html",
                 "image": "room-loft",
                 "imageAlt": "阁楼家庭房实拍"
@@ -514,7 +482,7 @@
                 "area": "58平方米",
                 "bed": "1.8米大床",
                 "guests": "可住2人",
-                "price": "1280元\u2060起",
+                "price": "1280元⁠起",
                 "href": "rooms/court-suite.html",
                 "image": "room-suite",
                 "imageAlt": "院落套房实拍"
@@ -523,25 +491,12 @@
           }
         },
         {
-          "type": "yard",
-          "variant": "wide",
-          "anchor": "view",
-          "tone": "image",
-          "data": {
-            "image": "yard-wide",
-            "imageAlt": "从院门望向对面的山",
-            "caption": "从院门望出去，对面是芦茨的山。",
-            "href": "album/index.html",
-            "linkLabel": "看相册"
-          }
-        },
-        {
           "type": "chronicle",
           "variant": "split",
           "anchor": "story",
-          "tone": "light",
+          "tone": "dark",
           "data": {
-            "title": "民宿故事",
+            "title": "院落与住宿",
             "lead": "2016年把老屋改成十二间房，晚饭仍在院里做。",
             "body": "门楼还是老屋的木门。2019年起晚饭在院里做。订房打电话，或加微信，前台留到晚上九点。",
             "image": "story-gate",
@@ -552,46 +507,12 @@
           }
         },
         {
-          "type": "nearby",
-          "variant": "cards",
-          "anchor": "nearby",
-          "tone": "dark",
-          "data": {
-            "title": "出了院门能去哪",
-            "lead": "码头、竹筏和溪边的晚饭，都在步行范围内。",
-            "items": [
-              {
-                "name": "芦茨码头",
-                "text": "出了院门步行8分钟，早班船看天气。",
-                "href": "places/spot-pier.html",
-                "image": "place-pier",
-                "imageAlt": "芦茨码头和船"
-              },
-              {
-                "name": "竹筏漂流",
-                "text": "从码头下水，大约四十分钟回到原处。",
-                "href": "places/exp-raft.html",
-                "image": "place-raft",
-                "imageAlt": "江上的竹筏"
-              },
-              {
-                "name": "溪边土灶",
-                "text": "溪边可以吃饭，也可以留在院里。",
-                "href": "places/bite-stove.html",
-                "image": "place-stove",
-                "imageAlt": "溪边的土灶"
-              }
-            ]
-          },
-          "bg": "bg-mist"
-        },
-        {
           "type": "supper",
           "variant": "board",
           "anchor": "supper",
           "tone": "light",
           "data": {
-            "title": "晚饭在院里灶",
+            "title": "晚餐与院落体验",
             "lead": "住店的人优先，六点半开饭，九点收灶。",
             "body": "笋干老鸭68元，清蒸溪鱼78元，青团16元。只住房、不吃饭也可以。",
             "href": "dining/index.html",
@@ -622,24 +543,46 @@
           }
         },
         {
-          "type": "collection-list",
-          "variant": "feed",
-          "anchor": "notes",
-          "tone": "image",
+          "type": "nearby",
+          "variant": "cards",
+          "anchor": "nearby",
+          "tone": "dark",
           "data": {
-            "title": "最近三篇",
-            "lead": "雾、雨，还有一顿早餐。",
-            "collection": "journal",
-            "pageSize": 2
-          }
+            "title": "周边游玩",
+            "lead": "码头、竹筏和溪边的晚饭，都在步行范围内。",
+            "items": [
+              {
+                "name": "芦茨码头",
+                "text": "出了院门步行8分钟，早班船看天气。",
+                "href": "places/spot-pier.html",
+                "image": "place-pier",
+                "imageAlt": "芦茨码头和船"
+              },
+              {
+                "name": "竹筏漂流",
+                "text": "从码头下水，大约四十分钟回到原处。",
+                "href": "places/exp-raft.html",
+                "image": "place-raft",
+                "imageAlt": "江上的竹筏"
+              },
+              {
+                "name": "溪边土灶",
+                "text": "溪边可以吃饭，也可以留在院里。",
+                "href": "places/bite-stove.html",
+                "image": "place-stove",
+                "imageAlt": "溪边的土灶"
+              }
+            ]
+          },
+          "bg": "bg-mist"
         },
         {
           "type": "reserve",
           "variant": "band",
           "anchor": "book",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "电话或微信订",
+            "title": "查询空房与预订",
             "lead": "前台留到晚上九点，空房以电话为准。"
           },
           "bg": "bg-wood"
@@ -755,7 +698,7 @@
             "title": "四种房型",
             "lead": "一共十二间。溪口四间，竹廊两间，阁楼四间，套房两间。",
             "collection": "rooms",
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]
@@ -796,7 +739,7 @@
                 "label": "美食"
               }
             ],
-            "pageSize": 3
+            "pageSize": 9
           }
         }
       ]
@@ -949,7 +892,7 @@
             "title": "三篇短记",
             "lead": "雾、雨，还有一顿早餐。",
             "collection": "journal",
-            "pageSize": 2
+            "pageSize": 9
           }
         }
       ]

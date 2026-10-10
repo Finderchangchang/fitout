@@ -72,36 +72,15 @@
           ]
         },
         {
-          "type": "lanes",
-          "required": false,
-          "variants": [
-            "index"
-          ]
-        },
-        {
-          "type": "trust",
-          "required": false,
-          "variants": [
-            "stats"
-          ]
-        },
-        {
           "type": "cases",
-          "required": false,
+          "required": true,
           "variants": [
             "gallery"
           ]
         },
         {
-          "type": "photo-band",
-          "required": false,
-          "variants": [
-            "wide"
-          ]
-        },
-        {
           "type": "offer",
-          "required": true,
+          "required": false,
           "variants": [
             "tiles"
           ]
@@ -118,13 +97,6 @@
           "required": false,
           "variants": [
             "steps"
-          ]
-        },
-        {
-          "type": "collection-list",
-          "required": false,
-          "variants": [
-            "digest"
           ]
         },
         {
@@ -363,5 +335,7 @@
         }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

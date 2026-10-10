@@ -13,9 +13,15 @@
     "form": "留言咨询"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -23,13 +29,33 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 5, "interval": "4500ms" }
+    "carousel": {
+      "min": 3,
+      "max": 5,
+      "interval": "4500ms"
+    }
   },
   "collections": [
-    { "id": "courses", "label": "课程", "listFile": "courses/index.html" },
-    { "id": "teachers", "label": "讲师", "listFile": "teachers/index.html" },
-    { "id": "works", "label": "学员作业", "listFile": "works/index.html" },
-    { "id": "news", "label": "资讯", "listFile": "news/index.html" }
+    {
+      "id": "courses",
+      "label": "课程",
+      "listFile": "courses/index.html"
+    },
+    {
+      "id": "teachers",
+      "label": "讲师",
+      "listFile": "teachers/index.html"
+    },
+    {
+      "id": "works",
+      "label": "学员作业",
+      "listFile": "works/index.html"
+    },
+    {
+      "id": "news",
+      "label": "资讯",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -38,17 +64,51 @@
       "kind": "home",
       "optional": false,
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel", "text"] },
-        { "type": "trust", "required": false, "variants": ["stats"] },
-        { "type": "tracks", "required": false, "variants": ["grid"] },
-        { "type": "photo-band", "required": false, "variants": ["wide"] },
-        { "type": "course-board", "required": true, "variants": ["board"] },
-        { "type": "why", "required": false, "variants": ["steps"] },
-        { "type": "team", "required": false, "variants": ["cards", "roster"] },
-        { "type": "testimonials", "required": false, "variants": ["grid-cards"] },
-        { "type": "cases", "required": false, "variants": ["gallery", "list"] },
-        { "type": "bulletin", "required": false, "variants": ["feed"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel",
+            "text"
+          ]
+        },
+        {
+          "type": "course-board",
+          "required": true,
+          "variants": [
+            "board"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "cards",
+            "roster"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery",
+            "list"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -57,10 +117,34 @@
       "kind": "about",
       "optional": false,
       "order": [
-        { "type": "why", "required": false, "variants": ["steps"] },
-        { "type": "studio", "required": false, "variants": ["split"] },
-        { "type": "trust", "required": false, "variants": ["stats"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "studio",
+          "required": false,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -69,8 +153,20 @@
       "kind": "list",
       "optional": false,
       "order": [
-        { "type": "course-board", "required": true, "variants": ["board"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "course-board",
+          "required": true,
+          "variants": [
+            "board"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -80,7 +176,13 @@
       "optional": false,
       "from": "courses",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -89,10 +191,26 @@
       "kind": "team",
       "optional": true,
       "when": "档案写了可以放上姓名的讲师。",
-      "deny": ["没有讲师", "没有老师", "不公开人员"],
+      "deny": [
+        "没有讲师",
+        "没有老师",
+        "不公开人员"
+      ],
       "order": [
-        { "type": "collection-list", "required": false, "variants": ["portraits"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "portraits"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -103,7 +221,13 @@
       "when": "讲师列表开着，并且有对应的人。列表关掉就不生成。",
       "from": "teachers",
       "order": [
-        { "type": "collection-detail", "required": false, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -112,10 +236,25 @@
       "kind": "list",
       "optional": true,
       "when": "档案有学员作业或作品可以展示。",
-      "deny": ["没有作品", "没有作业"],
+      "deny": [
+        "没有作品",
+        "没有作业"
+      ],
       "order": [
-        { "type": "collection-list", "required": false, "variants": ["cards"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "cards"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -126,7 +265,13 @@
       "when": "作业列表开着，并且有对应条目。列表关掉就不生成。",
       "from": "works",
       "order": [
-        { "type": "collection-detail", "required": false, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -135,10 +280,26 @@
       "kind": "news-list",
       "optional": true,
       "when": "档案里有可以单独成篇的课室动态。",
-      "deny": ["没有新闻", "没有动态", "不发新闻"],
+      "deny": [
+        "没有新闻",
+        "没有动态",
+        "不发新闻"
+      ],
       "order": [
-        { "type": "collection-list", "required": false, "variants": ["rows"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "collection-list",
+          "required": false,
+          "variants": [
+            "rows"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -149,7 +310,13 @@
       "when": "资讯列表开着，并且有对应稿件。列表关掉就不生成。",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": false, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": false,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -158,9 +325,23 @@
       "kind": "contact",
       "optional": false,
       "order": [
-        { "type": "contact", "required": true, "variants": ["card"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "card"
+          ]
+        },
+        {
+          "type": "faq",
+          "required": false,
+          "variants": [
+            "accordion"
+          ]
+        }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

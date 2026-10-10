@@ -67,52 +67,35 @@
           ]
         },
         {
-          "type": "trust",
-          "required": false,
-          "variants": [
-            "stats"
-          ]
-        },
-        {
           "type": "stays",
           "required": true,
           "variants": [
-            "cards"
-          ]
-        },
-        {
-          "type": "yard",
-          "required": false,
-          "variants": [
-            "wide"
+            "cards",
+            "text-list"
           ]
         },
         {
           "type": "chronicle",
           "required": false,
           "variants": [
-            "split"
-          ]
-        },
-        {
-          "type": "nearby",
-          "required": false,
-          "variants": [
-            "cards"
+            "split",
+            "text-list"
           ]
         },
         {
           "type": "supper",
           "required": false,
           "variants": [
-            "board"
+            "board",
+            "text-list"
           ]
         },
         {
-          "type": "collection-list",
+          "type": "nearby",
           "required": false,
           "variants": [
-            "feed"
+            "cards",
+            "text-list"
           ]
         },
         {
@@ -134,7 +117,8 @@
           "type": "chronicle",
           "required": false,
           "variants": [
-            "split"
+            "split",
+            "text-list"
           ]
         },
         {
@@ -242,7 +226,8 @@
           "type": "supper",
           "required": false,
           "variants": [
-            "board"
+            "board",
+            "text-list"
           ]
         },
         {
@@ -268,7 +253,8 @@
           "type": "album",
           "required": false,
           "variants": [
-            "wall"
+            "wall",
+            "text-list"
           ]
         }
       ]
@@ -346,5 +332,7 @@
         }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

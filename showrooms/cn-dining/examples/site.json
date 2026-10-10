@@ -18,9 +18,6 @@
         "time": "10:00-21:30"
       }
     ],
-    "formUrl": "https://example.com/lucha-join",
-    "icp": "浙ICP备17028394号",
-    "police": "浙公网安备33010602017028号",
     "qrcodes": [
       {
         "image": "qr-wechat",
@@ -412,6 +409,20 @@
                 "price": "36元",
                 "image": "prod-rice",
                 "imageAlt": "一碗茶泡饭"
+              },
+              {
+                "name": "桂花卷",
+                "image": "prod-roll",
+                "imageAlt": "切开的桂花卷",
+                "text": "糖渍桂花卷在面里，不撒在表面，和司康共用同一炉。",
+                "price": "23元"
+              },
+              {
+                "name": "葱油拌面",
+                "image": "prod-noodle",
+                "imageAlt": "一碗葱油拌面",
+                "text": "葱油在余杭后厨熬制，门店加热后拌碱面，可另加蛋。",
+                "price": "31元"
               }
             ]
           }
@@ -709,7 +720,7 @@
     {
       "id": "contact",
       "title": "联系我们｜麓茶记（虚构）",
-      "description": "热线0571-87926340，地址在杭州龙井路，公众号和点单码见本页。",
+      "description": "热线0571-87926340，地址在杭州龙井路，门店事务可电话或微信联系。",
       "banner": "banner",
       "bannerAlt": "吧台上的杯子和烤盘",
       "crumbs": [
@@ -726,7 +737,7 @@
           "tone": "light",
           "data": {
             "title": "到店信息",
-            "lead": "门店事务请打热线。公众号发通知，点单码在店内使用。",
+            "lead": "门店事务请打热线，或通过微信联系。",
             "qrs": [
               {
                 "label": "公众号",

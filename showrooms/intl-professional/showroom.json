@@ -13,9 +13,15 @@
     "form": "预约面谈"
   },
   "shell": {
-    "header": ["standard"],
-    "footer": ["columns"],
-    "floatContact": ["dock"]
+    "header": [
+      "standard"
+    ],
+    "footer": [
+      "columns"
+    ],
+    "floatContact": [
+      "dock"
+    ]
   },
   "motion": {
     "enter": "fade",
@@ -23,13 +29,33 @@
     "duration": "700ms",
     "once": true,
     "count": true,
-    "carousel": { "min": 3, "max": 9, "interval": "4500ms" }
+    "carousel": {
+      "min": 3,
+      "max": 9,
+      "interval": "4500ms"
+    }
   },
   "collections": [
-    { "id": "services", "label": "服务领域", "listFile": "services/index.html" },
-    { "id": "team", "label": "顾问团队", "listFile": "team/index.html" },
-    { "id": "cases", "label": "项目记录", "listFile": "cases/index.html" },
-    { "id": "news", "label": "书房笔记", "listFile": "news/index.html" }
+    {
+      "id": "services",
+      "label": "服务领域",
+      "listFile": "services/index.html"
+    },
+    {
+      "id": "team",
+      "label": "顾问团队",
+      "listFile": "team/index.html"
+    },
+    {
+      "id": "cases",
+      "label": "项目记录",
+      "listFile": "cases/index.html"
+    },
+    {
+      "id": "news",
+      "label": "书房笔记",
+      "listFile": "news/index.html"
+    }
   ],
   "pages": [
     {
@@ -38,18 +64,51 @@
       "kind": "home",
       "optional": false,
       "order": [
-        { "type": "hero", "required": true, "variants": ["carousel", "text"] },
-        { "type": "preface", "required": false, "variants": ["split"] },
-        { "type": "trust", "required": false, "variants": ["stats"] },
-        { "type": "services", "required": true, "variants": ["grid-cards"] },
-        { "type": "photo-band", "required": false, "variants": ["wide"] },
-        { "type": "team", "required": false, "variants": ["cards", "roster"] },
-        { "type": "cases", "required": false, "variants": ["gallery", "list"] },
-        { "type": "why", "required": false, "variants": ["steps"] },
-        { "type": "still", "required": false, "variants": ["frame"] },
-        { "type": "faq", "required": false, "variants": ["accordion"] },
-        { "type": "collection-list", "required": false, "variants": ["grid"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] }
+        {
+          "type": "hero",
+          "required": true,
+          "variants": [
+            "carousel",
+            "text"
+          ]
+        },
+        {
+          "type": "services",
+          "required": true,
+          "variants": [
+            "grid-cards"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery",
+            "list"
+          ]
+        },
+        {
+          "type": "team",
+          "required": false,
+          "variants": [
+            "cards",
+            "roster"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "steps"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        }
       ]
     },
     {
@@ -58,12 +117,48 @@
       "kind": "about",
       "optional": false,
       "order": [
-        { "type": "preface", "required": true, "variants": ["split"] },
-        { "type": "timeline", "required": false, "variants": ["rail"] },
-        { "type": "why", "required": false, "variants": ["method"] },
-        { "type": "trust", "required": false, "variants": ["stats"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] },
-        { "type": "contact", "required": false, "variants": ["card"] }
+        {
+          "type": "preface",
+          "required": true,
+          "variants": [
+            "split"
+          ]
+        },
+        {
+          "type": "timeline",
+          "required": false,
+          "variants": [
+            "rail"
+          ]
+        },
+        {
+          "type": "why",
+          "required": false,
+          "variants": [
+            "method"
+          ]
+        },
+        {
+          "type": "trust",
+          "required": false,
+          "variants": [
+            "stats"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        },
+        {
+          "type": "contact",
+          "required": false,
+          "variants": [
+            "card"
+          ]
+        }
       ]
     },
     {
@@ -72,9 +167,27 @@
       "kind": "list",
       "optional": false,
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["grid"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] },
-        { "type": "contact", "required": false, "variants": ["card"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "grid"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        },
+        {
+          "type": "contact",
+          "required": false,
+          "variants": [
+            "card"
+          ]
+        }
       ]
     },
     {
@@ -84,7 +197,13 @@
       "optional": false,
       "from": "services",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -93,11 +212,33 @@
       "kind": "team",
       "optional": true,
       "when": "有可以署名的顾问或合伙人",
-      "deny": ["没有团队", "没有真人", "不公开人员"],
+      "deny": [
+        "没有团队",
+        "没有真人",
+        "不公开人员"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["grid"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] },
-        { "type": "contact", "required": false, "variants": ["card"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "grid"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        },
+        {
+          "type": "contact",
+          "required": false,
+          "variants": [
+            "card"
+          ]
+        }
       ]
     },
     {
@@ -108,7 +249,13 @@
       "when": "团队列表开着就生成",
       "from": "team",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -117,11 +264,31 @@
       "kind": "list",
       "optional": true,
       "when": "有可公开的项目",
-      "deny": ["没有案例"],
+      "deny": [
+        "没有案例"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["grid"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] },
-        { "type": "contact", "required": false, "variants": ["card"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "grid"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        },
+        {
+          "type": "contact",
+          "required": false,
+          "variants": [
+            "card"
+          ]
+        }
       ]
     },
     {
@@ -132,7 +299,13 @@
       "when": "项目列表开着就生成",
       "from": "cases",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -141,11 +314,32 @@
       "kind": "news-list",
       "optional": true,
       "when": "有可成篇的文章",
-      "deny": ["没有文章", "不发文章"],
+      "deny": [
+        "没有文章",
+        "不发文章"
+      ],
       "order": [
-        { "type": "collection-list", "required": true, "variants": ["grid"] },
-        { "type": "cta-band", "required": false, "variants": ["inline"] },
-        { "type": "contact", "required": false, "variants": ["card"] }
+        {
+          "type": "collection-list",
+          "required": true,
+          "variants": [
+            "grid"
+          ]
+        },
+        {
+          "type": "cta-band",
+          "required": false,
+          "variants": [
+            "inline"
+          ]
+        },
+        {
+          "type": "contact",
+          "required": false,
+          "variants": [
+            "card"
+          ]
+        }
       ]
     },
     {
@@ -156,7 +350,13 @@
       "when": "文章列表开着就生成",
       "from": "news",
       "order": [
-        { "type": "collection-detail", "required": true, "variants": ["article"] }
+        {
+          "type": "collection-detail",
+          "required": true,
+          "variants": [
+            "article"
+          ]
+        }
       ]
     },
     {
@@ -165,8 +365,16 @@
       "kind": "contact",
       "optional": false,
       "order": [
-        { "type": "contact", "required": true, "variants": ["card"] }
+        {
+          "type": "contact",
+          "required": true,
+          "variants": [
+            "card"
+          ]
+        }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

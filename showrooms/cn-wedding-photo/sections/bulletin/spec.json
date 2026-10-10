@@ -61,7 +61,13 @@
       "imageField": "items.image",
       "family": "bulletin",
       "fit": "左图右文的三条近况",
-      "fallback": "omit"
+      "fallback": "text-list"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "text-catalog",
+      "fit": "无照片时保留业务、规格和联系信息",
+      "source": "样板间自写"
     }
   }
 }

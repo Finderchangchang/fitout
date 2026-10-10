@@ -1,0 +1,358 @@
+# 澄湾口腔（虚构） · 虚构演示企业档案
+
+仅用于样板间演示，不对应真实企业。来源：v0.6.0 的示例内容，事实不随版式改写。重复的宣传句不构成新事实；现有数值只在相应业务语境中使用。
+
+- `contact.phone`：0571-88021936
+- `contact.wechat`：chengwan-kouqiang
+- `contact.wechatQr`：qr-wechat
+- `contact.email`：hello@chengwan.example
+- `contact.address`：杭州市西湖区学院路 18 号（虚构地址）
+- `contact.hours[0].day`：周一至周六
+- `contact.hours[0].time`：8:30-17:30
+- `contact.hours[1].day`：周日
+- `contact.hours[1].time`：8:30-12:00
+- `contact.formUrl`：https://example.com/forms/chengwan-book
+- `contact.icp`：浙ICP备20883721号
+- `contact.qrcodes[0].label`：门诊微信
+- `contact.qrcodes[1].label`：客服微信
+- `name`：澄湾口腔（虚构）
+- `summary`：学院路社区口腔门诊，洗牙和补牙当天可以约。
+- `pages.home.title`：澄湾口腔（虚构）
+- `pages.home.description`：杭州学院路社区口腔门诊，洗牙和补牙当天可以约。
+- `pages.home.hero.label`：学院路门诊
+- `pages.home.hero.title`：看牙不用排一整天
+- `pages.home.hero.lead`：学院路社区门诊，洗牙和补牙当天可以约。
+- `pages.home.hero.primaryLabel`：预约挂号
+- `pages.home.hero.secondaryLabel`：看看项目
+- `pages.home.hero.slides[0].title`：看牙不用排一整天
+- `pages.home.hero.slides[0].lead`：学院路社区门诊，洗牙和补牙当天可以约。
+- `pages.home.hero.slides[1].title`：洗牙补牙当天能约
+- `pages.home.hero.slides[1].lead`：洁牙180到280元，一次大约四十分钟。
+- `pages.home.hero.slides[2].title`：约好时间按点来
+- `pages.home.hero.slides[2].lead`：预约之后按约定时间看，不占一整天。
+- `pages.home.hero.slides[3].title`：种牙先看牙槽骨
+- `pages.home.hero.slides[3].lead`：种植检查80元起，方案确认后再约。
+- `pages.home.gate.title`：今天怎么看
+- `pages.home.gate.lead`：电话、流程、医保和到店，四件事先看完。
+- `pages.home.gate.note`：洗牙和补牙可以约当天下午。
+- `pages.home.gate.items[0].no`：01
+- `pages.home.gate.items[0].name`：预约挂号
+- `pages.home.gate.items[0].text`：留下姓名和想看的项目。
+- `pages.home.gate.items[1].no`：02
+- `pages.home.gate.items[1].name`：就诊流程
+- `pages.home.gate.items[1].text`：先挂号，再检查，当天能做的当天做。
+- `pages.home.gate.items[2].no`：03
+- `pages.home.gate.items[2].name`：医保怎么刷
+- `pages.home.gate.items[2].text`：职工医保在一楼收费处结算。
+- `pages.home.gate.items[3].no`：04
+- `pages.home.gate.items[3].name`：怎么到店
+- `pages.home.gate.items[3].text`：地铁学院路站 B 口，步行约八分钟。
+- `pages.home.trust.title`：门诊数字
+- `pages.home.trust.lead`：数字来自 2025 年门诊登记。
+- `pages.home.trust.items[0].value`：12860+
+- `pages.home.trust.items[0].label`：去年接诊人次
+- `pages.home.trust.items[1].value`：16年
+- `pages.home.trust.items[1].label`：学院路开业
+- `pages.home.trust.items[2].value`：6台
+- `pages.home.trust.items[2].label`：综合治疗台
+- `pages.home.trust.items[3].value`：4人
+- `pages.home.trust.items[3].label`：执业医师
+- `pages.home.services.title`：诊疗项目
+- `pages.home.services.lead`：价格是区间，检查之后按收费单算。
+- `pages.home.services.items[0].name`：超声波洁牙
+- `pages.home.services.items[0].text`：牙结石和色素，一次大约四十分钟。
+- `pages.home.services.items[0].price`：180-280 元
+- `pages.home.services.items[0].tag`：常规治疗
+- `pages.home.services.items[1].name`：树脂补牙
+- `pages.home.services.items[1].text`：补小洞，颜色按邻牙选。
+- `pages.home.services.items[1].price`：280-680 元
+- `pages.home.services.items[1].tag`：常规治疗
+- `pages.home.services.items[2].name`：拔除智齿
+- `pages.home.services.items[2].text`：简单的当天可以拔，复杂的先检查再约时间。
+- `pages.home.services.items[2].price`：600 元起
+- `pages.home.services.items[2].tag`：常规治疗
+- `pages.home.services.items[3].name`：儿童涂氟
+- `pages.home.services.items[3].text`：三岁到六岁，每半年一次。
+- `pages.home.services.items[3].price`：80-160 元
+- `pages.home.services.items[3].tag`：儿童口腔
+- `pages.home.brief.title`：医院介绍
+- `pages.home.brief.lead`：2010 年在学院路开业，一楼候诊。
+- `pages.home.brief.text`：二楼四间诊室，六台治疗台。社区门诊，不做住院。
+- `pages.home.brief.linkLabel`：看医院介绍
+- `pages.home.brief.linkHref`：about/index.html
+- `pages.home.team.title`：医生团队
+- `pages.home.team.lead`：四位执业医师，年限写在名字下面。
+- `pages.home.team.items[0].name`：林昭宁
+- `pages.home.team.items[0].role`：主治医师
+- `pages.home.team.items[0].text`：执业 16 年，主要看种植修复。
+- `pages.home.team.items[1].name`：赵晚晴
+- `pages.home.team.items[1].role`：医师
+- `pages.home.team.items[1].text`：执业 9 年，主要看儿童牙科。
+- `pages.home.team.items[2].name`：陈屿
+- `pages.home.team.items[2].role`：医师
+- `pages.home.team.items[2].text`：执业 12 年，主要看牙周。
+- `pages.home.team.items[3].name`：吴祈
+- `pages.home.team.items[3].role`：医师
+- `pages.home.team.items[3].text`：执业 7 年，洁牙和补牙。
+- `pages.home.photo-band.caption`：一楼候诊，二楼是诊室。
+- `pages.home.gear.title`：诊室设备
+- `pages.home.gear.lead`：三台常用设备，都在二楼诊室。
+- `pages.home.gear.items[0].name`：综合治疗台
+- `pages.home.gear.items[0].text`：六台，每间诊室一台到两台。
+- `pages.home.gear.items[1].name`：全景机
+- `pages.home.gear.items[1].text`：拔牙和种植前用来看牙根。
+- `pages.home.gear.items[2].name`：超声洁牙机
+- `pages.home.gear.items[2].text`：洗牙用，头可拆下来消毒。
+- `pages.home.bulletin.title`：口腔科普
+- `pages.home.bulletin.lead`：就诊前可以先看这三篇。
+- `pages.home.bulletin.items[0].name`：孩子第一次看牙
+- `pages.home.bulletin.items[0].text`：三岁前先看一次。
+- `pages.home.bulletin.items[0].date`：2026-03-18
+- `pages.home.bulletin.items[1].name`：洗牙会把牙洗薄吗
+- `pages.home.bulletin.items[1].text`：洗的是结石，不是牙面。
+- `pages.home.bulletin.items[1].date`：2026-02-06
+- `pages.home.bulletin.items[2].name`：牙龈出血先看哪
+- `pages.home.bulletin.items[2].text`：先看牙周，再决定洗牙。
+- `pages.home.bulletin.items[2].date`：2026-01-14
+- `pages.home.cta-band.title`：预约下午的号
+- `pages.home.cta-band.lead`：电话留下姓名和项目，或走在线预约。
+- `pages.about.title`：医院介绍｜澄湾口腔（虚构）
+- `pages.about.description`：2010 年在学院路开业，一楼候诊，二楼四间诊室。
+- `pages.about.essay.title`：医院介绍
+- `pages.about.essay.lead`：学院路这一栋，一楼候诊，二楼看牙。
+- `pages.about.essay.items[0].text`：2010 年 3 月在学院路开业，一直做社区口腔。
+- `pages.about.essay.items[1].text`：一楼是候诊和收费，二楼四间诊室，六台治疗台。
+- `pages.about.essay.items[2].text`：四位医师都有执业证。种植、儿童和牙周分开约。
+- `pages.about.essay.items[3].text`：不做住院。收费以到店检查后的收费单为准。
+- `pages.about.rooms.title`：门诊环境
+- `pages.about.rooms.lead`：候诊、诊室和消毒间都在这一栋。
+- `pages.about.rooms.items[0].name`：候诊区
+- `pages.about.rooms.items[1].name`：诊室
+- `pages.about.rooms.items[2].name`：消毒间
+- `pages.about.gear.title`：诊室设备
+- `pages.about.gear.lead`：治疗台、全景机和洁牙机。
+- `pages.about.gear.items[0].name`：综合治疗台
+- `pages.about.gear.items[0].text`：六台，每间诊室一台到两台。
+- `pages.about.gear.items[1].name`：全景机
+- `pages.about.gear.items[1].text`：拔牙和种植前用来看牙根。
+- `pages.about.gear.items[2].name`：超声洁牙机
+- `pages.about.gear.items[2].text`：洗牙用，头可拆下来消毒。
+- `pages.about.papers.title`：执业资质
+- `pages.about.papers.lead`：收费处能看到这三张证。
+- `pages.about.papers.items[0].name`：医疗机构执业许可证
+- `pages.about.papers.items[0].text`：门诊诊疗科目含口腔科。
+- `pages.about.papers.items[1].name`：放射诊疗许可证
+- `pages.about.papers.items[1].text`：全景机按放射诊疗许可使用。
+- `pages.about.papers.items[2].name`：医师执业证
+- `pages.about.papers.items[2].text`：四位医师的执业证在收费处可查。
+- `pages.about.cta-band.title`：先约一个号
+- `pages.about.cta-band.lead`：洗牙和补牙可以约当天下午。
+- `pages.services.title`：诊疗项目｜澄湾口腔（虚构）
+- `pages.services.description`：超声波洁牙、树脂补牙、拔除智齿、儿童涂氟、种植咨询和正畸初诊。
+- `pages.services.collection-list.title`：诊疗项目
+- `pages.services.collection-list.lead`：六项都在做，价格是区间。
+- `pages.services.cta-band.title`：看完再预约
+- `pages.services.cta-band.lead`：不确定做什么，先打电话问。
+- `pages.doctors.title`：医生团队｜澄湾口腔（虚构）
+- `pages.doctors.description`：林昭宁、赵晚晴、陈屿、吴祈，写清执业年限和擅长项目。
+- `pages.doctors.collection-list.title`：医生团队
+- `pages.doctors.collection-list.lead`：点名字看年限和擅长项目。
+- `pages.doctors.cta-band.title`：想指定医生
+- `pages.doctors.cta-band.lead`：预约时说出医生姓名。
+- `pages.guide.title`：就诊指南｜澄湾口腔（虚构）
+- `pages.guide.description`：就诊五步、职工医保、学院路站步行和每天的门诊时间。
+- `pages.guide.why.title`：就诊流程
+- `pages.guide.why.lead`：从预约到离院，五步走完。
+- `pages.guide.why.items[0].name`：预约
+- `pages.guide.why.items[0].text`：电话或在线留下姓名和项目。
+- `pages.guide.why.items[1].name`：到店挂号
+- `pages.guide.why.items[1].text`：一楼收费处取号，带医保卡。
+- `pages.guide.why.items[2].name`：检查
+- `pages.guide.why.items[2].text`：先看口腔，需要时拍全景片。
+- `pages.guide.why.items[3].name`：看诊
+- `pages.guide.why.items[3].text`：能当天做的，做完再离开。
+- `pages.guide.why.items[4].name`：离院
+- `pages.guide.why.items[4].text`：收费处结账，拿注意事项。
+- `pages.guide.faq.title`：医保和费用
+- `pages.guide.faq.lead`：能刷的写清楚，不能刷的也写清楚。
+- `pages.guide.faq.items[0].q`：职工医保能刷吗
+- `pages.guide.faq.items[0].a`：杭州市职工医保可以在收费处结算。儿童看牙按当时政策。
+- `pages.guide.faq.items[1].q`：儿童看牙怎么结算
+- `pages.guide.faq.items[1].a`：杭州少儿医保能报的项目，收费处按系统结算。报不了的当场说。
+- `pages.guide.faq.items[2].q`：为什么先给价格区间
+- `pages.guide.faq.items[2].a`：没检查之前不知道洞有多大。到店后按收费单，不按网页上的区间收。
+- `pages.guide.faq.items[3].q`：能不能当天做完
+- `pages.guide.faq.items[3].a`：洗牙和补小洞多数可以当天做。拔智齿：简单的当天可以拔，复杂的先检查再约时间。种植咨询当天不植入。
+- `pages.guide.reach.title`：交通和时间
+- `pages.guide.reach.lead`：学院路站出来，步行大约八分钟。
+- `pages.guide.reach.text`：地铁学院路站 B 口，门诊门口有六个停车位。
+- `pages.guide.cta-band.title`：到店前先电话
+- `pages.guide.cta-band.lead`：说一下项目，前台帮你留号。
+- `pages.articles.title`：口腔科普｜澄湾口腔（虚构）
+- `pages.articles.description`：第一次看牙、洗牙、牙龈出血和儿童涂氟，四篇短文。
+- `pages.articles.collection-list.title`：口腔科普
+- `pages.articles.collection-list.lead`：四篇都是就诊前该知道的事。
+- `pages.articles.cta-band.title`：看完去预约
+- `pages.articles.cta-band.lead`：还有问题，打电话问前台。
+- `pages.contact.title`：预约挂号｜澄湾口腔（虚构）
+- `pages.contact.description`：电话 0571-88021936，或填写在线预约，前台会回电话。
+- `pages.contact.contact.title`：预约挂号
+- `pages.contact.contact.lead`：电话留下姓名和项目，或走在线预约。
+- `pages.contact.contact.qrs[0].label`：门诊微信
+- `pages.contact.contact.qrs[1].label`：门诊服务号
+- `pages.contact.inquiry.title`：在线预约
+- `pages.contact.inquiry.lead`：表单在外部页面，填完会有人回电话。
+- `collections.services.ultrasonic.slug`：ultrasonic
+- `collections.services.ultrasonic.name`：超声波洁牙
+- `collections.services.ultrasonic.summary`：180-280 元。适合牙结石和色素，一次大约四十分钟。
+- `collections.services.ultrasonic.body`：先看牙龈有没有出血，再用超声洁牙机去掉结石。做完会告诉你哪里还要复查。价格按结石多少落在区间里。
+- `collections.services.ultrasonic.fit`：牙结石、色素，或牙龈容易出血的人。
+- `collections.services.ultrasonic.price`：180-280 元
+- `collections.services.ultrasonic.steps[0].name`：检查
+- `collections.services.ultrasonic.steps[0].text`：先看牙结石在哪。
+- `collections.services.ultrasonic.steps[1].name`：洁治
+- `collections.services.ultrasonic.steps[1].text`：超声去掉结石和色素。
+- `collections.services.ultrasonic.steps[2].name`：抛光
+- `collections.services.ultrasonic.steps[2].text`：表面抛一遍，减少色素挂住。
+- `collections.services.ultrasonic.steps[3].name`：交代
+- `collections.services.ultrasonic.steps[3].text`：告诉你下次复查的月份。
+- `collections.services.ultrasonic.cautions[0].text`：当天不要喝有色饮料。
+- `collections.services.ultrasonic.cautions[1].text`：牙龈本来就肿的，洗完可能渗血。
+- `collections.services.ultrasonic.category`：常规治疗
+- `collections.services.resin.slug`：resin
+- `collections.services.resin.name`：树脂补牙
+- `collections.services.resin.summary`：280-680 元。补小洞，颜色按旁边的牙选。
+- `collections.services.resin.body`：去掉坏掉的部分，再用树脂补上。颜色对着旁边的牙调。补完当天可以吃饭，先别咬很硬的东西。
+- `collections.services.resin.fit`：蛀了小洞，或旧补料松了的牙。
+- `collections.services.resin.price`：280-680 元
+- `collections.services.resin.steps[0].name`：检查
+- `collections.services.resin.steps[0].text`：看洞有多深，要不要拍片。
+- `collections.services.resin.steps[1].name`：去腐
+- `collections.services.resin.steps[1].text`：清掉坏掉的部分。
+- `collections.services.resin.steps[2].name`：充填
+- `collections.services.resin.steps[2].text`：树脂补上，按邻牙调色。
+- `collections.services.resin.steps[3].name`：调整
+- `collections.services.resin.steps[3].text`：咬合磨顺，再交代饮食。
+- `collections.services.resin.cautions[0].text`：补完两小时内别喝太烫的水。
+- `collections.services.resin.cautions[1].text`：当天别用这边咬骨头。
+- `collections.services.resin.category`：常规治疗
+- `collections.services.wisdom.slug`：wisdom
+- `collections.services.wisdom.name`：拔除智齿
+- `collections.services.wisdom.summary`：600 元起。简单的当天可以拔，复杂的先检查再约时间。
+- `collections.services.wisdom.body`：先看片子上牙根的位置。简单的当天可以拔，复杂的先检查再约时间。拔完咬棉球，当天少漱口。
+- `collections.services.wisdom.fit`：智齿反复肿痛，或片子上挡住邻牙。
+- `collections.services.wisdom.price`：600 元起
+- `collections.services.wisdom.steps[0].name`：拍片
+- `collections.services.wisdom.steps[0].text`：看牙根和邻牙的位置。
+- `collections.services.wisdom.steps[1].name`：评估
+- `collections.services.wisdom.steps[1].text`：简单的当天可以拔，复杂的先检查再约时间。
+- `collections.services.wisdom.steps[2].name`：拔除
+- `collections.services.wisdom.steps[2].text`：按片子上的情况拔。
+- `collections.services.wisdom.steps[3].name`：交代
+- `collections.services.wisdom.steps[3].text`：咬棉球，约复查时间。
+- `collections.services.wisdom.cautions[0].text`：当天不要用力漱口。
+- `collections.services.wisdom.cautions[1].text`：肿痛加重就回门诊看。
+- `collections.services.wisdom.category`：常规治疗
+- `collections.services.fluoride.slug`：fluoride
+- `collections.services.fluoride.name`：儿童涂氟
+- `collections.services.fluoride.summary`：80-160 元。三岁到六岁，每半年一次。
+- `collections.services.fluoride.body`：牙齿清洁后涂氟，让孩子吐掉多余的。做完半小时内不喝水、不吃东西。不能替代每天刷牙。
+- `collections.services.fluoride.fit`：三岁到六岁，还没有明显蛀洞的孩子。
+- `collections.services.fluoride.price`：80-160 元
+- `collections.services.fluoride.steps[0].name`：检查
+- `collections.services.fluoride.steps[0].text`：先看有没有已经蛀的牙。
+- `collections.services.fluoride.steps[1].name`：清洁
+- `collections.services.fluoride.steps[1].text`：牙面擦干。
+- `collections.services.fluoride.steps[2].name`：涂氟
+- `collections.services.fluoride.steps[2].text`：涂上后让孩子吐掉。
+- `collections.services.fluoride.steps[3].name`：交代
+- `collections.services.fluoride.steps[3].text`：做完半小时内不喝水、不吃东西。
+- `collections.services.fluoride.cautions[0].text`：已经疼的牙先检查，不直接涂。
+- `collections.services.fluoride.cautions[1].text`：做完当天按平时刷牙。
+- `collections.services.fluoride.category`：儿童口腔
+- `collections.services.implant.slug`：implant
+- `collections.services.implant.name`：种植咨询
+- `collections.services.implant.summary`：检查 80 元起。先看牙槽骨，再谈方案。
+- `collections.services.implant.body`：缺牙的人先拍片，看骨头够不够。咨询只出方案和时间，不在当天植入。费用在方案里另写。
+- `collections.services.implant.fit`：缺了一颗或多颗牙，想了解种植怎么排。
+- `collections.services.implant.price`：80 元起
+- `collections.services.implant.steps[0].name`：问诊
+- `collections.services.implant.steps[0].text`：问缺牙多久，有没有全身病。
+- `collections.services.implant.steps[1].name`：拍片
+- `collections.services.implant.steps[1].text`：看牙槽骨的高度。
+- `collections.services.implant.steps[2].name`：方案
+- `collections.services.implant.steps[2].text`：写出时间和费用区间。
+- `collections.services.implant.steps[3].name`：预约
+- `collections.services.implant.steps[3].text`：决定做的话另约手术日。
+- `collections.services.implant.cautions[0].text`：咨询不是手术，当天不植入。
+- `collections.services.implant.cautions[1].text`：全身病要先告诉医生。
+- `collections.services.implant.category`：修复正畸
+- `collections.services.ortho.slug`：ortho
+- `collections.services.ortho.name`：正畸初诊
+- `collections.services.ortho.summary`：120 元。先取记录，不在初诊贴托槽。
+- `collections.services.ortho.body`：初诊看牙列和咬合，需要时拍片、取模型。方案和费用在第二次说。初诊不贴托槽。
+- `collections.services.ortho.fit`：牙不齐，或咬合觉得别扭，想先了解矫正。
+- `collections.services.ortho.price`：120 元
+- `collections.services.ortho.steps[0].name`：检查
+- `collections.services.ortho.steps[0].text`：看牙列和咬合。
+- `collections.services.ortho.steps[1].name`：记录
+- `collections.services.ortho.steps[1].text`：拍片或取模型。
+- `collections.services.ortho.steps[2].name`：说明
+- `collections.services.ortho.steps[2].text`：告诉你大概要多久。
+- `collections.services.ortho.steps[3].name`：再约
+- `collections.services.ortho.steps[3].text`：费用在下一次说清。
+- `collections.services.ortho.cautions[0].text`：初诊不贴托槽，也不收全额。
+- `collections.services.ortho.cautions[1].text`：儿童矫正要监护人在场。
+- `collections.services.ortho.category`：修复正畸
+- `collections.doctors.lin-zhaoning.slug`：lin-zhaoning
+- `collections.doctors.lin-zhaoning.name`：林昭宁
+- `collections.doctors.lin-zhaoning.summary`：执业 16 年。主治医师，主要看种植修复。
+- `collections.doctors.lin-zhaoning.body`：2010 年和门诊一起开业。种植修复和缺牙方案由他看。复杂的先拍片，再约下一次。
+- `collections.doctors.lin-zhaoning.years`：16 年
+- `collections.doctors.lin-zhaoning.focus`：种植修复
+- `collections.doctors.lin-zhaoning.category`：种植
+- `collections.doctors.zhao-wanqing.slug`：zhao-wanqing
+- `collections.doctors.zhao-wanqing.name`：赵晚晴
+- `collections.doctors.zhao-wanqing.summary`：执业 9 年。医师，主要看儿童牙科。
+- `collections.doctors.zhao-wanqing.body`：2017 年到学院路。儿童涂氟、乳牙和第一次看牙由她约。孩子哭闹会改到人少的时段。
+- `collections.doctors.zhao-wanqing.years`：9 年
+- `collections.doctors.zhao-wanqing.focus`：儿童牙科
+- `collections.doctors.zhao-wanqing.category`：儿童
+- `collections.doctors.chen-yu.slug`：chen-yu
+- `collections.doctors.chen-yu.name`：陈屿
+- `collections.doctors.chen-yu.summary`：执业 12 年。医师，主要看牙周。
+- `collections.doctors.chen-yu.body`：2014 年到门诊。牙周和洗牙后的复查由他看。出血反复的，会先约牙周再约洗牙。
+- `collections.doctors.chen-yu.years`：12 年
+- `collections.doctors.chen-yu.focus`：牙周治疗
+- `collections.doctors.chen-yu.category`：牙周
+- `collections.doctors.wu-qi.slug`：wu-qi
+- `collections.doctors.wu-qi.name`：吴祈
+- `collections.doctors.wu-qi.summary`：执业 7 年。医师，洁牙和补牙。
+- `collections.doctors.wu-qi.body`：2019 年到学院路。超声波洁牙和树脂补牙大多由他做。当天有空号，前台会告诉你。
+- `collections.doctors.wu-qi.years`：7 年
+- `collections.doctors.wu-qi.focus`：洁牙和补牙
+- `collections.doctors.wu-qi.category`：洁牙补牙
+- `collections.articles.first-visit.slug`：first-visit
+- `collections.articles.first-visit.name`：孩子第一次看牙
+- `collections.articles.first-visit.summary`：2026-03-18。三岁前先看一次，不急着做治疗。
+- `collections.articles.first-visit.date`：2026-03-18
+- `collections.articles.first-visit.body`：第一次只看牙，让孩子坐上治疗椅。有蛀洞再约下一次，不在第一次硬做。带上医保卡和既往病历。
+- `collections.articles.first-visit.category`：儿童
+- `collections.articles.brush.slug`：brush
+- `collections.articles.brush.name`：洗牙会把牙洗薄吗
+- `collections.articles.brush.summary`：2026-02-06。洗掉的是结石，不是牙釉质。
+- `collections.articles.brush.date`：2026-02-06
+- `collections.articles.brush.body`：超声头对着结石，不打磨牙面。觉得酸，多半是牙根露出来了，要告诉医生。洗完按医生说的月份复查。
+- `collections.articles.brush.category`：洁牙
+- `collections.articles.gum.slug`：gum
+- `collections.articles.gum.name`：牙龈出血先看哪
+- `collections.articles.gum.summary`：2026-01-14。先看牙周，再决定要不要洗牙。
+- `collections.articles.gum.date`：2026-01-14
+- `collections.articles.gum.body`：刷牙出血先挂牙周，不要自己不停刷到不出血。医生看完再说要不要洁牙。出血不止的当天留观。
+- `collections.articles.gum.category`：牙周
+- `collections.articles.kids.slug`：kids
+- `collections.articles.kids.name`：孩子几岁做涂氟
+- `collections.articles.kids.summary`：2025-11-20。三岁到六岁，每半年可以做一次。
+- `collections.articles.kids.date`：2025-11-20
+- `collections.articles.kids.body`：乳牙齐了就可以问医生要不要涂氟。做完半小时内不喝水、不吃东西。已经疼的牙先检查，不直接涂。
+- `collections.articles.kids.category`：儿童

@@ -1,6 +1,6 @@
 .menu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .menu-item { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--surface); border-bottom: 1px solid var(--border); }
-.menu-item img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: cover; }
+.menu-item img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; align-self: start; }
 .menu-copy { padding: 1.25rem; display: grid; gap: 0.75rem; align-content: center; }
 .menu-copy .price { font-size: var(--fs-3); color: var(--accent); }
 .menu-item:not(:has(img)) { grid-template-columns: 1fr; background: transparent; }

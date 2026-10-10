@@ -1,0 +1,445 @@
+# 澄木整装（虚构） · 虚构演示企业档案
+
+仅用于样板间演示，不对应真实企业。来源：v0.6.0 的示例内容，事实不随版式改写。重复的宣传句不构成新事实；现有数值只在相应业务语境中使用。
+
+- `contact.phone`：0571-86024173
+- `contact.wechat`：chengmu-measure
+- `contact.wechatQr`：qr-wechat
+- `contact.email`：hello@chengmu.example
+- `contact.address`：浙江省杭州市余杭区良渚街道港南路18号（虚构地址）
+- `contact.hours[0].day`：周一至周日
+- `contact.hours[0].time`：09:00-18:00
+- `contact.formUrl`：https://example.com/chengmu-measure
+- `contact.icp`：浙ICP备20260318号-4
+- `contact.qrcodes[0].label`：关注公众号
+- `contact.qrcodes[1].label`：加顾问微信
+- `name`：澄木整装（虚构）
+- `summary`：余杭良渚的家装和全屋定制，套餐价写在页面上。
+- `pages.home.title`：澄木整装（虚构）｜余杭家装
+- `pages.home.description`：良渚的家装和全屋定制。套餐标参考价，以实际量房为准。
+- `pages.home.hero.label`：良渚整装
+- `pages.home.hero.title`：先量房再开口价
+- `pages.home.hero.lead`：半包、全包、整装都写参考价，以实际量房为准。
+- `pages.home.hero.primaryLabel`：免费量房
+- `pages.home.hero.secondaryLabel`：看看案例
+- `pages.home.hero.slides[0].title`：先量房再开口价
+- `pages.home.hero.slides[0].lead`：半包、全包、整装都写参考价，以实际量房为准。
+- `pages.home.hero.slides[1].title`：柜缝对齐再报价
+- `pages.home.hero.slides[1].lead`：浅色柜门和台面的接缝，量完再报柜体。
+- `pages.home.hero.slides[2].title`：木门靠墙对色
+- `pages.home.hero.slides[2].lead`：几扇门并排看色差，当天指给你。
+- `pages.home.hero.slides[3].title`：管线贴墙再验收
+- `pages.home.hero.slides[3].lead`：水电沿墙定位，验收时对着照片看。
+- `pages.home.hero.slides[4].title`：墙面干透再进场
+- `pages.home.hero.slides[4].lead`：乳胶漆滚到墙角，干透再做柜。
+- `pages.home.lanes.title`：先看这四件事
+- `pages.home.lanes.lead`：量房、套餐、验收和主案，从这里进。
+- `pages.home.lanes.items[0].name`：免费量房
+- `pages.home.lanes.items[0].text`：余杭上门，量完再写价
+- `pages.home.lanes.items[1].name`：套餐报价
+- `pages.home.lanes.items[1].text`：半包全包整装分开标
+- `pages.home.lanes.items[2].name`：工地验收
+- `pages.home.lanes.items[2].text`：水电木作油漆有节点
+- `pages.home.lanes.items[3].name`：主案对接
+- `pages.home.lanes.items[3].text`：四位主案对到交房
+- `pages.home.trust.title`：在册数字
+- `pages.home.trust.lead`：这些数记到 2026 年 3 月。
+- `pages.home.trust.items[0].value`：12 年
+- `pages.home.trust.items[0].label`：余杭做整装
+- `pages.home.trust.items[1].value`：860 户
+- `pages.home.trust.items[1].label`：余杭已交付
+- `pages.home.trust.items[2].value`：4 位
+- `pages.home.trust.items[2].label`：在册主案
+- `pages.home.trust.items[3].value`：68 天
+- `pages.home.trust.items[3].label`：三居参考工期
+- `pages.home.cases.title`：完工案例
+- `pages.home.cases.lead`：先看三套。六套完工房在案例页。
+- `pages.home.cases.items[0].name`：良渚春漫里
+- `pages.home.cases.items[0].text`：三室两厅，89㎡，现代，工期 68 天。
+- `pages.home.cases.items[0].result`：参考价 18.6 万
+- `pages.home.cases.items[1].name`：勾庄云栖
+- `pages.home.cases.items[1].text`：四室两厅，142㎡，新中式，工期 110 天。
+- `pages.home.cases.items[1].result`：参考价 41.8 万
+- `pages.home.cases.items[2].name`：仁和雅苑
+- `pages.home.cases.items[2].text`：两室一厅，65㎡，极简，工期 48 天。
+- `pages.home.cases.items[2].result`：参考价 11.5 万
+- `pages.home.photo-band.caption`：良渚展厅一层，样板间按在售套餐搭。
+- `pages.home.offer.title`：装修套餐
+- `pages.home.offer.lead`：三档都标参考价，以实际量房为准。
+- `pages.home.offer.items[0].name`：半包
+- `pages.home.offer.items[0].text`：人工含水电、泥瓦、木作和油漆，主材自购。
+- `pages.home.offer.items[0].price`：参考价 899 元/㎡
+- `pages.home.offer.items[1].name`：全包
+- `pages.home.offer.items[1].text`：常用瓷砖、地板、涂料和洁具含在价里。
+- `pages.home.offer.items[1].price`：参考价 1680 元/㎡
+- `pages.home.offer.items[2].name`：整装
+- `pages.home.offer.items[2].text`：在全包上加柜体、室内门和基础家电。
+- `pages.home.offer.items[2].price`：参考价 2390 元/㎡
+- `pages.home.team.title`：设计团队
+- `pages.home.team.lead`：四位主案，量房之后对到交房。
+- `pages.home.team.items[0].name`：周晚宁
+- `pages.home.team.items[0].role`：主案设计
+- `pages.home.team.items[0].text`：原木和收纳，在跟瓶窑金地、仓前梧桐里。
+- `pages.home.team.items[1].name`：陈予安
+- `pages.home.team.items[1].role`：主案设计
+- `pages.home.team.items[1].text`：现代和北欧，在跟径山云溪府。
+- `pages.home.team.items[2].name`：林知夏
+- `pages.home.team.items[2].role`：主案设计
+- `pages.home.team.items[2].text`：奶油和浅色，西溪蝶园（外区）已交房。
+- `pages.home.team.items[3].name`：吴砚舟
+- `pages.home.team.items[3].role`：主案设计
+- `pages.home.team.items[3].text`：新中式和极简，仁和雅苑已交房。
+- `pages.home.why.title`：施工怎么走
+- `pages.home.why.lead`：从量房到验收，每步在工地留记录。
+- `pages.home.why.items[0].name`：上门量房
+- `pages.home.why.items[0].text`：余杭范围内上门，出房型图和参考价。
+- `pages.home.why.items[1].name`：定平面
+- `pages.home.why.items[1].text`：主案出平面，柜深和点位一起标。
+- `pages.home.why.items[2].name`：签套餐
+- `pages.home.why.items[2].text`：半包、全包或整装，清单附在合同后。
+- `pages.home.why.items[3].name`：水电泥瓦
+- `pages.home.why.items[3].text`：打压和空鼓当场看，签字再往下做。
+- `pages.home.why.items[4].name`：木作油漆
+- `pages.home.why.items[4].text`：柜门在车间下料，色号按附件。
+- `pages.home.why.items[5].name`：竣工验收
+- `pages.home.why.items[5].text`：保洁之后按房间走一遍，再付尾款。
+- `pages.home.collection-list.title`：装修知识
+- `pages.home.collection-list.lead`：半包全包、水电、柜子和付款。
+- `pages.home.collection-list.moreLabel`：看装修知识
+- `pages.home.cta-band.title`：约一次免费量房
+- `pages.home.cta-band.lead`：电话或留言都行。报价写参考价，以实际量房为准。
+- `pages.about.title`：关于我们｜澄木整装（虚构）
+- `pages.about.description`：2014 年在良渚港南路开业，展厅和木作车间都在这一处。
+- `pages.about.why.title`：公司在良渚
+- `pages.about.why.lead`：展厅和车间在余杭，外区工地先电话确认。
+- `pages.about.why.items[0].name`：2014 年开业
+- `pages.about.why.items[0].text`：展厅一直在港南路 18 号，没有搬过。
+- `pages.about.why.items[1].name`：只做余杭
+- `pages.about.why.items[1].text`：工地当天能到，外区先电话确认。
+- `pages.about.why.items[2].name`：自有木作
+- `pages.about.why.items[2].text`：柜门在自己的车间下料，不外发贴皮。
+- `pages.about.why.items[3].name`：报价先量房
+- `pages.about.why.items[3].text`：套餐价写在页面上，上门再复核。
+- `pages.about.trust.title`：资质证照
+- `pages.about.trust.lead`：装修资质、安全生产许可和营业执照。
+- `pages.about.trust.items[0].name`：装修装饰专业承包
+- `pages.about.trust.items[0].issuer`：浙江住建
+- `pages.about.trust.items[1].name`：安全生产许可证
+- `pages.about.trust.items[1].issuer`：浙江应急
+- `pages.about.trust.items[2].name`：营业执照
+- `pages.about.trust.items[2].issuer`：余杭市监
+- `pages.about.cases.title`：展厅和车间
+- `pages.about.cases.lead`：来访从展厅进，柜子到后面的车间看。
+- `pages.about.cases.items[0].name`：港南路展厅
+- `pages.about.cases.items[0].text`：一层三套样板，按在售套餐布置。
+- `pages.about.cases.items[0].result`：良渚街道
+- `pages.about.cases.items[1].name`：木作车间
+- `pages.about.cases.items[1].text`：开料、封边和试装都在这间。
+- `pages.about.cases.items[1].result`：展厅后面
+- `pages.about.cases.items[2].name`：样板间过道
+- `pages.about.cases.items[2].text`：过道墙上贴着材料色号。
+- `pages.about.cases.items[2].result`：可直接看
+- `pages.projects.title`：装修案例｜澄木整装（虚构）
+- `pages.projects.description`：六套完工房。西溪蝶园在西湖，电话确认后才接。造价工期都写了。
+- `pages.projects.collection-list.title`：装修案例
+- `pages.projects.collection-list.lead`：参考价，以实际量房为准。西溪蝶园是外区。
+- `pages.designers.title`：设计团队｜澄木整装（虚构）
+- `pages.designers.description`：四位主案，写了年限和手头工地。
+- `pages.designers.collection-list.title`：设计团队
+- `pages.designers.collection-list.lead`：量房之后由主案对到交房。
+- `pages.packages.title`：装修套餐｜澄木整装（虚构）
+- `pages.packages.description`：半包、全包、整装。页面价格是参考价，以实际量房为准。
+- `pages.packages.collection-list.title`：装修套餐
+- `pages.packages.collection-list.lead`：三档参考价，以实际量房为准。
+- `pages.craft.title`：施工工艺｜澄木整装（虚构）
+- `pages.craft.description`：六步工序、四个验收节点，和三处在建工地。
+- `pages.craft.why.title`：施工工序
+- `pages.craft.why.lead`：按这个顺序做，不跳步。
+- `pages.craft.why.items[0].name`：保护拆改
+- `pages.craft.why.items[0].text`：成品保护先做，承重墙不动。
+- `pages.craft.why.items[1].name`：水电定位
+- `pages.craft.why.items[1].text`：点位按图弹线，业主确认再开槽。
+- `pages.craft.why.items[2].name`：泥瓦铺贴
+- `pages.craft.why.items[2].text`：空鼓和坡度当天查，不合格重贴。
+- `pages.craft.why.items[3].name`：木作安装
+- `pages.craft.why.items[3].text`：柜门车间做好再进场，缝隙当场看。
+- `pages.craft.why.items[4].name`：油漆收口
+- `pages.craft.why.items[4].text`：色号按合同附件，自然光下对色。
+- `pages.craft.why.items[5].name`：保洁验收
+- `pages.craft.why.items[5].text`：保洁后按房间走，尾款这时付。
+- `pages.craft.services.title`：验收节点
+- `pages.craft.services.lead`：四个节点都要业主在场签字。
+- `pages.craft.services.items[0].name`：水电验收
+- `pages.craft.services.items[0].text`：打压、绝缘、拍照，结果写在单上。
+- `pages.craft.services.items[1].name`：泥瓦验收
+- `pages.craft.services.items[1].text`：空鼓、平整、坡度，当场记下来。
+- `pages.craft.services.items[2].name`：木作验收
+- `pages.craft.services.items[2].text`：柜门缝、五金、封边，装完再看。
+- `pages.craft.services.items[3].name`：油漆验收
+- `pages.craft.services.items[3].text`：色差、开裂、阴阳角，自然光下看。
+- `pages.craft.cases.title`：在建工地
+- `pages.craft.cases.lead`：这三处正在做，可以约着去看。
+- `pages.craft.cases.items[0].name`：瓶窑金地
+- `pages.craft.cases.items[0].text`：水电已验收，等泥瓦进场。
+- `pages.craft.cases.items[0].result`：瓶窑
+- `pages.craft.cases.items[1].name`：仓前梧桐里
+- `pages.craft.cases.items[1].text`：泥瓦做完，木作柜体在车间。
+- `pages.craft.cases.items[1].result`：仓前
+- `pages.craft.cases.items[2].name`：径山云溪府
+- `pages.craft.cases.items[2].text`：木作进场，油漆还没开始。
+- `pages.craft.cases.items[2].result`：径山
+- `pages.notes.title`：装修知识｜澄木整装（虚构）
+- `pages.notes.description`：半包和全包、水电验收、柜子计价、付款节点。
+- `pages.notes.collection-list.title`：装修知识
+- `pages.notes.collection-list.lead`：四篇短文，写选择和验收。
+- `pages.contact.title`：免费量房｜澄木整装（虚构）
+- `pages.contact.description`：余杭范围内量房不收费。报价写参考价，以实际量房为准。
+- `pages.contact.contact.title`：免费量房
+- `pages.contact.contact.lead`：留电话或加微信。报价是参考价，以实际量房为准。
+- `pages.contact.faq.title`：量房之前
+- `pages.contact.faq.lead`：上门前通常先确认这四件事。
+- `pages.contact.faq.items[0].q`：量房收不收费
+- `pages.contact.faq.items[0].a`：余杭范围内不收费。外区先打电话，确认能不能排期。
+- `pages.contact.faq.items[1].q`：报价怎么算
+- `pages.contact.faq.items[1].a`：页面价格是参考价，以实际量房为准。半包不含主材。
+- `pages.contact.faq.items[2].q`：工期一般多久
+- `pages.contact.faq.items[2].a`：89㎡三居参考 68 天。旧房拆改会再加几天，量房时写进计划。
+- `pages.contact.faq.items[3].q`：能不能只做柜子
+- `pages.contact.faq.items[3].a`：可以。全屋定制按投影面积另算，仍建议先量房再定柜深。
+- `collections.projects.chunman.slug`：chunman
+- `collections.projects.chunman.name`：良渚春漫里
+- `collections.projects.chunman.summary`：良渚春漫里，三室两厅，89㎡，现代。参考价 18.6 万，工期 68 天。
+- `collections.projects.chunman.body`：2025 年 4 月量房。客厅做了整面柜，厨房改成 U 型。水电留了打压照片，油漆在自然光下对过色。参考价 18.6 万，以实际量房为准。工期 68 天。
+- `collections.projects.chunman.specs[0].label`：小区
+- `collections.projects.chunman.specs[0].value`：良渚春漫里
+- `collections.projects.chunman.specs[1].label`：户型
+- `collections.projects.chunman.specs[1].value`：三室两厅
+- `collections.projects.chunman.specs[2].label`：面积
+- `collections.projects.chunman.specs[2].value`：89㎡
+- `collections.projects.chunman.specs[3].label`：风格
+- `collections.projects.chunman.specs[3].value`：现代
+- `collections.projects.chunman.specs[4].label`：造价
+- `collections.projects.chunman.specs[4].value`：参考价 18.6 万
+- `collections.projects.chunman.specs[5].label`：工期
+- `collections.projects.chunman.specs[5].value`：68 天
+- `collections.projects.chunman.category`：现代
+- `collections.projects.weilaicheng.slug`：weilaicheng
+- `collections.projects.weilaicheng.name`：未来科技城
+- `collections.projects.weilaicheng.summary`：未来科技城，四室两厅，128㎡，原木。参考价 32.4 万，工期 92 天。
+- `collections.projects.weilaicheng.body`：2025 年 6 月量房。客餐厅打通，柜体用浅橡木。木作在自己车间下料。参考价 32.4 万，以实际量房为准。工期 92 天。
+- `collections.projects.weilaicheng.specs[0].label`：小区
+- `collections.projects.weilaicheng.specs[0].value`：未来科技城
+- `collections.projects.weilaicheng.specs[1].label`：户型
+- `collections.projects.weilaicheng.specs[1].value`：四室两厅
+- `collections.projects.weilaicheng.specs[2].label`：面积
+- `collections.projects.weilaicheng.specs[2].value`：128㎡
+- `collections.projects.weilaicheng.specs[3].label`：风格
+- `collections.projects.weilaicheng.specs[3].value`：原木
+- `collections.projects.weilaicheng.specs[4].label`：造价
+- `collections.projects.weilaicheng.specs[4].value`：参考价 32.4 万
+- `collections.projects.weilaicheng.specs[5].label`：工期
+- `collections.projects.weilaicheng.specs[5].value`：92 天
+- `collections.projects.weilaicheng.category`：原木
+- `collections.projects.dieyuan.slug`：dieyuan
+- `collections.projects.dieyuan.name`：西溪蝶园
+- `collections.projects.dieyuan.summary`：西溪蝶园，西湖外区，两室一厅，76㎡，奶油。参考价 14.2 万，工期 55 天。电话确认后接的。
+- `collections.projects.dieyuan.body`：2025 年 8 月量房。这套在西湖，不在余杭，电话确认后才接。墙面用暖白乳胶漆，地面是浅色地板。没有拆承重墙。参考价 14.2 万，以实际量房为准。工期 55 天。
+- `collections.projects.dieyuan.specs[0].label`：小区
+- `collections.projects.dieyuan.specs[0].value`：西溪蝶园
+- `collections.projects.dieyuan.specs[1].label`：范围
+- `collections.projects.dieyuan.specs[1].value`：西湖外区，电话确认后接
+- `collections.projects.dieyuan.specs[2].label`：户型
+- `collections.projects.dieyuan.specs[2].value`：两室一厅
+- `collections.projects.dieyuan.specs[3].label`：面积
+- `collections.projects.dieyuan.specs[3].value`：76㎡
+- `collections.projects.dieyuan.specs[4].label`：风格
+- `collections.projects.dieyuan.specs[4].value`：奶油
+- `collections.projects.dieyuan.specs[5].label`：造价
+- `collections.projects.dieyuan.specs[5].value`：参考价 14.2 万
+- `collections.projects.dieyuan.specs[6].label`：工期
+- `collections.projects.dieyuan.specs[6].value`：55 天
+- `collections.projects.dieyuan.category`：奶油
+- `collections.projects.yunqi.slug`：yunqi
+- `collections.projects.yunqi.name`：勾庄云栖
+- `collections.projects.yunqi.summary`：勾庄云栖，四室两厅，142㎡，新中式。参考价 41.8 万，工期 110 天。
+- `collections.projects.yunqi.body`：2025 年 9 月量房。客厅做了木格栅，餐厅留了圆桌位。柜门是胡桃木色。参考价 41.8 万，以实际量房为准。工期 110 天。
+- `collections.projects.yunqi.specs[0].label`：小区
+- `collections.projects.yunqi.specs[0].value`：勾庄云栖
+- `collections.projects.yunqi.specs[1].label`：户型
+- `collections.projects.yunqi.specs[1].value`：四室两厅
+- `collections.projects.yunqi.specs[2].label`：面积
+- `collections.projects.yunqi.specs[2].value`：142㎡
+- `collections.projects.yunqi.specs[3].label`：风格
+- `collections.projects.yunqi.specs[3].value`：新中式
+- `collections.projects.yunqi.specs[4].label`：造价
+- `collections.projects.yunqi.specs[4].value`：参考价 41.8 万
+- `collections.projects.yunqi.specs[5].label`：工期
+- `collections.projects.yunqi.specs[5].value`：110 天
+- `collections.projects.yunqi.category`：新中式
+- `collections.projects.yaren.slug`：yaren
+- `collections.projects.yaren.name`：仁和雅苑
+- `collections.projects.yaren.summary`：仁和雅苑，两室一厅，65㎡，极简。参考价 11.5 万，工期 48 天。
+- `collections.projects.yaren.body`：2025 年 11 月量房。收纳做进墙里，台面少摆东西。旧房只做了局部翻新。参考价 11.5 万，以实际量房为准。工期 48 天。
+- `collections.projects.yaren.specs[0].label`：小区
+- `collections.projects.yaren.specs[0].value`：仁和雅苑
+- `collections.projects.yaren.specs[1].label`：户型
+- `collections.projects.yaren.specs[1].value`：两室一厅
+- `collections.projects.yaren.specs[2].label`：面积
+- `collections.projects.yaren.specs[2].value`：65㎡
+- `collections.projects.yaren.specs[3].label`：风格
+- `collections.projects.yaren.specs[3].value`：极简
+- `collections.projects.yaren.specs[4].label`：造价
+- `collections.projects.yaren.specs[4].value`：参考价 11.5 万
+- `collections.projects.yaren.specs[5].label`：工期
+- `collections.projects.yaren.specs[5].value`：48 天
+- `collections.projects.yaren.category`：极简
+- `collections.projects.nanyuan.slug`：nanyuan
+- `collections.projects.nanyuan.name`：闲林南苑
+- `collections.projects.nanyuan.summary`：闲林南苑，三室两厅，108㎡，北欧。参考价 22.7 万，工期 76 天。
+- `collections.projects.nanyuan.body`：2026 年 1 月量房。儿童房做了上下柜，客厅用浅灰布艺沙发。参考价 22.7 万，以实际量房为准。工期 76 天。
+- `collections.projects.nanyuan.specs[0].label`：小区
+- `collections.projects.nanyuan.specs[0].value`：闲林南苑
+- `collections.projects.nanyuan.specs[1].label`：户型
+- `collections.projects.nanyuan.specs[1].value`：三室两厅
+- `collections.projects.nanyuan.specs[2].label`：面积
+- `collections.projects.nanyuan.specs[2].value`：108㎡
+- `collections.projects.nanyuan.specs[3].label`：风格
+- `collections.projects.nanyuan.specs[3].value`：北欧
+- `collections.projects.nanyuan.specs[4].label`：造价
+- `collections.projects.nanyuan.specs[4].value`：参考价 22.7 万
+- `collections.projects.nanyuan.specs[5].label`：工期
+- `collections.projects.nanyuan.specs[5].value`：76 天
+- `collections.projects.nanyuan.category`：北欧
+- `collections.designers.zhou.slug`：zhou
+- `collections.designers.zhou.name`：周晚宁
+- `collections.designers.zhou.summary`：主案设计，2017 年入职。春漫里和云栖的柜子是她画的。
+- `collections.designers.zhou.body`：周晚宁跟原木和收纳。量房时先问储物，再定柜深。在澄木第 9 年。春漫里和云栖已交房。现在同时跟两套：瓶窑金地、仓前梧桐里。
+- `collections.designers.zhou.specs[0].label`：岗位
+- `collections.designers.zhou.specs[0].value`：主案设计
+- `collections.designers.zhou.specs[1].label`：年限
+- `collections.designers.zhou.specs[1].value`：9 年
+- `collections.designers.zhou.specs[2].label`：擅长
+- `collections.designers.zhou.specs[2].value`：原木和收纳
+- `collections.designers.zhou.specs[3].label`：在跟
+- `collections.designers.zhou.specs[3].value`：瓶窑金地、仓前梧桐里
+- `collections.designers.chen.slug`：chen
+- `collections.designers.chen.name`：陈予安
+- `collections.designers.chen.summary`：主案设计，2019 年入职。科技城和南苑已交房，现在跟径山云溪府。
+- `collections.designers.chen.body`：陈予安做现代和北欧。平面先排动线，再谈材料和颜色。在澄木第 7 年。未来科技城和闲林南苑已交房。现在跟径山云溪府。
+- `collections.designers.chen.specs[0].label`：岗位
+- `collections.designers.chen.specs[0].value`：主案设计
+- `collections.designers.chen.specs[1].label`：年限
+- `collections.designers.chen.specs[1].value`：7 年
+- `collections.designers.chen.specs[2].label`：擅长
+- `collections.designers.chen.specs[2].value`：现代和北欧
+- `collections.designers.chen.specs[3].label`：在跟
+- `collections.designers.chen.specs[3].value`：径山云溪府
+- `collections.designers.lin.slug`：lin
+- `collections.designers.lin.name`：林知夏
+- `collections.designers.lin.summary`：主案设计，2020 年入职。蝶园的奶油色是她定的，这套已交房。
+- `collections.designers.lin.body`：林知夏做奶油和浅色。她习惯把乳胶漆色号写在合同附件里。在澄木第 6 年。西溪蝶园已交房，这套在西湖，电话确认后接的。手头没有在建工地。
+- `collections.designers.lin.specs[0].label`：岗位
+- `collections.designers.lin.specs[0].value`：主案设计
+- `collections.designers.lin.specs[1].label`：年限
+- `collections.designers.lin.specs[1].value`：6 年
+- `collections.designers.lin.specs[2].label`：擅长
+- `collections.designers.lin.specs[2].value`：奶油和浅色
+- `collections.designers.lin.specs[3].label`：在跟
+- `collections.designers.lin.specs[3].value`：手头无在建
+- `collections.designers.wu.slug`：wu
+- `collections.designers.wu.name`：吴砚舟
+- `collections.designers.wu.summary`：主案设计，2015 年入职。雅苑的极简收纳是他收的口，已交房。
+- `collections.designers.wu.body`：吴砚舟做新中式和极简。木格栅的间距他会在车间先钉一块样。在澄木第 11 年。仁和雅苑已交房。手头没有在建工地。
+- `collections.designers.wu.specs[0].label`：岗位
+- `collections.designers.wu.specs[0].value`：主案设计
+- `collections.designers.wu.specs[1].label`：年限
+- `collections.designers.wu.specs[1].value`：11 年
+- `collections.designers.wu.specs[2].label`：擅长
+- `collections.designers.wu.specs[2].value`：新中式和极简
+- `collections.designers.wu.specs[3].label`：在跟
+- `collections.designers.wu.specs[3].value`：手头无在建
+- `collections.packages.half.slug`：half
+- `collections.packages.half.name`：半包
+- `collections.packages.half.summary`：参考价 899 元/㎡。含水电、泥瓦、木作、油漆人工，主材自购。以实际量房为准。
+- `collections.packages.half.body`：半包只管人工和辅料。水电、泥瓦、木作、油漆都含。瓷砖、地板、洁具、灯具由业主自己买。参考价 899 元/㎡，以实际量房为准。
+- `collections.packages.half.specs[0].label`：档位
+- `collections.packages.half.specs[0].value`：半包
+- `collections.packages.half.specs[1].label`：计价
+- `collections.packages.half.specs[1].value`：每平方米
+- `collections.packages.half.specs[2].label`：参考价
+- `collections.packages.half.specs[2].value`：899 元/㎡
+- `collections.packages.half.specs[3].label`：人工
+- `collections.packages.half.specs[3].value`：水电泥瓦木作油漆
+- `collections.packages.half.specs[4].label`：主材
+- `collections.packages.half.specs[4].value`：业主自购
+- `collections.packages.half.category`：半包
+- `collections.packages.full.slug`：full
+- `collections.packages.full.name`：全包
+- `collections.packages.full.summary`：参考价 1680 元/㎡。含常用瓷砖、地板、涂料和洁具。以实际量房为准。
+- `collections.packages.full.body`：全包在半包上加上常用主材：瓷砖、地板、乳胶漆、洁具和灯具按展厅在售款。柜体另计。参考价 1680 元/㎡，以实际量房为准。
+- `collections.packages.full.specs[0].label`：档位
+- `collections.packages.full.specs[0].value`：全包
+- `collections.packages.full.specs[1].label`：计价
+- `collections.packages.full.specs[1].value`：每平方米
+- `collections.packages.full.specs[2].label`：参考价
+- `collections.packages.full.specs[2].value`：1680 元/㎡
+- `collections.packages.full.specs[3].label`：主材
+- `collections.packages.full.specs[3].value`：瓷砖地板涂料洁具
+- `collections.packages.full.specs[4].label`：柜体
+- `collections.packages.full.specs[4].value`：另计
+- `collections.packages.full.category`：全包
+- `collections.packages.turnkey.slug`：turnkey
+- `collections.packages.turnkey.name`：整装
+- `collections.packages.turnkey.summary`：参考价 2390 元/㎡。在全包上加柜体、室内门和基础家电。以实际量房为准。
+- `collections.packages.turnkey.body`：整装按套餐交付。柜体、室内门、洁具升级款和基础家电都写在清单里。换品牌要改价。参考价 2390 元/㎡，以实际量房为准。
+- `collections.packages.turnkey.specs[0].label`：档位
+- `collections.packages.turnkey.specs[0].value`：整装
+- `collections.packages.turnkey.specs[1].label`：计价
+- `collections.packages.turnkey.specs[1].value`：每平方米
+- `collections.packages.turnkey.specs[2].label`：参考价
+- `collections.packages.turnkey.specs[2].value`：2390 元/㎡
+- `collections.packages.turnkey.specs[3].label`：包含
+- `collections.packages.turnkey.specs[3].value`：柜体、门、基础家电
+- `collections.packages.turnkey.specs[4].label`：换品牌
+- `collections.packages.turnkey.specs[4].value`：另算差价
+- `collections.packages.turnkey.category`：整装
+- `collections.notes.half-full.slug`：half-full
+- `collections.notes.half-full.name`：半包和全包差在哪
+- `collections.notes.half-full.summary`：半包不含主材，全包含常用瓷砖、地板和涂料。差价看套餐页。
+- `collections.notes.half-full.date`：2026-02-18
+- `collections.notes.half-full.body`：半包适合已经看好砖和洁具的人。全包把常用主材放进单价，少跑建材市场。两边的人工范围一样。页面上的都是参考价，以实际量房为准。
+- `collections.notes.half-full.specs[0].label`：栏目
+- `collections.notes.half-full.specs[0].value`：套餐
+- `collections.notes.half-full.specs[1].label`：适合
+- `collections.notes.half-full.specs[1].value`：还在比半包和全包
+- `collections.notes.half-full.category`：套餐
+- `collections.notes.water.slug`：water
+- `collections.notes.water.name`：水电验收看哪几项
+- `collections.notes.water.summary`：打压、绝缘、拍照。业主在场，结果写在验收单上。
+- `collections.notes.water.date`：2026-03-06
+- `collections.notes.water.body`：水管打压看保压，电路看绝缘电阻，点位按图拍照。不合格的当天返工，不放到木作之后。验收单业主签字才进入泥瓦。
+- `collections.notes.water.specs[0].label`：栏目
+- `collections.notes.water.specs[0].value`：水电
+- `collections.notes.water.specs[1].label`：节点
+- `collections.notes.water.specs[1].value`：打压、绝缘、拍照
+- `collections.notes.water.category`：验收
+- `collections.notes.cabinet.slug`：cabinet
+- `collections.notes.cabinet.name`：柜子按投影还是延米
+- `collections.notes.cabinet.summary`：澄木柜体按投影面积报价，不含台面石。先量房再定柜深。
+- `collections.notes.cabinet.date`：2026-04-12
+- `collections.notes.cabinet.body`：投影面积是柜子贴墙的正面面积。转角柜、高柜和吊柜分开量。台面石和见光板另计。合同里写清投影单价，参考价仍以实际量房为准。
+- `collections.notes.cabinet.specs[0].label`：栏目
+- `collections.notes.cabinet.specs[0].value`：定制
+- `collections.notes.cabinet.specs[1].label`：计价
+- `collections.notes.cabinet.specs[1].value`：按投影面积
+- `collections.notes.cabinet.category`：柜体
+- `collections.notes.pay.slug`：pay
+- `collections.notes.pay.name`：装修款分三笔
+- `collections.notes.pay.summary`：签约、水电验收、竣工各一笔。比例写在合同里，不临时改。
+- `collections.notes.pay.date`：2026-05-20
+- `collections.notes.pay.body`：第一笔签约后付，第二笔水电验收签字后付，第三笔竣工验收后付。材料代购单独列，不和工程款混在一张收据上。
+- `collections.notes.pay.specs[0].label`：栏目
+- `collections.notes.pay.specs[0].value`：付款
+- `collections.notes.pay.specs[1].label`：节点
+- `collections.notes.pay.specs[1].value`：签约、水电、竣工
+- `collections.notes.pay.category`：付款

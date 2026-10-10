@@ -72,20 +72,6 @@
           ]
         },
         {
-          "type": "trust",
-          "required": false,
-          "variants": [
-            "stats"
-          ]
-        },
-        {
-          "type": "campus",
-          "required": false,
-          "variants": [
-            "split"
-          ]
-        },
-        {
           "type": "services",
           "required": true,
           "variants": [
@@ -96,28 +82,8 @@
           "type": "advantage",
           "required": false,
           "variants": [
-            "switch"
-          ]
-        },
-        {
-          "type": "photo-band",
-          "required": false,
-          "variants": [
-            "wide"
-          ]
-        },
-        {
-          "type": "cases",
-          "required": false,
-          "variants": [
-            "gallery"
-          ]
-        },
-        {
-          "type": "bulletin",
-          "required": false,
-          "variants": [
-            "feed"
+            "switch",
+            "points"
           ]
         },
         {
@@ -125,6 +91,14 @@
           "required": false,
           "variants": [
             "cards"
+          ]
+        },
+        {
+          "type": "cases",
+          "required": false,
+          "variants": [
+            "gallery",
+            "list"
           ]
         },
         {
@@ -365,5 +339,7 @@
         }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

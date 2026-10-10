@@ -1,0 +1,5 @@
+.advantage-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; }
+.advantage-points article { border-top: 1px solid currentColor; padding-top: 1.25rem; }
+.advantage-points h3 { margin: 0 0 0.75rem; color: inherit; }
+.advantage-points p { margin: 0; max-width: 34rem; color: inherit; }
+@media (max-width: 767px) { .advantage-points { grid-template-columns: 1fr; gap: 1.5rem; } }

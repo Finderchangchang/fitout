@@ -75,7 +75,8 @@
           "type": "services",
           "required": true,
           "variants": [
-            "bays"
+            "bays",
+            "text-list"
           ]
         },
         {
@@ -93,31 +94,10 @@
           ]
         },
         {
-          "type": "floor",
-          "required": false,
-          "variants": [
-            "split"
-          ]
-        },
-        {
           "type": "team",
           "required": false,
           "variants": [
             "cards"
-          ]
-        },
-        {
-          "type": "photo-band",
-          "required": false,
-          "variants": [
-            "wide"
-          ]
-        },
-        {
-          "type": "collection-list",
-          "required": false,
-          "variants": [
-            "notes"
           ]
         },
         {
@@ -129,7 +109,7 @@
         },
         {
           "type": "contact",
-          "required": true,
+          "required": false,
           "variants": [
             "split"
           ]
@@ -153,7 +133,8 @@
           "type": "tools",
           "required": false,
           "variants": [
-            "pair"
+            "pair",
+            "text-list"
           ]
         },
         {
@@ -342,5 +323,7 @@
         }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }

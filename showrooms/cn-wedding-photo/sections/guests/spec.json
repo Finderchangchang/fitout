@@ -56,7 +56,13 @@
       "imageField": "items.image",
       "family": "voices",
       "fit": "三张竖图旁边是原话",
-      "fallback": "omit"
+      "fallback": "text-list"
+    },
+    "text-list": {
+      "needsImage": false,
+      "family": "text-catalog",
+      "fit": "无照片时保留业务、规格和联系信息",
+      "source": "样板间自写"
     }
   }
 }

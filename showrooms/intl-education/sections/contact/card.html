@@ -17,19 +17,20 @@
           <p><a href="{{amapUrl}}">{{icon:map-pin:20}}{{address}}</a></p>
           <p><a href="tel:{{phoneTel}}">{{icon:phone:20}}{{phone}}</a></p>
           {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:20}}{{email}}</a></p>{{/if}}
+          {{#if wechat}}<p class="contact-line">{{icon:chat:20}}<span class="nums">{{wechat}}</span></p>{{/if}}
         </div>
         <div class="btn-row contact-actions">
           {{#if formUrl}}<a class="btn btn-primary" href="{{formUrl}}" target="_blank" rel="noopener noreferrer">{{icon:external:16}}{{formLabel}}</a>{{/if}}
           <a class="btn" href="{{amapUrl}}">{{ui.amap}}</a>
+          {{#if wechat}}<button type="button" class="btn" data-copy="{{wechat}}">{{ui.copyWechat}}</button>{{/if}}
         </div>
       </div>
+      {{#if wechatQrSrc}}
       <figure class="card contact-code">
-        {{#if wechatQrSrc}}<img src="{{wechatQrSrc}}" alt="顾问微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">{{/if}}
-        {{#if wechat}}
-        <p class="contact-line">{{icon:chat:20}}{{wechat}}</p>
-        <p><button type="button" class="btn" data-copy="{{wechat}}">{{ui.copyWechat}}</button></p>
-        {{/if}}
+        <img src="{{wechatQrSrc}}" alt="顾问微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
+        <figcaption>微信联系课程顾问</figcaption>
       </figure>
+      {{/if}}
     </div>
   </div>
 </section>

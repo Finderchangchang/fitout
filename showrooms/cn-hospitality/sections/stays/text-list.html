@@ -1,0 +1,12 @@
+<section class="section" data-section="stays" data-family="room-comparison" id="{{anchor}}">
+  <div class="container">
+    <div class="section-head">{{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}{{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}{{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}</div>
+    <div class="plain-rooms">
+      {{#each items}}<article class="plain-room">
+        <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
+        <dl><div><dt>面积</dt><dd>{{area}}</dd></div><div><dt>床型</dt><dd>{{bed}}</dd></div><div><dt>入住人数</dt><dd>{{guests}}</dd></div></dl>
+        <p class="plain-price">{{price}}</p><a href="{{href}}">查看房型与预订说明</a>
+      </article>{{/each}}
+    </div>
+  </div>
+</section>

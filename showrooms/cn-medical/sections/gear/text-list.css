@@ -1,0 +1,5 @@
+.plain-equipment-list { margin: 0; }
+.plain-equipment-list > div { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 1.5rem; border-top: 1px solid var(--border); padding-block: 1.25rem; }
+.plain-equipment-list dt { font-size: var(--fs-2); font-weight: 650; }
+.plain-equipment-list dd { align-self: center; }
+@media (max-width: 767px) { .plain-equipment-list > div { grid-template-columns: 1fr; gap: 0.5rem; } }

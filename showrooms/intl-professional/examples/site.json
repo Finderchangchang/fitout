@@ -85,8 +85,8 @@
   "pages": [
     {
       "id": "home",
-      "title": "石澜顾问（虚构）｜玉皇山路",
-      "description": "杭州玉皇山路的顾问书房。组织、财务、合同和交接，可以预约面谈。",
+      "title": "石澜顾问（虚构）｜企业治理与经营顾问",
+      "description": "杭州玉皇山路，提供组织、财务、合同、品牌和交接相关咨询。",
       "sections": [
         {
           "type": "hero",
@@ -95,8 +95,8 @@
           "tone": "image",
           "data": {
             "label": "玉皇山路书房",
-            "title": "复杂的事，当面谈清",
-            "lead": "组织、财务、合同和交接，先听完再动笔。",
+            "title": "企业治理与经营顾问",
+            "lead": "杭州玉皇山路，提供组织、财务、合同、品牌和交接相关咨询。",
             "primaryLabel": "预约面谈",
             "primaryHref": "contact/index.html",
             "secondaryLabel": "看服务",
@@ -106,76 +106,35 @@
               {
                 "image": "hero-desk",
                 "imageAlt": "书桌一角，灯和空白纸",
-                "title": "坐下来，把事情谈清",
-                "lead": "组织、财务、合同和交接，先听完再动笔。"
+                "title": "企业治理与经营顾问",
+                "lead": "先确认业务问题，再以书面范围开展工作。"
               },
               {
                 "image": "hero-stone",
                 "imageAlt": "石墙和窄窗的侧光",
-                "title": "石墙这边，只谈正事",
-                "lead": "玉皇山路书房，只谈约好的事。"
+                "title": "组织与治理",
+                "lead": "从现有职责表和章程了解组织问题。"
               },
               {
                 "image": "hero-table",
                 "imageAlt": "空会议桌和两把椅子",
-                "title": "两把椅子，一次谈完",
-                "lead": "空会议桌，一次把范围谈完。"
+                "title": "财务与合同咨询",
+                "lead": "核对资料与范围，再讨论方案和报价。"
               },
               {
                 "image": "hero-folio",
                 "imageAlt": "空白纸和一支铅笔",
-                "title": "材料摊开，再做决定",
-                "lead": "材料摊开，对过再决定做不做。"
+                "title": "材料与项目范围",
+                "lead": "面谈可带现有合同或职责表，没有材料也可先说明情况。"
               },
               {
                 "image": "hero-door",
                 "imageAlt": "石墙窄门的侧光",
-                "title": "约好时间，再进这门",
-                "lead": "先预约，再进书房。"
+                "title": "预约面谈",
+                "lead": "先确认时间，面谈后决定服务范围。"
               }
             ]
           }
-        },
-        {
-          "type": "preface",
-          "variant": "split",
-          "anchor": "opening",
-          "tone": "light",
-          "data": {
-            "kicker": "玉皇山路",
-            "title": "先听完，再动笔",
-            "lead": "没听清的那一件，不往下写。",
-            "text": "事情先在桌上摊开。书房在玉皇山路，面谈事先约。"
-          }
-        },
-        {
-          "type": "trust",
-          "variant": "stats",
-          "anchor": "numbers",
-          "tone": "dark",
-          "data": {
-            "title": "几件能数的事",
-            "lead": "开业年份、在所的人、正在接的事。",
-            "items": [
-              {
-                "value": "2014",
-                "label": "杭州开业"
-              },
-              {
-                "value": "4",
-                "label": "位署名的人"
-              },
-              {
-                "value": "6",
-                "label": "块对外业务"
-              },
-              {
-                "value": "4",
-                "label": "件公开项目"
-              }
-            ]
-          },
-          "bg": "bg-paper"
         },
         {
           "type": "services",
@@ -183,7 +142,7 @@
           "anchor": "domains",
           "tone": "light",
           "data": {
-            "title": "正在接的事",
+            "title": "咨询服务范围",
             "lead": "六块业务，点进去看做法。",
             "items": [
               {
@@ -238,15 +197,49 @@
           }
         },
         {
-          "type": "photo-band",
-          "variant": "wide",
-          "anchor": "room",
-          "tone": "image",
+          "type": "cases",
+          "variant": "gallery",
+          "anchor": "work",
+          "tone": "dark",
           "data": {
-            "image": "band-room",
-            "imageAlt": "书房朝西的那面墙",
-            "caption": "书房朝西的那面墙"
-          }
+            "title": "项目背景与交付",
+            "lead": "四件已经做完的事。",
+            "items": [
+              {
+                "name": "食品厂班组职责",
+                "text": "把班组长的职责表重写，并跟车间对过。",
+                "result": "班组长从11人收到7人",
+                "image": "case-shifts",
+                "imageAlt": "车间职责表",
+                "href": "cases/shifts.html"
+              },
+              {
+                "name": "报价单收成两页",
+                "text": "把六页报价收成客户能一次看完的两页。",
+                "result": "第一次会议对上范围",
+                "image": "case-quotes",
+                "imageAlt": "两页报价单",
+                "href": "cases/quotes.html"
+              },
+              {
+                "name": "家族股权变更",
+                "text": "陪着把股权变更材料按清单备齐并送件。",
+                "result": "2024年11月办完变更",
+                "image": "case-equity",
+                "imageAlt": "股权材料封面",
+                "href": "cases/equity.html"
+              },
+              {
+                "name": "分所办公室动线",
+                "text": "重排接待、工位和档案室的走法。",
+                "result": "档案室挪到前台后面",
+                "image": "case-route",
+                "imageAlt": "前台后的档案柜",
+                "href": "cases/route.html"
+              }
+            ]
+          },
+          "bg": "band-room"
         },
         {
           "type": "team",
@@ -254,8 +247,8 @@
           "anchor": "people",
           "tone": "light",
           "data": {
-            "title": "谁在谈",
-            "lead": "四位可以署名的人。",
+            "title": "顾问团队",
+            "lead": "团队的从业年限与业务分工可在详情页查看。",
             "items": [
               {
                 "name": "周衡",
@@ -293,57 +286,12 @@
           }
         },
         {
-          "type": "cases",
-          "variant": "gallery",
-          "anchor": "work",
-          "tone": "dark",
-          "data": {
-            "title": "可以公开的几件",
-            "lead": "四件已经做完的事。",
-            "items": [
-              {
-                "name": "食品厂班组职责",
-                "text": "把班组长的职责表重写，并跟车间对过。",
-                "result": "班组长从11人收到7人",
-                "image": "case-shifts",
-                "imageAlt": "车间职责表",
-                "href": "cases/shifts.html"
-              },
-              {
-                "name": "报价单收成两页",
-                "text": "把六页报价收成客户能一次看完的两页。",
-                "result": "第一次会议对上范围",
-                "image": "case-quotes",
-                "imageAlt": "两页报价单",
-                "href": "cases/quotes.html"
-              },
-              {
-                "name": "家族股权变更",
-                "text": "陪着把股权变更材料按清单备齐并送件。",
-                "result": "2024年11月办完变更",
-                "image": "case-equity",
-                "imageAlt": "股权材料封面",
-                "href": "cases/equity.html"
-              },
-              {
-                "name": "分所办公室动线",
-                "text": "重排接待、工位和档案室的走法。",
-                "result": "档案室挪到前台后面",
-                "image": "case-route",
-                "imageAlt": "前台后的档案柜",
-                "href": "cases/route.html"
-              }
-            ]
-          },
-          "bg": "bg-folder"
-        },
-        {
           "type": "why",
           "variant": "steps",
           "anchor": "method",
-          "tone": "light",
+          "tone": "dark",
           "data": {
-            "title": "面谈怎么走",
+            "title": "咨询与交付流程",
             "lead": "每次只推进纸上有的那一页。",
             "items": [
               {
@@ -366,63 +314,12 @@
           }
         },
         {
-          "type": "still",
-          "variant": "frame",
-          "anchor": "window",
-          "tone": "image",
-          "data": {
-            "image": "still-window",
-            "imageAlt": "窗边空椅和石墙",
-            "caption": "窗边的空椅"
-          }
-        },
-        {
-          "type": "faq",
-          "variant": "accordion",
-          "anchor": "questions",
-          "tone": "dark",
-          "data": {
-            "title": "见面之前",
-            "lead": "三条约法，见面之前先说清。",
-            "items": [
-              {
-                "q": "第一次面谈收费吗",
-                "a": "第一次面谈不收费，限90分钟。"
-              },
-              {
-                "q": "对面也来找你们呢",
-                "a": "同一件事已有委托方就不接对面。"
-              },
-              {
-                "q": "原件什么时候退",
-                "a": "项目结束10个工作日内退还原件。"
-              },
-              {
-                "q": "周日能见面吗",
-                "a": "周日不接待，请改到工作日。"
-              }
-            ]
-          },
-          "bg": "bg-chairs"
-        },
-        {
-          "type": "collection-list",
-          "variant": "grid",
-          "anchor": "notes",
-          "tone": "light",
-          "data": {
-            "title": "书房笔记",
-            "lead": "三篇短文，写给委托人。",
-            "collection": "news"
-          }
-        },
-        {
           "type": "cta-band",
           "variant": "inline",
           "anchor": "visit",
-          "tone": "dark",
+          "tone": "light",
           "data": {
-            "title": "约一次面谈",
+            "title": "预约项目面谈",
             "lead": "带上材料，或者空手来也可以。",
             "primaryHref": "contact/index.html"
           },
@@ -516,7 +413,7 @@
           "anchor": "numbers",
           "tone": "dark",
           "data": {
-            "title": "几件能数的事",
+            "title": "顾问团队与业务",
             "lead": "开业年份、在所的人、正在接的事。",
             "items": [
               {
@@ -525,7 +422,7 @@
               },
               {
                 "value": "4",
-                "label": "位署名的人"
+                "label": "位常驻顾问"
               },
               {
                 "value": "6",
@@ -579,7 +476,7 @@
             "title": "正在接的委托",
             "lead": "点进一项，看做法和问题。",
             "collection": "services",
-            "pageSize": 4
+            "pageSize": 9
           }
         },
         {
@@ -609,7 +506,7 @@
     {
       "id": "team",
       "title": "顾问团队｜石澜顾问（虚构）",
-      "description": "四位可以署名的合伙人与顾问，从业年限和擅长写在名字下面。",
+      "description": "四位常驻合伙人与顾问，从业年限和擅长写在名字下面。",
       "banner": "banner-team",
       "bannerAlt": "书房里的空椅",
       "sections": [
@@ -619,10 +516,10 @@
           "anchor": "list",
           "tone": "light",
           "data": {
-            "title": "谁在谈",
+            "title": "顾问团队",
             "lead": "从业年限写在名字下面。",
             "collection": "team",
-            "pageSize": 2
+            "pageSize": 9
           }
         },
         {
@@ -665,7 +562,7 @@
             "title": "可以公开的几件",
             "lead": "背景、做法和结果分开写。",
             "collection": "cases",
-            "pageSize": 2
+            "pageSize": 9
           }
         },
         {
@@ -694,7 +591,7 @@
     },
     {
       "id": "news",
-      "title": "书房笔记｜石澜顾问（虚构）",
+      "title": "咨询洞察｜石澜顾问（虚构）",
       "description": "写给委托人的三篇短文：面谈材料、报价写法和董事会。",
       "banner": "banner-news",
       "bannerAlt": "桌上的笔记",
@@ -708,7 +605,7 @@
             "title": "写给委托人的",
             "lead": "三篇，日期写在题下。",
             "collection": "news",
-            "pageSize": 2
+            "pageSize": 9
           }
         },
         {

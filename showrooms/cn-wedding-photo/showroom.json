@@ -77,38 +77,11 @@
           ]
         },
         {
-          "type": "trust",
-          "required": false,
-          "variants": [
-            "stats"
-          ]
-        },
-        {
-          "type": "offer",
+          "type": "folio",
           "required": true,
           "variants": [
-            "tiles"
-          ]
-        },
-        {
-          "type": "folio",
-          "required": false,
-          "variants": [
-            "spread"
-          ]
-        },
-        {
-          "type": "photo-band",
-          "required": false,
-          "variants": [
-            "wide"
-          ]
-        },
-        {
-          "type": "essay",
-          "required": false,
-          "variants": [
-            "split"
+            "spread",
+            "text-list"
           ]
         },
         {
@@ -119,17 +92,18 @@
           ]
         },
         {
-          "type": "guests",
-          "required": false,
+          "type": "collection-list",
           "variants": [
-            "wall"
-          ]
+            "portraits"
+          ],
+          "required": false
         },
         {
-          "type": "bulletin",
+          "type": "essay",
           "required": false,
           "variants": [
-            "feed"
+            "split",
+            "text-list"
           ]
         },
         {
@@ -151,7 +125,8 @@
           "type": "essay",
           "required": false,
           "variants": [
-            "split"
+            "split",
+            "text-list"
           ]
         },
         {
@@ -334,7 +309,8 @@
           "type": "guests",
           "required": false,
           "variants": [
-            "wall"
+            "wall",
+            "text-list"
           ]
         }
       ]
@@ -399,5 +375,7 @@
         }
       ]
     }
-  ]
+  ],
+  "layout": "business",
+  "missingClientImages": "omit"
 }
