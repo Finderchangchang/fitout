@@ -59,7 +59,13 @@
       "type": "string",
       "required": false,
       "maxChars": 8,
-      "hint": "轮播间隔毫秒，3000 到 5000。不是轮播就不要填"
+      "hint": "轮播间隔毫秒，3000 到 5000。不是轮播就不要填。默认 4000"
+    },
+    "mode": {
+      "type": "string",
+      "required": false,
+      "maxChars": 16,
+      "hint": "carousel 或 single。不写就是 carousel。只有一张图时按单张大图，不出圆点和箭头"
     },
     "slides": {
       "type": "list",
@@ -78,9 +84,45 @@
           "required": true,
           "maxChars": 30,
           "hint": "这张图里有什么"
+        },
+        "title": {
+          "type": "string",
+          "required": false,
+          "maxChars": 80,
+          "hint": "可无。写了就这张图用自己的标题。中文不超过 14 字，英文不超过 10 个词。建议 3 到 5 张"
+        },
+        "lead": {
+          "type": "string",
+          "required": false,
+          "maxChars": 40,
+          "hint": "可无。这张图自己的一句说明"
+        },
+        "primaryLabel": {
+          "type": "string",
+          "required": false,
+          "maxChars": 8,
+          "hint": "可无。不写就用首屏主按钮"
+        },
+        "primaryHref": {
+          "type": "string",
+          "required": false,
+          "maxChars": 200,
+          "hint": "可无"
+        },
+        "secondaryLabel": {
+          "type": "string",
+          "required": false,
+          "maxChars": 8,
+          "hint": "可无。只有第一张会继承首屏的次按钮"
+        },
+        "secondaryHref": {
+          "type": "string",
+          "required": false,
+          "maxChars": 200,
+          "hint": "可无"
         }
       },
-      "hint": "轮播 3 到 9 张。不是轮播就不要写"
+      "hint": "轮播建议 3 到 5 张，引擎仍接受 3 到 9 张。不是轮播就不要写"
     }
   },
   "variants": {

@@ -1,5 +1,6 @@
 <section class="section" data-section="collection-list" data-family="people" id="{{anchor}}">
-  <div class="container">
+  {{#each filters}}<span id="{{anchor}}-{{key}}" class="filter-hook"></span>{{/each}}
+<div class="container">
     <div class="section-head">
       {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
       {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
@@ -10,9 +11,17 @@
       <article>
         {{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
         <h2 class="item-title"><a href="{{href}}">{{name}}</a></h2>
-        {{#if summary}}<p>{{summary}}</p>{{/if}}
+        {{#if summary}}<p class="media-card-summary">{{summary}}</p>{{/if}}
+        <p class="media-card-meta">{{#if date}}<time datetime="{{dateIso}}">{{date}}</time>{{/if}}{{#if category}}<span class="media-card-tag">{{category}}</span>{{/if}}</p>
       </article>
       {{/each}}
     </div>
+      {{#if pager}}
+    <nav class="pager" data-pager aria-label="{{ui.pagerLabel}}">
+      {{#if prevHref}}<a class="pager-prev" href="{{prevHref}}">{{ui.pagerPrev}}</a>{{/if}}
+      {{#each pager}}<a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}>{{label}}</a>{{/each}}
+      {{#if nextHref}}<a class="pager-next" href="{{nextHref}}">{{ui.pagerNext}}</a>{{/if}}
+    </nav>
+    {{/if}}
   </div>
 </section>

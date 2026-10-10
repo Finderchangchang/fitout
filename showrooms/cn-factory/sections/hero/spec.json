@@ -1,22 +1,92 @@
 {
   "note": "满宽轮播。标题是活字。底边是压在图上的编号工艺条，点进产品分类，不是栏目胶囊。",
   "fields": {
-    "label": { "type": "string", "required": false, "maxChars": 12 },
-    "title": { "type": "string", "required": true, "maxChars": 80 },
-    "lead": { "type": "string", "required": true, "maxChars": 40 },
-    "primaryLabel": { "type": "string", "required": true, "maxChars": 8 },
-    "primaryHref": { "type": "string", "required": true, "maxChars": 200 },
-    "secondaryLabel": { "type": "string", "required": false, "maxChars": 8 },
-    "secondaryHref": { "type": "string", "required": false, "maxChars": 200 },
-    "interval": { "type": "string", "required": false, "maxChars": 8 },
+    "label": {
+      "type": "string",
+      "required": false,
+      "maxChars": 12
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxChars": 80
+    },
+    "lead": {
+      "type": "string",
+      "required": true,
+      "maxChars": 40
+    },
+    "primaryLabel": {
+      "type": "string",
+      "required": true,
+      "maxChars": 8
+    },
+    "primaryHref": {
+      "type": "string",
+      "required": true,
+      "maxChars": 200
+    },
+    "secondaryLabel": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
+    },
+    "secondaryHref": {
+      "type": "string",
+      "required": false,
+      "maxChars": 200
+    },
+    "interval": {
+      "type": "string",
+      "required": false,
+      "maxChars": 8
+    },
     "slides": {
       "type": "list",
       "required": true,
       "min": 3,
       "max": 5,
       "item": {
-        "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "image": {
+          "type": "image",
+          "required": true,
+          "maxChars": 200
+        },
+        "imageAlt": {
+          "type": "string",
+          "required": true,
+          "maxChars": 30
+        },
+        "title": {
+          "type": "string",
+          "required": false,
+          "maxChars": 14
+        },
+        "lead": {
+          "type": "string",
+          "required": false,
+          "maxChars": 40
+        },
+        "primaryLabel": {
+          "type": "string",
+          "required": false,
+          "maxChars": 8
+        },
+        "primaryHref": {
+          "type": "string",
+          "required": false,
+          "maxChars": 200
+        },
+        "secondaryLabel": {
+          "type": "string",
+          "required": false,
+          "maxChars": 8
+        },
+        "secondaryHref": {
+          "type": "string",
+          "required": false,
+          "maxChars": 200
+        }
       }
     },
     "rail": {
@@ -25,9 +95,21 @@
       "min": 4,
       "max": 4,
       "item": {
-        "name": { "type": "string", "required": true, "maxChars": 12 },
-        "text": { "type": "string", "required": true, "maxChars": 16 },
-        "href": { "type": "string", "required": true, "maxChars": 200 }
+        "name": {
+          "type": "string",
+          "required": true,
+          "maxChars": 12
+        },
+        "text": {
+          "type": "string",
+          "required": true,
+          "maxChars": 16
+        },
+        "href": {
+          "type": "string",
+          "required": true,
+          "maxChars": 200
+        }
       }
     }
   },

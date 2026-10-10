@@ -22,6 +22,16 @@
       {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
       </div>
     </div>
+    {{#if qrcodes}}
+    <div class="footer-qrs" data-qrcodes>
+      {{#each qrcodes}}
+      <figure class="footer-qr">
+        <img src="{{src}}" alt="{{alt}}" width="{{width}}" height="{{height}}" decoding="async">
+        {{#if label}}<figcaption>{{label}}</figcaption>{{/if}}
+      </figure>
+      {{/each}}
+    </div>
+    {{/if}}
     <div class="footer-legal">
       <p>{{year}} {{name}}</p>
       {{#if icp}}<p><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer">{{icp}}</a></p>{{/if}}

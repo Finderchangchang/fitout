@@ -10,8 +10,8 @@
       <article class="use-card">
         {{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
         <h3>{{name}}</h3>
-        <p>{{text}}</p>
-        {{#if result}}<p class="meta">{{result}}</p>{{/if}}
+        <p class="media-card-summary">{{text}}</p>
+        {{#if result}}<p class="media-card-meta">{{result}}</p>{{/if}}
       </article>
       {{/each}}
     </div>

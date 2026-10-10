@@ -24,7 +24,19 @@
     ],
     "formUrl": "https://example.com/wantang-book",
     "icp": "浙ICP备16048217号",
-    "police": "浙公网安备33010602016048号"
+    "police": "浙公网安备33010602016048号",
+    "qrcodes": [
+      {
+        "image": "qr-wechat",
+        "imageAlt": "公众号二维码",
+        "label": "关注公众号"
+      },
+      {
+        "image": "qr-book",
+        "imageAlt": "预约二维码",
+        "label": "预约看样"
+      }
+    ]
   },
   "nav": [
     {
@@ -45,7 +57,17 @@
     },
     {
       "label": "关于我们",
-      "href": "about/index.html"
+      "href": "about/index.html",
+      "children": [
+        {
+          "label": "拍摄团队",
+          "href": "team/index.html"
+        },
+        {
+          "label": "客片评价",
+          "href": "guests/index.html"
+        }
+      ]
     },
     {
       "label": "新闻动态",
@@ -93,7 +115,8 @@
             "image": "work-veil-b",
             "imageAlt": "窗边坐着整理头纱"
           }
-        ]
+        ],
+        "category": "窗光"
       },
       {
         "slug": "lake",
@@ -125,7 +148,8 @@
             "image": "work-lake-b",
             "imageAlt": "庭院回廊里的一组"
           }
-        ]
+        ],
+        "category": "园林"
       },
       {
         "slug": "hall",
@@ -157,7 +181,8 @@
             "image": "work-hall-b",
             "imageAlt": "走道尽头的一组站姿"
           }
-        ]
+        ],
+        "category": "厅堂"
       },
       {
         "slug": "alley",
@@ -189,7 +214,8 @@
             "image": "work-alley-b",
             "imageAlt": "梧桐阴影里的半身"
           }
-        ]
+        ],
+        "category": "街拍"
       }
     ],
     "packages": [
@@ -233,7 +259,8 @@
             "image": "pkg-dress",
             "imageAlt": "藕粉色婚纱礼服"
           }
-        ]
+        ],
+        "category": "轻纱"
       },
       {
         "slug": "garden",
@@ -275,7 +302,8 @@
             "image": "pkg-dress",
             "imageAlt": "藕粉色婚纱礼服"
           }
-        ]
+        ],
+        "category": "园林"
       },
       {
         "slug": "film",
@@ -317,7 +345,8 @@
             "image": "pkg-dress",
             "imageAlt": "藕粉色婚纱礼服"
           }
-        ]
+        ],
+        "category": "胶片"
       }
     ],
     "team": [
@@ -341,7 +370,8 @@
             "label": "擅长",
             "value": "外景与窗光"
           }
-        ]
+        ],
+        "category": "摄影"
       },
       {
         "slug": "zhou",
@@ -363,7 +393,8 @@
             "label": "擅长",
             "value": "棚拍与厅堂"
           }
-        ]
+        ],
+        "category": "摄影"
       },
       {
         "slug": "he",
@@ -385,7 +416,8 @@
             "label": "擅长",
             "value": "盘发与外景妆"
           }
-        ]
+        ],
+        "category": "化妆"
       },
       {
         "slug": "su",
@@ -407,7 +439,8 @@
             "label": "擅长",
             "value": "棚内妆与试纱"
           }
-        ]
+        ],
+        "category": "化妆"
       }
     ],
     "bases": [
@@ -434,7 +467,8 @@
             "label": "风格",
             "value": "窗光"
           }
-        ]
+        ],
+        "category": "室内棚"
       },
       {
         "slug": "garden",
@@ -459,7 +493,8 @@
             "label": "风格",
             "value": "园林"
           }
-        ]
+        ],
+        "category": "外景"
       },
       {
         "slug": "street",
@@ -484,7 +519,8 @@
             "label": "风格",
             "value": "梧桐"
           }
-        ]
+        ],
+        "category": "外景"
       }
     ],
     "news": [
@@ -495,7 +531,8 @@
         "summary": "2026-03-12，学院路店南窗的纱换成藕粉色。看样室的灯没动。",
         "body": "南窗原来的白纱换成藕粉色。上午的光还是从这扇窗进来。看样仍在二楼，电话预约。",
         "image": "news-open",
-        "imageAlt": "学院路店南窗的新纱"
+        "imageAlt": "学院路店南窗的新纱",
+        "category": "店务"
       },
       {
         "slug": "fair",
@@ -504,7 +541,8 @@
         "summary": "2026-04-18，店里办了一场档期说明，限额十二对，讲的是五到六月。",
         "body": "说明会在二楼看样室，讲五到六月哪几天还能拍。没有现场下定的折扣。想看样仍要另外打电话。",
         "image": "news-fair",
-        "imageAlt": "二楼看样室的说明会"
+        "imageAlt": "二楼看样室的说明会",
+        "category": "档期"
       },
       {
         "slug": "album",
@@ -513,7 +551,8 @@
         "summary": "2026-05-09，12寸皮册样品到店，封面是豆沙色，园林和胶片两档用它。",
         "body": "样品放在二楼看样室。轻纱套系仍是10寸相册。封面颜色只有豆沙这一种。",
         "image": "work-hall",
-        "imageAlt": "看样室里的皮册样品"
+        "imageAlt": "看样室里的皮册样品",
+        "category": "店务"
       }
     ]
   },
@@ -540,19 +579,33 @@
             "slides": [
               {
                 "image": "hero-veil",
-                "imageAlt": "藕粉头纱的褶皱和窗光"
+                "imageAlt": "藕粉头纱的褶皱和窗光",
+                "title": "先看样片再定档",
+                "lead": "杭州婚纱摄影，套系写明服装、张数和精修。"
               },
               {
                 "image": "hero-garden",
-                "imageAlt": "庭院回廊边的花和纱"
+                "imageAlt": "庭院回廊边的花和纱",
+                "title": "回廊边先看花",
+                "lead": "龙井庭院约2亩，园林套系在这里拍。"
               },
               {
                 "image": "hero-studio",
-                "imageAlt": "试纱间的缎面和柔光"
+                "imageAlt": "试纱间的缎面和柔光",
+                "title": "试纱看缎面光",
+                "lead": "学院路棚260平方米，窗光试纱。"
               },
               {
                 "image": "hero-aisle",
-                "imageAlt": "礼堂椅背和一小束花"
+                "imageAlt": "礼堂椅背和一小束花",
+                "title": "走道也能出片",
+                "lead": "宴会厅走道布光，胶片套系用这一档。"
+              },
+              {
+                "image": "hero-album",
+                "imageAlt": "素面相册和戒指盒",
+                "title": "皮册到店再看样",
+                "lead": "12寸皮册是豆沙色，园林和胶片用它。"
               }
             ]
           }
@@ -619,7 +672,8 @@
                 "imageAlt": "二楼看样室的选片桌"
               }
             ]
-          }
+          },
+          "bg": "bg-tulle"
         },
         {
           "type": "folio",
@@ -720,7 +774,8 @@
                 "hrefLabel": "看这档"
               }
             ]
-          }
+          },
+          "bg": "bg-satin"
         },
         {
           "type": "guests",
@@ -770,24 +825,28 @@
                 "text": "2026-03-12，南窗纱换成藕粉。",
                 "href": "news/courtyard.html",
                 "image": "news-open",
-                "imageAlt": "学院路店南窗的新纱"
+                "imageAlt": "学院路店南窗的新纱",
+                "date": "2026-03-12"
               },
               {
                 "name": "档期说明会",
                 "text": "2026-04-18，店里办档期说明。",
                 "href": "news/fair.html",
                 "image": "news-fair",
-                "imageAlt": "二楼看样室的说明会"
+                "imageAlt": "二楼看样室的说明会",
+                "date": "2026-04-18"
               },
               {
                 "name": "皮册样品到店",
                 "text": "2026-05-09，12寸皮册样品到了。",
                 "href": "news/album.html",
                 "image": "work-hall",
-                "imageAlt": "看样室里的皮册样品"
+                "imageAlt": "看样室里的皮册样品",
+                "date": "2026-05-09"
               }
             ]
-          }
+          },
+          "bg": "bg-garden"
         },
         {
           "type": "invite",
@@ -870,7 +929,8 @@
                 "text": "拍完约选片，精修张数按套系。"
               }
             ]
-          }
+          },
+          "bg": "bg-satin"
         },
         {
           "type": "photo-band",
@@ -938,7 +998,8 @@
           "data": {
             "title": "样片集",
             "lead": "点进去看拍摄地、风格和套系。",
-            "collection": "works"
+            "collection": "works",
+            "pageSize": 3
           }
         }
       ]
@@ -964,7 +1025,8 @@
           "data": {
             "title": "三档套系",
             "lead": "服装、张数、精修、相册和价格都写在说明里。",
-            "collection": "packages"
+            "collection": "packages",
+            "pageSize": 2
           }
         }
       ]
@@ -990,7 +1052,8 @@
           "data": {
             "title": "摄影师和化妆师",
             "lead": "四位都在店里，不外包。",
-            "collection": "team"
+            "collection": "team",
+            "pageSize": 3
           }
         }
       ]
@@ -1016,7 +1079,8 @@
           "data": {
             "title": "三个拍摄点",
             "lead": "一个棚、一处庭院、一段梧桐道。",
-            "collection": "bases"
+            "collection": "bases",
+            "pageSize": 2
           }
         }
       ]
@@ -1087,7 +1151,8 @@
           "data": {
             "title": "店里近况",
             "lead": "按日期排，新的在前。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": 2
           }
         }
       ]
@@ -1135,7 +1200,8 @@
           "data": {
             "title": "咨询档期",
             "lead": "看样请打电话。想问某一天有没有空，用这张表。"
-          }
+          },
+          "bg": "bg-tulle"
         }
       ]
     }

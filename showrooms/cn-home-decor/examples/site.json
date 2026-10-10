@@ -19,7 +19,19 @@
       }
     ],
     "formUrl": "https://example.com/chengmu-measure",
-    "icp": "浙ICP备20260318号-4"
+    "icp": "浙ICP备20260318号-4",
+    "qrcodes": [
+      {
+        "image": "qr-wechat",
+        "imageAlt": "公众号二维码",
+        "label": "关注公众号"
+      },
+      {
+        "image": "qr-advisor",
+        "imageAlt": "顾问微信二维码",
+        "label": "加顾问微信"
+      }
+    ]
   },
   "nav": [
     {
@@ -44,7 +56,13 @@
     },
     {
       "label": "施工工艺",
-      "href": "craft/index.html"
+      "href": "craft/index.html",
+      "children": [
+        {
+          "label": "装修知识",
+          "href": "notes/index.html"
+        }
+      ]
     },
     {
       "label": "免费量房",
@@ -90,7 +108,8 @@
             "label": "工期",
             "value": "68 天"
           }
-        ]
+        ],
+        "category": "现代"
       },
       {
         "slug": "weilaicheng",
@@ -124,7 +143,8 @@
             "label": "工期",
             "value": "92 天"
           }
-        ]
+        ],
+        "category": "原木"
       },
       {
         "slug": "dieyuan",
@@ -162,7 +182,8 @@
             "label": "工期",
             "value": "55 天"
           }
-        ]
+        ],
+        "category": "奶油"
       },
       {
         "slug": "yunqi",
@@ -196,7 +217,8 @@
             "label": "工期",
             "value": "110 天"
           }
-        ]
+        ],
+        "category": "新中式"
       },
       {
         "slug": "yaren",
@@ -230,7 +252,8 @@
             "label": "工期",
             "value": "48 天"
           }
-        ]
+        ],
+        "category": "极简"
       },
       {
         "slug": "nanyuan",
@@ -264,7 +287,8 @@
             "label": "工期",
             "value": "76 天"
           }
-        ]
+        ],
+        "category": "北欧"
       }
     ],
     "designers": [
@@ -402,7 +426,8 @@
             "label": "主材",
             "value": "业主自购"
           }
-        ]
+        ],
+        "category": "半包"
       },
       {
         "slug": "full",
@@ -432,7 +457,8 @@
             "label": "柜体",
             "value": "另计"
           }
-        ]
+        ],
+        "category": "全包"
       },
       {
         "slug": "turnkey",
@@ -462,7 +488,8 @@
             "label": "换品牌",
             "value": "另算差价"
           }
-        ]
+        ],
+        "category": "整装"
       }
     ],
     "notes": [
@@ -483,7 +510,8 @@
             "label": "适合",
             "value": "还在比半包和全包"
           }
-        ]
+        ],
+        "category": "套餐"
       },
       {
         "slug": "water",
@@ -502,7 +530,8 @@
             "label": "节点",
             "value": "打压、绝缘、拍照"
           }
-        ]
+        ],
+        "category": "验收"
       },
       {
         "slug": "cabinet",
@@ -521,7 +550,8 @@
             "label": "计价",
             "value": "按投影面积"
           }
-        ]
+        ],
+        "category": "柜体"
       },
       {
         "slug": "pay",
@@ -540,7 +570,8 @@
             "label": "节点",
             "value": "签约、水电、竣工"
           }
-        ]
+        ],
+        "category": "付款"
       }
     ]
   },
@@ -567,19 +598,33 @@
             "slides": [
               {
                 "image": "hero-living",
-                "imageAlt": "浅橡木地板和暖白墙角"
+                "imageAlt": "浅橡木地板和暖白墙角",
+                "title": "先量房再开口价",
+                "lead": "半包、全包、整装都写参考价，以实际量房为准。"
               },
               {
                 "image": "hero-kitchen",
-                "imageAlt": "浅色柜门和台面的接缝"
+                "imageAlt": "浅色柜门和台面的接缝",
+                "title": "柜缝对齐再报价",
+                "lead": "浅色柜门和台面的接缝，量完再报柜体。"
               },
               {
                 "image": "hero-showroom",
-                "imageAlt": "并排木门的暖白墙面"
+                "imageAlt": "并排木门的暖白墙面",
+                "title": "木门靠墙对色",
+                "lead": "几扇门并排看色差，当天指给你。"
               },
               {
                 "image": "hero-site",
-                "imageAlt": "沿墙定位的水电管局部"
+                "imageAlt": "沿墙定位的水电管局部",
+                "title": "管线贴墙再验收",
+                "lead": "水电沿墙定位，验收时对着照片看。"
+              },
+              {
+                "image": "hero-roller",
+                "imageAlt": "墙角刚滚过的乳胶漆",
+                "title": "墙面干透再进场",
+                "lead": "乳胶漆滚到墙角，干透再做柜。"
               }
             ]
           }
@@ -642,7 +687,8 @@
                 "label": "三居参考工期"
               }
             ]
-          }
+          },
+          "bg": "bg-floor"
         },
         {
           "type": "cases",
@@ -805,7 +851,8 @@
                 "text": "保洁之后按房间走一遍，再付尾款。"
               }
             ]
-          }
+          },
+          "bg": "bg-pipe"
         },
         {
           "type": "collection-list",
@@ -817,7 +864,8 @@
             "lead": "半包全包、水电、柜子和付款。",
             "collection": "notes",
             "moreLabel": "看装修知识",
-            "moreHref": "notes/index.html"
+            "moreHref": "notes/index.html",
+            "pageSize": 3
           }
         },
         {
@@ -829,7 +877,8 @@
             "title": "约一次免费量房",
             "lead": "电话或留言都行。报价写参考价，以实际量房为准。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-sample"
         }
       ]
     },
@@ -963,7 +1012,8 @@
           "data": {
             "title": "装修案例",
             "lead": "参考价，以实际量房为准。西溪蝶园是外区。",
-            "collection": "projects"
+            "collection": "projects",
+            "pageSize": 3
           }
         }
       ]
@@ -989,7 +1039,8 @@
           "data": {
             "title": "设计团队",
             "lead": "量房之后由主案对到交房。",
-            "collection": "designers"
+            "collection": "designers",
+            "pageSize": 3
           }
         }
       ]
@@ -1015,7 +1066,8 @@
           "data": {
             "title": "装修套餐",
             "lead": "三档参考价，以实际量房为准。",
-            "collection": "packages"
+            "collection": "packages",
+            "pageSize": 2
           }
         }
       ]
@@ -1156,7 +1208,8 @@
           "data": {
             "title": "装修知识",
             "lead": "四篇短文，写选择和验收。",
-            "collection": "notes"
+            "collection": "notes",
+            "pageSize": 3
           }
         }
       ]

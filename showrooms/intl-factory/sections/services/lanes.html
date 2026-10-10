@@ -5,11 +5,13 @@
       {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
       {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
     </div>
-    <div class="lane-list">
+    <div class="lane-list" data-media-group="lane">
       {{#each items}}
-      <article class="lane">
+      <article class="lane media-card">
+        <a class="media-card-thumb" href="{{href}}">{{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{else}}<span class="media-card-fallback" aria-hidden="true">{{name}}</span>{{/if}}</a>
         <h3><a href="{{href}}">{{name}}</a></h3>
-        <p>{{text}}</p>
+        <p class="media-card-summary">{{text}}</p>
+        {{#if tag}}<p class="media-card-meta"><span class="media-card-tag">{{tag}}</span></p>{{/if}}
       </article>
       {{/each}}
     </div>

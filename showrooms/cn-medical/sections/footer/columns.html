@@ -19,18 +19,17 @@
         <p><a href="{{amapUrl}}">{{address}}</a></p>
         {{#each hours}}<p>{{day}} <span class="nums">{{time}}</span></p>{{/each}}
       </div>
-      {{#if wechatQrSrc}}
-      <div>
-        <p class="footer-label">二维码</p>
-        <div class="footer-qrs">
-          <figure>
-            <img src="{{wechatQrSrc}}" alt="门诊微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
-            <figcaption>门诊微信</figcaption>
-          </figure>
-        </div>
-      </div>
-      {{/if}}
     </div>
+    {{#if qrcodes}}
+    <div class="footer-qrs" data-qrcodes>
+      {{#each qrcodes}}
+      <figure class="footer-qr">
+        <img src="{{src}}" alt="{{alt}}" width="{{width}}" height="{{height}}" decoding="async">
+        {{#if label}}<figcaption>{{label}}</figcaption>{{/if}}
+      </figure>
+      {{/each}}
+    </div>
+    {{/if}}
     <div class="footer-legal">
       <p>{{year}} {{name}} 版权自有</p>
       {{#if icp}}<p><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer">{{icp}}</a></p>{{/if}}

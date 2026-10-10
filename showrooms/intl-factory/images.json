@@ -207,7 +207,7 @@
         "warmth": -0.15
       },
       "desc": "用途，柜体五金。",
-      "tier": "must"
+      "tier": "nice"
     },
     {
       "id": "part-bolt",
@@ -761,6 +761,130 @@
         "warmth": -0.15
       },
       "desc": "客户提供的微信二维码。",
+      "tier": "nice"
+    },
+    {
+      "id": "hero-pack",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "pins",
+        "tray",
+        "studio"
+      ],
+      "prompt": "电商棚拍，浅灰无缝背景，浅钢托盘里并排躺着十根一样的钢销，每根都是笔直光滑圆柱，两端平切，没有尖头，没有弯曲，没有铅笔形状，柔光，金属本色，不要文字，不要商标，不要包装，不要车间。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "第五张轮播，成品销钉托盘，不是厂房全景。",
+      "tier": "must"
+    },
+    {
+      "id": "bg-bench",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "pins",
+        "bench",
+        "coolant"
+      ],
+      "prompt": "冷灰钢台上并排几根刚车好的钢销，表面一层薄冷却液反光，画面很近，不要车间全景，不要人，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "深色实力条底图，台面销钉近景。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-press",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "press",
+        "die",
+        "sheet"
+      ],
+      "prompt": "静物照片：一块冷灰钢板平放，板上有几个干净的圆孔，旁边一把静止的钢模具，背景纯浅灰，没有火花，没有火焰，没有橙色，没有厂房，没有人，不要文字，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "深色厂房块底图，模具和钢板局部。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-crate",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "crate",
+        "plywood",
+        "strap"
+      ],
+      "prompt": "静物照片：胶合板箱的一个角和一条钢带，背景是纯浅灰，没有厂房，没有火花，没有火焰，没有橙色光，没有字，不要人，不要商标。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "深色行动条底图，木箱角。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-drawing",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "qr",
+        "placeholder"
+      ],
+      "prompt": "客户提供的二维码。没有文件时不要生成假码。",
+      "grade": "冷石墨，冷却液只带一点绿，金属保持本色，不要暖橙，不要红火花占画面，不要文字，不要商标。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.72,
+        "warmth": -0.15
+      },
+      "desc": "客户提供的图纸说明二维码。",
       "tier": "nice"
     }
   ]

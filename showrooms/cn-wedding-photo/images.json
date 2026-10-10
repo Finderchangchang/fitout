@@ -621,6 +621,83 @@
       ],
       "prompt": "方形预约二维码，浅暖底，中间不放商标。",
       "tier": "nice"
+    },
+    {
+      "id": "hero-album",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "album",
+        "ring",
+        "linen",
+        "window"
+      ],
+      "prompt": "素色布面相册和一只小戒指盒放在亚麻桌布上，窗边柔光，封面没有字，不要品牌，不要人，不要文字。",
+      "grade": "低饱和暖粉。场景是中国婚纱店、南窗和江南庭院，人脸是东亚面孔，柔光，没有字。产品图是浅色干净背景的棚拍。不要正红，不要金字，不要酒吧灯光。",
+      "desc": "首屏，相册和戒指盒。",
+      "tier": "must"
+    },
+    {
+      "id": "bg-tulle",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "tulle",
+        "veil",
+        "window"
+      ],
+      "prompt": "藕粉色头纱褶皱的特写，窗边柔光，不要人，不要文字，不要品牌。",
+      "grade": "低饱和暖粉。场景是中国婚纱店、南窗和江南庭院，人脸是东亚面孔，柔光，没有字。产品图是浅色干净背景的棚拍。不要正红，不要金字，不要酒吧灯光。",
+      "desc": "深色板块底，头纱。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-satin",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "satin",
+        "fabric",
+        "light"
+      ],
+      "prompt": "缎面布料的柔光特写，试纱间暖光，不要人，不要衣架商标，不要文字。",
+      "grade": "低饱和暖粉。场景是中国婚纱店、南窗和江南庭院，人脸是东亚面孔，柔光，没有字。产品图是浅色干净背景的棚拍。不要正红，不要金字，不要酒吧灯光。",
+      "desc": "深色板块底，缎面。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-garden",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "garden",
+        "flower",
+        "gauze"
+      ],
+      "prompt": "江南庭院里白色薄纱和粉色花枝的局部，自然光，画面四角干净，不要水印，不要角标，不要任何文字，不要人，不要招牌。",
+      "grade": "低饱和暖粉。场景是中国江南庭院，柔光。画面里不要人，不要脸。没有字，没有水印，没有角标。不要正红，不要金字。",
+      "desc": "深色板块底，庭院花和纱。",
+      "tier": "nice"
     }
   ]
 }

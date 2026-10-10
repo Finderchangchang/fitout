@@ -10,7 +10,8 @@
       <article class="stagger-row">
         <div class="stagger-copy">
           <h3 class="item-title">{{name}}</h3>
-          <p>{{text}}</p>
+          <p class="media-card-summary">{{text}}</p>
+          {{#if tag}}<p class="media-card-meta"><span class="media-card-tag">{{tag}}</span></p>{{/if}}
           {{#if href}}<p><a class="text-link" href="{{href}}">看{{name}}</a></p>{{/if}}
         </div>
         {{#if image}}

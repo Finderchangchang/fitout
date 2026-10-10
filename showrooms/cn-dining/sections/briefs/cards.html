@@ -10,7 +10,8 @@
       <article class="brief">
         <img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">
         <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
-        <p>{{text}}</p>
+        <p class="media-card-summary">{{text}}</p>
+        <p class="media-card-meta"><time>{{date}}</time></p>
       </article>
       {{/each}}
     </div>

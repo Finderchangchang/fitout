@@ -4,7 +4,9 @@
  * 用 DeepSeek 按企业档案填 site.json。密钥只读 DEEPSEEK_API_KEY。
  * 拿到 JSON 后用本仓库的填写校验和拼装、机检回喂，最多再改 --max-retries 轮。
  * token 记在 <out>.log.json，每次模型原文记在 <out>.raw-<n>.txt。设置 FITOUT_CALL_LEDGER 时，调用次数达到 80 就停。
- * 导出 fillProfile，供 fitout.mjs 调用。直接运行本文件时，命令和退出码与以前相同。
+ * 导出 fillProfile，供 fitout.mjs 的 --fill deepseek 调用。
+ * 导出 lintAgentSite：只校验已经写好的 site.json，不读密钥，不请求网络。
+ * 直接运行本文件时，命令和退出码与以前相同，仍走 DeepSeek。
  */
 import fs from "fs";
 import os from "os";
@@ -40,6 +42,32 @@ let apiKey = "";
 let callLog = [];
 let lastErrors = [];
 
+export function lintAgentSite({ profilePath, showroomId: showroomArg, site }) {
+  openShowroom(profilePath, showroomArg);
+  return lintSite(site, { leak: true, model: true });
+}
+
+function openShowroom(profilePath, showroomArg) {
+  if (!profilePath || !showroomArg) fail(USAGE, 2);
+  showroomId = showroomArg;
+  profileFile = path.resolve(profilePath);
+  if (!fs.existsSync(profileFile)) fail(`找不到企业档案：${profileFile}`, 2);
+  if (!/^[a-z0-9_-]+$/.test(showroomId)) fail(`样板间 id 不合法：${showroomId}`, 2);
+  const showroomDir = path.join(root, "showrooms", showroomId);
+  showroom = readJson(path.join(showroomDir, "showroom.json"));
+  const example = readJson(path.join(showroomDir, "examples", "site.json"));
+  const images = readJson(path.join(showroomDir, "images.json"));
+  profile = fs.readFileSync(profileFile, "utf8").replace(/^\uFEFF/, "");
+  specs = loadSpecs(showroomDir);
+  slots = Array.isArray(images.slots) ? images.slots : [];
+  heroSlots = slots.filter((slot) => slot.block === "hero" && slot.tier === "must" && slot.mustBeReal === false);
+  bans = exampleBans(example, showroomId);
+  businessType = example.businessType === "Organization" || example.businessType === "LocalBusiness"
+    ? example.businessType
+    : (showroom.industry === "factory-trade" ? "Organization" : "LocalBusiness");
+  return { example };
+}
+
 export async function fillProfile(options = {}) {
   const profilePath = options.profilePath;
   const showroomArg = options.showroomId;
@@ -51,28 +79,12 @@ export async function fillProfile(options = {}) {
   lastErrors = [];
   if (!profilePath || !showroomArg || !outPath || !Number.isInteger(maxRetries) || maxRetries < 0) fail(USAGE, 2);
 
-  showroomId = showroomArg;
-  profileFile = path.resolve(profilePath);
   outFile = path.resolve(outPath);
   logFile = `${outFile}.log.json`;
-  if (!fs.existsSync(profileFile)) fail(`找不到企业档案：${profileFile}`, 2);
-  if (!/^[a-z0-9_-]+$/.test(showroomId)) fail(`样板间 id 不合法：${showroomId}`, 2);
-
-  const showroomDir = path.join(root, "showrooms", showroomId);
-  showroom = readJson(path.join(showroomDir, "showroom.json"));
-  const example = readJson(path.join(showroomDir, "examples", "site.json"));
-  const images = readJson(path.join(showroomDir, "images.json"));
-  profile = fs.readFileSync(profileFile, "utf8").replace(/^\uFEFF/, "");
+  const { example } = openShowroom(profilePath, showroomArg);
   const rulesDoc = fs.readFileSync(path.join(root, "docs", "SITE_JSON.md"), "utf8").replace(/^\uFEFF/, "");
-  specs = loadSpecs(showroomDir);
-  slots = Array.isArray(images.slots) ? images.slots : [];
-  heroSlots = slots.filter((slot) => slot.block === "hero" && slot.tier === "must" && slot.mustBeReal === false);
-  bans = exampleBans(example, showroomId);
   const outline = showroomOutline(showroom, heroSlots, slots);
   const specText = specPrompt(showroom, specs);
-  businessType = example.businessType === "Organization" || example.businessType === "LocalBusiness"
-    ? example.businessType
-    : (showroom.industry === "factory-trade" ? "Organization" : "LocalBusiness");
   const system = systemPrompt(showroom, bans, businessType);
   const user = userPrompt({ rulesDoc, outline, specText, example, profile, showroomId });
 

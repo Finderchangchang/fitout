@@ -11,7 +11,10 @@
       "item": {
         "name": { "type": "string", "required": true, "maxChars": 12 },
         "text": { "type": "string", "required": true, "maxChars": 40 },
-        "href": { "type": "string", "required": true, "maxChars": 200 }
+        "href": { "type": "string", "required": true, "maxChars": 200 },
+        "image": { "type": "image", "required": false, "maxChars": 200 },
+        "imageAlt": { "type": "string", "required": false, "maxChars": 30 },
+        "tag": { "type": "string", "required": false, "maxChars": 12 }
       }
     }
   },

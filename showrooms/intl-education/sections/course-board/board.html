@@ -10,8 +10,10 @@
     <style>
       {{#each groups}}{{#if hide}}
       #{{anchor}}:has(#lane-{{anchor}}-{{key}}:checked) .course-card:not([data-cat="{{key}}"]){display:none}
+      #{{anchor}}:has(#{{anchor}}-{{key}}:target) .course-card:not([data-cat="{{key}}"]){display:none}
       {{/if}}{{/each}}
     </style>
+    {{#each groups}}{{#if hide}}<span id="{{anchor}}-{{key}}" class="hook"></span>{{/if}}{{/each}}
     <div class="filter-row">
       {{#each groups}}
       <input class="filter-input" type="radio" name="lane-{{anchor}}" id="lane-{{anchor}}-{{key}}" {{#if on}}checked{{/if}}>

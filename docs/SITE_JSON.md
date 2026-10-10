@@ -26,7 +26,7 @@
 | `summary` | 否 | 一句话，页脚和 JSON-LD 用。没有就不填 |
 | `url` | 否 | 站点根地址。有才输出 canonical |
 | `contact` | 是 | 见下 |
-| `nav` | 是 | `{ "label", "href" }`。单页用 `#services` 这种锚点，多页用 `index.html`、`products/index.html` 这种路径 |
+| `nav` | 是 | 导航。见「导航」。数组写法照旧 |
 | `shell` | 是 | `header`、`footer`、`floatContact`，值必须在户型允许的版式里 |
 | `pages` | 是 | 见下。不要写 `from: products` 的那一页 |
 | `products` | 工厂必填 | 见下。门店不要写 |
@@ -63,8 +63,9 @@
 | `formUrl` | 外部表单链接，例如飞书表单。有才出现「在线留言」，点了跳走。不要做站内可提交表单 |
 | `icp` | ICP 备案号原文。有才在页脚显示 |
 | `police` | 公安备案号原文。有才显示 |
+| `qrcodes` | 可无。数组，每项 `{ "image", "label" }`，`imageAlt` 可无。例如「关注公众号」「加店长微信」。有就在页脚显示最多 2 个，电脑右侧悬浮条多一个「二维码」按钮，悬停弹出。没有、或图片文件没有，整块不出。这是页脚和悬浮条用的，和联系板块里的 `qrs` 不是同一个字段 |
 
-悬浮条文案是固定的：打电话、加微信、导航。不要改。
+悬浮条文案是固定的：打电话、加微信、导航。写了 `qrcodes` 才多一个「二维码」。不要改这几句。
 
 顶栏按钮和行动条按钮用户型里的主按钮（门店「电话预约」，工厂「获取报价」）。首屏默认也用这一句。要换文案或链接，写顶层 `hero.buttons`；不写才用样板间默认。默认按钮指向的页如果关掉了，拼装改成「电话咨询」或「联系我们」，链到联系页。
 
@@ -77,7 +78,9 @@
 | `id` | 必须是户型里的页面 id：门店只有 `home`。工厂有 `home`、`products`、`about`、`contact` |
 | `title` | 进 `<title>`。不要用破折号「——」或「—」。需要分隔时用「｜」 |
 | `description` | 进 description 和 Open Graph |
-| `sections` | 按户型顺序排。每块 `{ "type", "variant", "anchor", "data" }` |
+| `sections` | 按户型顺序排。每块 `{ "type", "variant", "anchor", "tone", "data" }`。`tone` 可无，取值 `light`、`dark`、`image` |
+
+板块还可以写 `bg`（放在板块上，或放在 `data.bg`）：一张图的图片位 id。只在 `tone` 为 `dark` 或 `image` 时生效，渲染成图片加一层主色方向的深色半透明蒙版（约 0.76）。没这张图就退回原来的纯色。首屏和内页横幅不要用这个字段。图片位见 `docs/IMAGES.md` 的 `section-bg`。
 
 `anchor` 用字母开头，只能有字母、数字、连字符。单页导航的 `#锚点` 必须对上这里。同一页不要重复同一种 type。
 
@@ -123,9 +126,29 @@
 
 ### hero
 
-`label` 可无，≤12。`title` 中文 ≤14 字、英文 ≤10 个词。`lead` ≤40。`primaryLabel` ≤8。`primaryHref` ≤200。`secondaryLabel` 可无 ≤8。`secondaryHref` 可无 ≤200。`image` 可无。`imageAlt` 可无 ≤30。轮播另有 `interval`（3000 到 5000 的毫秒，字符串）和 `slides`（3 到 9 张，每张 `image`、`imageAlt`）。
+`label` 可无，≤12。`title` 中文 ≤14 字、英文 ≤10 个词。`lead` ≤40。`primaryLabel` ≤8。`primaryHref` ≤200。`secondaryLabel` 可无 ≤8。`secondaryHref` 可无 ≤200。`image` 可无。`imageAlt` 可无 ≤30。轮播另有 `interval`（3000 到 5000 的毫秒，字符串，不写就是 4000）、`mode` 和 `slides`。
+
+`mode` 可无：`carousel`（默认）或 `single`。`slides` 建议 3 到 5 张，引擎仍接受最多 9 张。每张必填 `image`、`imageAlt`。可另写 `title`（仍是中文 ≤14 字、英文 ≤10 个词）、`lead`（≤40）、`primaryLabel` / `primaryHref`、`secondaryLabel` / `secondaryHref`。某一张没写标题、说明或按钮，就用首屏上的那一组。只有一张，或 `mode` 为 `single`，就出单张大图，没有圆点、没有箭头。两张及以上并且不是 `single`：自动播放（默认 4 秒，悬停暂停，系统开了减少动效就停在当前张），有圆点和左右箭头。
+
+`mode` 和 `slides` 写在首页 hero 板块的 `data` 里。顶层 `hero` 只放 `buttons`，不要把轮播写到顶层。
 
 首屏：小标签、标题、一句说明、最多两个按钮（一主一次），以及压在底边的一条信任数字。小标签全站只用一种写法。图片位可以写成 `slot:名字`，名字要在样板间的 `images.json` 里。
+
+## 导航
+
+`nav` 继续可以写成数组：`[{ "label", "href" }]`。单页用 `#services` 这种锚点，多页用 `index.html`、`products/index.html`。
+
+要关掉自动二级，写成对象：`{ "autoChildren": false, "items": [ ... ] }`。`autoChildren` 不写或为 true 时，某一项没有自己的 `children`，并且它的链接对得上某个集合的列表页，这个集合又有至少 2 个分类，就用这些分类做二级。分类不到 2 个就不生成。某一项写 `"autoChildren": false` 只关这一项；写集合 id（字符串）就指定用哪个集合。分类链接：列表版式里有 `id="{{anchor}}-{{key}}"` 时，链到 `#锚点-分类键`（和筛选项同一个键）；版式只有板块锚点时，几个分类都链到这个锚点；两种都没有就只链列表页。不要编一个页面上不存在的锚点。
+
+某一项自己的二级写 `children`：`[{ "label", "href" }]`。写了就用这份，不再自动生成。
+
+电脑宽度：鼠标悬停或键盘聚焦时展开，有小箭头，移开大约 0.28 秒后收起。手机菜单里点箭头折叠。当前页，以及当前页所属的一级，用主色底线高亮。详情页高亮它所属的栏目。带 `#` 的分类链接不高亮成「当前页」，避免一进列表每一类都亮。
+
+## 列表和分页
+
+集合列表（`collection-list`、`product-list`）的卡片有四样：缩略图、标题、摘要（两行截断）、日期或标签。没有缩略图时用主色块加标题的第一个字，不留裂图。首页上的产品、新闻块同样带图。
+
+`data.pageSize` 可无，默认 9，最大 60。只在**这一页就是该集合的列表页**、并且条目数超过 `pageSize` 时分页：第 1 页仍是原来的 `index.html`，第 2 页起是同目录的 `page/2.html`。页上有页码、上一页、下一页。`data.limit` 只截短首页这类导读，不拿来分页。分类键按整份集合算，翻页不会变。
 
 ### trust
 
@@ -253,15 +276,29 @@
 - 编出来的客户数、评分、备案号、评价、案例、团队。没有就不填，整块不出。
 - 站内可提交的表单、嵌入地图、手画插画。
 
+## 对话里由 AI 自己填（agent）
+
+装上 skill 之后，正在对话的 AI 按本页和样板间 `examples/site.json` 的结构，把事实写进站点目录的 `site.json`。然后跑：
+
+```bash
+node scripts/fitout.mjs --profile <站点目录>/企业档案.md --out <站点目录> --showroom <id> --fill agent
+```
+
+这个模式不调用 DeepSeek，不读 `DEEPSEEK_API_KEY`。脚本只校验已经写好的 `site.json`。校验没过，会打印中文错误清单，退出码不是 0。按清单改 `site.json`，再跑同一条命令。不要为了过检去编事实。
+
+`--fill` 不写时也是 `agent`。`--fill deepseek` 才是下面的批量填法，才需要 `DEEPSEEK_API_KEY`。
+
+没有 `MINIMAX_API_KEY` 时，`--gen-images` 会跳过生图并提示，站点照常拼。
+
 ## 用模型填
 
-`scripts/fill.mjs` 把本页规则、这套样板间的 `examples/site.json`（只作结构，不抄公司名、电话、数字和句式）、各板块 `spec.json` 的字段和字数上限、企业档案全文拼成提示词，请 DeepSeek 输出 `site.json`。
+`scripts/fill.mjs` 把本页规则、这套样板间的 `examples/site.json`（只作结构，不抄公司名、电话、数字和句式）、各板块 `spec.json` 的字段和字数上限、企业档案全文拼成提示词，请 DeepSeek 输出 `site.json`。只有这条和 `--fill deepseek` 才需要密钥。
 
 ```bash
 node scripts/fill.mjs --profile <企业档案.md> --showroom <id> --out <site.json> [--model deepseek-chat] [--max-retries 2]
 ```
 
-一条命令从企业档案做到整站：`node scripts/fitout.mjs --profile <档案.md> --out <目录> --showroom auto`，见 README 的「试一下」。
+一条命令从企业档案做到整站，批量填法加 `--fill deepseek`：`node scripts/fitout.mjs --profile <档案.md> --out <目录> --showroom auto --fill deepseek`，见 README 的「进阶」。
 
 - `--model` 默认 `deepseek-chat`。
 - `--max-retries` 默认 `2`。校验不过就把错误清单发回给模型改，最多再改这么多轮。

@@ -1,5 +1,5 @@
 {
-  "note": "条目来自 site.json 的 products，由拼装脚本注入，不要在 data 里再写一份。",
+  "note": "条目来自 site.json 的 products，由拼装脚本注入，不要在 data 里再写一份。卡片固定四要素：缩略图、标题、两行摘要、日期或标签。data.pageSize 默认 9，超过才在列表页静态分页。",
   "fields": {
     "title": {
       "type": "string",

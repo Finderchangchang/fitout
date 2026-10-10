@@ -19,7 +19,19 @@
       }
     ],
     "formUrl": "https://example.com/fanshang-inquiry",
-    "icp": "皖ICP备20260816号-3"
+    "icp": "皖ICP备20260816号-3",
+    "qrcodes": [
+      {
+        "image": "qr-wechat",
+        "imageAlt": "公众号二维码",
+        "label": "关注公众号"
+      },
+      {
+        "image": "qr-buyer",
+        "imageAlt": "采购微信二维码",
+        "label": "加采购微信"
+      }
+    ]
   },
   "nav": [
     {
@@ -28,7 +40,13 @@
     },
     {
       "label": "基地介绍",
-      "href": "about/index.html"
+      "href": "about/index.html",
+      "children": [
+        {
+          "label": "资质认证",
+          "href": "certs/index.html"
+        }
+      ]
     },
     {
       "label": "产品中心",
@@ -61,7 +79,7 @@
       {
         "slug": "wan-dao",
         "name": "畈上晚稻米",
-        "summary": "麻埠畈上。10公斤袋。批发4.6元/斤，零售6.8元/斤。",
+        "summary": "麻埠畈上。10公斤袋。批发4.6元\u2060/\u2060斤，零售6.8元\u2060/\u2060斤。",
         "body": "当年晚稻，过筛后按袋称重。袋上写田块号，不在户里混堆。",
         "image": "prod-rice",
         "imageAlt": "一袋十公斤的晚稻米",
@@ -84,18 +102,19 @@
           },
           {
             "label": "批发价",
-            "value": "4.6元/斤起"
+            "value": "4.6元\u2060/\u2060斤起"
           },
           {
             "label": "零售价",
-            "value": "6.8元/斤"
+            "value": "6.8元\u2060/\u2060斤"
           }
-        ]
+        ],
+        "category": "粮油"
       },
       {
         "slug": "cai-zi",
         "name": "麻埠菜籽油",
-        "summary": "金寨麻埠。5升壶。批发18元/升，零售26元/升。",
+        "summary": "金寨麻埠。5升壶。批发18元\u2060/\u2060升，零售26元\u2060/\u2060升。",
         "body": "当年油菜籽压榨。壶上写批次，不和其他油混装。",
         "image": "prod-oil",
         "imageAlt": "一壶五升的菜籽油",
@@ -118,18 +137,19 @@
           },
           {
             "label": "批发价",
-            "value": "18元/升起"
+            "value": "18元\u2060/\u2060升起"
           },
           {
             "label": "零售价",
-            "value": "26元/升"
+            "value": "26元\u2060/\u2060升"
           }
-        ]
+        ],
+        "category": "粮油"
       },
       {
         "slug": "ban-li",
         "name": "金寨板栗",
-        "summary": "金寨。5公斤网袋。批发9.5元/斤，零售14元/斤。",
+        "summary": "金寨。5公斤网袋。批发9.5元\u2060/\u2060斤，零售14元\u2060/\u2060斤。",
         "body": "采后当天进冷库，出库走冷藏。不常温堆放。",
         "image": "prod-chestnut",
         "imageAlt": "一网袋刚出冷库的板栗",
@@ -152,18 +172,19 @@
           },
           {
             "label": "批发价",
-            "value": "9.5元/斤起"
+            "value": "9.5元\u2060/\u2060斤起"
           },
           {
             "label": "零售价",
-            "value": "14元/斤"
+            "value": "14元\u2060/\u2060斤"
           }
-        ]
+        ],
+        "category": "干货"
       },
       {
         "slug": "shai-qing",
         "name": "麻埠晒青",
-        "summary": "春茶，250克袋。批发68元/斤，零售96元/斤。",
+        "summary": "春茶，250克袋。批发68元\u2060/\u2060斤，零售96元\u2060/\u2060斤。",
         "body": "春茶，摊晾后晒干。汤色黄，有谷香。按当年批次报价。",
         "image": "prod-tea",
         "imageAlt": "一袋二百五十克晒青",
@@ -186,18 +207,19 @@
           },
           {
             "label": "批发价",
-            "value": "68元/斤起"
+            "value": "68元\u2060/\u2060斤起"
           },
           {
             "label": "零售价",
-            "value": "96元/斤"
+            "value": "96元\u2060/\u2060斤"
           }
-        ]
+        ],
+        "category": "茶叶"
       },
       {
         "slug": "xiang-gu",
         "name": "畈上干香菇",
-        "summary": "畈上。500克袋。批发42元/斤，零售58元/斤。",
+        "summary": "畈上。500克袋。批发42元\u2060/\u2060斤，零售58元\u2060/\u2060斤。",
         "body": "烘干后密封。出库前看袋是否受潮，受潮的不发。",
         "image": "prod-mushroom",
         "imageAlt": "一袋五百克干香菇",
@@ -220,18 +242,19 @@
           },
           {
             "label": "批发价",
-            "value": "42元/斤起"
+            "value": "42元\u2060/\u2060斤起"
           },
           {
             "label": "零售价",
-            "value": "58元/斤"
+            "value": "58元\u2060/\u2060斤"
           }
-        ]
+        ],
+        "category": "干货"
       },
       {
         "slug": "hong-shu",
         "name": "高山薯干",
-        "summary": "天堂寨脚。2.5公斤袋。批发11元/斤，零售16元/斤。",
+        "summary": "天堂寨脚。2.5公斤袋。批发11元\u2060/\u2060斤，零售16元\u2060/\u2060斤。",
         "body": "切片后晒干。常温密封，不和鲜货放一间库。",
         "image": "prod-yam",
         "imageAlt": "一袋切片晒干的薯干",
@@ -254,13 +277,14 @@
           },
           {
             "label": "批发价",
-            "value": "11元/斤起"
+            "value": "11元\u2060/\u2060斤起"
           },
           {
             "label": "零售价",
-            "value": "16元/斤"
+            "value": "16元\u2060/\u2060斤"
           }
-        ]
+        ],
+        "category": "干货"
       }
     ],
     "news": [
@@ -271,7 +295,8 @@
         "summary": "2026年9月18日开镰，第一批约40吨晚稻进了冷库。",
         "body": "晒场过了水分的米，当天过筛后入库。这一批约40吨，先供县城三家粮油店。",
         "image": "news-harvest",
-        "imageAlt": "冷库门口卸下的晚稻袋"
+        "imageAlt": "冷库门口卸下的晚稻袋",
+        "category": "收成"
       },
       {
         "slug": "xu-yue",
@@ -280,7 +305,8 @@
         "summary": "2026年8月2日，县城三家粮油店把年度合同续了一年。",
         "body": "续约写了晚稻和菜籽油的量。板栗和干货仍按季另议，不写进年度。",
         "image": "news-shop",
-        "imageAlt": "粮油店货架上的米袋"
+        "imageAlt": "粮油店货架上的米袋",
+        "category": "合作"
       },
       {
         "slug": "kuo-ku",
@@ -289,7 +315,8 @@
         "summary": "2026年6月21日，冷库扩到280吨，鲜货和干货分库。",
         "body": "原来180吨不够放板栗。新库隔成两间，鲜货走冷藏，干货常温。",
         "image": "news-cold",
-        "imageAlt": "新隔出的两间冷库"
+        "imageAlt": "新隔出的两间冷库",
+        "category": "库容"
       }
     ]
   },
@@ -316,19 +343,27 @@
             "slides": [
               {
                 "image": "hero-paddy",
-                "imageAlt": "稻穗和水面的午后局部"
+                "imageAlt": "稻穗和水面的午后局部",
+                "title": "当年晚稻，按袋出货",
+                "lead": "畈上村860亩晚稻，按袋出货，不混堆。"
               },
               {
                 "image": "hero-yard",
-                "imageAlt": "摊开的稻谷和干土色地面"
+                "imageAlt": "摊开的稻谷和干土色地面",
+                "title": "摊开再装袋",
+                "lead": "稻谷摊在干土上，装袋前不混堆。"
               },
               {
                 "image": "hero-cold",
-                "imageAlt": "冷库门边的冷藏车厢局部"
+                "imageAlt": "冷库门边的冷藏车厢局部",
+                "title": "鲜货进冷库",
+                "lead": "冷库扩到280吨，鲜货和干货分库。"
               },
               {
                 "image": "hero-pack",
-                "imageAlt": "码齐的本色编织袋"
+                "imageAlt": "码齐的本色编织袋",
+                "title": "本色袋不混装",
+                "lead": "晚稻10公斤一袋，批发按袋出。"
               }
             ]
           }
@@ -359,7 +394,8 @@
                 "label": "统一收购"
               }
             ]
-          }
+          },
+          "bg": "bg-paddy"
         },
         {
           "type": "lots",
@@ -372,31 +408,35 @@
             "items": [
               {
                 "name": "畈上晚稻米",
-                "summary": "麻埠畈上。10公斤袋。批发4.6元/斤，零售6.8元/斤。",
+                "summary": "麻埠畈上。10公斤袋。批发4.6元\u2060/\u2060斤，零售6.8元\u2060/\u2060斤。",
                 "href": "products/wan-dao.html",
                 "image": "prod-rice",
-                "imageAlt": "一袋十公斤的晚稻米"
+                "imageAlt": "一袋十公斤的晚稻米",
+                "category": "粮油"
               },
               {
                 "name": "麻埠菜籽油",
-                "summary": "金寨麻埠。5升壶。批发18元/升，零售26元/升。",
+                "summary": "金寨麻埠。5升壶。批发18元\u2060/\u2060升，零售26元\u2060/\u2060升。",
                 "href": "products/cai-zi.html",
                 "image": "prod-oil",
-                "imageAlt": "一壶五升的菜籽油"
+                "imageAlt": "一壶五升的菜籽油",
+                "category": "粮油"
               },
               {
                 "name": "金寨板栗",
-                "summary": "金寨。5公斤网袋。批发9.5元/斤，零售14元/斤。",
+                "summary": "金寨。5公斤网袋。批发9.5元\u2060/\u2060斤，零售14元\u2060/\u2060斤。",
                 "href": "products/ban-li.html",
                 "image": "prod-chestnut",
-                "imageAlt": "一网袋刚出冷库的板栗"
+                "imageAlt": "一网袋刚出冷库的板栗",
+                "category": "干货"
               },
               {
                 "name": "麻埠晒青",
-                "summary": "春茶，250克袋。批发68元/斤，零售96元/斤。",
+                "summary": "春茶，250克袋。批发68元\u2060/\u2060斤，零售96元\u2060/\u2060斤。",
                 "href": "products/shai-qing.html",
                 "image": "prod-tea",
-                "imageAlt": "一袋二百五十克晒青"
+                "imageAlt": "一袋二百五十克晒青",
+                "category": "茶叶"
               }
             ]
           }
@@ -459,7 +499,8 @@
                 "text": "干货进常温库，鲜货进零到四度冷库。"
               }
             ]
-          }
+          },
+          "bg": "bg-grain"
         },
         {
           "type": "collection-list",
@@ -469,7 +510,8 @@
           "data": {
             "title": "社里近事",
             "lead": "开镰、续约和扩库，都写了日子。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": 2
           }
         },
         {
@@ -481,7 +523,8 @@
             "title": "批发从一吨起谈",
             "lead": "晚稻1吨起，干货100斤起，外省一次一议。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-cold"
         }
       ]
     },
@@ -540,7 +583,8 @@
                 "label": "统一收购"
               }
             ]
-          }
+          },
+          "bg": "bg-paddy"
         },
         {
           "type": "why",
@@ -601,7 +645,8 @@
           "data": {
             "title": "产品中心",
             "lead": "点进去能看保质期和储存方式。",
-            "collection": "products"
+            "collection": "products",
+            "pageSize": 3
           }
         }
       ]
@@ -723,7 +768,8 @@
             "title": "约看证书原件",
             "lead": "电话约时间，到社里看原件。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-cold"
         }
       ]
     },
@@ -797,7 +843,8 @@
                 "text": "鲜货走冷藏，干货常温，出库前对袋数。"
               }
             ]
-          }
+          },
+          "bg": "bg-grain"
         },
         {
           "type": "photo-band",
@@ -819,7 +866,8 @@
             "title": "谈一吨的量",
             "lead": "把品类、数量和到货地说清楚。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-cold"
         }
       ]
     },
@@ -845,7 +893,8 @@
           "data": {
             "title": "新闻动态",
             "lead": "开镰、续约和扩库，按日子排。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": 2
           }
         }
       ]

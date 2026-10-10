@@ -17,7 +17,7 @@
   gap: 0.85rem;
 }
 
-.hero-full .hero-copy > :not(.hero-ui) {
+.hero-full .hero-copy > * {
   max-width: 40rem;
 }
 
@@ -53,8 +53,7 @@
 }
 
 .hero-full .hero-ui {
-  width: fit-content;
-  max-width: 100%;
+  width: min(100%, fit-content);
   margin: 0.25rem 0 0;
   padding: 0;
   justify-content: flex-start;

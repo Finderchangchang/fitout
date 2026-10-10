@@ -538,6 +538,64 @@
       "prompt": "客户提供的公众号二维码。此位不生成。",
       "desc": "公众号二维码。上线前由店里替换。",
       "tier": "nice"
+    },
+    {
+      "id": "hero-brake",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "brake",
+        "disc",
+        "lift",
+        "workshop"
+      ],
+      "prompt": "举升机上轿车刹车盘和卡钳的局部，车间顶灯，金属反光，不要品牌标志，不要车牌，不要人，不要文字。",
+      "grade": "白天车间，冷白灯，浅灰地坪。可以有正红车漆，但不要整张发红。东亚面孔，工装，不穿西装。无文字、无标志、无水印。",
+      "desc": "首屏，刹车盘局部。",
+      "tier": "must"
+    },
+    {
+      "id": "bg-lift",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "lift",
+        "concrete",
+        "workshop"
+      ],
+      "prompt": "举升机立柱和混凝土地面的局部，车间顶灯，不要整车，不要品牌，不要人，不要文字。",
+      "grade": "白天车间，冷白灯，浅灰地坪。可以有正红车漆，但不要整张发红。东亚面孔，工装，不穿西装。无文字、无标志、无水印。",
+      "desc": "深色板块底，举升机立柱。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-bench",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "workbench",
+        "wrench",
+        "steel"
+      ],
+      "prompt": "空无一人的钢制工作台，台面上只有扳手和一只空托盘，冷白顶灯，浅灰地坪，不要人，不要脸，不要手，不要整车，不要可读单据，不要品牌，不要文字。",
+      "grade": "白天车间，冷白灯，浅灰地坪。画面里不要人，不要脸，不要手。无文字、无标志、无水印。",
+      "desc": "深色板块底，工作台。",
+      "tier": "nice"
     }
   ]
 }

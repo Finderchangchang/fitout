@@ -584,6 +584,63 @@
       "prompt": "客户提供的预订二维码，上线前替换。",
       "grade": "二维码用客户原图，不调色，不重画。",
       "tier": "nice"
+    },
+    {
+      "id": "bg-creek",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "creek",
+        "stone",
+        "water"
+      ],
+      "prompt": "溪水冲过青石的局部，午后侧光，不要村落全景，不要人，不要文字，不要招牌。",
+      "grade": "整套偏暖、略压饱和。院子和房间是午后的暖沙光，阴影带一点苔绿，不要冷蓝，不要霓虹绿。菜品是浅底棚拍。不要把字烤进图。",
+      "desc": "深色板块底，溪石。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-mist",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "river",
+        "mist",
+        "mountain"
+      ],
+      "prompt": "清晨江面薄雾和远处低山，江岸是竹林和中国南方的河岸树，不要教堂，不要尖塔，不要西式建筑，不要船名，不要人，不要文字。",
+      "grade": "整套偏暖、略压饱和。院子和房间是午后的暖沙光，阴影带一点苔绿，不要冷蓝，不要霓虹绿。菜品是浅底棚拍。不要把字烤进图。",
+      "desc": "深色板块底，江雾。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-wood",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "wood",
+        "door",
+        "grain"
+      ],
+      "prompt": "老木门的门轴和木纹特写，午后光，不要整栋房子，不要人，不要文字，不要招牌。",
+      "grade": "整套偏暖、略压饱和。院子和房间是午后的暖沙光，阴影带一点苔绿，不要冷蓝，不要霓虹绿。菜品是浅底棚拍。不要把字烤进图。",
+      "desc": "深色板块底，老木门。",
+      "tier": "nice"
     }
   ]
 }

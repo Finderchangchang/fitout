@@ -137,10 +137,7 @@ const outDir = siteDirArg || path.join(outRoot, site.id);
 resetOutDir(outDir, keepRels);
 
 if (!site.name) fail("缺少 name");
-if (!Array.isArray(site.nav) || site.nav.length === 0) fail("缺少 nav");
-for (const item of site.nav) {
-  if (!item.label || !item.href) fail("nav 每一项都要有 label 和 href");
-}
+const navConf = readNavConfig(site);
 for (const page of site.pages || []) {
   if (!house.pages.some((item) => item.id === page.id && !item.from)) fail(`户型没有页面 ${page.id}`);
 }
@@ -275,7 +272,8 @@ function writeCollection(page) {
   }
 }
 
-function writePage({ file, title, description, sections, order, banner }) {
+function writePage(opts) {
+  const { file, title, description, sections, order, banner } = opts;
   if (written.includes(file)) fail(`页面文件冲突：${file}`);
   if (!title) fail(`${file} 缺少 title`);
   if (!description) fail(`${file} 缺少 description`);
@@ -295,6 +293,7 @@ function writePage({ file, title, description, sections, order, banner }) {
     if (kept) queued.push(kept);
   }
   if (showroom && file !== "index.html") retargetBanner(queued);
+  const listState = opts.listState || planList(file, queued);
   const globals = makeGlobals(file);
   let main = "";
   let first = true;
@@ -308,7 +307,7 @@ function writePage({ file, title, description, sections, order, banner }) {
     const variant = resolved.variant;
     const fillSpec = resolved.fillSpec || spec;
     usedCss.add(`${section.type}/${variant}`);
-    const data = prepareData({ ...section, data: resolved.data }, fillSpec, file, variant);
+    const data = prepareData({ ...section, data: resolved.data }, fillSpec, file, variant, listState);
     data.anchor = safeAnchor(section.anchor || section.type, file);
     data.isH1 = first;
     data.isH2 = !first;
@@ -320,7 +319,14 @@ function writePage({ file, title, description, sections, order, banner }) {
       data.rest = items.slice(1);
     }
     let html = render(readText(sectionFile(section.type, variant, "html")), data, { icons, globals });
-    html = tagSection(html, section, resolved);
+    if (section.type === "hero" && variant === "carousel") {
+      if (!data.carouselOn && /\bdata-carousel\b/.test(html)) html = stripCarouselChrome(html);
+      if (data.hasSlideCopy) html = injectHeroCopies(html, data);
+    }
+    if ((section.type === "collection-list" || section.type === "product-list") && data._paginate === "1") {
+      html = upgradeListCards(html, data);
+    }
+    html = tagSection(html, section, resolved, file);
     main += html;
   }
   if (file === "index.html" && toolEntry) {
@@ -331,14 +337,16 @@ function writePage({ file, title, description, sections, order, banner }) {
       label: toolEntry.label,
       href: siteHref(file, toolEntry.href),
     }, { icons, globals });
-    main += tagSection(toolHtml, { tone: "" });
+    main += tagSection(toolHtml, { tone: "" }, null, file);
   }
   usedCss.add(`header/${shellChoice.header}`);
   usedCss.add(`footer/${shellChoice.footer}`);
   usedCss.add(`float-contact/${shellChoice.floatContact}`);
-  const headerHtml = render(readText(sectionFile("header", shellChoice.header, "html")), globals, { icons });
-  const footerHtml = render(readText(sectionFile("footer", shellChoice.footer, "html")), globals, { icons });
-  const floatHtml = render(readText(sectionFile("float-contact", shellChoice.floatContact, "html")), globals, { icons });
+  let headerHtml = render(readText(sectionFile("header", shellChoice.header, "html")), globals, { icons });
+  headerHtml = upgradeHeader(headerHtml, globals.nav);
+  let footerHtml = render(readText(sectionFile("footer", shellChoice.footer, "html")), globals, { icons });
+  let floatHtml = render(readText(sectionFile("float-contact", shellChoice.floatContact, "html")), globals, { icons });
+  ({ footerHtml, floatHtml } = injectQr(footerHtml, floatHtml, globals.qrcodes));
   const isHome = file === "index.html";
   let html = render(shell, {
     pageTitle: title,
@@ -368,42 +376,92 @@ function writePage({ file, title, description, sections, order, banner }) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, "utf8");
   written.push(file);
+  if (!opts.listState && listState && listState.pages > 1) {
+    for (let page = 2; page <= listState.pages; page += 1) {
+      writePage({
+        ...opts,
+        file: pageFileOf(listState.listFile, page),
+        listState: { ...listState, page, file: pageFileOf(listState.listFile, page) },
+      });
+    }
+  }
 }
 
-function tagSection(html, section, resolved) {
+function tagSection(html, section, resolved, file) {
   const tone = section.tone || "";
   if (tone && !TONES.has(tone)) fail(`tone 只能是 light、dark、image：${tone}`);
   const enter = tokens.motion === 1;
   const bare = Boolean(resolved?.bare);
-  return html.replace(/<section\b([^>]*)>/, (full, attrs) => {
+  let tagged = html.replace(/<section\b([^>]*)>/, (full, attrs) => {
     let next = attrs;
     if (tone && !/\bdata-tone=/.test(attrs)) next += ` data-tone="${tone}"`;
     if (enter && !/\bdata-enter=/.test(attrs)) next += ` data-enter="fade"`;
     if (bare && !/\bdata-hero-bare\b/.test(attrs)) next += ` data-hero-bare=""`;
     return `<section${next}>`;
   });
+  const bg = sectionBackground(section, file);
+  if (bg && (tone === "dark" || tone === "image") && section.type !== "hero" && section.type !== "page-banner") {
+    tagged = tagged.replace(/<section\b([^>]*)>/, (full, attrs) => {
+      let next = attrs;
+      if (/\bclass="/.test(next)) next = next.replace(/class="/, 'class="has-section-bg ');
+      else next += ' class="has-section-bg"';
+      return `<section${next}>`;
+    });
+    const img = `<div class="section-bg" aria-hidden="true"><img src="${escAttr(bg.src)}" alt="" width="${escAttr(bg.width)}" height="${escAttr(bg.height)}" decoding="async"><span class="section-bg-mask"></span></div>`;
+    tagged = tagged.replace(/(<section\b[^>]*>)/, `$1${img}`);
+  }
+  return tagged;
 }
 
-function prepareData(section, spec, file, variant) {
+function prepareData(section, spec, file, variant, listState) {
   const raw = { ...(section.data || {}) };
   if (section.type === "product-list" || section.type === "collection-list") {
     const id = section.type === "product-list" ? "products" : String(raw.collection || "");
-    const items = itemsOf(id) || [];
-    const catKeys = categoryKeys(items);
-    raw.items = items.map((item) => {
+    const all = itemsOf(id) || [];
+    const catKeys = categoryKeys(all);
+    let view = all;
+    const paging = listState && listState.type === section.type && listState.id === id && toRootPath(file) === toRootPath(listState.file);
+    raw.pager = [];
+    raw.prevHref = "";
+    raw.nextHref = "";
+    raw._paginate = "";
+    if (paging) {
+      const start = (listState.page - 1) * listState.pageSize;
+      view = all.slice(start, start + listState.pageSize);
+      raw._paginate = "1";
+      raw.pager = [];
+      for (let page = 1; page <= listState.pages; page += 1) {
+        raw.pager.push({
+          label: String(page),
+          href: pageFileOf(listState.listFile, page),
+          current: page === listState.page,
+        });
+      }
+      raw.prevHref = listState.page > 1 ? pageFileOf(listState.listFile, listState.page - 1) : "";
+      raw.nextHref = listState.page < listState.pages ? pageFileOf(listState.listFile, listState.page + 1) : "";
+    } else {
+      const limit = Number(raw.limit);
+      if (Number.isFinite(limit) && limit > 0) view = all.slice(0, Math.floor(limit));
+    }
+    raw.items = view.map((item) => {
       const category = String(item.category || "").trim();
+      const name = item.name || "";
       return {
-        name: item.name || "",
+        name,
         summary: item.summary || "",
         href: detailHref(id, item.slug),
         image: item.image || "",
-        imageAlt: item.imageAlt || item.name || "",
+        imageAlt: item.imageAlt || name,
         category,
         catKey: catKeys.get(category) || "",
+        date: item.date || "",
+        dateIso: dateIso(item.date),
+        initial: firstChar(name),
       };
     });
     raw.filters = filtersFrom(catKeys, raw.facets);
   }
+  if (section.type === "hero" && variant === "carousel") prepareHero(raw);
   const data = fill(raw, spec.fields, `${section.type}`);
   if (section.type === "trust" && Array.isArray(data.items)) {
     data.items = data.items.map((item) => ({
@@ -411,7 +469,6 @@ function prepareData(section, spec, file, variant) {
       countTo: (String(item.value || "").match(/\d[\d.]*/) || [""])[0],
     }));
   }
-  if (section.type === "hero" && variant === "carousel" && !data.interval) data.interval = "4000";
   return bindAssets(localizeDates(data), file);
 }
 
@@ -469,7 +526,7 @@ function bindAssets(data, file) {
             out.imageHeight = pic.src ? String(pic.height) : "";
           }
         }
-      } else if (typeof value === "string" && (key === "primaryHref" || key === "secondaryHref" || key === "href" || key === "backHref")) {
+      } else if (typeof value === "string" && (key === "primaryHref" || key === "secondaryHref" || key === "href" || key === "backHref" || key === "prevHref" || key === "nextHref")) {
         out[key] = rootHref(file, value);
       } else if (value && typeof value === "object") out[key] = walk(value);
       else out[key] = value;
@@ -922,8 +979,9 @@ function makeGlobals(file) {
     ui: copy,
     nav: navFor(file),
     homeHref: rootHref(file, "index.html"),
+    qrcodes: qrCodesFor(file),
     // 页脚品牌栏的「首页」链接：导航里已经有首页就不再放一条重复的。
-    footerHome: !(site.nav || []).some((item) => rootHref("index.html", item.href) === "index.html"),
+    footerHome: !navConf.items.some((item) => rootHref("index.html", item.href) === "index.html"),
   };
 }
 
@@ -1193,14 +1251,429 @@ function readToolEntry() {
 
 function navFor(file) {
   const closed = closedTargets(house, site);
-  const nav = (site.nav || [])
-    .filter((item) => !pointsClosed(item.href, closed))
-    .map((item) => ({ label: item.label, href: rootHref(file, item.href) }));
+  const nav = [];
+  for (const item of navConf.items) {
+    if (pointsClosed(item.href, closed)) continue;
+    const children = resolveChildren(item, navConf.auto, closed).map((child) => ({
+      label: child.label,
+      href: rootHref(file, child.href),
+      current: childHrefCurrent(child.href, file),
+      children: [],
+    }));
+    const current = covers(item.href, file) || children.some((child) => child.current);
+    nav.push({
+      label: item.label,
+      href: rootHref(file, item.href),
+      current,
+      children,
+    });
+  }
   if (!toolEntry) return nav;
   const href = siteHref(file, toolEntry.href);
-  const taken = (site.nav || []).some((item) => sameSitePath(item.href, toolEntry.href));
-  if (!taken) nav.push({ label: toolEntry.title, href });
+  const taken = navConf.items.some((item) => sameSitePath(item.href, toolEntry.href));
+  if (!taken) nav.push({ label: toolEntry.title, href, current: covers(toolEntry.href, file), children: [] });
   return nav;
+}
+
+function readNavConfig(doc) {
+  const nav = doc.nav;
+  let auto = doc.navAutoChildren !== false;
+  let items = nav;
+  if (nav && !Array.isArray(nav) && typeof nav === "object") {
+    auto = nav.autoChildren !== false;
+    items = nav.items;
+  }
+  if (!Array.isArray(items) || items.length === 0) fail("缺少 nav");
+  for (const item of items) {
+    if (!item || !item.label || !item.href) fail("nav 每一项都要有 label 和 href");
+    if (item.children == null) continue;
+    if (!Array.isArray(item.children)) fail("nav.children 必须是列表");
+    for (const child of item.children) {
+      if (!child || !child.label || !child.href) fail("nav 的二级每一项都要有 label 和 href");
+    }
+  }
+  return { auto, items };
+}
+
+function resolveChildren(item, auto, closed) {
+  if (Array.isArray(item.children) && item.children.length) {
+    return item.children.filter((child) => child && child.label && child.href && !pointsClosed(child.href, closed));
+  }
+  if (item.autoChildren === false || auto === false) return [];
+  const id = typeof item.autoChildren === "string" && item.autoChildren
+    ? item.autoChildren
+    : collectionIdForHref(item.href);
+  if (!id) return [];
+  const items = itemsOf(id);
+  if (!items) return [];
+  const keys = categoryKeys(items);
+  if (keys.size < 2) return [];
+  const listFile = toRootPath(listFileOf(id));
+  const hook = listHookOf(id);
+  const children = [];
+  for (const [label, key] of keys) {
+    const href = categoryHref(listFile, hook, key);
+    if (pointsClosed(href, closed)) continue;
+    children.push({ label, href });
+  }
+  return children.length >= 2 ? children : [];
+}
+
+function collectionIdForHref(href) {
+  const cols = showroom?.collections || house.collections || [];
+  for (const col of cols) {
+    if (col?.listFile && sameSitePath(col.listFile, href)) return col.id;
+  }
+  if (sameSitePath(href, "products/index.html") && itemsOf("products")) return "products";
+  return "";
+}
+
+function listHookOf(id) {
+  const listFile = toRootPath(listFileOf(id));
+  for (const page of site.pages || []) {
+    const housePage = (house.pages || []).find((item) => item.id === page.id && !item.from);
+    if (!housePage || toRootPath(housePage.file) !== listFile) continue;
+    for (const section of page.sections || []) {
+      if (section?.type !== "collection-list" && section?.type !== "product-list") continue;
+      const html = readSectionTemplate(section.type, section.variant);
+      return {
+        anchor: section.anchor || "list",
+        keyed: /id="\{\{anchor\}\}-\{\{key\}\}"/.test(html),
+        anchored: /id="\{\{anchor\}\}"/.test(html),
+      };
+    }
+  }
+  return { anchor: "list", keyed: false, anchored: false };
+}
+
+function categoryHref(listFile, hook, key) {
+  if (hook.keyed) return `${listFile}#${hook.anchor}-${key}`;
+  if (hook.anchored) return `${listFile}#${hook.anchor}`;
+  return listFile;
+}
+
+function readSectionTemplate(type, variant) {
+  if (!type || !variant) return "";
+  const names = [];
+  if (showroomDir) names.push(path.join(showroomDir, "sections", type, `${variant}.html`));
+  names.push(path.join(frameworkDir, "sections", type, `${variant}.html`));
+  for (const file of names) {
+    if (fs.existsSync(file)) return readText(file);
+  }
+  return "";
+}
+
+function childHrefCurrent(href, file) {
+  if (String(href || "").includes("#")) return false;
+  return covers(href, file);
+}
+
+function covers(href, file) {
+  const raw = String(href || "").trim();
+  if (!raw || raw.startsWith("#") || /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(raw)) return false;
+  const pathOnly = raw.split("#")[0].split("?")[0];
+  const rootPath = toRootPath(pathOnly);
+  const current = toRootPath(file);
+  if (rootPath === "index.html") return current === "index.html";
+  if (rootPath === current) return true;
+  if (rootPath.endsWith("/index.html")) {
+    const dir = rootPath.slice(0, -"index.html".length);
+    return current.startsWith(dir);
+  }
+  return false;
+}
+
+function toRootPath(file) {
+  let raw = String(file || "").trim().replace(/\\/g, "/").replace(/^\/+/, "");
+  raw = raw.split("#")[0].split("?")[0];
+  if (!raw || raw === "index.html") return "index.html";
+  if (raw.endsWith("/")) raw += "index.html";
+  else if (!path.posix.extname(raw)) raw += "/index.html";
+  return raw;
+}
+
+function pageFileOf(listFile, page) {
+  const rootPath = toRootPath(listFile);
+  if (page <= 1) return rootPath;
+  const dir = path.posix.dirname(rootPath);
+  const base = dir === "." ? "" : `${dir}/`;
+  return `${base}page/${page}.html`;
+}
+
+function planList(file, queued) {
+  for (const section of queued) {
+    if (section.type !== "collection-list" && section.type !== "product-list") continue;
+    const id = section.type === "product-list" ? "products" : String(section.data?.collection || "");
+    if (!id) continue;
+    const listFile = toRootPath(listFileOf(id));
+    if (toRootPath(file) !== listFile) continue;
+    const items = itemsOf(id) || [];
+    const pageSize = clampPageSize(section.data?.pageSize ?? site.pageSize);
+    if (items.length <= pageSize) continue;
+    return {
+      type: section.type,
+      id,
+      listFile,
+      pageSize,
+      pages: Math.ceil(items.length / pageSize),
+      page: 1,
+      file: listFile,
+    };
+  }
+  return null;
+}
+
+function clampPageSize(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n) || n <= 0) return 9;
+  return Math.min(60, Math.max(1, Math.floor(n)));
+}
+
+function prepareHero(raw) {
+  if (!raw.interval) raw.interval = "4000";
+  const slides = Array.isArray(raw.slides) ? raw.slides.map((item) => ({ ...(item || {}) })) : [];
+  const single = raw.mode === "single" || slides.length <= 1;
+  const kept = single ? slides.slice(0, 1) : slides;
+  const hasCopy = kept.some((item) => textOf(item.title) || textOf(item.lead) || textOf(item.primaryLabel));
+  raw.carouselOn = single ? "" : "1";
+  raw.hasSlideCopy = hasCopy ? "1" : "";
+  raw.slides = kept.map((item, index) => {
+    if (!hasCopy) return item;
+    return {
+      ...item,
+      title: textOf(item.title) || textOf(raw.title),
+      lead: textOf(item.lead) || textOf(raw.lead),
+      primaryLabel: textOf(item.primaryLabel) || textOf(raw.primaryLabel),
+      primaryHref: textOf(item.primaryHref) || textOf(raw.primaryHref),
+      secondaryLabel: textOf(item.secondaryLabel) || (index === 0 ? textOf(raw.secondaryLabel) : ""),
+      secondaryHref: textOf(item.secondaryHref) || (index === 0 ? textOf(raw.secondaryHref) : ""),
+      isFirst: index === 0,
+    };
+  });
+}
+
+function textOf(value) {
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function firstChar(name) {
+  const text = String(name || "").trim();
+  if (!text) return "";
+  return [...text][0];
+}
+
+function dateIso(value) {
+  const text = String(value || "").trim();
+  const matched = text.match(/^(\d{4})[-/.年](\d{1,2})(?:[-/.月](\d{1,2}))?/);
+  if (!matched) return "";
+  const month = matched[2].padStart(2, "0");
+  const day = matched[3] ? matched[3].padStart(2, "0") : "01";
+  return `${matched[1]}-${month}-${day}`;
+}
+
+function escAttr(value) {
+  return escapeHtml(value).replace(/"/g, "&quot;");
+}
+
+function sectionBackground(section, file) {
+  const id = textOf(section?.bg) || textOf(section?.data?.bg);
+  if (!id || !file) return null;
+  const pic = resolvePicture(id, file);
+  if (!pic.src) return null;
+  return pic;
+}
+
+function stripCarouselChrome(html) {
+  let out = html.replace(/\sdata-carousel\b(?:="[^"]*")?/g, "");
+  out = out.replace(/\sdata-interval="[^"]*"/g, "");
+  out = out.replace(/<button\b[^>]*\bdata-carousel-prev\b[^>]*>[\s\S]*?<\/button>/g, "");
+  out = out.replace(/<button\b[^>]*\bdata-carousel-next\b[^>]*>[\s\S]*?<\/button>/g, "");
+  out = out.replace(/<div class="hero-dots">[\s\S]*?<\/div>/g, "");
+  out = out.replace(/<div class="container hero-ui">\s*<\/div>/g, "");
+  return out;
+}
+
+function injectHeroCopies(html, data) {
+  if (!data?.hasSlideCopy || html.includes("data-hero-copy")) return html;
+  const slides = Array.isArray(data.slides) ? data.slides : [];
+  const copies = slides.map((slide) => {
+    const title = slide.title ? `<p class="section-title">${escapeHtml(slide.title)}</p>` : "";
+    const lead = slide.lead ? `<p class="section-lead">${escapeHtml(slide.lead)}</p>` : "";
+    let buttons = "";
+    if (slide.primaryLabel && slide.primaryHref) {
+      const secondary = slide.secondaryLabel && slide.secondaryHref
+        ? `<a class="btn" href="${escAttr(slide.secondaryHref)}">${escapeHtml(slide.secondaryLabel)}</a>`
+        : "";
+      buttons = `<div class="btn-row"><a class="btn btn-primary" href="${escAttr(slide.primaryHref)}">${escapeHtml(slide.primaryLabel)}</a>${secondary}</div>`;
+    }
+    return `<div class="hero-slide-copy" data-hero-copy>${title}${lead}${buttons}</div>`;
+  }).join("");
+  const block = `<div class="hero-slide-copies" data-hero-copies>${copies}</div>`;
+  let next = html.replace(/class="([^"]*\bhero-copy\b[^"]*)"/, (full, cls) => {
+    if (cls.includes("has-slide-copy")) return full;
+    return `class="${cls} has-slide-copy"`;
+  });
+  next = next.replace(/(<div\b[^>]*\bhero-copy\b[^>]*>)/, `$1${block}`);
+  return next;
+}
+
+function upgradeListCards(html, data) {
+  if (!data || data._paginate !== "1") return html;
+  let next = html;
+  if (!next.includes("media-card")) {
+    const items = data.items || [];
+    const found = next.match(/<article\b[\s\S]*?<\/article>/g) || [];
+    if (found.length === items.length && items.length) {
+      let index = 0;
+      next = next.replace(/<article\b[\s\S]*?<\/article>/g, () => mediaCard(items[index++]));
+      next = next.replace(
+        /(<div\b[^>]*class=")([^"]*)("[^>]*>)(\s*<article class="media-card")/,
+        (full, open, cls, close, rest) => (/\bmedia-grid\b/.test(cls) ? full : `${open}${cls} media-grid${close}${rest}`),
+      );
+    }
+  }
+  if (!next.includes("data-pager") && Array.isArray(data.pager) && data.pager.length > 1) {
+    next = insertPager(next, pagerHtml(data));
+  }
+  return next;
+}
+
+function mediaCard(item) {
+  const href = escAttr(item.href || "");
+  const name = escapeHtml(item.name || "");
+  const initial = escapeHtml(item.initial || firstChar(item.name) || "·");
+  const thumb = item.image
+    ? `<img src="${escAttr(item.image)}" alt="${escAttr(item.imageAlt || item.name || "")}" width="${escAttr(item.imageWidth || "")}" height="${escAttr(item.imageHeight || "")}" loading="lazy" decoding="async">`
+    : `<span class="media-card-fallback" aria-hidden="true">${initial}</span>`;
+  const summary = `<p class="media-card-summary">${escapeHtml(item.summary || "")}</p>`;
+  const bits = [];
+  if (item.date) {
+    const iso = item.dateIso ? ` datetime="${escAttr(item.dateIso)}"` : "";
+    bits.push(`<time${iso}>${escapeHtml(item.date)}</time>`);
+  }
+  if (item.category) bits.push(`<span class="media-card-tag">${escapeHtml(item.category)}</span>`);
+  return `<article class="media-card"><a class="media-card-thumb" href="${href}">${thumb}</a><h2 class="item-title"><a href="${href}">${name}</a></h2>${summary}<p class="media-card-meta">${bits.join("")}</p></article>`;
+}
+
+function pagerHtml(data) {
+  const prev = data.prevHref ? `<a class="pager-prev" href="${escAttr(data.prevHref)}">${escapeHtml(copy.pagerPrev)}</a>` : "";
+  const next = data.nextHref ? `<a class="pager-next" href="${escAttr(data.nextHref)}">${escapeHtml(copy.pagerNext)}</a>` : "";
+  const pages = (data.pager || []).map((item) => {
+    const current = item.current ? ' class="is-current" aria-current="page"' : "";
+    return `<a href="${escAttr(item.href)}"${current}>${escapeHtml(item.label)}</a>`;
+  }).join("");
+  return `<nav class="pager" data-pager aria-label="${escAttr(copy.pagerLabel)}">${prev}${pages}${next}</nav>`;
+}
+
+function insertPager(html, nav) {
+  const end = html.lastIndexOf("</section>");
+  if (end === -1) return html + nav;
+  const head = html.slice(0, end);
+  const div = head.lastIndexOf("</div>");
+  if (div === -1) return `${head}${nav}${html.slice(end)}`;
+  return `${head.slice(0, div)}${nav}${head.slice(div)}${html.slice(end)}`;
+}
+
+function qrCodesFor(file) {
+  const list = site.contact?.qrcodes;
+  if (!Array.isArray(list)) return [];
+  const out = [];
+  for (const item of list) {
+    if (!item || typeof item !== "object") continue;
+    const image = textOf(item.image);
+    if (!image) continue;
+    const pic = resolvePicture(image, file);
+    if (!pic.src) continue;
+    const label = textOf(item.label);
+    out.push({
+      src: pic.src,
+      width: String(pic.width || ""),
+      height: String(pic.height || ""),
+      label,
+      alt: textOf(item.imageAlt) || label || copy.placeholderQr || "二维码",
+    });
+    if (out.length >= 2) break;
+  }
+  return out;
+}
+
+function qrBlock(items) {
+  const figs = items.map((item) => {
+    const caption = item.label ? `<figcaption>${escapeHtml(item.label)}</figcaption>` : "";
+    return `<figure class="footer-qr"><img src="${escAttr(item.src)}" alt="${escAttr(item.alt)}" width="${escAttr(item.width)}" height="${escAttr(item.height)}" decoding="async">${caption}</figure>`;
+  }).join("");
+  return `<div class="footer-qrs" data-qrcodes>${figs}</div>`;
+}
+
+function injectQr(footerHtml, floatHtml, items) {
+  if (!items?.length) return { footerHtml, floatHtml };
+  if (!footerHtml.includes("data-qrcodes")) {
+    const block = qrBlock(items);
+    if (footerHtml.includes('<div class="footer-legal">')) {
+      footerHtml = footerHtml.replace('<div class="footer-legal">', `${block}<div class="footer-legal">`);
+    } else {
+      footerHtml = footerHtml.replace(/<\/footer>/, `${block}</footer>`);
+    }
+  }
+  if (!floatHtml.includes("data-qrcodes")) {
+    const figs = items.map((item) => {
+      const caption = item.label ? `<figcaption>${escapeHtml(item.label)}</figcaption>` : "";
+      return `<figure class="footer-qr"><img src="${escAttr(item.src)}" alt="${escAttr(item.alt)}" width="${escAttr(item.width)}" height="${escAttr(item.height)}">${caption}</figure>`;
+    }).join("");
+    const pop = `<details class="wechat-pop qr-pop"><summary class="btn">${escapeHtml(copy.qrButton)}</summary><div class="wechat-panel qr-pop-panel" data-qrcodes>${figs}</div></details>`;
+    const at = floatHtml.lastIndexOf("</div>");
+    if (at !== -1) floatHtml = `${floatHtml.slice(0, at)}${pop}${floatHtml.slice(at)}`;
+  }
+  return { footerHtml, floatHtml };
+}
+
+function upgradeHeader(html, items) {
+  if (!html || !Array.isArray(items) || items.length === 0) return html;
+  const byKey = new Map();
+  for (const item of items) byKey.set(`${item.href}\0${stripJoiners(item.label)}`, item);
+  return html.replace(/<a href="([^"]+)">([^<]*)<\/a>/g, (full, href, inner) => {
+    const label = stripJoiners(decodeBasic(inner)).trim();
+    const item = byKey.get(`${decodeBasic(href)}\0${label}`);
+    if (!item) return full;
+    if (!item.current && !(item.children && item.children.length)) return full;
+    return navItemHtml(item);
+  });
+}
+
+function navItemHtml(item) {
+  const kids = Array.isArray(item.children) ? item.children : [];
+  const hasKids = kids.length > 0;
+  const current = Boolean(item.current);
+  const cls = `nav-item${hasKids ? " has-sub" : ""}${current ? " is-current" : ""}`;
+  const currentAttr = current ? ' class="is-current" aria-current="page"' : "";
+  const popup = hasKids ? ' aria-haspopup="true"' : "";
+  const caret = hasKids ? '<span class="nav-caret" aria-hidden="true"></span>' : "";
+  const sub = hasKids
+    ? `<button type="button" class="nav-more" aria-expanded="false" aria-label="${escAttr(copy.navExpand)}">${chevronIcon()}<span class="sr">${escapeHtml(copy.navExpand)}</span></button><ul class="nav-sub" data-subnav>${kids.map((child) => {
+      const childCurrent = child.current ? ' class="is-current" aria-current="page"' : "";
+      return `<li><a href="${escAttr(child.href)}"${childCurrent}>${escapeHtml(child.label)}</a></li>`;
+    }).join("")}</ul>`
+    : "";
+  return `<span class="${cls}"><a href="${escAttr(item.href)}"${currentAttr}${popup}>${escapeHtml(item.label)}${caret}</a>${sub}</span>`;
+}
+
+function chevronIcon() {
+  const svg = icons.get("chevron-down");
+  if (!svg) return "";
+  return svg.replace("<svg", '<svg class="icon icon-20" focusable="false" aria-hidden="true"');
+}
+
+function stripJoiners(value) {
+  return String(value || "").replace(/\u2060/g, "");
+}
+
+function decodeBasic(value) {
+  return stripJoiners(value)
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
 }
 
 function sameSitePath(left, right) {

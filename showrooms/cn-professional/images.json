@@ -618,6 +618,66 @@
       "prompt": "另一张白卡上的方形二维码，四周留白，没有其他文字。",
       "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
       "tier": "nice"
+    },
+    {
+      "id": "bg-numbers",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "meeting",
+        "chair",
+        "wood",
+        "side"
+      ],
+      "prompt": "律所会客室一角，空木椅和深色桌面，侧光，安静。不要人脸，不要可读文字。",
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "desc": "数字条深色底，空会客室。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-team",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "shelf",
+        "files",
+        "wood",
+        "warm"
+      ],
+      "prompt": "深色木架上几只素色牛皮纸档案盒，盒脊完全空白，没有字，没有数字，没有图案，暖色侧光。不要人脸，不要证书，不要书名。",
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "desc": "团队板块深色底，卷宗架。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-call",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "desk",
+        "pen",
+        "paper",
+        "brick"
+      ],
+      "prompt": "会客桌侧面，一支钢笔和一叠空白纸，窗外是虚化的青砖墙。不要人脸，不要文字。",
+      "grade": "低饱和、偏暖的中性调。阴影偏墨，高光偏暖白。不要青绿，不要金色文字，不要蓝紫渐变。",
+      "desc": "咨询条深色底，案头局部。",
+      "tier": "nice"
     }
   ]
 }

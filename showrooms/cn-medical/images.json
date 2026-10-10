@@ -578,6 +578,66 @@
       "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
       "desc": "门诊服务号二维码。交给门诊换成自己的码。",
       "tier": "nice"
+    },
+    {
+      "id": "bg-numbers",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "dental",
+        "tray",
+        "light",
+        "metal"
+      ],
+      "prompt": "牙科诊室治疗台托盘的冷白灯局部，金属器械摆整齐。不见口腔，不见人脸，不要文字。",
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "desc": "数字条深色底，治疗托盘。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-team",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "clinic",
+        "window",
+        "chair",
+        "cool"
+      ],
+      "prompt": "靠窗诊室的治疗台一角，浅色台面和冷白灯。不见病人，不见人脸，不要文字。",
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "desc": "医生板块深色底，诊室一角。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-book",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "waiting",
+        "chair",
+        "floor",
+        "cool"
+      ],
+      "prompt": "候诊椅和浅灰地面反光的局部，冷白灯。不要门头，不要人脸，不要文字。",
+      "grade": "明亮、冷白、略偏青。浅灰纸，医疗青只做点和按钮，照片按白天诊室实拍，画面里不写字。",
+      "desc": "预约条深色底，候诊椅局部。",
+      "tier": "nice"
     }
   ]
 }

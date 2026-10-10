@@ -105,7 +105,7 @@
         "saturate": 0.68,
         "warmth": 0.12
       },
-      "tier": "must"
+      "tier": "nice"
     },
     {
       "id": "still-window",
@@ -205,7 +205,7 @@
         "saturate": 0.68,
         "warmth": 0.12
       },
-      "tier": "must"
+      "tier": "nice"
     },
     {
       "id": "svc-organize",
@@ -752,6 +752,220 @@
         "saturate": 0.68,
         "warmth": 0.12
       },
+      "tier": "nice"
+    },
+    {
+      "id": "hero-folio",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paper",
+        "pencil"
+      ],
+      "prompt": "暖灰石色桌面上摊开的空白纸和一支铅笔，纸上没有字，阴影偏墨绿，不要金色，不要文字，不要商标，不要人。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "第四张轮播，空白纸和铅笔。",
+      "tier": "must"
+    },
+    {
+      "id": "hero-door",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "stone",
+        "door"
+      ],
+      "prompt": "石墙里一扇木门，墙上没有门牌，没有灯，没有招牌，画面任何地方都没有字母和水印，阴影偏墨绿，不要金色，不要人，不要文字，不要商标。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "第五张轮播，石墙窄门。",
+      "tier": "must"
+    },
+    {
+      "id": "bg-paper",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paper",
+        "stone"
+      ],
+      "prompt": "石桌上空白纸的一角，纸上没有字，暖灰石色，阴影偏墨绿，不要人，不要文字，不要商标。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "深色数字条底图，空白纸一角。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-folder",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "folder",
+        "paper"
+      ],
+      "prompt": "一只文件夹的侧面，封面没有字，暖灰石纸色，阴影偏墨绿，不要人，不要文字，不要商标。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "深色案例块底图，文件夹侧面。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-chairs",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "chairs",
+        "stone"
+      ],
+      "prompt": "两把空椅子靠着石墙，暖灰石色，阴影偏墨绿，不要人，不要文字，不要商标。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "深色问答块底图，两把空椅子。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-steps",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "stone",
+        "steps"
+      ],
+      "prompt": "特写一块没有刻字的花岗岩石阶边缘，石面完全空白，没有数字，没有油漆，没有金色，阴影偏墨绿，不要人，不要文字，不要商标。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "深色年表底图，石阶局部。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-step",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "stone",
+        "door"
+      ],
+      "prompt": "书房门口的石阶，没有门牌，暖灰石色，阴影偏墨绿，不要人，不要文字，不要商标。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "深色面谈条底图，书房石阶。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-visit",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "qr"
+      ],
+      "prompt": "客户提供的二维码。没有文件时不要生成假码。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "客户提供的预约号二维码。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-note",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "qr"
+      ],
+      "prompt": "客户提供的二维码。没有文件时不要生成假码。",
+      "grade": "低饱和、阴影偏墨绿、高光是暖灰石纸。不要金色，不要藏青，不要可读文字和标志。",
+      "gradeParams": {
+        "brightness": 1.01,
+        "contrast": 1.05,
+        "saturate": 0.68,
+        "warmth": 0.12
+      },
+      "desc": "客户提供的来访说明二维码。",
       "tier": "nice"
     }
   ]

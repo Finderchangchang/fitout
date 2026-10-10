@@ -714,6 +714,66 @@
         "warmth": 0
       },
       "tier": "nice"
+    },
+    {
+      "id": "bg-courses",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "bench",
+        "caliper",
+        "metal",
+        "lamp"
+      ],
+      "prompt": "钳工台近景，卡尺、金属零件和一盏台灯，金属屑是本色，夜班冷白灯。不要学员的脸，不要可读文字。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。",
+      "desc": "课程板块深色底，钳工台。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-news",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "drawing",
+        "pencil",
+        "lamp",
+        "workshop"
+      ],
+      "prompt": "工位上摊开的零件图，只有线条没有可读文字，旁边一支铅笔，台灯光，背景虚成车间隔断。不要人脸。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。",
+      "desc": "公告板块深色底，零件图。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-book",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "lathe",
+        "aisle",
+        "concrete",
+        "evening"
+      ],
+      "prompt": "傍晚实训车间过道的局部，一侧是车床床身，地面是水泥灰。不要厂房全景，不要人脸，不要文字。",
+      "grade": "明亮、自然光、偏暖。浅松绿底，松绿和明橙只做点和标题，照片按白天实拍，画面里不写字。",
+      "desc": "预约条深色底，车间过道局部。",
+      "tier": "nice"
     }
   ]
 }

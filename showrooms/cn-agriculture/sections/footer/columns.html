@@ -22,17 +22,6 @@
           {{#if wechat}}<p class="footer-copy"><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
         </div>
       </div>
-      {{#if wechatQrSrc}}
-      <div>
-        <p class="footer-label">扫码</p>
-        <div class="qr-pair">
-          <figure>
-            <img src="{{wechatQrSrc}}" alt="{{name}}公众号二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}" loading="lazy" decoding="async">
-            <figcaption>关注公众号</figcaption>
-          </figure>
-        </div>
-      </div>
-      {{/if}}
     </div>
     <div class="footer-legal">
       <p>{{year}} {{name}} 版权自有</p>

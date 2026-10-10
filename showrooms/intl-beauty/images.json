@@ -93,7 +93,7 @@
       "ratio": "2.4:1",
       "px": "1440x600",
       "source": "stock",
-      "tier": "must",
+      "tier": "nice",
       "keywords": [
         "window",
         "curtain",
@@ -573,6 +573,177 @@
       ],
       "prompt": "方形微信二维码，客户提供，不要另外生成图案。",
       "desc": "微信二维码，上线前替换。"
+    },
+    {
+      "id": "hero-comb",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "comb",
+        "scissors",
+        "stone"
+      ],
+      "prompt": "冷石灰色台面上一把深色宽齿梳子和一把两片刀刃的剪刀，刀刃并拢，只有两片，不要第三片刀，不要手，不要脸，不要文字，不要商标，不要暖裸色。",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.06,
+        "saturate": 0.72,
+        "warmth": -0.12
+      },
+      "desc": "第五张轮播，梳子和剪刀，没有人。",
+      "tier": "must"
+    },
+    {
+      "id": "bg-basin",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "basin",
+        "stone",
+        "tap"
+      ],
+      "prompt": "石质洗手台和铜龙头的局部，冷石灰光，阴影带一点松绿，不要镜子里的人，不要文字，不要商标。",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.06,
+        "saturate": 0.72,
+        "warmth": -0.12
+      },
+      "desc": "深色数字条底图，洗手台局部。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-linen",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "towel",
+        "linen"
+      ],
+      "prompt": "叠好的本色毛巾一角，冷石灰光，松绿阴影，不要人，不要文字，不要商标，不要玫瑰粉。",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.06,
+        "saturate": 0.72,
+        "warmth": -0.12
+      },
+      "desc": "深色评价块底图，毛巾一角。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-oils",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "oil",
+        "bottle",
+        "wood"
+      ],
+      "prompt": "木架上的几只玻璃油瓶，瓶身没有标签，冷石灰光，不要文字，不要商标，不要人。",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.06,
+        "saturate": 0.72,
+        "warmth": -0.12
+      },
+      "desc": "深色价目块底图，无标签油瓶。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-wood",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "wood",
+        "counter",
+        "comb"
+      ],
+      "prompt": "旧木柜台的边沿和一把深色梳子，冷石灰光，不要年份数字，不要文字，不要人，不要商标。",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.06,
+        "saturate": 0.72,
+        "warmth": -0.12
+      },
+      "desc": "深色年份条底图，旧木边。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-book",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paper",
+        "towel"
+      ],
+      "prompt": "一张空白白纸靠着一条本色毛巾，背景是冷石灰墙，纸上没有字，不要粉色，不要玫瑰色，不要人，不要文字，不要商标。",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.06,
+        "saturate": 0.72,
+        "warmth": -0.12
+      },
+      "desc": "深色预约条底图，空白纸和毛巾。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-book",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "qr"
+      ],
+      "prompt": "客户提供的二维码。没有文件时不要生成假码。",
+      "grade": "冷石灰光，略压饱和，阴影带一点松绿。不要暖裸色，不要玫瑰粉，不要把字烤进图。",
+      "gradeParams": {
+        "brightness": 1,
+        "contrast": 1.06,
+        "saturate": 0.72,
+        "warmth": -0.12
+      },
+      "desc": "客户提供的预约号二维码。",
+      "tier": "nice"
     }
   ]
 }

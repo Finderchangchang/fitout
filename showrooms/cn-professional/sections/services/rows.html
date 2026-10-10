@@ -11,8 +11,8 @@
         {{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
         <div>
           {{#if href}}<h3 class="item-name"><a href="{{href}}">{{name}}</a></h3>{{else}}<h3 class="item-name">{{name}}</h3>{{/if}}
-          <p>{{text}}</p>
-          {{#if price}}<p class="price">{{price}}</p>{{/if}}
+          <p class="media-card-summary">{{text}}</p>
+          <p class="media-card-meta">{{#if tag}}<span class="media-card-tag">{{tag}}</span>{{/if}}{{#if price}}<span class="price">{{price}}</span>{{/if}}</p>
         </div>
       </article>
       {{/each}}

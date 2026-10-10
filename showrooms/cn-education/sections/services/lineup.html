@@ -10,8 +10,8 @@
       <article>
         {{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
         <h3 class="item-title">{{#if href}}<a href="{{href}}">{{name}}</a>{{else}}{{name}}{{/if}}</h3>
-        <p>{{text}}</p>
-        {{#if price}}<p class="price">{{price}}</p>{{/if}}
+        <p class="media-card-summary">{{text}}</p>
+        <p class="media-card-meta">{{#if tag}}<span class="media-card-tag">{{tag}}</span>{{/if}}{{#if price}}<span class="media-card-tag">{{price}}</span>{{/if}}</p>
       </article>
       {{/each}}
     </div>

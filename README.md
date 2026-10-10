@@ -2,7 +2,43 @@
 
 > 便宜模型，也能装出好门面。
 
+**不用任何密钥就能出站。** 装上 skill，跟 AI 说「给我公司做个官网」。AI 自己问企业信息、写好内容、跑一条命令。DeepSeek 密钥只在后面的批量填法里才要。没有生图密钥就跳过生图，站点照样能拼。
+
 **v0.1 预览**：10 个行业的国内风「样板间」已经能用。[精酿 · BrewReel](https://github.com/Finderchangchang/brewreel) 的兄弟项目：精酿出片，精装出官网。
+
+## 三步上手
+
+1. 装 skill。仓库放在本机任意目录，下面写成 `<精装仓库目录>`。把 `skill\fitout` 整个文件夹拷出去，文件夹名保持 `fitout`，里面要有 `SKILL.md`。
+
+Claude Code：
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills" | Out-Null
+Copy-Item -Recurse -Force "<精装仓库目录>\skill\fitout" "$env:USERPROFILE\.claude\skills\fitout"
+```
+
+Codex：同样拷到 `$env:USERPROFILE\.codex\skills\fitout`。
+
+Grok：同样拷到 `$env:USERPROFILE\.agents\skills\fitout`，或 `$env:USERPROFILE\.grok\skills\fitout`。
+
+2. 新开一轮对话，对 AI 说「给我公司做个官网」。它会问企业信息，确认后在一个站点目录里出站。
+
+3. 打开该目录的 `site/index.html`。要上线，按同一目录的 `交付说明.md` 发到 GitHub Pages。这条命令不会替你发布。
+
+一个站点一个目录：
+
+| 文件 | 是什么 |
+|---|---|
+| `企业档案.md` | 事实。AI 问答后写在这里 |
+| `site.json` | AI 填的站点内容 |
+| `photos/` | 你给的照片 |
+| `img/` | 生成或处理后的图 |
+| `site/` | 生成的网站 |
+| `交付说明.md` | 用了哪套样板间、缺哪些实拍、怎么发布 |
+
+改内容：改 `企业档案.md` 或 `site.json`，让 AI 重跑同一条命令。细节在 [skill/fitout/SKILL.md](skill/fitout/SKILL.md)。
+
+`site.json` 里这几处用框架现在的字段：首屏是 hero 板块的 `mode` 和 `slides`，导航是 `children` 或 `autoChildren`，深色板块可写 `bg`，列表写 `pageSize`，页脚二维码是 `contact.qrcodes`。说明在 [docs/SITE_JSON.md](docs/SITE_JSON.md)。
 
 给中小企业一键生成**好看、统一、拎包入住**的官网：挑一套样板间，按企业档案填内容，脚本拼出一整套静态官网（首页 + 关于 + 产品 / 服务列表和详情 + 团队 + 新闻 + 联系），传上 GitHub Pages 就能上线，手机打开不乱。
 
@@ -47,20 +83,32 @@
 | **样板间** | 一整套成熟官网版面，按行业分；配色、字体、间距、圆角全部写成数值，模型不碰 |
 | **户型** | 行业配方：有哪些页面、首页板块顺序、语气、必备件（行业见 `industries/registry.json`，可以继续加） |
 | **构件** | 导航、页脚、首屏轮播、数字条、服务、案例、团队、常见问题、联系……每个板块几种版式 |
-| **开工** | 模型按企业档案填 `site.json`，脚本按框架拼成官网 |
+| **开工** | 对话里的 AI 按企业档案写 `site.json`，脚本校验后按框架拼成官网。批量才另调 DeepSeek |
 | **交房** | 一套静态网页 + 图片文件夹，上线不用装任何东西 |
 
 流程：**量房**（读企业档案）→ **选样板间** → **出效果图** → **交房**。
 
-## 试一下
+## 进阶
 
-一条命令从企业档案到整站。Node 18+，不用装依赖。档案怎么写见 [docs/PROFILE.md](docs/PROFILE.md)。
+日常出站走上面的三步，不需要密钥。下面是命令行和批量。Node 18+，不用装依赖。档案怎么写见 [docs/PROFILE.md](docs/PROFILE.md)。
+
+`site.json` 已经写在站点目录里时，校验并出站（不调用 DeepSeek）：
 
 ```bash
-node scripts/fitout.mjs --profile examples/profiles/巷口半糖.md --out out/xiangkou --showroom auto
+node scripts/fitout.mjs --profile examples/profiles/巷口半糖.md --out out/xiangkou --showroom cn-dining --fill agent
 ```
 
-打开 `out/xiangkou/site/index.html`，摘要在 `out/xiangkou/交付说明.md`。老板照片加 `--photos <目录>`，氛围图加 `--gen-images`。给 AI 助手的装法在 [skill/fitout/SKILL.md](skill/fitout/SKILL.md)。
+打开 `out/xiangkou/site/index.html`，摘要在 `out/xiangkou/交付说明.md`。`--fill` 不写也是 `agent`。照片放进 `out/xiangkou/photos/`，或加 `--photos <目录>`。氛围图加 `--gen-images`；没有 `MINIMAX_API_KEY` 就跳过并提示，不因此失败。
+
+批量让 DeepSeek 填内容，才需要环境变量 `DEEPSEEK_API_KEY`。不要写进命令、档案或聊天：
+
+```bash
+node scripts/fitout.mjs --profile examples/profiles/巷口半糖.md --out out/xiangkou --showroom auto --fill deepseek
+```
+
+只填 json、不拼站：`node scripts/fill.mjs --profile 企业档案.md --showroom cn-factory --out site.json`。这条同样要密钥。填法和重试见 [docs/SITE_JSON.md](docs/SITE_JSON.md)。
+
+DeepSeek `deepseek-chat` 按 3 份虚构档案填了 6 个站，这一轮拼装、机检和视觉检查都通过，疑似编造 0，示例泄漏 0。
 
 ### 三档检查
 
@@ -85,10 +133,6 @@ node scripts/build.mjs showrooms/cn-factory/examples/site.json --out out
 ```
 
 打开 `out/` 里生成的 `index.html` 就能看。仓库里**不带演示图片**（图库照片的许可证不允许原样再分发），缺图的位置会自动换成不需要图的版式；自己配图的流程（图库下载 / AI 生图 / 统一调色）见 [docs/IMAGES.md](docs/IMAGES.md)。新做一套样板间见 [docs/SHOWROOM.md](docs/SHOWROOM.md)。
-
-按企业档案填 `site.json`：`node scripts/fill.mjs --profile 企业档案.md --showroom cn-factory --out site.json`。密钥只放环境变量 `DEEPSEEK_API_KEY`，填法和重试见 [docs/SITE_JSON.md](docs/SITE_JSON.md)。
-
-DeepSeek `deepseek-chat` 按 3 份虚构档案填了 6 个站，这一轮拼装、机检和视觉检查都通过，疑似编造 0，示例泄漏 0。
 
 ## 交房前的机检
 

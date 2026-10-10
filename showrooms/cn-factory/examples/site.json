@@ -23,7 +23,19 @@
       }
     ],
     "formUrl": "https://example.com/ningpu-inquiry",
-    "icp": "浙ICP备20260915号-6"
+    "icp": "浙ICP备20260915号-6",
+    "qrcodes": [
+      {
+        "image": "qr-wechat",
+        "label": "关注公众号",
+        "imageAlt": "宁浦精工公众号二维码"
+      },
+      {
+        "image": "qr-advisor",
+        "label": "顾问微信",
+        "imageAlt": "销售顾问微信二维码"
+      }
+    ]
   },
   "nav": [
     {
@@ -322,7 +334,8 @@
             "label": "产能",
             "value": "约 800 件/月"
           }
-        ]
+        ],
+        "category": "农机"
       },
       {
         "slug": "cabinet",
@@ -352,7 +365,8 @@
             "label": "表面",
             "value": "喷粉前"
           }
-        ]
+        ],
+        "category": "柜体"
       },
       {
         "slug": "rack",
@@ -382,7 +396,8 @@
             "label": "表面",
             "value": "客户自做"
           }
-        ]
+        ],
+        "category": "货架"
       },
       {
         "slug": "kitchen",
@@ -412,7 +427,8 @@
             "label": "表面",
             "value": "去毛刺"
           }
-        ]
+        ],
+        "category": "厨电"
       }
     ],
     "news": [
@@ -423,7 +439,8 @@
         "summary": "2026-03-12。新折弯机已进折弯车间，试折门框加强板合格，旧的 100 吨停用。",
         "body": "3 月 12 日到厂并完成就位。试折了门框加强板 NP-ZW-186，对角线在 ±0.2 毫米以内。操作工还是原来的班组。",
         "image": "news-press",
-        "imageAlt": "新到的 160 吨折弯机"
+        "imageAlt": "新到的 160 吨折弯机",
+        "category": "设备"
       },
       {
         "slug": "saturday",
@@ -432,7 +449,8 @@
         "summary": "2026-05-20。周六接待改到上午 11 点半结束，下午不安排看厂。",
         "body": "看厂请在工作日预约。周六只留到 11 点半，过了时间门卫不再放行。",
         "image": "news-hours",
-        "imageAlt": "厂门告示写着周六上午时间"
+        "imageAlt": "厂门告示写着周六上午时间",
+        "category": "接待"
       },
       {
         "slug": "quote",
@@ -441,7 +459,8 @@
         "summary": "2026-07-08。报价单增加材料牌号一栏，没写牌号的图纸先不报价。",
         "body": "同一张图，Q235 和 304 的价格差一截。牌号空着的，销售先问清楚再回传报价。",
         "image": "news-quote",
-        "imageAlt": "一张写了材料牌号的报价单"
+        "imageAlt": "一张写了材料牌号的报价单",
+        "category": "报价"
       },
       {
         "slug": "meter",
@@ -450,7 +469,8 @@
         "summary": "2026-09-02。孔位改用影像测量仪抽检，卡尺仍用来量厚度。",
         "body": "影像仪测量孔径和孔距。首件先过影像仪，尺寸对过再放到看板上，然后才批量。",
         "image": "news-meter",
-        "imageAlt": "质检室里的影像仪和卡尺"
+        "imageAlt": "质检室里的影像仪和卡尺",
+        "category": "质检"
       }
     ]
   },
@@ -477,19 +497,27 @@
             "slides": [
               {
                 "image": "hero-press",
-                "imageAlt": "冲床落料的金属板局部"
+                "imageAlt": "冲床落料的金属板局部",
+                "title": "十七年只做金属机件",
+                "lead": "图纸确认后在桐乡排产，折弯、冲压、机加和组焊都做。"
               },
               {
                 "image": "hero-bend",
-                "imageAlt": "折弯机钳口咬住钢板"
+                "imageAlt": "折弯机钳口咬住钢板",
+                "title": "折弯公差按零点二",
+                "lead": "门框加强板按图折弯，对角线抽检后再批量。"
               },
               {
                 "image": "hero-cnc",
-                "imageAlt": "车刀和轴套上的冷却液"
+                "imageAlt": "车刀和轴套上的冷却液",
+                "title": "轴套车铣不外协",
+                "lead": "45钢轴套在厂里车完，内孔按客户的轴配。"
               },
               {
                 "image": "hero-weld",
-                "imageAlt": "支架焊点的金属本色"
+                "imageAlt": "支架焊点的金属本色",
+                "title": "焊完进质检再出厂",
+                "lead": "支架按图组焊，焊点交检合格才装箱。"
               }
             ],
             "rail": [
@@ -542,7 +570,8 @@
                 "label": "折弯常规公差"
               }
             ]
-          }
+          },
+          "bg": "bg-meter"
         },
         {
           "type": "services",
@@ -558,28 +587,32 @@
                 "text": "板厚到 6 毫米，常规公差 ±0.2 毫米。",
                 "href": "products/index.html#catalog-k1ph8kiy",
                 "image": "line-bend",
-                "imageAlt": "折弯机在弯一块门框加强板"
+                "imageAlt": "折弯机在弯一块门框加强板",
+                "tag": "折弯"
               },
               {
                 "name": "160吨冲床",
                 "text": "连续模和单工序都做，冲床到 160 吨。",
                 "href": "products/index.html#catalog-k6a87dw",
                 "image": "line-stamp",
-                "imageAlt": "冲床在落一块柜体侧板"
+                "imageAlt": "冲床在落一块柜体侧板",
+                "tag": "冲压"
               },
               {
                 "name": "车床和铣床",
                 "text": "轴套和安装底板在厂里车铣，不外协。",
                 "href": "products/index.html#catalog-k15se72r",
                 "image": "line-cnc",
-                "imageAlt": "车床卡着一根轴套棒料"
+                "imageAlt": "车床卡着一根轴套棒料",
+                "tag": "机加"
               },
               {
                 "name": "组焊工位",
                 "text": "支架按图组焊，焊完进质检再出厂。",
                 "href": "products/index.html#catalog-kms2wja",
                 "image": "line-weld",
-                "imageAlt": "焊工在组一支支架"
+                "imageAlt": "焊工在组一支支架",
+                "tag": "组焊"
               }
             ]
           }
@@ -656,7 +689,8 @@
             "title": "新闻动态",
             "lead": "设备进厂、接待时间和报价上的变动。",
             "collection": "news"
-          }
+          },
+          "bg": "bg-news"
         },
         {
           "type": "honors",
@@ -669,27 +703,19 @@
             "items": [
               {
                 "name": "质量管理体系",
-                "issuer": "衡准认证",
-                "image": "cert-iso",
-                "imageAlt": "质量管理体系证书"
+                "issuer": "衡准认证"
               },
               {
                 "name": "环境管理体系",
-                "issuer": "衡准认证",
-                "image": "cert-env",
-                "imageAlt": "环境管理体系证书"
+                "issuer": "衡准认证"
               },
               {
                 "name": "职业健康安全",
-                "issuer": "衡准认证",
-                "image": "cert-ohs",
-                "imageAlt": "职业健康安全证书"
+                "issuer": "衡准认证"
               },
               {
                 "name": "企业技术中心",
-                "issuer": "桐乡经济开发区",
-                "image": "cert-tech",
-                "imageAlt": "企业技术中心牌匾"
+                "issuer": "桐乡经济开发区"
               }
             ]
           }
@@ -842,7 +868,8 @@
                 "label": "新模最长周期"
               }
             ]
-          }
+          },
+          "bg": "bg-meter"
         },
         {
           "type": "honors",
@@ -855,27 +882,19 @@
             "items": [
               {
                 "name": "质量管理体系",
-                "issuer": "衡准认证",
-                "image": "cert-iso",
-                "imageAlt": "质量管理体系证书"
+                "issuer": "衡准认证"
               },
               {
                 "name": "环境管理体系",
-                "issuer": "衡准认证",
-                "image": "cert-env",
-                "imageAlt": "环境管理体系证书"
+                "issuer": "衡准认证"
               },
               {
                 "name": "职业健康安全",
-                "issuer": "衡准认证",
-                "image": "cert-ohs",
-                "imageAlt": "职业健康安全证书"
+                "issuer": "衡准认证"
               },
               {
                 "name": "企业技术中心",
-                "issuer": "桐乡经济开发区",
-                "image": "cert-tech",
-                "imageAlt": "企业技术中心牌匾"
+                "issuer": "桐乡经济开发区"
               }
             ]
           }
@@ -930,7 +949,8 @@
                 "text": "支架总成，按套出货。",
                 "href": "products/index.html#catalog-kms2wja"
               }
-            ]
+            ],
+            "pageSize": "3"
           }
         }
       ]
@@ -956,7 +976,8 @@
           "data": {
             "title": "应用领域",
             "lead": "农机、配电、货架和厨电，写了工艺和月产能。",
-            "collection": "applications"
+            "collection": "applications",
+            "pageSize": "3"
           }
         }
       ]
@@ -982,7 +1003,8 @@
           "data": {
             "title": "新闻动态",
             "lead": "设备、接待和报价上的最近几条。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": "3"
           }
         }
       ]

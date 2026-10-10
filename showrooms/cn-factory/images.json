@@ -687,6 +687,46 @@
       "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
       "desc": "销售顾问微信二维码。页脚和联系页的销售位，由客户提供，不和公众号共用。",
       "tier": "nice"
+    },
+    {
+      "id": "bg-meter",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "brake",
+        "steel",
+        "closeup",
+        "cool"
+      ],
+      "prompt": "钢蓝灰车间的局部，折弯机钳口咬住一块钢板，冷白顶灯，金属保持本色，画面裁得很近。不要厂房全景，不要人脸，不要文字。",
+      "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
+      "desc": "企业实力深色底，折弯机钳口近景。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-news",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "gauge",
+        "caliper",
+        "steel",
+        "cool"
+      ],
+      "prompt": "磨砂玻璃质检台上两块光亮的小钢块，冷白顶灯，钢蓝灰，台面干净。不要卡尺，不要刻度，不要数字，不要字母，不要铭牌，不要霓虹灯，不要人脸。",
+      "grade": "冷静的钢蓝灰调。阴影偏钢蓝，高光不发黄，金属保持本色，不要暖橙滤镜，不要大字压在图上。",
+      "desc": "新闻板块深色底，质检台近景。",
+      "tier": "nice"
     }
   ]
 }

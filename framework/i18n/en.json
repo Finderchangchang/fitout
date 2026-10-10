@@ -26,5 +26,10 @@
   "slideSuffix": "",
   "placeholderNote": "Replace before launch",
   "placeholderQr": "QR code",
-  "placeholderImage": "Client image"
+  "placeholderImage": "Client image",
+  "navExpand": "Expand",
+  "pagerPrev": "Previous",
+  "pagerNext": "Next",
+  "pagerLabel": "Pages",
+  "qrButton": "QR code"
 }

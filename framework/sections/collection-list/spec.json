@@ -1,5 +1,5 @@
 {
-  "note": "任意集合的列表页。条目由拼装脚本从 collections 注入。",
+  "note": "任意集合的列表页。条目由拼装脚本从 collections 注入。卡片固定四要素：缩略图、标题、两行摘要、日期或标签。没图用主色块加标题首字。data.pageSize 默认 9，超过才静态分页；data.limit 只截首页导读，不参与分页。这两个数不要写进 fields。",
   "fields": {
     "title": { "type": "string", "required": true, "maxChars": 16 },
     "lead": { "type": "string", "required": false, "maxChars": 40 },

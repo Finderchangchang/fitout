@@ -1,5 +1,6 @@
 <section class="section" data-section="collection-list" data-family="mosaic" id="{{anchor}}">
-  <div class="container">
+  {{#each filters}}<span id="{{anchor}}-{{key}}" class="filter-hook"></span>{{/each}}
+<div class="container">
     <div class="section-head np-head">
       {{#if isH1}}<h1 class="section-title np-title">{{title}}</h1>{{/if}}
       {{#if isH2}}<h2 class="section-title np-title">{{title}}</h2>{{/if}}
@@ -7,12 +8,20 @@
     </div>
     <div class="job-grid" data-media-group="job">
       {{#each items}}
-      <article class="card job-card">
+      <article class="card job-card media-card">
         {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
         <h3><a href="{{href}}">{{name}}</a></h3>
-        <p>{{summary}}</p>
+        <p class="media-card-summary">{{summary}}</p>
+          <p class="media-card-meta">{{#if date}}<time datetime="{{dateIso}}">{{date}}</time>{{/if}}{{#if category}}<span class="media-card-tag">{{category}}</span>{{/if}}</p>
       </article>
       {{/each}}
     </div>
+      {{#if pager}}
+    <nav class="pager" data-pager aria-label="{{ui.pagerLabel}}">
+      {{#if prevHref}}<a class="pager-prev" href="{{prevHref}}">{{ui.pagerPrev}}</a>{{/if}}
+      {{#each pager}}<a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}>{{label}}</a>{{/each}}
+      {{#if nextHref}}<a class="pager-next" href="{{nextHref}}">{{ui.pagerNext}}</a>{{/if}}
+    </nav>
+    {{/if}}
   </div>
 </section>

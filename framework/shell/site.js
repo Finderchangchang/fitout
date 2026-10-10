@@ -27,9 +27,54 @@
     });
   }
 
+  document.querySelectorAll(".nav-item.has-sub").forEach(function (item) {
+    var timer = 0;
+    var button = item.querySelector(":scope > .nav-more");
+    function open() {
+      if (timer) window.clearTimeout(timer);
+      timer = 0;
+      item.classList.add("is-open");
+      if (button) button.setAttribute("aria-expanded", "true");
+    }
+    function close() {
+      item.classList.remove("is-open");
+      if (button) button.setAttribute("aria-expanded", "false");
+    }
+    function scheduleClose() {
+      if (timer) window.clearTimeout(timer);
+      timer = window.setTimeout(close, 280);
+    }
+    item.addEventListener("mouseenter", function () {
+      if (window.matchMedia("(min-width: 1024px)").matches) open();
+    });
+    item.addEventListener("mouseleave", function () {
+      if (window.matchMedia("(min-width: 1024px)").matches) scheduleClose();
+    });
+    item.addEventListener("focusin", function (event) {
+      if (button && (event.target === button || button.contains(event.target))) return;
+      open();
+    });
+    item.addEventListener("focusout", function (event) {
+      if (!item.contains(event.relatedTarget)) scheduleClose();
+    });
+    if (button) {
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (item.classList.contains("is-open")) close();
+        else open();
+      });
+    }
+  });
+
   document.addEventListener("keydown", function (event) {
     if (event.key !== "Escape") return;
     setOpen(false);
+    document.querySelectorAll(".nav-item.has-sub.is-open").forEach(function (item) {
+      item.classList.remove("is-open");
+      var button = item.querySelector(":scope > .nav-more");
+      if (button) button.setAttribute("aria-expanded", "false");
+    });
     document.querySelectorAll("details.wechat-pop[open]").forEach(function (el) {
       el.removeAttribute("open");
     });
@@ -159,11 +204,16 @@
     var interval = Number(root.getAttribute("data-interval") || "4000");
     if (!Number.isFinite(interval) || interval < 3000 || interval > 5000) interval = 4000;
 
+    var copies = Array.prototype.slice.call(root.querySelectorAll("[data-hero-copy]"));
+
     function show(i) {
       if (!slides.length) return;
       index = (i + slides.length) % slides.length;
       slides.forEach(function (slide, n) {
         slide.classList.toggle("is-current", n === index);
+      });
+      copies.forEach(function (copy, n) {
+        copy.classList.toggle("is-current", n === index);
       });
       dots.forEach(function (dot, n) {
         if (n === index) dot.setAttribute("aria-current", "true");

@@ -16,7 +16,9 @@
       "max": 9,
       "item": {
         "image": { "type": "image", "required": true, "maxChars": 200 },
-        "imageAlt": { "type": "string", "required": true, "maxChars": 30 }
+        "imageAlt": { "type": "string", "required": true, "maxChars": 30 },
+        "title": { "type": "string", "required": false, "maxChars": 80 },
+        "lead": { "type": "string", "required": false, "maxChars": 40 }
       }
     },
     "posters": {

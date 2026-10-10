@@ -23,7 +23,19 @@
       }
     ],
     "formUrl": "https://example.com/forms/chengwan-book",
-    "icp": "浙ICP备20883721号"
+    "icp": "浙ICP备20883721号",
+    "qrcodes": [
+      {
+        "image": "qr-wechat",
+        "label": "门诊微信",
+        "imageAlt": "澄湾口腔门诊微信"
+      },
+      {
+        "image": "qr-service",
+        "label": "客服微信",
+        "imageAlt": "澄湾口腔客服微信"
+      }
+    ]
   },
   "nav": [
     {
@@ -96,7 +108,8 @@
           {
             "text": "牙龈本来就肿的，洗完可能渗血。"
           }
-        ]
+        ],
+        "category": "常规治疗"
       },
       {
         "slug": "resin",
@@ -132,7 +145,8 @@
           {
             "text": "当天别用这边咬骨头。"
           }
-        ]
+        ],
+        "category": "常规治疗"
       },
       {
         "slug": "wisdom",
@@ -168,7 +182,8 @@
           {
             "text": "肿痛加重就回门诊看。"
           }
-        ]
+        ],
+        "category": "常规治疗"
       },
       {
         "slug": "fluoride",
@@ -204,7 +219,8 @@
           {
             "text": "做完当天按平时刷牙。"
           }
-        ]
+        ],
+        "category": "儿童口腔"
       },
       {
         "slug": "implant",
@@ -240,7 +256,8 @@
           {
             "text": "全身病要先告诉医生。"
           }
-        ]
+        ],
+        "category": "修复正畸"
       },
       {
         "slug": "ortho",
@@ -276,7 +293,8 @@
           {
             "text": "儿童矫正要监护人在场。"
           }
-        ]
+        ],
+        "category": "修复正畸"
       }
     ],
     "doctors": [
@@ -288,7 +306,8 @@
         "image": "doc-lin",
         "imageAlt": "林昭宁站在治疗台旁",
         "years": "16 年",
-        "focus": "种植修复"
+        "focus": "种植修复",
+        "category": "种植"
       },
       {
         "slug": "zhao-wanqing",
@@ -298,7 +317,8 @@
         "image": "doc-zhao",
         "imageAlt": "赵晚晴在儿童诊室",
         "years": "9 年",
-        "focus": "儿童牙科"
+        "focus": "儿童牙科",
+        "category": "儿童"
       },
       {
         "slug": "chen-yu",
@@ -308,7 +328,8 @@
         "image": "doc-chen",
         "imageAlt": "陈屿在诊室看牙周探针",
         "years": "12 年",
-        "focus": "牙周治疗"
+        "focus": "牙周治疗",
+        "category": "牙周"
       },
       {
         "slug": "wu-qi",
@@ -318,7 +339,8 @@
         "image": "doc-wu",
         "imageAlt": "吴祈站在洁牙机旁",
         "years": "7 年",
-        "focus": "洁牙和补牙"
+        "focus": "洁牙和补牙",
+        "category": "洁牙补牙"
       }
     ],
     "articles": [
@@ -329,7 +351,8 @@
         "date": "2026-03-18",
         "body": "第一次只看牙，让孩子坐上治疗椅。有蛀洞再约下一次，不在第一次硬做。带上医保卡和既往病历。",
         "image": "art-first",
-        "imageAlt": "儿童诊室门口的说明架"
+        "imageAlt": "儿童诊室门口的说明架",
+        "category": "儿童"
       },
       {
         "slug": "brush",
@@ -338,7 +361,8 @@
         "date": "2026-02-06",
         "body": "超声头对着结石，不打磨牙面。觉得酸，多半是牙根露出来了，要告诉医生。洗完按医生说的月份复查。",
         "image": "art-brush",
-        "imageAlt": "治疗台上的超声洁牙机"
+        "imageAlt": "治疗台上的超声洁牙机",
+        "category": "洁牙"
       },
       {
         "slug": "gum",
@@ -347,7 +371,8 @@
         "date": "2026-01-14",
         "body": "刷牙出血先挂牙周，不要自己不停刷到不出血。医生看完再说要不要洁牙。出血不止的当天留观。",
         "image": "art-gum",
-        "imageAlt": "托盘上的牙周探针"
+        "imageAlt": "托盘上的牙周探针",
+        "category": "牙周"
       },
       {
         "slug": "kids",
@@ -356,7 +381,8 @@
         "date": "2025-11-20",
         "body": "乳牙齐了就可以问医生要不要涂氟。做完半小时内不喝水、不吃东西。已经疼的牙先检查，不直接涂。",
         "image": "art-kids",
-        "imageAlt": "儿童诊室里的涂氟托盘"
+        "imageAlt": "儿童诊室里的涂氟托盘",
+        "category": "儿童"
       }
     ]
   },
@@ -383,19 +409,27 @@
             "slides": [
               {
                 "image": "hero-chair",
-                "imageAlt": "治疗台托盘和冷白灯"
+                "imageAlt": "治疗台托盘和冷白灯",
+                "title": "看牙不用排一整天",
+                "lead": "学院路社区门诊，洗牙和补牙当天可以约。"
               },
               {
                 "image": "hero-room",
-                "imageAlt": "靠窗诊室的治疗台一角"
+                "imageAlt": "靠窗诊室的治疗台一角",
+                "title": "洗牙补牙当天能约",
+                "lead": "洁牙180到280元，一次大约四十分钟。"
               },
               {
                 "image": "hero-lobby",
-                "imageAlt": "候诊椅和地面的反光"
+                "imageAlt": "候诊椅和地面的反光",
+                "title": "约好时间按点来",
+                "lead": "预约之后按约定时间看，不占一整天。"
               },
               {
                 "image": "hero-consult",
-                "imageAlt": "灯箱上的牙片，不见口腔"
+                "imageAlt": "灯箱上的牙片，不见口腔",
+                "title": "种牙先看牙槽骨",
+                "lead": "种植检查80元起，方案确认后再约。"
               }
             ]
           }
@@ -463,7 +497,8 @@
                 "label": "执业医师"
               }
             ]
-          }
+          },
+          "bg": "bg-numbers"
         },
         {
           "type": "services",
@@ -480,7 +515,8 @@
                 "price": "180-280 元",
                 "href": "services/ultrasonic.html",
                 "image": "svc-clean",
-                "imageAlt": "洁牙机放在治疗台旁边"
+                "imageAlt": "洁牙机放在治疗台旁边",
+                "tag": "常规治疗"
               },
               {
                 "name": "树脂补牙",
@@ -488,7 +524,8 @@
                 "price": "280-680 元",
                 "href": "services/resin.html",
                 "image": "svc-fill",
-                "imageAlt": "补牙用的树脂放在治疗台上"
+                "imageAlt": "补牙用的树脂放在治疗台上",
+                "tag": "常规治疗"
               },
               {
                 "name": "拔除智齿",
@@ -496,7 +533,8 @@
                 "price": "600 元起",
                 "href": "services/wisdom.html",
                 "image": "svc-pull",
-                "imageAlt": "拍片室里的全景机"
+                "imageAlt": "拍片室里的全景机",
+                "tag": "常规治疗"
               },
               {
                 "name": "儿童涂氟",
@@ -504,7 +542,8 @@
                 "price": "80-160 元",
                 "href": "services/fluoride.html",
                 "image": "svc-fluor",
-                "imageAlt": "儿童诊室里的治疗椅"
+                "imageAlt": "儿童诊室里的治疗椅",
+                "tag": "儿童口腔"
               }
             ]
           }
@@ -566,7 +605,8 @@
                 "imageAlt": "吴祈站在洁牙机旁"
               }
             ]
-          }
+          },
+          "bg": "bg-team"
         },
         {
           "type": "photo-band",
@@ -620,24 +660,27 @@
             "items": [
               {
                 "name": "孩子第一次看牙",
-                "text": "2026-03-18 · 三岁前先看一次。",
+                "text": "三岁前先看一次。",
                 "href": "articles/first-visit.html",
                 "image": "art-first",
-                "imageAlt": "儿童诊室门口的说明架"
+                "imageAlt": "儿童诊室门口的说明架",
+                "date": "2026-03-18"
               },
               {
                 "name": "洗牙会把牙洗薄吗",
-                "text": "2026-02-06 · 洗的是结石，不是牙面。",
+                "text": "洗的是结石，不是牙面。",
                 "href": "articles/brush.html",
                 "image": "art-brush",
-                "imageAlt": "治疗台上的超声洁牙机"
+                "imageAlt": "治疗台上的超声洁牙机",
+                "date": "2026-02-06"
               },
               {
                 "name": "牙龈出血先看哪",
-                "text": "2026-01-14 · 先看牙周，再决定洗牙。",
+                "text": "先看牙周，再决定洗牙。",
                 "href": "articles/gum.html",
                 "image": "art-gum",
-                "imageAlt": "托盘上的牙周探针"
+                "imageAlt": "托盘上的牙周探针",
+                "date": "2026-01-14"
               }
             ]
           }
@@ -651,7 +694,8 @@
             "title": "预约下午的号",
             "lead": "电话留下姓名和项目，或走在线预约。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -776,7 +820,8 @@
             "title": "先约一个号",
             "lead": "洗牙和补牙可以约当天下午。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -795,7 +840,8 @@
           "data": {
             "title": "诊疗项目",
             "lead": "六项都在做，价格是区间。",
-            "collection": "services"
+            "collection": "services",
+            "pageSize": "3"
           }
         },
         {
@@ -807,7 +853,8 @@
             "title": "看完再预约",
             "lead": "不确定做什么，先打电话问。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -826,7 +873,8 @@
           "data": {
             "title": "医生团队",
             "lead": "点名字看年限和擅长项目。",
-            "collection": "doctors"
+            "collection": "doctors",
+            "pageSize": "3"
           }
         },
         {
@@ -838,7 +886,8 @@
             "title": "想指定医生",
             "lead": "预约时说出医生姓名。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -931,7 +980,8 @@
             "title": "到店前先电话",
             "lead": "说一下项目，前台帮你留号。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -950,7 +1000,8 @@
           "data": {
             "title": "口腔科普",
             "lead": "四篇都是就诊前该知道的事。",
-            "collection": "articles"
+            "collection": "articles",
+            "pageSize": "3"
           }
         },
         {
@@ -962,7 +1013,8 @@
             "title": "看完去预约",
             "lead": "还有问题，打电话问前台。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },

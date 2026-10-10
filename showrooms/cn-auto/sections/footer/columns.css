@@ -68,6 +68,6 @@
 
 @media (min-width: 1024px) {
   .site-footer .footer-grid {
-    grid-template-columns: 1.3fr 0.8fr 1.2fr 1fr;
+    grid-template-columns: 1.3fr 0.9fr 1.4fr;
   }
 }

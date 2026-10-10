@@ -26,5 +26,10 @@
   "slideSuffix": "张",
   "placeholderNote": "上线前替换",
   "placeholderQr": "二维码",
-  "placeholderImage": "客户提供的图"
+  "placeholderImage": "客户提供的图",
+  "navExpand": "展开",
+  "pagerPrev": "上一页",
+  "pagerNext": "下一页",
+  "pagerLabel": "分页",
+  "qrButton": "二维码"
 }

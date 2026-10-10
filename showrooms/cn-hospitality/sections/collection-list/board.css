@@ -52,6 +52,12 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .place-grid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1024px) {
   .place-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

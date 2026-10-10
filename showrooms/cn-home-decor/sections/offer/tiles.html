@@ -11,8 +11,8 @@
       <article class="card offer-card">
         {{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
         <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
-        <p class="offer-price">{{price}}</p>
-        <p>{{text}}</p>
+        <p class="offer-price media-card-meta">{{price}}</p>
+        <p class="media-card-summary">{{text}}</p>
       </article>
       {{/each}}
     </div>

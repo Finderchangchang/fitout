@@ -632,6 +632,63 @@
       "grade": "浅米白底，码面清楚。",
       "desc": "采购对接二维码。",
       "tier": "nice"
+    },
+    {
+      "id": "bg-paddy",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "rice",
+        "paddy",
+        "water"
+      ],
+      "prompt": "晚稻稻穗和水面的局部，午后光，不要农田全景，不要人，不要文字，不要包装。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "深色板块底，稻穗。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-grain",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "grain",
+        "rice",
+        "drying"
+      ],
+      "prompt": "一堆摊开的稻谷粒填满画面，干土色，午后日光，颗粒清楚，不要袋子，不要人，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "深色板块底，稻谷。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-cold",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "cold",
+        "door",
+        "frost"
+      ],
+      "prompt": "冷库金属门边和一层薄霜，冷白灯光，不要铭牌，不要人，不要文字。",
+      "grade": "秋收暖调，稻穗金和干土色，午后光。不要青冷滤镜，不要暗调发红，不要把标题烤进图。",
+      "desc": "深色板块底，冷库门。",
+      "tier": "nice"
     }
   ]
 }

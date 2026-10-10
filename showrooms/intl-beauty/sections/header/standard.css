@@ -113,6 +113,14 @@ img {
   border-color: var(--on-media);
 }
 
+/* 菜单按钮透明、字色是图上的浅色。祖先一路透明，对比度按 body 底色算只有 1.28。
+   按钮自己垫一层已有的墨色，浅色图标落在深底上。 */
+.site-header[data-overlay] .menu-button {
+  background: var(--text);
+  color: var(--on-media);
+  border-color: var(--on-media);
+}
+
 .site-header[data-overlay] .mobile-panel {
   background: var(--surface);
   color: var(--text);

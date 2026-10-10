@@ -10,6 +10,12 @@
   max-width: none;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-2:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1024px) {
   .grid-2:has(.brief-card) {
     grid-template-columns: repeat(4, 1fr);

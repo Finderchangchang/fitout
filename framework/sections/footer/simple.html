@@ -9,6 +9,16 @@
       {{#if wechat}}<p>{{icon:chat:16}}{{wechat}}</p><p><button type="button" class="btn" data-copy="{{wechat}}">{{ui.copyWechat}}</button></p>{{/if}}
       <p><a href="{{amapUrl}}">{{icon:map-pin:16}}{{address}}</a></p>
       {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
+    {{#if qrcodes}}
+    <div class="footer-qrs" data-qrcodes>
+      {{#each qrcodes}}
+      <figure class="footer-qr">
+        <img src="{{src}}" alt="{{alt}}" width="{{width}}" height="{{height}}" decoding="async">
+        {{#if label}}<figcaption>{{label}}</figcaption>{{/if}}
+      </figure>
+      {{/each}}
+    </div>
+    {{/if}}
     <div class="footer-legal">
       <p>{{year}} {{name}}</p>
       {{#if icp}}<p><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer">{{icp}}</a></p>{{/if}}

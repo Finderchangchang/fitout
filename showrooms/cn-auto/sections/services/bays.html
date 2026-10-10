@@ -11,8 +11,8 @@
         <a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>
         <div class="bay-copy">
           <h3><a href="{{href}}">{{name}}</a></h3>
-          <p>{{text}}</p>
-          {{#if price}}<p class="bay-price">{{price}}</p>{{/if}}
+          <p class="media-card-summary">{{text}}</p>
+          {{#if price}}<p class="bay-price media-card-meta">{{price}}</p>{{/if}}
         </div>
       </article>
       {{/each}}

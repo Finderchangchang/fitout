@@ -13,6 +13,10 @@
   max-width: 40rem;
 }
 
+.hero-full .hero-copy.has-slide-copy > .hero-ui {
+  display: flex;
+}
+
 .hero-full .section-lead {
   color: var(--on-media);
 }

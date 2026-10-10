@@ -12,7 +12,24 @@
     {{/each}}
   </div>
   {{/if}}
-  <div class="container hero-copy" data-on-media>
+  <div class="container hero-copy{{#if hasSlideCopy}} has-slide-copy{{/if}}" data-on-media>
+    {{#if hasSlideCopy}}
+    <div class="hero-slide-copies" data-hero-copies>
+      {{#each slides}}
+      <div class="hero-slide-copy" data-hero-copy>
+        {{#if label}}<p class="kicker">{{label}}</p>{{/if}}
+        {{#if title}}{{#if isFirst}}{{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}{{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}{{else}}<p class="section-title">{{title}}</p>{{/if}}{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+        {{#if primaryLabel}}{{#if primaryHref}}
+        <div class="btn-row">
+          <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+          {{#if secondaryHref}}{{#if secondaryLabel}}<a class="btn" href="{{secondaryHref}}">{{secondaryLabel}}</a>{{/if}}{{/if}}
+        </div>
+        {{/if}}{{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{else}}
     {{#if label}}<p class="kicker">{{label}}</p>{{/if}}
     {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
     {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
@@ -21,6 +38,7 @@
       <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
       {{#if secondaryHref}}{{#if secondaryLabel}}<a class="btn" href="{{secondaryHref}}">{{secondaryLabel}}</a>{{/if}}{{/if}}
     </div>
+    {{/if}}
   </div>
   <div class="container hero-ui">
     <button type="button" class="carousel-btn" data-carousel-prev aria-label="上一张"><span class="prev-icon">{{icon:chevron-right:20}}</span><span class="sr">上一张</span></button>

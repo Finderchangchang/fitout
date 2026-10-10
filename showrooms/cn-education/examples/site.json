@@ -23,7 +23,19 @@
       }
     ],
     "formUrl": "https://example.com/forms/nanzhan-trial",
-    "icp": "浙ICP备20918463号"
+    "icp": "浙ICP备20918463号",
+    "qrcodes": [
+      {
+        "image": "qr-official",
+        "label": "学校公众号",
+        "imageAlt": "南栈技能学校公众号"
+      },
+      {
+        "image": "qr-advisor",
+        "label": "课程顾问",
+        "imageAlt": "课程顾问微信二维码"
+      }
+    ]
   },
   "nav": [
     {
@@ -86,7 +98,8 @@
             "label": "证书",
             "value": "车工中级工，可报考"
           }
-        ]
+        ],
+        "category": "机械加工"
       },
       {
         "slug": "elec-install",
@@ -112,7 +125,8 @@
             "label": "证书",
             "value": "低压电工证"
           }
-        ]
+        ],
+        "category": "电控自动化"
       },
       {
         "slug": "weld-arc",
@@ -138,7 +152,8 @@
             "label": "证书",
             "value": "焊工证，电弧焊"
           }
-        ]
+        ],
+        "category": "焊接"
       },
       {
         "slug": "cad-mech",
@@ -164,7 +179,8 @@
             "label": "证书",
             "value": "结业发制图员证明"
           }
-        ]
+        ],
+        "category": "机械加工"
       },
       {
         "slug": "plc-basic",
@@ -190,7 +206,8 @@
             "label": "证书",
             "value": "不单独发证"
           }
-        ]
+        ],
+        "category": "电控自动化"
       },
       {
         "slug": "lift-maint",
@@ -216,7 +233,8 @@
             "label": "证书",
             "value": "电梯维修上岗证"
           }
-        ]
+        ],
+        "category": "特种设备"
       }
     ],
     "teachers": [
@@ -334,7 +352,8 @@
             "label": "就业去向",
             "value": "拱墅机加工厂，车工"
           }
-        ]
+        ],
+        "category": "数控"
       },
       {
         "slug": "panel",
@@ -360,7 +379,8 @@
             "label": "就业去向",
             "value": "物业公司，维修电工"
           }
-        ]
+        ],
+        "category": "电工"
       },
       {
         "slug": "seam",
@@ -386,7 +406,8 @@
             "label": "就业去向",
             "value": "钢结构厂，焊工"
           }
-        ]
+        ],
+        "category": "焊接"
       },
       {
         "slug": "drawing",
@@ -412,7 +433,8 @@
             "label": "就业去向",
             "value": "机械厂，制图员"
           }
-        ]
+        ],
+        "category": "制图"
       },
       {
         "slug": "cabinet",
@@ -438,7 +460,8 @@
             "label": "就业去向",
             "value": "原车间电工"
           }
-        ]
+        ],
+        "category": "电工"
       }
     ],
     "news": [
@@ -449,7 +472,8 @@
         "date": "2026-03-02",
         "body": "2026年春季晚班从3月16日开课。数控车工、电工上岗、焊条电弧焊三个班同时收，晚班晚上六点到八点半。名额到教务室登记，也可以先预约试听。课表贴在门厅。",
         "image": "news-night",
-        "imageAlt": "二楼晚班教室亮着灯"
+        "imageAlt": "二楼晚班教室亮着灯",
+        "category": "招生"
       },
       {
         "slug": "exam-april",
@@ -458,7 +482,8 @@
         "date": "2026-04-02",
         "body": "低压电工四月考试还剩11个名额。已经在读电工班的学员优先。要考的人周三前到教务室登记，带身份证复印件。考证费不包含在学费里。",
         "image": "news-exam",
-        "imageAlt": "教务室桌上的考证名单"
+        "imageAlt": "教务室桌上的考证名单",
+        "category": "考证"
       },
       {
         "slug": "wire-lab",
@@ -467,7 +492,8 @@
         "date": "2026-06-18",
         "body": "实训室这周换了2.5平方的导线和一批线槽，旧线已经清走。六月电工晚班照常招生，上课时间是晚上六点到八点半。想报名的人可以先来试听。",
         "image": "news-wire",
-        "imageAlt": "电工室架子上的新导线"
+        "imageAlt": "电工室架子上的新导线",
+        "category": "实训"
       },
       {
         "slug": "open-shop",
@@ -476,7 +502,8 @@
         "date": "2026-09-05",
         "body": "9月12日上午九点到十一点，石桥路车间开放。只看不操作。想报名的人可以当场预约试听，也可以看看学员留在车间的工件。",
         "image": "news-meet",
-        "imageAlt": "周六上午打开的车间大门"
+        "imageAlt": "周六上午打开的车间大门",
+        "category": "开放日"
       }
     ]
   },
@@ -503,19 +530,27 @@
             "slides": [
               {
                 "image": "hero-shop",
-                "imageAlt": "车床卡盘和金属屑的局部"
+                "imageAlt": "车床卡盘和金属屑的局部",
+                "title": "学会技术，好找工作",
+                "lead": "六门课在开，白天和晚班都有。"
               },
               {
                 "image": "hero-class",
-                "imageAlt": "工位上的零件图和台灯光"
+                "imageAlt": "工位上的零件图和台灯光",
+                "title": "晚班也能上车床",
+                "lead": "数控车工96课时，学费7,860元，可考中级工。"
               },
               {
                 "image": "hero-gate",
-                "imageAlt": "楼梯栏杆和门厅的日光"
+                "imageAlt": "楼梯栏杆和门厅的日光",
+                "title": "周六上午来看车间",
+                "lead": "周六上午开放车间，可以当场预约试听。"
               },
               {
                 "image": "hero-bench",
-                "imageAlt": "钳工台上的卡尺和零件"
+                "imageAlt": "钳工台上的卡尺和零件",
+                "title": "看懂图纸再上车",
+                "lead": "机械制图48课时，图改完才送去车床。"
               }
             ]
           }
@@ -591,7 +626,8 @@
                 "price": "7,860 元",
                 "href": "courses/cnc-lathe.html",
                 "image": "course-cnc",
-                "imageAlt": "学员在数控车床前对刀"
+                "imageAlt": "学员在数控车床前对刀",
+                "tag": "机械加工"
               },
               {
                 "name": "电工上岗",
@@ -599,7 +635,8 @@
                 "price": "4,280 元",
                 "href": "courses/elec-install.html",
                 "image": "course-elec",
-                "imageAlt": "学员在配电箱前接线"
+                "imageAlt": "学员在配电箱前接线",
+                "tag": "电控自动化"
               },
               {
                 "name": "焊条电弧焊",
@@ -607,7 +644,8 @@
                 "price": "5,160 元",
                 "href": "courses/weld-arc.html",
                 "image": "course-weld",
-                "imageAlt": "学员戴面罩在焊接间操作"
+                "imageAlt": "学员戴面罩在焊接间操作",
+                "tag": "焊接"
               },
               {
                 "name": "机械制图",
@@ -615,7 +653,8 @@
                 "price": "3,240 元",
                 "href": "courses/cad-mech.html",
                 "image": "course-cad",
-                "imageAlt": "学员在电脑前改零件图"
+                "imageAlt": "学员在电脑前改零件图",
+                "tag": "机械加工"
               },
               {
                 "name": "PLC入门",
@@ -623,7 +662,8 @@
                 "price": "4,960 元",
                 "href": "courses/plc-basic.html",
                 "image": "course-plc",
-                "imageAlt": "学员在控制柜前看指示灯"
+                "imageAlt": "学员在控制柜前看指示灯",
+                "tag": "电控自动化"
               },
               {
                 "name": "电梯维保",
@@ -631,10 +671,12 @@
                 "price": "6,430 元",
                 "href": "courses/lift-maint.html",
                 "image": "course-lift",
-                "imageAlt": "学员在电梯机房看控制柜"
+                "imageAlt": "学员在电梯机房看控制柜",
+                "tag": "特种设备"
               }
             ]
-          }
+          },
+          "bg": "bg-courses"
         },
         {
           "type": "advantage",
@@ -761,7 +803,8 @@
                 "imageAlt": "电工室架子上的新导线"
               }
             ]
-          }
+          },
+          "bg": "bg-news"
         },
         {
           "type": "team",
@@ -816,7 +859,8 @@
             "title": "预约试听",
             "lead": "试听不收费。来之前打0571-86904326。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -922,7 +966,8 @@
             "title": "预约看校区",
             "lead": "周六上午可以约来看车间。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -949,7 +994,8 @@
                     "price": "7,860 元",
                     "href": "courses/cnc-lathe.html",
                     "image": "course-cnc",
-                    "imageAlt": "学员在数控车床前对刀"
+                    "imageAlt": "学员在数控车床前对刀",
+                    "text": "适合想上车床的在职人员，可考车工中级工。"
                   },
                   {
                     "name": "机械制图",
@@ -957,7 +1003,8 @@
                     "price": "3,240 元",
                     "href": "courses/cad-mech.html",
                     "image": "course-cad",
-                    "imageAlt": "学员在电脑前改零件图"
+                    "imageAlt": "学员在电脑前改零件图",
+                    "text": "适合要看图上车床的人，结业发制图员证明。"
                   }
                 ]
               },
@@ -970,7 +1017,8 @@
                     "price": "4,280 元",
                     "href": "courses/elec-install.html",
                     "image": "course-elec",
-                    "imageAlt": "学员在配电箱前接线"
+                    "imageAlt": "学员在配电箱前接线",
+                    "text": "适合要考低压电工证的人，考证按月另排。"
                   },
                   {
                     "name": "PLC入门",
@@ -978,7 +1026,8 @@
                     "price": "4,960 元",
                     "href": "courses/plc-basic.html",
                     "image": "course-plc",
-                    "imageAlt": "学员在控制柜前看指示灯"
+                    "imageAlt": "学员在控制柜前看指示灯",
+                    "text": "适合已经学过电工、想碰控制柜的人。"
                   }
                 ]
               },
@@ -991,7 +1040,8 @@
                     "price": "5,160 元",
                     "href": "courses/weld-arc.html",
                     "image": "course-weld",
-                    "imageAlt": "学员戴面罩在焊接间操作"
+                    "imageAlt": "学员戴面罩在焊接间操作",
+                    "text": "适合想学平焊的在职人员，可考焊工证。"
                   },
                   {
                     "name": "电梯维保",
@@ -999,7 +1049,8 @@
                     "price": "6,430 元",
                     "href": "courses/lift-maint.html",
                     "image": "course-lift",
-                    "imageAlt": "学员在电梯机房看控制柜"
+                    "imageAlt": "学员在电梯机房看控制柜",
+                    "text": "适合物业维修想考上岗的人，按月开班。"
                   }
                 ]
               }
@@ -1015,7 +1066,8 @@
             "title": "预约试听",
             "lead": "还没定报哪门，可以先来听一节。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -1032,7 +1084,8 @@
           "data": {
             "title": "师资力量",
             "lead": "车工、电工、制图、焊接，都是在岗老师。",
-            "collection": "teachers"
+            "collection": "teachers",
+            "pageSize": "3"
           }
         },
         {
@@ -1044,7 +1097,8 @@
             "title": "预约试听",
             "lead": "试听时可以对上带课的老师。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -1073,7 +1127,8 @@
             "title": "预约试听",
             "lead": "想来学同样的工种，先约一节试听。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -1090,7 +1145,8 @@
           "data": {
             "title": "招生资讯",
             "lead": "报名、考证和开班通知。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": "3"
           }
         },
         {
@@ -1102,7 +1158,8 @@
             "title": "预约试听",
             "lead": "看到想报的班，可以先来试听。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     },
@@ -1141,7 +1198,8 @@
           "data": {
             "title": "留言预约",
             "lead": "留下姓名和想学的工种，顾问会回电话。"
-          }
+          },
+          "bg": "bg-book"
         }
       ]
     }

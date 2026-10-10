@@ -12,5 +12,18 @@
     </div>
   </details>
   {{/if}}
+  {{#if qrcodes}}
+  <details class="wechat-pop qr-pop">
+    <summary class="btn">{{ui.qrButton}}</summary>
+    <div class="wechat-panel qr-pop-panel" data-qrcodes>
+      {{#each qrcodes}}
+      <figure class="footer-qr">
+        <img src="{{src}}" alt="{{alt}}" width="{{width}}" height="{{height}}">
+        {{#if label}}<figcaption>{{label}}</figcaption>{{/if}}
+      </figure>
+      {{/each}}
+    </div>
+  </details>
+  {{/if}}
   <a class="btn" href="{{amapUrl}}">{{icon:map-pin:20}}{{ui.directions}}</a>
 </div>

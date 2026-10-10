@@ -7,12 +7,20 @@
     </div>
     <div class="mosaic-grid" data-media-group="card">
       {{#each items}}
-      <article class="mosaic-card">
+      <article class="mosaic-card" data-cat="{{catKey}}">
         {{#if image}}<a href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
         <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
-        {{#if summary}}<p>{{summary}}</p>{{/if}}
+        {{#if summary}}<p class="media-card-summary">{{summary}}</p>{{/if}}
+        {{#if date}}<p class="media-card-meta"><time datetime="{{dateIso}}">{{date}}</time>{{#if category}}<span class="media-card-tag">{{category}}</span>{{/if}}</p>{{else}}{{#if category}}<p class="media-card-meta"><span class="media-card-tag">{{category}}</span></p>{{/if}}{{/if}}
       </article>
       {{/each}}
     </div>
+    {{#if pager}}
+    <nav class="pager" data-pager aria-label="{{ui.pagerLabel}}">
+      {{#if prevHref}}<a class="pager-prev" href="{{prevHref}}">{{ui.pagerPrev}}</a>{{/if}}
+      {{#each pager}}<a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}>{{label}}</a>{{/each}}
+      {{#if nextHref}}<a class="pager-next" href="{{nextHref}}">{{ui.pagerNext}}</a>{{/if}}
+    </nav>
+    {{/if}}
   </div>
 </section>

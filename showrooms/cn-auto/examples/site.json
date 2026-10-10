@@ -23,9 +23,25 @@
       }
     ],
     "formUrl": "https://example.com/luzhun-visit",
-    "icp": "浙ICP备20261006号-8"
+    "icp": "浙ICP备20261006号-8",
+    "qrcodes": [
+      {
+        "image": "qr-wechat",
+        "imageAlt": "门店微信二维码",
+        "label": "加门店微信"
+      },
+      {
+        "image": "qr-mp",
+        "imageAlt": "公众号二维码",
+        "label": "关注公众号"
+      }
+    ]
   },
   "nav": [
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
     {
       "label": "关于我们",
       "href": "about/index.html"
@@ -90,7 +106,8 @@
             "q": "可以只换机油吗",
             "a": "可以。机滤一起换的话，写在同一张单上。"
           }
-        ]
+        ],
+        "category": "保养"
       },
       {
         "slug": "repair",
@@ -124,7 +141,8 @@
             "q": "检测费能抵吗",
             "a": "当天在本店维修，检测费从工时里扣。不修就按检测收费。"
           }
-        ]
+        ],
+        "category": "维修"
       },
       {
         "slug": "paint",
@@ -152,7 +170,8 @@
             "label": "适合",
             "value": "刮蹭和小凹陷"
           }
-        ]
+        ],
+        "category": "钣喷"
       },
       {
         "slug": "detail",
@@ -180,7 +199,8 @@
             "label": "适合",
             "value": "日常精洗"
           }
-        ]
+        ],
+        "category": "美容"
       },
       {
         "slug": "film",
@@ -208,7 +228,8 @@
             "label": "适合",
             "value": "前挡或全车"
           }
-        ]
+        ],
+        "category": "贴膜"
       }
     ],
     "team": [
@@ -238,7 +259,8 @@
             "label": "门店",
             "value": "滨江店"
           }
-        ]
+        ],
+        "category": "机修保养"
       },
       {
         "slug": "chen",
@@ -266,7 +288,8 @@
             "label": "门店",
             "value": "滨江店"
           }
-        ]
+        ],
+        "category": "钣喷贴膜"
       },
       {
         "slug": "ma",
@@ -294,7 +317,8 @@
             "label": "门店",
             "value": "滨江店"
           }
-        ]
+        ],
+        "category": "机修保养"
       },
       {
         "slug": "lin",
@@ -322,7 +346,8 @@
             "label": "门店",
             "value": "滨江店"
           }
-        ]
+        ],
+        "category": "钣喷贴膜"
       }
     ],
     "stores": [
@@ -352,7 +377,8 @@
             "label": "停车",
             "value": "店门口可停"
           }
-        ]
+        ],
+        "category": "滨江"
       },
       {
         "slug": "gongshu",
@@ -380,7 +406,8 @@
             "label": "烤漆",
             "value": "请到滨江店"
           }
-        ]
+        ],
+        "category": "拱墅"
       },
       {
         "slug": "xiaoshan",
@@ -408,7 +435,8 @@
             "label": "维修",
             "value": "大项转滨江"
           }
-        ]
+        ],
+        "category": "萧山"
       }
     ],
     "news": [
@@ -420,7 +448,8 @@
         "bodyLabel": "怎么判断",
         "body": "机油盒上的月份和仪表里程一起看。先到的那个为准。店里换油时会写上下次时间。",
         "image": "news-oil",
-        "imageAlt": "工作台上的机油壶和机滤"
+        "imageAlt": "工作台上的机油壶和机滤",
+        "category": "保养"
       },
       {
         "slug": "scratch",
@@ -430,7 +459,8 @@
         "bodyLabel": "怎么判断",
         "body": "局部补漆大约两天。整喷时间更长，参考价另算。质保写在结算单上。",
         "image": "news-paint",
-        "imageAlt": "翼子板上的一小块刮蹭"
+        "imageAlt": "翼子板上的一小块刮蹭",
+        "category": "钣喷"
       },
       {
         "slug": "wash",
@@ -440,7 +470,8 @@
         "bodyLabel": "怎么判断",
         "body": "边缘的胶还在贴合。高压水容易把边吹开。三天后再用机器洗。",
         "image": "news-film",
-        "imageAlt": "刚贴好的前挡膜边缘"
+        "imageAlt": "刚贴好的前挡膜边缘",
+        "category": "贴膜"
       },
       {
         "slug": "brake",
@@ -450,7 +481,8 @@
         "bodyLabel": "怎么判断",
         "body": "厚度够就先不换。两边一起换的，参考价写在进厂单上，确认后再拆。",
         "image": "news-brake",
-        "imageAlt": "拆下来的刹车片放在工作台上"
+        "imageAlt": "拆下来的刹车片放在工作台上",
+        "category": "保养"
       }
     ]
   },
@@ -477,19 +509,33 @@
             "slides": [
               {
                 "image": "hero-bay",
-                "imageAlt": "举升机托着轿车底盘的局部"
+                "imageAlt": "举升机托着轿车底盘的局部",
+                "title": "先看工单，再动手",
+                "lead": "工时、配件参考价和质保，进厂前写在同一张单上。"
               },
               {
                 "image": "hero-order",
-                "imageAlt": "工装袖口和进厂单的桌面"
+                "imageAlt": "工装袖口和进厂单的桌面",
+                "title": "进厂先对工单",
+                "lead": "袖口边那张单，工时和配件写在一起。"
               },
               {
                 "image": "hero-paint",
-                "imageAlt": "烤漆房门口的车漆反光"
+                "imageAlt": "烤漆房门口的车漆反光",
+                "title": "漆干了再交车",
+                "lead": "烤漆房门口看反光，漆面质保十二个月。"
               },
               {
                 "image": "hero-film",
-                "imageAlt": "前挡玻璃上的贴膜刮板"
+                "imageAlt": "前挡玻璃上的贴膜刮板",
+                "title": "膜边贴平再交",
+                "lead": "前挡刮板走完，三天内别冲高压水。"
+              },
+              {
+                "image": "hero-brake",
+                "imageAlt": "举升机上的刹车盘局部",
+                "title": "先量刹车片厚度",
+                "lead": "轻点有金属声，先测厚度再决定换。"
               }
             ],
             "ticket": [
@@ -586,7 +632,8 @@
                 "text": "质保写在结算单，过期前可以回店。"
               }
             ]
-          }
+          },
+          "bg": "bg-lift"
         },
         {
           "type": "trust",
@@ -711,7 +758,8 @@
           "data": {
             "title": "养车知识",
             "lead": "机油、补漆、贴膜和刹车，店里写过的四篇。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": 3
           }
         },
         {
@@ -739,7 +787,8 @@
                 "href": "stores/xiaoshan.html"
               }
             ]
-          }
+          },
+          "bg": "bg-bench"
         },
         {
           "type": "contact",
@@ -858,7 +907,8 @@
             "title": "先约再进厂",
             "lead": "工位按天排，电话或预约表都可以。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-lift"
         }
       ]
     },
@@ -883,7 +933,8 @@
           "data": {
             "title": "五项服务",
             "lead": "每项都写时间和参考价，确认后才开工。",
-            "collection": "services"
+            "collection": "services",
+            "pageSize": 3
           }
         }
       ]
@@ -909,7 +960,8 @@
           "data": {
             "title": "技师团队 23 人，以下为部分骨干",
             "lead": "页面上是滨江店这四位。点名字看工龄和证书。",
-            "collection": "team"
+            "collection": "team",
+            "pageSize": 3
           }
         }
       ]
@@ -935,7 +987,8 @@
           "data": {
             "title": "三家门店",
             "lead": "点店名看地址、时间和导航。",
-            "collection": "stores"
+            "collection": "stores",
+            "pageSize": 2
           }
         }
       ]
@@ -961,7 +1014,8 @@
           "data": {
             "title": "四篇笔记",
             "lead": "机油、补漆、贴膜和刹车，按店里的做法写。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": 3
           }
         }
       ]

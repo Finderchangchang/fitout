@@ -10,8 +10,14 @@
   "url": "https://shilan.example/",
   "hero": {
     "buttons": [
-      { "label": "预约面谈", "href": "contact/index.html" },
-      { "label": "看服务", "href": "services/index.html" }
+      {
+        "label": "预约面谈",
+        "href": "contact/index.html"
+      },
+      {
+        "label": "看服务",
+        "href": "services/index.html"
+      }
     ]
   },
   "contact": {
@@ -19,18 +25,57 @@
     "email": "desk@shilan.example",
     "address": "杭州市西湖区玉皇山路18号石澜书房",
     "hours": [
-      { "day": "周一至周五", "time": "9:00-18:00" },
-      { "day": "周六", "time": "9:00-12:00" }
+      {
+        "day": "周一至周五",
+        "time": "9:00-18:00"
+      },
+      {
+        "day": "周六",
+        "time": "9:00-12:00"
+      }
+    ],
+    "qrcodes": [
+      {
+        "image": "qr-visit",
+        "label": "预约号",
+        "imageAlt": "预约号二维码，上线前替换"
+      },
+      {
+        "image": "qr-note",
+        "label": "来访说明",
+        "imageAlt": "来访说明二维码，上线前替换"
+      }
     ]
   },
   "nav": [
-    { "label": "首页", "href": "index.html" },
-    { "label": "关于", "href": "about/index.html" },
-    { "label": "服务", "href": "services/index.html" },
-    { "label": "团队", "href": "team/index.html" },
-    { "label": "案例", "href": "cases/index.html" },
-    { "label": "洞察", "href": "news/index.html" },
-    { "label": "面谈", "href": "contact/index.html" }
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "关于",
+      "href": "about/index.html"
+    },
+    {
+      "label": "服务",
+      "href": "services/index.html"
+    },
+    {
+      "label": "团队",
+      "href": "team/index.html"
+    },
+    {
+      "label": "案例",
+      "href": "cases/index.html"
+    },
+    {
+      "label": "洞察",
+      "href": "news/index.html"
+    },
+    {
+      "label": "面谈",
+      "href": "contact/index.html"
+    }
   ],
   "shell": {
     "header": "standard",
@@ -58,9 +103,36 @@
             "secondaryHref": "services/index.html",
             "interval": "4500",
             "slides": [
-              { "image": "hero-desk", "imageAlt": "书桌一角，灯和空白纸" },
-              { "image": "hero-stone", "imageAlt": "石墙和窄窗的侧光" },
-              { "image": "hero-table", "imageAlt": "空会议桌和两把椅子" }
+              {
+                "image": "hero-desk",
+                "imageAlt": "书桌一角，灯和空白纸",
+                "title": "坐下来，把事情谈清",
+                "lead": "组织、财务、合同和交接，先听完再动笔。"
+              },
+              {
+                "image": "hero-stone",
+                "imageAlt": "石墙和窄窗的侧光",
+                "title": "石墙这边，只谈正事",
+                "lead": "玉皇山路书房，只谈约好的事。"
+              },
+              {
+                "image": "hero-table",
+                "imageAlt": "空会议桌和两把椅子",
+                "title": "两把椅子，一次谈完",
+                "lead": "空会议桌，一次把范围谈完。"
+              },
+              {
+                "image": "hero-folio",
+                "imageAlt": "空白纸和一支铅笔",
+                "title": "材料摊开，再做决定",
+                "lead": "材料摊开，对过再决定做不做。"
+              },
+              {
+                "image": "hero-door",
+                "imageAlt": "石墙窄门的侧光",
+                "title": "约好时间，再进这门",
+                "lead": "先预约，再进书房。"
+              }
             ]
           }
         },
@@ -85,12 +157,25 @@
             "title": "几件能数的事",
             "lead": "开业年份、在所的人、正在接的事。",
             "items": [
-              { "value": "2014", "label": "杭州开业" },
-              { "value": "4", "label": "位署名的人" },
-              { "value": "6", "label": "块对外业务" },
-              { "value": "4", "label": "件公开项目" }
+              {
+                "value": "2014",
+                "label": "杭州开业"
+              },
+              {
+                "value": "4",
+                "label": "位署名的人"
+              },
+              {
+                "value": "6",
+                "label": "块对外业务"
+              },
+              {
+                "value": "4",
+                "label": "件公开项目"
+              }
             ]
-          }
+          },
+          "bg": "bg-paper"
         },
         {
           "type": "services",
@@ -106,42 +191,48 @@
                 "text": "把岗位、决策和例会写成能执行的安排。",
                 "image": "svc-organize",
                 "imageAlt": "职责表和铅笔",
-                "href": "services/organize.html"
+                "href": "services/organize.html",
+                "tag": "经营"
               },
               {
                 "name": "战略澄清",
                 "text": "先写清今年要做成哪几件事，再排资源。",
                 "image": "svc-strategy",
                 "imageAlt": "空白的年度清单",
-                "href": "services/strategy.html"
+                "href": "services/strategy.html",
+                "tag": "经营"
               },
               {
                 "name": "财务安排",
                 "text": "看报表、现金流和报价是不是同一件事。",
                 "image": "svc-finance",
                 "imageAlt": "摊开的报表",
-                "href": "services/finance.html"
+                "href": "services/finance.html",
+                "tag": "财务与合同"
               },
               {
                 "name": "合同与争议",
                 "text": "合同起草、审阅，以及已经发生的争议。",
                 "image": "svc-contract",
                 "imageAlt": "合同页的一角",
-                "href": "services/contracts.html"
+                "href": "services/contracts.html",
+                "tag": "财务与合同"
               },
               {
                 "name": "品牌与空间",
                 "text": "名称、物料和办公室动线一起看。",
                 "image": "svc-identity",
                 "imageAlt": "物料和平面草图",
-                "href": "services/identity.html"
+                "href": "services/identity.html",
+                "tag": "品牌与交接"
               },
               {
                 "name": "传承与交接",
                 "text": "股权、职责和客户关系怎么交下去。",
                 "image": "svc-handover",
                 "imageAlt": "交接清单的一页",
-                "href": "services/handover.html"
+                "href": "services/handover.html",
+                "tag": "品牌与交接"
               }
             ]
           }
@@ -243,7 +334,8 @@
                 "href": "cases/route.html"
               }
             ]
-          }
+          },
+          "bg": "bg-folder"
         },
         {
           "type": "why",
@@ -254,10 +346,22 @@
             "title": "面谈怎么走",
             "lead": "每次只推进纸上有的那一页。",
             "items": [
-              { "name": "先听完", "text": "把事情的来龙去脉听完，先不给方案。" },
-              { "name": "写进范围", "text": "哪些做、哪些不做，写成一页交给对方。" },
-              { "name": "按页推进", "text": "每次见面只对这一页上的事项。" },
-              { "name": "交回原件", "text": "做完把原件退回，并留下一份纪要。" }
+              {
+                "name": "先听完",
+                "text": "把事情的来龙去脉听完，先不给方案。"
+              },
+              {
+                "name": "写进范围",
+                "text": "哪些做、哪些不做，写成一页交给对方。"
+              },
+              {
+                "name": "按页推进",
+                "text": "每次见面只对这一页上的事项。"
+              },
+              {
+                "name": "交回原件",
+                "text": "做完把原件退回，并留下一份纪要。"
+              }
             ]
           }
         },
@@ -281,12 +385,25 @@
             "title": "见面之前",
             "lead": "三条约法，见面之前先说清。",
             "items": [
-              { "q": "第一次面谈收费吗", "a": "第一次面谈不收费，限90分钟。" },
-              { "q": "对面也来找你们呢", "a": "同一件事已有委托方就不接对面。" },
-              { "q": "原件什么时候退", "a": "项目结束10个工作日内退还原件。" },
-              { "q": "周日能见面吗", "a": "周日不接待，请改到工作日。" }
+              {
+                "q": "第一次面谈收费吗",
+                "a": "第一次面谈不收费，限90分钟。"
+              },
+              {
+                "q": "对面也来找你们呢",
+                "a": "同一件事已有委托方就不接对面。"
+              },
+              {
+                "q": "原件什么时候退",
+                "a": "项目结束10个工作日内退还原件。"
+              },
+              {
+                "q": "周日能见面吗",
+                "a": "周日不接待，请改到工作日。"
+              }
             ]
-          }
+          },
+          "bg": "bg-chairs"
         },
         {
           "type": "collection-list",
@@ -308,7 +425,8 @@
             "title": "约一次面谈",
             "lead": "带上材料，或者空手来也可以。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-step"
         }
       ]
     },
@@ -342,12 +460,25 @@
             "title": "开业以来",
             "lead": "周衡开业，后来三个人陆续进所。",
             "items": [
-              { "year": "2014年3月", "text": "玉皇山路书房开业，周衡就在。" },
-              { "year": "2017年", "text": "陈屿进所，负责财务。" },
-              { "year": "2019年", "text": "梁朔进所，负责合同与争议。" },
-              { "year": "2023年", "text": "沈澄进所，负责品牌与空间。" }
+              {
+                "year": "2014年3月",
+                "text": "玉皇山路书房开业，周衡就在。"
+              },
+              {
+                "year": "2017年",
+                "text": "陈屿进所，负责财务。"
+              },
+              {
+                "year": "2019年",
+                "text": "梁朔进所，负责合同与争议。"
+              },
+              {
+                "year": "2023年",
+                "text": "沈澄进所，负责品牌与空间。"
+              }
             ]
-          }
+          },
+          "bg": "bg-steps"
         },
         {
           "type": "why",
@@ -360,10 +491,22 @@
             "image": "method-note",
             "imageAlt": "摊开的笔记和铅笔",
             "items": [
-              { "name": "先听完", "text": "把事情的来龙去脉听完，先不给方案。" },
-              { "name": "写进范围", "text": "哪些做、哪些不做，写成一页交给对方。" },
-              { "name": "按页推进", "text": "每次见面只对这一页上的事项。" },
-              { "name": "交回原件", "text": "做完把原件退回，并留下一份纪要。" }
+              {
+                "name": "先听完",
+                "text": "把事情的来龙去脉听完，先不给方案。"
+              },
+              {
+                "name": "写进范围",
+                "text": "哪些做、哪些不做，写成一页交给对方。"
+              },
+              {
+                "name": "按页推进",
+                "text": "每次见面只对这一页上的事项。"
+              },
+              {
+                "name": "交回原件",
+                "text": "做完把原件退回，并留下一份纪要。"
+              }
             ]
           }
         },
@@ -376,12 +519,25 @@
             "title": "几件能数的事",
             "lead": "开业年份、在所的人、正在接的事。",
             "items": [
-              { "value": "2014", "label": "杭州开业" },
-              { "value": "4", "label": "位署名的人" },
-              { "value": "6", "label": "块对外业务" },
-              { "value": "4", "label": "件公开项目" }
+              {
+                "value": "2014",
+                "label": "杭州开业"
+              },
+              {
+                "value": "4",
+                "label": "位署名的人"
+              },
+              {
+                "value": "6",
+                "label": "块对外业务"
+              },
+              {
+                "value": "4",
+                "label": "件公开项目"
+              }
             ]
-          }
+          },
+          "bg": "bg-paper"
         },
         {
           "type": "cta-band",
@@ -392,7 +548,8 @@
             "title": "约一次面谈",
             "lead": "带上材料，或者空手来也可以。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-step"
         },
         {
           "type": "contact",
@@ -421,7 +578,8 @@
           "data": {
             "title": "正在接的委托",
             "lead": "点进一项，看做法和问题。",
-            "collection": "services"
+            "collection": "services",
+            "pageSize": 4
           }
         },
         {
@@ -433,7 +591,8 @@
             "title": "约一次面谈",
             "lead": "带上材料，或者空手来也可以。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-step"
         },
         {
           "type": "contact",
@@ -462,7 +621,8 @@
           "data": {
             "title": "谁在谈",
             "lead": "从业年限写在名字下面。",
-            "collection": "team"
+            "collection": "team",
+            "pageSize": 2
           }
         },
         {
@@ -474,7 +634,8 @@
             "title": "约一次面谈",
             "lead": "带上材料，或者空手来也可以。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-step"
         },
         {
           "type": "contact",
@@ -503,7 +664,8 @@
           "data": {
             "title": "可以公开的几件",
             "lead": "背景、做法和结果分开写。",
-            "collection": "cases"
+            "collection": "cases",
+            "pageSize": 2
           }
         },
         {
@@ -515,7 +677,8 @@
             "title": "约一次面谈",
             "lead": "带上材料，或者空手来也可以。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-step"
         },
         {
           "type": "contact",
@@ -544,7 +707,8 @@
           "data": {
             "title": "写给委托人的",
             "lead": "三篇，日期写在题下。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": 2
           }
         },
         {
@@ -556,7 +720,8 @@
             "title": "约一次面谈",
             "lead": "带上材料，或者空手来也可以。",
             "primaryHref": "contact/index.html"
-          }
+          },
+          "bg": "bg-step"
         },
         {
           "type": "contact",
@@ -601,14 +766,30 @@
         "image": "svc-organize",
         "imageAlt": "职责表和铅笔",
         "steps": [
-          { "name": "听现有决策", "text": "先听谁拍板、谁只是列席。" },
-          { "name": "收成一页", "text": "岗位和例会收成一页，不另做手册。" },
-          { "name": "对过一次", "text": "拿着这一页跟当事人对一次。" }
+          {
+            "name": "听现有决策",
+            "text": "先听谁拍板、谁只是列席。"
+          },
+          {
+            "name": "收成一页",
+            "text": "岗位和例会收成一页，不另做手册。"
+          },
+          {
+            "name": "对过一次",
+            "text": "拿着这一页跟当事人对一次。"
+          }
         ],
         "faqs": [
-          { "q": "没有职责表能谈吗", "a": "可以。没有表，就从现在谁在拍板说起。" },
-          { "q": "例会一定要改吗", "a": "只有决定对不上时才改。" }
-        ]
+          {
+            "q": "没有职责表能谈吗",
+            "a": "可以。没有表，就从现在谁在拍板说起。"
+          },
+          {
+            "q": "例会一定要改吗",
+            "a": "只有决定对不上时才改。"
+          }
+        ],
+        "category": "经营"
       },
       {
         "slug": "strategy",
@@ -619,14 +800,30 @@
         "image": "svc-strategy",
         "imageAlt": "空白的年度清单",
         "steps": [
-          { "name": "问今年", "text": "先问今年必须做成的事。" },
-          { "name": "划掉", "text": "做不到的从名单上划掉。" },
-          { "name": "排资源", "text": "剩下的事再排人和时间。" }
+          {
+            "name": "问今年",
+            "text": "先问今年必须做成的事。"
+          },
+          {
+            "name": "划掉",
+            "text": "做不到的从名单上划掉。"
+          },
+          {
+            "name": "排资源",
+            "text": "剩下的事再排人和时间。"
+          }
         ],
         "faqs": [
-          { "q": "今年的事没写过呢", "a": "就在见面时写。写不下的先划掉。" },
-          { "q": "资源不够怎么办", "a": "先划掉做不到的，再排剩下的。" }
-        ]
+          {
+            "q": "今年的事没写过呢",
+            "a": "就在见面时写。写不下的先划掉。"
+          },
+          {
+            "q": "资源不够怎么办",
+            "a": "先划掉做不到的，再排剩下的。"
+          }
+        ],
+        "category": "经营"
       },
       {
         "slug": "finance",
@@ -637,14 +834,30 @@
         "image": "svc-finance",
         "imageAlt": "摊开的报表",
         "steps": [
-          { "name": "对报表", "text": "先看报表和现金流是不是同一件事。" },
-          { "name": "看报价", "text": "报价里的范围要能在账上找到。" },
-          { "name": "留下差异", "text": "对不上的地方写成一页差异。" }
+          {
+            "name": "对报表",
+            "text": "先看报表和现金流是不是同一件事。"
+          },
+          {
+            "name": "看报价",
+            "text": "报价里的范围要能在账上找到。"
+          },
+          {
+            "name": "留下差异",
+            "text": "对不上的地方写成一页差异。"
+          }
         ],
         "faqs": [
-          { "q": "报表很乱也能谈吗", "a": "可以。先看现金流和报价是不是同一件事。" },
-          { "q": "要不要带报价单", "a": "有就带上。没有就从最近一笔说起。" }
-        ]
+          {
+            "q": "报表很乱也能谈吗",
+            "a": "可以。先看现金流和报价是不是同一件事。"
+          },
+          {
+            "q": "要不要带报价单",
+            "a": "有就带上。没有就从最近一笔说起。"
+          }
+        ],
+        "category": "财务与合同"
       },
       {
         "slug": "contracts",
@@ -655,14 +868,30 @@
         "image": "svc-contract",
         "imageAlt": "合同页的一角",
         "steps": [
-          { "name": "读完", "text": "先把现有合同读完再谈改法。" },
-          { "name": "标例外", "text": "例外和默认义务分开写。" },
-          { "name": "争议另页", "text": "已经发生的争议不塞进起草那一页。" }
+          {
+            "name": "读完",
+            "text": "先把现有合同读完再谈改法。"
+          },
+          {
+            "name": "标例外",
+            "text": "例外和默认义务分开写。"
+          },
+          {
+            "name": "争议另页",
+            "text": "已经发生的争议不塞进起草那一页。"
+          }
         ],
         "faqs": [
-          { "q": "合同已经签了呢", "a": "先读完，再决定改哪几条。" },
-          { "q": "争议能一起谈吗", "a": "可以。已经发生的争议另写一页。" }
-        ]
+          {
+            "q": "合同已经签了呢",
+            "a": "先读完，再决定改哪几条。"
+          },
+          {
+            "q": "争议能一起谈吗",
+            "a": "可以。已经发生的争议另写一页。"
+          }
+        ],
+        "category": "财务与合同"
       },
       {
         "slug": "identity",
@@ -673,14 +902,30 @@
         "image": "svc-identity",
         "imageAlt": "物料和平面草图",
         "steps": [
-          { "name": "看现用", "text": "先看现在的名称和物料。" },
-          { "name": "走一圈", "text": "在办公室走一圈，看动线。" },
-          { "name": "一起改", "text": "名称和空间不分成两个项目。" }
+          {
+            "name": "看现用",
+            "text": "先看现在的名称和物料。"
+          },
+          {
+            "name": "走一圈",
+            "text": "在办公室走一圈，看动线。"
+          },
+          {
+            "name": "一起改",
+            "text": "名称和空间不分成两个项目。"
+          }
         ],
         "faqs": [
-          { "q": "只改名称可以吗", "a": "可以。空间如果一起动，就不要拆成两个项目。" },
-          { "q": "要出效果图吗", "a": "不画效果图。只看现有物料和走法。" }
-        ]
+          {
+            "q": "只改名称可以吗",
+            "a": "可以。空间如果一起动，就不要拆成两个项目。"
+          },
+          {
+            "q": "要出效果图吗",
+            "a": "不画效果图。只看现有物料和走法。"
+          }
+        ],
+        "category": "品牌与交接"
       },
       {
         "slug": "handover",
@@ -691,14 +936,30 @@
         "image": "svc-handover",
         "imageAlt": "交接清单的一页",
         "steps": [
-          { "name": "问交给谁", "text": "先问职责和客户要交给谁。" },
-          { "name": "列在交接", "text": "股权、职责、客户关系分行列出。" },
-          { "name": "当面交", "text": "交接在见面时做，不只发文件。" }
+          {
+            "name": "问交给谁",
+            "text": "先问职责和客户要交给谁。"
+          },
+          {
+            "name": "列在交接",
+            "text": "股权、职责、客户关系分行列出。"
+          },
+          {
+            "name": "当面交",
+            "text": "交接在见面时做，不只发文件。"
+          }
         ],
         "faqs": [
-          { "q": "人还没定呢", "a": "先问职责和客户要交给谁。没定就先列出来。" },
-          { "q": "股权必须这次办吗", "a": "只有清单上有的才办。没有就不加。" }
-        ]
+          {
+            "q": "人还没定呢",
+            "a": "先问职责和客户要交给谁。没定就先列出来。"
+          },
+          {
+            "q": "股权必须这次办吗",
+            "a": "只有清单上有的才办。没有就不加。"
+          }
+        ],
+        "category": "品牌与交接"
       }
     ],
     "team": [
@@ -712,7 +973,8 @@
         "bodyLabel": "简介",
         "body": "开业时就在这间书房。组织和治理的事，由他听完再写。",
         "image": "team-zhou",
-        "imageAlt": "周衡在书架前"
+        "imageAlt": "周衡在书架前",
+        "category": "组织"
       },
       {
         "slug": "chen",
@@ -724,7 +986,8 @@
         "bodyLabel": "简介",
         "body": "看报表、现金流和报价能不能对上。",
         "image": "team-chen",
-        "imageAlt": "陈屿在账册桌边"
+        "imageAlt": "陈屿在账册桌边",
+        "category": "财务"
       },
       {
         "slug": "liang",
@@ -736,7 +999,8 @@
         "bodyLabel": "简介",
         "body": "审合同，也跟已经发生的争议。",
         "image": "team-liang",
-        "imageAlt": "梁朔在会议桌侧"
+        "imageAlt": "梁朔在会议桌侧",
+        "category": "合同"
       },
       {
         "slug": "shen",
@@ -748,7 +1012,8 @@
         "bodyLabel": "简介",
         "body": "看名称、物料和办公室怎么一起用。",
         "image": "team-shen",
-        "imageAlt": "沈澄在窗边"
+        "imageAlt": "沈澄在窗边",
+        "category": "品牌"
       }
     ],
     "cases": [
@@ -762,7 +1027,8 @@
         "imageAlt": "车间职责表",
         "background": "一家食品厂的班组长名单和职责对不上，车间也说不清谁管哪一段。",
         "approach": "把职责表按在岗的人重写，再跟车间对过一遍。",
-        "result": "班组长从11人收到7人"
+        "result": "班组长从11人收到7人",
+        "category": "组织"
       },
       {
         "slug": "quotes",
@@ -774,7 +1040,8 @@
         "imageAlt": "两页报价单",
         "background": "报价单有六页，第一次会议上对不上范围。",
         "approach": "收成两页，范围和例外写在同一页。",
-        "result": "第一次会议对上范围"
+        "result": "第一次会议对上范围",
+        "category": "财务"
       },
       {
         "slug": "equity",
@@ -786,7 +1053,8 @@
         "imageAlt": "股权材料封面",
         "background": "家族公司要办股权变更，材料清单是对方给的。",
         "approach": "按清单备齐，并陪同送件。",
-        "result": "2024年11月办完变更"
+        "result": "2024年11月办完变更",
+        "category": "交接"
       },
       {
         "slug": "route",
@@ -798,7 +1066,8 @@
         "imageAlt": "前台后的档案柜",
         "background": "分所的档案室和前台不在一条路上，取文件要穿过工位。",
         "approach": "重排接待、工位和档案室的走法。",
-        "result": "档案室挪到前台后面"
+        "result": "档案室挪到前台后面",
+        "category": "空间"
       }
     ],
     "news": [

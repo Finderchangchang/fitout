@@ -1,11 +1,27 @@
-<section class="hero hero-full" data-section="hero" data-family="stage" data-fullbleed id="{{anchor}}" data-carousel data-interval="{{interval}}">
+<section class="hero hero-full" data-section="hero" data-family="stage" data-fullbleed id="{{anchor}}"{{#if carouselOn}} data-carousel data-interval="{{interval}}"{{/if}}>
   <div class="hero-slides" data-media-group="hero">
     {{#each slides}}
     <img class="hero-slide" data-slide src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}">
     {{/each}}
   </div>
   <div class="hero-scrim"></div>
-  <div class="container hero-copy" data-on-media>
+  <div class="container hero-copy{{#if hasSlideCopy}} has-slide-copy{{/if}}" data-on-media>
+    {{#if hasSlideCopy}}
+    <div class="hero-slide-copies" data-hero-copies>
+      {{#each slides}}
+      <div class="hero-slide-copy" data-hero-copy>
+        {{#if title}}{{#if isFirst}}{{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}{{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}{{else}}<p class="section-title">{{title}}</p>{{/if}}{{/if}}
+        {{#if lead}}<p class="section-lead">{{lead}}</p>{{/if}}
+        {{#if primaryLabel}}{{#if primaryHref}}
+        <div class="btn-row">
+          <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
+          {{#if secondaryHref}}{{#if secondaryLabel}}<a class="btn" href="{{secondaryHref}}">{{secondaryLabel}}</a>{{/if}}{{/if}}
+        </div>
+        {{/if}}{{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{else}}
     {{#if label}}<p class="meta">{{label}}</p>{{/if}}
     {{#if isH1}}<h1 class="section-title">{{title}}</h1>{{/if}}
     {{#if isH2}}<h2 class="section-title">{{title}}</h2>{{/if}}
@@ -14,7 +30,9 @@
       <a class="btn btn-primary" href="{{primaryHref}}">{{primaryLabel}}</a>
       {{#if secondaryHref}}{{#if secondaryLabel}}<a class="btn" href="{{secondaryHref}}">{{secondaryLabel}}</a>{{/if}}{{/if}}
     </div>
+    {{/if}}
   </div>
+  {{#if carouselOn}}
   <div class="container hero-ui">
     <button type="button" class="carousel-btn" data-carousel-prev aria-label="上一张"><span class="prev-icon">{{icon:chevron-right:20}}</span><span class="sr">上一张</span></button>
     <div class="hero-dots">
@@ -24,4 +42,5 @@
     </div>
     <button type="button" class="carousel-btn" data-carousel-next aria-label="下一张">{{icon:chevron-right:20}}<span class="sr">下一张</span></button>
   </div>
+  {{/if}}
 </section>

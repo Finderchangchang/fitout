@@ -1,16 +1,16 @@
 /**
  * node scripts/check-visual.mjs <站点目录> [--shots <目录>] [--layout-only] [--page <相对路径>]... [--widths 375,1440] [--sample] [--hard] [--first-slide]
  * 需要浏览器的检查：图上文字对比度、按钮对比度、悬浮条压页脚、横向溢出、同组图片比例、点击区、顶栏高度，
- * 以及版式检查 L1 到 L22（本文件末尾的 layoutProbe：面包屑基线、页脚空白、图标间距、占位图字号、
+ * 以及版式检查 L1 到 L23（本文件末尾的 layoutProbe：面包屑基线、页脚空白、图标间距、占位图字号、
  * 小于 12px 的字、内部键名、文字被裁、按钮列宽、栏高失衡、同行顶边、左缘对齐、手机页脚间距、导航间距、
  * 首屏文案间距、短文字折行、网格末行孤儿卡、半宽空白板块、页头文字被省略号截断、
- * 竖版人像被横幅裁掉脸、页头和正文同一张图、中文末行只剩一个字；
+ * 竖版人像被横幅裁掉脸、页头和正文同一张图、中文末行只剩一个字、当前页导航高亮；
  * L18 统计数字上下不齐要截图量像素，单独在 measureNumerals 里量）。
  * 每个页面、每个宽度都量（L18 只在最宽的一档量）。同一条问题跨页合并成一行，写出现了几处和第一个例子。
  * L1 面包屑基线、L10 同行顶边、L11 左缘、L18 数字基线只警告，不让退出码失败。判定阈值不变。
  * --layout-only 只跑版式检查（反例测试用）；--page 只看指定页；--widths 指定宽度，默认 375,768,1024,1440。
  * --sample 每种页面类型抽一页；--first-slide 轮播只查第 1 张；--hard 只收录硬伤
- * （横向溢出、文字被裁 L7、图上文字对比度、按钮对比度、首屏立即可见、悬浮条压页脚、孤儿卡 L16）。
+ * （横向溢出、文字被裁 L7、图上文字对比度、按钮对比度、首屏立即可见、悬浮条压页脚、孤儿卡 L16、当前页导航高亮 L23）。
  * Playwright 先看环境变量 PLAYWRIGHT_PATH（指到入口文件或包目录都行），没设置就按 Node 正常的模块解析找。找不到就打印「跳过」并退出 0。
  *
  * 确定状态（不改框架）：
@@ -44,7 +44,7 @@ let widths = [375, 768, 1024, 1440];
 const onlyPages = [];
 const dirs = [];
 const WARN_LAYOUT = new Set(["L1", "L10", "L11", "L18"]);
-const HARD_LAYOUT = new Set(["L7", "L16"]);
+const HARD_LAYOUT = new Set(["L7", "L16", "L23"]);
 for (let i = 0; i < args.length; i += 1) {
   if (args[i] === "--shots") {
     shots = path.resolve(args[i + 1] || "");
@@ -1252,11 +1252,11 @@ function walk(dir) {
 }
 
 /**
- * 版式探针（L1 到 L17、L19 到 L22；L18 要截图，见 measureNumerals）。整个函数会被序列化后送进浏览器，所以：
+ * 版式探针（L1 到 L17、L19 到 L23；L18 要截图，见 measureNumerals）。整个函数会被序列化后送进浏览器，所以：
  * 只能用浏览器里有的东西，不能引用本文件外的变量。
  *
  * 返回 [{ rule, sig, detail }]。同一页同一条 sig 只报一次，跨页的合并由调用方做。
- * 规则编号 L1 到 L22，意思写在每一段的注释里。L1 到 L15 的阈值来自对 10 套国内风样板间 226 页的校准，
+ * 规则编号 L1 到 L23，意思写在每一段的注释里。L1 到 L15 的阈值来自对 10 套国内风样板间 226 页的校准，
  * L16 到 L19 用 14 套样板间（国内 10、国际 4）校准。L20 到 L22 按最终验收的三类问题加的。
  *
  * opts: { slotIds: string[]  样板间 images.json 里的图片位 id，可见文字里不许出现 }
@@ -1909,6 +1909,33 @@ function layoutProbe(opts) {
     const tail = units.slice(lo).map((u) => u.ch).join("");
     // 末行带数字的是价格、数量（「899 元/㎡」），不是句子末尾剩一个字。
     if (hanCount(tail) === 1 && !/\d/.test(tail)) add("L22", "中文末行只剩一个字", `${where(el)} 末行「${clean(tail).slice(0, 8)}」：${tx(el)}`);
+  }
+
+  // L23 桌面导航：当前页（含它所属的一级）必须带高亮，并且和旁边一项的样式不一样。
+  if (W >= 1024) {
+    const nav = [...document.querySelectorAll(".site-header .nav-list")].find(visible);
+    if (nav) {
+      const top = [...nav.children].flatMap((item) => {
+        const link = item.querySelector(":scope > a, :scope > .nav-item > a");
+        return link && visible(link) && !link.closest(".nav-sub") ? [link] : [];
+      });
+      if (top.length >= 1) {
+        const cur = top.find((link) => link.classList.contains("is-current") || link.getAttribute("aria-current") === "page" || link.closest(".is-current"));
+        if (!cur) add("L23", "当前页导航项没有高亮", where(nav));
+        else if (top.length >= 2) {
+          const other = top.find((link) => link !== cur);
+          const a = cs(cur);
+          const b = cs(other);
+          const differ = a.borderBottomColor !== b.borderBottomColor
+            || a.borderBottomWidth !== b.borderBottomWidth
+            || a.color !== b.color
+            || a.backgroundColor !== b.backgroundColor
+            || a.boxShadow !== b.boxShadow
+            || a.fontWeight !== b.fontWeight;
+          if (!differ) add("L23", "当前页导航项没有高亮样式", `${where(cur)}：${tx(cur)}`);
+        }
+      }
+    }
   }
 
   return hits;

@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 /**
- * node scripts/fitout.mjs --profile <档案.md> --out <目录> [--showroom <id>|auto] [--photos <老板照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]
- * 一条命令：挑样板间、填内容、配图、拼装、机检，并写交付说明。
- * 密钥只读环境变量。不发布，不改样板间。
+ * node scripts/fitout.mjs --profile <档案.md> --out <站点目录> [--fill agent|deepseek] [--showroom <id>|auto] [--photos <照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]
+ * 一条命令：挑样板间、校验或填写、配图、拼装、机检，并写交付说明。
+ * 默认 --fill agent：不调用 DeepSeek，校验站点目录里已有的 site.json。
+ * --fill deepseek 才读 DEEPSEEK_API_KEY。生图没有 MINIMAX_API_KEY 就跳过并提示。
+ * 不发布，不改样板间。
  */
 import fs from "fs";
+import os from "os";
 import path from "path";
 import { spawnSync } from "child_process";
 import { fileURLToPath } from "url";
 import { readJson } from "./lib/json.mjs";
-import { fillProfile } from "./fill.mjs";
+import { fillProfile, lintAgentSite } from "./fill.mjs";
 import {
   aspectRatioFor,
   buildPrompt,
@@ -27,7 +30,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
 const GEN_CAP = 8;
 const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
-const USAGE = "用法：node scripts/fitout.mjs --profile <档案.md> --out <目录> [--showroom <id>|auto] [--photos <老板照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]";
+const USAGE = "用法：node scripts/fitout.mjs --profile <档案.md> --out <站点目录> [--fill agent|deepseek] [--showroom <id>|auto] [--photos <照片目录>] [--gen-images] [--base-url <网址>] [--model deepseek-chat]\n默认 --fill agent，不需要密钥。--fill deepseek 才读 DEEPSEEK_API_KEY。";
 
 const KEYWORDS = {
   "cn-dining": ["奶茶", "茶饮", "餐饮", "烘焙", "咖啡", "甜品", "面包", "饭店", "餐厅", "火锅", "小吃"],
@@ -100,7 +103,7 @@ async function main() {
   console.log(`用第 1 套：${picked.id} ${picked.name}`);
 
   const outDir = path.resolve(opts.out);
-  fs.mkdirSync(outDir, { recursive: true });
+  settleSiteDir(outDir, profilePath);
   const notes = [];
   const say = (line) => {
     notes.push(line);
@@ -108,25 +111,30 @@ async function main() {
   };
 
   mark("填内容");
-  say("填内容：正在按档案写 site.json。");
-  let filled;
-  try {
-    filled = await fillProfile({
-      profilePath,
-      showroomId: picked.id,
-      outPath: path.join(outDir, "site.json"),
-      model: opts.model,
-      maxRetries: 2,
-    });
-  } catch (error) {
-    stepFail(step, `${error.message}\n请确认 DEEPSEEK_API_KEY 在环境变量里。不要把密钥贴到聊天或写进档案。`, error.code || 1);
+  if (opts.fill === "agent") {
+    validateAgentSite(outDir, profilePath, picked.id);
+    say("填内容：已校验 site.json。没有调用外部模型。");
+  } else {
+    say("填内容：正在按档案写 site.json。");
+    let filled;
+    try {
+      filled = await fillProfile({
+        profilePath,
+        showroomId: picked.id,
+        outPath: path.join(outDir, "site.json"),
+        model: opts.model,
+        maxRetries: 2,
+      });
+    } catch (error) {
+      stepFail(step, `${error.message}\n请确认 DEEPSEEK_API_KEY 在环境变量里。不要把密钥贴到聊天或写进档案。`, error.code || 1);
+    }
+    usage.fillCalls = filled.calls || 0;
+    usage.deepseek += filled.calls || 0;
+    if (!filled.ok) {
+      stepFail(step, `${filled.message}\n按这几条改档案，或把可选内容删短，然后重跑。不要手写电话、人数、价格去凑。`, 1);
+    }
+    say(filled.message);
   }
-  usage.fillCalls = filled.calls || 0;
-  usage.deepseek += filled.calls || 0;
-  if (!filled.ok) {
-    stepFail(step, `${filled.message}\n按这几条改档案，或把可选内容删短，然后重跑。不要手写电话、人数、价格去凑。`, 1);
-  }
-  say(filled.message);
 
   mark("配图");
   const roomDoc = readJson(path.join(root, "showrooms", picked.id, "showroom.json"));
@@ -135,9 +143,10 @@ async function main() {
     outDir,
     showroomId: picked.id,
     doc: imageDoc,
-    photos: opts.photos,
+    photos: photoSource(outDir, opts.photos),
     genImages: opts.genImages,
     model: opts.model,
+    fill: opts.fill,
     say,
   });
 
@@ -314,8 +323,12 @@ async function chooseShowroom(opts, parsed, catalog) {
   const first = ranked[0];
   const second = ranked[1] || first;
   const confident = first.score >= 8 && first.score - second.score >= 4;
-  if (confident) {
-    return { ...catalog.find((item) => item.id === first.id), ranked: top, why: first.reasons.join("；"), modelNote: "" };
+  if (confident || opts.fill === "agent") {
+    const note = !confident && opts.fill === "agent"
+      ? "前两名接近。这一步不调用外部模型，先用规则第 1 名。要换就重跑并写上 --showroom。"
+      : "";
+    if (note) console.log(note);
+    return { ...catalog.find((item) => item.id === first.id), ranked: top, why: first.reasons.join("；"), modelNote: note };
   }
   console.log("前两名接近，请模型从这两套里选。");
   const pickedId = await askModelPick(parsed, [first, second], opts.model);
@@ -350,10 +363,167 @@ async function askModelPick(parsed, pair, model) {
   return id;
 }
 
-async function prepareImages({ outDir, showroomId, doc, photos, genImages, model, say }) {
-  const work = path.join(outDir, "images-work");
-  fs.rmSync(work, { recursive: true, force: true });
-  fs.mkdirSync(work, { recursive: true });
+function settleSiteDir(outDir, profilePath) {
+  fs.mkdirSync(path.join(outDir, "photos"), { recursive: true });
+  fs.mkdirSync(path.join(outDir, "img"), { recursive: true });
+  const dest = path.join(outDir, "企业档案.md");
+  const src = path.resolve(profilePath);
+  if (src !== path.resolve(dest)) fs.copyFileSync(src, dest);
+}
+
+function photoSource(outDir, photosOpt) {
+  const dest = path.join(outDir, "photos");
+  if (!photosOpt) return listImages(dest).length ? dest : "";
+  const src = path.resolve(photosOpt);
+  if (!fs.existsSync(src) || !fs.statSync(src).isDirectory()) {
+    stepFail("配图", `找不到照片目录：${src}\n--photos 要指到放图片的文件夹。也可以把照片放进站点目录的 photos。`, 2);
+  }
+  if (src !== path.resolve(dest)) {
+    for (const file of listImages(src)) fs.copyFileSync(file, path.join(dest, path.basename(file)));
+  }
+  return listImages(dest).length ? dest : "";
+}
+
+function siteForLint(site) {
+  if (!site || typeof site !== "object" || Array.isArray(site)) return site;
+  const copy = JSON.parse(JSON.stringify(site));
+  const nav = copy.nav;
+  if (nav && !Array.isArray(nav) && typeof nav === "object") {
+    copy.nav = Array.isArray(nav.items) ? nav.items : [];
+  }
+  return copy;
+}
+
+function checkPageSize(value, push) {
+  const n = Number(value);
+  if (!Number.isInteger(n) || n < 1 || n > 60) push("列表 pageSize 要是 1 到 60 的整数");
+}
+
+function lintFrameworkFields(site) {
+  const errors = [];
+  const push = (message) => {
+    if (!errors.includes(message)) errors.push(message);
+  };
+  if (!site || typeof site !== "object" || Array.isArray(site)) return errors;
+
+  const nav = site.nav;
+  let items = [];
+  if (Array.isArray(nav)) items = nav;
+  else if (nav && typeof nav === "object") {
+    if (nav.autoChildren != null && nav.autoChildren !== true && nav.autoChildren !== false) {
+      push("nav.autoChildren 只能是 true 或 false");
+    }
+    if (!Array.isArray(nav.items)) push("nav.items 必须是列表");
+    else items = nav.items;
+  }
+  for (const item of items) {
+    if (!item || typeof item !== "object") continue;
+    if (item.autoChildren != null && item.autoChildren !== false && typeof item.autoChildren !== "string") {
+      push("导航项的 autoChildren 只能是 false，或一个集合 id");
+    }
+    if (item.children == null) continue;
+    if (!Array.isArray(item.children)) {
+      push("nav.children 必须是列表");
+      continue;
+    }
+    for (const child of item.children) {
+      if (!child || !child.label || !child.href) push("nav 的二级每一项都要有 label 和 href");
+    }
+  }
+
+  const topHero = site.hero;
+  if (topHero && typeof topHero === "object" && (topHero.mode != null || topHero.slides != null)) {
+    push("hero.mode 和 hero.slides 写在首页 hero 板块的 data 里。顶层 hero 只放 buttons");
+  }
+
+  for (const page of site.pages || []) {
+    for (const section of page?.sections || []) {
+      if (!section || typeof section !== "object") continue;
+      if (section.type === "hero") {
+        const data = section.data || {};
+        if (data.mode != null && data.mode !== "carousel" && data.mode !== "single") {
+          push("hero.mode 只能是 carousel 或 single");
+        }
+        if (data.slides != null) {
+          if (!Array.isArray(data.slides)) push("hero.slides 必须是列表");
+          else {
+            if (data.slides.length > 9) push("hero.slides 最多 9 张");
+            data.slides.forEach((slide, index) => {
+              if (!slide || !slide.image || !slide.imageAlt) push(`hero.slides 第 ${index + 1} 张要有 image 和 imageAlt`);
+            });
+          }
+        }
+      }
+      const bg = section.bg != null ? section.bg : section.data?.bg;
+      if (bg != null) {
+        if (typeof bg !== "string" || !bg.trim()) push("板块 bg 要是图片位 id");
+        if (section.type === "hero" || section.type === "page-banner") push("首屏和内页横幅不要写 bg");
+        else if (section.tone !== "dark" && section.tone !== "image") push("板块 bg 只在 tone 为 dark 或 image 时写");
+      }
+      if (section.data?.pageSize != null) checkPageSize(section.data.pageSize, push);
+    }
+  }
+  if (site.pageSize != null) checkPageSize(site.pageSize, push);
+
+  const codes = site.contact?.qrcodes;
+  if (codes != null) {
+    if (!Array.isArray(codes)) push("contact.qrcodes 必须是列表");
+    else {
+      codes.forEach((item, index) => {
+        if (!item || !item.image || !item.label) push(`contact.qrcodes 第 ${index + 1} 项要有 image 和 label`);
+      });
+    }
+  }
+  return errors;
+}
+
+function validateAgentSite(outDir, profilePath, showroomId) {
+  const siteFile = path.join(outDir, "site.json");
+  if (!fs.existsSync(siteFile)) {
+    stepFail(
+      "填内容",
+      `还没有 site.json：${siteFile}\n请按 docs/SITE_JSON.md，对照样板间 ${showroomId} 的 examples/site.json，把这一家的内容写到这个文件，再跑同一条命令。\n事实只来自企业档案。这一步不调用外部模型。`,
+      1,
+    );
+  }
+  let site;
+  try {
+    site = JSON.parse(fs.readFileSync(siteFile, "utf8").replace(/^\uFEFF/, ""));
+  } catch (error) {
+    stepFail("填内容", `site.json 不是合法的 JSON：${error.message}\n请改 ${siteFile} 后再跑同一条命令。`, 1);
+  }
+  let errors;
+  try {
+    errors = lintAgentSite({ profilePath, showroomId, site: siteForLint(site) });
+  } catch (error) {
+    stepFail("填内容", error.message, error.code || 1);
+  }
+  for (const item of lintFrameworkFields(site)) {
+    if (!errors.includes(item)) errors.push(item);
+  }
+  if (!errors.length) return;
+  const lines = errors.slice(0, 40).map((item, index) => `${index + 1}. ${item}`);
+  const more = errors.length > 40 ? `\n……还有 ${errors.length - 40} 条，先改上面这些。` : "";
+  stepFail(
+    "填内容",
+    `校验没过（${errors.length} 条）。请只改这些错，不要新增档案里没有的事实：\n${lines.join("\n")}${more}`,
+    1,
+  );
+}
+
+function publishDir(from, dest) {
+  fs.rmSync(dest, { recursive: true, force: true });
+  fs.mkdirSync(dest, { recursive: true });
+  if (!fs.existsSync(from)) return;
+  for (const name of fs.readdirSync(from)) {
+    const file = path.join(from, name);
+    if (fs.statSync(file).isFile()) fs.copyFileSync(file, path.join(dest, name));
+  }
+}
+
+async function prepareImages({ outDir, showroomId, doc, photos, genImages, model, fill, say }) {
+  const work = fs.mkdtempSync(path.join(os.tmpdir(), "fitout-img-"));
+  const published = path.join(outDir, "img");
   const slots = (doc.slots || []).filter((slot) => slot && slot.id);
   const items = [];
   const taken = new Set();
@@ -370,7 +540,7 @@ async function prepareImages({ outDir, showroomId, doc, photos, genImages, model
       taken.add(pair.slot.id);
       items.push(itemOf(pair.slot, "photo", path.basename(saved), "文件名对上图片位"));
     }
-    if (leftover.length) {
+    if (leftover.length && fill === "deepseek") {
       const matched = await matchByModel(leftover, slots.filter((slot) => !taken.has(slot.id)), model);
       for (const pair of matched) {
         const saved = copyOnto(pair.file, work, pair.slot.id);
@@ -380,6 +550,8 @@ async function prepareImages({ outDir, showroomId, doc, photos, genImages, model
       const used = new Set(matched.map((pair) => pair.file));
       const idle = leftover.filter((file) => !used.has(file));
       if (idle.length) say(`这几张没对上图片位，没有用：${idle.map((file) => path.basename(file)).join("、")}`);
+    } else if (leftover.length) {
+      say(`这几张文件名没对上图片位，没有用：${leftover.map((file) => path.basename(file)).join("、")}。把文件名改成图片位 id，例如 hero-tea.jpg，再跑。`);
     }
   }
 
@@ -394,14 +566,15 @@ async function prepareImages({ outDir, showroomId, doc, photos, genImages, model
     else {
       const key = String(process.env.MINIMAX_API_KEY || "").trim();
       if (!key) {
-        stepFail("配图", "要生成图片，但没有环境变量 MINIMAX_API_KEY。请在系统环境里设置，不要把密钥贴到聊天里。不需要生成图就去掉 --gen-images。", 2);
-      }
-      for (const slot of batch) {
-        if (slot.mustBeReal) stepFail("配图", `必须实拍的位不能生图：${slot.id}`, 1);
-        const saved = await generateSlot(doc, slot, work, showroomId, key);
-        taken.add(slot.id);
-        generated.push(slot.id);
-        items.push(itemOf(slot, "ai", path.basename(saved), "MiniMax image-01"));
+        say("跳过生图：没有配置生图密钥。站点照常拼。要氛围图时再设 MINIMAX_API_KEY，然后加上 --gen-images。必须实拍的位子不会用生成图。");
+      } else {
+        for (const slot of batch) {
+          if (slot.mustBeReal) stepFail("配图", `必须实拍的位不能生图：${slot.id}`, 1);
+          const saved = await generateSlot(doc, slot, work, showroomId, key);
+          taken.add(slot.id);
+          generated.push(slot.id);
+          items.push(itemOf(slot, "ai", path.basename(saved), "MiniMax image-01"));
+        }
       }
     }
   }
@@ -412,31 +585,33 @@ async function prepareImages({ outDir, showroomId, doc, photos, genImages, model
     items.push(itemOf(slot, "missing", "", slot.mustBeReal ? "必须实拍，不能用生成图" : "还没有"));
   }
 
-  let dir = work;
+  let dir = published;
   let graded = false;
   let gradeNote = "";
   const hasFile = slots.some((slot) => findSlotFile(work, slot.id));
   if (!hasFile) {
     gradeNote = "没有图片文件，跳过调色。";
-    dir = work;
+    publishDir(work, published);
   } else if (!findPlaywright()) {
     gradeNote = "跳过统一调色：没有找到 Playwright。图按原文件进站。装好之后可以再跑 scripts/images/grade.mjs。";
+    publishDir(work, published);
   } else {
-    const gradedDir = path.join(outDir, "images");
-    fs.rmSync(gradedDir, { recursive: true, force: true });
-    const gradedRun = run("images/grade.mjs", ["--showroom", showroomId, "--in", work, "--out", gradedDir], 600000);
+    fs.rmSync(published, { recursive: true, force: true });
+    const gradedRun = run("images/grade.mjs", ["--showroom", showroomId, "--in", work, "--out", published], 600000);
     if (gradedRun.status !== 0) {
+      publishDir(work, published);
+      fs.rmSync(work, { recursive: true, force: true });
       stepFail("配图", `统一调色没通过。\n${tail(gradedRun.text || gradedRun.error)}\n看表格里没通过的那几张。修图之后重跑。`, 1);
     }
     graded = true;
     gradeNote = "已统一调色。";
-    dir = gradedDir;
     for (const item of items) {
       if (!item.file) continue;
       const jpg = `${item.id}.jpg`;
-      if (fs.existsSync(path.join(gradedDir, jpg))) item.file = jpg;
+      if (fs.existsSync(path.join(published, jpg))) item.file = jpg;
     }
   }
+  fs.rmSync(work, { recursive: true, force: true });
   say(`配图：实拍 ${items.filter((item) => item.source === "photo").length}，生成 ${generated.length}，${gradeNote}`);
 
   const banned = items.filter((item) => item.source === "ai" && item.mustBeReal);
@@ -458,7 +633,7 @@ async function generateSlot(doc, slot, dir, showroomId, key) {
     const ran = run("images/gen-ai.mjs", ["--showroom", showroomId, "--out", dir, "--only", slot.id], 240000);
     usage.minimax += 1;
     if (ran.status !== 0) {
-      stepFail("配图", `生成 ${slot.id} 失败。\n${tail(ran.text || ran.error)}\n看 MINIMAX_API_KEY 和网络。已生成的图留在 images-work，修好后重跑。`, 1);
+      stepFail("配图", `生成 ${slot.id} 失败。\n${tail(ran.text || ran.error)}\n看网络后重跑。已经生成的图留在站点目录的 img。`, 1);
     }
     const file = findSlotFile(dir, slot.id);
     if (!file) stepFail("配图", `生成 ${slot.id} 之后没有找到文件。`, 1);
@@ -687,6 +862,16 @@ function writeDelivery({ outDir, picked, roomDoc, images, checkInfo, visual, sit
     });
   }
   lines.push("");
+  lines.push("## 这个目录");
+  lines.push("");
+  lines.push("改内容就改 `企业档案.md` 或 `site.json`，再跑同一条命令。");
+  lines.push("");
+  lines.push("- `企业档案.md`：事实来源");
+  lines.push("- `site.json`：站点内容");
+  lines.push("- `photos/`：你给的照片");
+  lines.push("- `img/`：生成或处理后的图");
+  lines.push("- `site/`：生成的网站，打开 `site/index.html`");
+  lines.push("");
   lines.push(`## 页面`);
   lines.push("");
   lines.push(`开着：${pages.on.join("、") || "无"}`);
@@ -877,8 +1062,8 @@ function run(script, args, timeout) {
 }
 
 function parseArgs(argv) {
-  const opts = { profile: "", out: "", showroom: "auto", photos: "", genImages: false, baseUrl: "", model: "deepseek-chat" };
-  const needs = new Set(["--profile", "--out", "--showroom", "--photos", "--base-url", "--model"]);
+  const opts = { profile: "", out: "", showroom: "auto", photos: "", genImages: false, baseUrl: "", model: "deepseek-chat", fill: "agent" };
+  const needs = new Set(["--profile", "--out", "--showroom", "--photos", "--base-url", "--model", "--fill"]);
   for (let i = 0; i < argv.length; i += 1) {
     const token = argv[i];
     if (token === "--gen-images") {
@@ -901,8 +1086,14 @@ function parseArgs(argv) {
     else if (token === "--photos") opts.photos = value;
     else if (token === "--base-url") opts.baseUrl = value;
     else if (token === "--model") opts.model = value;
+    else if (token === "--fill") opts.fill = value;
   }
   if (!opts.profile || !opts.out) {
+    console.error(USAGE);
+    process.exit(2);
+  }
+  if (opts.fill !== "agent" && opts.fill !== "deepseek") {
+    console.error("`--fill` 只能是 agent 或 deepseek。");
     console.error(USAGE);
     process.exit(2);
   }

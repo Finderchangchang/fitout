@@ -106,7 +106,7 @@
       "source": "stock",
       "mustBeReal": false,
       "fallback": "omit",
-      "tier": "must",
+      "tier": "nice",
       "keywords": [
         "classroom",
         "desks",
@@ -135,7 +135,7 @@
       "source": "stock",
       "mustBeReal": false,
       "fallback": "omit",
-      "tier": "must",
+      "tier": "nice",
       "keywords": [
         "corridor",
         "door",
@@ -842,6 +842,278 @@
         "saturate": 1
       },
       "desc": "顾问微信二维码，客户提供。"
+    },
+    {
+      "id": "hero-note",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "notebook",
+        "lamp",
+        "night"
+      ],
+      "prompt": "夜课台灯下合上的空白笔记本和一支笔，纸上没有字，阴影里一点孔雀蓝，不要人脸，不要文字，不要商标，不要蓝紫。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "第四张轮播，合上的空白笔记本。",
+      "tier": "must"
+    },
+    {
+      "id": "hero-night",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "desks",
+        "night",
+        "window"
+      ],
+      "prompt": "教室窗边的夜色和一排空课桌，没有人，黑板上没有字，阴影里一点孔雀蓝，不要文字，不要商标，不要蓝紫。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "第五张轮播，空课桌和夜窗。",
+      "tier": "must"
+    },
+    {
+      "id": "bg-lamp",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "lamp",
+        "desk"
+      ],
+      "prompt": "空课桌上的一盏台灯和一张网格纸，纸上没有字，夜课灯光，不要人，不要文字，不要商标。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "深色数字条底图，台灯和空桌。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-board",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "board",
+        "chalk"
+      ],
+      "prompt": "一块深色木板和一支粉笔，板面没有字，夜课灯光，不要人，不要文字，不要商标。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "深色课程板底图，没有字的木板。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-desks",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "desks",
+        "chairs"
+      ],
+      "prompt": "空教室里只有课桌和椅子，灯光只有孔雀蓝和冷白，不要红光，不要人，黑板上没有字，不要商标。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "深色讲师块底图，空椅子。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-print",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "print",
+        "paper"
+      ],
+      "prompt": "桌上只铺着一张完全空白的纸，镜头里只有纸和桌面，没有手，没有人，没有脸，夜课冷色灯光，不要文字，不要商标。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "深色作业块底图，印样背面。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-studio",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "studio",
+        "lamp",
+        "wall"
+      ],
+      "prompt": "工作室一角的灯和一面空墙，墙上没有招牌，夜课灯光，不要人，不要文字，不要商标。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "深色工作室块底图，灯和空墙。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-hall",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "corridor",
+        "night"
+      ],
+      "prompt": "空无一人的课室走廊尽头一盏夜灯，墙上没有招牌，走廊里没有人，没有人脸，不要文字，不要商标。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "深色行动条底图，夜灯走廊。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-sheet",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paper",
+        "blank"
+      ],
+      "prompt": "折叠的空白讲义，纸上没有字，夜课灯光，不要人，不要文字，不要商标。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "深色问答块底图，空白讲义。",
+      "tier": "nice"
+    },
+    {
+      "id": "qr-board",
+      "page": "contact",
+      "block": "contact",
+      "ratio": "1:1",
+      "px": "1200x1200",
+      "source": "client",
+      "mustBeReal": true,
+      "fallback": "omit",
+      "keywords": [
+        "qr"
+      ],
+      "prompt": "客户提供的二维码。没有文件时不要生成假码。",
+      "grade": "课程封面：浅暖象牙无缝背景棚拍，柔光，单主体。课堂、讲师、学员和工作室：夜课实拍，略压暗，阴影里一点孔雀蓝。不要蓝紫，不要红。画面里不写字。",
+      "gradeParams": {
+        "brightness": 0.96,
+        "contrast": 1.08,
+        "saturate": 0.92,
+        "tint": {
+          "color": "#087A91",
+          "opacity": 0.08
+        }
+      },
+      "desc": "客户提供的开课通知二维码。",
+      "tier": "nice"
     }
   ]
 }

@@ -11,8 +11,8 @@
         <p class="ledger-year">{{year}}</p>
         <div>
           {{#if href}}<h3 class="item-name"><a href="{{href}}">{{name}}</a></h3>{{else}}<h3 class="item-name">{{name}}</h3>{{/if}}
-          <p>{{text}}</p>
-          {{#if result}}<p class="mark">{{result}}</p>{{/if}}
+          <p class="media-card-summary">{{text}}</p>
+          {{#if result}}<p class="mark media-card-meta">{{result}}</p>{{/if}}
         </div>
         {{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{/if}}
       </article>

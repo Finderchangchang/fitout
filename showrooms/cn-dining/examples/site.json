@@ -20,7 +20,19 @@
     ],
     "formUrl": "https://example.com/lucha-join",
     "icp": "浙ICP备17028394号",
-    "police": "浙公网安备33010602017028号"
+    "police": "浙公网安备33010602017028号",
+    "qrcodes": [
+      {
+        "image": "qr-wechat",
+        "label": "关注公众号",
+        "imageAlt": "麓茶记公众号二维码"
+      },
+      {
+        "image": "qr-mini",
+        "label": "点单小程序",
+        "imageAlt": "麓茶记点单小程序码"
+      }
+    ]
   },
   "nav": [
     {
@@ -218,7 +230,8 @@
             "label": "城市",
             "value": "杭州"
           }
-        ]
+        ],
+        "category": "杭州"
       },
       {
         "slug": "hubin",
@@ -239,7 +252,8 @@
             "label": "城市",
             "value": "杭州"
           }
-        ]
+        ],
+        "category": "杭州"
       },
       {
         "slug": "pingjiang",
@@ -260,7 +274,8 @@
             "label": "城市",
             "value": "苏州"
           }
-        ]
+        ],
+        "category": "苏州"
       },
       {
         "slug": "yuehu",
@@ -281,7 +296,8 @@
             "label": "城市",
             "value": "宁波"
           }
-        ]
+        ],
+        "category": "宁波"
       }
     ],
     "news": [
@@ -292,7 +308,8 @@
         "summary": "龙井路店更换使用六年的烤炉，司康出炉时间调整为上午十点。",
         "body": "旧烤炉使用六年后温差开始不稳。新炉到店后空烤两天，2026年3月12日正式出货。",
         "image": "news-oven",
-        "imageAlt": "龙井路店新安装的烤炉"
+        "imageAlt": "龙井路店新安装的烤炉",
+        "category": "门店"
       },
       {
         "slug": "hill",
@@ -301,7 +318,8 @@
         "summary": "清明前往建德茶山，完成今年焙火乌龙原料采购。",
         "body": "今年的叶片比去年略厚。火候仍停在栗香。试饮安排在龙井路店。",
         "image": "news-hill",
-        "imageAlt": "建德茶山春季茶园"
+        "imageAlt": "建德茶山春季茶园",
+        "category": "原料"
       },
       {
         "slug": "meeting",
@@ -310,7 +328,8 @@
         "summary": "2026年4月18日在龙井路店举办加盟说明会，限额十二人。",
         "body": "下午两点在龙井路店举行。先品一杯焙火乌龙，再介绍加盟费用和18天跟班培训。限额十二人，额满即止。",
         "image": "news-meet",
-        "imageAlt": "龙井路店说明会长桌"
+        "imageAlt": "龙井路店说明会长桌",
+        "category": "加盟"
       }
     ]
   },
@@ -337,19 +356,27 @@
             "slides": [
               {
                 "image": "hero-tea",
-                "imageAlt": "杯沿的茶汤和暖色侧光"
+                "imageAlt": "杯沿的茶汤和暖色侧光",
+                "title": "焙火乌龙，当天现烤",
+                "lead": "原叶现泡，司康当天出炉，热食有茶泡饭和葱油拌面。"
               },
               {
                 "image": "hero-bake",
-                "imageAlt": "烤盘上刚出炉的司康"
+                "imageAlt": "烤盘上刚出炉的司康",
+                "title": "司康当天出炉即止",
+                "lead": "低筋面粉配发酵黄油，晚间售完就收。"
               },
               {
                 "image": "hero-door",
-                "imageAlt": "夜间门灯下的窄门局部"
+                "imageAlt": "夜间门灯下的窄门局部",
+                "title": "三十六座，今晚还开",
+                "lead": "龙井路店十点到九点半，座位三十六个。"
               },
               {
                 "image": "hero-table",
-                "imageAlt": "旧木桌上的杯子和盘子"
+                "imageAlt": "旧木桌上的杯子和盘子",
+                "title": "热食十一点后上桌",
+                "lead": "茶泡饭配腌萝卜，葱油拌面可以加蛋。"
               }
             ]
           }
@@ -527,24 +554,27 @@
             "items": [
               {
                 "name": "龙井路店完成烤炉更新",
-                "text": "2026年3月12日，司康出炉改为上午十点。",
+                "text": "司康出炉改为上午十点。",
                 "href": "news/oven.html",
                 "image": "news-oven",
-                "imageAlt": "龙井路店新安装的烤炉"
+                "imageAlt": "龙井路店新安装的烤炉",
+                "date": "2026年3月12日"
               },
               {
                 "name": "春季建德茶山原料到仓",
-                "text": "2026年4月4日，今年焙火原料完成采购。",
+                "text": "今年焙火原料完成采购。",
                 "href": "news/hill.html",
                 "image": "news-hill",
-                "imageAlt": "建德茶山春季茶园"
+                "imageAlt": "建德茶山春季茶园",
+                "date": "2026年4月4日"
               },
               {
                 "name": "四月加盟说明会开放报名",
-                "text": "2026年4月18日，龙井路店，限额十二人。",
+                "text": "龙井路店，限额十二人。",
                 "href": "news/meeting.html",
                 "image": "news-meet",
-                "imageAlt": "龙井路店说明会长桌"
+                "imageAlt": "龙井路店说明会长桌",
+                "date": "2026年4月18日"
               }
             ]
           }
@@ -572,7 +602,8 @@
                 "text": "前厅到店跟班18天，从早班开始。"
               }
             ]
-          }
+          },
+          "bg": "bg-join"
         }
       ]
     },
@@ -684,7 +715,8 @@
                 "key": "meal",
                 "label": "热食"
               }
-            ]
+            ],
+            "pageSize": "3"
           }
         }
       ]
@@ -710,7 +742,8 @@
           "data": {
             "title": "门店分布",
             "lead": "四家门店的地址、营业时间和座位数。",
-            "collection": "stores"
+            "collection": "stores",
+            "pageSize": "3"
           }
         }
       ]
@@ -794,7 +827,8 @@
           "data": {
             "title": "加盟咨询",
             "lead": "留下城市和预算，我们按来信顺序回复。"
-          }
+          },
+          "bg": "bg-join"
         }
       ]
     },
@@ -819,7 +853,8 @@
           "data": {
             "title": "新闻动态",
             "lead": "门店、采购和加盟说明，按日期排列。",
-            "collection": "news"
+            "collection": "news",
+            "pageSize": "2"
           }
         }
       ]
@@ -867,7 +902,8 @@
           "data": {
             "title": "招商咨询",
             "lead": "门店营业问题请打热线，加盟合作请来信说明。"
-          }
+          },
+          "bg": "bg-join"
         }
       ]
     }

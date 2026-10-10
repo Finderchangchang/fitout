@@ -28,6 +28,8 @@ node scripts/build.mjs <site.json> --images <老板照片和生成图的目录> 
 - `must` 缺了：拼装仍然成功。`check.mjs` 警告「这些图课上要有，现在还没有」，并列出 id。
 - 还有 `must` 或 `nice` 位没有文件时，首页张数不够不再拿 E4 挡住。演示模式仍按原来的张数规则。
 
+深色板块的底图用新的图片位：`block` 写 `section-bg`，`tier` 写 `nice`。板块的 `bg` 填这个 id。没有文件就退回纯色，不换版式，也不因此失败。这种位不是课上必须有的图，不占 `must` 的名额。拼装也接受已经存在的任意图片位 id 当作 `bg`（验收时可以拿现成的图顶上）。
+
 三个脚本都在 `scripts/images/`，不安装 npm 包。网络用 Node 自带的 fetch。裁切和调色用本机 Playwright 的 Chromium canvas。Playwright 先看环境变量 `PLAYWRIGHT_PATH`，指到入口文件（`.../playwright/index.mjs`）或包目录（`.../playwright`）都行，指到目录时自动找里面的 `index.mjs`；没设置就按 Node 正常的模块解析去找 `playwright`。`check-visual.mjs`、`shot.mjs` 和这几个脚本用同一个查找函数。
 
 MiniMax 的密钥只读环境变量 `MINIMAX_API_KEY`。接口根地址默认 `https://api.minimaxi.com/v1`，要用别的地址就设 `MINIMAX_BASE_URL`（https，写到 `/v1` 为止）。脚本不会把密钥写进日志、报告或图片目录。

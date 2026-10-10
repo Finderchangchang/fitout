@@ -3,7 +3,7 @@
     <a class="brand" href="{{homeHref}}">{{name}}</a>
     <nav class="desktop-nav" aria-label="主导航">
       <ul class="nav-list">
-        {{#each nav}}<li><a href="{{href}}">{{label}}</a></li>{{/each}}
+        {{#each nav}}<li class="nav-item{{#if children}} has-sub{{/if}}{{#if current}} is-current{{/if}}"><a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}{{#if children}} aria-haspopup="true"{{/if}}>{{label}}{{#if children}}<span class="nav-caret" aria-hidden="true"></span>{{/if}}</a>{{#if children}}<button type="button" class="nav-more" aria-expanded="false" aria-label="{{ui.navExpand}}">{{icon:chevron-down:20}}<span class="sr">{{ui.navExpand}}</span></button><ul class="nav-sub" data-subnav>{{#each children}}<li><a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}>{{label}}</a></li>{{/each}}</ul>{{/if}}</li>{{/each}}
       </ul>
     </nav>
     <div class="header-tools">
@@ -15,7 +15,7 @@
   <div class="mobile-panel" id="mobile-menu" data-menu-panel hidden>
     <button type="button" class="btn" data-menu-button aria-expanded="false">{{icon:close:20}}<span class="sr">关闭</span></button>
     <nav aria-label="手机导航">
-      {{#each nav}}<a href="{{href}}">{{label}}</a>{{/each}}
+      {{#each nav}}<span class="nav-item{{#if children}} has-sub{{/if}}{{#if current}} is-current{{/if}}"><a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}{{#if children}} aria-haspopup="true"{{/if}}>{{label}}</a>{{#if children}}<button type="button" class="nav-more" aria-expanded="false" aria-label="{{ui.navExpand}}">{{icon:chevron-down:20}}<span class="sr">{{ui.navExpand}}</span></button><ul class="nav-sub" data-subnav>{{#each children}}<li><a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}>{{label}}</a></li>{{/each}}</ul>{{/if}}</span>{{/each}}
       <a href="tel:{{phoneTel}}">{{phone}}</a>
     </nav>
   </div>

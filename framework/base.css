@@ -370,6 +370,7 @@ details[open] summary .chev {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   position: relative;
+  z-index: 26;
 }
 
 .site-header .bar {
@@ -845,6 +846,11 @@ html {
   color: var(--primary-contrast);
 }
 
+/* 国际风轮播没图时改成纯文字首屏，不再走 92svh 的轮播样式。60vh 只有视口的六成，低于这一档。 */
+html[data-flavor="intl"] .hero[data-hero-bare] {
+  min-height: 92vh;
+}
+
 .hero[data-hero-bare]::before {
   content: "";
   position: absolute;
@@ -1138,5 +1144,405 @@ html[data-flavor="intl"] {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* 当前页：底线用主色。只改边，不改字色，避免主色字压在底上对比度不够。
+   小箭头绝对定位，不占文字间距。二级菜单默认不占位，悬停或聚焦才打开。 */
+.nav-list > li,
+.nav-item {
+  position: relative;
+}
+
+.nav-list > li > .nav-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-list a,
+.mobile-panel .nav-item > a {
+  position: relative;
+}
+
+.site-header .nav-list > li > a.is-current,
+.site-header .nav-list > li > .nav-item > a.is-current,
+.site-header .nav-list > .nav-item > a.is-current,
+.site-header .mobile-panel .nav-item > a.is-current,
+.site-header .mobile-panel nav > a.is-current {
+  border-bottom: 2px solid var(--primary);
+}
+
+.nav-caret {
+  position: absolute;
+  right: 0.15rem;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid currentColor;
+  pointer-events: none;
+}
+
+.nav-more {
+  display: none;
+}
+
+.site-header .nav-sub {
+  display: none;
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  min-width: 12rem;
+}
+
+.site-header .nav-list .nav-sub a,
+.site-header .mobile-panel .nav-sub a {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 44px;
+  padding: 0.25rem 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .nav-list .nav-sub a.is-current,
+.site-header .mobile-panel .nav-sub a.is-current {
+  border-bottom: 0;
+  border-left: 3px solid var(--primary);
+}
+
+@media (min-width: 1024px) {
+  .nav-list > li.is-open > .nav-sub,
+  .nav-list > li:focus-within > .nav-sub,
+  .nav-list > li > .nav-item.is-open > .nav-sub,
+  .nav-list > li > .nav-item:focus-within > .nav-sub,
+  .nav-list > .nav-item.is-open > .nav-sub,
+  .nav-list > .nav-item:focus-within > .nav-sub {
+    display: grid;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@media (max-width: 1023px) {
+  .mobile-panel .nav-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .mobile-panel .nav-item > a {
+    flex: 1;
+  }
+
+  .mobile-panel .nav-caret {
+    display: none;
+  }
+
+  .mobile-panel .nav-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .mobile-panel .nav-item.is-open > .nav-sub {
+    display: grid;
+    position: static;
+    flex-basis: 100%;
+  }
+}
+
+.has-section-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.has-section-bg > .section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.has-section-bg > .section-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-bg-mask {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--text) 76%, transparent);
+}
+
+.has-section-bg > :not(.section-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.media-card {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.media-card-thumb {
+  display: block;
+  min-height: 44px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.media-card-thumb img,
+.media-card-fallback {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.media-card-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  font-family: var(--font-heading);
+  font-size: var(--fs-3);
+  font-weight: 600;
+}
+
+.media-card-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  margin: 0;
+}
+
+.media-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.media-card-tag {
+  display: inline-flex;
+  align-items: center;
+}
+
+.media-card-row {
+  grid-template-columns: 9rem minmax(0, 1fr);
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.media-card-row .media-card-thumb {
+  grid-row: 1 / span 3;
+}
+
+@media (min-width: 768px) {
+  .media-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.pager a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: 0.5rem;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.pager a.is-current {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+
+.footer-qrs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-qr {
+  margin: 0;
+  width: 7rem;
+}
+
+.footer-qr img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-qr figcaption {
+  margin-top: 0.25rem;
+}
+
+.hero-copy.has-slide-copy > :not(.hero-slide-copies) {
+  display: none;
+}
+
+.hero-slide-copy {
+  display: none;
+}
+
+.hero-slide-copy.is-current,
+.hero-slide-copies:not(:has(.is-current)) > .hero-slide-copy:first-child {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (max-width: 1023px) {
+  .float-dock > .qr-pop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .float-dock > .qr-pop:hover > .qr-pop-panel,
+  .float-dock > .qr-pop:focus-within > .qr-pop-panel {
+    display: grid;
+  }
+}
+
+/* 正式构建没有配图时，图文分栏的图列会被拿掉，字和卡片还停在左半边。
+   这里把这些分栏收成一列，放开为配图留的窄栏上限；只剩一张卡时让它铺满这一行。
+   短文案折不满容器 56% 时，用已有的分隔色在容器底边拉通一条线，空列收掉之后这条线落在整行上。 */
+@media (min-width: 1024px) {
+  .section:not(:has(img)):not([data-section="hero"]):not([data-section="page-banner"]):not([data-fullbleed]):not(.photo-band) > .container {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:not(:has(img)) > :is(
+    .container.field-land,
+    .container.floor-split,
+    .container.detail-grid,
+    .container.detail,
+    .container.campus-grid,
+    .container.brief-grid,
+    .container.article-col,
+    .container.reach-grid,
+    .container.essay-grid,
+    .container.place,
+    .container.studio-split,
+    .container.method-split,
+    .container.proj,
+    .container.report,
+    .container.story
+  ) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: none;
+  }
+
+  .section:not(:has(img)) > :is(
+    .container.field-land,
+    .container.floor-split,
+    .container.detail-grid,
+    .container.detail,
+    .container.campus-grid,
+    .container.brief-grid,
+    .container.article-col,
+    .container.reach-grid,
+    .container.essay-grid,
+    .container.place,
+    .container.studio-split,
+    .container.method-split,
+    .container.proj,
+    .container.report,
+    .container.story
+  ) > * {
+    grid-area: auto;
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .section:not(:has(img)) :is(.article-body, .station, .row-item, .lot-row) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section:not(:has(img)) :is(.prose, .report-head, .article-main, .article-copy, .article-head) {
+    max-width: none;
+  }
+
+  .section:not(:has(img)) :is(
+    .clip-list,
+    .note-list,
+    .feed-grid,
+    .board-grid,
+    .job-grid,
+    .part-grid,
+    .place-grid,
+    .room-grid,
+    .people-grid,
+    .portrait-grid,
+    .scene-grid,
+    .catalog-grid,
+    .row-list,
+    .shelf,
+    .lane-box,
+    .grid-2
+  ):has(> :only-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section:not(:has(img)) :is(
+    .clip-list,
+    .note-list,
+    .feed-grid,
+    .board-grid,
+    .job-grid,
+    .part-grid,
+    .place-grid,
+    .room-grid,
+    .people-grid,
+    .portrait-grid,
+    .scene-grid,
+    .catalog-grid,
+    .row-list,
+    .shelf,
+    .lane-box,
+    .grid-2
+  ):has(> :only-child) > :only-child {
+    grid-column: auto;
+    max-width: none;
   }
 }

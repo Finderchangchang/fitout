@@ -70,3 +70,10 @@
     aspect-ratio: 2 / 1;
   }
 }
+
+/* 三张在 768 是两列加一张。1024 起改走上面的六列跨格，这里不盖。 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .board-grid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

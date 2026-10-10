@@ -720,6 +720,83 @@
       "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
       "desc": "量房顾问微信二维码。上线前换成顾问的码。",
       "tier": "nice"
+    },
+    {
+      "id": "hero-roller",
+      "page": "home",
+      "block": "hero",
+      "ratio": "16:10",
+      "px": "1440x900",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "paint",
+        "roller",
+        "wall",
+        "oak"
+      ],
+      "prompt": "墙角一只完整的乳胶漆滚筒靠着刚滚过的暖白墙，手柄和滚筒连成一件，金属杆不断开，浅橡木地板只在画面边缘，日光，不要整间房，不要人，不要文字，不要商标。",
+      "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
+      "desc": "首屏，墙角的乳胶漆。",
+      "tier": "must"
+    },
+    {
+      "id": "bg-floor",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "oak",
+        "floor",
+        "grain"
+      ],
+      "prompt": "浅橡木地板的木纹特写，暖日光，斜向阴影，不要整间客厅，不要人，不要文字，不要商标。",
+      "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
+      "desc": "深色板块底，木地板。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-pipe",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "conduit",
+        "wall",
+        "site"
+      ],
+      "prompt": "沿墙固定的水电管和线槽局部，暖白墙，侧面日光，不要工地全景，不要人，不要文字，不要商标。",
+      "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
+      "desc": "深色板块底，水电管。",
+      "tier": "nice"
+    },
+    {
+      "id": "bg-sample",
+      "page": "home",
+      "block": "section-bg",
+      "ratio": "16:9",
+      "px": "1440x810",
+      "source": "ai",
+      "mustBeReal": false,
+      "fallback": "omit",
+      "keywords": [
+        "sample",
+        "oak",
+        "board"
+      ],
+      "prompt": "浅橡木样块和一小块暖白墙板靠在一起，柔光棚拍，不要整间展厅，不要人，不要文字，不要商标。",
+      "grade": "明亮的暖橙和浅橡木，日光，阴影偏暖。不要深茶色，不要把字烤进图里。",
+      "desc": "深色板块底，材料样块。",
+      "tier": "nice"
     }
   ]
 }

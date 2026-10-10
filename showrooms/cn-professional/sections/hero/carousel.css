@@ -32,6 +32,10 @@
   align-items: flex-start;
 }
 
+.hero-full .hero-copy.has-slide-copy > .hero-ui {
+  display: flex;
+}
+
 .hero-ui {
   align-self: flex-start;
   justify-content: flex-start;

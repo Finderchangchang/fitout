@@ -49,3 +49,10 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* 三张在 768–1099 仍是两列，末行剩一张。四列从 1100 起，这里只补这段。 */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .note-list:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

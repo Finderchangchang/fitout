@@ -8,6 +8,7 @@
     </div>
     <div class="shelf">
       {{#if filters}}
+      {{#each filters}}<span id="{{anchor}}-{{key}}" hidden></span>{{/each}}
       <div class="cat-switch">
         <input class="clip" type="radio" name="shelf-{{anchor}}" id="cat-{{anchor}}-all" checked>
         <label class="btn" for="cat-{{anchor}}-all">全部</label>
@@ -31,20 +32,31 @@
         .shelf:has(#cat-{{anchor}}-{{key}}:checked) .entry:not([data-cat="{{key}}"]) {
           display: none;
         }
+        .shelf:has(#{{anchor}}-{{key}}:target) .entry:not([data-cat="{{key}}"]) {
+          display: none;
+        }
         {{/each}}
       </style>
       {{/if}}
       <div class="note-list" data-media-group="noteimg">
         {{#each items}}
-        <article class="entry note-row" data-cat="{{catKey}}">
-          {{#if image}}<a class="note-photo" href="{{href}}"><img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async"></a>{{/if}}
+        <article class="entry note-row media-card" data-cat="{{catKey}}">
+          <a class="note-photo media-card-thumb" href="{{href}}">{{#if image}}<img src="{{image}}" alt="{{imageAlt}}" width="{{imageWidth}}" height="{{imageHeight}}" loading="lazy" decoding="async">{{else}}<span class="media-card-fallback" aria-hidden="true">{{initial}}</span>{{/if}}</a>
           <div>
             <h3 class="item-title"><a href="{{href}}">{{name}}</a></h3>
-            {{#if summary}}<p>{{summary}}</p>{{/if}}
+            <p class="media-card-summary">{{summary}}</p>
+            {{#if date}}<p class="media-card-meta"><time{{#if dateIso}} datetime="{{dateIso}}"{{/if}}>{{date}}</time>{{#if category}}<span class="media-card-tag">{{category}}</span>{{/if}}</p>{{else}}{{#if category}}<p class="media-card-meta"><span class="media-card-tag">{{category}}</span></p>{{/if}}{{/if}}
           </div>
         </article>
         {{/each}}
       </div>
     </div>
+    {{#if pager}}
+    <nav class="pager" data-pager aria-label="{{ui.pagerLabel}}">
+      {{#if prevHref}}<a class="pager-prev" href="{{prevHref}}">{{ui.pagerPrev}}</a>{{/if}}
+      {{#each pager}}<a href="{{href}}"{{#if current}} class="is-current" aria-current="page"{{/if}}>{{label}}</a>{{/each}}
+      {{#if nextHref}}<a class="pager-next" href="{{nextHref}}">{{ui.pagerNext}}</a>{{/if}}
+    </nav>
+    {{/if}}
   </div>
 </section>

@@ -76,6 +76,6 @@
 
 @media (min-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 1.15fr 0.8fr 1.2fr 0.95fr;
+    grid-template-columns: 1.2fr 0.9fr 1.3fr;
   }
 }

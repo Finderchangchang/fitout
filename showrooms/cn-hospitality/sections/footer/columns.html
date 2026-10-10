@@ -17,21 +17,8 @@
         {{#if email}}<p><a href="mailto:{{email}}">{{icon:mail:16}}{{email}}</a></p>{{/if}}
         <p><a href="{{amapUrl}}">{{icon:map-pin:16}}{{address}}</a></p>
         {{#each hours}}<p>{{icon:clock:16}}{{day}} <span class="nums">{{time}}</span></p>{{/each}}
-      </div>
-      {{#if hasWechat}}
-      <div class="footer-codes">
-        {{#if wechatQrSrc}}
-        <p class="footer-label">微信</p>
-        <div class="code-row">
-          <figure>
-            <img src="{{wechatQrSrc}}" alt="{{name}}微信二维码" width="{{wechatQrWidth}}" height="{{wechatQrHeight}}">
-            <figcaption>微信</figcaption>
-          </figure>
-        </div>
-        {{/if}}
         {{#if wechat}}<p><button type="button" class="btn" data-copy="{{wechat}}">复制微信号</button></p>{{/if}}
       </div>
-      {{/if}}
     </div>
     <div class="footer-legal">
       <p>{{year}} {{name}} 版权所有</p>
